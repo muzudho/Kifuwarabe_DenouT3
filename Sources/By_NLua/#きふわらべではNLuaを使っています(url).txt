@@ -1,0 +1,8 @@
+取得元：https://github.com/NLua/NLua
+
+ファイルを
+bin/Debug
+bin/Release
+に入れてください。
+
+NLua.dll を参照に追加してください。

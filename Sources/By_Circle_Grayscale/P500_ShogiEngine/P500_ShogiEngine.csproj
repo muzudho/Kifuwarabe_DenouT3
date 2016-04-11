@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E96A7341-B8E6-4979-8B2A-94FF2818962C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Grayscale</RootNamespace>
+    <AssemblyName>Grayscale.P500_ShogiEngine</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Builds\Engine\Bin\P500_ShogiEngine\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Builds\Engine\Bin\P500_ShogiEngine\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LEARN|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\Builds\Engine\Bin\P500_ShogiEngine\</OutputPath>
+    <DefineConstants>TRACE;LEARN</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DynamicJson, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Builds\Engine\Bin\Lib_NeueCC\DynamicJson.dll</HintPath>
+    </Reference>
+    <Reference Include="NLua, Version=1.3.2.0, Culture=neutral, PublicKeyToken=8df2ab518030ea95, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Builds\Engine\Bin\Lib_NLua\NLua.dll</HintPath>
+    </Reference>
+    <Reference Include="ProjectDark.KWSupport, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Builds\Engine\Bin\Lib_Circle_ProjectDark\ProjectDark.KWSupport.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="P522_Conv_FvKoumoku\L500____Converter\Conv_FvKoumoku522.cs" />
+    <Compile Include="P523_UtilFv_____\L480____UtilFvEdit\Util_FeatureVectorEdit.cs" />
+    <Compile Include="P523_UtilFv_____\L490____UtilFvFormat\Format_FeatureVector_Scale.cs" />
+    <Compile Include="P531_Hyokakansu_\L500____Hyokakansu\Hyokakansu_Sennitite.cs" />
+    <Compile Include="P531_Hyokakansu_\L510____HyokakansuColl\Util_HyokakansuCollection.cs" />
+    <Compile Include="P542_Scoreing___\L250____Args\EvaluationArgsImpl.cs" />
+    <Compile Include="P542_Scoreing___\L500____Util\Util_Scoreing.cs" />
+    <Compile Include="P542_Scoreing___\L___250_Args\EvaluationArgs.cs" />
+    <Compile Include="P551_Tansaku____\L500____Struct\Tansaku_ArgsImpl.cs" />
+    <Compile Include="P551_Tansaku____\L500____Struct\Tansaku_GenjoImpl.cs" />
+    <Compile Include="P551_Tansaku____\L___500_Struct\Tansaku_Args.cs" />
+    <Compile Include="P551_Tansaku____\L___500_Struct\Tansaku_Genjo.cs" />
+    <Compile Include="P551_Tansaku____\L___500_Struct\Tansaku_Routine.cs" />
+    <Compile Include="P553_TansakuHaba\L500____Struct\Tansaku_HabaYusen_Routine.cs" />
+    <Compile Include="P554_TansaFukasa\L500____Struct\Tansaku_FukasaYusen_Routine.cs" />
+    <Compile Include="P523_UtilFv_____\L490____UtilFvFormat\Const_FeatureVectorFormat.cs" />
+    <Compile Include="P523_UtilFv_____\L490____UtilFvFormat\Format_FeatureVector_KK.cs" />
+    <Compile Include="P523_UtilFv_____\L490____UtilFvFormat\Format_FeatureVector_KP.cs" />
+    <Compile Include="P523_UtilFv_____\L490____UtilFvFormat\Format_FeatureVector_PP_P1Banjo.cs" />
+    <Compile Include="P523_UtilFv_____\L490____UtilFvFormat\Format_FeatureVector_PP_P1Moti.cs" />
+    <Compile Include="P523_UtilFv_____\L491____UtilFvIo\Util_FeatureVectorInput.cs" />
+    <Compile Include="P523_UtilFv_____\L491____UtilFvIo\Util_FeatureVectorOutput.cs" />
+    <Compile Include="P521_FeatureVect\L___500_Struct\FeatureVector.cs" />
+    <Compile Include="P521_FeatureVect\L___500_Struct\Const_NikomaKankeiP_Param.cs" />
+    <Compile Include="P521_FeatureVect\L500____Struct\FeatureVectorImpl.cs" />
+    <Compile Include="P525_ConvFv_____\L500____Converter\Conv_FvKoumoku525.cs" />
+    <Compile Include="P523_UtilFv_____\L490____UtilFvFormat\Format_FeatureVector_Komawari.cs" />
+    <Compile Include="P523_UtilFv_____\L510____UtilFvLoad\Util_FvLoad.cs" />
+    <Compile Include="P531_Hyokakansu_\L499____UtilFv\Util_FvParamIndex.cs" />
+    <Compile Include="P531_Hyokakansu_\L500____Hyokakansu\Hyokakansu_NikomaKankeiPp.cs" />
+    <Compile Include="P531_Hyokakansu_\L___500_Hyokakansu\Hyokakansu.cs" />
+    <Compile Include="P531_Hyokakansu_\L060____UtilLua\Util_Lua_KifuWarabe.cs" />
+    <Compile Include="P531_Hyokakansu_\L490____UtilSokutei\Util_KomanoKyori.cs" />
+    <Compile Include="P531_Hyokakansu_\L500____Hyokakansu\HyokakansuAbstract.cs" />
+    <Compile Include="P531_Hyokakansu_\L500____Hyokakansu\Hyokakansu_Komawari.cs" />
+    <Compile Include="P554_TansaFukasa\L___500_Struct\Mode_Tansaku.cs" />
+    <Compile Include="P560_UtilClient_\L500____Util\Util_InClient.cs" />
+    <Compile Include="P542_Scoreing___\L___240_Shogisasi\Shogisasi.cs" />
+    <Compile Include="P542_Scoreing___\L010____Log\PerformanceMetrics.cs" />
+    <Compile Include="P571_KifuWarabe_\L061____Util\Util_LogBuilder510.cs" />
+    <Compile Include="P542_Scoreing___\L125____ScoreSibori\ScoreSiboriEngine.cs" />
+    <Compile Include="P571_KifuWarabe_\L100____Shogisasi\ShogisasiImpl.cs" />
+    <Compile Include="P571_KifuWarabe_\L125____KingState\Result_KingState.cs" />
+    <Compile Include="P571_KifuWarabe_\L249____Noop\NoopPhase.cs" />
+    <Compile Include="P571_KifuWarabe_\L249____Noop\NoopTimerImpl.cs" />
+    <Compile Include="P571_KifuWarabe_\L250____UsiLoop\PhaseResult_UsiLoop1.cs" />
+    <Compile Include="P571_KifuWarabe_\L250____UsiLoop\UsiLoop1.cs" />
+    <Compile Include="P571_KifuWarabe_\L250____UsiLoop\UsiLoop2.cs" />
+    <Compile Include="P571_KifuWarabe_\L250____UsiLoop\PhaseResult_UsiLoop2.cs" />
+    <Compile Include="P571_KifuWarabe_\L500____KifuWarabe\KifuWarabeImpl.cs" />
+    <Compile Include="P542_Scoreing___\L___005_UsiLoop\ShogiEngine.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\P000_Environment\P000_Environment.csproj">
+      <Project>{147b11e0-827b-4d3f-844c-adf2beafa53f}</Project>
+      <Name>P000_Environment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\P140_KifuSfen___\P140_KifuSfen___.csproj">
+      <Project>{b0982362-ab7f-45a6-af5f-c9fdfa49f9dd}</Project>
+      <Name>P140_KifuSfen___</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\P150_LogKyokuPng\P150_LogKyokuPng.csproj">
+      <Project>{6f26bae0-8e17-4fda-a242-d1d7c4db2507}</Project>
+      <Name>P150_LogKyokuPng</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\P200_KnowNingen_\P200_KnowNingen_.csproj">
+      <Project>{2cfb37ae-2d9e-4478-abd8-1eaaaf98f223}</Project>
+      <Name>P200_KnowNingen_</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\P440_KifuTreeLog\P440_KifuTreeLog.csproj">
+      <Project>{da78a967-e248-4fc3-a89c-11ebb03030b7}</Project>
+      <Name>P440_KifuTreeLog</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="P501_／／将棋エンジン\" />
+    <Folder Include="P510_／／↓心\" />
+    <Folder Include="P520_／／↓右脳（二駒関係）\" />
+    <Folder Include="P530_／／↓評価\" />
+    <Folder Include="P540_／／↓点数付け・探索ルーチン\" />
+    <Folder Include="P556_／／↑探索ルーチン\" />
+    <Folder Include="P570_／／↓きふわらべ\" />
+    <Folder Include="P580_Form_______／／フォーム\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2CFB37AE-2D9E-4478-ABD8-1EAAAF98F223}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Grayscale</RootNamespace>
+    <AssemblyName>Grayscale.P200_KnowNingen_</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Builds\Engine\Bin\P200_KnowNingen_\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Builds\Engine\Bin\P200_KnowNingen_\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LEARN|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\Builds\Engine\Bin\P200_KnowNingen_\</OutputPath>
+    <DefineConstants>TRACE;LEARN</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ProjectDark.KWSupport">
+      <HintPath>..\..\..\Builds\Engine\Bin\Lib_Circle_ProjectDark\ProjectDark.KWSupport.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="P211_WordShogi__\L260____Operator\Util_SyElement_BinaryOperator.cs" />
+    <Compile Include="P211_WordShogi__\L___250_Masu\New_Basho.cs" />
+    <Compile Include="P212_ConvPside__\L500____Converter\Conv_MasuHandle.cs" />
+    <Compile Include="P212_ConvPside__\L500____Converter\Conv_SyElement.cs" />
+    <Compile Include="P238_Seiza______\L500____Util\Util_Starlightable.cs" />
+    <Compile Include="P258_UtilSky258_\L500____UtilSky\Util_Sky_BoolQuery.cs" />
+    <Compile Include="P260_Play_______\L250____Calc\Query_SkyFingers.cs" />
+    <Compile Include="P239_ConvWords__\L500____Converter\Conv_Fingers.cs" />
+    <Compile Include="P239_ConvWords__\L500____Converter\Conv_KomabetuMasus268.cs" />
+    <Compile Include="P239_ConvWords__\L500____Converter\Conv_Komasyurui.cs" />
+    <Compile Include="P239_ConvWords__\L500____Converter\Conv_NariNarazu.cs" />
+    <Compile Include="P239_ConvWords__\L500____Converter\Conv_AgaruHiku.cs" />
+    <Compile Include="P239_ConvWords__\L500____Converter\Conv_DaHyoji.cs" />
+    <Compile Include="P239_ConvWords__\L500____Converter\Conv_MigiHidari.cs" />
+    <Compile Include="P239_ConvWords__\L500____Converter\Conv_Sasite.cs" />
+    <Compile Include="P211_WordShogi__\L500____Word\Array_Playerside.cs" />
+    <Compile Include="P212_ConvPside__\L500____Converter\Conv_Playerside.cs" />
+    <Compile Include="P213_Komasyurui_\L250____Word\Array_Komasyurui.cs" />
+    <Compile Include="P218_Starlight__\L___500_Struct\Startype.cs" />
+    <Compile Include="P223_TedokuHisto\L___250_Struct\TedokuHistory.cs" />
+    <Compile Include="P223_TedokuHisto\L250____Struct\TedokuHisotryConst.cs" />
+    <Compile Include="P223_TedokuHisto\L250____Struct\TedokuHisotryBuffer.cs" />
+    <Compile Include="P223_TedokuHisto\L240____Util\Util_TedokuHistory.cs" />
+    <Compile Include="P239_ConvWords__\L500____Converter\Conv_Sky.cs" />
+    <Compile Include="P261_Utifudume__\L500____Util\Util_Utifudume.cs" />
+    <Compile Include="P267_ConvKiki___\L500____Converter\Util_SkyPside.cs" />
+    <Compile Include="P325_PnlTaikyoku\L250____Struct\Model_ManualImpl.cs" />
+    <Compile Include="P325_PnlTaikyoku\L250____Struct\Model_TaikyokuImpl.cs" />
+    <Compile Include="P325_PnlTaikyoku\L___250_Struct\Model_Manual.cs" />
+    <Compile Include="P325_PnlTaikyoku\L___250_Struct\Model_Taikyoku.cs" />
+    <Compile Include="P369_ConvCsa____\L500____Converter\Util_CsaSasite.cs" />
+    <Compile Include="P222_Log_Kaisetu\L500____Util\Util_LogWriter022_Json.cs" />
+    <Compile Include="P234_Komahaiyaku\L250____Word\Array_Komahaiyaku185.cs" />
+    <Compile Include="P242_UtilColleEx\L500____Util\Util_List_OneAndMultiEx.cs" />
+    <Compile Include="P242_UtilColleEx\L500____Util\Util_Maps_OneAndMultiEx.cs" />
+    <Compile Include="P258_UtilSky258_\L250____UtilFingers\Util_Fingers_KomasyuruiQuery.cs" />
+    <Compile Include="P258_UtilSky258_\L500____UtilSky\Util_Sky_FingerQuery.cs" />
+    <Compile Include="P258_UtilSky258_\L500____UtilSky\Util_Sky_FingersQueryEx.cs" />
+    <Compile Include="P258_UtilSky258_\L500____UtilSky\Util_Sky_FingersQueryFx.cs" />
+    <Compile Include="P258_UtilSky258_\L500____UtilSky\Util_Sky_KomaQuery.cs" />
+    <Compile Include="P258_UtilSky258_\L500____UtilSky\Util_Sky_SyugoQuery.cs" />
+    <Compile Include="P239_ConvWords__\L500____Converter\Conv_String268.cs" />
+    <Compile Include="P211_WordShogi__\L510____Komanokiki\MasubetuKikisuImpl.cs" />
+    <Compile Include="P211_WordShogi__\L___510_Komanokiki\MasubetuKikisu.cs" />
+    <Compile Include="P269_Util_Sasu__\L500____Util\Util_Sasu269.cs" />
+    <Compile Include="P212_ConvPside__\L500____Converter\Conv_Okiba.cs" />
+    <Compile Include="P258_UtilSky258_\L500____UtilSky\Util_Sky_FingersQuery.cs" />
+    <Compile Include="P258_UtilSky258_\L500____UtilSky\Util_SkyWriter.cs" />
+    <Compile Include="P292_JsaFugo____\L500____Util\Util_Translator_JsaFugo.cs" />
+    <Compile Include="P370_LogGraphiEx\L500____Util\Conv_KaisetuBoards.cs" />
+    <Compile Include="P216_ZobrishHash\L500____Struct\Util_ZobristHashing.cs" />
+    <Compile Include="P323_Sennitite__\L500____Struct\SennititeConfirmerImpl.cs" />
+    <Compile Include="P323_Sennitite__\L___500_Struct\SennititeConfirmer.cs" />
+    <Compile Include="P339_ConvKyokume\L500____Converter\Conv_SasiteStr_Sfen.cs" />
+    <Compile Include="P307_UtilSky____\L500____Util\Conv_Sfenstring307.cs" />
+    <Compile Include="P307_UtilSky____\L500____Util\Conv_Starlight.cs" />
+    <Compile Include="P321_KyokumHyoka\L___250_Struct\HyokakansuName.cs" />
+    <Compile Include="P339_ConvKyokume\L500____Converter\Conv_KifuNode.cs" />
+    <Compile Include="P339_ConvKyokume\L500____Converter\Conv_NextNodes.cs" />
+    <Compile Include="P341_Ittesasu___\L500____UtilA\Conv_JsaFugoText.cs" />
+    <Compile Include="P339_ConvKyokume\L500____Converter\Conv_SfenSasiteTokens.cs" />
+    <Compile Include="P341_Ittesasu___\L500____UtilA\Util_IttemodosuRoutine.cs" />
+    <Compile Include="P353_Conv_SasuEx\L500____Converter\Conv_SasuEntry.cs" />
+    <Compile Include="P353_Conv_SasuEx\L500____Converter\SasuEntry.cs" />
+    <Compile Include="P360_Conv_Sasu__\L500____Converter\Conv_KomabetuSusumeruMasus.cs" />
+    <Compile Include="P360_Conv_Sasu__\L500____Converter\Conv_SasitebetuKyokumenwrappers361.cs" />
+    <Compile Include="P361_Util_______\L500____Util\Util_NodeAssert361.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P206_Json_______\L___500_Struct\Json_Val.cs" />
+    <Compile Include="P206_Json_______\L500____Struct\Json_Arr.cs" />
+    <Compile Include="P206_Json_______\L500____Struct\Json_Obj.cs" />
+    <Compile Include="P206_Json_______\L500____Struct\Json_Prop.cs" />
+    <Compile Include="P206_Json_______\L500____Struct\Json_Str.cs" />
+    <Compile Include="P209_KifuJsa____\L500____Word\AgaruHiku.cs" />
+    <Compile Include="P209_KifuJsa____\L500____Word\DaHyoji.cs" />
+    <Compile Include="P209_KifuJsa____\L500____Word\MigiHidari.cs" />
+    <Compile Include="P209_KifuJsa____\L500____Word\NariFunari.cs" />
+    <Compile Include="P211_WordShogi__\L500____Word\Hogaku.cs" />
+    <Compile Include="P211_WordShogi__\L500____Word\Okiba.cs" />
+    <Compile Include="P211_WordShogi__\L500____Word\Playerside.cs" />
+    <Compile Include="P218_Starlight__\L___500_Struct\Starbeamable.cs" />
+    <Compile Include="P218_Starlight__\L___500_Struct\Starlight.cs" />
+    <Compile Include="P218_Starlight__\L___500_Struct\Starlightable.cs" />
+    <Compile Include="P222_Log_Kaisetu\L250____Struct\KaisetuBoard.cs" />
+    <Compile Include="P222_Log_Kaisetu\L250____Struct\KaisetuBoards.cs" />
+    <Compile Include="P224_Sky________\L___500_Struct\Sky.cs" />
+    <Compile Include="P224_Sky________\L500____Struct\Fingers.cs" />
+    <Compile Include="P224_Sky________\L500____Struct\RO_Starlight.cs" />
+    <Compile Include="P224_Sky________\L500____Struct\RO_Starbeam.cs" />
+    <Compile Include="P224_Sky________\L500____Struct\SkyBuffer.cs" />
+    <Compile Include="P224_Sky________\L500____Struct\SkyConst.cs" />
+    <Compile Include="P226_Tree_______\L___500_Struct\Node.cs" />
+    <Compile Include="P226_Tree_______\L___500_Struct\Tree.cs" />
+    <Compile Include="P226_Tree_______\L500____Struct\NodeImpl.cs" />
+    <Compile Include="P226_Tree_______\L500____Struct\TreeImpl.cs" />
+    <Compile Include="P213_Komasyurui_\L500____Util\Util_Komasyurui14.cs" />
+    <Compile Include="P213_Komasyurui_\L250____Word\Komasyurui14.cs" />
+    <Compile Include="P211_WordShogi__\L250____Masu\BashoImpl.cs" />
+    <Compile Include="P211_WordShogi__\L250____Masu\Masu_Honshogi.cs" />
+    <Compile Include="P214_Masu_______\L500____Util\Util_Masu10.cs" />
+    <Compile Include="P214_Masu_______\L500____Util\Util_MasuNum.cs" />
+    <Compile Include="P214_Masu_______\L500____Util\Util_Muki.cs" />
+    <Compile Include="P234_Komahaiyaku\L500____Util\Util_Komahaiyaku184.cs" />
+    <Compile Include="P234_Komahaiyaku\L250____Word\Komahaiyaku185.cs" />
+    <Compile Include="P236_KomahaiyaTr\L500____Table\Data_KomahaiyakuTransition.cs" />
+    <Compile Include="P238_Seiza______\L250____Struct\RO_Star.cs" />
+    <Compile Include="P238_Seiza______\L250____Struct\StartposExporterImpl.cs" />
+    <Compile Include="P238_Seiza______\L500____Util\Util_Koma.cs" />
+    <Compile Include="P245_SfenTransla\L250____Struct\StartposBuilder1.cs" />
+    <Compile Include="P245_SfenTransla\L500____Util\Util_StartposExporter.cs" />
+    <Compile Include="P246_MasusWriter\L250____Writer\ShogibanTermDisplay.cs" />
+    <Compile Include="P246_MasusWriter\L500____Util\Util_Masus.cs" />
+    <Compile Include="P246_MasusWriter\L250____Writer\Writer_Masus.cs" />
+    <Compile Include="P247_KyokumenWra\L500____Struct\KyokumenWrapper.cs" />
+    <Compile Include="P248_Michi______\L500____Struct\Michi187Array.cs" />
+    <Compile Include="P250_KomahaiyaEx\L500____Util\Util_KomahaiyakuEx184.cs" />
+    <Compile Include="P250_KomahaiyaEx\L500____Util\Util_Array_KomahaiyakuEx184.cs" />
+    <Compile Include="P252_KifuwKuukan\L500____Word\KifuwarabeKuukan24.cs" />
+    <Compile Include="P256_SeizaFinger\L250____Struct\Finger_Honshogi.cs" />
+    <Compile Include="P256_SeizaFinger\L500____Util\Util_Finger.cs" />
+    <Compile Include="P258_UtilSky258_\L500____UtilSky\Util_Sky258A.cs" />
+    <Compile Include="P292_JsaFugo____\L250____Struct\JsaFugoImpl.cs" />
+    <Compile Include="P215_KomanoKidou\L500____Struct\KomanoKidou.cs" />
+    <Compile Include="P215_KomanoKidou\L500____Struct\Array_Rule01_PotentialMove15.cs" />
+    <Compile Include="P270_ForcePromot\L250____Struct\Array_ForcePromotion.cs" />
+    <Compile Include="P270_ForcePromot\L500____Util\Util_ForcePromotion.cs" />
+    <Compile Include="P295_JsaFugoWrit\L500____Writer\Array_JsaFugoCreator15.cs" />
+    <Compile Include="P258_UtilSky258_\L505____ConvLogJson\Util_Converter_LogGraphicEx.cs" />
+    <Compile Include="P202_GraphicLog_\L500____Util\Util_GraphicalLog.cs" />
+    <Compile Include="P258_UtilSky258_\L510____UtilLogJson\Util_FormatJson_LogGraphicEx.cs" />
+    <Compile Include="P272_CollectOpeA\L500____CollectionOpeA\Util_KomabetuMasubetuMasus.cs" />
+    <Compile Include="P272_CollectOpeA\L500____CollectionOpeA\Util_KomabetuMasus.cs" />
+    <Compile Include="P274_KifuReaderB\L___500_Reader\KifuReaderB_State.cs" />
+    <Compile Include="P274_KifuReaderB\L500____Reader\KifuReaderB_Impl.cs" />
+    <Compile Include="P274_KifuReaderB\L500____Reader\KifuReaderB_StateB0.cs" />
+    <Compile Include="P276_SeizaStartp\L500____Struct\StartposImporter.cs" />
+    <Compile Include="P307_UtilSky____\L500____Util\Util_Sky307.cs" />
+    <Compile Include="P320_NodeWriter_\L500____Writer\NodeWriterImpl.cs" />
+    <Compile Include="P324_KifuTree___\L___250_Struct\KifuNode.cs" />
+    <Compile Include="P324_KifuTree___\L___250_Struct\KifuTree.cs" />
+    <Compile Include="P321_KyokumHyoka\L___250_Struct\KyHyokaSheet.cs" />
+    <Compile Include="P321_KyokumHyoka\L___250_Struct\KyHyokaMeisai_Koumoku.cs" />
+    <Compile Include="P324_KifuTree___\L250____Struct\KifuNodeImpl.cs" />
+    <Compile Include="P324_KifuTree___\L250____Struct\KifuTreeImpl.cs" />
+    <Compile Include="P321_KyokumHyoka\L250____Struct\KyHyokaMeisai_KoumokuImpl.cs" />
+    <Compile Include="P321_KyokumHyoka\L250____Struct\KyHyokaSheetImpl.cs" />
+    <Compile Include="P258_UtilSky258_\L500____UtilSky\Util_Sky_CountQuery.cs" />
+    <Compile Include="P341_Ittesasu___\L125____UtilB\Util_KifuTree282.cs" />
+    <Compile Include="P324_KifuTree___\L250____Struct\Word_KifuTree.cs" />
+    <Compile Include="P341_Ittesasu___\L___250_OperationA\IttesasuArg.cs" />
+    <Compile Include="P341_Ittesasu___\L___250_OperationA\IttesasuResult.cs" />
+    <Compile Include="P341_Ittesasu___\L___250_OperationA\IttemodosuArg.cs" />
+    <Compile Include="P341_Ittesasu___\L___250_OperationA\IttemodosuResult.cs" />
+    <Compile Include="P341_Ittesasu___\L250____OperationA\IttesasuArgImpl.cs" />
+    <Compile Include="P341_Ittesasu___\L250____OperationA\IttesasuResultImpl.cs" />
+    <Compile Include="P341_Ittesasu___\L500____UtilA\Util_IttesasuRoutine.cs" />
+    <Compile Include="P341_Ittesasu___\L500____UtilA\Conv_JsaFugoTokens.cs" />
+    <Compile Include="P341_Ittesasu___\L500____UtilA\Query341_OnSky.cs" />
+    <Compile Include="P341_Ittesasu___\L250____OperationA\Util_KirokuGakari.cs" />
+    <Compile Include="P296_ConvJsa____\L500____Converter\Conv_SasiteStr_Jsa.cs" />
+    <Compile Include="P341_Ittesasu___\L250____OperationA\IttemodosuArgImpl.cs" />
+    <Compile Include="P341_Ittesasu___\L250____OperationA\IttemodosuResultImpl.cs" />
+    <Compile Include="P360_Conv_Sasu__\L500____Converter\Conv_StarbetuSasites.cs" />
+    <Compile Include="P341_Ittesasu___\L510____OperationB\Util_Sasu341.cs" />
+    <Compile Include="P354_Util_SasuEx\L500____Util\Util_SasuEx.cs" />
+    <Compile Include="P355_KifuParserA\L___500_Parser\KifuParserA.cs" />
+    <Compile Include="P355_KifuParserA\L___500_Parser\KifuParserA_Genjo.cs" />
+    <Compile Include="P355_KifuParserA\L___500_Parser\KifuParserA_Result.cs" />
+    <Compile Include="P355_KifuParserA\L___500_Parser\KifuParserA_State.cs" />
+    <Compile Include="P355_KifuParserA\L500____Parser\KifuParserA_GenjoImpl.cs" />
+    <Compile Include="P355_KifuParserA\L500____Parser\KifuParserA_Impl.cs" />
+    <Compile Include="P355_KifuParserA\L500____Parser\KifuParserA_ResultImpl.cs" />
+    <Compile Include="P355_KifuParserA\L500____Parser\KifuParserA_StateA0_Document.cs" />
+    <Compile Include="P355_KifuParserA\L500____Parser\KifuParserA_StateA1a_SfenStartpos.cs" />
+    <Compile Include="P355_KifuParserA\L500____Parser\KifuParserA_StateA1b_SfenLnsgkgsnl.cs" />
+    <Compile Include="P355_KifuParserA\L500____Parser\KifuParserA_StateA1_SfenPosition.cs" />
+    <Compile Include="P355_KifuParserA\L500____Parser\KifuParserA_StateA2_SfenMoves.cs" />
+    <Compile Include="P262_Play2______\L500____Struct\Play.cs" />
+    <Compile Include="P260_Play_______\L250____Calc\Play_KomaAndMove.cs" />
+    <Compile Include="P260_Play_______\L500____Query\Query_FingersMasusSky.cs" />
+    <Compile Include="P360_Conv_Sasu__\L500____Converter\Conv_KomabetuMasus.cs" />
+    <Compile Include="P362_LegalMove__\L500____Util\Util_LegalMove.cs" />
+    <Compile Include="P266_KyokumMoves\L___250_Log\MmLogGenjo.cs" />
+    <Compile Include="P266_KyokumMoves\L250____Log\MmLogGenjoImpl.cs" />
+    <Compile Include="P266_KyokumMoves\L500____Util\Util_KyokumenMoves.cs" />
+    <Compile Include="P323_Sennitite__\L500____Struct\SennititeCounterImpl.cs" />
+    <Compile Include="P323_Sennitite__\L___500_Struct\SennititeCounter.cs" />
+    <Compile Include="P372_KyokuParser\L500____Parser\MotiItemImpl.cs" />
+    <Compile Include="P372_KyokuParser\L500____Parser\ParsedKyokumenImpl.cs" />
+    <Compile Include="P372_KyokuParser\L___500_Parser\MotiItem.cs" />
+    <Compile Include="P372_KyokuParser\L___500_Parser\ParsedKyokumen.cs" />
+    <Compile Include="P373_ConvStartpo\L500____Converter\Conv_StartposImporter.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="P201_／／人間ライブラリー\" />
+    <Folder Include="P205_／／↓データ格納記法（JSON）\" />
+    <Folder Include="P208_／／↓日本将棋連盟式符号（上引寄、等）\" />
+    <Folder Include="P210_／／↓きふわらべ式将棋符号\" />
+    <Folder Include="P217_／／↓きふわらべ独自局面データ（P217～P239）\" />
+    <Folder Include="P240_／／↑きふわらべ独自局面データ\" />
+    <Folder Include="P241_／／↓細々（P241～P259）\" />
+    <Folder Include="P289_／／↑細々\" />
+    <Folder Include="P291_／／↓日本将棋連盟の符号\" />
+    <Folder Include="P297_／／↑日本将棋連盟の符号\" />
+    <Folder Include="P301_／／↓細々\" />
+    <Folder Include="P327_／／↑細々\" />
+    <Folder Include="P340_／／↓★一手指すルーチン\" />
+    <Folder Include="P348_／／↑一手指すルーチン\" />
+    <Folder Include="P350_／／↓SFEN棋譜指示実行\" />
+    <Folder Include="P355_KifuParserA\L___000／／一手指すルーチンを利用\" />
+    <Folder Include="P358_／／↑SFEN棋譜指示実行\" />
+    <Folder Include="P359_／／↓合法手まとめルーチン\" />
+    <Folder Include="P368_／／↑合法手まとめルーチン\" />
+    <Folder Include="P380_Form_______／／フォーム\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\P000_Environment\P000_Environment.csproj">
+      <Project>{147b11e0-827b-4d3f-844c-adf2beafa53f}</Project>
+      <Name>P000_Environment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\P140_KifuSfen___\P140_KifuSfen___.csproj">
+      <Project>{b0982362-ab7f-45a6-af5f-c9fdfa49f9dd}</Project>
+      <Name>P140_KifuSfen___</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\P150_LogKyokuPng\P150_LogKyokuPng.csproj">
+      <Project>{6f26bae0-8e17-4fda-a242-d1d7c4db2507}</Project>
+      <Name>P150_LogKyokuPng</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\P160_KifuCsa____\P160_KifuCsa____.csproj">
+      <Project>{abed6201-9999-44cd-a91b-4ca01cc89006}</Project>
+      <Name>P160_KifuCsa____</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

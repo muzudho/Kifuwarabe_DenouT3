@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectDark.KWSupport.Sample", "ProjectDark.KWSupport.Sample.csproj", "{E34E23CA-0B47-470F-9DCD-3B830ECA6623}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9F395594-4560-407D-9C35-4BBAA19BC8FB} = {9F395594-4560-407D-9C35-4BBAA19BC8FB}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectDark.KWSupport", "..\..\BuildVS\ProjectDark.KWSupport.csproj", "{9F395594-4560-407D-9C35-4BBAA19BC8FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E34E23CA-0B47-470F-9DCD-3B830ECA6623}.Release|x86.ActiveCfg = Release|x86
+		{E34E23CA-0B47-470F-9DCD-3B830ECA6623}.Release|x86.Build.0 = Release|x86
+		{9F395594-4560-407D-9C35-4BBAA19BC8FB}.Release|x86.ActiveCfg = Release|x86
+		{9F395594-4560-407D-9C35-4BBAA19BC8FB}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

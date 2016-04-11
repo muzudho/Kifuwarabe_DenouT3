@@ -1,0 +1,6 @@
+2015/12/21 19:06:01  > usi
+2015/12/21 19:06:01  > setoption name USI_Ponder value false
+2015/12/21 19:06:01  > setoption name noopable value true
+2015/12/21 19:06:01  > isready
+2015/12/21 19:06:01  > usinewgame
+2015/12/21 19:14:19  > quit

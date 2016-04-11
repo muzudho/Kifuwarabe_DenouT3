@@ -1,0 +1,14 @@
+"name","value","comment"
+,,
+"data_forcePromotion_UTF-8","../../Data/data_forcePromotion_UTF-8.csv",
+"data_haiyaku185_UTF-8","../../Data/data_haiyaku185_UTF-8.csv",
+"data_michi187","../../Data/data_michi187.csv",
+"data_syuruiToHaiyaku","../../Data/data_syuruiToHaiyaku.csv",
+"data_widgets_01_shogiban","../../Data/data_widgets_01_shogiban.csv",
+"data_widgets_02_console","../../Data/data_widgets_02_console.csv",
+,,"削除:data_widgets_KifuNarabeVs「../../Data/data_widgets_KifuNarabeVs.csv」"
+,,
+,,
+"_log_道表","../../Logs/_log_道表.html",
+"_log_強制転成表","../../Logs/_log_強制転成表.html",
+"_log_配役転換表","../../Logs/_log_配役転換表.html",

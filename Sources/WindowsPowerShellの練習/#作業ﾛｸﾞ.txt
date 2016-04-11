@@ -1,0 +1,18 @@
+
+[スタート]-[すべてのプログラム]-[アクセサリ]-[Windows PowerShell]を
+『右』クリックして、[管理者として実行]を選ぶ。
+
+
+Get-ChildItem と入れれば、ファイルエントリ一覧が出る。
+
+
+ここで、
+Set-ExecutionPolicy RemoteSigned
+と打ち込んでおく。
+これで、スクリプトの実行許可を与えた。
+
+
+
+sample1.ps1 ファイルを作成。
+
+

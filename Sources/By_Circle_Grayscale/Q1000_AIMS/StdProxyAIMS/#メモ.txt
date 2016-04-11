@@ -1,0 +1,8 @@
+project light☆@prjlight
+@muzudho1 説明不十分すぎてすみません。 
+【１】 Process.Start(～) 
+StdProxyAIMS.StartProcess 
+【２】標準入出力 
+StdProxyAIMS.ReadData 標準出力の読み取り 
+StdProxyAIMS.WriteData 
+です

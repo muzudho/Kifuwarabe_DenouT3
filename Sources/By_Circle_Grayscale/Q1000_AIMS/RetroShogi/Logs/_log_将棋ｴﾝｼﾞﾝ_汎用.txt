@@ -1,0 +1,2 @@
+Program「大外枠でキャッチ」：FileNotFoundException ファイル 'C:\Users\Takahashi\Documents\Visual Studio 2012\Projects_Shogi\By_Circle_Grayscale\data_michi187.csv' が見つかりませんでした。
+Program「大外枠でキャッチ」：FileNotFoundException ファイル 'C:\Users\Takahashi\Documents\Visual Studio 2012\Projects_Shogi\By_Circle_Grayscale\AIMS\ShogiServer\data_michi187.csv' が見つかりませんでした。

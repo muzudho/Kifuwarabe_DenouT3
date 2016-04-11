@@ -1,0 +1,2 @@
+C:\Root_KifuWarabe\Sources\By_Circle_Grayscale\Q1000_AIMS\StdProxyAIMS_Kaizo\GameServer\GameServer\bin\Release\Sample.GameServer.exe.config
+C:\Root_KifuWarabe\CSharp\Sources\By_Circle_Grayscale\Q1000_AIMS\StdProxyAIMS_Kaizo\GameServer\GameServer\bin\Release\Sample.GameServer.exe.config

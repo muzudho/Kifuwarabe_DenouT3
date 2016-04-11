@@ -1,0 +1,54 @@
+これは何か
+
+    ゲームエンジンＡＩＭＳで、外部アプリケーションのプロセス起動が
+    できるか試すもの。
+
+
+権利
+
+    ----------
+
+    権利物：    AIMS
+    権利者：    License_AIMS.txt 参照
+
+    ----------
+
+    権利物：    StdProxyAIMS.dll
+    権利者：    License_ProjectDark.txt 参照
+
+    ----------
+
+    権利物：    ComputerPlayer
+                GameServer
+                Terminal
+                設計図.edg
+                設計図_スライド1.png ～ 設計図_スライド5.png
+    権利者：    License_Grayscale.txt 参照
+
+    ----------
+
+
+動かし方
+
+    AIMS.exe をダブルクリックするだけ☆
+    
+    （１）ゲーム・サーバー              Sample.GameServer
+    （２）コンピューター・プレイヤー    Sample.ComputerPlayer
+    （３）ターミナル                    Sample.Terminal
+    
+    の３つが起動します。
+    Windowsタスクマネージャーを使うなどして、プロセスを確認してください。
+
+
+
+StdProxyAIMS.dll
+
+    【１】プロセス・スタート
+
+            StdProxyAIMS.StartProcess 
+
+    【２】標準入出力 
+
+            StdProxyAIMS.ReadData       標準出力の読取り 
+            StdProxyAIMS.WriteData      標準入力への書込み
+

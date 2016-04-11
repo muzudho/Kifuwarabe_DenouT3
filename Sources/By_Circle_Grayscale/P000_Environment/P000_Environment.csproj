@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{147B11E0-827B-4D3F-844C-ADF2BEAFA53F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Grayscale</RootNamespace>
+    <AssemblyName>Grayscale.P000_Environment</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Builds\Engine\Bin\P000_Environment\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Builds\Engine\Bin\P000_Environment\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LEARN|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\Builds\Engine\Bin\P000_Environment\</OutputPath>
+    <DefineConstants>TRACE;LEARN</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ProjectDark.KWSupport">
+      <HintPath>..\..\..\Builds\Engine\Bin\Lib_Circle_ProjectDark\ProjectDark.KWSupport.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P003_Log________\L___500_Struct\KwErrorHandler.cs" />
+    <Compile Include="P003_Log________\L___500_Struct\KwLogger.cs" />
+    <Compile Include="P003_Log________\L500____Struct\ErrorHandlerImpl.cs" />
+    <Compile Include="P003_Log________\L500____Struct\KwLoggerImpl.cs" />
+    <Compile Include="P003_Log________\L500____Struct\Util_OwataMinister.cs" />
+    <Compile Include="P005_Tushin_____\L500____Util\Util_Message.cs" />
+    <Compile Include="P011_Csv________\L250____Parser\CsvLineParserImpl.cs" />
+    <Compile Include="P011_Csv________\L500____Parser\Util_Csv.cs" />
+    <Compile Include="P027_Settei_____\L500____Struct\Const_Filepath.cs" />
+    <Compile Include="P027_Settei_____\L500____Struct\Data_Settei_Csv.cs" />
+    <Compile Include="P027_Settei_____\L510____Xml\SetteiXmlFile.cs" />
+    <Compile Include="P031_Random_____\L500____Struct\KwRandom.cs" />
+    <Compile Include="P031_Random_____\L500____Struct\KwShuffle.cs" />
+    <Compile Include="P035_Collection_\L500____Struct\Couple.cs" />
+    <Compile Include="P035_Collection_\L500____Struct\List_OneAndMulti.cs" />
+    <Compile Include="P035_Collection_\L500____Struct\Maps_OneAndMulti.cs" />
+    <Compile Include="P035_Collection_\L500____Struct\Maps_OneAndMultiAndMulti.cs" />
+    <Compile Include="P035_Collection_\L500____Struct\Maps_OneAndOne.cs" />
+    <Compile Include="P055_Conv_Sy\L500____Converter\Conv_Sy.cs" />
+    <Compile Include="P057_UtilSyColle\L500____Util\Util_List_OneAndMulti.cs" />
+    <Compile Include="P061_ConstShogi_\L250____Const\ConstShogi.cs" />
+    <Compile Include="P062_ConvText___\L250____Const\TextConst.cs" />
+    <Compile Include="P062_ConvText___\L500____Converter\Conv_Alphabet.cs" />
+    <Compile Include="P062_ConvText___\L500____Converter\Conv_Filepath.cs" />
+    <Compile Include="P056_Syugoron___\L___250_Struct\SyElement.cs" />
+    <Compile Include="P056_Syugoron___\L___250_Struct\SySet.cs" />
+    <Compile Include="P056_Syugoron___\L250____Struct\SyElement_Default.cs" />
+    <Compile Include="P056_Syugoron___\L250____Struct\SyFuncDictionary.cs" />
+    <Compile Include="P056_Syugoron___\L250____Struct\SySet_Default.cs" />
+    <Compile Include="P056_Syugoron___\L250____Struct\SySet_DirectedSegment.cs" />
+    <Compile Include="P056_Syugoron___\L250____Struct\SySet_Ordered.cs" />
+    <Compile Include="P056_Syugoron___\L250____Struct\SyWordDictionary.cs" />
+    <Compile Include="P056_Syugoron___\L500____Util\Util_SySet.cs" />
+    <Compile Include="P062_ConvText___\L500____Converter\Conv_Int.cs" />
+    <Compile Include="P062_ConvText___\L500____Converter\Conv_Suji.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="P001_／／環境\" />
+    <Folder Include="P002_／／↓ログ、異常系処理等\" />
+    <Folder Include="P004_／／↓通信\" />
+    <Folder Include="P010_／／↓CSV\" />
+    <Folder Include="P020_／／↓設定ファイル\" />
+    <Folder Include="P030_／／↓ランダム値生成\" />
+    <Folder Include="P034_／／コレクションクラス\" />
+    <Folder Include="P054_／／↓集合論\" />
+    <Folder Include="P060_／／↓将棋定数と変換器\" />
+    <Folder Include="P070_Form_______／／フォーム\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

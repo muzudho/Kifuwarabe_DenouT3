@@ -1,0 +1,48 @@
+Error:   起こった場所：Util_LearningView#Ittesasu_ByBtnClick：指し手[7h8i]はありませんでした。
+Fig.0　P1　升80　王
+Fig.1　P2　升65　王
+Fig.2　P1　升63　竜
+Fig.3　P2　升44　飛
+Fig.4　P2　升75　馬
+Fig.5　P2　升41　角
+Fig.6　P1　升84　金
+Fig.7　P2　升64　金
+Fig.8　P2　升128　金
+Fig.9　P2　升56　金
+Fig.10　P2　升121　銀
+Fig.11　P1　升62　銀
+Fig.12　P2　升39　銀
+Fig.13　P2　升125　銀
+Fig.14　P2　升61　桂
+Fig.15　P1　升71　桂
+Fig.16　P2　升20　桂
+Fig.17　P1　升83　桂
+Fig.18　P1　升8　香
+Fig.19　P1　升79　香
+Fig.20　P2　升1　香
+Fig.21　P1　升82　香
+Fig.22　P1　升6　歩
+Fig.23　P2　升122　歩
+Fig.24　P2　升124　歩
+Fig.25　P1　升33　歩
+Fig.26　P2　升123　歩
+Fig.27　P2　升127　歩
+Fig.28　P2　升130　歩
+Fig.29　P1　升69　歩
+Fig.30　P1　升77　歩
+Fig.31　P2　升2　歩
+Fig.32　P1　升37　と
+Fig.33　P2　升22　歩
+Fig.34　P1　升60　歩
+Fig.35　P1　升53　歩
+Fig.36　P2　升48　歩
+Fig.37　P2　升57　歩
+Fig.38　P1　升81　歩
+Fig.39　P2　升74　歩
+
+Error:   NullReferenceException オブジェクト参照がオブジェクト インスタンスに設定されていません。：Util_IttesasuRoutine#Sasu24_UgokasuKoma_IdoSakiHe： exceptionArea=99001000
+hint=[Util_LearningView#Ittesasu_ByBtnClick]
+Error:   Util_IttesasuRoutine#Execute（B）： exceptionArea=1050
+NullReferenceException：オブジェクト参照がオブジェクト インスタンスに設定されていません。
+Error:   起こった場所：Uc_Main#SippaiIdo: ArgumentException：ファイル名を空にすることはできません。
+パラメーター名:sourceFileName

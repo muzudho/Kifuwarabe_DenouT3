@@ -1,0 +1,6 @@
+R:\Programs.Sources\InheritableInt\Release\VisualStudioProjects\obj\x86\Release\ProjectDark.KWSupport.Sample.csprojResolveAssemblyReference.cache
+R:\Programs.Sources\InheritableInt\Release\VisualStudioProjects\obj\x86\Release\ProjectDark.KWSupport.Sample.exe
+R:\Programs.Sources\InheritableInt\Release\ProjectDark.KWSupport.Sample.exe
+B:\Programs.Sources\InheritableInt\Release\VisualStudioProjects\obj\x86\Release\ProjectDark.KWSupport.Sample.csprojResolveAssemblyReference.cache
+B:\Programs.Sources\InheritableInt\Release\VisualStudioProjects\obj\x86\Release\ProjectDark.KWSupport.Sample.exe
+B:\Programs.Sources\InheritableInt\Release\ProjectDark.KWSupport.Sample.exe
