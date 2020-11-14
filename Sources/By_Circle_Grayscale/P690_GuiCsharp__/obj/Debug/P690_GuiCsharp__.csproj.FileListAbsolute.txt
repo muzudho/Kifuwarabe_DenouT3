@@ -1,0 +1,13 @@
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Builds\Engine\Bin\P690_GuiCsharp__\Grayscale.P690_GuiCsharp__.exe.config
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Builds\Engine\Bin\P690_GuiCsharp__\Grayscale.P690_GuiCsharp__.exe
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Builds\Engine\Bin\P690_GuiCsharp__\Grayscale.P690_GuiCsharp__.pdb
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P690_GuiCsharp__\obj\Debug\P690_GuiCsharp__.csprojAssemblyReference.cache
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P690_GuiCsharp__\obj\Debug\Grayscale.P699_Form_______.Form2_Console.resources
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P690_GuiCsharp__\obj\Debug\Grayscale.P699_Form_______.Uc_Form2Main.resources
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P690_GuiCsharp__\obj\Debug\Grayscale.P699_Form_______.Form1_Shogi.resources
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P690_GuiCsharp__\obj\Debug\Grayscale.Properties.Resources.resources
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P690_GuiCsharp__\obj\Debug\Grayscale.P699_Form_______.Uc_Form1Main.resources
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P690_GuiCsharp__\obj\Debug\P690_GuiCsharp__.csproj.GenerateResource.cache
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P690_GuiCsharp__\obj\Debug\P690_GuiCsharp__.csproj.CopyComplete
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P690_GuiCsharp__\obj\Debug\Grayscale.P690_GuiCsharp__.exe
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P690_GuiCsharp__\obj\Debug\Grayscale.P690_GuiCsharp__.pdb

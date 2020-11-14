@@ -1,4 +1,5 @@
-﻿using Grayscale.P003_Log________.L___500_Struct;
+﻿using System;
+using Grayscale.P003_Log________.L___500_Struct;
 using Grayscale.P003_Log________.L500____Struct;
 using Grayscale.P571_KifuWarabe_.L500____KifuWarabe;
 

@@ -1,0 +1,8 @@
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Builds\Engine\Bin\P920_UtifuduTest\Grayscale.P920_UtifuduTest.exe.config
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Builds\Engine\Bin\P920_UtifuduTest\Grayscale.P920_UtifuduTest.exe
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Builds\Engine\Bin\P920_UtifuduTest\Grayscale.P920_UtifuduTest.pdb
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P920_UtifuduTest\obj\Release\P920_UtifuduTest.Properties.Resources.resources
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P920_UtifuduTest\obj\Release\P920_UtifuduTest.Uc_Main1.resources
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P920_UtifuduTest\obj\Release\P920_UtifuduTest.csproj.GenerateResource.cache
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P920_UtifuduTest\obj\Release\Grayscale.P920_UtifuduTest.exe
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P920_UtifuduTest\obj\Release\Grayscale.P920_UtifuduTest.pdb
