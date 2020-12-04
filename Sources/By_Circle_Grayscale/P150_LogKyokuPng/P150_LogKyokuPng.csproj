@@ -67,8 +67,8 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="P157KyokumenPng\L500____Struct\KyokumenPngArgsImpl.cs" />
-    <Compile Include="P157KyokumenPng\L500____Struct\KyokumenPngEnvironmentImpl.cs" />
+    <Compile Include="P157KyokumenPng\L500Struct\KyokumenPngArgsImpl.cs" />
+    <Compile Include="P157KyokumenPng\L500Struct\KyokumenPngEnvironmentImpl.cs" />
     <Compile Include="P157KyokumenPng\I500Struct\KyokumenPngArgs.cs" />
     <Compile Include="P157KyokumenPng\I500Struct\KyokumenPngArgs_FoodOrDropKoma.cs" />
     <Compile Include="P157KyokumenPng\I500Struct\KyokumenPngEnvironment.cs" />

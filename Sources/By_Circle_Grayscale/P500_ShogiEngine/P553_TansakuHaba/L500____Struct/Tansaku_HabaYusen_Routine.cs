@@ -2,9 +2,9 @@
 using Grayscale.P324_KifuTree___.L___250_Struct;
 using Grayscale.P542_Scoreing___.L___250_Args;
 using Grayscale.P551_Tansaku____.L___500_Tansaku;
-using Grayscale.P554_TansaFukasa.L___500_Struct;
+using Grayscale.P554_TansaFukasa.I500Struct;
 
-namespace Grayscale.P553_TansakuHaba.L500____Struct
+namespace Grayscale.P553_TansakuHaba.L500Struct
 {
     public class Tansaku_HabaYusen_Routine : Tansaku_Routine
     {

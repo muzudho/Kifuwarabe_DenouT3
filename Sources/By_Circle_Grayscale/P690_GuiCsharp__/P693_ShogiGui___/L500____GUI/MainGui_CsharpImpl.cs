@@ -2,11 +2,11 @@
 using Grayscale.P003Log.I500Struct;
 using Grayscale.P027Settei.L500Struct;
 using Grayscale.P031Random.L500Struct;
-using Grayscale.P236_KomahaiyaTr.L500____Table;
-using Grayscale.P238_Seiza______.L250____Struct;
-using Grayscale.P238_Seiza______.L500____Util;
-using Grayscale.P248_Michi______.L500____Word;
-using Grayscale.P250_KomahaiyaEx.L500____Util;
+using Grayscale.P236KomahaiyaTr.L500Table;
+using Grayscale.P238Seiza.L250Struct;
+using Grayscale.P238Seiza.L500Util;
+using Grayscale.P248Michi.L500Word;
+using Grayscale.P250KomahaiyaEx.L500Util;
 using Grayscale.P270_ForcePromot.L250____Struct;
 using Grayscale.P325_PnlTaikyoku.L___250_Struct;
 using Grayscale.P325_PnlTaikyoku.L250____Struct;

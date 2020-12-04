@@ -2,14 +2,14 @@
 //#define DEBUG_ALPHA_METHOD
 
 using Grayscale.P003Log.I500Struct;
-using Grayscale.P035_Collection.L500Struct;
+using Grayscale.P035Collection.L500Struct;
 using Grayscale.P056Syugoron.I250Struct;
 using Grayscale.P212ConvPside.L500Converter;
 using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P222LogKaisetu.L250Struct;
 using Grayscale.P224Sky.L500Struct;
-using Grayscale.P238_Seiza______.L250____Struct;
-using Grayscale.P238_Seiza______.L500____Util;
+using Grayscale.P238Seiza.L250Struct;
+using Grayscale.P238Seiza.L500Util;
 using Grayscale.P324_KifuTree___.L___250_Struct;
 using Grayscale.P354_Util_SasuEx.L500____Util;
 using Grayscale.P360_Conv_Sasu__.L500____Converter;
@@ -18,14 +18,14 @@ using Grayscale.P266_KyokumMoves.L500____Util;
 using Grayscale.P542_Scoreing___.L___250_Args;
 using Grayscale.P542_Scoreing___.L500____Util;
 using Grayscale.P551_Tansaku____.L___500_Tansaku;
-using Grayscale.P551_Tansaku____.L500____Struct;
+using Grayscale.P551_Tansaku____.L500Struct;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 using Grayscale.P353_Conv_SasuEx.L500____Converter;
 using Grayscale.P202GraphicLog.L500Util;
-using Grayscale.P554_TansaFukasa.L___500_Struct;
+using Grayscale.P554_TansaFukasa.I500Struct;
 
 
 #if DEBUG
@@ -33,7 +33,7 @@ using Grayscale.P266_KyokumMoves.L250____Log;
 using Grayscale.P370_LogGraphiEx.L500____Util;
 #endif
 
-namespace Grayscale.P554_TansaFukasa.L500____Struct
+namespace Grayscale.P554_TansaFukasa.L500Struct
 {
 
     /// <summary>

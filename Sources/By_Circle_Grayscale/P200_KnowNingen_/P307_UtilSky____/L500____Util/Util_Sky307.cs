@@ -5,10 +5,10 @@ using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P212ConvPside.L500Converter;
 using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P224Sky.L500Struct;
-using Grayscale.P238_Seiza______.L250____Struct;
-using Grayscale.P238_Seiza______.L500____Util;
-using Grayscale.P245_SfenTransla.L500____Util;
-using Grayscale.P258_UtilSky258_.L505____ConvLogJson;
+using Grayscale.P238Seiza.L250Struct;
+using Grayscale.P238Seiza.L500Util;
+using Grayscale.P245_SfenTransla.L500Util;
+using Grayscale.P258UtilSky258.L505ConvLogJson;
 using System.Diagnostics;
 using System.Text;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号

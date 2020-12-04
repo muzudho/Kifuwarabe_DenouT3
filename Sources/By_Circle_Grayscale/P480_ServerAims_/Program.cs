@@ -4,7 +4,7 @@ using Grayscale.P027Settei.L500Struct;
 using Grayscale.P027Settei.L510Xml;
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P224Sky.L500Struct;
-using Grayscale.P258_UtilSky258_.L500____UtilSky;
+using Grayscale.P258UtilSky258.L500UtilSky;
 using Grayscale.P481_AimsServer_.L500____Server;
 using System.Windows.Forms;
 

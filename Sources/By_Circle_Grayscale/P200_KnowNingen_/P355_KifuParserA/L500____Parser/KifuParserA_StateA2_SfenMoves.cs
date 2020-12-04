@@ -4,7 +4,7 @@ using Grayscale.P146ConvSfen.L500Converter;
 using Grayscale.P213Komasyurui.L250Word;
 using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P224Sky.L500Struct;
-using Grayscale.P258_UtilSky258_.L500____UtilSky;
+using Grayscale.P258UtilSky258.L500UtilSky;
 using Grayscale.P325_PnlTaikyoku.L___250_Struct;
 using Grayscale.P339_ConvKyokume.L500____Converter;
 using Grayscale.P341_Ittesasu___.L___250_OperationA;

@@ -2,6 +2,7 @@ C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\
 C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Builds\Engine\Bin\P460_Server_____\Grayscale.P460_Server_____.dll
 C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Builds\Engine\Bin\P460_Server_____\Grayscale.P460_Server_____.pdb
 C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P460_Server_____\obj\Release\P460_Server_____.csprojAssemblyReference.cache
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P460_Server_____\obj\Release\P460_Server_____.csproj.CoreCompileInputs.cache
 C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P460_Server_____\obj\Release\P460_Server_____.csproj.CopyComplete
 C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P460_Server_____\obj\Release\Grayscale.P460_Server_____.dll
 C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P460_Server_____\obj\Release\Grayscale.P460_Server_____.pdb

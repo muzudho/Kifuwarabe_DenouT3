@@ -4,13 +4,13 @@ using Grayscale.P062ConvText.L500Converter;
 using Grayscale.P212ConvPside.L500Converter;
 using Grayscale.P213Komasyurui.L250Word;
 using Grayscale.P214Masu.L500Util;
-using Grayscale.P521_FeatureVect.L___500_Struct;
+using Grayscale.P521_FeatureVect.I500Struct;
 using System.Text;
 
 #if DEBUG
 #endif
 
-namespace Grayscale.P521_FeatureVect.L500____Struct
+namespace Grayscale.P521_FeatureVect.L500Struct
 {
 
     public class FeatureVectorImpl : FeatureVector

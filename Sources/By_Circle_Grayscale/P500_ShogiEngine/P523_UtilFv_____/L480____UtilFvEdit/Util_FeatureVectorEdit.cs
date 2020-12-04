@@ -1,7 +1,7 @@
 ﻿using Grayscale.P031Random.L500Struct;
 using Grayscale.P213Komasyurui.L250Word;
-using Grayscale.P521_FeatureVect.L___500_Struct;
-using Grayscale.P521_FeatureVect.L500____Struct;
+using Grayscale.P521_FeatureVect.I500Struct;
+using Grayscale.P521_FeatureVect.L500Struct;
 
 namespace Grayscale.P523_UtilFv_____.L480____UtilFvEdit
 {

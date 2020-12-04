@@ -1,8 +1,8 @@
-﻿using Grayscale.P035_Collection.L500Struct;
+﻿using Grayscale.P035Collection.L500Struct;
 using Grayscale.P056Syugoron.I250Struct;
 using Grayscale.P211WordShogi.I250Masu;
 using Grayscale.P211WordShogi.L250Masu;
-using Grayscale.P246_MasusWriter.L500____Util;
+using Grayscale.P246MasusWriter.L500Util;
 using System.Text;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 

@@ -4,7 +4,7 @@ using Grayscale.P145SfenStruct.I250Struct;
 using Grayscale.P145SfenStruct.L250Struct;
 using Grayscale.P146ConvSfen.L500Converter;
 using Grayscale.P157KyokumenPng.I500Struct;
-using Grayscale.P157KyokumenPng.L500____Struct;
+using Grayscale.P157KyokumenPng.L500Struct;
 using Grayscale.P158LogKyokuPng.L250UtilPaint;
 using System.Drawing;
 using System.IO;

@@ -2,8 +2,8 @@
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P226Tree.I500Struct;
-using Grayscale.P239_ConvWords__.L500____Converter;
-using Grayscale.P247_KyokumenWra.L500____Struct;
+using Grayscale.P239ConvWords.L500Converter;
+using Grayscale.P247KyokumenWra.L500Struct;
 using Grayscale.P324_KifuTree___.L___250_Struct;
 using Grayscale.P324_KifuTree___.L250____Struct;
 using Grayscale.P339_ConvKyokume.L500____Converter;

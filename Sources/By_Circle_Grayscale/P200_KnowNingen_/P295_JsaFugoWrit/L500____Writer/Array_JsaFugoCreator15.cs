@@ -6,10 +6,10 @@ using Grayscale.P215KomanoKidou.L500Struct;
 using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P224Sky.L500Struct;
 using Grayscale.P234Komahaiyaku.L500Util;
-using Grayscale.P238_Seiza______.L250____Struct;
-using Grayscale.P238_Seiza______.L500____Util;
-using Grayscale.P247_KyokumenWra.L500____Struct;
-using Grayscale.P258_UtilSky258_.L500____UtilSky;
+using Grayscale.P238Seiza.L250Struct;
+using Grayscale.P238Seiza.L500Util;
+using Grayscale.P247KyokumenWra.L500Struct;
+using Grayscale.P258UtilSky258.L500UtilSky;
 using Grayscale.P292_JsaFugo____.L250____Struct;
 
 namespace Grayscale.P295_JsaFugoWrit.L500____Writer

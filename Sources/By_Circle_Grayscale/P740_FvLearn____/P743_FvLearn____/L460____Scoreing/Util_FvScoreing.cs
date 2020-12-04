@@ -1,7 +1,7 @@
 ﻿using Grayscale.P003Log.I500Struct;
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P224Sky.L500Struct;
-using Grayscale.P521_FeatureVect.L___500_Struct;
+using Grayscale.P521_FeatureVect.I500Struct;
 using Grayscale.P743_FvLearn____.L___400_54List;
 using Grayscale.P743_FvLearn____.L400____54List;
 using Grayscale.P743_FvLearn____.L450____Tyoseiryo;

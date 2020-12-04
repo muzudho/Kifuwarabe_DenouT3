@@ -2,7 +2,7 @@
 using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P224Sky.L500Struct;
 using Grayscale.P226Tree.I500Struct;
-using Grayscale.P247_KyokumenWra.L500____Struct;
+using Grayscale.P247KyokumenWra.L500Struct;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 namespace Grayscale.P341_Ittesasu___.L___250_OperationA

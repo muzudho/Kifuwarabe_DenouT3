@@ -1,6 +1,6 @@
 ﻿using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P226Tree.I500Struct;
-using Grayscale.P247_KyokumenWra.L500____Struct;
+using Grayscale.P247KyokumenWra.L500Struct;
 
 
 namespace Grayscale.P361_Util_______.L500____Util

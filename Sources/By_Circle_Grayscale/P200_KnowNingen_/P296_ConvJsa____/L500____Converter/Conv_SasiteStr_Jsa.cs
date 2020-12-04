@@ -2,9 +2,9 @@
 using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P226Tree.I500Struct;
 using Grayscale.P234Komahaiyaku.L500Util;
-using Grayscale.P238_Seiza______.L250____Struct;
-using Grayscale.P238_Seiza______.L500____Util;
-using Grayscale.P247_KyokumenWra.L500____Struct;
+using Grayscale.P238Seiza.L250Struct;
+using Grayscale.P238Seiza.L500Util;
+using Grayscale.P247KyokumenWra.L500Struct;
 using Grayscale.P292_JsaFugo____.L250____Struct;
 using Grayscale.P292_JsaFugo____.L500____Util;
 using Grayscale.P295_JsaFugoWrit.L500____Writer;

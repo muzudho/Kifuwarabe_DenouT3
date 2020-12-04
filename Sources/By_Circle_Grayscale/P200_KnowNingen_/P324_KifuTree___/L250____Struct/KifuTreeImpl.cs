@@ -2,10 +2,10 @@
 using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P226Tree.I500Struct;
 using Grayscale.P226Tree.L500Struct;
-using Grayscale.P247_KyokumenWra.L500____Struct;
+using Grayscale.P247KyokumenWra.L500Struct;
 using Grayscale.P324_KifuTree___.L___250_Struct;
-using Grayscale.P323_Sennitite__.L500____Struct;
-using Grayscale.P323_Sennitite__.L___500_Struct;
+using Grayscale.P323_Sennitite__.L500Struct;
+using Grayscale.P323_Sennitite__.I500Struct;
 
 #if DEBUG
 using System.Diagnostics;

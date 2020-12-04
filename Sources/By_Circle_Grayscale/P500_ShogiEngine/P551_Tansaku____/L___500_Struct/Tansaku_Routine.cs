@@ -1,7 +1,7 @@
 ﻿using Grayscale.P003Log.I500Struct;
 using Grayscale.P324_KifuTree___.L___250_Struct;
 using Grayscale.P542_Scoreing___.L___250_Args;
-using Grayscale.P554_TansaFukasa.L___500_Struct;
+using Grayscale.P554_TansaFukasa.I500Struct;
 
 namespace Grayscale.P551_Tansaku____.L___500_Tansaku
 {

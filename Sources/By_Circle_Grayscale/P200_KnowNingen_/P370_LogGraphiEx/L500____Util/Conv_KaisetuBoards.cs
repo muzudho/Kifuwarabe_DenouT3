@@ -1,6 +1,6 @@
 ﻿using Grayscale.P222LogKaisetu.L250Struct;
 using Grayscale.P222LogKaisetu.L500Util;
-using Grayscale.P239_ConvWords__.L500____Converter;
+using Grayscale.P239ConvWords.L500Converter;
 using System.Text;
 
 #if DEBUG

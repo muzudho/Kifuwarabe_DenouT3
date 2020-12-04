@@ -3,11 +3,11 @@ using Grayscale.P003Log.L500Struct;
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P226Tree.I500Struct;
-using Grayscale.P247_KyokumenWra.L500____Struct;
+using Grayscale.P247KyokumenWra.L500Struct;
 using Grayscale.P321_KyokumHyoka.L___250_Struct;
 using Grayscale.P324_KifuTree___.L___250_Struct;
-using Grayscale.P440_KifuTreeLog.L500____Struct;
-using Grayscale.P521_FeatureVect.L500____Struct;
+using Grayscale.P440_KifuTreeLog.L500Struct;
+using Grayscale.P521_FeatureVect.L500Struct;
 using Grayscale.P523_UtilFv_____.L510____UtilFvLoad;
 using Grayscale.P542_Scoreing___.L___250_Args;
 using Grayscale.P542_Scoreing___.L250____Args;
@@ -31,7 +31,7 @@ using Grayscale.P523_UtilFv_____.L480____UtilFvEdit;
 #endif
 
 #if DEBUG
-using Grayscale.P222_Log_Kaisetu.L250____Struct;
+using Grayscale.P222LogKaisetu.L250____Struct;
 #endif
 
 namespace Grayscale.P743_FvLearn____.L600____Operation

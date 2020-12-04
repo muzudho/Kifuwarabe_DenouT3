@@ -1,9 +1,9 @@
 ﻿using Grayscale.P003Log.I500Struct;
-using Grayscale.P035_Collection.L500Struct;
+using Grayscale.P035Collection.L500Struct;
 using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P224Sky.L500Struct;
-using Grayscale.P238_Seiza______.L500____Util;
-using Grayscale.P247_KyokumenWra.L500____Struct;
+using Grayscale.P238Seiza.L500Util;
+using Grayscale.P247KyokumenWra.L500Struct;
 using Grayscale.P324_KifuTree___.L___250_Struct;
 using Grayscale.P324_KifuTree___.L250____Struct;
 using Grayscale.P339_ConvKyokume.L500____Converter;

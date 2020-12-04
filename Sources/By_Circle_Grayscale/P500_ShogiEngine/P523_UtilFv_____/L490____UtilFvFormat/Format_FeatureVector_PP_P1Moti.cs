@@ -1,8 +1,8 @@
 ﻿using Grayscale.P062ConvText.L500Converter;
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P214Masu.L500Util;
-using Grayscale.P521_FeatureVect.L___500_Struct;
-using Grayscale.P521_FeatureVect.L500____Struct;
+using Grayscale.P521_FeatureVect.I500Struct;
+using Grayscale.P521_FeatureVect.L500Struct;
 using System;
 using System.Collections.Generic;
 using System.Text;

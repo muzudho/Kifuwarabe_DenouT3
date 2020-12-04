@@ -1,0 +1,2 @@
+2020/12/05 1:45:36  > position startpos moves 2g2f
+2020/12/05 1:45:36  > go btime 309000 wtime 300000 binc 10000 winc 10000

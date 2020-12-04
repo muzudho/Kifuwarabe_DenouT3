@@ -1,4 +1,4 @@
-﻿using Grayscale.P035_Collection.L500Struct;
+﻿using Grayscale.P035Collection.L500Struct;
 using Grayscale.P055_Conv_Sy.L500Converter;
 using Grayscale.P056Syugoron.I250Struct;
 using System.Text;

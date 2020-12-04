@@ -1,14 +1,14 @@
 ﻿using Grayscale.P003Log.I500Struct;
-using Grayscale.P035_Collection.L500Struct;
+using Grayscale.P035Collection.L500Struct;
 using Grayscale.P056Syugoron.I250Struct;
 using Grayscale.P056Syugoron.L250Struct;
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P212ConvPside.L500Converter;
 using Grayscale.P224Sky.L500Struct;
-using Grayscale.P239_ConvWords__.L500____Converter;
-using Grayscale.P258_UtilSky258_.L500____UtilSky;
-using Grayscale.P260_Play_______.L500____Query;
-using Grayscale.P262_Play2______.L500____Struct;
+using Grayscale.P239ConvWords.L500Converter;
+using Grayscale.P258UtilSky258.L500UtilSky;
+using Grayscale.P260Play.L500Query;
+using Grayscale.P262Play2.L500Struct;
 using System;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 

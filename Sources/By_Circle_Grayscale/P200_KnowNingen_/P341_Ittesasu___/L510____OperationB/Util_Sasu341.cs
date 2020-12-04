@@ -5,9 +5,9 @@ using Grayscale.P212ConvPside.L500Converter;
 using Grayscale.P213Komasyurui.L250Word;
 using Grayscale.P213Komasyurui.L500Util;
 using Grayscale.P224Sky.L500Struct;
-using Grayscale.P238_Seiza______.L250____Struct;
-using Grayscale.P238_Seiza______.L500____Util;
-using Grayscale.P258_UtilSky258_.L500____UtilSky;
+using Grayscale.P238Seiza.L250Struct;
+using Grayscale.P238Seiza.L500Util;
+using Grayscale.P258UtilSky258.L500UtilSky;
 using Grayscale.P341_Ittesasu___.L500____UtilA;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 

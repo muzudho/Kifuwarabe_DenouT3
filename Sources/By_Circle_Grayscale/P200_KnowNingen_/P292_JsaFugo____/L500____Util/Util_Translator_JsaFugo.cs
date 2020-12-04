@@ -5,10 +5,10 @@ using Grayscale.P214Masu.L500Util;
 using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P224Sky.L500Struct;
 using Grayscale.P226Tree.I500Struct;
-using Grayscale.P238_Seiza______.L250____Struct;
-using Grayscale.P238_Seiza______.L500____Util;
-using Grayscale.P239_ConvWords__.L500____Converter;
-using Grayscale.P247_KyokumenWra.L500____Struct;
+using Grayscale.P238Seiza.L250Struct;
+using Grayscale.P238Seiza.L500Util;
+using Grayscale.P239ConvWords.L500Converter;
+using Grayscale.P247KyokumenWra.L500Struct;
 using Grayscale.P292_JsaFugo____.L250____Struct;
 using System.Text;
 

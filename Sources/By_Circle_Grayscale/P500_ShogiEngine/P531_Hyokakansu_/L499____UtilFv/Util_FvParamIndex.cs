@@ -3,10 +3,10 @@ using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P212ConvPside.L500Converter;
 using Grayscale.P213Komasyurui.L250Word;
 using Grayscale.P224Sky.L500Struct;
-using Grayscale.P238_Seiza______.L250____Struct;
-using Grayscale.P258_UtilSky258_.L500____UtilSky;
-using Grayscale.P521_FeatureVect.L___500_Struct;
-using Grayscale.P521_FeatureVect.L500____Struct;
+using Grayscale.P238Seiza.L250Struct;
+using Grayscale.P258UtilSky258.L500UtilSky;
+using Grayscale.P521_FeatureVect.I500Struct;
+using Grayscale.P521_FeatureVect.L500Struct;
 using System.Diagnostics;
 
 

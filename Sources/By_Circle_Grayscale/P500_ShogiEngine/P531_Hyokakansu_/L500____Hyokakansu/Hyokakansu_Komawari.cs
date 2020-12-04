@@ -2,10 +2,10 @@
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P224Sky.L500Struct;
-using Grayscale.P238_Seiza______.L250____Struct;
-using Grayscale.P238_Seiza______.L500____Util;
+using Grayscale.P238Seiza.L250Struct;
+using Grayscale.P238Seiza.L500Util;
 using Grayscale.P321_KyokumHyoka.L___250_Struct;
-using Grayscale.P521_FeatureVect.L___500_Struct;
+using Grayscale.P521_FeatureVect.I500Struct;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 using System;
 using Grayscale.P212ConvPside.L500Converter;

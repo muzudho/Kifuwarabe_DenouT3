@@ -2,7 +2,7 @@
 using Grayscale.P146ConvSfen.L500Converter;
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P224Sky.L500Struct;
-using Grayscale.P276_SeizaStartp.L500____Struct;
+using Grayscale.P276_SeizaStartp.L500Struct;
 
 
 namespace Grayscale.P307_UtilSky____.L500____Util

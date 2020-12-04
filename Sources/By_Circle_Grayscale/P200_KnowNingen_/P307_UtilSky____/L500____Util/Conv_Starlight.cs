@@ -3,9 +3,9 @@ using Grayscale.P206Json.L500Struct;
 using Grayscale.P212ConvPside.L500Converter;
 using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P234Komahaiyaku.L500Util;
-using Grayscale.P238_Seiza______.L250____Struct;
-using Grayscale.P238_Seiza______.L500____Util;
-using Grayscale.P239_ConvWords__.L500____Converter;
+using Grayscale.P238Seiza.L250Struct;
+using Grayscale.P238Seiza.L500Util;
+using Grayscale.P239ConvWords.L500Converter;
 
 namespace Grayscale.P307_UtilSky____.L500____Util
 {

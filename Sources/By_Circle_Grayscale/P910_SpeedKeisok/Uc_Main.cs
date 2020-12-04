@@ -2,8 +2,8 @@
 using Grayscale.P003Log.L500Struct;
 using Grayscale.P224Sky.L500Struct;
 using Grayscale.P324_KifuTree___.L___250_Struct;
-using Grayscale.P521_FeatureVect.L___500_Struct;
-using Grayscale.P521_FeatureVect.L500____Struct;
+using Grayscale.P521_FeatureVect.I500Struct;
+using Grayscale.P521_FeatureVect.L500Struct;
 using Grayscale.P523_UtilFv_____.L510____UtilFvLoad;
 using Grayscale.P531_Hyokakansu_.L___500_Hyokakansu;
 using Grayscale.P531_Hyokakansu_.L500____Hyokakansu;

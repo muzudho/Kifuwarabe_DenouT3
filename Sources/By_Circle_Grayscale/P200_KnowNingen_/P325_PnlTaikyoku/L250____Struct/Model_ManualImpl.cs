@@ -1,6 +1,6 @@
 ﻿using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P224Sky.L500Struct;
-using Grayscale.P258_UtilSky258_.L500____UtilSky;
+using Grayscale.P258UtilSky258.L500UtilSky;
 using Grayscale.P325_PnlTaikyoku.L___250_Struct;
 
 namespace Grayscale.P325_PnlTaikyoku.L250____Struct

@@ -1,6 +1,6 @@
-﻿using Grayscale.P323_Sennitite__.L___500_Struct;
+﻿using Grayscale.P323_Sennitite__.I500Struct;
 
-namespace Grayscale.P323_Sennitite__.L500____Struct
+namespace Grayscale.P323_Sennitite__.L500Struct
 {
 
     /// <summary>

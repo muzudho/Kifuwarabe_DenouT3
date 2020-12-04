@@ -1,6 +1,6 @@
 ﻿using Grayscale.P551_Tansaku____.L___500_Tansaku;
 
-namespace Grayscale.P551_Tansaku____.L500____Struct
+namespace Grayscale.P551_Tansaku____.L500Struct
 {
     /// <summary>
     /// 探索中に変化するデータです。

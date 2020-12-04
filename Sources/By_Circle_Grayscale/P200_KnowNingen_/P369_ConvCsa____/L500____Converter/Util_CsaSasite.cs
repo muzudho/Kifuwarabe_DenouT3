@@ -8,8 +8,8 @@ using Grayscale.P213Komasyurui.L250Word;
 using Grayscale.P213Komasyurui.L500Util;
 using Grayscale.P214Masu.L500Util;
 using Grayscale.P224Sky.L500Struct;
-using Grayscale.P238_Seiza______.L250____Struct;
-using Grayscale.P258_UtilSky258_.L500____UtilSky;
+using Grayscale.P238Seiza.L250Struct;
+using Grayscale.P258UtilSky258.L500UtilSky;
 using System.Diagnostics;
 using System.Text;
 

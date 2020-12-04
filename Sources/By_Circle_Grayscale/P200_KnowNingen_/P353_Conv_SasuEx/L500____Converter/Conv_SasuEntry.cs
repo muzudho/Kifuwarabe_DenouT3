@@ -1,6 +1,6 @@
 ﻿using Grayscale.P003Log.I500Struct;
 using Grayscale.P224Sky.L500Struct;
-using Grayscale.P247_KyokumenWra.L500____Struct;
+using Grayscale.P247KyokumenWra.L500Struct;
 using Grayscale.P324_KifuTree___.L___250_Struct;
 using Grayscale.P324_KifuTree___.L250____Struct;
 using Grayscale.P341_Ittesasu___.L510____OperationB;

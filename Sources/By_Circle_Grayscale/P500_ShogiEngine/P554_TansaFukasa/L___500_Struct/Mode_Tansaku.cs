@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P554_TansaFukasa.L___500_Struct
+namespace Grayscale.P554_TansaFukasa.I500Struct
 {
     public enum Mode_Tansaku
     {

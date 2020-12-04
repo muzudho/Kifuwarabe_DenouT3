@@ -1,4 +1,4 @@
-﻿using Grayscale.P276_SeizaStartp.L500____Struct;
+﻿using Grayscale.P276_SeizaStartp.L500Struct;
 
 namespace Grayscale.P355_KifuParserA.L___500_Parser
 {

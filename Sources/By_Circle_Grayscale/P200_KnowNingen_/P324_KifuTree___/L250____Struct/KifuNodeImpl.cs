@@ -2,7 +2,7 @@
 using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P226Tree.I500Struct;
 using Grayscale.P226Tree.L500Struct;
-using Grayscale.P247_KyokumenWra.L500____Struct;
+using Grayscale.P247KyokumenWra.L500Struct;
 using Grayscale.P307_UtilSky____.L500____Util;
 using Grayscale.P321_KyokumHyoka.L___250_Struct;
 using Grayscale.P321_KyokumHyoka.L250____Struct;

@@ -1,8 +1,8 @@
 ﻿using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P226Tree.I500Struct;
-using Grayscale.P247_KyokumenWra.L500____Struct;
-using Grayscale.P323_Sennitite__.L___500_Struct;
+using Grayscale.P247KyokumenWra.L500Struct;
+using Grayscale.P323_Sennitite__.I500Struct;
 
 
 namespace Grayscale.P324_KifuTree___.L___250_Struct

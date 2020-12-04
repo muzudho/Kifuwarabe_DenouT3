@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P323_Sennitite__.L___500_Struct
+namespace Grayscale.P323_Sennitite__.I500Struct
 {
     /// <summary>
     /// TODO: 巻き戻しボタンへの対応がまだ。

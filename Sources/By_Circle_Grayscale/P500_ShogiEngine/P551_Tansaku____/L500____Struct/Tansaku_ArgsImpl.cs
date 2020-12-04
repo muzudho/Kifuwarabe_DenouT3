@@ -1,7 +1,7 @@
 ﻿using Grayscale.P222LogKaisetu.L250Struct;
 using Grayscale.P551_Tansaku____.L___500_Tansaku;
 
-namespace Grayscale.P551_Tansaku____.L500____Struct
+namespace Grayscale.P551_Tansaku____.L500Struct
 {
 
     /// <summary>
