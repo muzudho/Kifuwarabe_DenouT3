@@ -1,10 +1,10 @@
-﻿using Grayscale.P145_SfenStruct_.L250____Struct;
-using Grayscale.P206_Json_______.L___500_Struct;
-using Grayscale.P206_Json_______.L500____Struct;
-using Grayscale.P211_WordShogi__.L500____Word;
-using Grayscale.P212_ConvPside__.L500____Converter;
-using Grayscale.P218_Starlight__.L___500_Struct;
-using Grayscale.P224_Sky________.L500____Struct;
+﻿using Grayscale.P145SfenStruct.L250Struct;
+using Grayscale.P206Json.I500Struct;
+using Grayscale.P206Json.L500Struct;
+using Grayscale.P211WordShogi.L500Word;
+using Grayscale.P212ConvPside.L500Converter;
+using Grayscale.P218Starlight.I500Struct;
+using Grayscale.P224Sky.L500Struct;
 using Grayscale.P238_Seiza______.L250____Struct;
 using Grayscale.P238_Seiza______.L500____Util;
 using Grayscale.P245_SfenTransla.L500____Util;

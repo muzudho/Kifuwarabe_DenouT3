@@ -1,5 +1,5 @@
-﻿using Grayscale.P218_Starlight__.L___500_Struct;
-using Grayscale.P224_Sky________.L500____Struct;
+﻿using Grayscale.P218Starlight.I500Struct;
+using Grayscale.P224Sky.L500Struct;
 using Grayscale.P238_Seiza______.L250____Struct;
 using System;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号

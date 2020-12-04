@@ -1,4 +1,4 @@
-﻿using Grayscale.P209_KifuJsa____.L500____Word;
+﻿using Grayscale.P209KifuJsa.L500Word;
 
 namespace Grayscale.P239_ConvWords__.L500____Converter
 {

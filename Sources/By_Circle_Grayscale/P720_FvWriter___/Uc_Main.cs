@@ -1,8 +1,8 @@
 ﻿using Grayscale.P003Log.I500Struct;
 using Grayscale.P003Log.L500Struct;
 using Grayscale.P027Settei.L500Struct;
-using Grayscale.P163_KifuCsa____.L___250_Struct;
-using Grayscale.P163_KifuCsa____.L250____Struct;
+using Grayscale.P163KifuCsa.I250Struct;
+using Grayscale.P163KifuCsa.L250Struct;
 using Grayscale.P521_FeatureVect.L___500_Struct;
 using Grayscale.P521_FeatureVect.L500____Struct;
 using Grayscale.P523_UtilFv_____.L480____UtilFvEdit;

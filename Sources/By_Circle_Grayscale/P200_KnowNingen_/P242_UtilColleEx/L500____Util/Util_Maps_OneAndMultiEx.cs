@@ -1,5 +1,5 @@
 ﻿using Grayscale.P035_Collection.L500Struct;
-using Grayscale.P218_Starlight__.L___500_Struct;
+using Grayscale.P218Starlight.I500Struct;
 using System.Collections.Generic;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 

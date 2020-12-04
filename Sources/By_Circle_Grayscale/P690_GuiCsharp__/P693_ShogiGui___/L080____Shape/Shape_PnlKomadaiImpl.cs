@@ -1,5 +1,5 @@
-﻿using Grayscale.P211_WordShogi__.L500____Word;
-using Grayscale.P214_Masu_______.L500____Util;
+﻿using Grayscale.P211WordShogi.L500Word;
+using Grayscale.P214Masu.L500Util;
 using Grayscale.P693_ShogiGui___.L___080_Shape;
 using Grayscale.P693_ShogiGui___.L___492_Widgets;
 using Grayscale.P693_ShogiGui___.L___500_Gui;

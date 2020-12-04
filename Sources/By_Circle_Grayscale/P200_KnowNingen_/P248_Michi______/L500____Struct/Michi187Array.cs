@@ -2,9 +2,9 @@
 using Grayscale.P055_Conv_Sy.L500Converter;
 using Grayscale.P056Syugoron.I250Struct;
 using Grayscale.P056Syugoron.L250Struct;
-using Grayscale.P211_WordShogi__.L250____Masu;
-using Grayscale.P211_WordShogi__.L500____Word;
-using Grayscale.P214_Masu_______.L500____Util;
+using Grayscale.P211WordShogi.L250Masu;
+using Grayscale.P211WordShogi.L500Word;
+using Grayscale.P214Masu.L500Util;
 using System;
 using System.Collections.Generic;
 using System.IO;

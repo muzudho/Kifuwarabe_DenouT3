@@ -1,8 +1,8 @@
-﻿using Grayscale.P206_Json_______.L___500_Struct;
-using Grayscale.P206_Json_______.L500____Struct;
-using Grayscale.P212_ConvPside__.L500____Converter;
-using Grayscale.P218_Starlight__.L___500_Struct;
-using Grayscale.P234_Komahaiyaku.L500____Util;
+﻿using Grayscale.P206Json.I500Struct;
+using Grayscale.P206Json.L500Struct;
+using Grayscale.P212ConvPside.L500Converter;
+using Grayscale.P218Starlight.I500Struct;
+using Grayscale.P234Komahaiyaku.L500Util;
 using Grayscale.P238_Seiza______.L250____Struct;
 using Grayscale.P238_Seiza______.L500____Util;
 using Grayscale.P239_ConvWords__.L500____Converter;

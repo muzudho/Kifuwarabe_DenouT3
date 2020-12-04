@@ -1,5 +1,5 @@
 ﻿using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P218_Starlight__.L___500_Struct;
+using Grayscale.P218Starlight.I500Struct;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 namespace Grayscale.P353_Conv_SasuEx.L500____Converter

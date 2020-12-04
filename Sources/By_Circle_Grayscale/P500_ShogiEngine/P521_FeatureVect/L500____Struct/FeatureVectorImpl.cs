@@ -1,9 +1,9 @@
 ﻿using Grayscale.P056Syugoron.I250Struct;
 using Grayscale.P061ConstShogi_.L250Const;
 using Grayscale.P062ConvText.L500Converter;
-using Grayscale.P212_ConvPside__.L500____Converter;
-using Grayscale.P213_Komasyurui_.L250____Word;
-using Grayscale.P214_Masu_______.L500____Util;
+using Grayscale.P212ConvPside.L500Converter;
+using Grayscale.P213Komasyurui.L250Word;
+using Grayscale.P214Masu.L500Util;
 using Grayscale.P521_FeatureVect.L___500_Struct;
 using System.Text;
 

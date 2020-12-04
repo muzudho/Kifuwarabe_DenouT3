@@ -1,6 +1,6 @@
-﻿using Grayscale.P157_KyokumenPng.L___500_Struct;
-using Grayscale.P157_KyokumenPng.L500____Struct;
-using Grayscale.P158_LogKyokuPng.L500____UtilWriter;
+﻿using Grayscale.P157KyokumenPng.I500Struct;
+using Grayscale.P157KyokumenPng.L500____Struct;
+using Grayscale.P158LogKyokuPng.L500UtilWriter;
 using System;
 using System.Collections.Generic;
 

@@ -4,10 +4,10 @@
 using Grayscale.P003Log.I500Struct;
 using Grayscale.P035_Collection.L500Struct;
 using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P212_ConvPside__.L500____Converter;
-using Grayscale.P218_Starlight__.L___500_Struct;
-using Grayscale.P222_Log_Kaisetu.L250____Struct;
-using Grayscale.P224_Sky________.L500____Struct;
+using Grayscale.P212ConvPside.L500Converter;
+using Grayscale.P218Starlight.I500Struct;
+using Grayscale.P222LogKaisetu.L250Struct;
+using Grayscale.P224Sky.L500Struct;
 using Grayscale.P238_Seiza______.L250____Struct;
 using Grayscale.P238_Seiza______.L500____Util;
 using Grayscale.P324_KifuTree___.L___250_Struct;
@@ -24,7 +24,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 using Grayscale.P353_Conv_SasuEx.L500____Converter;
-using Grayscale.P202_GraphicLog_.L500____Util;
+using Grayscale.P202GraphicLog.L500Util;
 using Grayscale.P554_TansaFukasa.L___500_Struct;
 
 

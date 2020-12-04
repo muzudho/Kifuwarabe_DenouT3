@@ -1,7 +1,7 @@
 ﻿using Grayscale.P056Syugoron.I250Struct;
 using Grayscale.P056Syugoron.L250Struct;
-using Grayscale.P211_WordShogi__.L___250_Masu;
-using Grayscale.P214_Masu_______.L500____Util;
+using Grayscale.P211WordShogi.I250Masu;
+using Grayscale.P214Masu.L500Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;

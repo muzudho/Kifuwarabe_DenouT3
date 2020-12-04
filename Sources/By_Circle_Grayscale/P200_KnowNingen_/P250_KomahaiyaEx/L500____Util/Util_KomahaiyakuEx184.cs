@@ -1,9 +1,9 @@
 ﻿using Grayscale.P031Random.L500Struct;
 using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P211_WordShogi__.L___250_Masu;
-using Grayscale.P213_Komasyurui_.L250____Word;
-using Grayscale.P234_Komahaiyaku.L250____Word;
-using Grayscale.P234_Komahaiyaku.L500____Util;
+using Grayscale.P211WordShogi.I250Masu;
+using Grayscale.P213Komasyurui.L250Word;
+using Grayscale.P234Komahaiyaku.L250Word;
+using Grayscale.P234Komahaiyaku.L500Util;
 using System.Collections.Generic;
 
 namespace Grayscale.P250_KomahaiyaEx.L500____Util

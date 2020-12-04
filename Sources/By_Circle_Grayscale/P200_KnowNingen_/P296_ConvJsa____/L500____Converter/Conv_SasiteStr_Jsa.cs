@@ -1,7 +1,7 @@
 ﻿using Grayscale.P003Log.I500Struct;
-using Grayscale.P218_Starlight__.L___500_Struct;
-using Grayscale.P226_Tree_______.L___500_Struct;
-using Grayscale.P234_Komahaiyaku.L500____Util;
+using Grayscale.P218Starlight.I500Struct;
+using Grayscale.P226Tree.I500Struct;
+using Grayscale.P234Komahaiyaku.L500Util;
 using Grayscale.P238_Seiza______.L250____Struct;
 using Grayscale.P238_Seiza______.L500____Util;
 using Grayscale.P247_KyokumenWra.L500____Struct;

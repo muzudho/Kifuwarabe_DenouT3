@@ -1,8 +1,8 @@
 ﻿using Grayscale.P011Csv.L500Util;
 using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P213_Komasyurui_.L250____Word;
-using Grayscale.P234_Komahaiyaku.L250____Word;
-using Grayscale.P234_Komahaiyaku.L500____Util;
+using Grayscale.P213Komasyurui.L250Word;
+using Grayscale.P234Komahaiyaku.L250Word;
+using Grayscale.P234Komahaiyaku.L500Util;
 using Grayscale.P248_Michi______.L500____Word;
 using System.Collections.Generic;
 using System.Text;

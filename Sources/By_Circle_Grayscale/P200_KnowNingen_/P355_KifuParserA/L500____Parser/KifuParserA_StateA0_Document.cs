@@ -1,6 +1,6 @@
 ﻿using Grayscale.P003Log.I500Struct;
 using Grayscale.P003Log.L500Struct;
-using Grayscale.P211_WordShogi__.L500____Word;
+using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P325_PnlTaikyoku.L___250_Struct;
 using Grayscale.P355_KifuParserA.L___500_Parser;
 using System;

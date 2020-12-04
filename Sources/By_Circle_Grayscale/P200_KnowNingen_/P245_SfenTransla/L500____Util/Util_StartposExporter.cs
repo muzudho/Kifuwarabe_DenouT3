@@ -1,4 +1,4 @@
-﻿using Grayscale.P211_WordShogi__.L500____Word;
+﻿using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P238_Seiza______.L250____Struct;
 using System.Text;
 

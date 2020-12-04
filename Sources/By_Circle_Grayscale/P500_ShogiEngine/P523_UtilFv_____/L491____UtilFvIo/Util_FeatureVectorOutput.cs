@@ -1,4 +1,4 @@
-﻿using Grayscale.P211_WordShogi__.L500____Word;
+﻿using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P521_FeatureVect.L___500_Struct;
 using Grayscale.P521_FeatureVect.L500____Struct;
 using Grayscale.P523_UtilFv_____.L490____UtilFvFormat;

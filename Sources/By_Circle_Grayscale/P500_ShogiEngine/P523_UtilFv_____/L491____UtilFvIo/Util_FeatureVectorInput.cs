@@ -1,9 +1,9 @@
 ﻿using Grayscale.P003Log.I500Struct;
 using Grayscale.P011Csv.L500Util;
 using Grayscale.P061ConstShogi_.L250Const;
-using Grayscale.P211_WordShogi__.L500____Word;
-using Grayscale.P213_Komasyurui_.L250____Word;
-using Grayscale.P214_Masu_______.L500____Util;
+using Grayscale.P211WordShogi.L500Word;
+using Grayscale.P213Komasyurui.L250Word;
+using Grayscale.P214Masu.L500Util;
 using Grayscale.P521_FeatureVect.L___500_Struct;
 using Grayscale.P521_FeatureVect.L500____Struct;
 using Grayscale.P522_Conv_FvKoumoku.L500____Converter;

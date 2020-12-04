@@ -1,6 +1,6 @@
-﻿using Grayscale.P206_Json_______.L___500_Struct;
-using Grayscale.P206_Json_______.L500____Struct;
-using Grayscale.P226_Tree_______.L500____Struct;
+﻿using Grayscale.P206Json.I500Struct;
+using Grayscale.P206Json.L500Struct;
+using Grayscale.P226Tree.L500Struct;
 using Grayscale.P247_KyokumenWra.L500____Struct;
 using Grayscale.P307_UtilSky____.L500____Util;
 using System.Diagnostics;

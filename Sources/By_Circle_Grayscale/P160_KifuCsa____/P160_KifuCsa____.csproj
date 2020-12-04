@@ -67,13 +67,13 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="P163_KifuCsa____\L___250_Struct\CsaKifu.cs" />
-    <Compile Include="P163_KifuCsa____\L___250_Struct\CsaKifuSasite.cs" />
-    <Compile Include="P163_KifuCsa____\L250____Struct\CsaKifuImpl.cs" />
-    <Compile Include="P163_KifuCsa____\L250____Struct\CsaKifuSasiteImpl.cs" />
-    <Compile Include="P163_KifuCsa____\L250____Struct\Util_Csa.cs" />
-    <Compile Include="P163_KifuCsa____\L250____Struct\Word_Csa.cs" />
-    <Compile Include="P163_KifuCsa____\L500____Writer\CsaKifuWriterImpl.cs" />
+    <Compile Include="P163KifuCsa\I250Struct\CsaKifu.cs" />
+    <Compile Include="P163KifuCsa\I250Struct\CsaKifuSasite.cs" />
+    <Compile Include="P163KifuCsa\L250Struct\CsaKifuImpl.cs" />
+    <Compile Include="P163KifuCsa\L250Struct\CsaKifuSasiteImpl.cs" />
+    <Compile Include="P163KifuCsa\L250Struct\Util_Csa.cs" />
+    <Compile Include="P163KifuCsa\L250Struct\Word_Csa.cs" />
+    <Compile Include="P163KifuCsa\L500Writer\CsaKifuWriterImpl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Uc_Main.cs">

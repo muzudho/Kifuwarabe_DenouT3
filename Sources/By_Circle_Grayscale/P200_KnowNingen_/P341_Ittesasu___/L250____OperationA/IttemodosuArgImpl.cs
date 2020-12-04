@@ -1,5 +1,5 @@
-﻿using Grayscale.P218_Starlight__.L___500_Struct;
-using Grayscale.P226_Tree_______.L___500_Struct;
+﻿using Grayscale.P218Starlight.I500Struct;
+using Grayscale.P226Tree.I500Struct;
 using Grayscale.P247_KyokumenWra.L500____Struct;
 using Grayscale.P341_Ittesasu___.L___250_OperationA;
 

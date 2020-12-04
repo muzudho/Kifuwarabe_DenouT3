@@ -2,14 +2,14 @@
 using Grayscale.P003Log.L500Struct;
 using Grayscale.P056Syugoron.I250Struct;
 using Grayscale.P062ConvText.L500Converter;
-using Grayscale.P211_WordShogi__.L500____Word;
-using Grayscale.P213_Komasyurui_.L250____Word;
-using Grayscale.P213_Komasyurui_.L500____Util;
-using Grayscale.P214_Masu_______.L500____Util;
-using Grayscale.P218_Starlight__.L___500_Struct;
-using Grayscale.P224_Sky________.L500____Struct;
-using Grayscale.P226_Tree_______.L___500_Struct;
-using Grayscale.P234_Komahaiyaku.L500____Util;
+using Grayscale.P211WordShogi.L500Word;
+using Grayscale.P213Komasyurui.L250Word;
+using Grayscale.P213Komasyurui.L500Util;
+using Grayscale.P214Masu.L500Util;
+using Grayscale.P218Starlight.I500Struct;
+using Grayscale.P224Sky.L500Struct;
+using Grayscale.P226Tree.I500Struct;
+using Grayscale.P234Komahaiyaku.L500Util;
 using Grayscale.P238_Seiza______.L250____Struct;
 using Grayscale.P238_Seiza______.L500____Util;
 using Grayscale.P245_SfenTransla.L500____Util;
@@ -20,9 +20,9 @@ using Grayscale.P324_KifuTree___.L___250_Struct;
 using System;
 using System.Text;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
-using Grayscale.P212_ConvPside__.L500____Converter;
+using Grayscale.P212ConvPside.L500Converter;
 using Grayscale.P239_ConvWords__.L500____Converter;
-using Grayscale.P211_WordShogi__.L___250_Masu;
+using Grayscale.P211WordShogi.I250Masu;
 using Grayscale.P055_Conv_Sy.L500Converter;
 
 #if DEBUG

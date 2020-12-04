@@ -1,5 +1,5 @@
-﻿using Grayscale.P222_Log_Kaisetu.L250____Struct;
-using Grayscale.P222_Log_Kaisetu.L500____Util;
+﻿using Grayscale.P222LogKaisetu.L250Struct;
+using Grayscale.P222LogKaisetu.L500Util;
 using Grayscale.P239_ConvWords__.L500____Converter;
 using System.Text;
 

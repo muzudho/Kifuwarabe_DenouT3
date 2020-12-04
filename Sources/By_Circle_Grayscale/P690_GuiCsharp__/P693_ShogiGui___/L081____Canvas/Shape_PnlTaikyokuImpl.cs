@@ -1,8 +1,8 @@
 ﻿using Grayscale.P003Log.I500Struct;
-using Grayscale.P211_WordShogi__.L500____Word;
-using Grayscale.P212_ConvPside__.L500____Converter;
-using Grayscale.P218_Starlight__.L___500_Struct;
-using Grayscale.P224_Sky________.L500____Struct;
+using Grayscale.P211WordShogi.L500Word;
+using Grayscale.P212ConvPside.L500Converter;
+using Grayscale.P218Starlight.I500Struct;
+using Grayscale.P224Sky.L500Struct;
 using Grayscale.P238_Seiza______.L250____Struct;
 using Grayscale.P256_SeizaFinger.L250____Struct;
 using Grayscale.P693_ShogiGui___.L___080_Shape;

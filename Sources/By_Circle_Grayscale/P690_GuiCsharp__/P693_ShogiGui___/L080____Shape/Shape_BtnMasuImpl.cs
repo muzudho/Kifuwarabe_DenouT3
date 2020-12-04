@@ -1,6 +1,6 @@
 ﻿using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P211_WordShogi__.L250____Masu;
-using Grayscale.P212_ConvPside__.L500____Converter;
+using Grayscale.P211WordShogi.L250Masu;
+using Grayscale.P212ConvPside.L500Converter;
 using Grayscale.P693_ShogiGui___.L___080_Shape;
 using System.Drawing;
 

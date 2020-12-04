@@ -1,4 +1,4 @@
-﻿using Grayscale.P224_Sky________.L500____Struct;
+﻿using Grayscale.P224Sky.L500Struct;
 using System.Diagnostics;
 
 namespace Grayscale.P247_KyokumenWra.L500____Struct

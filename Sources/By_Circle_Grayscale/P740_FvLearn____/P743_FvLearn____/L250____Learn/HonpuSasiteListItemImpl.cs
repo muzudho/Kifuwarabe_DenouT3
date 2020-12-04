@@ -1,4 +1,4 @@
-﻿using Grayscale.P163_KifuCsa____.L___250_Struct;
+﻿using Grayscale.P163KifuCsa.I250Struct;
 using System.Text;
 
 

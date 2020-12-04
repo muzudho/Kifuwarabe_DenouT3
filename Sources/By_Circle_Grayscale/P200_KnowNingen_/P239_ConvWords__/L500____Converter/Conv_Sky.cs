@@ -1,6 +1,6 @@
-﻿using Grayscale.P212_ConvPside__.L500____Converter;
-using Grayscale.P216_ZobrishHash.L500____Struct;
-using Grayscale.P224_Sky________.L___500_Struct;
+﻿using Grayscale.P212ConvPside.L500Converter;
+using Grayscale.P216ZobrishHash.L500Struct;
+using Grayscale.P224Sky.I500Struct;
 using Grayscale.P238_Seiza______.L250____Struct;
 using Grayscale.P238_Seiza______.L500____Util;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号

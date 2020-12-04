@@ -1,9 +1,9 @@
 ﻿using Grayscale.P003Log.I500Struct;
 using Grayscale.P035_Collection.L500Struct;
 using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P202_GraphicLog_.L500____Util;
-using Grayscale.P211_WordShogi__.L260____Operator;
-using Grayscale.P224_Sky________.L500____Struct;
+using Grayscale.P202GraphicLog.L500Util;
+using Grayscale.P211WordShogi.L260Operator;
+using Grayscale.P224Sky.L500Struct;
 using Grayscale.P258_UtilSky258_.L510____UtilLogJson;
 using System.Collections.Generic;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号

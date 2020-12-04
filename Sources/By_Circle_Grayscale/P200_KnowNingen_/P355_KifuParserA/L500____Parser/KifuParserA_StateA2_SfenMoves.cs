@@ -1,9 +1,9 @@
 ﻿using Grayscale.P003Log.I500Struct;
 using Grayscale.P003Log.L500Struct;
-using Grayscale.P146_ConvSfen___.L500____Converter;
-using Grayscale.P213_Komasyurui_.L250____Word;
-using Grayscale.P218_Starlight__.L___500_Struct;
-using Grayscale.P224_Sky________.L500____Struct;
+using Grayscale.P146ConvSfen.L500Converter;
+using Grayscale.P213Komasyurui.L250Word;
+using Grayscale.P218Starlight.I500Struct;
+using Grayscale.P224Sky.L500Struct;
 using Grayscale.P258_UtilSky258_.L500____UtilSky;
 using Grayscale.P325_PnlTaikyoku.L___250_Struct;
 using Grayscale.P339_ConvKyokume.L500____Converter;

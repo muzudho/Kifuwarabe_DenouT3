@@ -1,7 +1,7 @@
 ﻿using Grayscale.P003Log.I500Struct;
 using Grayscale.P031Random.L500Struct;
-using Grayscale.P211_WordShogi__.L500____Word;
-using Grayscale.P222_Log_Kaisetu.L250____Struct;
+using Grayscale.P211WordShogi.L500Word;
+using Grayscale.P222LogKaisetu.L250Struct;
 using Grayscale.P324_KifuTree___.L___250_Struct;
 using Grayscale.P339_ConvKyokume.L500____Converter;
 using Grayscale.P521_FeatureVect.L___500_Struct;

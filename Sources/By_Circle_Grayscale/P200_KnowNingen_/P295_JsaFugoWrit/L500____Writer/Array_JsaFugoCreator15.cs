@@ -1,11 +1,11 @@
 ﻿using Grayscale.P003Log.I500Struct;
 using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P209_KifuJsa____.L500____Word;
-using Grayscale.P211_WordShogi__.L500____Word;
-using Grayscale.P215_KomanoKidou.L500____Struct;
-using Grayscale.P218_Starlight__.L___500_Struct;
-using Grayscale.P224_Sky________.L500____Struct;
-using Grayscale.P234_Komahaiyaku.L500____Util;
+using Grayscale.P209KifuJsa.L500Word;
+using Grayscale.P211WordShogi.L500Word;
+using Grayscale.P215KomanoKidou.L500Struct;
+using Grayscale.P218Starlight.I500Struct;
+using Grayscale.P224Sky.L500Struct;
+using Grayscale.P234Komahaiyaku.L500Util;
 using Grayscale.P238_Seiza______.L250____Struct;
 using Grayscale.P238_Seiza______.L500____Util;
 using Grayscale.P247_KyokumenWra.L500____Struct;

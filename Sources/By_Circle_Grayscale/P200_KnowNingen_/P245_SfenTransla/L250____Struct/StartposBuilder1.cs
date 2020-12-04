@@ -1,5 +1,5 @@
-﻿using Grayscale.P212_ConvPside__.L500____Converter;
-using Grayscale.P213_Komasyurui_.L250____Word;
+﻿using Grayscale.P212ConvPside.L500Converter;
+using Grayscale.P213Komasyurui.L250Word;
 using Grayscale.P238_Seiza______.L250____Struct;
 using System;
 using System.Collections.Generic;

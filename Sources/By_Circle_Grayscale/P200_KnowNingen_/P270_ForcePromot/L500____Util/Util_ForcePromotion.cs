@@ -1,4 +1,4 @@
-﻿using Grayscale.P234_Komahaiyaku.L250____Word;
+﻿using Grayscale.P234Komahaiyaku.L250Word;
 using Grayscale.P270_ForcePromot.L250____Struct;
 using System.Collections.Generic;
 using System.IO;

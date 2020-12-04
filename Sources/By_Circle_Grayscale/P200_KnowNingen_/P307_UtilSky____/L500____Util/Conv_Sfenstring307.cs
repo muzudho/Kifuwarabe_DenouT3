@@ -1,7 +1,7 @@
-﻿using Grayscale.P145_SfenStruct_.L250____Struct;
-using Grayscale.P146_ConvSfen___.L500____Converter;
-using Grayscale.P211_WordShogi__.L500____Word;
-using Grayscale.P224_Sky________.L500____Struct;
+﻿using Grayscale.P145SfenStruct.L250Struct;
+using Grayscale.P146ConvSfen.L500Converter;
+using Grayscale.P211WordShogi.L500Word;
+using Grayscale.P224Sky.L500Struct;
 using Grayscale.P276_SeizaStartp.L500____Struct;
 
 

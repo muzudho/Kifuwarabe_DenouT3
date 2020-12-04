@@ -1,8 +1,8 @@
 ﻿using Grayscale.P003Log.I500Struct;
 using Grayscale.P003Log.L500Struct;
-using Grayscale.P211_WordShogi__.L500____Word;
-using Grayscale.P218_Starlight__.L___500_Struct;
-using Grayscale.P226_Tree_______.L___500_Struct;
+using Grayscale.P211WordShogi.L500Word;
+using Grayscale.P218Starlight.I500Struct;
+using Grayscale.P226Tree.I500Struct;
 using Grayscale.P247_KyokumenWra.L500____Struct;
 using Grayscale.P521_FeatureVect.L___500_Struct;
 using Grayscale.P523_UtilFv_____.L490____UtilFvFormat;

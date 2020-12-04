@@ -1,8 +1,8 @@
 ﻿using Grayscale.P056Syugoron.I250Struct;
 using Grayscale.P056Syugoron.L250Struct;
 using Grayscale.P062ConvText.L500Converter;
-using Grayscale.P211_WordShogi__.L250____Masu;
-using Grayscale.P211_WordShogi__.L500____Word;
+using Grayscale.P211WordShogi.L250Masu;
+using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P693_ShogiGui___.L___080_Shape;
 using Grayscale.P693_ShogiGui___.L___492_Widgets;
 using Grayscale.P693_ShogiGui___.L___500_Gui;

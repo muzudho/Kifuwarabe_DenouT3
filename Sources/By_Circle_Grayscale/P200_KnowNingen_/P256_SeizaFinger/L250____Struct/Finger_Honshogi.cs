@@ -1,4 +1,4 @@
-﻿using Grayscale.P224_Sky________.L500____Struct;
+﻿using Grayscale.P224Sky.L500Struct;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 namespace Grayscale.P256_SeizaFinger.L250____Struct

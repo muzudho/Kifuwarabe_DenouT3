@@ -1,8 +1,8 @@
 ﻿using Grayscale.P003Log.I500Struct;
-using Grayscale.P213_Komasyurui_.L250____Word;
-using Grayscale.P213_Komasyurui_.L500____Util;
-using Grayscale.P218_Starlight__.L___500_Struct;
-using Grayscale.P224_Sky________.L500____Struct;
+using Grayscale.P213Komasyurui.L250Word;
+using Grayscale.P213Komasyurui.L500Util;
+using Grayscale.P218Starlight.I500Struct;
+using Grayscale.P224Sky.L500Struct;
 using Grayscale.P238_Seiza______.L250____Struct;
 using Grayscale.P238_Seiza______.L500____Util;
 using Grayscale.P258_UtilSky258_.L500____UtilSky;
