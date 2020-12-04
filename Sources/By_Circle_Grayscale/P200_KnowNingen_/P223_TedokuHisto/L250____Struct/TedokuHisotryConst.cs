@@ -1,4 +1,4 @@
-﻿using Grayscale.P056_Syugoron___.L___250_Struct;
+﻿using Grayscale.P056Syugoron.I250Struct;
 using Grayscale.P211_WordShogi__.L250____Masu;
 using Grayscale.P213_Komasyurui_.L250____Word;
 using Grayscale.P223_TedokuHisto.L___250_Struct;

@@ -1,4 +1,4 @@
-﻿using Grayscale.P061_ConstShogi_.L250____Const;
+﻿using Grayscale.P061ConstShogi_.L250Const;
 
 namespace Grayscale.P521_FeatureVect.L___500_Struct
 {

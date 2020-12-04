@@ -1,7 +1,7 @@
-﻿using Grayscale.P003_Log________.L___500_Struct;
-using Grayscale.P035_Collection_.L500____Struct;
-using Grayscale.P056_Syugoron___.L___250_Struct;
-using Grayscale.P056_Syugoron___.L250____Struct;
+﻿using Grayscale.P003Log.I500Struct;
+using Grayscale.P035_Collection.L500Struct;
+using Grayscale.P056Syugoron.I250Struct;
+using Grayscale.P056Syugoron.L250Struct;
 using Grayscale.P211_WordShogi__.L500____Word;
 using Grayscale.P212_ConvPside__.L500____Converter;
 using Grayscale.P224_Sky________.L500____Struct;

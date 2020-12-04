@@ -1,5 +1,5 @@
-﻿using Grayscale.P003_Log________.L___500_Struct;
-using Grayscale.P003_Log________.L500____Struct;
+﻿using Grayscale.P003Log.I500Struct;
+using Grayscale.P003Log.L500Struct;
 using Grayscale.P693_ShogiGui___.L500____GUI;
 using Grayscale.P699_Form_______;
 using System;

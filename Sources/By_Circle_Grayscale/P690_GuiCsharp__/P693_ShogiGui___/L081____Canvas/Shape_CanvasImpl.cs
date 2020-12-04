@@ -1,4 +1,4 @@
-﻿using Grayscale.P003_Log________.L___500_Struct;
+﻿using Grayscale.P003Log.I500Struct;
 using Grayscale.P693_ShogiGui___.L___081_Canvas;
 using Grayscale.P693_ShogiGui___.L___492_Widgets;
 using Grayscale.P693_ShogiGui___.L___500_Gui;

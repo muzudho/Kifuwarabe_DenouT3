@@ -1,5 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.3\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.3\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props')" />
+  <Import Project="..\packages\Microsoft.NetFramework.Analyzers.2.9.3\build\Microsoft.NetFramework.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetFramework.Analyzers.2.9.3\build\Microsoft.NetFramework.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.NetCore.Analyzers.2.9.3\build\Microsoft.NetCore.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetCore.Analyzers.2.9.3\build\Microsoft.NetCore.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.CodeQuality.Analyzers.2.9.3\build\Microsoft.CodeQuality.Analyzers.props" Condition="Exists('..\packages\Microsoft.CodeQuality.Analyzers.2.9.3\build\Microsoft.CodeQuality.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.3\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.3\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -11,6 +16,8 @@
     <AssemblyName>Grayscale.P000_Environment</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x64</PlatformTarget>
@@ -36,14 +43,15 @@
     <OutputPath>..\..\..\Builds\Engine\Bin\P000_Environment\</OutputPath>
     <DefineConstants>TRACE;LEARN</DefineConstants>
     <DebugType>full</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ProjectDark.KWSupport">
-      <HintPath>..\..\..\Builds\Engine\Bin\Lib_Circle_ProjectDark\ProjectDark.KWSupport.dll</HintPath>
+    <Reference Include="ProjectDark.KWSupport, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Resources\Lib_Circle_ProjectDark\ProjectDark.KWSupport.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -63,41 +71,41 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="P003_Log________\L___500_Struct\KwErrorHandler.cs" />
-    <Compile Include="P003_Log________\L___500_Struct\KwLogger.cs" />
-    <Compile Include="P003_Log________\L500____Struct\ErrorHandlerImpl.cs" />
-    <Compile Include="P003_Log________\L500____Struct\KwLoggerImpl.cs" />
-    <Compile Include="P003_Log________\L500____Struct\Util_OwataMinister.cs" />
-    <Compile Include="P005_Tushin_____\L500____Util\Util_Message.cs" />
-    <Compile Include="P011_Csv________\L250____Parser\CsvLineParserImpl.cs" />
-    <Compile Include="P011_Csv________\L500____Parser\Util_Csv.cs" />
-    <Compile Include="P027_Settei_____\L500____Struct\Const_Filepath.cs" />
-    <Compile Include="P027_Settei_____\L500____Struct\Data_Settei_Csv.cs" />
-    <Compile Include="P027_Settei_____\L510____Xml\SetteiXmlFile.cs" />
-    <Compile Include="P031_Random_____\L500____Struct\KwRandom.cs" />
-    <Compile Include="P031_Random_____\L500____Struct\KwShuffle.cs" />
-    <Compile Include="P035_Collection_\L500____Struct\Couple.cs" />
-    <Compile Include="P035_Collection_\L500____Struct\List_OneAndMulti.cs" />
-    <Compile Include="P035_Collection_\L500____Struct\Maps_OneAndMulti.cs" />
-    <Compile Include="P035_Collection_\L500____Struct\Maps_OneAndMultiAndMulti.cs" />
-    <Compile Include="P035_Collection_\L500____Struct\Maps_OneAndOne.cs" />
-    <Compile Include="P055_Conv_Sy\L500____Converter\Conv_Sy.cs" />
-    <Compile Include="P057_UtilSyColle\L500____Util\Util_List_OneAndMulti.cs" />
-    <Compile Include="P061_ConstShogi_\L250____Const\ConstShogi.cs" />
-    <Compile Include="P062_ConvText___\L250____Const\TextConst.cs" />
-    <Compile Include="P062_ConvText___\L500____Converter\Conv_Alphabet.cs" />
-    <Compile Include="P062_ConvText___\L500____Converter\Conv_Filepath.cs" />
-    <Compile Include="P056_Syugoron___\L___250_Struct\SyElement.cs" />
-    <Compile Include="P056_Syugoron___\L___250_Struct\SySet.cs" />
-    <Compile Include="P056_Syugoron___\L250____Struct\SyElement_Default.cs" />
-    <Compile Include="P056_Syugoron___\L250____Struct\SyFuncDictionary.cs" />
-    <Compile Include="P056_Syugoron___\L250____Struct\SySet_Default.cs" />
-    <Compile Include="P056_Syugoron___\L250____Struct\SySet_DirectedSegment.cs" />
-    <Compile Include="P056_Syugoron___\L250____Struct\SySet_Ordered.cs" />
-    <Compile Include="P056_Syugoron___\L250____Struct\SyWordDictionary.cs" />
-    <Compile Include="P056_Syugoron___\L500____Util\Util_SySet.cs" />
-    <Compile Include="P062_ConvText___\L500____Converter\Conv_Int.cs" />
-    <Compile Include="P062_ConvText___\L500____Converter\Conv_Suji.cs" />
+    <Compile Include="P003Log\I500Struct\KwErrorHandler.cs" />
+    <Compile Include="P003Log\I500Struct\KwLogger.cs" />
+    <Compile Include="P003Log\L500Struct\ErrorHandlerImpl.cs" />
+    <Compile Include="P003Log\L500Struct\KwLoggerImpl.cs" />
+    <Compile Include="P003Log\L500Struct\Util_OwataMinister.cs" />
+    <Compile Include="P005Tushin\L500Util\Util_Message.cs" />
+    <Compile Include="P011Csv\L250Parser\CsvLineParserImpl.cs" />
+    <Compile Include="P011Csv\L500Util\Util_Csv.cs" />
+    <Compile Include="P027Settei\L500Struct\Const_Filepath.cs" />
+    <Compile Include="P027Settei\L500Struct\Data_Settei_Csv.cs" />
+    <Compile Include="P027Settei\L510Xml\SetteiXmlFile.cs" />
+    <Compile Include="P031Random\L500Struct\KwRandom.cs" />
+    <Compile Include="P031Random\L500Struct\KwShuffle.cs" />
+    <Compile Include="P035_Collection\L500Struct\Couple.cs" />
+    <Compile Include="P035_Collection\L500Struct\List_OneAndMulti.cs" />
+    <Compile Include="P035_Collection\L500Struct\Maps_OneAndMulti.cs" />
+    <Compile Include="P035_Collection\L500Struct\Maps_OneAndMultiAndMulti.cs" />
+    <Compile Include="P035_Collection\L500Struct\Maps_OneAndOne.cs" />
+    <Compile Include="P055_Conv_Sy\L500Converter\Conv_Sy.cs" />
+    <Compile Include="P057UtilSyColle\L500Util\Util_List_OneAndMulti.cs" />
+    <Compile Include="P061ConstShogi_\L250Const\ConstShogi.cs" />
+    <Compile Include="P062ConvText\L250Const\TextConst.cs" />
+    <Compile Include="P062ConvText\L500Converter1\Conv_Alphabet.cs" />
+    <Compile Include="P062ConvText\L500Converter1\Conv_Filepath.cs" />
+    <Compile Include="P056Syugoron\I250Struct\SyElement.cs" />
+    <Compile Include="P056Syugoron\I250Struct\SySet.cs" />
+    <Compile Include="P056Syugoron\L250Struct\SyElement_Default.cs" />
+    <Compile Include="P056Syugoron\L250Struct\SyFuncDictionary.cs" />
+    <Compile Include="P056Syugoron\L250Struct\SySet_Default.cs" />
+    <Compile Include="P056Syugoron\L250Struct\SySet_DirectedSegment.cs" />
+    <Compile Include="P056Syugoron\L250Struct\SySet_Ordered.cs" />
+    <Compile Include="P056Syugoron\L250Struct\SyWordDictionary.cs" />
+    <Compile Include="P056Syugoron\L500Util\Util_SySet.cs" />
+    <Compile Include="P062ConvText\L500Converter1\Conv_Int.cs" />
+    <Compile Include="P062ConvText\L500Converter1\Conv_Suji.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -113,6 +121,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -138,7 +147,27 @@
     <Folder Include="P060_／／↓将棋定数と変換器\" />
     <Folder Include="P070_Form_______／／フォーム\" />
   </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.3\analyzers\dotnet\Microsoft.CodeAnalysis.VersionCheckAnalyzer.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.3\analyzers\dotnet\cs\Humanizer.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.3\analyzers\dotnet\cs\Microsoft.CodeQuality.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.3\analyzers\dotnet\cs\Microsoft.CodeQuality.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.2.9.3\analyzers\dotnet\cs\Microsoft.NetCore.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.2.9.3\analyzers\dotnet\cs\Microsoft.NetCore.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.3\analyzers\dotnet\cs\Microsoft.NetFramework.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.3\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>このプロジェクトは、このコンピューター上にない NuGet パッケージを参照しています。それらのパッケージをダウンロードするには、[NuGet パッケージの復元] を使用します。詳細については、http://go.microsoft.com/fwlink/?LinkID=322105 を参照してください。見つからないファイルは {0} です。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.3\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.3\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeQuality.Analyzers.2.9.3\build\Microsoft.CodeQuality.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeQuality.Analyzers.2.9.3\build\Microsoft.CodeQuality.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.NetCore.Analyzers.2.9.3\build\Microsoft.NetCore.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NetCore.Analyzers.2.9.3\build\Microsoft.NetCore.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.NetFramework.Analyzers.2.9.3\build\Microsoft.NetFramework.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NetFramework.Analyzers.2.9.3\build\Microsoft.NetFramework.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.3\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.3\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

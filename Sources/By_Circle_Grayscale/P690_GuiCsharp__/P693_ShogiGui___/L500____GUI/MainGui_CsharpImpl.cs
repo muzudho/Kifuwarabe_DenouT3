@@ -1,7 +1,7 @@
 ﻿using Codeplex.Data;//DynamicJson
-using Grayscale.P003_Log________.L___500_Struct;
-using Grayscale.P027_Settei_____.L500____Struct;
-using Grayscale.P031_Random_____.L500____Struct;
+using Grayscale.P003Log.I500Struct;
+using Grayscale.P027Settei.L500Struct;
+using Grayscale.P031Random.L500Struct;
 using Grayscale.P236_KomahaiyaTr.L500____Table;
 using Grayscale.P238_Seiza______.L250____Struct;
 using Grayscale.P238_Seiza______.L500____Util;

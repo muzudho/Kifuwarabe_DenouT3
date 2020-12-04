@@ -1,6 +1,6 @@
-﻿using Grayscale.P003_Log________.L500____Struct;
-using Grayscale.P011_Csv________.L250____Parser;
-using Grayscale.P056_Syugoron___.L___250_Struct;
+﻿using Grayscale.P003Log.L500Struct;
+using Grayscale.P011Csv.L250Parser;
+using Grayscale.P056Syugoron.I250Struct;
 using Grayscale.P211_WordShogi__.L500____Word;
 using Grayscale.P212_ConvPside__.L500____Converter;
 using Grayscale.P213_Komasyurui_.L250____Word;

@@ -1,4 +1,4 @@
-﻿using Grayscale.P056_Syugoron___.L___250_Struct;
+﻿using Grayscale.P056Syugoron.I250Struct;
 using Grayscale.P213_Komasyurui_.L250____Word;
 using Grayscale.P234_Komahaiyaku.L250____Word;
 using System.Collections.Generic;

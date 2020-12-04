@@ -1,5 +1,5 @@
 ﻿
-using Grayscale.P056_Syugoron___.L___250_Struct;
+using Grayscale.P056Syugoron.I250Struct;
 
 
 namespace Grayscale.P693_ShogiGui___.L___080_Shape

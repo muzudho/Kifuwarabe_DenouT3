@@ -1,5 +1,5 @@
-﻿using Grayscale.P003_Log________.L___500_Struct;
-using Grayscale.P003_Log________.L500____Struct;
+﻿using Grayscale.P003Log.I500Struct;
+using Grayscale.P003Log.L500Struct;
 using Grayscale.P276_SeizaStartp.L500____Struct;
 using Grayscale.P325_PnlTaikyoku.L___250_Struct;
 using Grayscale.P355_KifuParserA.L___500_Parser;

@@ -1,4 +1,4 @@
-﻿using Grayscale.P003_Log________.L___500_Struct;
+﻿using Grayscale.P003Log.I500Struct;
 using Grayscale.P341_Ittesasu___.L250____OperationA;
 using Grayscale.P693_ShogiGui___.L___500_Gui;
 using Grayscale.P693_ShogiGui___.L500____GUI;
@@ -57,8 +57,9 @@ namespace Grayscale.P803_GuiCsharpVs.L500____Gui
 
         /// <summary>
         /// コンピューターの先手
+        /// (2020-11-21 sat) virtual --> override.
         /// </summary>
-        public virtual void Do_ComputerSente(KwErrorHandler errH)
+        public override void Do_ComputerSente(KwErrorHandler errH)
         {
             this.Link_Server.EngineClient.ShogiEngineProcessWrapper.Send_Position(
                 Util_KirokuGakari.ToSfen_PositionCommand(this.Link_Server.Model_Taikyoku.Kifu), errH);

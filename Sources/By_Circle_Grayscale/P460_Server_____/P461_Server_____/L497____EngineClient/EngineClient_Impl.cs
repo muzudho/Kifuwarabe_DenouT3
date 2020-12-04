@@ -1,6 +1,6 @@
-﻿using Grayscale.P003_Log________.L___500_Struct;
-using Grayscale.P003_Log________.L500____Struct;
-using Grayscale.P005_Tushin_____.L500____Util;
+﻿using Grayscale.P003Log.I500Struct;
+using Grayscale.P003Log.L500Struct;
+using Grayscale.P005Tushin.L500Util;
 using Grayscale.P211_WordShogi__.L500____Word;
 using Grayscale.P324_KifuTree___.L___250_Struct;
 using Grayscale.P341_Ittesasu___.L250____OperationA;

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("将棋の思考エンジンです。")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ぐれーすけーる")]
-[assembly: AssemblyProduct("Kifuwarabe_SDT3")]
+[assembly: AssemblyProduct("201511-SDT3-Kifuwarabe")]
 [assembly: AssemblyCopyright("Copyright © ぐれーすけーる 2014-2015")]
 [assembly: AssemblyTrademark("きふわらべ")]
 [assembly: AssemblyCulture("")]

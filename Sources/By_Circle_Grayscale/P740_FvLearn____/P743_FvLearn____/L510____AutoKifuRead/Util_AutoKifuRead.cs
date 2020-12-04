@@ -1,4 +1,4 @@
-﻿using Grayscale.P003_Log________.L___500_Struct;
+﻿using Grayscale.P003Log.I500Struct;
 using Grayscale.P743_FvLearn____.L250____Learn;
 using Grayscale.P743_FvLearn____.L260____View;
 using Grayscale.P743_FvLearn____.L450____Tyoseiryo;

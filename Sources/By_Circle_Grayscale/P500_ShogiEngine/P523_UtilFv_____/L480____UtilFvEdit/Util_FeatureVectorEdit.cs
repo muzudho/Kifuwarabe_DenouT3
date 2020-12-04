@@ -1,4 +1,4 @@
-﻿using Grayscale.P031_Random_____.L500____Struct;
+﻿using Grayscale.P031Random.L500Struct;
 using Grayscale.P213_Komasyurui_.L250____Word;
 using Grayscale.P521_FeatureVect.L___500_Struct;
 using Grayscale.P521_FeatureVect.L500____Struct;

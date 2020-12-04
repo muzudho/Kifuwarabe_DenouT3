@@ -1,4 +1,4 @@
-﻿using Grayscale.P056_Syugoron___.L___250_Struct;
+﻿using Grayscale.P056Syugoron.I250Struct;
 using Grayscale.P211_WordShogi__.L250____Masu;
 using Grayscale.P212_ConvPside__.L500____Converter;
 using Grayscale.P693_ShogiGui___.L___080_Shape;
@@ -140,9 +140,8 @@ namespace Grayscale.P693_ShogiGui___.L080____Shape
             {
             }
 
-            //----------
+            /*
             // 升番号
-            //----------
             if(false){
                 string text = Conv_SyElement.ToMasuNumber(this.Zahyo).ToString();
 
@@ -160,6 +159,7 @@ namespace Grayscale.P693_ShogiGui___.L080____Shape
                 g1.DrawString(text, font, Brushes.BurlyWood, x + 1, y + 1);//影
                 g1.DrawString(text, font, Brushes.Beige, x, y);//色
             }
+            */
 
             //----------
             // 枠線

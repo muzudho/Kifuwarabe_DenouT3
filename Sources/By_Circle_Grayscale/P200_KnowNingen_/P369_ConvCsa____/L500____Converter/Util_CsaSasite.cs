@@ -1,5 +1,5 @@
-﻿using Grayscale.P056_Syugoron___.L___250_Struct;
-using Grayscale.P062_ConvText___.L500____Converter;
+﻿using Grayscale.P056Syugoron.I250Struct;
+using Grayscale.P062ConvText.L500Converter;
 using Grayscale.P145_SfenStruct_.L250____Struct;
 using Grayscale.P163_KifuCsa____.L___250_Struct;
 using Grayscale.P163_KifuCsa____.L250____Struct;

@@ -1,7 +1,7 @@
-﻿using Grayscale.P011_Csv________.L500____Util;
-using Grayscale.P055_Conv_Sy.L500____Converter;
-using Grayscale.P056_Syugoron___.L___250_Struct;
-using Grayscale.P056_Syugoron___.L250____Struct;
+﻿using Grayscale.P011Csv.L500Util;
+using Grayscale.P055_Conv_Sy.L500Converter;
+using Grayscale.P056Syugoron.I250Struct;
+using Grayscale.P056Syugoron.L250Struct;
 using Grayscale.P211_WordShogi__.L250____Masu;
 using Grayscale.P211_WordShogi__.L500____Word;
 using Grayscale.P214_Masu_______.L500____Util;

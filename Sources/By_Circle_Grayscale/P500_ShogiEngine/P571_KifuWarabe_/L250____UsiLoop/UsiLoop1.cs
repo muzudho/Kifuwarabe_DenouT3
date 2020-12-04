@@ -1,5 +1,5 @@
-﻿using Grayscale.P003_Log________.L500____Struct;
-using Grayscale.P005_Tushin_____.L500____Util;
+﻿using Grayscale.P003Log.L500Struct;
+using Grayscale.P005Tushin.L500Util;
 using Grayscale.P542_Scoreing___.L___005_UsiLoop;
 using System;
 using System.Collections.Generic;

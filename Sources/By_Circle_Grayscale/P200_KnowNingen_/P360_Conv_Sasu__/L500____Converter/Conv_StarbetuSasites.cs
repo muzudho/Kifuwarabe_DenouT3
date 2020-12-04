@@ -1,5 +1,5 @@
-﻿using Grayscale.P003_Log________.L___500_Struct;
-using Grayscale.P035_Collection_.L500____Struct;
+﻿using Grayscale.P003Log.I500Struct;
+using Grayscale.P035_Collection.L500Struct;
 using Grayscale.P218_Starlight__.L___500_Struct;
 using Grayscale.P224_Sky________.L500____Struct;
 using Grayscale.P238_Seiza______.L500____Util;

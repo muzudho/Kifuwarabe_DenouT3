@@ -1,4 +1,4 @@
-﻿using Grayscale.P003_Log________.L___500_Struct;
+﻿using Grayscale.P003Log.I500Struct;
 using Grayscale.P163_KifuCsa____.L___250_Struct;
 using Grayscale.P218_Starlight__.L___500_Struct;
 using Grayscale.P224_Sky________.L500____Struct;

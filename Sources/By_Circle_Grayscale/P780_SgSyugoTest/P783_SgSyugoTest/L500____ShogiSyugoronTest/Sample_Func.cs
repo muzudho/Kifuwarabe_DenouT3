@@ -1,4 +1,4 @@
-﻿using Grayscale.P062_ConvText___.L500____Converter;
+﻿using Grayscale.P062ConvText.L500Converter;
 using System.Collections.Generic;
 using System.Text;
 

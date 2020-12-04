@@ -1,4 +1,4 @@
-﻿using Grayscale.P031_Random_____.L500____Struct;
+﻿using Grayscale.P031Random.L500Struct;
 using NLua;
 using System;
 

@@ -4,3 +4,4 @@ C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\
 C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P440_KifuTreeLog\obj\Release\P440_KifuTreeLog.csproj.CopyComplete
 C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P440_KifuTreeLog\obj\Release\P440_KifuTreeLog.dll
 C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P440_KifuTreeLog\obj\Release\P440_KifuTreeLog.pdb
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P440_KifuTreeLog\obj\Release\P440_KifuTreeLog.csproj.CoreCompileInputs.cache

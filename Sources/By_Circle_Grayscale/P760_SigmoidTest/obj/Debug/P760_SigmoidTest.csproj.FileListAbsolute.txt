@@ -1,5 +1,0 @@
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Builds\Engine\Bin\P760_SigmoidTest\Grayscale.P760_SigmoidTest.exe.config
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Builds\Engine\Bin\P760_SigmoidTest\Grayscale.P760_SigmoidTest.exe
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Builds\Engine\Bin\P760_SigmoidTest\Grayscale.P760_SigmoidTest.pdb
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P760_SigmoidTest\obj\Debug\Grayscale.P760_SigmoidTest.exe
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P760_SigmoidTest\obj\Debug\Grayscale.P760_SigmoidTest.pdb

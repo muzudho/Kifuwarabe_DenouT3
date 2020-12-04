@@ -1,5 +1,5 @@
-﻿using Grayscale.P003_Log________.L___500_Struct;
-using Grayscale.P003_Log________.L500____Struct;
+﻿using Grayscale.P003Log.I500Struct;
+using Grayscale.P003Log.L500Struct;
 using Grayscale.P211_WordShogi__.L500____Word;
 using Grayscale.P218_Starlight__.L___500_Struct;
 using Grayscale.P222_Log_Kaisetu.L250____Struct;
@@ -34,7 +34,7 @@ using Grayscale.P743_FvLearn____.L___450_Tyoseiryo;
 using Grayscale.P743_FvLearn____.L450____Tyoseiryo;
 using Grayscale.P743_FvLearn____.L___490_StopLearning;
 using Grayscale.P743_FvLearn____.L490____StopLearning;
-using Grayscale.P031_Random_____.L500____Struct;
+using Grayscale.P031Random.L500Struct;
 using Grayscale.P743_FvLearn____.L508____AutoSasiteRush;
 
 namespace Grayscale.P743_FvLearn____

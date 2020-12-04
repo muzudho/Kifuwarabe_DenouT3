@@ -1,5 +1,5 @@
-﻿using Grayscale.P003_Log________.L___500_Struct;
-using Grayscale.P056_Syugoron___.L___250_Struct;
+﻿using Grayscale.P003Log.I500Struct;
+using Grayscale.P056Syugoron.I250Struct;
 using Grayscale.P209_KifuJsa____.L500____Word;
 using Grayscale.P211_WordShogi__.L500____Word;
 using Grayscale.P215_KomanoKidou.L500____Struct;

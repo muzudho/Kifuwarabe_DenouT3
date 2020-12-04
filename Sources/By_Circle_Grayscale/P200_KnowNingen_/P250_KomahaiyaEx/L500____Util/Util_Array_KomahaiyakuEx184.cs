@@ -1,5 +1,5 @@
-﻿using Grayscale.P011_Csv________.L500____Util;
-using Grayscale.P056_Syugoron___.L___250_Struct;
+﻿using Grayscale.P011Csv.L500Util;
+using Grayscale.P056Syugoron.I250Struct;
 using Grayscale.P213_Komasyurui_.L250____Word;
 using Grayscale.P234_Komahaiyaku.L250____Word;
 using Grayscale.P234_Komahaiyaku.L500____Util;

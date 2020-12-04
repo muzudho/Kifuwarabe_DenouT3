@@ -1,4 +1,4 @@
-﻿using Grayscale.P003_Log________.L500____Struct;
+﻿using Grayscale.P003Log.L500Struct;
 using Grayscale.P211_WordShogi__.L500____Word;
 using Grayscale.P212_ConvPside__.L500____Converter;
 using Grayscale.P213_Komasyurui_.L250____Word;

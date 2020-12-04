@@ -1,5 +1,5 @@
-﻿using Grayscale.P056_Syugoron___.L___250_Struct;
-using Grayscale.P056_Syugoron___.L250____Struct;
+﻿using Grayscale.P056Syugoron.I250Struct;
+using Grayscale.P056Syugoron.L250Struct;
 using Grayscale.P211_WordShogi__.L___250_Masu;
 using Grayscale.P214_Masu_______.L500____Util;
 using System;

@@ -1,4 +1,4 @@
-﻿using Grayscale.P056_Syugoron___.L___250_Struct;
+﻿using Grayscale.P056Syugoron.I250Struct;
 using Grayscale.P211_WordShogi__.L___250_Masu;
 
 namespace Grayscale.P211_WordShogi__.L260____Operator

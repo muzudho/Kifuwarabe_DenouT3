@@ -1,4 +1,4 @@
-﻿using Grayscale.P003_Log________.L___500_Struct;
+﻿using Grayscale.P003Log.I500Struct;
 using Grayscale.P211_WordShogi__.L500____Word;
 using Grayscale.P224_Sky________.L500____Struct;
 using Grayscale.P321_KyokumHyoka.L___250_Struct;
@@ -49,7 +49,7 @@ namespace Grayscale.P531_Hyokakansu_.L500____Hyokakansu
             {
                 case Playerside.P1: out_score = float.MinValue; break;
                 case Playerside.P2: out_score = float.MaxValue; break;
-                default: throw new Exception("千日手判定をしようとしましたが、先後の分からない局面データがありました。"); break;
+                default: throw new Exception("千日手判定をしようとしましたが、先後の分からない局面データがありました。"); 
             }
 
 

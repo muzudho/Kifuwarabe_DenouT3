@@ -1,4 +1,4 @@
-﻿using Grayscale.P003_Log________.L___500_Struct;
+﻿using Grayscale.P003Log.I500Struct;
 using Grayscale.P461_Server_____.L___496_EngineWrapper;
 using System.Diagnostics;
 

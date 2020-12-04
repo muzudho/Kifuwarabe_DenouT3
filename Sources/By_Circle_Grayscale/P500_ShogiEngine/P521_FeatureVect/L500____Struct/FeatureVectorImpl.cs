@@ -1,6 +1,6 @@
-﻿using Grayscale.P056_Syugoron___.L___250_Struct;
-using Grayscale.P061_ConstShogi_.L250____Const;
-using Grayscale.P062_ConvText___.L500____Converter;
+﻿using Grayscale.P056Syugoron.I250Struct;
+using Grayscale.P061ConstShogi_.L250Const;
+using Grayscale.P062ConvText.L500Converter;
 using Grayscale.P212_ConvPside__.L500____Converter;
 using Grayscale.P213_Komasyurui_.L250____Word;
 using Grayscale.P214_Masu_______.L500____Util;

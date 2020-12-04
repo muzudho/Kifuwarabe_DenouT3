@@ -1,5 +1,5 @@
-﻿using Grayscale.P003_Log________.L___500_Struct;
-using Grayscale.P027_Settei_____.L500____Struct;
+﻿using Grayscale.P003Log.I500Struct;
+using Grayscale.P027Settei.L500Struct;
 using Grayscale.P211_WordShogi__.L500____Word;
 using Grayscale.P234_Komahaiyaku.L250____Word;
 using Grayscale.P234_Komahaiyaku.L500____Util;
@@ -177,6 +177,7 @@ namespace Grayscale.P693_ShogiGui___.L080____Shape
             }
             else
             {
+                /*
                 //----------
                 // 配役画像
                 //----------
@@ -196,12 +197,12 @@ namespace Grayscale.P693_ShogiGui___.L080____Shape
                 }
 
                 g1.DrawImage(img, this.Bounds);
+                */
             }
 
 
-            //----------
+            /*
             // 枠線
-            //----------
             if(false)
             {
                 Pen pen;
@@ -216,10 +217,10 @@ namespace Grayscale.P693_ShogiGui___.L080____Shape
 
                 g1.DrawRectangle(pen, this.Bounds);
             }
+            */
 
-            //----------
+            /*
             // 文字
-            //----------
             if(false)
             {
                 if (koma.Pside == Playerside.P1)
@@ -331,6 +332,7 @@ namespace Grayscale.P693_ShogiGui___.L080____Shape
                     //fnt.Dispose();
                 }
             }
+            */
 
 
             //// フィンガー番号

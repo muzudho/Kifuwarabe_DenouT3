@@ -1,5 +1,5 @@
-﻿using Grayscale.P031_Random_____.L500____Struct;
-using Grayscale.P056_Syugoron___.L___250_Struct;
+﻿using Grayscale.P031Random.L500Struct;
+using Grayscale.P056Syugoron.I250Struct;
 using Grayscale.P211_WordShogi__.L___250_Masu;
 using Grayscale.P213_Komasyurui_.L250____Word;
 using Grayscale.P234_Komahaiyaku.L250____Word;

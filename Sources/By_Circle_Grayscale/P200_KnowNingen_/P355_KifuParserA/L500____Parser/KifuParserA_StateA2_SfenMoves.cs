@@ -1,5 +1,5 @@
-﻿using Grayscale.P003_Log________.L___500_Struct;
-using Grayscale.P003_Log________.L500____Struct;
+﻿using Grayscale.P003Log.I500Struct;
+using Grayscale.P003Log.L500Struct;
 using Grayscale.P146_ConvSfen___.L500____Converter;
 using Grayscale.P213_Komasyurui_.L250____Word;
 using Grayscale.P218_Starlight__.L___500_Struct;

@@ -1,7 +1,7 @@
-﻿using Grayscale.P003_Log________.L___500_Struct;
-using Grayscale.P003_Log________.L500____Struct;
-using Grayscale.P056_Syugoron___.L___250_Struct;
-using Grayscale.P062_ConvText___.L500____Converter;
+﻿using Grayscale.P003Log.I500Struct;
+using Grayscale.P003Log.L500Struct;
+using Grayscale.P056Syugoron.I250Struct;
+using Grayscale.P062ConvText.L500Converter;
 using Grayscale.P211_WordShogi__.L500____Word;
 using Grayscale.P213_Komasyurui_.L250____Word;
 using Grayscale.P213_Komasyurui_.L500____Util;
@@ -23,7 +23,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 using Grayscale.P212_ConvPside__.L500____Converter;
 using Grayscale.P239_ConvWords__.L500____Converter;
 using Grayscale.P211_WordShogi__.L___250_Masu;
-using Grayscale.P055_Conv_Sy.L500____Converter;
+using Grayscale.P055_Conv_Sy.L500Converter;
 
 #if DEBUG
 using System.Diagnostics;

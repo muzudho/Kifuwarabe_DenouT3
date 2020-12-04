@@ -1,4 +1,4 @@
-﻿using Grayscale.P003_Log________.L___500_Struct;
+﻿using Grayscale.P003Log.I500Struct;
 using Grayscale.P542_Scoreing___.L___005_UsiLoop;
 using System.Diagnostics;
 

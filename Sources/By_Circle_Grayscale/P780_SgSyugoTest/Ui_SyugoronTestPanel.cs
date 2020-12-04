@@ -1,6 +1,6 @@
-﻿using Grayscale.P055_Conv_Sy.L500____Converter;
-using Grayscale.P056_Syugoron___.L___250_Struct;
-using Grayscale.P056_Syugoron___.L250____Struct;
+﻿using Grayscale.P055_Conv_Sy.L500Converter;
+using Grayscale.P056Syugoron.I250Struct;
+using Grayscale.P056Syugoron.L250Struct;
 using System;
 using System.Collections.Generic;
 using System.IO;

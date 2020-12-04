@@ -1,5 +1,5 @@
-﻿using Grayscale.P003_Log________.L___500_Struct;
-using Grayscale.P031_Random_____.L500____Struct;
+﻿using Grayscale.P003Log.I500Struct;
+using Grayscale.P031Random.L500Struct;
 using Grayscale.P211_WordShogi__.L500____Word;
 using Grayscale.P222_Log_Kaisetu.L250____Struct;
 using Grayscale.P324_KifuTree___.L___250_Struct;

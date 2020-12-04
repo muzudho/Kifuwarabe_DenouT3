@@ -1,10 +1,10 @@
 ﻿// noop 可
 //#define NOOPABLE
 
-using Grayscale.P003_Log________.L___500_Struct;
-using Grayscale.P003_Log________.L500____Struct;
-using Grayscale.P005_Tushin_____.L500____Util;
-using Grayscale.P027_Settei_____.L500____Struct;
+using Grayscale.P003Log.I500Struct;
+using Grayscale.P003Log.L500Struct;
+using Grayscale.P005Tushin.L500Util;
+using Grayscale.P027Settei.L500Struct;
 using Grayscale.P236_KomahaiyaTr.L500____Table;
 using Grayscale.P248_Michi______.L500____Word;
 using Grayscale.P250_KomahaiyaEx.L500____Util;
@@ -26,8 +26,6 @@ namespace Grayscale.P571_KifuWarabe_.L500____KifuWarabe
 
     public class KifuWarabeImpl : ShogiEngine
     {
-
-        #region プロパティー
         /// <summary>
         /// きふわらべの作者名です。
         /// </summary>
@@ -65,9 +63,6 @@ namespace Grayscale.P571_KifuWarabe_.L500____KifuWarabe
         /// </summary>
         public bool Option_enable_serverNoopable { get; set; }
 
-        #endregion
-
-        #region 送信
         /// <summary>
         /// 送信
         /// </summary>
@@ -82,9 +77,7 @@ namespace Grayscale.P571_KifuWarabe_.L500____KifuWarabe
             Util_OwataMinister.ENGINE_NETWORK.Logger.WriteLine_S(line);
 #endif
         }
-        #endregion
 
-        #region コンストラクター
         /// <summary>
         /// コンストラクター
         /// </summary>
@@ -105,9 +98,7 @@ namespace Grayscale.P571_KifuWarabe_.L500____KifuWarabe
             this.Option_enable_usiPonder = false; // ポンダーに対応している将棋サーバーなら真です。
             this.Option_enable_serverNoopable = false; // 独自実装のコマンドなので、ＯＦＦにしておきます。
         }
-        #endregion
 
-        #region 処理の流れ
         public void AtBegin(KwErrorHandler errH)
         {
             int exception_area = 0;
@@ -118,7 +109,6 @@ namespace Grayscale.P571_KifuWarabe_.L500____KifuWarabe
                 // ログファイル削除  |
                 //-------------------+----------------------------------------------------------------------------------------------------
                 {
-                    #region ↓詳説
                     //
                     // 図.
                     //
@@ -126,7 +116,6 @@ namespace Grayscale.P571_KifuWarabe_.L500____KifuWarabe
                     //          ├─ Engine.KifuWarabe.exe
                     //          └─ log.txt               ←これを削除
                     //
-                    #endregion
                     Util_OwataMinister.Remove_AllLogFiles();
                 }
 
@@ -186,7 +175,6 @@ namespace Grayscale.P571_KifuWarabe_.L500____KifuWarabe
                 //-------------+----------------------------------------------------------------------------------------------------------
                 // ログ書込み  |  ＜この将棋エンジン＞  製品名、バージョン番号
                 //-------------+----------------------------------------------------------------------------------------------------------
-                #region ↓詳説
                 //
                 // 図.
                 //
@@ -202,7 +190,6 @@ namespace Grayscale.P571_KifuWarabe_.L500____KifuWarabe
                 //
                 // バージョン番号を「1.00.0」形式（メジャー番号.マイナー番号.ビルド番号)で書くのは作者の趣味です。
                 //
-                #endregion
                 {
                     string versionStr;
 
@@ -236,7 +223,6 @@ namespace Grayscale.P571_KifuWarabe_.L500____KifuWarabe
             try
             {
 
-                #region ↑詳説
                 // 
                 // 図.
                 // 
@@ -245,13 +231,11 @@ namespace Grayscale.P571_KifuWarabe_.L500____KifuWarabe
                 //     プログラムの終了：  この中の最終行を終えたとき、
                 //                         または途中で Environment.Exit(0); が呼ばれたときに終わります。
                 //                         また、コンソールウィンドウの[×]ボタンを押して強制終了されたときも  ぶつ切り  で突然終わります。
-                #endregion
 
 
                 //************************************************************************************************************************
                 // ループ（全体）
                 //************************************************************************************************************************
-                #region ↓詳説
                 //
                 // 図.
                 //
@@ -267,7 +251,6 @@ namespace Grayscale.P571_KifuWarabe_.L500____KifuWarabe
                 //
                 // 無限ループの中に、２つの無限ループが入っています。
                 //
-                #endregion
 
                 while (true)
                 {
@@ -275,9 +258,9 @@ namespace Grayscale.P571_KifuWarabe_.L500____KifuWarabe
             MessageBox.Show("きふわらべのMainの無限ループでブレイク☆！", "デバッグ");
             System.Diagnostics.Debugger.Break();
 #endif
-                    //************************************************************************************************************************
-                    // ループ（１つ目）
-                    //************************************************************************************************************************
+                    //
+                    // USIループ（１つ目）
+                    //
                     UsiLoop1 usiLoop1 = new UsiLoop1(this);
                     usiLoop1.AtStart();
                     bool isTimeoutShutdown_temp;
@@ -294,9 +277,9 @@ namespace Grayscale.P571_KifuWarabe_.L500____KifuWarabe
                         goto gt_EndMethod;//全体ループを抜けます。
                     }
 
-                    //************************************************************************************************************************
-                    // ループ（２つ目）
-                    //************************************************************************************************************************
+                    //
+                    // USIループ（２つ目）
+                    //
                     UsiLoop2 usiLoop2 = new UsiLoop2(this.shogisasi, this);
                     usiLoop2.AtBegin();
                     usiLoop2.AtBody(out isTimeoutShutdown_temp, errH);
@@ -326,7 +309,6 @@ namespace Grayscale.P571_KifuWarabe_.L500____KifuWarabe
         public void AtEnd()
         {
         }
-        #endregion
 
     }
 }
