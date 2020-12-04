@@ -66,9 +66,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="P803_GuiCsharpVs\L500____Gui\MainGui_CsharpVsImpl.cs" />
-    <Compile Include="P803_GuiCsharpVs\L491____Event\Event_CsharpVsImpl.cs" />
-    <Compile Include="P803_GuiCsharpVs\L492____Widget\WidgetsLoader_CsharpVsImpl.cs" />
+    <Compile Include="P803_GuiCsharpVs\MainGui_CsharpVsImpl.cs" />
+    <Compile Include="P803_GuiCsharpVs\Event_CsharpVsImpl.cs" />
+    <Compile Include="P803_GuiCsharpVs\WidgetsLoader_CsharpVsImpl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

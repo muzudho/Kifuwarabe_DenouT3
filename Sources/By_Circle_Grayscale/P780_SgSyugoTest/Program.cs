@@ -1,4 +1,4 @@
-﻿using Grayscale.P780_SgSyugoTest.L500____ShogiSyugoronTest;
+﻿using Grayscale.P780_SgSyugoTest.L500ShogiSyugoronTest;
 using System;
 using System.Windows.Forms;
 

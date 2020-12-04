@@ -5,7 +5,7 @@ using Grayscale.P699_Form_______;
 using System;
 using System.Windows.Forms;
 
-namespace Grayscale.P803_GuiCsharpVs.L500____Gui
+namespace Grayscale.P803GuiCsharpVs.L500Gui
 {
     static class Program
     {

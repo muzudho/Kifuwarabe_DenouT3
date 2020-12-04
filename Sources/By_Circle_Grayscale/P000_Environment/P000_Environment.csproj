@@ -71,12 +71,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="P003Log\I500Struct\KwErrorHandler.cs" />
-    <Compile Include="P003Log\I500Struct\KwLogger.cs" />
-    <Compile Include="P003Log\L500Struct\ErrorHandlerImpl.cs" />
-    <Compile Include="P003Log\L500Struct\KwLoggerImpl.cs" />
-    <Compile Include="P003Log\L500Struct\Util_OwataMinister.cs" />
-    <Compile Include="P005Tushin\L500Util\Util_Message.cs" />
+    <Compile Include="P003Log\KwErrorHandler.cs" />
+    <Compile Include="P003Log\KwLogger.cs" />
+    <Compile Include="P003Log\ErrorHandlerImpl.cs" />
+    <Compile Include="P003Log\KwLoggerImpl.cs" />
+    <Compile Include="P003Log\Util_OwataMinister.cs" />
+    <Compile Include="P005Tushin\Util_Message.cs" />
     <Compile Include="P011Csv\L250Parser\CsvLineParserImpl.cs" />
     <Compile Include="P011Csv\L500Util\Util_Csv.cs" />
     <Compile Include="P027Settei\L500Struct\Const_Filepath.cs" />

@@ -1,8 +1,8 @@
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P500_ShogiEngine\obj\Release\P500_ShogiEngine.csprojAssemblyReference.cache
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P500_ShogiEngine\obj\Release\P500_ShogiEngine.csproj.CoreCompileInputs.cache
 C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Builds\Engine\Bin\P500_ShogiEngine\Grayscale.P500_ShogiEngine.exe.config
 C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Builds\Engine\Bin\P500_ShogiEngine\Grayscale.P500_ShogiEngine.exe
 C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Builds\Engine\Bin\P500_ShogiEngine\Grayscale.P500_ShogiEngine.pdb
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P500_ShogiEngine\obj\Release\P500_ShogiEngine.csprojAssemblyReference.cache
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P500_ShogiEngine\obj\Release\P500_ShogiEngine.csproj.CoreCompileInputs.cache
 C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P500_ShogiEngine\obj\Release\P500_ShogiEngine.csproj.CopyComplete
 C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P500_ShogiEngine\obj\Release\Grayscale.P500_ShogiEngine.exe
 C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P500_ShogiEngine\obj\Release\Grayscale.P500_ShogiEngine.pdb

@@ -1,5 +1,5 @@
 ﻿using Grayscale.P003Log.I500Struct;
-using Grayscale.P003Log.L500Struct;
+//using Grayscale.P003Log.L500Struct;
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P226Tree.I500Struct;

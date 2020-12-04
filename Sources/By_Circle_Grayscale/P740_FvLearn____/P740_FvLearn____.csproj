@@ -86,32 +86,32 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="P743_FvLearn____\Util_LearningView.cs" />
-    <Compile Include="P743_FvLearn____\N40t14ListImpl.cs" />
-    <Compile Include="P743_FvLearn____\N54ListImpl.cs" />
-    <Compile Include="P743_FvLearn____\Util_40t14List.cs" />
-    <Compile Include="P743_FvLearn____\Util_54List.cs" />
-    <Compile Include="P743_FvLearn____\Util_Inspection.cs" />
-    <Compile Include="P743_FvLearn____\Util_Zooming.cs" />
-    <Compile Include="P743_FvLearn____\Util_Ranking.cs" />
-    <Compile Include="P743_FvLearn____\TyoseiryoSettingsImpl.cs" />
-    <Compile Include="P743_FvLearn____\Util_Tyoseiryo.cs" />
-    <Compile Include="P743_FvLearn____\Util_FvScoreing.cs" />
-    <Compile Include="P743_FvLearn____\Util_StartZero.cs" />
-    <Compile Include="P743_FvLearn____\Util_LearnFunctions.cs" />
-    <Compile Include="P743_FvLearn____\StopLearningImpl.cs" />
-    <Compile Include="P743_FvLearn____\Util_AutoSortingRush.cs" />
-    <Compile Include="P743_FvLearn____\Util_AutoKifuRead.cs" />
-    <Compile Include="P743_FvLearn____\Util_AutoSasiteRush.cs" />
-    <Compile Include="P743_FvLearn____\Util_LearnOperation.cs" />
-    <Compile Include="P743_FvLearn____\LearningData.cs" />
-    <Compile Include="P743_FvLearn____\GohosyuListItem.cs" />
-    <Compile Include="P743_FvLearn____\LearningDataImpl.cs" />
-    <Compile Include="P743_FvLearn____\HonpuSasiteListItemImpl.cs" />
-    <Compile Include="P743_FvLearn____\N40t14List.cs" />
-    <Compile Include="P743_FvLearn____\N54List.cs" />
-    <Compile Include="P743_FvLearn____\TyoseiryoSettings.cs" />
-    <Compile Include="P743_FvLearn____\StopLearning.cs" />
+    <Compile Include="P743FvLearn\Util_LearningView.cs" />
+    <Compile Include="P743FvLearn\N40t14ListImpl.cs" />
+    <Compile Include="P743FvLearn\N54ListImpl.cs" />
+    <Compile Include="P743FvLearn\Util_40t14List.cs" />
+    <Compile Include="P743FvLearn\Util_54List.cs" />
+    <Compile Include="P743FvLearn\Util_Inspection.cs" />
+    <Compile Include="P743FvLearn\Util_Zooming.cs" />
+    <Compile Include="P743FvLearn\Util_Ranking.cs" />
+    <Compile Include="P743FvLearn\TyoseiryoSettingsImpl.cs" />
+    <Compile Include="P743FvLearn\Util_Tyoseiryo.cs" />
+    <Compile Include="P743FvLearn\Util_FvScoreing.cs" />
+    <Compile Include="P743FvLearn\Util_StartZero.cs" />
+    <Compile Include="P743FvLearn\Util_LearnFunctions.cs" />
+    <Compile Include="P743FvLearn\StopLearningImpl.cs" />
+    <Compile Include="P743FvLearn\Util_AutoSortingRush.cs" />
+    <Compile Include="P743FvLearn\Util_AutoKifuRead.cs" />
+    <Compile Include="P743FvLearn\Util_AutoSasiteRush.cs" />
+    <Compile Include="P743FvLearn\Util_LearnOperation.cs" />
+    <Compile Include="P743FvLearn\LearningData.cs" />
+    <Compile Include="P743FvLearn\GohosyuListItem.cs" />
+    <Compile Include="P743FvLearn\LearningDataImpl.cs" />
+    <Compile Include="P743FvLearn\HonpuSasiteListItemImpl.cs" />
+    <Compile Include="P743FvLearn\N40t14List.cs" />
+    <Compile Include="P743FvLearn\N54List.cs" />
+    <Compile Include="P743FvLearn\TyoseiryoSettings.cs" />
+    <Compile Include="P743FvLearn\StopLearning.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Uc_Main.cs">
@@ -208,27 +208,7 @@
     <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.3\analyzers\dotnet\cs\Microsoft.NetFramework.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.3\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="P743_FvLearn____\L250____Learn\" />
-    <Folder Include="P743_FvLearn____\L260____View\" />
-    <Folder Include="P743_FvLearn____\L400____54List\" />
-    <Folder Include="P743_FvLearn____\L420____Inspection\" />
-    <Folder Include="P743_FvLearn____\L430____Zooming\" />
-    <Folder Include="P743_FvLearn____\L440____Ranking\" />
-    <Folder Include="P743_FvLearn____\L450____Tyoseiryo\" />
-    <Folder Include="P743_FvLearn____\L460____Scoreing\" />
-    <Folder Include="P743_FvLearn____\L470____StartZero\" />
-    <Folder Include="P743_FvLearn____\L480____Functions\" />
-    <Folder Include="P743_FvLearn____\L490____StopLearning\" />
-    <Folder Include="P743_FvLearn____\L506____AutoSortingRush\" />
-    <Folder Include="P743_FvLearn____\L508____AutoSasiteRush\" />
-    <Folder Include="P743_FvLearn____\L510____AutoKifuRead\" />
-    <Folder Include="P743_FvLearn____\L600____Operation\" />
-    <Folder Include="P743_FvLearn____\L___250_Learn\" />
-    <Folder Include="P743_FvLearn____\L___400_54List\" />
-    <Folder Include="P743_FvLearn____\L___450_Tyoseiryo\" />
-    <Folder Include="P743_FvLearn____\L___490_StopLearning\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

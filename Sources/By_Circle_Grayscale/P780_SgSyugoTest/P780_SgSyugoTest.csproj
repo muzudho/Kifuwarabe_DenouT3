@@ -61,7 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="P783_SgSyugoTest\L500____ShogiSyugoronTest\Sample_Func.cs" />
+    <Compile Include="P783SgSyugoTest\Sample_Func.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ui_SyugoronTestForm.cs">

@@ -1,12 +1,6 @@
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Builds\Engine\Bin\P740_FvLearn____\Grayscale.P740_FvLearn____.exe.config
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Builds\Engine\Bin\P740_FvLearn____\Grayscale.P740_FvLearn____.exe
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Builds\Engine\Bin\P740_FvLearn____\Grayscale.P740_FvLearn____.pdb
 C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P740_FvLearn____\obj\Release\P740_FvLearn____.csprojAssemblyReference.cache
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P740_FvLearn____\obj\Release\Grayscale.P743_FvLearn____.Form1.resources
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P740_FvLearn____\obj\Release\Grayscale.P743FvLearn.Form1.resources
 C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P740_FvLearn____\obj\Release\Grayscale.Properties.Resources.resources
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P740_FvLearn____\obj\Release\Grayscale.P743_FvLearn____.Uc_Main.resources
+C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P740_FvLearn____\obj\Release\Grayscale.P743FvLearn.Uc_Main.resources
 C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P740_FvLearn____\obj\Release\P740_FvLearn____.csproj.GenerateResource.cache
 C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P740_FvLearn____\obj\Release\P740_FvLearn____.csproj.CoreCompileInputs.cache
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P740_FvLearn____\obj\Release\P740_FvLearn____.csproj.CopyComplete
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P740_FvLearn____\obj\Release\Grayscale.P740_FvLearn____.exe
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P740_FvLearn____\obj\Release\Grayscale.P740_FvLearn____.pdb

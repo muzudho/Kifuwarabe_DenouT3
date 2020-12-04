@@ -1,12 +1,5 @@
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Builds\Engine\Bin\P910_SpeedKeisok\Grayscale.P910_SpeedKeisok.exe.config
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Builds\Engine\Bin\P910_SpeedKeisok\Grayscale.P910_SpeedKeisok.exe
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Builds\Engine\Bin\P910_SpeedKeisok\Grayscale.P910_SpeedKeisok.pdb
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P910_SpeedKeisok\obj\Release\P910_SpeedKeisok.csprojAssemblyReference.cache
 C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P910_SpeedKeisok\obj\Release\Grayscale.P910_SpeedKeisok.Form1.resources
 C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P910_SpeedKeisok\obj\Release\Grayscale.Properties.Resources.resources
 C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P910_SpeedKeisok\obj\Release\Grayscale.P910_SpeedKeisok.Uc_Main.resources
 C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P910_SpeedKeisok\obj\Release\P910_SpeedKeisok.csproj.GenerateResource.cache
 C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P910_SpeedKeisok\obj\Release\P910_SpeedKeisok.csproj.CoreCompileInputs.cache
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P910_SpeedKeisok\obj\Release\P910_SpeedKeisok.csproj.CopyComplete
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P910_SpeedKeisok\obj\Release\Grayscale.P910_SpeedKeisok.exe
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P910_SpeedKeisok\obj\Release\Grayscale.P910_SpeedKeisok.pdb
