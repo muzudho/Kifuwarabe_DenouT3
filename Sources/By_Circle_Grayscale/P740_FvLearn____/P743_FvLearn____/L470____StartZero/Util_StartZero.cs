@@ -2,7 +2,7 @@
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P224Sky.L500Struct;
 using Grayscale.P258UtilSky258.L500UtilSky;
-using Grayscale.P321_KyokumHyoka.I250Struct;
+using Grayscale.P321KyokumHyoka.I250Struct;
 using Grayscale.P521_FeatureVect.I500Struct;
 using Grayscale.P531_Hyokakansu_.L500____Hyokakansu;
 using Grayscale.P743_FvLearn____.L___400_54List;

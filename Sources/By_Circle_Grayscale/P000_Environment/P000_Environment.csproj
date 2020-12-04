@@ -84,11 +84,11 @@
     <Compile Include="P027Settei\L510Xml\SetteiXmlFile.cs" />
     <Compile Include="P031Random\L500Struct\KwRandom.cs" />
     <Compile Include="P031Random\L500Struct\KwShuffle.cs" />
-    <Compile Include="P035Collection\L500Struct\Couple.cs" />
-    <Compile Include="P035Collection\L500Struct\List_OneAndMulti.cs" />
-    <Compile Include="P035Collection\L500Struct\Maps_OneAndMulti.cs" />
-    <Compile Include="P035Collection\L500Struct\Maps_OneAndMultiAndMulti.cs" />
-    <Compile Include="P035Collection\L500Struct\Maps_OneAndOne.cs" />
+    <Compile Include="P035Collection\Couple.cs" />
+    <Compile Include="P035Collection\List_OneAndMulti.cs" />
+    <Compile Include="P035Collection\Maps_OneAndMulti.cs" />
+    <Compile Include="P035Collection\Maps_OneAndMultiAndMulti.cs" />
+    <Compile Include="P035Collection\Maps_OneAndOne.cs" />
     <Compile Include="P055_Conv_Sy\L500Converter\Conv_Sy.cs" />
     <Compile Include="P057UtilSyColle\L500Util\Util_List_OneAndMulti.cs" />
     <Compile Include="P061ConstShogi_\L250Const\ConstShogi.cs" />

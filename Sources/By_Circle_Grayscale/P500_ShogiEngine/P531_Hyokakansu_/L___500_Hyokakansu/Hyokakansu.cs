@@ -1,6 +1,6 @@
 ﻿using Grayscale.P003Log.I500Struct;
 using Grayscale.P224Sky.L500Struct;
-using Grayscale.P321_KyokumHyoka.I250Struct;
+using Grayscale.P321KyokumHyoka.I250Struct;
 using Grayscale.P521_FeatureVect.I500Struct;
 
 namespace Grayscale.P531_Hyokakansu_.L___500_Hyokakansu

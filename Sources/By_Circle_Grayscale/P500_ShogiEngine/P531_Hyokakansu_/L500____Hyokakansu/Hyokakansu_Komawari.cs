@@ -4,7 +4,7 @@ using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P224Sky.L500Struct;
 using Grayscale.P238Seiza.L250Struct;
 using Grayscale.P238Seiza.L500Util;
-using Grayscale.P321_KyokumHyoka.I250Struct;
+using Grayscale.P321KyokumHyoka.I250Struct;
 using Grayscale.P521_FeatureVect.I500Struct;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 using System;
@@ -12,7 +12,7 @@ using Grayscale.P212ConvPside.L500Converter;
 
 #if DEBUG || LEARN
 using System.Text;
-using Grayscale.P321_KyokumHyoka.L250Struct;
+using Grayscale.P321KyokumHyoka.L250Struct;
 #endif
 
 namespace Grayscale.P531_Hyokakansu_.L500____Hyokakansu

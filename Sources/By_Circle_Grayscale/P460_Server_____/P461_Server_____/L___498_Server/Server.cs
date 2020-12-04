@@ -1,4 +1,4 @@
-﻿using Grayscale.P325_PnlTaikyoku.I250Struct;
+﻿using Grayscale.P325PnlTaikyoku.I250Struct;
 using Grayscale.P461_Server_____.L___497_EngineClient;
 
 namespace Grayscale.P461_Server_____.L___498_Server

@@ -2,8 +2,8 @@
 using Grayscale.P003Log.L500Struct;
 using Grayscale.P005Tushin.L500Util;
 using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P324_KifuTree___.I250Struct;
-using Grayscale.P341_Ittesasu___.L250____OperationA;
+using Grayscale.P324KifuTree.I250Struct;
+using Grayscale.P341Ittesasu.L250OperationA;
 using Grayscale.P461_Server_____.L___125_Receiver;
 using Grayscale.P461_Server_____.L___496_EngineWrapper;
 using Grayscale.P461_Server_____.L___497_EngineClient;

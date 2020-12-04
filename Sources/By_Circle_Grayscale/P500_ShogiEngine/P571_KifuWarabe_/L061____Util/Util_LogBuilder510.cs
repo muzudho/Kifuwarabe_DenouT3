@@ -9,7 +9,7 @@ using Grayscale.P222LogKaisetu.L250Struct;
 using Grayscale.P226_Tree_______.I500Struct;
 using Grayscale.P247_KyokumenWra.L500Struct;
 using Grayscale.P266_KyokumMoves.L500Util;
-using Grayscale.P324_KifuTree___.I250Struct;
+using Grayscale.P324KifuTree.I250Struct;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 using Grayscale.P266_KyokumMoves.L250____Log;

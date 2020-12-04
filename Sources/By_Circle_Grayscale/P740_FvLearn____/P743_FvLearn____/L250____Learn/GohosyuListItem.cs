@@ -1,4 +1,4 @@
-﻿using Grayscale.P321_KyokumHyoka.I250Struct;
+﻿using Grayscale.P321KyokumHyoka.I250Struct;
 using System;
 using System.Text;
 

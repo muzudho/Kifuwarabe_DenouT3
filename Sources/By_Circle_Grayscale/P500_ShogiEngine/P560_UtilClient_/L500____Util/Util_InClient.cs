@@ -5,9 +5,9 @@ using Grayscale.P146ConvSfen.L500Converter;
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P224Sky.L500Struct;
 using Grayscale.P307UtilSky.L500Util;
-using Grayscale.P324_KifuTree___.L250Struct;
-using Grayscale.P325_PnlTaikyoku.I250Struct;
-using Grayscale.P355_KifuParserA.L___500_Parser;
+using Grayscale.P324KifuTree.L250Struct;
+using Grayscale.P325PnlTaikyoku.I250Struct;
+using Grayscale.P355_KifuParserA.I500Parser;
 
 namespace Grayscale.P560_UtilClient_.L500Util
 {

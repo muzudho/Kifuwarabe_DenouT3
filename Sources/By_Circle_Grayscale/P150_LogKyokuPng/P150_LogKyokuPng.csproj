@@ -67,11 +67,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="P157KyokumenPng\L500Struct\KyokumenPngArgsImpl.cs" />
-    <Compile Include="P157KyokumenPng\L500Struct\KyokumenPngEnvironmentImpl.cs" />
-    <Compile Include="P157KyokumenPng\I500Struct\KyokumenPngArgs.cs" />
-    <Compile Include="P157KyokumenPng\I500Struct\KyokumenPngArgs_FoodOrDropKoma.cs" />
-    <Compile Include="P157KyokumenPng\I500Struct\KyokumenPngEnvironment.cs" />
+    <Compile Include="P157KyokumenPng\KyokumenPngArgsImpl.cs" />
+    <Compile Include="P157KyokumenPng\KyokumenPngEnvironmentImpl.cs" />
+    <Compile Include="P157KyokumenPng\KyokumenPngArgs.cs" />
+    <Compile Include="P157KyokumenPng\KyokumenPngArgs_FoodOrDropKoma.cs" />
+    <Compile Include="P157KyokumenPng\KyokumenPngEnvironment.cs" />
     <Compile Include="P158LogKyokuPng\L250UtilPaint\Util_KyokumenPngPainter.cs" />
     <Compile Include="P158LogKyokuPng\L500UtilWriter\Util_KyokumenPng_Writer.cs" />
     <Compile Include="Program.cs" />

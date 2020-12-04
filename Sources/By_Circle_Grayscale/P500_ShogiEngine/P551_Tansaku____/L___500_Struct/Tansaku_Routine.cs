@@ -1,5 +1,5 @@
 ﻿using Grayscale.P003Log.I500Struct;
-using Grayscale.P324_KifuTree___.I250Struct;
+using Grayscale.P324KifuTree.I250Struct;
 using Grayscale.P542_Scoreing___.L___250_Args;
 using Grayscale.P554_TansaFukasa.I500Struct;
 
