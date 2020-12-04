@@ -16,28 +16,28 @@ using Grayscale.P542Scoreing.L250Args;
 using Grayscale.P440KifuTreeLog.L500Struct;
 using Grayscale.P571KifuWarabe.L100Shogisasi;
 using Grayscale.P571KifuWarabe.L500KifuWarabe;
-using Grayscale.P743_FvLearn____.L___250_Learn;
-using Grayscale.P743_FvLearn____.L250____Learn;
+using Grayscale.P743FvLearn.I250Learn;
+using Grayscale.P743FvLearn.L250Learn;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using Grayscale.P743_FvLearn____.L260____View;
-using Grayscale.P743_FvLearn____.L460____Scoreing;
-using Grayscale.P743_FvLearn____.L470____StartZero;
-using Grayscale.P743_FvLearn____.L600____Operation;
-using Grayscale.P743_FvLearn____.L510____AutoKifuRead;
-using Grayscale.P743_FvLearn____.L480____Functions;
-using Grayscale.P743_FvLearn____.L___450_Tyoseiryo;
-using Grayscale.P743_FvLearn____.L450____Tyoseiryo;
-using Grayscale.P743_FvLearn____.L___490_StopLearning;
-using Grayscale.P743_FvLearn____.L490____StopLearning;
+using Grayscale.P743FvLearn.L260View;
+using Grayscale.P743FvLearn.L460Scoreing;
+using Grayscale.P743FvLearn.L470StartZero;
+using Grayscale.P743FvLearn.L600Operation;
+using Grayscale.P743FvLearn.L510AutoKifuRead;
+using Grayscale.P743FvLearn.L480Functions;
+using Grayscale.P743FvLearn.I450Tyoseiryo;
+using Grayscale.P743FvLearn.L450Tyoseiryo;
+using Grayscale.P743FvLearn.I490StopLearning;
+using Grayscale.P743FvLearn.L490StopLearning;
 using Grayscale.P031Random.L500Struct;
-using Grayscale.P743_FvLearn____.L508____AutoSasiteRush;
+using Grayscale.P743FvLearn.L508AutoSasiteRush;
 
-namespace Grayscale.P743_FvLearn____
+namespace Grayscale.P743FvLearn
 {
     public partial class Uc_Main : UserControl
     {

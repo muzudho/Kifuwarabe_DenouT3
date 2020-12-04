@@ -1,4 +1,4 @@
-﻿namespace Grayscale.P743_FvLearn____
+﻿namespace Grayscale.P743FvLearn
 {
     partial class Form1
     {
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uc_Main1 = new P743_FvLearn____.Uc_Main();
+            this.uc_Main1 = new P743FvLearn.Uc_Main();
             this.SuspendLayout();
             // 
             // uc_Main1

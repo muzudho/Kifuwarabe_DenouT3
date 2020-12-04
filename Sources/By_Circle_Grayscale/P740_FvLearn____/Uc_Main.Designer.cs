@@ -1,4 +1,4 @@
-﻿namespace Grayscale.P743_FvLearn____
+﻿namespace Grayscale.P743FvLearn
 {
     partial class Uc_Main
     {
