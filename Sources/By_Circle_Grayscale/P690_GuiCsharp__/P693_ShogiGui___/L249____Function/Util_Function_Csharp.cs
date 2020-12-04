@@ -15,7 +15,7 @@ using Grayscale.P258UtilSky258.L500UtilSky;
 using Grayscale.P296ConvJsa.L500Converter;
 using Grayscale.P324KifuTree.I250Struct;
 using Grayscale.P324KifuTree.L250Struct;
-using Grayscale.P461_Server_____.L250____Util;
+using Grayscale.P461Server.L250Util;
 using Grayscale.P693_ShogiGui___.L___080_Shape;
 using Grayscale.P693_ShogiGui___.L___499_Repaint;
 using Grayscale.P693_ShogiGui___.L___500_Gui;

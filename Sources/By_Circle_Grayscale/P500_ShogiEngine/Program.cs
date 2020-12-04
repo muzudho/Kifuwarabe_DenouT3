@@ -1,7 +1,7 @@
 ﻿using System;
 using Grayscale.P003Log.I500Struct;
 using Grayscale.P003Log.L500Struct;
-using Grayscale.P571_KifuWarabe_.L500____KifuWarabe;
+using Grayscale.P571KifuWarabe.L500KifuWarabe;
 
 namespace Grayscale.P580_Form_______
 {

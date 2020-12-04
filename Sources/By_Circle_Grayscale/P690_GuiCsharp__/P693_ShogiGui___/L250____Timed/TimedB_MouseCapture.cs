@@ -26,7 +26,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 using Grayscale.P239ConvWords.L500Converter;
-using Grayscale.P461_Server_____.L250____Util;
+using Grayscale.P461Server.L250Util;
 using Grayscale.P211WordShogi.L260Operator;
 using Grayscale.P693_ShogiGui___.L___492_Widgets;
 using Grayscale.P693_ShogiGui___.L___499_Repaint;

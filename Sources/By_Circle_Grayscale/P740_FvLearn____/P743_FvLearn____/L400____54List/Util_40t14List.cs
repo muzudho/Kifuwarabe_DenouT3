@@ -7,8 +7,8 @@ using Grayscale.P224Sky.L500Struct;
 using Grayscale.P238Seiza.L250Struct;
 using Grayscale.P238Seiza.L500Util;
 using Grayscale.P258UtilSky258.L500UtilSky;
-using Grayscale.P521_FeatureVect.L500Struct;
-using Grayscale.P525_ConvFv_____.L500Converter;
+using Grayscale.P521FeatureVect.L500Struct;
+using Grayscale.P525ConvFv.L500Converter;
 using Grayscale.P743_FvLearn____.L___400_54List;
 using System.Text;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号

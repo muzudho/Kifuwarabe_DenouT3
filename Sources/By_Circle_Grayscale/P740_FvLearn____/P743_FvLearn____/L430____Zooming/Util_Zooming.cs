@@ -1,6 +1,6 @@
 ﻿using Grayscale.P003Log.I500Struct;
-using Grayscale.P521_FeatureVect.I500Struct;
-using Grayscale.P521_FeatureVect.L500Struct;
+using Grayscale.P521FeatureVect.I500Struct;
+using Grayscale.P521FeatureVect.L500Struct;
 using Grayscale.P743_FvLearn____.L420____Inspection;
 
 namespace Grayscale.P743_FvLearn____.L430____Zooming

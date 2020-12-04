@@ -59,12 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="P481_AimsServer_\L125____Receiver\Receiver_ForAimsImpl.cs" />
-    <Compile Include="P481_AimsServer_\L060____Phase\PhaseResult_AimsServer.cs" />
-    <Compile Include="P481_AimsServer_\L___070_ServerBase\AimsServerBase.cs" />
-    <Compile Include="P481_AimsServer_\L___060_Phase\Phase_AimsServer.cs" />
-    <Compile Include="P481_AimsServer_\L500____Server\AimsServerImpl.cs" />
-    <Compile Include="P481_AimsServer_\L___125_Receiver\Receiver_ForAims.cs" />
+    <Compile Include="P481AimsServer\Receiver_ForAimsImpl.cs" />
+    <Compile Include="P481AimsServer\PhaseResult_AimsServer.cs" />
+    <Compile Include="P481AimsServer\AimsServerBase.cs" />
+    <Compile Include="P481AimsServer\Phase_AimsServer.cs" />
+    <Compile Include="P481AimsServer\AimsServerImpl.cs" />
+    <Compile Include="P481AimsServer\Receiver_ForAims.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

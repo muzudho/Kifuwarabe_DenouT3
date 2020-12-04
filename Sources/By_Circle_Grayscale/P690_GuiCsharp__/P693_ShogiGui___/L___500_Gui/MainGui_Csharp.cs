@@ -1,7 +1,7 @@
 ﻿using Grayscale.P003Log.I500Struct;
 using Grayscale.P238Seiza.L250Struct;
 using Grayscale.P325PnlTaikyoku.I250Struct;
-using Grayscale.P461_Server_____.L___498_Server;
+using Grayscale.P461Server.L498Server;
 using Grayscale.P693_ShogiGui___.L___080_Shape;
 using Grayscale.P693_ShogiGui___.L___081_Canvas;
 using Grayscale.P693_ShogiGui___.L___125_Scene;

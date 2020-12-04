@@ -65,15 +65,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="P461_Server_____\L250____Util\Util_Functions_Server.cs" />
-    <Compile Include="P461_Server_____\L125____Receiver\Receiver_ForCsharpVsImpl.cs" />
-    <Compile Include="P461_Server_____\L496____EngineWrapper\EngineProcessWrapperImpl.cs" />
-    <Compile Include="P461_Server_____\L498____Server\Server_Impl.cs" />
-    <Compile Include="P461_Server_____\L497____EngineClient\EngineClient_Impl.cs" />
-    <Compile Include="P461_Server_____\L___125_Receiver\Receiver.cs" />
-    <Compile Include="P461_Server_____\L___496_EngineWrapper\EngineProcessWrapper.cs" />
-    <Compile Include="P461_Server_____\L___497_EngineClient\EngineClient.cs" />
-    <Compile Include="P461_Server_____\L___498_Server\Server.cs" />
+    <Compile Include="P461Server\Util_Functions_Server.cs" />
+    <Compile Include="P461Server\Receiver_ForCsharpVsImpl.cs" />
+    <Compile Include="P461Server\EngineProcessWrapperImpl.cs" />
+    <Compile Include="P461Server\Server_Impl.cs" />
+    <Compile Include="P461Server\EngineClient_Impl.cs" />
+    <Compile Include="P461Server\Receiver.cs" />
+    <Compile Include="P461Server\EngineProcessWrapper.cs" />
+    <Compile Include="P461Server\EngineClient.cs" />
+    <Compile Include="P461Server\Server.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

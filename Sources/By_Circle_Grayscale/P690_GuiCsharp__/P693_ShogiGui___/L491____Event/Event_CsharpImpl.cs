@@ -12,7 +12,7 @@ using Grayscale.P276SeizaStartp.L500Struct;
 using Grayscale.P324KifuTree.I250Struct;
 using Grayscale.P324KifuTree.L250Struct;
 using Grayscale.P341Ittesasu.L125UtilB;
-using Grayscale.P461_Server_____.L250____Util;
+using Grayscale.P461Server.L250Util;
 using Grayscale.P693_ShogiGui___.L___080_Shape;
 using Grayscale.P693_ShogiGui___.L___125_Scene;
 using Grayscale.P693_ShogiGui___.L___491_Event;

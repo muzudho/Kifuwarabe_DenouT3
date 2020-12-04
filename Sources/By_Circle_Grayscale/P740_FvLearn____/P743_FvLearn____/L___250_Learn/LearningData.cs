@@ -4,8 +4,8 @@ using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P224Sky.L500Struct;
 using Grayscale.P321KyokumHyoka.I250Struct;
 using Grayscale.P324KifuTree.I250Struct;
-using Grayscale.P521_FeatureVect.I500Struct;
-using Grayscale.P542_Scoreing___.L___250_Args;
+using Grayscale.P521FeatureVect.I500Struct;
+using Grayscale.P542Scoreing.I250Args;
 
 #if DEBUG
 

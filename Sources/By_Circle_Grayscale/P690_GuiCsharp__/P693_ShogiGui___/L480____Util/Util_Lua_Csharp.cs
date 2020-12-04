@@ -11,7 +11,7 @@ using Grayscale.P256SeizaFinger.L250Struct;
 using Grayscale.P258UtilSky258.L500UtilSky;
 using Grayscale.P324KifuTree.I250Struct;
 using Grayscale.P324KifuTree.L250Struct;
-using Grayscale.P461_Server_____.L250____Util;
+using Grayscale.P461Server.L250Util;
 using Grayscale.P693_ShogiGui___.L___499_Repaint;
 using Grayscale.P693_ShogiGui___.L___500_Gui;
 using Grayscale.P693_ShogiGui___.L125____Scene;

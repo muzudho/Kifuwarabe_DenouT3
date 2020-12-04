@@ -6,13 +6,13 @@ using Grayscale.P226Tree.I500Struct;
 using Grayscale.P247KyokumenWra.L500Struct;
 using Grayscale.P321KyokumHyoka.I250Struct;
 using Grayscale.P324KifuTree.I250Struct;
-using Grayscale.P440_KifuTreeLog.L500Struct;
-using Grayscale.P521_FeatureVect.L500Struct;
-using Grayscale.P523_UtilFv_____.L510____UtilFvLoad;
-using Grayscale.P542_Scoreing___.L___250_Args;
-using Grayscale.P542_Scoreing___.L250____Args;
-using Grayscale.P571_KifuWarabe_.L100____Shogisasi;
-using Grayscale.P571_KifuWarabe_.L500____KifuWarabe;
+using Grayscale.P440KifuTreeLog.L500Struct;
+using Grayscale.P521FeatureVect.L500Struct;
+using Grayscale.P523UtilFv.L510UtilFvLoad;
+using Grayscale.P542Scoreing.I250Args;
+using Grayscale.P542Scoreing.L250Args;
+using Grayscale.P571KifuWarabe.L100Shogisasi;
+using Grayscale.P571KifuWarabe.L500KifuWarabe;
 using Grayscale.P743_FvLearn____.L250____Learn;
 using Grayscale.P743_FvLearn____.L260____View;
 using Grayscale.P743_FvLearn____.L460____Scoreing;
@@ -27,7 +27,7 @@ using Grayscale.P743_FvLearn____.L___400_54List;
 using Grayscale.P743_FvLearn____.L400____54List;
 
 #if DEBUG || LEARN
-using Grayscale.P523_UtilFv_____.L480____UtilFvEdit;
+using Grayscale.P523UtilFv.L480UtilFvEdit;
 #endif
 
 #if DEBUG
