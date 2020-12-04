@@ -1,14 +1,14 @@
 ﻿using Grayscale.P003Log.I500Struct;
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P224Sky.L500Struct;
-using Grayscale.P321_KyokumHyoka.L___250_Struct;
+using Grayscale.P321_KyokumHyoka.I250Struct;
 using Grayscale.P521_FeatureVect.I500Struct;
 using System;
 
 
 #if DEBUG || LEARN
 using System.Text;
-using Grayscale.P321_KyokumHyoka.L250____Struct;
+using Grayscale.P321_KyokumHyoka.L250Struct;
 #endif
 
 namespace Grayscale.P531_Hyokakansu_.L500____Hyokakansu

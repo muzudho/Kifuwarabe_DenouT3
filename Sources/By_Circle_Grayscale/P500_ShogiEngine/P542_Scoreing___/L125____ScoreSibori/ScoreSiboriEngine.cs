@@ -3,7 +3,7 @@ using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P226Tree.I500Struct;
 using Grayscale.P247KyokumenWra.L500Struct;
-using Grayscale.P324_KifuTree___.L___250_Struct;
+using Grayscale.P324_KifuTree___.I250Struct;
 using Grayscale.P542_Scoreing___.L___240_Shogisasi;
 using System.Collections.Generic;
 using System;

@@ -8,7 +8,7 @@ using Grayscale.P027Settei.L500Struct;
 using Grayscale.P236KomahaiyaTr.L500Table;
 using Grayscale.P248Michi.L500Word;
 using Grayscale.P250KomahaiyaEx.L500Util;
-using Grayscale.P270_ForcePromot.L250____Struct;
+using Grayscale.P270ForcePromot.L250Struct;
 using Grayscale.P523_UtilFv_____.L510____UtilFvLoad;
 using Grayscale.P542_Scoreing___.L___005_UsiLoop;
 using Grayscale.P542_Scoreing___.L___240_Shogisasi;

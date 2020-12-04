@@ -11,12 +11,12 @@ using Grayscale.P238Seiza.L250Struct;
 using Grayscale.P238Seiza.L500Util;
 using Grayscale.P247KyokumenWra.L500Struct;
 using Grayscale.P258UtilSky258.L500UtilSky;
-using Grayscale.P339_ConvKyokume.L500____Converter;
-using Grayscale.P353_Conv_SasuEx.L500____Converter;
+using Grayscale.P339_ConvKyokume.L500Converter;
+using Grayscale.P353_Conv_SasuEx.L500Converter;
 using System.Collections.Generic;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P360_Conv_Sasu__.L500____Converter
+namespace Grayscale.P360_Conv_Sasu__.L500Converter
 {
     public abstract class Conv_KomabetuMasus
     {

@@ -1,6 +1,6 @@
 ﻿using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P224Sky.L500Struct;
-using Grayscale.P324_KifuTree___.L___250_Struct;
+using Grayscale.P324_KifuTree___.I250Struct;
 using System.Collections.Generic;
 
 namespace Grayscale.P372_KyokuParser.L___500_Parser

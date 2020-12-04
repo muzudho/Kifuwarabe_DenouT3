@@ -4,14 +4,14 @@ using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P224Sky.L500Struct;
 using Grayscale.P238Seiza.L500Util;
 using Grayscale.P247KyokumenWra.L500Struct;
-using Grayscale.P324_KifuTree___.L___250_Struct;
-using Grayscale.P324_KifuTree___.L250____Struct;
-using Grayscale.P339_ConvKyokume.L500____Converter;
+using Grayscale.P324_KifuTree___.I250Struct;
+using Grayscale.P324_KifuTree___.L250Struct;
+using Grayscale.P339_ConvKyokume.L500Converter;
 using Grayscale.P341_Ittesasu___.L510____OperationB;
 using System.Collections.Generic;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P360_Conv_Sasu__.L500____Converter
+namespace Grayscale.P360_Conv_Sasu__.L500Converter
 {
 
     /// <summary>

@@ -12,7 +12,7 @@ using Grayscale.P234Komahaiyaku.L500Util;
 using Grayscale.P238Seiza.L250Struct;
 using Grayscale.P238Seiza.L500Util;
 using Grayscale.P258UtilSky258.L500UtilSky;
-using Grayscale.P324_KifuTree___.L250____Struct;
+using Grayscale.P324_KifuTree___.L250Struct;
 using Grayscale.P341_Ittesasu___.L250____OperationA;
 using Grayscale.P693_ShogiGui___.L___080_Shape;
 using Grayscale.P693_ShogiGui___.L___100_Widgets;

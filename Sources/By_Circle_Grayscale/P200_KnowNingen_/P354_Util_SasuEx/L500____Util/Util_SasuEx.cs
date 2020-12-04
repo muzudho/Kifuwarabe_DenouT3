@@ -6,15 +6,15 @@ using Grayscale.P224Sky.L500Struct;
 using Grayscale.P238Seiza.L250Struct;
 using Grayscale.P238Seiza.L500Util;
 using Grayscale.P258UtilSky258.L500UtilSky;
-using Grayscale.P269_Util_Sasu__.L500____Util;
-using Grayscale.P339_ConvKyokume.L500____Converter;
-using Grayscale.P353_Conv_SasuEx.L500____Converter;
+using Grayscale.P269UtilSasu.L500Util;
+using Grayscale.P339_ConvKyokume.L500Converter;
+using Grayscale.P353_Conv_SasuEx.L500Converter;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P354_Util_SasuEx.L500____Util
+namespace Grayscale.P354_Util_SasuEx.L500Util
 {
 
     /// <summary>

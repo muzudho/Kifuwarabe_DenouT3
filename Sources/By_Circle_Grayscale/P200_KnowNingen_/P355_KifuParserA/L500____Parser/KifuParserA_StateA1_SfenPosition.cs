@@ -3,8 +3,8 @@ using Grayscale.P003Log.L500Struct;
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P224Sky.L500Struct;
 using Grayscale.P258UtilSky258.L500UtilSky;
-using Grayscale.P324_KifuTree___.L250____Struct;
-using Grayscale.P325_PnlTaikyoku.L___250_Struct;
+using Grayscale.P324_KifuTree___.L250Struct;
+using Grayscale.P325_PnlTaikyoku.I250Struct;
 using Grayscale.P355_KifuParserA.L___500_Parser;
 using System;
 

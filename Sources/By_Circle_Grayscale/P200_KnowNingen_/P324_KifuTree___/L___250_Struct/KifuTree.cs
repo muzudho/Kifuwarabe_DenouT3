@@ -5,7 +5,7 @@ using Grayscale.P247KyokumenWra.L500Struct;
 using Grayscale.P323_Sennitite__.I500Struct;
 
 
-namespace Grayscale.P324_KifuTree___.L___250_Struct
+namespace Grayscale.P324_KifuTree___.I250Struct
 {
     public interface KifuTree : Tree<Starbeamable, KyokumenWrapper>
     {

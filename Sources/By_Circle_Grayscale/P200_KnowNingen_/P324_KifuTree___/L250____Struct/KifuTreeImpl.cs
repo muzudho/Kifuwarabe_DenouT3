@@ -3,7 +3,7 @@ using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P226Tree.I500Struct;
 using Grayscale.P226Tree.L500Struct;
 using Grayscale.P247KyokumenWra.L500Struct;
-using Grayscale.P324_KifuTree___.L___250_Struct;
+using Grayscale.P324_KifuTree___.I250Struct;
 using Grayscale.P323_Sennitite__.L500Struct;
 using Grayscale.P323_Sennitite__.I500Struct;
 
@@ -11,7 +11,7 @@ using Grayscale.P323_Sennitite__.I500Struct;
 using System.Diagnostics;
 #endif
 
-namespace Grayscale.P324_KifuTree___.L250____Struct
+namespace Grayscale.P324_KifuTree___.L250Struct
 {
     public class KifuTreeImpl : TreeImpl<Starbeamable, KyokumenWrapper>, KifuTree
     {

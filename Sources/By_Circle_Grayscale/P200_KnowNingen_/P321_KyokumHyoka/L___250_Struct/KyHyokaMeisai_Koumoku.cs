@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P321_KyokumHyoka.L___250_Struct
+namespace Grayscale.P321_KyokumHyoka.I250Struct
 {
 
     /// <summary>

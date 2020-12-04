@@ -11,7 +11,7 @@ using Grayscale.P258UtilSky258.L500UtilSky;
 using System.Collections.Generic;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P360_Conv_Sasu__.L500____Converter
+namespace Grayscale.P360_Conv_Sasu__.L500Converter
 {
     public abstract class Conv_SasitebetuKyokumenwrappers361
     {

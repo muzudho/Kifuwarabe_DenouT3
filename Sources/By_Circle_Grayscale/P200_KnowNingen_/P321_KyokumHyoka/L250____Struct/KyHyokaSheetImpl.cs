@@ -1,7 +1,7 @@
-﻿using Grayscale.P321_KyokumHyoka.L___250_Struct;
+﻿using Grayscale.P321_KyokumHyoka.I250Struct;
 using System.Collections.Generic;
 
-namespace Grayscale.P321_KyokumHyoka.L250____Struct
+namespace Grayscale.P321_KyokumHyoka.L250Struct
 {
     /// <summary>
     /// 局面を切り取ったときの、スコアの明細

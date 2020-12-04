@@ -3,7 +3,7 @@ using Grayscale.P226Tree.I500Struct;
 using Grayscale.P247KyokumenWra.L500Struct;
 
 
-namespace Grayscale.P361_Util_______.L500____Util
+namespace Grayscale.P361_Util_______.L500Util
 {
     public abstract class Util_NodeAssert361
     {

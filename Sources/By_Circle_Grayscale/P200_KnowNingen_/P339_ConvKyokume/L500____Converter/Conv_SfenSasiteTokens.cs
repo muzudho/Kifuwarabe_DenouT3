@@ -15,8 +15,8 @@ using Grayscale.P238Seiza.L500Util;
 using Grayscale.P245_SfenTransla.L500Util;
 using Grayscale.P247KyokumenWra.L500Struct;
 using Grayscale.P258UtilSky258.L500UtilSky;
-using Grayscale.P307_UtilSky____.L500____Util;
-using Grayscale.P324_KifuTree___.L___250_Struct;
+using Grayscale.P307UtilSky.L500Util;
+using Grayscale.P324_KifuTree___.I250Struct;
 using System;
 using System.Text;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
@@ -29,7 +29,7 @@ using Grayscale.P055_Conv_Sy.L500Converter;
 using System.Diagnostics;
 #endif
 
-namespace Grayscale.P339_ConvKyokume.L500____Converter
+namespace Grayscale.P339_ConvKyokume.L500Converter
 {
     public abstract class Conv_SfenSasiteTokens
     {

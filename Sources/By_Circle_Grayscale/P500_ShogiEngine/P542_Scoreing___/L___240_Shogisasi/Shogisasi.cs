@@ -1,5 +1,5 @@
 ﻿using Grayscale.P003Log.I500Struct;
-using Grayscale.P324_KifuTree___.L___250_Struct;
+using Grayscale.P324_KifuTree___.I250Struct;
 using Grayscale.P521_FeatureVect.I500Struct;
 
 namespace Grayscale.P542_Scoreing___.L___240_Shogisasi

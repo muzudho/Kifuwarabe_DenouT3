@@ -12,7 +12,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace Grayscale.P339_ConvKyokume.L500____Converter
+namespace Grayscale.P339_ConvKyokume.L500Converter
 {
 
     public abstract class Conv_SasiteStr_Sfen

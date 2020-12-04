@@ -1,7 +1,7 @@
-﻿using Grayscale.P324_KifuTree___.L___250_Struct;
-using Grayscale.P325_PnlTaikyoku.L___250_Struct;
+﻿using Grayscale.P324_KifuTree___.I250Struct;
+using Grayscale.P325_PnlTaikyoku.I250Struct;
 
-namespace Grayscale.P325_PnlTaikyoku.L250____Struct
+namespace Grayscale.P325_PnlTaikyoku.L250Struct
 {
     public class Model_TaikyokuImpl : Model_Taikyoku
     {

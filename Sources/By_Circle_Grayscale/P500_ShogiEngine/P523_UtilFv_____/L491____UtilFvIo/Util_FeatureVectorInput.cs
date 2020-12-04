@@ -6,7 +6,7 @@ using Grayscale.P213Komasyurui.L250Word;
 using Grayscale.P214Masu.L500Util;
 using Grayscale.P521_FeatureVect.I500Struct;
 using Grayscale.P521_FeatureVect.L500Struct;
-using Grayscale.P522_Conv_FvKoumoku.L500____Converter;
+using Grayscale.P522_Conv_FvKoumoku.L500Converter;
 using Grayscale.P523_UtilFv_____.L480____UtilFvEdit;
 using Grayscale.P523_UtilFv_____.L490____UtilFvFormat;
 using System;

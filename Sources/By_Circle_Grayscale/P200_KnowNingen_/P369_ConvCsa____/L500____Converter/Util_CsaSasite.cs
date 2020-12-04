@@ -13,7 +13,7 @@ using Grayscale.P258UtilSky258.L500UtilSky;
 using System.Diagnostics;
 using System.Text;
 
-namespace Grayscale.P369_ConvCsa____.L500____Converter
+namespace Grayscale.P369_ConvCsa____.L500Converter
 {
     public abstract class Util_CsaSasite
     {

@@ -1,5 +1,5 @@
 ﻿using Grayscale.P003Log.I500Struct;
-using Grayscale.P324_KifuTree___.L___250_Struct;
+using Grayscale.P324_KifuTree___.I250Struct;
 using Grayscale.P461_Server_____.L___125_Receiver;
 using Grayscale.P461_Server_____.L___496_EngineWrapper;
 

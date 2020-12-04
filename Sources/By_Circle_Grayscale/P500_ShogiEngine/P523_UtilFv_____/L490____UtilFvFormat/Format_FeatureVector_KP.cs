@@ -3,7 +3,7 @@ using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P214Masu.L500Util;
 using Grayscale.P521_FeatureVect.I500Struct;
 using Grayscale.P521_FeatureVect.L500Struct;
-using Grayscale.P522_Conv_FvKoumoku.L500____Converter;
+using Grayscale.P522_Conv_FvKoumoku.L500Converter;
 using System;
 using System.Collections.Generic;
 using System.Text;

@@ -2,10 +2,10 @@
 using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P226Tree.I500Struct;
 using Grayscale.P247KyokumenWra.L500Struct;
-using Grayscale.P321_KyokumHyoka.L___250_Struct;
+using Grayscale.P321_KyokumHyoka.I250Struct;
 
 
-namespace Grayscale.P324_KifuTree___.L___250_Struct
+namespace Grayscale.P324_KifuTree___.I250Struct
 {
 
     /// <summary>

@@ -8,10 +8,10 @@ using Grayscale.P238Seiza.L250Struct;
 using Grayscale.P238Seiza.L500Util;
 using Grayscale.P258UtilSky258.L500UtilSky;
 using Grayscale.P521_FeatureVect.L500Struct;
-using Grayscale.P522_Conv_FvKoumoku.L500____Converter;
+using Grayscale.P522_Conv_FvKoumoku.L500Converter;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
 
-namespace Grayscale.P525_ConvFv_____.L500____Converter
+namespace Grayscale.P525_ConvFv_____.L500Converter
 {
 
     /// <summary>

@@ -13,7 +13,7 @@ using Grayscale.P238Seiza.L500Util;
 using Grayscale.P256SeizaFinger.L250Struct;
 using Grayscale.P258UtilSky258.L500UtilSky;
 using Grayscale.P260Play.L500Query;
-using Grayscale.P267_ConvKiki___.L500____Converter;
+using Grayscale.P267ConvKiki.L500Converter;
 using System;
 using System.Collections.Generic;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号

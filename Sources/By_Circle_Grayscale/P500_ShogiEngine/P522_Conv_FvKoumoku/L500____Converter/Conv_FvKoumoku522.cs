@@ -3,7 +3,7 @@ using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P521_FeatureVect.I500Struct;
 using System;
 
-namespace Grayscale.P522_Conv_FvKoumoku.L500____Converter
+namespace Grayscale.P522_Conv_FvKoumoku.L500Converter
 {
     public abstract class Conv_FvKoumoku522
     {

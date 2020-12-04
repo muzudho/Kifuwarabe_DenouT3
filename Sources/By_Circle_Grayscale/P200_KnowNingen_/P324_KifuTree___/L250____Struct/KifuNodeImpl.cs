@@ -3,14 +3,14 @@ using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P226Tree.I500Struct;
 using Grayscale.P226Tree.L500Struct;
 using Grayscale.P247KyokumenWra.L500Struct;
-using Grayscale.P307_UtilSky____.L500____Util;
-using Grayscale.P321_KyokumHyoka.L___250_Struct;
-using Grayscale.P321_KyokumHyoka.L250____Struct;
-using Grayscale.P324_KifuTree___.L___250_Struct;
-using Grayscale.P339_ConvKyokume.L500____Converter;
+using Grayscale.P307UtilSky.L500Util;
+using Grayscale.P321_KyokumHyoka.I250Struct;
+using Grayscale.P321_KyokumHyoka.L250Struct;
+using Grayscale.P324_KifuTree___.I250Struct;
+using Grayscale.P339_ConvKyokume.L500Converter;
 using System.Text;
 
-namespace Grayscale.P324_KifuTree___.L250____Struct
+namespace Grayscale.P324_KifuTree___.L250Struct
 {
     public class KifuNodeImpl : NodeImpl<Starbeamable, KyokumenWrapper>, KifuNode
     {

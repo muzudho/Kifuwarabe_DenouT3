@@ -1,5 +1,5 @@
 ﻿using Grayscale.P003Log.I500Struct;
-using Grayscale.P325_PnlTaikyoku.L___250_Struct;
+using Grayscale.P325_PnlTaikyoku.I250Struct;
 
 namespace Grayscale.P355_KifuParserA.L___500_Parser
 {

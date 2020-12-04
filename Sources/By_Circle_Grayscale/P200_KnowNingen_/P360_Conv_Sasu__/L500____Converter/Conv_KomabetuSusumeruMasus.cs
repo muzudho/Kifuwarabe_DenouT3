@@ -5,10 +5,10 @@ using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P224Sky.L500Struct;
 using Grayscale.P238Seiza.L250Struct;
 using Grayscale.P238Seiza.L500Util;
-using Grayscale.P269_Util_Sasu__.L500____Util;
+using Grayscale.P269UtilSasu.L500Util;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P360_Conv_Sasu__.L500____Converter
+namespace Grayscale.P360_Conv_Sasu__.L500Converter
 {
     public abstract class Conv_KomabetuSusumeruMasus
     {

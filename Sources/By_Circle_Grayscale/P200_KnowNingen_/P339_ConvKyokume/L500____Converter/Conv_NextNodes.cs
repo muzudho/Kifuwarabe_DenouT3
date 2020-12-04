@@ -1,10 +1,10 @@
 ﻿using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P226Tree.I500Struct;
 using Grayscale.P247KyokumenWra.L500Struct;
-using Grayscale.P324_KifuTree___.L___250_Struct;
+using Grayscale.P324_KifuTree___.I250Struct;
 using System.Collections.Generic;
 
-namespace Grayscale.P339_ConvKyokume.L500____Converter
+namespace Grayscale.P339_ConvKyokume.L500Converter
 {
     public abstract class Conv_NextNodes
     {

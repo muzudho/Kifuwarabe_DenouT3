@@ -20,15 +20,15 @@ using Grayscale.P256SeizaFinger.L250Struct;
 using Grayscale.P258UtilSky258.L500UtilSky;
 using Grayscale.P258UtilSky258.L505ConvLogJson;
 using Grayscale.P260Play.L500Query;
-using Grayscale.P269_Util_Sasu__.L500____Util;
-using Grayscale.P324_KifuTree___.L___250_Struct;
-using Grayscale.P360_Conv_Sasu__.L500____Converter;
-using Grayscale.P361_Util_______.L500____Util;
+using Grayscale.P269UtilSasu.L500Util;
+using Grayscale.P324_KifuTree___.I250Struct;
+using Grayscale.P360_Conv_Sasu__.L500Converter;
+using Grayscale.P361_Util_______.L500Util;
 using System;
 using System.Collections.Generic;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P362_LegalMove__.L500____Util
+namespace Grayscale.P362_LegalMove__.L500Util
 {
 
 

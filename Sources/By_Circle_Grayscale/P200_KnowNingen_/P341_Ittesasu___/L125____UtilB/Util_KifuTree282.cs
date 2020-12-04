@@ -4,9 +4,9 @@ using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P226Tree.I500Struct;
 using Grayscale.P239ConvWords.L500Converter;
 using Grayscale.P247KyokumenWra.L500Struct;
-using Grayscale.P324_KifuTree___.L___250_Struct;
-using Grayscale.P324_KifuTree___.L250____Struct;
-using Grayscale.P339_ConvKyokume.L500____Converter;
+using Grayscale.P324_KifuTree___.I250Struct;
+using Grayscale.P324_KifuTree___.L250Struct;
+using Grayscale.P339_ConvKyokume.L500Converter;
 using System.Collections.Generic;
 using System.Diagnostics;
 

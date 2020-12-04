@@ -6,16 +6,16 @@ using Grayscale.P224Sky.L500Struct;
 using Grayscale.P238Seiza.L250Struct;
 using Grayscale.P247KyokumenWra.L500Struct;
 using Grayscale.P258UtilSky258.L500UtilSky;
-using Grayscale.P276_SeizaStartp.L500Struct;
-using Grayscale.P324_KifuTree___.L250____Struct;
-using Grayscale.P325_PnlTaikyoku.L___250_Struct;
+using Grayscale.P276SeizaStartp.L500Struct;
+using Grayscale.P324_KifuTree___.L250Struct;
+using Grayscale.P325_PnlTaikyoku.I250Struct;
 using Grayscale.P341_Ittesasu___.L500____UtilA;
 using Grayscale.P355_KifuParserA.L___500_Parser;
 using Grayscale.P372_KyokuParser.L___500_Parser;
 using Grayscale.P372_KyokuParser.L500____Parser;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P373_ConvStartpo.L500____Converter
+namespace Grayscale.P373_ConvStartpo.L500Converter
 {
     public abstract class Conv_StartposImporter
     {

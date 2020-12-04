@@ -17,7 +17,7 @@ using Grayscale.P238Seiza.L500Util;
 using Grayscale.P239ConvWords.L500Converter;
 using Grayscale.P247KyokumenWra.L500Struct;
 using Grayscale.P258UtilSky258.L500UtilSky;
-using Grayscale.P324_KifuTree___.L___250_Struct;
+using Grayscale.P324_KifuTree___.I250Struct;
 using System.Diagnostics;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 

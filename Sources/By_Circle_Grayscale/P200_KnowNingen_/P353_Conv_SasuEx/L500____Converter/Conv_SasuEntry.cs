@@ -1,11 +1,11 @@
 ﻿using Grayscale.P003Log.I500Struct;
 using Grayscale.P224Sky.L500Struct;
 using Grayscale.P247KyokumenWra.L500Struct;
-using Grayscale.P324_KifuTree___.L___250_Struct;
-using Grayscale.P324_KifuTree___.L250____Struct;
+using Grayscale.P324_KifuTree___.I250Struct;
+using Grayscale.P324_KifuTree___.L250Struct;
 using Grayscale.P341_Ittesasu___.L510____OperationB;
 
-namespace Grayscale.P353_Conv_SasuEx.L500____Converter
+namespace Grayscale.P353_Conv_SasuEx.L500Converter
 {
     public abstract class Conv_SasuEntry
     {

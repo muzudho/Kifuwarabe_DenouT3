@@ -2,18 +2,18 @@
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P224Sky.L500Struct;
 using Grayscale.P239ConvWords.L500Converter;
-using Grayscale.P321_KyokumHyoka.L250____Struct;
-using Grayscale.P324_KifuTree___.L___250_Struct;
+using Grayscale.P321_KyokumHyoka.L250Struct;
+using Grayscale.P324_KifuTree___.I250Struct;
 using Grayscale.P531_Hyokakansu_.L___500_Hyokakansu;
 using Grayscale.P531_Hyokakansu_.L510____HyokakansuColl;
 using Grayscale.P542_Scoreing___.L___250_Args;
 using System;
 
 #if DEBUG || LEARN
-using Grayscale.P321_KyokumHyoka.L___250_Struct;
+using Grayscale.P321_KyokumHyoka.I250Struct;
 #endif
 
-namespace Grayscale.P542_Scoreing___.L500____Util
+namespace Grayscale.P542_Scoreing___.L500Util
 {
     /// <summary>
     /// 得点付けを行います。

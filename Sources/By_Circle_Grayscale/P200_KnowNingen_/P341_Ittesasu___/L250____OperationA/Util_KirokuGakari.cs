@@ -5,10 +5,10 @@ using Grayscale.P224Sky.L500Struct;
 using Grayscale.P226Tree.I500Struct;
 using Grayscale.P247KyokumenWra.L500Struct;
 using Grayscale.P258UtilSky258.L500UtilSky;
-using Grayscale.P296_ConvJsa____.L500____Converter;
-using Grayscale.P324_KifuTree___.L___250_Struct;
-using Grayscale.P324_KifuTree___.L250____Struct;
-using Grayscale.P339_ConvKyokume.L500____Converter;
+using Grayscale.P296ConvJsa.L500Converter;
+using Grayscale.P324_KifuTree___.I250Struct;
+using Grayscale.P324_KifuTree___.L250Struct;
+using Grayscale.P339_ConvKyokume.L500Converter;
 using Grayscale.P341_Ittesasu___.L125____UtilB;
 using System.Text;
 

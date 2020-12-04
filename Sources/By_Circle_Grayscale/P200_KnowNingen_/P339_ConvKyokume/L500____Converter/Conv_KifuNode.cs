@@ -9,11 +9,11 @@ using Grayscale.P234Komahaiyaku.L500Util;
 using Grayscale.P238Seiza.L250Struct;
 using Grayscale.P238Seiza.L500Util;
 using Grayscale.P258UtilSky258.L500UtilSky;
-using Grayscale.P324_KifuTree___.L___250_Struct;
+using Grayscale.P324_KifuTree___.I250Struct;
 using System.Text;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P339_ConvKyokume.L500____Converter
+namespace Grayscale.P339_ConvKyokume.L500Converter
 {
     public abstract class Conv_KifuNode
     {

@@ -1,6 +1,6 @@
-﻿using Grayscale.P321_KyokumHyoka.L___250_Struct;
+﻿using Grayscale.P321_KyokumHyoka.I250Struct;
 
-namespace Grayscale.P321_KyokumHyoka.L250____Struct
+namespace Grayscale.P321_KyokumHyoka.L250Struct
 {
 
     /// <summary>a

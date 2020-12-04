@@ -1,9 +1,9 @@
 ﻿using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P224Sky.L500Struct;
 using Grayscale.P258UtilSky258.L500UtilSky;
-using Grayscale.P325_PnlTaikyoku.L___250_Struct;
+using Grayscale.P325_PnlTaikyoku.I250Struct;
 
-namespace Grayscale.P325_PnlTaikyoku.L250____Struct
+namespace Grayscale.P325_PnlTaikyoku.L250Struct
 {
     public class Model_ManualImpl : Model_Manual
     {

@@ -7,7 +7,7 @@ using System.Text;
 
 #endif
 
-namespace Grayscale.P370_LogGraphiEx.L500____Util
+namespace Grayscale.P370_LogGraphiEx.L500Util
 {
     public abstract class Conv_KaisetuBoards
     {

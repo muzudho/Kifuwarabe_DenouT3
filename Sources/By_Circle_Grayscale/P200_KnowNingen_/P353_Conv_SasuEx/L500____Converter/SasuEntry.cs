@@ -2,7 +2,7 @@
 using Grayscale.P218Starlight.I500Struct;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P353_Conv_SasuEx.L500____Converter
+namespace Grayscale.P353_Conv_SasuEx.L500Converter
 {
     public class SasuEntry
     {
