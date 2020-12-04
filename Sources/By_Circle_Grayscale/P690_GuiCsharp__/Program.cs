@@ -4,8 +4,8 @@
 using Grayscale.P003Log.I500Struct;
 using Grayscale.P003Log.L500Struct;
 using Grayscale.P027Settei.L500Struct;
-using Grayscale.P693_ShogiGui___.L492____Widgets;
-using Grayscale.P693_ShogiGui___.L500____GUI;
+using Grayscale.P693ShogiGui.L492Widgets;
+using Grayscale.P693ShogiGui.L500GUI;
 using System;
 using System.Windows.Forms;
 

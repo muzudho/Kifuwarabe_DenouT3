@@ -1,7 +1,7 @@
 ﻿using Grayscale.P003Log.I500Struct;
 using Grayscale.P341Ittesasu.L250OperationA;
-using Grayscale.P693_ShogiGui___.L___500_Gui;
-using Grayscale.P693_ShogiGui___.L500____GUI;
+using Grayscale.P693ShogiGui.I500Gui;
+using Grayscale.P693ShogiGui.L500GUI;
 using Grayscale.P803_GuiCsharpVs.L492____Widget;
 using System.Text;
 

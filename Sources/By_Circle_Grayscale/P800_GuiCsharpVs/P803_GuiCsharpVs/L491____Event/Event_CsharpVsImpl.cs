@@ -1,12 +1,12 @@
 ﻿using Grayscale.P003Log.I500Struct;
-using Grayscale.P693_ShogiGui___.L___080_Shape;
-using Grayscale.P693_ShogiGui___.L___491_Event;
-using Grayscale.P693_ShogiGui___.L___500_Gui;
-using Grayscale.P693_ShogiGui___.L___510_Form;
-using Grayscale.P693_ShogiGui___.L500____GUI;
+using Grayscale.P693ShogiGui.I080Shape;
+using Grayscale.P693ShogiGui.I491Event;
+using Grayscale.P693ShogiGui.I500Gui;
+using Grayscale.P693ShogiGui.I510Form;
+using Grayscale.P693ShogiGui.L500GUI;
 using Grayscale.P699_Form_______;
 
-namespace Grayscale.P803_GuiCsharpVs.L491____Event
+namespace Grayscale.P803_GuiCsharpVs.L491Event
 {
     /// <summary>
     /// シングルトン

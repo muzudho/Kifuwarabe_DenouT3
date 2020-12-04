@@ -1,6 +1,6 @@
 ﻿using Grayscale.P003Log.I500Struct;
 using Grayscale.P003Log.L500Struct;
-using Grayscale.P693_ShogiGui___.L500____GUI;
+using Grayscale.P693ShogiGui.L500GUI;
 using Grayscale.P699_Form_______;
 using System;
 using System.Windows.Forms;

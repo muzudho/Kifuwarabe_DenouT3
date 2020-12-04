@@ -1,7 +1,7 @@
-﻿using Grayscale.P693_ShogiGui___.L___492_Widgets;
-using Grayscale.P693_ShogiGui___.L___500_Gui;
-using Grayscale.P693_ShogiGui___.L492____Widgets;
-using Grayscale.P803_GuiCsharpVs.L491____Event;
+﻿using Grayscale.P693ShogiGui.I492Widgets;
+using Grayscale.P693ShogiGui.I500Gui;
+using Grayscale.P693ShogiGui.L492Widgets;
+using Grayscale.P803_GuiCsharpVs.L491Event;
 
 namespace Grayscale.P803_GuiCsharpVs.L492____Widget
 {

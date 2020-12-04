@@ -1,4 +1,4 @@
-﻿using Grayscale.P693_ShogiGui___.L500____GUI;
+﻿using Grayscale.P693ShogiGui.L500GUI;
 using System.Windows.Forms;
 
 namespace Grayscale.P699_Form_______
