@@ -72,8 +72,8 @@
     <Compile Include="P157KyokumenPng\KyokumenPngArgs.cs" />
     <Compile Include="P157KyokumenPng\KyokumenPngArgs_FoodOrDropKoma.cs" />
     <Compile Include="P157KyokumenPng\KyokumenPngEnvironment.cs" />
-    <Compile Include="P158LogKyokuPng\L250UtilPaint\Util_KyokumenPngPainter.cs" />
-    <Compile Include="P158LogKyokuPng\L500UtilWriter\Util_KyokumenPng_Writer.cs" />
+    <Compile Include="P158LogKyokuPng\Util_KyokumenPngPainter.cs" />
+    <Compile Include="P158LogKyokuPng\Util_KyokumenPng_Writer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestProgram.cs" />

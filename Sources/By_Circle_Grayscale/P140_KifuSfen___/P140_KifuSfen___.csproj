@@ -67,18 +67,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="P147FormatSfen\L260Format\Format_Kyokumen1.cs" />
-    <Compile Include="P146ConvSfen\L500Converter\Conv_Sfenstring146.cs" />
-    <Compile Include="P146ConvSfen\L500Converter\Conv_SfenMotigomaToken.cs" />
-    <Compile Include="P145SfenStruct\I250Struct\RO_Kyokumen1_ForFormat.cs" />
-    <Compile Include="P145SfenStruct\I250Struct\RO_Kyokumen2_ForTokenize.cs" />
-    <Compile Include="P145SfenStruct\L250Struct\RO_Kyokumen1_ForFormatImpl.cs" />
-    <Compile Include="P145SfenStruct\L250Struct\RO_Kyokumen2_ForTokenizeImpl.cs" />
-    <Compile Include="P145SfenStruct\L250Struct\SfenstringImpl.cs" />
-    <Compile Include="P144ConvSujiDan\L500Converter\Conv_SujiDan.cs" />
-    <Compile Include="P145SfenStruct\L500Util\Util_RO_Kyokumen2.cs" />
-    <Compile Include="P145SfenStruct\L250Struct\Word_Sfen.cs" />
-    <Compile Include="P146ConvSfen\L500Converter\Conv_SfenSasitesText.cs" />
+    <Compile Include="P147FormatSfen\Format_Kyokumen1.cs" />
+    <Compile Include="P146ConvSfen\Conv_Sfenstring146.cs" />
+    <Compile Include="P146ConvSfen\Conv_SfenMotigomaToken.cs" />
+    <Compile Include="P145SfenStruct\RO_Kyokumen1_ForFormat.cs" />
+    <Compile Include="P145SfenStruct\RO_Kyokumen2_ForTokenize.cs" />
+    <Compile Include="P145SfenStruct\RO_Kyokumen1_ForFormatImpl.cs" />
+    <Compile Include="P145SfenStruct\RO_Kyokumen2_ForTokenizeImpl.cs" />
+    <Compile Include="P145SfenStruct\SfenstringImpl.cs" />
+    <Compile Include="P144ConvSujiDan\Conv_SujiDan.cs" />
+    <Compile Include="P145SfenStruct\Util_RO_Kyokumen2.cs" />
+    <Compile Include="P145SfenStruct\Word_Sfen.cs" />
+    <Compile Include="P146ConvSfen\Conv_SfenSasitesText.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
