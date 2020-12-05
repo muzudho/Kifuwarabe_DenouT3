@@ -83,7 +83,7 @@ namespace Grayscale.P360ConvSasu.L500Converter
         public static Dictionary<string, SasuEntry> ToSasitebetuSky1(
             Maps_OneAndOne<Finger, SySet<SyElement>> komabetuSusumuMasus,
             SkyConst src_Sky,
-            KwErrorHandler errH
+            IKwErrorHandler errH
         )
         {
             Dictionary<string, SasuEntry> result_komabetuEntry = new Dictionary<string, SasuEntry>();
@@ -126,7 +126,7 @@ namespace Grayscale.P360ConvSasu.L500Converter
 
         //Dictionary<Starbeamable, KyokumenWrapper>
         public static Dictionary<string, SasuEntry> KomabetuMasus_ToSasitebetuSky(
-            List_OneAndMulti<Finger, SySet<SyElement>> sMs, SkyConst src_Sky, KwErrorHandler errH)
+            List_OneAndMulti<Finger, SySet<SyElement>> sMs, SkyConst src_Sky, IKwErrorHandler errH)
         {
             Dictionary<string, SasuEntry> sasitebetuEntry = new Dictionary<string, SasuEntry>();
 

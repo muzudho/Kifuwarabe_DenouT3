@@ -8,34 +8,34 @@ namespace Grayscale.P003Log.L500Struct
     /// <summary>
     /// エラー・ハンドラーです。
     /// </summary>
-    public class ErrorHandlerImpl : KwErrorHandler
+    public class ErrorHandlerImpl : IKwErrorHandler
     {
         /// <summary>
         /// ロガー。
         /// </summary>
-        public KwLogger Logger
+        public IKwLogger Logger
         {
             get
             {
                 return this.logger;
             }
         }
-        private KwLogger logger;
+        private IKwLogger logger;
 
         /// <summary>
         /// 用途は任意のイベント・ハンドラー＜その１＞。主にフォームにログ出力するのに使う。
         /// </summary>
-        public DLGT_OnLogAppend Dlgt_OnLog1Append_or_Null{get;set;}
-        public DLGT_OnLogClear Dlgt_OnLog1Clear_or_Null { get; set; }
+        public DLGTOnLogAppend DlgtOnLog1AppendOrNull{get;set;}
+        public DLGTOnLogClear DlgtOnLog1ClearOrNull { get; set; }
 
         /// <summary>
         /// 用途は任意のイベント・ハンドラー＜その２＞。主にフォームにログ出力するのに使う。
         /// </summary>
-        public DLGT_OnLogAppend Dlgt_OnNaibuDataAppend_or_Null { get; set; }
-        public DLGT_OnLogClear Dlgt_OnNaibuDataClear_or_Null { get; set; }
+        public DLGTOnLogAppend DlgtOnNaibuDataAppendOrNull { get; set; }
+        public DLGTOnLogClear DlgtOnNaibuDataClearOrNull { get; set; }
 
 
-        public ErrorHandlerImpl( KwLogger logTag)
+        public ErrorHandlerImpl( IKwLogger logTag)
         {
             this.logger = logTag;
         }
@@ -54,7 +54,7 @@ namespace Grayscale.P003Log.L500Struct
             Debug.Fail(message);
 
             // どうにもできないので  ログだけ取って、上に投げます。
-            this.Logger.WriteLine_Error(message);
+            this.Logger.WriteLineError(message);
             // ログ出力に失敗することがありますが、無視します。
         }
 
@@ -72,7 +72,7 @@ namespace Grayscale.P003Log.L500Struct
             Debug.Fail(message);
 
             // どうにもできないので  ログだけ取って、上に投げます。
-            this.Logger.WriteLine_Error(message);
+            this.Logger.WriteLineError(message);
             // ログ出力に失敗することがありますが、無視します。
         }
     }

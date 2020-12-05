@@ -32,7 +32,7 @@ namespace Grayscale.P354UtilSasuEx.L500Util
         public static Dictionary<string, SasuEntry> CreateNariSasite(
             SkyConst src_Sky,
             Dictionary<string, SasuEntry> a_sasitebetuEntry,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             //----------------------------------------

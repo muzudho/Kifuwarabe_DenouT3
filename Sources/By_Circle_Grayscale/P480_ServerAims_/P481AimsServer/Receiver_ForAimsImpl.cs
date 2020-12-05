@@ -42,7 +42,7 @@ namespace Grayscale.P481AimsServer.L125Receiver
         /// <param name="e"></param>
         public override void OnListenUpload_Async(object sender, DataReceivedEventArgs e)
         {
-            KwErrorHandler errH = Util_OwataMinister.AIMS_DEFAULT;
+            IKwErrorHandler errH = UtilOwataMinister.AimsDefault;
 
             string line = e.Data;
 

@@ -107,7 +107,7 @@ namespace Grayscale.P542Scoreing.L500Util
         public static void DoScoreing_Kyokumen(
             KifuNode node_yomi_mutable,
             EvaluationArgs args,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             //----------------------------------------

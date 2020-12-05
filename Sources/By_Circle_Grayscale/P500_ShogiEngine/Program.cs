@@ -17,7 +17,7 @@ namespace Grayscale.P580_Form_______
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            KwErrorHandler errH = Util_OwataMinister.ENGINE_DEFAULT;
+            IKwErrorHandler errH = UtilOwataMinister.EngineDefault;
 
             // 将棋エンジン　きふわらべ
             KifuWarabeImpl kifuWarabe = new KifuWarabeImpl();

@@ -53,7 +53,7 @@ namespace Grayscale.P481AimsServer.L500Server
         {
         }
 
-        public void AtBody(KwErrorHandler errH)
+        public void AtBody(IKwErrorHandler errH)
         {
             PhaseResult_AimsServer phaseResult = PhaseResult_AimsServer.None;
 

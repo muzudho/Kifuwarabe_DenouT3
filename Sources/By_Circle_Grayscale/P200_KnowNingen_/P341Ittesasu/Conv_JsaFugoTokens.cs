@@ -50,7 +50,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             string strDaHyoji, //打
             out Starbeamable sasite,
             KifuTree kifu,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             Node<Starbeamable, KyokumenWrapper> siteiNode = kifu.CurNode;

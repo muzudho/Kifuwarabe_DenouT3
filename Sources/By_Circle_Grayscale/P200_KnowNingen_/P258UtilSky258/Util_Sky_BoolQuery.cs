@@ -27,7 +27,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// </summary>
         /// <param name="masus"></param>
         /// <returns></returns>
-        public static bool ExistsIn(Starlight sl, SySet<SyElement> masus, SkyConst src_Sky, KwErrorHandler errH)
+        public static bool ExistsIn(Starlight sl, SySet<SyElement> masus, SkyConst src_Sky, IKwErrorHandler errH)
         {
             bool matched = false;
 
@@ -234,7 +234,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
             }
             catch (Exception ex)
             {
-                Util_OwataMinister.ERROR.DonimoNaranAkirameta(ex, "IsDaAction:");// exceptionArea=" + exceptionArea
+                UtilOwataMinister.ERROR.DonimoNaranAkirameta(ex, "IsDaAction:");// exceptionArea=" + exceptionArea
                 throw ex;
             }
 

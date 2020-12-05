@@ -28,8 +28,8 @@ namespace Grayscale.P693ShogiGui.L125Scene
         private Point mouseLocation;
 
 
-        public KwErrorHandler Flg_logTag { get { return this.flg_logTag; } }
-        private KwErrorHandler flg_logTag;
+        public IKwErrorHandler Flg_logTag { get { return this.flg_logTag; } }
+        private IKwErrorHandler flg_logTag;
 
         public MouseEventState()
         {
@@ -39,7 +39,7 @@ namespace Grayscale.P693ShogiGui.L125Scene
             this.flg_logTag = null;
         }
 
-        public MouseEventState(SceneName name1, string windowName, MouseEventStateName name2, Point mouseLocation, KwErrorHandler logTag)
+        public MouseEventState(SceneName name1, string windowName, MouseEventStateName name2, Point mouseLocation, IKwErrorHandler logTag)
         {
             this.name1 = name1;
             this.windowName = windowName;

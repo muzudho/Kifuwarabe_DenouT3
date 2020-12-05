@@ -46,7 +46,7 @@ namespace Grayscale.P743FvLearn.L600Operation
         /// </summary>
         /// <param name="uc_Main"></param>
         /// <param name="tyoseiryo"></param>
-        public static void A_RankUp_SelectedSasite(Uc_Main uc_Main, float tyoseiryo, KwErrorHandler errH)
+        public static void A_RankUp_SelectedSasite(Uc_Main uc_Main, float tyoseiryo, IKwErrorHandler errH)
         {
             //----------------------------------------
             // 選択したノードを参考に、減点を行う。
@@ -105,7 +105,7 @@ namespace Grayscale.P743FvLearn.L600Operation
         /// <summary>
         /// 初期局面の評価値を 0 点にするようにFVを調整します。
         /// </summary>
-        public static void Do_ZeroStart(ref bool isRequest_ShowGohosyu, Uc_Main uc_Main, KwErrorHandler errH)
+        public static void Do_ZeroStart(ref bool isRequest_ShowGohosyu, Uc_Main uc_Main, IKwErrorHandler errH)
         {
             bool isRequestDoEvents = false;
             Util_StartZero.Adjust_HirateSyokiKyokumen_0ten_AndFvParamRange(ref isRequestDoEvents, uc_Main.LearningData.Fv, errH);
@@ -124,7 +124,7 @@ namespace Grayscale.P743FvLearn.L600Operation
         public static void Do_RankUpSasite(
             ref bool isRequest_ShowGohosyu,
             ref bool isRequest_ChangeKyokumenPng,
-            Uc_Main uc_Main, KwErrorHandler errH)
+            Uc_Main uc_Main, IKwErrorHandler errH)
         {
             // 評価値変化量
             float chosei_bairitu;
@@ -150,7 +150,7 @@ namespace Grayscale.P743FvLearn.L600Operation
         public static void Do_RankDownSasite(
             ref bool isRequest_ShowGohosyu,
             ref bool isRequest_ChangeKyokumenPng,
-            Uc_Main uc_Main, KwErrorHandler errH)
+            Uc_Main uc_Main, IKwErrorHandler errH)
         {
             // 評価値変化量
             float badScore;
@@ -217,7 +217,7 @@ namespace Grayscale.P743FvLearn.L600Operation
         //}
 
 
-        public static void Do_OpenFvCsv(Uc_Main uc_Main, KwErrorHandler errH)
+        public static void Do_OpenFvCsv(Uc_Main uc_Main, IKwErrorHandler errH)
         {
             if ("" != uc_Main.TxtFvFilepath.Text)
             {
@@ -270,7 +270,7 @@ namespace Grayscale.P743FvLearn.L600Operation
 
 
 
-        public static void Load_CsaKifu(Uc_Main uc_Main, KwErrorHandler errH)
+        public static void Load_CsaKifu(Uc_Main uc_Main, IKwErrorHandler errH)
         {
             uc_Main.LearningData.ReadKifu(uc_Main);
 
@@ -282,7 +282,7 @@ namespace Grayscale.P743FvLearn.L600Operation
             ref bool isRequest_ShowGohosyu,
             ref bool isRequest_ChangeKyokumenPng,
             string kifuFilepath,
-            Uc_Main uc_Main, KwErrorHandler errH)
+            Uc_Main uc_Main, IKwErrorHandler errH)
         {
             uc_Main.TxtKifuFilepath.Text = kifuFilepath;
 
@@ -313,7 +313,7 @@ namespace Grayscale.P743FvLearn.L600Operation
         public static void Setup_KifuTree(
             ref bool isRequest_ShowGohosyu,
             ref bool isRequest_ChangeKyokumenPng,
-            Uc_Main uc_Main, KwErrorHandler errH)
+            Uc_Main uc_Main, IKwErrorHandler errH)
         {
             {
                 KifuTree kifu_newHirate;

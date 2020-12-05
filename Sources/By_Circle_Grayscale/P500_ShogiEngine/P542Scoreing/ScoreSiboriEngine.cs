@@ -22,7 +22,7 @@ namespace Grayscale.P542Scoreing.L125ScoreSibori
         /// </summary>
         /// <param name="kifu"></param>
         /// <param name="atamanosumiCollection"></param>
-        public void EdaSibori_HighScore(KifuTree kifu, Shogisasi shogisasi, KwErrorHandler errH)
+        public void EdaSibori_HighScore(KifuTree kifu, Shogisasi shogisasi, IKwErrorHandler errH)
         {
             int exception_area = 0;
 
@@ -144,7 +144,7 @@ namespace Grayscale.P542Scoreing.L125ScoreSibori
         /// <returns></returns>
         private List<Node<Starbeamable, KyokumenWrapper>> RankingNode_WithJudge_ForeachNextNodes(
             Node<Starbeamable, KyokumenWrapper> hubNode,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             int exception_area = 0;

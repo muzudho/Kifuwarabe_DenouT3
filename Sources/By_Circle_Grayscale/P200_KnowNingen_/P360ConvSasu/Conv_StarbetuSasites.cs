@@ -29,7 +29,7 @@ namespace Grayscale.P360ConvSasu.L500Converter
         public static KifuNode ToNextNodes_AsHubNode(
             Maps_OneAndMulti<Finger,Starbeamable> komabetuAllSasite,
             SkyConst src_Sky,//Node<Starbeamable, KyokumenWrapper> to_parentNode,//親となる予定のノード
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             KifuNode hubNode = new KifuNodeImpl( null, null);//蝶番

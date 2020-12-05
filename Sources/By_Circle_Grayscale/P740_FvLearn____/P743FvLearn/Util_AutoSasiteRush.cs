@@ -39,7 +39,7 @@ namespace Grayscale.P743FvLearn.L508AutoSasiteRush
             ref bool isRequest_ShowGohosyu,
             ref bool isRequest_ChangeKyokumenPng,
             int renzokuTe,
-            Uc_Main uc_Main, KwErrorHandler errH
+            Uc_Main uc_Main, IKwErrorHandler errH
             )
         {
             out_isEndKifuread = false;

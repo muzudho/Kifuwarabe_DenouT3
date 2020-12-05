@@ -49,7 +49,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , KwErrorHandler errH2
+                    , IKwErrorHandler errH2
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
@@ -70,7 +70,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , KwErrorHandler errH
+                    , IKwErrorHandler errH
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
@@ -91,7 +91,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , KwErrorHandler errH
+                    , IKwErrorHandler errH
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
@@ -109,7 +109,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , KwErrorHandler errH
+                    , IKwErrorHandler errH
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
@@ -127,7 +127,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , KwErrorHandler errH
+                    , IKwErrorHandler errH
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
@@ -150,7 +150,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , KwErrorHandler errH
+                    , IKwErrorHandler errH
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
@@ -179,7 +179,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , KwErrorHandler errH
+                    , IKwErrorHandler errH
                     ) =>
                 {
                     MainGui_Csharp shogibanGui2 = (MainGui_Csharp)obj_shogiGui2;
@@ -195,7 +195,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , KwErrorHandler errH
+                    , IKwErrorHandler errH
                     ) =>
                 {
                     MainGui_Csharp shogibanGui2 = (MainGui_Csharp)obj_shogiGui2;
@@ -223,7 +223,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , KwErrorHandler errH2
+                    , IKwErrorHandler errH2
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
@@ -252,7 +252,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                         object obj_shogiGui2
                         , object userWidget2 // UerWidget
                         , object btnKoma_Selected2
-                        , KwErrorHandler errH2
+                        , IKwErrorHandler errH2
                         ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
@@ -270,7 +270,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , KwErrorHandler errH2
+                    , IKwErrorHandler errH2
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
@@ -286,7 +286,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , KwErrorHandler errH2
+                    , IKwErrorHandler errH2
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
@@ -303,7 +303,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , KwErrorHandler errH2
+                    , IKwErrorHandler errH2
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
@@ -319,7 +319,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , KwErrorHandler errH2
+                    , IKwErrorHandler errH2
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
@@ -479,7 +479,7 @@ namespace Grayscale.P693ShogiGui.L491Event
         private void After_NaruNaranai_ButtonPushed(
             MainGui_Csharp mainGui
             , Shape_BtnKoma btnTumandeiruKoma
-            , KwErrorHandler errH
+            , IKwErrorHandler errH
         )
         {
 

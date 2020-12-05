@@ -61,7 +61,7 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
         public static void A_Write_KifuTreeLog(
             KaisetuBoards logF_kiki,
             KifuTree kifu,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
 #if DEBUG
@@ -158,7 +158,7 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
             KifuTree kifu,
             string relFolder,
             KyokumenPngEnvironment reportEnvironment,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
 
@@ -212,7 +212,7 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
             KifuTree kifu,
             string relFolder,
             KyokumenPngEnvironment reportEnvironment,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             string fileName = "";

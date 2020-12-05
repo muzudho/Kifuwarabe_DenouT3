@@ -32,7 +32,7 @@ namespace Grayscale.P542Scoreing.L240Shogisasi
         KifuNode WA_Bestmove(
             bool isHonshogi,
             KifuTree kifu,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             );
 
     }

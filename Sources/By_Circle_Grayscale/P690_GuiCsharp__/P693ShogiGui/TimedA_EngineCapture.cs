@@ -24,7 +24,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
         }
 
 
-        public override void Step(KwErrorHandler errH)
+        public override void Step(IKwErrorHandler errH)
         {
             // 将棋エンジンからの入力が、input99 に溜まるものとします。
             if (0 < this.mainGui.ConsoleWindowGui.InputString99.Length)

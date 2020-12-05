@@ -163,7 +163,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
 
 
 
-        public void AtBody(out bool out_isTimeoutShutdown, KwErrorHandler errH)
+        public void AtBody(out bool out_isTimeoutShutdown, IKwErrorHandler errH)
         {
             out_isTimeoutShutdown = false;
             //PerformanceMetrics performanceMetrics = new PerformanceMetrics();//使ってない？
@@ -214,7 +214,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                 }
 
                 // 通信ログは必ず取ります。
-                errH.Logger.WriteLine_C(line);
+                errH.Logger.WriteLineC(line);
 
 #if NOOPABLE
                 if (this.owner.Option_enable_serverNoopable)
@@ -346,7 +346,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
 
         public void AtLoop_OnPosition(string line, ref PhaseResult_UsiLoop2 result_Usi)
         {
-            KwErrorHandler errH = Util_OwataMinister.ENGINE_DEFAULT;
+            IKwErrorHandler errH = UtilOwataMinister.EngineDefault;
 
             try
             {
@@ -487,14 +487,14 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
             catch (Exception ex)
             {
                 // エラー：どうにもできないので  ログだけ取って無視します。
-                Util_OwataMinister.ENGINE_DEFAULT.DonimoNaranAkirameta("Program「position」：" + ex.GetType().Name + "：" + ex.Message);
+                UtilOwataMinister.EngineDefault.DonimoNaranAkirameta("Program「position」：" + ex.GetType().Name + "：" + ex.Message);
             }
         }
         private void Log1(string message)
         {
-            Util_OwataMinister.ENGINE_DEFAULT.Logger.WriteLine_AddMemo(message);
+            UtilOwataMinister.EngineDefault.Logger.WriteLineAddMemo(message);
         }
-        private void Log2_Png_Tyokkin(string line, KifuNode kifuNode, KwErrorHandler errH)
+        private void Log2_Png_Tyokkin(string line, KifuNode kifuNode, IKwErrorHandler errH)
         {
             //OwataMinister.WARABE_ENGINE.Logger.WriteLine_AddMemo(
             //    Util_Sky307.Json_1Sky(this.Kifu.CurNode.Value.ToKyokumenConst, "現局面になっているのかなんだぜ☆？　line=[" + line + "]　棋譜＝" + KirokuGakari.ToJsaKifuText(this.Kifu, OwataMinister.WARABE_ENGINE),
@@ -600,7 +600,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
                 // どうにもできないので  ログだけ取って無視します。
-                Util_OwataMinister.ENGINE_DEFAULT.DonimoNaranAkirameta("Program「go ponder」：" + ex.GetType().Name + "：" + ex.Message);
+                UtilOwataMinister.EngineDefault.DonimoNaranAkirameta("Program「go ponder」：" + ex.GetType().Name + "：" + ex.Message);
             }
         }
 
@@ -612,7 +612,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
         /// <param name="result_Usi"></param>
         public void AtLoop_OnGo(string line, ref PhaseResult_UsiLoop2 result_Usi)
         {
-            KwErrorHandler errH = Util_OwataMinister.ENGINE_DEFAULT;
+            IKwErrorHandler errH = UtilOwataMinister.EngineDefault;
             int exceptionArea = 0;
 
             try
@@ -891,22 +891,22 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                 {
                     case 2100:
                         {
-                            Util_OwataMinister.ENGINE_DEFAULT.DonimoNaranAkirameta(ex, "マルチＰＶから、ベスト指し手をチョイスしようとしたときの１０です。");
+                            UtilOwataMinister.EngineDefault.DonimoNaranAkirameta(ex, "マルチＰＶから、ベスト指し手をチョイスしようとしたときの１０です。");
                             throw ex;
                         }
                     case 2200:
                         {
-                            Util_OwataMinister.ENGINE_DEFAULT.DonimoNaranAkirameta(ex, "マルチＰＶから、ベスト指し手をチョイスしようとしたときの４０です。");
+                            UtilOwataMinister.EngineDefault.DonimoNaranAkirameta(ex, "マルチＰＶから、ベスト指し手をチョイスしようとしたときの４０です。");
                             throw ex;
                         }
                     case 2300:
                         {
-                            Util_OwataMinister.ENGINE_DEFAULT.DonimoNaranAkirameta(ex, "マルチＰＶから、ベスト指し手をチョイスしようとしたときの５０です。");
+                            UtilOwataMinister.EngineDefault.DonimoNaranAkirameta(ex, "マルチＰＶから、ベスト指し手をチョイスしようとしたときの５０です。");
                             throw ex;
                         }
                     case 2400:
                         {
-                            Util_OwataMinister.ENGINE_DEFAULT.DonimoNaranAkirameta(ex, "マルチＰＶから、ベスト指し手をチョイスしようとしたときの９０です。");
+                            UtilOwataMinister.EngineDefault.DonimoNaranAkirameta(ex, "マルチＰＶから、ベスト指し手をチョイスしようとしたときの９０です。");
                             throw ex;
                         }
                     default:
@@ -915,7 +915,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                             //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
                             // どうにもできないので  ログだけ取って無視します。
-                            Util_OwataMinister.ENGINE_DEFAULT.DonimoNaranAkirameta("Program「go」：" + ex.GetType().Name + " " + ex.Message + "：goを受け取ったときです。：");
+                            UtilOwataMinister.EngineDefault.DonimoNaranAkirameta("Program「go」：" + ex.GetType().Name + " " + ex.Message + "：goを受け取ったときです。：");
                         }
                         break;
                 }
@@ -1023,7 +1023,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
                 // どうにもできないので  ログだけ取って無視します。
-                Util_OwataMinister.ENGINE_DEFAULT.DonimoNaranAkirameta("Program「stop」：" + ex.GetType().Name + " " + ex.Message);
+                UtilOwataMinister.EngineDefault.DonimoNaranAkirameta("Program「stop」：" + ex.GetType().Name + " " + ex.Message);
             }
         }
 
@@ -1085,7 +1085,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
             catch (Exception ex)
             {
                 // エラー続行
-                Util_OwataMinister.ENGINE_DEFAULT.DonimoNaranAkirameta(ex, "Program「gameover」：" + ex.GetType().Name + " " + ex.Message);
+                UtilOwataMinister.EngineDefault.DonimoNaranAkirameta(ex, "Program「gameover」：" + ex.GetType().Name + " " + ex.Message);
             }
         }
 

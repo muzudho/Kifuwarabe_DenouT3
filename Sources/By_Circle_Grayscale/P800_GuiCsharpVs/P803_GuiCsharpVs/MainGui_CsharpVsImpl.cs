@@ -23,7 +23,7 @@ namespace Grayscale.P803GuiCsharpVs.L500Gui
         /// 手番が替わったときの挙動を、ここに書きます。
         /// ************************************************************************************************************************
         /// </summary>
-        public override void ChangedTurn( KwErrorHandler errH)
+        public override void ChangedTurn( IKwErrorHandler errH)
         {
             this.Link_Server.EngineClient.OnChangedTurn(this.Link_Server.Model_Taikyoku.Kifu, errH);
         }
@@ -31,7 +31,7 @@ namespace Grayscale.P803GuiCsharpVs.L500Gui
         /// <summary>
         /// 将棋エンジンに、終了するように促します。
         /// </summary>
-        public override void Shutdown( KwErrorHandler errH)
+        public override void Shutdown( IKwErrorHandler errH)
         {
             this.Link_Server.EngineClient.Send_Shutdown(errH);
         }
@@ -39,7 +39,7 @@ namespace Grayscale.P803GuiCsharpVs.L500Gui
         /// <summary>
         /// 将棋エンジンに、ログを出すように促します。
         /// </summary>
-        public override void Logdase( KwErrorHandler errH)
+        public override void Logdase( IKwErrorHandler errH)
         {
             this.Link_Server.EngineClient.Send_Logdase(errH);
         }
@@ -49,7 +49,7 @@ namespace Grayscale.P803GuiCsharpVs.L500Gui
         /// 将棋エンジンを起動します。
         /// ************************************************************************************************************************
         /// </summary>
-        public override void Start_ShogiEngine(string shogiEngineFilePath, KwErrorHandler errH)
+        public override void Start_ShogiEngine(string shogiEngineFilePath, IKwErrorHandler errH)
         {
             this.Link_Server.EngineClient.Start(shogiEngineFilePath);
             this.Link_Server.EngineClient.ShogiEngineProcessWrapper.Send_Usi(errH);
@@ -59,7 +59,7 @@ namespace Grayscale.P803GuiCsharpVs.L500Gui
         /// コンピューターの先手
         /// (2020-11-21 sat) virtual --> override.
         /// </summary>
-        public override void Do_ComputerSente(KwErrorHandler errH)
+        public override void Do_ComputerSente(IKwErrorHandler errH)
         {
             this.Link_Server.EngineClient.ShogiEngineProcessWrapper.Send_Position(
                 Util_KirokuGakari.ToSfen_PositionCommand(this.Link_Server.Model_Taikyoku.Kifu), errH);
@@ -70,7 +70,7 @@ namespace Grayscale.P803GuiCsharpVs.L500Gui
         /// <summary>
         /// このアプリケーションソフトの開始時の処理。
         /// </summary>
-        public new void Load_AsStart(KwErrorHandler errH)
+        public new void Load_AsStart(IKwErrorHandler errH)
         {
             base.Load_AsStart(errH);
 

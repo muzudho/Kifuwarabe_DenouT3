@@ -61,7 +61,7 @@ namespace Grayscale.P158LogKyokuPng.L500UtilWriter
                 relFolder,
                 outFile,
                 reportEnvironment,
-                Util_OwataMinister.TEST_PROGRAM
+                UtilOwataMinister.TestProgram
                 );
 
         gt_EndMethod:
@@ -86,7 +86,7 @@ namespace Grayscale.P158LogKyokuPng.L500UtilWriter
             string appendFilepath,
             string outFile,
             KyokumenPngEnvironment reportEnvironment,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             bool successful = true;

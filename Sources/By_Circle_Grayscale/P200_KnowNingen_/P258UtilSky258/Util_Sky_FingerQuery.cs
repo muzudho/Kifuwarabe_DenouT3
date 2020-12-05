@@ -32,7 +32,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// <param name="masu">筋、段</param>
         /// <param name="uc_Main">メインパネル</param>
         /// <returns>駒。無ければヌル。</returns>
-        public static Finger InMasuNow(SkyConst src_Sky, Playerside pside, SyElement masu, KwErrorHandler errH)
+        public static Finger InMasuNow(SkyConst src_Sky, Playerside pside, SyElement masu, IKwErrorHandler errH)
         {
             Finger foundKoma = Fingers.Error_1;
 
@@ -77,7 +77,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// <param name="komasyurui"></param>
         /// <param name="uc_Main"></param>
         /// <returns>無ければ -1</returns>
-        public static Finger InOkibaSyuruiNow_IgnoreCase(SkyConst src_Sky, Okiba okiba, Komasyurui14 komasyurui, KwErrorHandler errH)
+        public static Finger InOkibaSyuruiNow_IgnoreCase(SkyConst src_Sky, Okiba okiba, Komasyurui14 komasyurui, IKwErrorHandler errH)
         {
             Finger found = Fingers.Error_1;
 
@@ -111,7 +111,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// <param name="masu">筋、段</param>
         /// <param name="uc_Main">メインパネル</param>
         /// <returns>駒。無ければヌル。</returns>
-        public static Finger InShogibanMasuNow(SkyConst src_Sky, Playerside pside, SyElement masu, KwErrorHandler errH)
+        public static Finger InShogibanMasuNow(SkyConst src_Sky, Playerside pside, SyElement masu, IKwErrorHandler errH)
         {
             Finger foundKoma = Fingers.Error_1;
 

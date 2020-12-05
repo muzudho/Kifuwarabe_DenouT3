@@ -31,7 +31,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             SySet<SyElement> srcAll,
             SkyConst src_Sky,//KifuTree kifu,
             out Finger foundKoma,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             //SkyConst src_Sky = kifu.CurNode.Value.ToKyokumenConst;

@@ -37,7 +37,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
             out KifuParserA_State nextState,
             KifuParserA owner,
             KifuParserA_Genjo genjo,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             nextState = this;
@@ -62,17 +62,17 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                     // FIXME: コンピューターが先手のとき、ここにくる？
 
                     // 異常時。
-                    errH.Logger.WriteLine_Error("＼（＾ｏ＾）／「" + genjo.InputLine + "」入力がない1☆！　終わるぜ☆");
+                    errH.Logger.WriteLineError("＼（＾ｏ＾）／「" + genjo.InputLine + "」入力がない1☆！　終わるぜ☆");
                     genjo.ToBreak_Abnormal();
                 }
                 else
                 {
                     // 異常時。
-                    errH.Logger.WriteLine_Error("＼（＾ｏ＾）／「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　movesがない☆！　終わるぜ☆");
+                    errH.Logger.WriteLineError("＼（＾ｏ＾）／「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　movesがない☆！　終わるぜ☆");
                     genjo.ToBreak_Abnormal();
                 }
             }
-            catch (Exception ex) { Util_OwataMinister.ERROR.DonimoNaranAkirameta(ex, "SFEN文字列の解析中。"); throw ex; }
+            catch (Exception ex) { UtilOwataMinister.ERROR.DonimoNaranAkirameta(ex, "SFEN文字列の解析中。"); throw ex; }
 
             return genjo.InputLine;
         }

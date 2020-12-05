@@ -31,7 +31,7 @@ namespace Grayscale.P571KifuWarabe.L249Noop
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="isTimeoutShutdown"></param>
-        public void _02_AtEmptyMessage(ShogiEngine owner, out bool isTimeoutShutdown, KwErrorHandler errH)
+        public void _02_AtEmptyMessage(ShogiEngine owner, out bool isTimeoutShutdown, IKwErrorHandler errH)
         {
             isTimeoutShutdown = false;
             //errH.Logger.WriteLine_AddMemo("メッセージは届いていませんでした。this.sw_forNoop.Elapsed.Seconds=[" + this.sw_forNoop.Elapsed.Seconds + "]");
@@ -73,7 +73,7 @@ namespace Grayscale.P571KifuWarabe.L249Noop
         /// <summary>
         /// 応答があったとき。
         /// </summary>
-        public void _03_AtResponsed(ShogiEngine owner, string command, KwErrorHandler errH)
+        public void _03_AtResponsed(ShogiEngine owner, string command, IKwErrorHandler errH)
         {
             //System.Windows.Forms.MessageBox.Show("メッセージが届いています [" + line + "]");
 
@@ -82,7 +82,7 @@ namespace Grayscale.P571KifuWarabe.L249Noop
             //{
                 // noopを投げてなくても、毎回ストップウォッチはリスタートさせます。
 //#if DEBUG
-                errH.Logger.WriteLine_C("サーバーから応答[" + command + "]があったのでタイマーをリスタートさせるぜ☆");
+                errH.Logger.WriteLineC("サーバーから応答[" + command + "]があったのでタイマーをリスタートさせるぜ☆");
 //#endif
                 this.noopPhase = NoopPhase.None;
                 this.sw_forNoop.Restart();

@@ -26,7 +26,7 @@ namespace Grayscale.P341Ittesasu.L125UtilB
         /// </summary>
         public static int IzennoHenkaCutter(
             KifuTree kifu_mutable,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             int result_removedCount = 0;
@@ -110,7 +110,7 @@ namespace Grayscale.P341Ittesasu.L125UtilB
             KifuTree kifuRef,
             KifuNode nextNode_and_nextCurrent,
             string hint,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             string sasiteStr = Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(nextNode_and_nextCurrent.Key);
@@ -192,7 +192,7 @@ namespace Grayscale.P341Ittesasu.L125UtilB
         /// [ここから採譜]機能
         /// ************************************************************************************************************************
         /// </summary>
-        public static void SetStartpos_KokokaraSaifu(KifuTree kifu, Playerside pside, KwErrorHandler errH)
+        public static void SetStartpos_KokokaraSaifu(KifuTree kifu, Playerside pside, IKwErrorHandler errH)
         {
 
             //------------------------------------------------------------

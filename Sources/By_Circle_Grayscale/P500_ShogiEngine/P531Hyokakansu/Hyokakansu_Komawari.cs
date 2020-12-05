@@ -39,7 +39,7 @@ namespace Grayscale.P531Hyokakansu.L500Hyokakansu
 #endif
             SkyConst src_Sky,
             FeatureVector fv,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             float score_p1 = 0.0f;

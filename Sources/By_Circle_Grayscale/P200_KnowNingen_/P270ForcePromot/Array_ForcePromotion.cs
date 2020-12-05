@@ -100,7 +100,7 @@ namespace Grayscale.P270ForcePromot.L250Struct
                         "rowCount=[" + rowCount + "]\n" +
                         "masuHandle=[" + masuHandle + "]\n";
                         Exception ex = new Exception(message);
-                        Util_OwataMinister.ERROR.DonimoNaranAkirameta(ex, "強制昇格中☆"); throw ex;
+                        UtilOwataMinister.ERROR.DonimoNaranAkirameta(ex, "強制昇格中☆"); throw ex;
                     }
 
                     map2.Add(masuHandle, Array_Komahaiyaku185.Items[ haiyakuHandle_target]);

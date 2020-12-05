@@ -23,7 +23,7 @@ namespace Grayscale.P360ConvSasu.L500Converter
         public static List<Couple<Finger, SyElement>> NextNodes_ToKamList(
             SkyConst src_Sky_genzai,
             Node<Starbeamable, KyokumenWrapper> hubNode,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             List<Couple<Finger, SyElement>> kmList = new List<Couple<Finger, SyElement>>();

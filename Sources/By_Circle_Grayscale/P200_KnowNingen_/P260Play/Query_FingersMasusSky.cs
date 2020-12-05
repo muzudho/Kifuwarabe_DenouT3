@@ -31,7 +31,7 @@ namespace Grayscale.P260Play.L500Query
             SySet<SyElement> masus_mikata_Banjo,
             SySet<SyElement> masus_aite_Banjo,
             SkyConst src_Sky,
-            KwErrorHandler errH_orNull
+            IKwErrorHandler errH_orNull
             )
         {
             // 利きを調べる側の利き（戦駒）

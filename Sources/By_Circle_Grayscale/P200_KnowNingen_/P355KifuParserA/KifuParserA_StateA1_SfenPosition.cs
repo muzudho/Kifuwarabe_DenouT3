@@ -41,7 +41,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
             out KifuParserA_State nextState,
             KifuParserA owner,
             KifuParserA_Genjo genjo,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             nextState = this;
@@ -78,13 +78,13 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                 else
                 {
 //#if DEBUG
-                    errH.Logger.WriteLine_Error("（＾△＾）ここはスルーして次に状態遷移するんだぜ☆\n「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】");//　：　局面の指定のようなんだぜ☆　対応していない☆？
+                    errH.Logger.WriteLineError("（＾△＾）ここはスルーして次に状態遷移するんだぜ☆\n「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】");//　：　局面の指定のようなんだぜ☆　対応していない☆？
                     //errH.Logger.WriteLine_Error("（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　局面の指定のようなんだぜ☆　対応していない☆？");
 //#endif
                     nextState = KifuParserA_StateA1b_SfenLnsgkgsnl.GetInstance();
                 }
             }
-            catch (Exception ex) { Util_OwataMinister.ERROR.DonimoNaranAkirameta(ex, "positionの解析中。"); throw ex; }
+            catch (Exception ex) { UtilOwataMinister.ERROR.DonimoNaranAkirameta(ex, "positionの解析中。"); throw ex; }
 
             return genjo.InputLine;
         }

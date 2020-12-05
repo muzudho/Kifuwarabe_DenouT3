@@ -63,7 +63,7 @@ namespace Grayscale.P743FvLearn.L470StartZero
         /// </summary>
         public static void Adjust_HirateSyokiKyokumen_0ten_AndFvParamRange(
             ref bool ref_isRequestDoEvents,
-            FeatureVector fv, KwErrorHandler errH)
+            FeatureVector fv, IKwErrorHandler errH)
         {
             if (null == Util_StartZero.src_Sky_hirateSyokikyokumen)
             {

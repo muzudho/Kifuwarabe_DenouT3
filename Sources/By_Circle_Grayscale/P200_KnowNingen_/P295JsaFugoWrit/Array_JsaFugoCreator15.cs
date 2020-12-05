@@ -23,7 +23,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
     /// </summary>
     public abstract class Array_JsaFugoCreator15
     {
-        public delegate JsaFugoImpl DELEGATE_CreateJFugo(Starbeamable teSasite, KyokumenWrapper kWrap, KwErrorHandler errH);
+        public delegate JsaFugoImpl DELEGATE_CreateJFugo(Starbeamable teSasite, KyokumenWrapper kWrap, IKwErrorHandler errH);
 
         public static DELEGATE_CreateJFugo[] ItemMethods
         {
@@ -58,7 +58,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
         }
 
 
-        public static JsaFugoImpl CreateNullKoma(Starbeamable sasite, KyokumenWrapper kWrap, KwErrorHandler errH)
+        public static JsaFugoImpl CreateNullKoma(Starbeamable sasite, KyokumenWrapper kWrap, IKwErrorHandler errH)
         {
             JsaFugoImpl result;
 
@@ -95,7 +95,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
         /// </summary>
         /// <param name="sasite">移動先、移動元、両方のマス番号</param>
         /// <returns></returns>
-        public static JsaFugoImpl CreateFu(Starbeamable sasite, KyokumenWrapper kWrap, KwErrorHandler errH)
+        public static JsaFugoImpl CreateFu(Starbeamable sasite, KyokumenWrapper kWrap, IKwErrorHandler errH)
         {
             JsaFugoImpl result;
 
@@ -192,7 +192,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             return result;
         }
 
-        public static JsaFugoImpl CreateKyo(Starbeamable sasite, KyokumenWrapper kWrap, KwErrorHandler errH)
+        public static JsaFugoImpl CreateKyo(Starbeamable sasite, KyokumenWrapper kWrap, IKwErrorHandler errH)
         {
             JsaFugoImpl fugo;
 
@@ -302,7 +302,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             return fugo;
         }
 
-        public static JsaFugoImpl CreateKei(Starbeamable sasite, KyokumenWrapper kWrap, KwErrorHandler errH)
+        public static JsaFugoImpl CreateKei(Starbeamable sasite, KyokumenWrapper kWrap, IKwErrorHandler errH)
         {
             JsaFugoImpl fugo;
 
@@ -416,7 +416,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             return fugo;
         }
 
-        public static JsaFugoImpl CreateGin(Starbeamable sasite, KyokumenWrapper kWrap, KwErrorHandler errH)
+        public static JsaFugoImpl CreateGin(Starbeamable sasite, KyokumenWrapper kWrap, IKwErrorHandler errH)
         {
             JsaFugoImpl fugo;
 
@@ -587,7 +587,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             return fugo;
         }
 
-        public static JsaFugoImpl CreateKin(Starbeamable sasite, KyokumenWrapper kWrap, KwErrorHandler errH)
+        public static JsaFugoImpl CreateKin(Starbeamable sasite, KyokumenWrapper kWrap, IKwErrorHandler errH)
         {
             JsaFugoImpl fugo;
 
@@ -615,7 +615,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             Starbeamable sasite,//移動先、移動元、両方のマス番号
             KyokumenWrapper kWrap,
             out MigiHidari migiHidari, out AgaruHiku agaruHiku, out NariNarazu nari, out DaHyoji daHyoji,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             SkyConst src_Sky = kWrap.KyokumenConst;
@@ -773,7 +773,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             nari = NariNarazu.CTRL_SONOMAMA;
         }
 
-        public static JsaFugoImpl CreateOh(Starbeamable sasite, KyokumenWrapper kWrap, KwErrorHandler errH)
+        public static JsaFugoImpl CreateOh(Starbeamable sasite, KyokumenWrapper kWrap, IKwErrorHandler errH)
         {
             JsaFugoImpl fugo;
 
@@ -820,7 +820,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             return fugo;
         }
 
-        public static JsaFugoImpl CreateHisya(Starbeamable sasite, KyokumenWrapper kWrap, KwErrorHandler errH)
+        public static JsaFugoImpl CreateHisya(Starbeamable sasite, KyokumenWrapper kWrap, IKwErrorHandler errH)
         {
             JsaFugoImpl fugo;
 
@@ -987,7 +987,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             return fugo;
         }
 
-        public static JsaFugoImpl CreateKaku(Starbeamable sasite, KyokumenWrapper kWrap, KwErrorHandler errH)
+        public static JsaFugoImpl CreateKaku(Starbeamable sasite, KyokumenWrapper kWrap, IKwErrorHandler errH)
         {
             JsaFugoImpl fugo;
 
@@ -1154,7 +1154,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             return fugo;
         }
 
-        public static JsaFugoImpl CreateRyu(Starbeamable sasite, KyokumenWrapper kWrap, KwErrorHandler errH)
+        public static JsaFugoImpl CreateRyu(Starbeamable sasite, KyokumenWrapper kWrap, IKwErrorHandler errH)
         {
             JsaFugoImpl fugo;
 
@@ -1349,7 +1349,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             return fugo;
         }
 
-        public static JsaFugoImpl CreateUma(Starbeamable sasite, KyokumenWrapper kWrap, KwErrorHandler errH)
+        public static JsaFugoImpl CreateUma(Starbeamable sasite, KyokumenWrapper kWrap, IKwErrorHandler errH)
         {
             JsaFugoImpl fugo;
 
@@ -1545,7 +1545,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             return fugo;
         }
 
-        public static JsaFugoImpl CreateTokin(Starbeamable sasite, KyokumenWrapper kWrap, KwErrorHandler errH)
+        public static JsaFugoImpl CreateTokin(Starbeamable sasite, KyokumenWrapper kWrap, IKwErrorHandler errH)
         {
             JsaFugoImpl fugo;
 
@@ -1569,7 +1569,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             return fugo;
         }
 
-        public static JsaFugoImpl CreateNariKyo(Starbeamable sasite, KyokumenWrapper kWrap, KwErrorHandler errH)
+        public static JsaFugoImpl CreateNariKyo(Starbeamable sasite, KyokumenWrapper kWrap, IKwErrorHandler errH)
         {
             MigiHidari migiHidari;
             AgaruHiku agaruHiku;
@@ -1593,7 +1593,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             return fugo;
         }
 
-        public static JsaFugoImpl CreateNariKei(Starbeamable sasite, KyokumenWrapper kWrap, KwErrorHandler errH)
+        public static JsaFugoImpl CreateNariKei(Starbeamable sasite, KyokumenWrapper kWrap, IKwErrorHandler errH)
         {
             JsaFugoImpl fugo;
 
@@ -1617,7 +1617,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             return fugo;
         }
 
-        public static JsaFugoImpl CreateNariGin(Starbeamable sasite, KyokumenWrapper kWrap, KwErrorHandler errH)
+        public static JsaFugoImpl CreateNariGin(Starbeamable sasite, KyokumenWrapper kWrap, IKwErrorHandler errH)
         {
             JsaFugoImpl fugo;
 
@@ -1642,7 +1642,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             return fugo;
         }
 
-        public static JsaFugoImpl CreateErrorKoma(Starbeamable sasite, KyokumenWrapper kWrap, KwErrorHandler errH)
+        public static JsaFugoImpl CreateErrorKoma(Starbeamable sasite, KyokumenWrapper kWrap, IKwErrorHandler errH)
         {
             JsaFugoImpl fugo;
 

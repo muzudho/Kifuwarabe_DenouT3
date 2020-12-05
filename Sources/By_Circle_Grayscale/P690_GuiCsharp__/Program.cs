@@ -20,7 +20,7 @@ namespace Grayscale.P699_Form_______
         [STAThread]
         static void Main()
         {
-            KwErrorHandler errH = Util_OwataMinister.CsharpGui_DEFAULT;
+            IKwErrorHandler errH = UtilOwataMinister.CsharpGuiDefault;
             MainGui_CsharpImpl mainGui = new MainGui_CsharpImpl();//new ShogiEngineVsClientImpl(this)
 
             //↓ [STAThread]指定のあるメソッドで フォームを作成してください。

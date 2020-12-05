@@ -43,7 +43,7 @@ namespace Grayscale.P743FvLearn.L260View
         public static void ShowSasiteList(
             LearningData learningData,
             Uc_Main uc_Main,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             //
@@ -196,7 +196,7 @@ namespace Grayscale.P743FvLearn.L260View
         /// ノード情報の表示
         /// </summary>
         /// <param name="uc_Main"></param>
-        public static void Aa_ShowNode2(LearningData learningData, Uc_Main uc_Main, KwErrorHandler errH)
+        public static void Aa_ShowNode2(LearningData learningData, Uc_Main uc_Main, IKwErrorHandler errH)
         {
             // 手目済み
             uc_Main.TxtTemezumi.Text = learningData.Kifu.CurNode.Value.KyokumenConst.Temezumi.ToString();
@@ -212,7 +212,7 @@ namespace Grayscale.P743FvLearn.L260View
         /// 合法手リストの表示
         /// </summary>
         /// <param name="uc_Main"></param>
-        public static void Aa_ShowGohosyu2(LearningData learningData, Uc_Main uc_Main, KwErrorHandler errH)
+        public static void Aa_ShowGohosyu2(LearningData learningData, Uc_Main uc_Main, IKwErrorHandler errH)
         {
             //----------------------------------------
             // フォルダー作成
@@ -312,7 +312,7 @@ namespace Grayscale.P743FvLearn.L260View
         public static void Ittesasu_ByBtnClick(
             ref bool isRequestShowGohosyu,
             ref bool isRequestChangeKyokumenPng,
-            LearningData learningData, Uc_Main uc_Main, KwErrorHandler errH)
+            LearningData learningData, Uc_Main uc_Main, IKwErrorHandler errH)
         {
 #if DEBUG
             Stopwatch sw1 = new Stopwatch();
@@ -332,9 +332,9 @@ namespace Grayscale.P743FvLearn.L260View
             // リストボックスの先頭から指し手をSFEN形式で１つ取得。
             HonpuSasiteListItemImpl item = (HonpuSasiteListItemImpl)uc_Main.LstSasite.Items[0];
             string sfen = item.Sfen;
-            if (null != errH.Dlgt_OnLog1Append_or_Null)
+            if (null != errH.DlgtOnLog1AppendOrNull)
             {
-                errH.Dlgt_OnLog1Append_or_Null("sfen=" + sfen + Environment.NewLine);
+                errH.DlgtOnLog1AppendOrNull("sfen=" + sfen + Environment.NewLine);
             }
 
             //

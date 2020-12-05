@@ -13,7 +13,7 @@ namespace Grayscale.P003Log.L500Struct
     /// 
     /// きふわらべのロガー。
     /// </summary>
-    public class KwLoggerImpl : KwLogger
+    public class KwLoggerImpl : IKwLogger
     {
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace Grayscale.P003Log.L500Struct
         /// <summary>
         /// タイムスタンプ出力の有無。
         /// </summary>
-        public bool Print_TimeStamp { get { return this.print_TimeStamp; } }
+        public bool PrintTimeStamp { get { return this.print_TimeStamp; } }
         private bool print_TimeStamp;
 
 
@@ -53,13 +53,13 @@ namespace Grayscale.P003Log.L500Struct
         /// <param name="fileNameWoe">拡張子抜きのファイル名。(with out extension)</param>
         /// <param name="extension">ドット付き拡張子。(with dot)</param>
         /// <param name="enable">ログ出力の有無</param>
-        /// <param name="print_TimeStamp">タイムスタンプ出力のON/OFF</param>
-        public KwLoggerImpl(string fileNameWoe, string extension, bool enable, bool print_TimeStamp)
+        /// <param name="printTimeStamp">タイムスタンプ出力のON/OFF</param>
+        public KwLoggerImpl(string fileNameWoe, string extension, bool enable, bool printTimeStamp)
         {
             this.fileNameWoe = fileNameWoe;
             this.extension = extension;
             this.enable = enable;
-            this.print_TimeStamp = print_TimeStamp;
+            this.print_TimeStamp = printTimeStamp;
         }
 
 
@@ -81,7 +81,7 @@ namespace Grayscale.P003Log.L500Struct
             }
 
             // If parameter cannot be cast to Point return false.
-            KwLogger p = obj as KwLogger;
+            IKwLogger p = obj as IKwLogger;
             if ((System.Object)p == null)
             {
                 return false;
@@ -100,7 +100,7 @@ namespace Grayscale.P003Log.L500Struct
         /// ************************************************************************************************************************
         /// </summary>
         /// <param name="line"></param>
-        public void WriteLine_AddMemo(
+        public void WriteLineAddMemo(
             string line
             )
         {
@@ -119,7 +119,7 @@ namespace Grayscale.P003Log.L500Struct
                 StringBuilder sb = new StringBuilder();
 
                 // タイムスタンプ
-                if (this.Print_TimeStamp)
+                if (this.PrintTimeStamp)
                 {
                     sb.Append(DateTime.Now.ToString());
                     sb.Append(" : ");
@@ -135,7 +135,7 @@ namespace Grayscale.P003Log.L500Struct
                 System.IO.File.AppendAllText(filepath2, sb.ToString());
             }
             catch (Exception ex) {
-                Util_OwataMinister.ERROR.DonimoNaranAkirameta(ex, "ログ中☆");
+                UtilOwataMinister.ERROR.DonimoNaranAkirameta(ex, "ログ中☆");
                 // ログ出力に失敗しても、続行します。
             }
 
@@ -153,12 +153,12 @@ namespace Grayscale.P003Log.L500Struct
         /// ************************************************************************************************************************
         /// </summary>
         /// <param name="line"></param>
-        public void WriteLine_Error(
+        public void WriteLineError(
             string line
             )
         {
             bool enable = this.Enable;
-            bool printTimestamp = this.Print_TimeStamp;
+            bool printTimestamp = this.PrintTimeStamp;
             string filepath2 = Path.Combine(Application.StartupPath, this.FileName);
 
             if (!enable)
@@ -215,7 +215,7 @@ namespace Grayscale.P003Log.L500Struct
         /// ************************************************************************************************************************
         /// </summary>
         /// <param name="line"></param>
-        public void WriteLine_OverMemo(
+        public void WriteLineOverMemo(
             string line
             )
         {
@@ -234,7 +234,7 @@ namespace Grayscale.P003Log.L500Struct
                 StringBuilder sb = new StringBuilder();
 
                 // タイムスタンプ
-                if (this.Print_TimeStamp)
+                if (this.PrintTimeStamp)
                 {
                     sb.Append(DateTime.Now.ToString());
                     sb.Append(" : ");
@@ -250,7 +250,7 @@ namespace Grayscale.P003Log.L500Struct
                 System.IO.File.WriteAllText(filepath2, sb.ToString());
             }
             catch (Exception ex) {
-                Util_OwataMinister.ERROR.DonimoNaranAkirameta(ex, "ログ取り中☆"); throw ex;
+                UtilOwataMinister.ERROR.DonimoNaranAkirameta(ex, "ログ取り中☆"); throw ex;
             }
 
         gt_EndMethod:
@@ -270,7 +270,7 @@ namespace Grayscale.P003Log.L500Struct
         /// ************************************************************************************************************************
         /// </summary>
         /// <param name="line"></param>
-        public void WriteLine_S(
+        public void WriteLineS(
             string line
             //,
             //[CallerMemberName] string memberName = "",
@@ -279,7 +279,7 @@ namespace Grayscale.P003Log.L500Struct
             )
         {
             bool enable = this.Enable;
-            bool print_TimeStamp = this.Print_TimeStamp;
+            bool print_TimeStamp = this.PrintTimeStamp;
             string filepath2 = Path.Combine(Application.StartupPath, this.FileName);
 
             if (!enable)
@@ -305,7 +305,7 @@ namespace Grayscale.P003Log.L500Struct
 
                 System.IO.File.AppendAllText(filepath2, sb.ToString());
             }
-            catch (Exception ex) { Util_OwataMinister.ERROR.DonimoNaranAkirameta(ex, "ログ取り中☆"); }
+            catch (Exception ex) { UtilOwataMinister.ERROR.DonimoNaranAkirameta(ex, "ログ取り中☆"); }
 
         gt_EndMethod:
             ;
@@ -318,7 +318,7 @@ namespace Grayscale.P003Log.L500Struct
         /// ************************************************************************************************************************
         /// </summary>
         /// <param name="line"></param>
-        public void WriteLine_C(
+        public void WriteLineC(
             string line
             //,
             //[CallerMemberName] string memberName = "",
@@ -327,7 +327,7 @@ namespace Grayscale.P003Log.L500Struct
             )
         {
             bool enable = this.Enable;
-            bool print_TimeStamp = this.Print_TimeStamp;
+            bool print_TimeStamp = this.PrintTimeStamp;
             string filepath2 = Path.Combine(Application.StartupPath, this.FileName);
 
             if (!enable)
@@ -353,7 +353,7 @@ namespace Grayscale.P003Log.L500Struct
 
                 System.IO.File.AppendAllText(filepath2, sb.ToString());
             }
-            catch (Exception ex) { Util_OwataMinister.ERROR.DonimoNaranAkirameta(ex, "ログ取り中☆"); throw ex; }
+            catch (Exception ex) { UtilOwataMinister.ERROR.DonimoNaranAkirameta(ex, "ログ取り中☆"); throw ex; }
 
         gt_EndMethod:
             ;

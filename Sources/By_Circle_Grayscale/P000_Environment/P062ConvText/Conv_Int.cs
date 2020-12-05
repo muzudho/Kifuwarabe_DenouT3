@@ -32,7 +32,7 @@ namespace Grayscale.P062ConvText.L500Converter
                 case 9: alphabet = "i"; break;
                 default:
                     Exception ex = new Exception("筋[" + num + "]をアルファベットに変えることはできませんでした。");
-                    Util_OwataMinister.ERROR.DonimoNaranAkirameta(ex, "筋をアルファベットに変換中☆"); throw ex;
+                    UtilOwataMinister.ERROR.DonimoNaranAkirameta(ex, "筋をアルファベットに変換中☆"); throw ex;
             }
 
             return alphabet;

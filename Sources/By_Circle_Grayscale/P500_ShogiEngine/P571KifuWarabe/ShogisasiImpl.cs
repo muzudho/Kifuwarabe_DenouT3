@@ -70,7 +70,7 @@ namespace Grayscale.P571KifuWarabe.L100Shogisasi
         public KifuNode WA_Bestmove(
             bool isHonshogi,
             KifuTree kifu,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
 #if DEBUG
@@ -160,7 +160,7 @@ namespace Grayscale.P571KifuWarabe.L100Shogisasi
         /// <returns></returns>
         private KifuNode ChoiceNode_DoutenKessyou(
             KifuTree kifu,
-            bool isHonshogi, KwErrorHandler errH)
+            bool isHonshogi, IKwErrorHandler errH)
         {
             KifuNode bestKifuNode = null;
 

@@ -27,7 +27,7 @@ namespace Grayscale.P553TansakuHaba.L500Struct
             Mode_Tansaku mode_Tansaku,
             float alphabeta_otherBranchDecidedValue,
             EvaluationArgs args,
-            KwErrorHandler log
+            IKwErrorHandler log
             )
         {
         }

@@ -10,7 +10,7 @@ namespace Grayscale.P693ShogiGui.I491Event
          object obj_shogiGui //ShogiGui
         , object userWidget // UerWidget
         , object shape_BtnKoma_Selected //Shape_BtnKoma
-        , KwErrorHandler errH2
+        , IKwErrorHandler errH2
     );
 
     ///// <summary>

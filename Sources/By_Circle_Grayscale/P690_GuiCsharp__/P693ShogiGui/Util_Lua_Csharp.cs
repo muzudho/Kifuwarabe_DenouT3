@@ -26,7 +26,7 @@ namespace Grayscale.P693ShogiGui.L480Util
         private static Lua lua;
 
         public static MainGui_Csharp ShogiGui { get; set; }
-        public static KwErrorHandler ErrH { get; set; }
+        public static IKwErrorHandler ErrH { get; set; }
 
         /// <summary>
         /// 
@@ -133,7 +133,7 @@ namespace Grayscale.P693ShogiGui.L480Util
         /// </summary>
         public static void ClearKifu(MainGui_Csharp mainGui, RepaintRequest repaintRequest)
         {
-            KwErrorHandler errH = Util_OwataMinister.ERROR;
+            IKwErrorHandler errH = Util_OwataMinister.ERROR;
             mainGui.Link_Server.Model_Taikyoku.Kifu.Clear();// 棋譜を空っぽにします。
 
             SkyBuffer buffer_Sky = new SkyBuffer(mainGui.Model_Manual.GuiSkyConst);

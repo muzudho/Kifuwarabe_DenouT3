@@ -70,7 +70,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                 }
 
                 // 通信ログは必ず取ります。
-                Util_OwataMinister.ENGINE_NETWORK.Logger.WriteLine_C(line);
+                UtilOwataMinister.EngineNetwork.Logger.WriteLineC(line);
 
 #if NOOPABLE
                 noopTimer._04_AtResponsed(this.Owner, line);

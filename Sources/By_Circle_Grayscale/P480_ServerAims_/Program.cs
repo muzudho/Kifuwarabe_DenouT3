@@ -15,7 +15,7 @@ namespace Grayscale.P489_Form_______
 
         static void Main(string[] args)
         {
-            KwErrorHandler errH = Util_OwataMinister.AIMS_DEFAULT;
+            IKwErrorHandler errH = UtilOwataMinister.AimsDefault;
             MessageBox.Show("AIMSサーバー");
 
 

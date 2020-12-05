@@ -32,7 +32,7 @@ namespace Grayscale.P531Hyokakansu.I500Hyokakansu
 #endif
             SkyConst src_Sky,
             FeatureVector featureVector,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             );
 
     }

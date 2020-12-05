@@ -23,7 +23,7 @@ namespace Grayscale.P260Play.L250Calc
         public static Maps_OneAndOne<Finger, SySet<SyElement>> Get_PotentialMoves(
             SkyConst src_Sky,
             Fingers fingers,
-            KwErrorHandler errH_orNull
+            IKwErrorHandler errH_orNull
             )
         {
             Maps_OneAndOne<Finger, SySet<SyElement>> kiki_fMs = new Maps_OneAndOne<Finger, SySet<SyElement>>();// 「どの駒を、どこに進める」の一覧

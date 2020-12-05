@@ -259,7 +259,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// <returns>駒毎の、全指し手</returns>
         public static Maps_OneAndMulti<Finger, Starbeamable> SplitSasite_ByStar(
             SkyConst src_Sky,
-            Node<Starbeamable, KyokumenWrapper> hubNode, KwErrorHandler errH)
+            Node<Starbeamable, KyokumenWrapper> hubNode, IKwErrorHandler errH)
         {
             Maps_OneAndMulti<Finger, Starbeamable> enable_teMap = new Maps_OneAndMulti<Finger, Starbeamable>();
 

@@ -18,7 +18,7 @@ namespace Grayscale.P743FvLearn.L400N54List
     public class Util_54List
     {
 
-        private static void Error1(RO_Star koma, KwErrorHandler errH)
+        private static void Error1(RO_Star koma, IKwErrorHandler errH)
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Util_54List#Error1：２駒関係FVの配列添え字がわからないぜ☆！処理は続けられない。");
@@ -36,7 +36,7 @@ namespace Grayscale.P743FvLearn.L400N54List
         /// 盤上の40駒リスト。
         /// 駒台の14駒リスト。
         /// </summary>
-        public static N54List Calc_54List(SkyConst src_Sky, KwErrorHandler errH)
+        public static N54List Calc_54List(SkyConst src_Sky, IKwErrorHandler errH)
         {
             N54List result_n54List = new N54ListImpl();
 

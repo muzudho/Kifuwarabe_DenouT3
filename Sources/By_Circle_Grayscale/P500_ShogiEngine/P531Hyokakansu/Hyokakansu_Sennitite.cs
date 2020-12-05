@@ -40,7 +40,7 @@ namespace Grayscale.P531Hyokakansu.L500Hyokakansu
 #endif
  SkyConst src_Sky,
             FeatureVector featureVector,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             out_score = 0.0f;//互角

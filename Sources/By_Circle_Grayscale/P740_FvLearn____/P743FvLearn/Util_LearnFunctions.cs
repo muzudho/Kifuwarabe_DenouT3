@@ -25,7 +25,7 @@ namespace Grayscale.P743FvLearn.L480Functions
         /// <summary>
         /// FVを、-999.0～999.0(*bairitu)に矯正。
         /// </summary>
-        public static void FvParamRange_PP(FeatureVector fv, KwErrorHandler errH)
+        public static void FvParamRange_PP(FeatureVector fv, IKwErrorHandler errH)
         {
             //--------------------------------------------------------------------------------
             // 変換前のデータを確認。 
@@ -47,7 +47,7 @@ namespace Grayscale.P743FvLearn.L480Functions
         /// FVの保存。
         /// </summary>
         /// <param name="uc_Main"></param>
-        public static void Do_Save(Uc_Main uc_Main, KwErrorHandler errH)
+        public static void Do_Save(Uc_Main uc_Main, IKwErrorHandler errH)
         {
             FeatureVector fv = uc_Main.LearningData.Fv;
 
@@ -157,7 +157,7 @@ namespace Grayscale.P743FvLearn.L480Functions
         /// </summary>
         public static void Do_RankUpHonpu(ref bool ref_isRequestShowGohosyu, Uc_Main uc_Main, string sfenSasiteStr, float tyoseiryo)
         {
-            KwErrorHandler errH = Util_OwataMinister.LEARNER;
+            IKwErrorHandler errH = Util_OwataMinister.LEARNER;
 
             //----------------------------------------
             // 1P は正の数がグッド、2P は負の数がグッド。

@@ -15,7 +15,7 @@ namespace Grayscale.P803GuiCsharpVs.L500Gui
         [STAThread]
         static void Main()
         {
-            KwErrorHandler errH = Util_OwataMinister.CsharpGui_DEFAULT;
+            IKwErrorHandler errH = UtilOwataMinister.CsharpGuiDefault;
             MainGui_CsharpVsImpl mainGuiVs = new MainGui_CsharpVsImpl();
 
             //↓ [STAThread]指定のあるメソッドで フォームを作成してください。

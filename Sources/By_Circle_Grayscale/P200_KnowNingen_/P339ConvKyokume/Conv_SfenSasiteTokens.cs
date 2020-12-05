@@ -51,7 +51,7 @@ namespace Grayscale.P339ConvKyokume.L500Converter
             out Starbeamable sasite,
             KifuTree kifu,
             string hint,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             sasite = Util_Sky258A.NULL_OBJECT_SASITE;
@@ -128,7 +128,7 @@ namespace Grayscale.P339ConvKyokume.L500Converter
                     {
                         string message = "TuginoItte_Sfen#GetData_FromTextSub：駒台から種類[" + uttaSyurui + "]の駒を掴もうとしましたが、エラーでした。";
                         Exception ex = new Exception(message);
-                        Util_OwataMinister.ERROR.DonimoNaranAkirameta(ex, "moves解析中☆"); throw ex;
+                        UtilOwataMinister.ERROR.DonimoNaranAkirameta(ex, "moves解析中☆"); throw ex;
                     }
 
 
@@ -195,7 +195,7 @@ namespace Grayscale.P339ConvKyokume.L500Converter
                             src_Sky.Temezumi));
 
                         Exception ex = new Exception(sb.ToString());
-                        Util_OwataMinister.ERROR.DonimoNaranAkirameta(ex, "SFEN解析中の失敗"); throw ex;
+                        UtilOwataMinister.ERROR.DonimoNaranAkirameta(ex, "SFEN解析中の失敗"); throw ex;
                     }
                 }
 
@@ -278,7 +278,7 @@ namespace Grayscale.P339ConvKyokume.L500Converter
                     Komasyurui14.H00_Null___//符号からは、取った駒は分からない
                 );
             }
-            catch (Exception ex) { Util_OwataMinister.ERROR.DonimoNaranAkirameta(ex, "moves解析中☆　str1=「" + str1 + "」　str2=「" + str2 + "」　str3=「" + str3 + "」　str4=「" + str4 + "」　strNari=「" + strNari + "」　"); throw ex; }
+            catch (Exception ex) { UtilOwataMinister.ERROR.DonimoNaranAkirameta(ex, "moves解析中☆　str1=「" + str1 + "」　str2=「" + str2 + "」　str3=「" + str3 + "」　str4=「" + str4 + "」　strNari=「" + strNari + "」　"); throw ex; }
         }
     }
 }

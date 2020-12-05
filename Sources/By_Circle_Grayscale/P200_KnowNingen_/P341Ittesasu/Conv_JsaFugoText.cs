@@ -28,7 +28,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             out string str9,
             out string rest,
             KifuTree kifu,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             //nextTe = null;

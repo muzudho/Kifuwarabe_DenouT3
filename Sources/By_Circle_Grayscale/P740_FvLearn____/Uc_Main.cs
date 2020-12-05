@@ -128,11 +128,11 @@ namespace Grayscale.P743FvLearn
             //
             // イベントハンドラー登録
             //
-            Util_OwataMinister.LEARNER.Dlgt_OnLog1Append_or_Null = (string log) =>
+            UtilOwataMinister.Learner.DlgtOnLog1AppendOrNull = (string log) =>
             {
                 this.txtIttesasuLog.Text += log;
             };
-            Util_OwataMinister.LEARNER.Dlgt_OnLog1Clear_or_Null = () =>
+            UtilOwataMinister.Learner.DlgtOnLog1ClearOrNull = () =>
             {
                 this.txtIttesasuLog.Text = "";
             };
@@ -160,7 +160,7 @@ namespace Grayscale.P743FvLearn
         /// <param name="e"></param>
         private void btnSasu_Click(object sender, EventArgs e)
         {
-            KwErrorHandler errH = Util_OwataMinister.LEARNER;
+            IKwErrorHandler errH = UtilOwataMinister.Learner;
             bool isRequest_ShowGohosyu = false;
             bool isRequest_ChangeKyokumenPng = false;
 
@@ -216,7 +216,7 @@ namespace Grayscale.P743FvLearn
 
         private void btnOpenCsa_Click(object sender, EventArgs e)
         {
-            KwErrorHandler errH = Util_OwataMinister.LEARNER;
+            IKwErrorHandler errH = UtilOwataMinister.Learner;
             bool isRequest_ShowGohosyu = false;
             bool isRequest_ChangeKyokumenPng = false;
 
@@ -247,7 +247,7 @@ namespace Grayscale.P743FvLearn
             {
                 // 合法手一覧を更新
                 Util_LearnFunctions.FvParamRange_PP(this.LearningData.Fv, errH);// 自動で -999～999(*bairitu) に矯正。
-                Util_LearningView.Aa_ShowGohosyu2(this.LearningData, this, Util_OwataMinister.LEARNER);
+                Util_LearningView.Aa_ShowGohosyu2(this.LearningData, this, UtilOwataMinister.Learner);
                 isRequest_ShowGohosyu = false;
             }
 
@@ -266,7 +266,7 @@ namespace Grayscale.P743FvLearn
         /// <param name="e"></param>
         private void btnOpenFvCsv_Click(object sender, EventArgs e)
         {
-            KwErrorHandler errH = Util_OwataMinister.LEARNER;
+            IKwErrorHandler errH = UtilOwataMinister.Learner;
 
             Util_LearnOperation.Do_OpenFvCsv(this,errH);
         }
@@ -278,7 +278,7 @@ namespace Grayscale.P743FvLearn
         /// <param name="e"></param>
         private void btnWriteFv_Click(object sender, EventArgs e)
         {
-            KwErrorHandler errH = Util_OwataMinister.LEARNER;
+            IKwErrorHandler errH = UtilOwataMinister.Learner;
 
             Util_LearnFunctions.Do_Save(this, errH);
         }
@@ -290,7 +290,7 @@ namespace Grayscale.P743FvLearn
         /// <param name="e"></param>
         private void btnUpdateKyokumenHyoka_Click(object sender, EventArgs e)
         {
-            KwErrorHandler errH = Util_OwataMinister.LEARNER;
+            IKwErrorHandler errH = UtilOwataMinister.Learner;
             bool isRequest_ShowGohosyu = false;
             bool isRequest_ChangeKyokumenPng = false;
 
@@ -319,7 +319,7 @@ namespace Grayscale.P743FvLearn
         /// </summary>
         public void SeikoIdo()
         {
-            KwErrorHandler errH = Util_OwataMinister.LEARNER;
+            IKwErrorHandler errH = UtilOwataMinister.Learner;
 
             // 今読んだ棋譜を移す先（成功時）
             if (2 <= this.search_kifu_folder_lines.Length)
@@ -348,7 +348,7 @@ namespace Grayscale.P743FvLearn
         /// </summary>
         private void SippaiIdo()
         {
-            KwErrorHandler errH = Util_OwataMinister.LEARNER;
+            IKwErrorHandler errH = UtilOwataMinister.Learner;
 
             // 今読んだ棋譜を移す先（失敗時）
             if (3 <= this.search_kifu_folder_lines.Length)
@@ -380,7 +380,7 @@ namespace Grayscale.P743FvLearn
         /// <param name="e"></param>
         private void btnFv999_999_Click(object sender, EventArgs e)
         {
-            KwErrorHandler errH = Util_OwataMinister.LEARNER;
+            IKwErrorHandler errH = UtilOwataMinister.Learner;
             bool isRequest_ShowGohosyu = false;
 
             isRequest_ShowGohosyu = true;
@@ -410,7 +410,7 @@ namespace Grayscale.P743FvLearn
         /// <param name="e"></param>
         private void btnSasiteRankDown_Click(object sender, EventArgs e)
         {
-            KwErrorHandler errH = Util_OwataMinister.LEARNER;
+            IKwErrorHandler errH = UtilOwataMinister.Learner;
             bool isRequest_ShowGohosyu = false;
             bool isRequest_ChangeKyokumenPng = false;
 
@@ -441,7 +441,7 @@ namespace Grayscale.P743FvLearn
         /// <param name="e"></param>
         private void btnSasiteRankUp_Click(object sender, EventArgs e)
         {
-            KwErrorHandler errH = Util_OwataMinister.LEARNER;
+            IKwErrorHandler errH = UtilOwataMinister.Learner;
             bool isRequest_ShowGohosyu = false;
             bool isRequest_ChangeKyokumenPng = false;
 
@@ -473,7 +473,7 @@ namespace Grayscale.P743FvLearn
         /// <param name="e"></param>
         private void btnStartZero_Click(object sender, EventArgs e)
         {
-            KwErrorHandler errH = Util_OwataMinister.LEARNER;
+            IKwErrorHandler errH = UtilOwataMinister.Learner;
             bool isRequest_ShowGohosyu = false;
 
             Util_LearnOperation.Do_ZeroStart( ref isRequest_ShowGohosyu, this, errH);
@@ -504,7 +504,7 @@ namespace Grayscale.P743FvLearn
             out bool out_isEmptyKifu,
             ref bool ref_isRequest_ShowGohosyu,
             ref bool ref_isRequest_ChangeKyokumenPng,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             //
@@ -539,7 +539,7 @@ namespace Grayscale.P743FvLearn
         /// <param name="e"></param>
         private void btnNextKifuSet_Click(object sender, EventArgs e)
         {
-            KwErrorHandler errH = Util_OwataMinister.LEARNER;
+            IKwErrorHandler errH = UtilOwataMinister.Learner;
             bool isRequest_ShowGohosyu = false;
             bool isRequest_ChangeKyokumenPng = false;
 
@@ -551,7 +551,7 @@ namespace Grayscale.P743FvLearn
             {
                 // 合法手一覧を更新
                 Util_LearnFunctions.FvParamRange_PP(this.LearningData.Fv, errH);// 自動で -999～999(*bairitu) に矯正。
-                Util_LearningView.Aa_ShowGohosyu2(this.LearningData, this, Util_OwataMinister.LEARNER);
+                Util_LearningView.Aa_ShowGohosyu2(this.LearningData, this, UtilOwataMinister.Learner);
                 isRequest_ShowGohosyu = false;
             }
 

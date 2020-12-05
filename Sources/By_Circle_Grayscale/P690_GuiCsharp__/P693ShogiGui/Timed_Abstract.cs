@@ -6,7 +6,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
     public abstract class Timed_Abstract : Timed
     {
 
-        abstract public void Step(KwErrorHandler errH);
+        abstract public void Step(IKwErrorHandler errH);
 
     }
 }

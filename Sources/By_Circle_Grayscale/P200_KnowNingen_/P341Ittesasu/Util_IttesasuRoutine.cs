@@ -46,7 +46,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
         public static void Before1(
             IttesasuArg ittesasuArg,
             out IttesasuResult ittesasuResult,
-            KwErrorHandler errH,
+            IKwErrorHandler errH,
             string hint
             ,
             [CallerMemberName] string memberName = "",
@@ -222,7 +222,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
 
                 // どうにもできないので  ログだけ取って無視します。
                 string message = "Util_IttesasuRoutine#Execute（B）： exceptionArea=" + exceptionArea + "\n" + ex.GetType().Name + "：" + ex.Message;
-                errH.Logger.WriteLine_Error(message);
+                errH.Logger.WriteLineError(message);
                 throw ex;
             }
         }
@@ -235,7 +235,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
         /// <param name="errH"></param>
         public static void Before2(
             ref IttesasuResult ittesasuReference,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             Node<Starbeamable, KyokumenWrapper> editNodeRef = ittesasuReference.Get_SyuryoNode_OrNull;
@@ -271,7 +271,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             KifuTree kifu_mutable,
             string nextSasiteStr,
             Node<Starbeamable, KyokumenWrapper> edit_childNode_Ref,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
 
@@ -311,7 +311,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             Starbeamable sasite,
             Playerside kaisi_tebanside,
             SkyConst kaisi_Sky,
-            KwErrorHandler errH,
+            IKwErrorHandler errH,
             string hint
             ,
             [CallerMemberName] string memberName = "",
@@ -434,7 +434,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             out RO_Star out_food_koma,
             out Playerside pside,
             out SyElement akiMasu,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             RO_Star dstKoma = Util_Starlightable.AsKoma(dst.Now);

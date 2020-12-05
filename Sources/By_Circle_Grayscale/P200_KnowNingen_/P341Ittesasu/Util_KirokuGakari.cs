@@ -38,7 +38,7 @@ namespace Grayscale.P341Ittesasu.L250OperationA
         public static string ToJsaFugoListString(
             KifuTree src_kifu,
             string hint,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             StringBuilder sb = new StringBuilder();

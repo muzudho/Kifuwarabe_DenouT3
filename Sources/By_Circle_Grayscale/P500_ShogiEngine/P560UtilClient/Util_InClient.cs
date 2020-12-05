@@ -23,10 +23,10 @@ namespace Grayscale.P560UtilClient.L500Util
         public static void OnChangeSky_Im_Client(
             Model_Taikyoku model_Taikyoku,
             KifuParserA_Genjo genjo,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
-            errH.Logger.WriteLine_Error("（＾△＾）「" + genjo.InputLine + "」Util_InClient　：　クライアントの委譲メソッドｷﾀｰ☆");
+            errH.Logger.WriteLineError("（＾△＾）「" + genjo.InputLine + "」Util_InClient　：　クライアントの委譲メソッドｷﾀｰ☆");
 
 
             string old_inputLine = genjo.InputLine;//退避
@@ -38,7 +38,7 @@ namespace Grayscale.P560UtilClient.L500Util
                 out ro_Kyokumen2_ForTokenize
                 );
 
-            errH.Logger.WriteLine_Error("（＾△＾）old_inputLine=「" + old_inputLine + "」 rest=「" + rest + "」 Util_InClient　：　ﾊﾊｯ☆");
+            errH.Logger.WriteLineError("（＾△＾）old_inputLine=「" + old_inputLine + "」 rest=「" + rest + "」 Util_InClient　：　ﾊﾊｯ☆");
 
             //string old_inputLine = genjo.InputLine;
             //genjo.InputLine = "";

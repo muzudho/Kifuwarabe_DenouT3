@@ -46,7 +46,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             KifuTree kifu,
             bool isHonshogi,
             Mode_Tansaku mode_Tansaku,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             // TODO:ここではログを出力せずに、ツリーの先端で出力したい。
@@ -199,7 +199,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             Mode_Tansaku mode_Tansaku,
             float alphabeta_otherBranchDecidedValue,
             EvaluationArgs args,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             int exceptionArea = 0;
@@ -286,7 +286,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
                             Debug.Fail(message);
 
                             // どうにもできないので  ログだけ取って、上に投げます。
-                            errH.Logger.WriteLine_Error(message);
+                            errH.Logger.WriteLineError(message);
                             throw ex;
                         }
 #if DEBUG
@@ -331,7 +331,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             out Dictionary<string, SasuEntry> out_sasitebetuEntry,
             out int out_yomiDeep,
             out float out_a_childrenBest,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             out_sasitebetuEntry = Tansaku_FukasaYusen_Routine.WAAAA_Create_ChildNodes(
@@ -360,7 +360,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             KifuNode node_yomi,
             EvaluationArgs args,
             out float out_a_childrenBest,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             // 局面に評価値を付けます。
@@ -419,7 +419,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             KifuNode node_yomi,
             int sasitebetuEntry_count,
             EvaluationArgs args,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             int exceptionArea = 0;
@@ -597,7 +597,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             Tansaku_Genjo genjo,
             Starbeamable src_Sky_sasite,
             SkyConst src_Sky,
-            KwErrorHandler errH
+            IKwErrorHandler errH
             )
         {
             int exceptionArea = 0;

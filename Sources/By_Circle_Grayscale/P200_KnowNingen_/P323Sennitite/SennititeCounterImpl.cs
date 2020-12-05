@@ -159,16 +159,16 @@ namespace Grayscale.P323Sennitite.L500Struct
 
             if (processName=="Grayscale.P800_ShogiGuiVs.vshost")
             {
-                Util_OwataMinister.CsharpGui_SENNITITE.Logger.WriteLine_AddMemo(text);
+                UtilOwataMinister.CsharpGuiSennitite.Logger.WriteLineAddMemo(text);
             }
             else if (processName == "Grayscale.P500_ShogiEngine_KifuWarabe")
             {
-                Util_OwataMinister.ENGINE_SENNITITE.Logger.WriteLine_AddMemo(text);
+                UtilOwataMinister.EngineSennitite.Logger.WriteLineAddMemo(text);
             }
             else
             {
                 // 名称変更したことを忘れていた場合は、デフォルトの書き出し先へ退避。
-                Util_OwataMinister.DEFAULT_SENNITITE.Logger.WriteLine_AddMemo(text);
+                UtilOwataMinister.DefaultSennitite.Logger.WriteLineAddMemo(text);
             }
         }
 

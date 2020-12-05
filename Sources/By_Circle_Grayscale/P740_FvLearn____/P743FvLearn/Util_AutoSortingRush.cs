@@ -43,7 +43,7 @@ namespace Grayscale.P743FvLearn.L506AutoSasiteSort
             int loopLimit,
             ref float ref_tyoseiryo,
             string sfenSasiteStr,
-            Uc_Main uc_Main, KwErrorHandler errH
+            Uc_Main uc_Main, IKwErrorHandler errH
             )
         {
             out_isEndAutoLearn = false;

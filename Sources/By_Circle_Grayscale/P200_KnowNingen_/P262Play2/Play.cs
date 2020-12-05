@@ -43,7 +43,7 @@ namespace Grayscale.P262Play2.L500Struct
             SySet<SyElement> masus_mikata_onBanjo,//打ち歩詰めチェック用
             SySet<SyElement> masus_aite_onBanjo,//打ち歩詰めチェック用
             SySet<SyElement> motiOkenaiMasus,
-            KwErrorHandler errH_orNull
+            IKwErrorHandler errH_orNull
             )
         {
             // 駒種類別、置こうとする升

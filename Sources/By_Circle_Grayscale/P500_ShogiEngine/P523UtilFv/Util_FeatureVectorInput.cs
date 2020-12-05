@@ -264,7 +264,7 @@ namespace Grayscale.P523UtilFv.L491UtilFvIo
         /// ファイルから読み込みます。
         /// </summary>
         /// <param name="filepath1"></param>
-        public static bool Make_FromFile_KK(FeatureVector fv, string filepath1, KwErrorHandler errH)
+        public static bool Make_FromFile_KK(FeatureVector fv, string filepath1, IKwErrorHandler errH)
         {
             bool successful = false;
 
@@ -385,7 +385,7 @@ namespace Grayscale.P523UtilFv.L491UtilFvIo
         /// <param name="filepath1"></param>
         /// <param name="kingPlayer">1 or 2</param>
         /// <returns></returns>
-        public static bool Make_FromFile_KP(FeatureVector fv, string filepath1, Playerside k_pside, KwErrorHandler errH)
+        public static bool Make_FromFile_KP(FeatureVector fv, string filepath1, Playerside k_pside, IKwErrorHandler errH)
         {
             bool successful = false;
 
@@ -638,7 +638,7 @@ namespace Grayscale.P523UtilFv.L491UtilFvIo
         /// </summary>
         /// <param name="filepath1"></param>
         /// <returns></returns>
-        public static bool Make_FromFile_PP_Banjo(FeatureVector fv, string filepath1, int p1_base, KwErrorHandler errH)
+        public static bool Make_FromFile_PP_Banjo(FeatureVector fv, string filepath1, int p1_base, IKwErrorHandler errH)
         {
             bool successful = false;
 
@@ -886,7 +886,7 @@ namespace Grayscale.P523UtilFv.L491UtilFvIo
         /// <param name="fv"></param>
         /// <param name="filepath1"></param>
         /// <returns></returns>
-        public static bool Make_FromFile_PP_Moti19Mai(FeatureVector fv, string filepath1, int p1_base, KwErrorHandler errH)
+        public static bool Make_FromFile_PP_Moti19Mai(FeatureVector fv, string filepath1, int p1_base, IKwErrorHandler errH)
         {
             bool successful = false;
             string filepath2 = Path.Combine(Application.StartupPath, filepath1);
@@ -1143,7 +1143,7 @@ namespace Grayscale.P523UtilFv.L491UtilFvIo
         /// <param name="fv"></param>
         /// <param name="filepath1"></param>
         /// <returns></returns>
-        public static bool Make_FromFile_PP_Moti3or5Mai(FeatureVector fv, string filepath1, int p1_base, int p1Koumoku3or5Length, KwErrorHandler errH)
+        public static bool Make_FromFile_PP_Moti3or5Mai(FeatureVector fv, string filepath1, int p1_base, int p1Koumoku3or5Length, IKwErrorHandler errH)
         {
 
             bool successful = false;

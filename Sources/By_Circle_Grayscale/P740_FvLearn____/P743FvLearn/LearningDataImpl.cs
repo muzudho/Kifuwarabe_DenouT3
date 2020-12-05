@@ -135,7 +135,7 @@ namespace Grayscale.P743FvLearn.L250Learn
         public void ChangeKyokumenPng(Uc_Main uc_Main)
         {
             uc_Main.PctKyokumen.Image = null;//掴んでいる画像ファイルを放します。
-            this.WritePng(Util_OwataMinister.LEARNER);
+            this.WritePng(UtilOwataMinister.Learner);
             uc_Main.PctKyokumen.ImageLocation = Const_Filepath.ENGINE_TO_LOGS + "_log_学習局面.png";
         }
 
@@ -175,7 +175,7 @@ namespace Grayscale.P743FvLearn.L250Learn
         /// <summary>
         /// 合法手一覧を作成したい。
         /// </summary>
-        public void Aa_Yomi(Starbeamable sasite, KwErrorHandler errH)
+        public void Aa_Yomi(Starbeamable sasite, IKwErrorHandler errH)
         {
             //----------------------------------------
             // 合法手のNextNodesを作成します。
@@ -259,7 +259,7 @@ namespace Grayscale.P743FvLearn.L250Learn
         /// <summary>
         /// 局面PNG画像書き出し。
         /// </summary>
-        public void WritePng(KwErrorHandler errH)
+        public void WritePng(IKwErrorHandler errH)
         {
             int srcMasu_orMinusOne = -1;
             int dstMasu_orMinusOne = -1;
@@ -310,7 +310,7 @@ namespace Grayscale.P743FvLearn.L250Learn
         /// <param name="uc_Main"></param>
         public void Aaa_CreateNextNodes_Gohosyu(
             EvaluationArgs args,
-            KwErrorHandler errH)
+            IKwErrorHandler errH)
         {
             try
             {
@@ -365,7 +365,7 @@ namespace Grayscale.P743FvLearn.L250Learn
 #endif
                     node.Value.KyokumenConst,
                     this.Fv, //参照してもらうだけ。
-                    Util_OwataMinister.LEARNER
+                    UtilOwataMinister.Learner
                 );
             }
             //----------------------------------------
@@ -381,7 +381,7 @@ namespace Grayscale.P743FvLearn.L250Learn
 #endif
                     node.Value.KyokumenConst,
                     this.Fv, //参照してもらうだけ。
-                    Util_OwataMinister.LEARNER
+                    UtilOwataMinister.Learner
                 );
             }
         }
