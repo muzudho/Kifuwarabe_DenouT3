@@ -72,7 +72,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                     genjo.ToBreak_Abnormal();
                 }
             }
-            catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "SFEN文字列の解析中。"); throw ex; }
+            catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "SFEN文字列の解析中。"); throw; }
 
             return genjo.InputLine;
         }

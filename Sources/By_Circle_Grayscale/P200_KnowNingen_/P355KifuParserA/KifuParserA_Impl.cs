@@ -60,7 +60,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                 this.State = nextState;
 
             }
-            catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "棋譜解析中☆"); throw ex; }
+            catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "棋譜解析中☆"); throw; }
 
             return genjo.InputLine;
         }
@@ -130,7 +130,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
 
 
             }
-            catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "棋譜解析中☆"); throw ex; }
+            catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "棋譜解析中☆"); throw; }
         }
 
     }

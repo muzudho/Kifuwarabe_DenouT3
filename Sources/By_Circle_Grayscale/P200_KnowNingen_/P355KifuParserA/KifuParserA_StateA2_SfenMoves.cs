@@ -143,7 +143,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
 
                         genjo.InputLine = rest;
                     }
-                    catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "moves解析中☆"); throw ex; }
+                    catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "moves解析中☆"); throw; }
 
 
 

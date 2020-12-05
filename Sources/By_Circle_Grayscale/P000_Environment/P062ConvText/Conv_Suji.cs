@@ -30,8 +30,8 @@ namespace Grayscale.P062ConvText.L500Converter
                 case '8': alphabet = "h"; break;
                 case '9': alphabet = "i"; break;
                 default:
-                    Exception ex = new Exception("筋[" + suji + "]をアルファベットに変えることはできませんでした。");
-                    ErrorControllerReference.Error.Panic(ex, "筋をアルファベットに変換中☆"); throw ex;
+                    Exception ex1 = new Exception("筋[" + suji + "]をアルファベットに変えることはできませんでした。");
+                    ErrorControllerReference.Error.Panic(ex1, "筋をアルファベットに変換中☆"); throw ex1;
             }
 
             return alphabet;

@@ -212,7 +212,7 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
                         ErrorControllerReference.EngineDefault.Panic("フィーチャーベクターCSVを読み込んでいるとき。" + ex.GetType().Name + "：" + ex.Message);
                         break;
                 }
-                throw ex;
+                throw;
             }
         }
 

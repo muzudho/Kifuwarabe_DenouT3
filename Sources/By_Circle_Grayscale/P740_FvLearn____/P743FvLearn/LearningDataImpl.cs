@@ -336,7 +336,7 @@ namespace Grayscale.P743FvLearn.L250Learn
                 new Tansaku_FukasaYusen_Routine().WAA_Yomu_Start(
                     this.Kifu, isHonshogi, Mode_Tansaku.Learning, alphabeta_otherBranchDecidedValue, args, errH);
             }
-            catch (Exception ex) { errH.Panic(ex, "棋譜ツリーを作っていたときです。"); throw ex; }
+            catch (Exception ex) { errH.Panic(ex, "棋譜ツリーを作っていたときです。"); throw; }
 
         }
 

@@ -422,7 +422,7 @@ namespace Grayscale.P362LegalMove.L500Util
                     sMs_effect.AddRange_New( kmEffect_seme_BANJO);
 
                 }
-                catch (Exception ex) { errH.Panic(ex, "ランダムチョイス(50)"); throw ex; }
+                catch (Exception ex) { errH.Panic(ex, "ランダムチョイス(50)"); throw; }
 
             }
 

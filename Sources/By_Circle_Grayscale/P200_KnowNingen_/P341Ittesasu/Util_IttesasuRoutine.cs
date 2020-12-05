@@ -223,7 +223,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
                 // どうにもできないので  ログだけ取って無視します。
                 string message = "Util_IttesasuRoutine#Execute（B）： exceptionArea=" + exceptionArea + "\n" + ex.GetType().Name + "：" + ex.Message;
                 errH.Logger.WriteLineError(message);
-                throw ex;
+                throw;
             }
         }
 
@@ -386,7 +386,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
                 // どうにもできないので  ログだけ取って無視します。
                 errH.Panic(ex, "Util_IttesasuRoutine#Sasu24_UgokasuKoma_IdoSakiHe： exceptionArea=" + exceptionArea+"\n"+
                     "hint=["+hint+"]");
-                throw ex;
+                throw;
             }
         }
 

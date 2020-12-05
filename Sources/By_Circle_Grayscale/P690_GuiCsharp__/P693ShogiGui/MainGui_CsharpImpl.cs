@@ -332,7 +332,7 @@ namespace Grayscale.P693ShogiGui.L500GUI
                     catch (Exception ex)
                     {
                         MessageBox.Show("JSONのパース時にエラーか？：" + ex.GetType().Name + "：" + ex.Message);
-                        throw ex;
+                        throw;
                     }
 
 

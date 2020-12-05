@@ -86,7 +86,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                 }
 
             }
-            catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "SFEN解析中☆"); throw ex; }
+            catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "SFEN解析中☆"); throw; }
 
             return genjo.InputLine;
         }

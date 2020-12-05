@@ -892,22 +892,22 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                     case 2100:
                         {
                             ErrorControllerReference.EngineDefault.Panic(ex, "マルチＰＶから、ベスト指し手をチョイスしようとしたときの１０です。");
-                            throw ex;
+                            throw;
                         }
                     case 2200:
                         {
                             ErrorControllerReference.EngineDefault.Panic(ex, "マルチＰＶから、ベスト指し手をチョイスしようとしたときの４０です。");
-                            throw ex;
+                            throw;
                         }
                     case 2300:
                         {
                             ErrorControllerReference.EngineDefault.Panic(ex, "マルチＰＶから、ベスト指し手をチョイスしようとしたときの５０です。");
-                            throw ex;
+                            throw;
                         }
                     case 2400:
                         {
                             ErrorControllerReference.EngineDefault.Panic(ex, "マルチＰＶから、ベスト指し手をチョイスしようとしたときの９０です。");
-                            throw ex;
+                            throw;
                         }
                     default:
                         {

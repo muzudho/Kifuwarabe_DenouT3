@@ -127,8 +127,8 @@ namespace Grayscale.P339ConvKyokume.L500Converter
                     if (Fingers.Error_1 == koma)
                     {
                         string message = "TuginoItte_Sfen#GetData_FromTextSub：駒台から種類[" + uttaSyurui + "]の駒を掴もうとしましたが、エラーでした。";
-                        Exception ex = new Exception(message);
-                        ErrorControllerReference.Error.Panic(ex, "moves解析中☆"); throw ex;
+                        Exception ex1 = new Exception(message);
+                        ErrorControllerReference.Error.Panic(ex1, "moves解析中☆"); throw ex1;
                     }
 
 
@@ -194,8 +194,8 @@ namespace Grayscale.P339ConvKyokume.L500Converter
                             hint + "_SF解3",
                             src_Sky.Temezumi));
 
-                        Exception ex = new Exception(sb.ToString());
-                        ErrorControllerReference.Error.Panic(ex, "SFEN解析中の失敗"); throw ex;
+                        Exception ex1 = new Exception(sb.ToString());
+                        ErrorControllerReference.Error.Panic(ex1, "SFEN解析中の失敗"); throw ex1;
                     }
                 }
 
@@ -278,7 +278,7 @@ namespace Grayscale.P339ConvKyokume.L500Converter
                     Komasyurui14.H00_Null___//符号からは、取った駒は分からない
                 );
             }
-            catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "moves解析中☆　str1=「" + str1 + "」　str2=「" + str2 + "」　str3=「" + str3 + "」　str4=「" + str4 + "」　strNari=「" + strNari + "」　"); throw ex; }
+            catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "moves解析中☆　str1=「" + str1 + "」　str2=「" + str2 + "」　str3=「" + str3 + "」　str4=「" + str4 + "」　strNari=「" + strNari + "」　"); throw; }
         }
     }
 }

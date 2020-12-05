@@ -109,7 +109,7 @@ namespace Grayscale.P571KifuWarabe.L100Shogisasi
                 new Tansaku_FukasaYusen_Routine().WAA_Yomu_Start(
                     kifu, isHonshogi, Mode_Tansaku.Shogi_ENgine, alphabeta_otherBranchDecidedValue, args, errH);
             }
-            catch (Exception ex) { errH.Panic(ex, "棋譜ツリーを作っていたときです。"); throw ex; }
+            catch (Exception ex) { errH.Panic(ex, "棋譜ツリーを作っていたときです。"); throw; }
 
 
 #if DEBUG
@@ -135,7 +135,7 @@ namespace Grayscale.P571KifuWarabe.L100Shogisasi
                 // 評価値の高いノードだけを残します。
                 this.EdagariEngine.EdaSibori_HighScore(kifu, this, errH);
             }
-            catch (Exception ex) { errH.Panic(ex, "ベストムーブ後半２０：ハイスコア抽出"); throw ex; }
+            catch (Exception ex) { errH.Panic(ex, "ベストムーブ後半２０：ハイスコア抽出"); throw; }
 
 
             // 評価値の同点があれば、同点決勝をして　1手に決めます。
@@ -144,7 +144,7 @@ namespace Grayscale.P571KifuWarabe.L100Shogisasi
             {
                 bestKifuNode = this.ChoiceNode_DoutenKessyou(kifu, isHonshogi, errH);
             }
-            catch (Exception ex) { errH.Panic(ex, "ベストムーブ後半３０：同点決勝"); throw ex; }
+            catch (Exception ex) { errH.Panic(ex, "ベストムーブ後半３０：同点決勝"); throw; }
 
 
             return bestKifuNode;

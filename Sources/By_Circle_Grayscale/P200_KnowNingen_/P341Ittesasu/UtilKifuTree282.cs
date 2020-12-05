@@ -155,8 +155,8 @@ namespace Grayscale.P341Ittesasu.L125UtilB
             if (null == src_Sky)
             {
                 string message = "ノードを追加しようとしましたが、指定されたnewSkyがヌルです。";
-                Exception ex = new Exception(message);
-                OwataMinister.ERROR.DonimoNaranAkirameta(ex, "取った駒を差替え中☆"); throw ex;
+                Exception ex1 = new Exception(message);
+                OwataMinister.ERROR.DonimoNaranAkirameta(ex1, "取った駒を差替え中☆"); throw ex1;
             }
 
             // 現手番

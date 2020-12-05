@@ -235,7 +235,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
             catch (Exception ex)
             {
                 ErrorControllerReference.Error.Panic(ex, "IsDaAction:");// exceptionArea=" + exceptionArea
-                throw ex;
+                throw;
             }
 
             return result;

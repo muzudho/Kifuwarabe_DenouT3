@@ -84,7 +84,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                     nextState = KifuParserA_StateA1b_SfenLnsgkgsnl.GetInstance();
                 }
             }
-            catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "positionの解析中。"); throw ex; }
+            catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "positionの解析中。"); throw; }
 
             return genjo.InputLine;
         }

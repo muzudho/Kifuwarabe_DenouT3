@@ -123,7 +123,7 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
 
                 // どうにもできないので  ログだけ取って、上に投げます。
                 errH.Logger.WriteLine_Error(message);
-                throw ex;
+                throw;
             }
 
             try
@@ -144,7 +144,7 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
                     logF_kiki.boards.Clear();
                 }
             }
-            catch (Exception ex) { errH.DonimoNaranAkirameta(ex, "局面評価明細を出力しようとしたときです。"); throw ex; }
+            catch (Exception ex) { errH.DonimoNaranAkirameta(ex, "局面評価明細を出力しようとしたときです。"); throw; }
 #endif
         }
 
@@ -282,7 +282,7 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
             }
             catch (System.Exception ex)
             {
-                errH.Panic(ex, "盤１個分のログを出力しようとしていたときです。\n fileName=[" + fileName + "]\n relFolder=[" + relFolder + "]"); throw ex;
+                errH.Panic(ex, "盤１個分のログを出力しようとしていたときです。\n fileName=[" + fileName + "]\n relFolder=[" + relFolder + "]"); throw;
             }
         }
 
@@ -380,7 +380,7 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
 //                    logF_kiki.boards.Clear();
 //                }
 //            }
-//            catch (Exception ex) { errH.DonimoNaranAkirameta(ex, "HTML5ログを出力しようとしたときです。"); throw ex; }
+//            catch (Exception ex) { errH.DonimoNaranAkirameta(ex, "HTML5ログを出力しようとしたときです。"); throw; }
 //#endif
 //        }
 

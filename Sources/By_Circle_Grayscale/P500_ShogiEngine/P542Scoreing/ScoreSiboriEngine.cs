@@ -128,7 +128,7 @@ namespace Grayscale.P542Scoreing.L125ScoreSibori
             }
             catch (Exception ex)
             {
-                errH.Panic(ex, "ベストムーブ／ハイスコア抽出中 exception_area=[" + exception_area + "]"); throw ex;
+                errH.Panic(ex, "ベストムーブ／ハイスコア抽出中 exception_area=[" + exception_area + "]"); throw;
             }
 
         gt_EndMethod:
@@ -167,7 +167,7 @@ namespace Grayscale.P542Scoreing.L125ScoreSibori
             }
             catch (Exception ex)
             {
-                errH.Panic(ex, "ベストムーブ／ハイスコア抽出中 exception_area=[" + exception_area + "]"); throw ex;
+                errH.Panic(ex, "ベストムーブ／ハイスコア抽出中 exception_area=[" + exception_area + "]"); throw;
             }
 
             return list;

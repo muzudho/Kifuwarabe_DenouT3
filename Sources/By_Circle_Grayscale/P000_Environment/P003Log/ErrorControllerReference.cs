@@ -126,7 +126,7 @@ namespace Grayscale.P003Log.L500Struct
                     }
                 }
             }
-            catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "ﾛｸﾞﾌｧｲﾙ削除中☆"); throw ex; }
+            catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "ﾛｸﾞﾌｧｲﾙ削除中☆"); throw; }
         }
     }
 }

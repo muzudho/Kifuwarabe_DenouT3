@@ -287,15 +287,15 @@ namespace Grayscale.P554TansaFukasa.L500Struct
 
                             // どうにもできないので  ログだけ取って、上に投げます。
                             errH.Logger.WriteLineError(message);
-                            throw ex;
+                            throw;
                         }
 #if DEBUG
                     case 20:
                         {
-                            errH.DonimoNaranAkirameta(ex, "棋譜ツリーの読みの後半９０です。"); throw ex;
+                            errH.DonimoNaranAkirameta(ex, "棋譜ツリーの読みの後半９０です。"); throw;
                         }
 #endif
-                    default: throw ex;
+                    default: throw;
                 }
             }
         }
@@ -562,17 +562,17 @@ namespace Grayscale.P554TansaFukasa.L500Struct
                 {
                     case 10:
                         {
-                            errH.Panic(ex, "棋譜ツリーの読みループの前半１０です。"); throw ex;
+                            errH.Panic(ex, "棋譜ツリーの読みループの前半１０です。"); throw;
                         }
                     case 20:
                         {
-                            errH.Panic(ex, "棋譜ツリーの読みループの前半２０です。"); throw ex;
+                            errH.Panic(ex, "棋譜ツリーの読みループの前半２０です。"); throw;
                         }
                     case 30:
                         {
-                            errH.Panic(ex, "棋譜ツリーの読みループの後半７０です。"); throw ex;
+                            errH.Panic(ex, "棋譜ツリーの読みループの後半７０です。"); throw;
                         }
-                    default: throw ex;
+                    default: throw;
                 }
             }
 
@@ -754,25 +754,25 @@ namespace Grayscale.P554TansaFukasa.L500Struct
                 {
                     case 10:
                         {
-                            errH.Panic(ex, "棋譜ツリーの読みループの作成次ノードの前半１０です。"); throw ex;
+                            errH.Panic(ex, "棋譜ツリーの読みループの作成次ノードの前半１０です。"); throw;
                         }
                     case 20:
                         {
-                            errH.Panic(ex, "棋譜ツリーの読みループの作成次ノードの前半３０です。"); throw ex;
+                            errH.Panic(ex, "棋譜ツリーの読みループの作成次ノードの前半３０です。"); throw;
                         }
                     case 30:
                         {
-                            errH.Panic(ex, "棋譜ツリーの読みループの作成次ノードの中盤５０です。"); throw ex;
+                            errH.Panic(ex, "棋譜ツリーの読みループの作成次ノードの中盤５０です。"); throw;
                         }
                     case 40:
                         {
-                            errH.Panic(ex, "王手局面除去後に成りの指し手を追加していた時です。"); throw ex;
+                            errH.Panic(ex, "王手局面除去後に成りの指し手を追加していた時です。"); throw;
                         }
                     case 50:
                         {
-                            errH.Panic(ex, "棋譜ツリーの読みループの作成次ノードの後半９０です。"); throw ex;
+                            errH.Panic(ex, "棋譜ツリーの読みループの作成次ノードの後半９０です。"); throw;
                         }
-                    default: throw ex;
+                    default: throw;
                 }
             }
 
@@ -803,7 +803,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             }
             catch (Exception ex)
             {
-                errH.DonimoNaranAkirameta(ex, "棋譜ツリーの読みループの作成次ノードの前半２０です。"); throw ex;
+                errH.DonimoNaranAkirameta(ex, "棋譜ツリーの読みループの作成次ノードの前半２０です。"); throw;
             }
         }
         private static void Log2(
@@ -828,7 +828,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             }
             catch (Exception ex)
             {
-                errH.DonimoNaranAkirameta(ex, "棋譜ツリーの読みループの作成次ノードの前半４０です。"); throw ex;
+                errH.DonimoNaranAkirameta(ex, "棋譜ツリーの読みループの作成次ノードの前半４０です。"); throw;
             }
         }
 #endif

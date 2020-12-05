@@ -238,7 +238,7 @@ namespace Grayscale.P003Log.PartOfErrorControllerReference
             catch (Exception ex) {
                 // 循環参照になるので、ログを取れません。
                 // ErrorControllerReference.ERROR.Panic(ex, "ログ取り中☆");
-                throw ex;
+                throw;
             }
 
         gt_EndMethod:
@@ -349,7 +349,7 @@ namespace Grayscale.P003Log.PartOfErrorControllerReference
             {
                 // 循環参照になるので、ログを取れません。
                 // ErrorControllerReference.ERROR.Panic(ex, "ログ取り中☆");
-                throw ex;
+                throw;
             }
 
         gt_EndMethod:
