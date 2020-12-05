@@ -1,5 +1,20 @@
 # Kifuwarabe_DenouT3
 
+2020年11月の 電竜戦から きふわらずさ(Kifuwarakaku)にリネームして開発再開だぜ☆（＾～＾）  
+
+|                         | ファイル                                                                                      |
+| ----------------------- | --------------------------------------------------------------------------------------------- |
+| ソース                  | `Kifuwarabe_DenouT3/Sources/By_Circle_Grayscale/Kifuwarakaku.sln`                             |
+| 将棋エンジン ソース     | P500ShogiEngine                                                                               |
+| 将棋GUI ソース          | P800GuiCshapeVs                                                                               |
+| 将棋エンジン ランタイム | `Kifuwarabe_DenouT3/Builds/Engine/Bin/P500_ShogiEngine/Grayscale.P500_ShogiEngine.exe`        |
+| 設定ファイル1           | `Kifuwarabe_DenouT3/Builds/Engine/Bin/P500_ShogiEngine/Grayscale.P500_ShogiEngine.exe.config` |
+| 設定ファイル2           | `Kifuwarabe_DenouT3/Profile/Engine.toml`                                                      |
+
+設定ファイル1 の `Grayscale.P500_ShogiEngine.exe.config` の中にある `Profile` のパスを、 設定ファイル2 の親ディレクトリー `Profile` に合わせてください。  
+
+## Manual
+
 第３回電王トーナメントの　きふわらべ　を入れる予定だぜ☆（＾ｑ＾）  
 あれ、動かない？ と思う時は 添付の `vcredist_x64.exe` を実行して  
 『VC++再配布可能ランタイムパッケージ』 を インストールしておいてくれだぜ☆（＾▽＾）  
