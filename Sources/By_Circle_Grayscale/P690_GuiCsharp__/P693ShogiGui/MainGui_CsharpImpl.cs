@@ -1,7 +1,12 @@
-﻿using Codeplex.Data;//DynamicJson
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
+using System.Text;
+using System.Windows.Forms;
+using Codeplex.Data;//DynamicJson
 using Grayscale.P003Log.I500Struct;
 using Grayscale.P027Settei.L500Struct;
-using Grayscale.P031Random.L500Struct;
 using Grayscale.P236KomahaiyaTr.L500Table;
 using Grayscale.P238Seiza.L250Struct;
 using Grayscale.P238Seiza.L500Util;
@@ -10,11 +15,9 @@ using Grayscale.P250KomahaiyaEx.L500Util;
 using Grayscale.P270ForcePromot.L250Struct;
 using Grayscale.P325PnlTaikyoku.I250Struct;
 using Grayscale.P325PnlTaikyoku.L250Struct;
-using Grayscale.P461Server.L498Server;
 using Grayscale.P461Server.L497EngineClient;
 using Grayscale.P461Server.L498Server;
 using Grayscale.P693ShogiGui.I080Shape;
-using Grayscale.P693ShogiGui.L081Canvas;
 using Grayscale.P693ShogiGui.I125Scene;
 using Grayscale.P693ShogiGui.I492Widgets;
 using Grayscale.P693ShogiGui.I499Repaint;
@@ -26,12 +29,6 @@ using Grayscale.P693ShogiGui.L125Scene;
 using Grayscale.P693ShogiGui.L249Function;
 using Grayscale.P693ShogiGui.L250Timed;
 using Grayscale.P693ShogiGui.L492Widgets;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
-using System.Text;
-using System.Windows.Forms;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 namespace Grayscale.P693ShogiGui.L500GUI

@@ -1,5 +1,4 @@
-﻿using Grayscale.P693ShogiGui.L081Canvas;
-using Grayscale.P693ShogiGui.I500Gui;
+﻿using Grayscale.P693ShogiGui.I500Gui;
 using Grayscale.P693ShogiGui.L081Canvas;
 
 namespace Grayscale.P693ShogiGui.L500GUI
