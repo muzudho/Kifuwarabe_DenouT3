@@ -1,0 +1,7 @@
+[Engine]
+
+# 将棋ソフトの表示名です。
+Name = "Kifuwarakaku Bld3"
+
+# 将棋ソフトの制作者名です。
+Author = "Satoshi TAKAHASHI"

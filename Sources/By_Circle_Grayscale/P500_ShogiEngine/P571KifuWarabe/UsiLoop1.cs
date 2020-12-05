@@ -4,6 +4,9 @@ using Grayscale.P542Scoreing.I005UsiLoop;
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Configuration;
+using System.IO;
+using Nett;
 
 
 namespace Grayscale.P571KifuWarabe.L250UsiLoop
@@ -201,8 +204,12 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
             // オプションも送り返せば、受け取ってくれます。
             // usi を受け取ってから、5秒以内に usiok を送り返して完了です。
             #endregion
-            this.Owner.Send("id name " + this.Owner.SeihinName);
-            this.Owner.Send("id author " + this.Owner.AuthorName);
+            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+            var engineName = toml.Get<TomlTable>("Engine").Get<string>("Name");
+            var engineAuthor = toml.Get<TomlTable>("Engine").Get<string>("Author");
+            this.Owner.Send($"id name {engineName}");
+            this.Owner.Send($"id author {engineAuthor}");
             this.Owner.Send("usiok");
         }
 

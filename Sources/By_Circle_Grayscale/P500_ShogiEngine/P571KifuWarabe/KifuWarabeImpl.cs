@@ -27,20 +27,6 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
     public class KifuWarabeImpl : ShogiEngine
     {
         /// <summary>
-        /// きふわらべの作者名です。
-        /// </summary>
-        public string AuthorName { get { return this.authorName; } }
-        private string authorName;
-
-
-        /// <summary>
-        /// 製品名です。
-        /// </summary>
-        public string SeihinName { get { return this.seihinName; } }
-        private string seihinName;
-
-
-        /// <summary>
         /// USI「setoption」コマンドのリストです。
         /// </summary>
         public Dictionary<string, string> SetoptionDictionary { get; set; }
@@ -83,12 +69,6 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
         /// </summary>
         public KifuWarabeImpl()
         {
-            // 作者名
-            this.authorName = "TAKAHASHI Satoshi"; // むずでょ
-
-            // 製品名
-            this.seihinName = ((System.Reflection.AssemblyProductAttribute)Attribute.GetCustomAttribute(System.Reflection.Assembly.GetExecutingAssembly(), typeof(System.Reflection.AssemblyProductAttribute))).Product;
-
             //-------------+----------------------------------------------------------------------------------------------------------
             // データ設計  |
             //-------------+----------------------------------------------------------------------------------------------------------
