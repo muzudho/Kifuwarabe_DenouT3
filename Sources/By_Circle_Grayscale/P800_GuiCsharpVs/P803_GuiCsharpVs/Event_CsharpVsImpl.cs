@@ -31,7 +31,7 @@ namespace Grayscale.P803GuiCsharpVs.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , IKwErrorHandler errH
+                    , IErrorController errH
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
@@ -45,7 +45,7 @@ namespace Grayscale.P803GuiCsharpVs.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , IKwErrorHandler errH
+                    , IErrorController errH
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
@@ -62,7 +62,7 @@ namespace Grayscale.P803GuiCsharpVs.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , IKwErrorHandler errH
+                    , IErrorController errH
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;

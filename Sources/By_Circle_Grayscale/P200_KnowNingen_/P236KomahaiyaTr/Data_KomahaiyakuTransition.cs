@@ -222,7 +222,7 @@ namespace Grayscale.P236KomahaiyaTr.L500Table
                         "rowCount=[" + rowCount2 + "]\n" +
                         "columnCount=[" + columnCount + "]\n";
                         Exception ex = new Exception(message);
-                        UtilOwataMinister.ERROR.DonimoNaranAkirameta(ex, "配役変換中☆"); throw ex;
+                        ErrorControllerReference.Error.Panic(ex, "配役変換中☆"); throw ex;
                     }
 
                     int masuHandle = (8 - columnCount) * 9 + (rowCount2 % 9);//0～80

@@ -70,7 +70,7 @@ namespace Grayscale.P571KifuWarabe.L100Shogisasi
         public KifuNode WA_Bestmove(
             bool isHonshogi,
             KifuTree kifu,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
 #if DEBUG
@@ -109,7 +109,7 @@ namespace Grayscale.P571KifuWarabe.L100Shogisasi
                 new Tansaku_FukasaYusen_Routine().WAA_Yomu_Start(
                     kifu, isHonshogi, Mode_Tansaku.Shogi_ENgine, alphabeta_otherBranchDecidedValue, args, errH);
             }
-            catch (Exception ex) { errH.DonimoNaranAkirameta(ex, "棋譜ツリーを作っていたときです。"); throw ex; }
+            catch (Exception ex) { errH.Panic(ex, "棋譜ツリーを作っていたときです。"); throw ex; }
 
 
 #if DEBUG
@@ -135,7 +135,7 @@ namespace Grayscale.P571KifuWarabe.L100Shogisasi
                 // 評価値の高いノードだけを残します。
                 this.EdagariEngine.EdaSibori_HighScore(kifu, this, errH);
             }
-            catch (Exception ex) { errH.DonimoNaranAkirameta(ex, "ベストムーブ後半２０：ハイスコア抽出"); throw ex; }
+            catch (Exception ex) { errH.Panic(ex, "ベストムーブ後半２０：ハイスコア抽出"); throw ex; }
 
 
             // 評価値の同点があれば、同点決勝をして　1手に決めます。
@@ -144,7 +144,7 @@ namespace Grayscale.P571KifuWarabe.L100Shogisasi
             {
                 bestKifuNode = this.ChoiceNode_DoutenKessyou(kifu, isHonshogi, errH);
             }
-            catch (Exception ex) { errH.DonimoNaranAkirameta(ex, "ベストムーブ後半３０：同点決勝"); throw ex; }
+            catch (Exception ex) { errH.Panic(ex, "ベストムーブ後半３０：同点決勝"); throw ex; }
 
 
             return bestKifuNode;
@@ -160,7 +160,7 @@ namespace Grayscale.P571KifuWarabe.L100Shogisasi
         /// <returns></returns>
         private KifuNode ChoiceNode_DoutenKessyou(
             KifuTree kifu,
-            bool isHonshogi, IKwErrorHandler errH)
+            bool isHonshogi, IErrorController errH)
         {
             KifuNode bestKifuNode = null;
 

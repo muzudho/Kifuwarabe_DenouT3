@@ -49,7 +49,7 @@ namespace Grayscale.P461Server.L497EngineClient
         /// <param name="e"></param>
         public virtual void OnListenUpload_Async(object sender, DataReceivedEventArgs e)
         {
-            IKwErrorHandler errH = UtilOwataMinister.ServerNetworkAsync;
+            IErrorController errH = ErrorControllerReference.ServerNetworkAsync;
 
             string line = e.Data;
 

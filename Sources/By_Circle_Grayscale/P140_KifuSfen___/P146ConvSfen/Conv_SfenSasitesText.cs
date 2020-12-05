@@ -32,7 +32,7 @@ namespace Grayscale.P146ConvSfen.L500Converter
             out string moji4,
             out string moji5,
             out string rest,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             bool successful = false;
@@ -83,13 +83,13 @@ namespace Grayscale.P146ConvSfen.L500Converter
                         // 最初の１件だけ処理して終わります。
                         break;
                     }
-                    catch (Exception ex) { UtilOwataMinister.ERROR.DonimoNaranAkirameta(ex, "moves解析中☆"); throw ex; }
+                    catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "moves解析中☆"); throw ex; }
                 }
 
                 rest = rest.Trim();
 
             }
-            catch (Exception ex) { UtilOwataMinister.ERROR.DonimoNaranAkirameta(ex, "moves解析中☆"); throw ex; }
+            catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "moves解析中☆"); throw ex; }
 
             return successful;
         }

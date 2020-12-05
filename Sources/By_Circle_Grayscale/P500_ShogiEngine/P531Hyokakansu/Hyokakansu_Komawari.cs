@@ -37,9 +37,9 @@ namespace Grayscale.P531Hyokakansu.L500Hyokakansu
 #if DEBUG || LEARN
             out KyHyokaMeisai_Koumoku out_meisaiKoumoku_orNull,
 #endif
-            SkyConst src_Sky,
+            SkyConst srcSky,
             FeatureVector fv,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             float score_p1 = 0.0f;
@@ -47,7 +47,7 @@ namespace Grayscale.P531Hyokakansu.L500Hyokakansu
 
 
 
-            src_Sky.Foreach_Starlights((Finger finger, Starlight light, ref bool toBreak) =>
+            srcSky.Foreach_Starlights((Finger finger, Starlight light, ref bool toBreak) =>
             {
                 RO_Starlight ms = (RO_Starlight)light;
 

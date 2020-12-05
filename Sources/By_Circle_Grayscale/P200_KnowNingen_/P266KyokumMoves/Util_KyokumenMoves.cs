@@ -90,7 +90,7 @@ namespace Grayscale.P266KyokumMoves.L500Util
 #endif
             )
         {
-            IKwErrorHandler errH = null;
+            IErrorController errH = null;
 #if DEBUG
                     if (mmLog_orNull != null)
                     {
@@ -255,7 +255,7 @@ namespace Grayscale.P266KyokumMoves.L500Util
             SySet<SyElement> masus_mikata_onBanjo,
             SySet<SyElement> masus_aite_onBanjo,
             SkyConst src_Sky,
-            IKwErrorHandler errH_orNull
+            IErrorController errH_orNull
             )
         {
             // 持ち駒を置けない升

@@ -32,7 +32,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// <param name="masu">筋、段</param>
         /// <param name="uc_Main">メインパネル</param>
         /// <returns>駒。無ければヌル。</returns>
-        public static Finger InMasuNow(SkyConst src_Sky, Playerside pside, SyElement masu, IKwErrorHandler errH)
+        public static Finger InMasuNow(SkyConst src_Sky, Playerside pside, SyElement masu, IErrorController errH)
         {
             Finger foundKoma = Fingers.Error_1;
 
@@ -77,7 +77,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// <param name="komasyurui"></param>
         /// <param name="uc_Main"></param>
         /// <returns>無ければ -1</returns>
-        public static Finger InOkibaSyuruiNow_IgnoreCase(SkyConst src_Sky, Okiba okiba, Komasyurui14 komasyurui, IKwErrorHandler errH)
+        public static Finger InOkibaSyuruiNowIgnoreCase(SkyConst srcSky, Okiba okiba, Komasyurui14 komasyurui, IErrorController errH)
         {
             Finger found = Fingers.Error_1;
 
@@ -85,7 +85,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
 
             foreach (Finger finger in Finger_Honshogi.Items_KomaOnly)
             {
-                RO_Star koma = Util_Starlightable.AsKoma(src_Sky.StarlightIndexOf(finger).Now);
+                RO_Star koma = Util_Starlightable.AsKoma(srcSky.StarlightIndexOf(finger).Now);
 
                 if (Conv_SyElement.ToOkiba(koma.Masu) == okiba
                     && Util_Komasyurui14.Matches(koma.ToNarazuCase(), syuruiNarazuCase))
@@ -111,7 +111,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// <param name="masu">筋、段</param>
         /// <param name="uc_Main">メインパネル</param>
         /// <returns>駒。無ければヌル。</returns>
-        public static Finger InShogibanMasuNow(SkyConst src_Sky, Playerside pside, SyElement masu, IKwErrorHandler errH)
+        public static Finger InShogibanMasuNow(SkyConst src_Sky, Playerside pside, SyElement masu, IErrorController errH)
         {
             Finger foundKoma = Fingers.Error_1;
 

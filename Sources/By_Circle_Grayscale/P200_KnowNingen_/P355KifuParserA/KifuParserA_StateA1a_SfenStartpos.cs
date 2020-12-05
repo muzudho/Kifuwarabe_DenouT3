@@ -37,7 +37,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
             out KifuParserA_State nextState,
             KifuParserA owner,
             KifuParserA_Genjo genjo,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             nextState = this;
@@ -72,7 +72,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                     genjo.ToBreak_Abnormal();
                 }
             }
-            catch (Exception ex) { UtilOwataMinister.ERROR.DonimoNaranAkirameta(ex, "SFEN文字列の解析中。"); throw ex; }
+            catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "SFEN文字列の解析中。"); throw ex; }
 
             return genjo.InputLine;
         }

@@ -23,7 +23,7 @@ namespace Grayscale.P296ConvJsa.L500Converter
         public static string ToSasiteStr_Jsa(
             Node<Starbeamable, KyokumenWrapper> node,
             //KyokumenWrapper kyokumenWrapper,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             RO_Star koma = Util_Starlightable.AsKoma(((Starbeamable)node.Key).LongTimeAgo);

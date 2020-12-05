@@ -34,7 +34,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
             this.SaiseiEventQueue = new Queue<SaiseiEventState>();
         }
 
-        public override void Step(IKwErrorHandler errH)
+        public override void Step(IErrorController errH)
         {
 
             // 入っているマウス操作イベントは、全部捨てていきます。

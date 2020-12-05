@@ -65,7 +65,7 @@ namespace Grayscale.P523UtilFv.L510UtilFvLoad
         /// <param name="rv_orNull">学習でしか使いません。</param>
         /// <param name="filepath_komawari_base"></param>
         /// <returns></returns>
-        public static string OpenFv(FeatureVector fv, string filepath_komawari_base, IKwErrorHandler errH)
+        public static string OpenFv(FeatureVector fv, string filepath_komawari_base, IErrorController errH)
         {
             StringBuilder sb_result = new StringBuilder();
 

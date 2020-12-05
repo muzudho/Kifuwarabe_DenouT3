@@ -31,7 +31,7 @@ namespace Grayscale.P571KifuWarabe.L249Noop
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="isTimeoutShutdown"></param>
-        public void _02_AtEmptyMessage(ShogiEngine owner, out bool isTimeoutShutdown, IKwErrorHandler errH)
+        public void _02_AtEmptyMessage(ShogiEngine owner, out bool isTimeoutShutdown, IErrorController errH)
         {
             isTimeoutShutdown = false;
             //errH.Logger.WriteLine_AddMemo("メッセージは届いていませんでした。this.sw_forNoop.Elapsed.Seconds=[" + this.sw_forNoop.Elapsed.Seconds + "]");
@@ -73,7 +73,7 @@ namespace Grayscale.P571KifuWarabe.L249Noop
         /// <summary>
         /// 応答があったとき。
         /// </summary>
-        public void _03_AtResponsed(ShogiEngine owner, string command, IKwErrorHandler errH)
+        public void _03_AtResponsed(ShogiEngine owner, string command, IErrorController errH)
         {
             //System.Windows.Forms.MessageBox.Show("メッセージが届いています [" + line + "]");
 

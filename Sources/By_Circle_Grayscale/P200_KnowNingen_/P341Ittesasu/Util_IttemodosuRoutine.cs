@@ -44,7 +44,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
         public static void Before1(
             IttemodosuArg ittemodosuArg,
             out IttemodosuResult ittemodosuResult,
-            IKwErrorHandler errH
+            IErrorController errH
             ,
             [CallerMemberName] string memberName = "",
             [CallerFilePath] string sourceFilePath = "",
@@ -194,7 +194,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
         /// <param name="errH"></param>
         public static void Before2(
             ref IttemodosuResult ittemodosuReference,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             Node<Starbeamable, KyokumenWrapper> editNodeRef = ittemodosuReference.SyuryoNode_OrNull;
@@ -246,7 +246,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             Starbeamable sasite,
             Playerside kaisi_tebanside,
             SkyConst kaisi_Sky,
-            IKwErrorHandler errH
+            IErrorController errH
             ,
             [CallerMemberName] string memberName = "",
             [CallerFilePath] string sourceFilePath = "",
@@ -341,7 +341,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             SkyConst kaisi_Sky,//巻き戻しのとき
             SkyConst susunda_Sky_orNull,
             out Finger out_figFoodKoma,
-            IKwErrorHandler errH
+            IErrorController errH
         )
         {
             if (Komasyurui14.H00_Null___ != (Komasyurui14)sasite.FoodKomaSyurui)
@@ -364,7 +364,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
 
 
                 // 取った駒は、種類が同じなら、駒台のどの駒でも同じです。
-                out_figFoodKoma = Util_Sky_FingerQuery.InOkibaSyuruiNow_IgnoreCase(kaisi_Sky, okiba, (Komasyurui14)sasite.FoodKomaSyurui, errH);
+                out_figFoodKoma = Util_Sky_FingerQuery.InOkibaSyuruiNowIgnoreCase(kaisi_Sky, okiba, (Komasyurui14)sasite.FoodKomaSyurui, errH);
             }
             else
             {

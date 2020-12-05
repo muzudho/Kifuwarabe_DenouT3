@@ -19,7 +19,7 @@ namespace Grayscale.P355_KifuParserA.I500Parser
             ref KifuParserA_Result result,
             Model_Taikyoku model_Taikyoku,
             KifuParserA_Genjo genjo,
-            IKwErrorHandler errH
+            IErrorController errH
             ,
             [CallerMemberName] string memberName = "",
             [CallerFilePath] string sourceFilePath = "",
@@ -36,7 +36,7 @@ namespace Grayscale.P355_KifuParserA.I500Parser
             ref KifuParserA_Result result,
             Model_Taikyoku model_Taikyoku,
             KifuParserA_Genjo genjo,
-            IKwErrorHandler errH
+            IErrorController errH
             ,
             [CallerMemberName] string memberName = "",
             [CallerFilePath] string sourceFilePath = "",

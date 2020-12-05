@@ -57,7 +57,7 @@ namespace Grayscale.P362LegalMove.L500Util
 #endif
 
             string hint,
-            IKwErrorHandler errH)
+            IErrorController errH)
         {
             Node<Starbeamable, KyokumenWrapper> hubNode = Conv_StarbetuSasites.ToNextNodes_AsHubNode(
                 genTeban_komabetuAllSasite1,
@@ -122,7 +122,7 @@ namespace Grayscale.P362LegalMove.L500Util
             Node<Starbeamable, KyokumenWrapper> hubNode,
             int temezumi_yomiGenTeban,
             string hint,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             bool enableLog = false;//errH.Logger.Enable
@@ -147,7 +147,7 @@ namespace Grayscale.P362LegalMove.L500Util
             KaisetuBoards logF_kiki,
 #endif
 
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             // Node<,>の形で。
@@ -205,7 +205,7 @@ namespace Grayscale.P362LegalMove.L500Util
             KaisetuBoards logF_kiki,
 #endif
             Starbeamable sasite_forLog,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             bool isHonshogi = true;
@@ -289,7 +289,7 @@ namespace Grayscale.P362LegalMove.L500Util
             string logBrd_caption,
             int temezumi_yomiCur_forLog,
             Starbeamable sasite_forLog,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
 #if DEBUG
@@ -422,7 +422,7 @@ namespace Grayscale.P362LegalMove.L500Util
                     sMs_effect.AddRange_New( kmEffect_seme_BANJO);
 
                 }
-                catch (Exception ex) { errH.DonimoNaranAkirameta(ex, "ランダムチョイス(50)"); throw ex; }
+                catch (Exception ex) { errH.Panic(ex, "ランダムチョイス(50)"); throw ex; }
 
             }
 

@@ -70,7 +70,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                 }
 
                 // 通信ログは必ず取ります。
-                UtilOwataMinister.EngineNetwork.Logger.WriteLineC(line);
+                ErrorControllerReference.EngineNetwork.Logger.WriteLineC(line);
 
 #if NOOPABLE
                 noopTimer._04_AtResponsed(this.Owner, line);
@@ -344,13 +344,13 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
             // 将棋エンジン「おっおっ、設定を終わらせておかなければ（汗、汗…）」
             //------------------------------------------------------------
 #if DEBUG
-            Util_OwataMinister.ENGINE_DEFAULT.Logger.WriteLine_AddMemo("┏━━━━━設定━━━━━┓");
+            ErrorControllerReference.ENGINE_DEFAULT.Logger.WriteLine_AddMemo("┏━━━━━設定━━━━━┓");
             foreach (KeyValuePair<string, string> pair in this.Owner.SetoptionDictionary)
             {
                 // ここで将棋エンジンの設定を済ませておいてください。
-                Util_OwataMinister.ENGINE_DEFAULT.Logger.WriteLine_AddMemo(pair.Key + "=" + pair.Value);
+                ErrorControllerReference.ENGINE_DEFAULT.Logger.WriteLine_AddMemo(pair.Key + "=" + pair.Value);
             }
-            Util_OwataMinister.ENGINE_DEFAULT.Logger.WriteLine_AddMemo("┗━━━━━━━━━━━━┛");
+            ErrorControllerReference.ENGINE_DEFAULT.Logger.WriteLine_AddMemo("┗━━━━━━━━━━━━┛");
 #endif
 
             //------------------------------------------------------------
@@ -435,7 +435,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
             //
             #endregion
 #if DEBUG
-            Util_OwataMinister.ENGINE_DEFAULT.Logger.WriteLine_AddMemo("(^-^)ﾉｼ");
+            ErrorControllerReference.ENGINE_DEFAULT.Logger.WriteLine_AddMemo("(^-^)ﾉｼ");
 #endif
 
 

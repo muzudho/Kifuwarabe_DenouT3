@@ -51,7 +51,7 @@ namespace Grayscale.P531Hyokakansu.L500Hyokakansu
 #endif
             SkyConst src_Sky,
             FeatureVector fv,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             out_score = 0.0f;            // -999～999(*bairitu) が 40×40個ほど足し合わせた数になるはず。

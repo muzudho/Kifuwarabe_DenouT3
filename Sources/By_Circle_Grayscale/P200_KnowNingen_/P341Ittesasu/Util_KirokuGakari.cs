@@ -38,7 +38,7 @@ namespace Grayscale.P341Ittesasu.L250OperationA
         public static string ToJsaFugoListString(
             KifuTree src_kifu,
             string hint,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             StringBuilder sb = new StringBuilder();
@@ -85,7 +85,7 @@ namespace Grayscale.P341Ittesasu.L250OperationA
                 );
 
                 // 記録係り用棋譜（採譜）
-                Util_KifuTree282.AppendChild_And_ChangeCurrentToChild(saifuKifu, saifu_newChild, hint+"/ToJsaKifuText", errH);// 新しい次ノードを追加。次ノードを、これからカレントとする。
+                UtilKifuTree282.AppendChild_And_ChangeCurrentToChild(saifuKifu, saifu_newChild, hint+"/ToJsaKifuText", errH);// 新しい次ノードを追加。次ノードを、これからカレントとする。
 
                 // 後手の符号がまだ含まれていない。
                 string jsaFugoStr = Conv_SasiteStr_Jsa.ToSasiteStr_Jsa(saifu_newChild,

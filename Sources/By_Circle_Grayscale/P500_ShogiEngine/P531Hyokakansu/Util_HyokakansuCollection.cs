@@ -44,7 +44,7 @@ namespace Grayscale.P531Hyokakansu.L510HyokakansuColl
         public static void EvaluateAll_Normal(
             KifuNode node_mutable,
             FeatureVector fv,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             // 妄想と、指定のノードを比較し、点数付けします。

@@ -85,13 +85,13 @@ namespace Grayscale.P699_Form_______
         /// <param name="e"></param>
         private void Ui_Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            IKwErrorHandler errH = UtilOwataMinister.CsharpGuiDefault;
+            IErrorController errH = ErrorControllerReference.CsharpGuiDefault;
             this.owner.Shutdown(errH);
         }
 
         private void Ui_Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            IKwErrorHandler errH = UtilOwataMinister.CsharpGuiDefault;
+            IErrorController errH = ErrorControllerReference.CsharpGuiDefault;
             this.owner.Shutdown(errH);
         }
     }

@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace Grayscale.P461Server.I496EngineWrapper
 {
-    public delegate void DELEGATE_ShogiServer_ToEngine(string line, IKwErrorHandler errH);
+    public delegate void DELEGATE_ShogiServer_ToEngine(string line, IErrorController errH);
 
     /// <summary>
     /// 至将棋エンジン 通信インターフェース。
@@ -25,61 +25,61 @@ namespace Grayscale.P461Server.I496EngineWrapper
         /// <summary>
         /// 将棋エンジンに、"noop from server"を送信します。
         /// </summary>
-        void Send_Noop_from_server( IKwErrorHandler errH);
+        void Send_Noop_from_server( IErrorController errH);
 
         
         /// <summary>
         /// 将棋エンジンに、"usinewgame"を送信します。
         /// </summary>
-        void Send_Usinewgame( IKwErrorHandler errH);
+        void Send_Usinewgame( IErrorController errH);
 
 
         /// <summary>
         /// 将棋エンジンに、"usi"を送信します。
         /// </summary>
-        void Send_Usi( IKwErrorHandler errH);
+        void Send_Usi( IErrorController errH);
 
 
                 
         /// <summary>
         /// 将棋エンジンに、終了するように促します。
         /// </summary>
-        void Send_Shutdown( IKwErrorHandler errH);
+        void Send_Shutdown( IErrorController errH);
 
 
         
         /// <summary>
         /// 将棋エンジンに、"setoption ～略～"を送信します。
         /// </summary>
-        void Send_Setoption(string setoption, IKwErrorHandler errH);
+        void Send_Setoption(string setoption, IErrorController errH);
 
 
                 
         /// <summary>
         /// 将棋エンジンに、"quit"を送信します。
         /// </summary>
-        void Send_Quit( IKwErrorHandler errH);
+        void Send_Quit( IErrorController errH);
 
 
                 
         /// <summary>
         /// 将棋エンジンに、"position ～略～"を送信します。
         /// </summary>
-        void Send_Position(string position, IKwErrorHandler errH);
+        void Send_Position(string position, IErrorController errH);
 
 
         
         /// <summary>
         /// 将棋エンジンに、ログを出すように促します。
         /// </summary>
-        void Send_Logdase( IKwErrorHandler errH);
+        void Send_Logdase( IErrorController errH);
 
 
                 
         /// <summary>
         /// 将棋エンジンに、"isready"を送信します。
         /// </summary>
-        void Send_Isready( IKwErrorHandler errH);
+        void Send_Isready( IErrorController errH);
 
 
                 
@@ -94,14 +94,14 @@ namespace Grayscale.P461Server.I496EngineWrapper
         /// <summary>
         /// 将棋エンジンに、"go"を送信します。
         /// </summary>
-        void Send_Go( IKwErrorHandler errH);
+        void Send_Go( IErrorController errH);
 
 
 
         /// <summary>
         /// 将棋エンジンに、"gameover lose"を送信します。
         /// </summary>
-        void Send_Gameover_lose( IKwErrorHandler errH);
+        void Send_Gameover_lose( IErrorController errH);
 
     }
 }

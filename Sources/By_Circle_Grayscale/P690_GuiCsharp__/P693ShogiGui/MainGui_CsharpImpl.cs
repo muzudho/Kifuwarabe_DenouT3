@@ -150,7 +150,7 @@ namespace Grayscale.P693ShogiGui.L500GUI
                 return this.flowB;
             }
         }
-        public void SetFlowB(SceneName name1, IKwErrorHandler errH)
+        public void SetFlowB(SceneName name1, IErrorController errH)
         {
             this.flowB = name1;
 
@@ -221,14 +221,14 @@ namespace Grayscale.P693ShogiGui.L500GUI
         /// 将棋エンジンを起動します。
         /// ************************************************************************************************************************
         /// </summary>
-        public virtual void Start_ShogiEngine(string shogiEngineFilePath, IKwErrorHandler errH)
+        public virtual void Start_ShogiEngine(string shogiEngineFilePath, IErrorController errH)
         {
         }
 
         /// <summary>
         /// コンピューターの先手
         /// </summary>
-        public virtual void Do_ComputerSente(IKwErrorHandler errH)
+        public virtual void Do_ComputerSente(IErrorController errH)
         {
         }
 
@@ -237,7 +237,7 @@ namespace Grayscale.P693ShogiGui.L500GUI
         /// 手番が替わったときの挙動を、ここに書きます。
         /// ************************************************************************************************************************
         /// </summary>
-        public virtual void ChangedTurn(IKwErrorHandler errH)
+        public virtual void ChangedTurn(IErrorController errH)
         {
         }
 
@@ -245,7 +245,7 @@ namespace Grayscale.P693ShogiGui.L500GUI
         /// <summary>
         /// 将棋エンジンに、終了するように促します。
         /// </summary>
-        public virtual void Shutdown(IKwErrorHandler errH)
+        public virtual void Shutdown(IErrorController errH)
         {
         }
 
@@ -253,14 +253,14 @@ namespace Grayscale.P693ShogiGui.L500GUI
         /// <summary>
         /// 将棋エンジンに、ログを出すように促します。
         /// </summary>
-        public virtual void Logdase(IKwErrorHandler errH)
+        public virtual void Logdase(IErrorController errH)
         {
         }
 
 
 
         private int noopSend_counter;
-        public void Timer_Tick( IKwErrorHandler errH)
+        public void Timer_Tick( IErrorController errH)
         {
             if (this.server.EngineClient.ShogiEngineProcessWrapper.IsLive_ShogiEngine())
             {
@@ -352,7 +352,7 @@ namespace Grayscale.P693ShogiGui.L500GUI
         /// <summary>
         /// このアプリケーションソフトの開始時の処理。
         /// </summary>
-        public virtual void Load_AsStart(IKwErrorHandler errH)
+        public virtual void Load_AsStart(IErrorController errH)
         {
             //
             // 既存のログファイルを削除したい。
@@ -415,7 +415,7 @@ namespace Grayscale.P693ShogiGui.L500GUI
             this.WidgetLoaders.Add(new WidgetsLoader_CsharpImpl(filepath_widgets02, this));
         }
 
-        public void LaunchForm_AsBody(IKwErrorHandler errH)
+        public void LaunchForm_AsBody(IErrorController errH)
         {
             ((Form1_Shogiable)this.OwnerForm).Delegate_Form1_Load = (MainGui_Csharp shogiGui, object sender, EventArgs e) =>
             {
@@ -457,7 +457,7 @@ namespace Grayscale.P693ShogiGui.L500GUI
         }
 
 
-        public void Response( string mutexString, IKwErrorHandler errH)
+        public void Response( string mutexString, IErrorController errH)
         {
             Uc_Form1Mainable uc_Form1Main = ((Form1_Shogiable)this.OwnerForm).Uc_Form1Main;
 

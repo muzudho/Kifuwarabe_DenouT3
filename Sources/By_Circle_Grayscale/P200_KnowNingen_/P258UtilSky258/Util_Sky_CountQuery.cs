@@ -57,7 +57,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
             out int mn,
             out int ml,
             out int mp,
-            IKwErrorHandler errH
+            IErrorController errH
         )
         {
             mK = 0;

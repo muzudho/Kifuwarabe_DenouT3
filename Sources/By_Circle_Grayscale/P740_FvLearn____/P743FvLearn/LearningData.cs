@@ -47,14 +47,14 @@ namespace Grayscale.P743FvLearn.I250Learn
         /// <summary>
         /// 局面PNG画像書き出し。
         /// </summary>
-        void WritePng(IKwErrorHandler errH);
+        void WritePng(IErrorController errH);
 
 
         /// <summary>
         /// 合法手を一覧します。
         /// </summary>
         /// <param name="uc_Main"></param>
-        void Aaa_CreateNextNodes_Gohosyu( EvaluationArgs args, IKwErrorHandler errH);
+        void Aaa_CreateNextNodes_Gohosyu( EvaluationArgs args, IErrorController errH);
 
         /// <summary>
         /// 全合法手をダンプ。デバッグ用途。
@@ -79,7 +79,7 @@ namespace Grayscale.P743FvLearn.I250Learn
         /// <summary>
         /// 合法手一覧を作成したい。
         /// </summary>
-        void Aa_Yomi( Starbeamable sasite, IKwErrorHandler errH);
+        void Aa_Yomi( Starbeamable sasite, IErrorController errH);
 
     }
 }

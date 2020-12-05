@@ -39,7 +39,7 @@ namespace Grayscale.P743FvLearn.L508AutoSasiteRush
             ref bool isRequest_ShowGohosyu,
             ref bool isRequest_ChangeKyokumenPng,
             int renzokuTe,
-            Uc_Main uc_Main, IKwErrorHandler errH
+            Uc_Main uc_Main, IErrorController errH
             )
         {
             out_isEndKifuread = false;
@@ -152,7 +152,7 @@ namespace Grayscale.P743FvLearn.L508AutoSasiteRush
                 if (uc_Main.ChkRenzokuAutoRun.Checked)
                 {
                     // [一手指す]ボタン押下
-                    Util_LearningView.Ittesasu_ByBtnClick(
+                    Util_LearningView.IttesasuByBtnClick(
                         ref isRequest_ShowGohosyu,
                         ref isRequest_ChangeKyokumenPng,
                         uc_Main.LearningData, uc_Main, errH);

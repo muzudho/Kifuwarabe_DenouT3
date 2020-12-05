@@ -74,7 +74,7 @@
     <Compile Include="P238Seiza\Util_Koma.cs" />
     <Compile Include="P238Seiza\Util_Starlightable.cs" />
     <Compile Include="P258UtilSky258\Util_Sky_BoolQuery.cs" />
-    <Compile Include="P260Play\Query_SkyFingers.cs" />
+    <Compile Include="P260Play\QuerySkyFingers.cs" />
     <Compile Include="P239ConvWords\Conv_Fingers.cs" />
     <Compile Include="P239ConvWords\Conv_KomabetuMasus268.cs" />
     <Compile Include="P239ConvWords\Conv_Komasyurui.cs" />
@@ -217,7 +217,7 @@
     <Compile Include="P321KyokumHyoka\KyHyokaMeisai_KoumokuImpl.cs" />
     <Compile Include="P321KyokumHyoka\KyHyokaSheetImpl.cs" />
     <Compile Include="P258UtilSky258\Util_Sky_CountQuery.cs" />
-    <Compile Include="P341Ittesasu\Util_KifuTree282.cs" />
+    <Compile Include="P341Ittesasu\UtilKifuTree282.cs" />
     <Compile Include="P324KifuTree\Word_KifuTree.cs" />
     <Compile Include="P341Ittesasu\IttesasuArg.cs" />
     <Compile Include="P341Ittesasu\IttesasuResult.cs" />

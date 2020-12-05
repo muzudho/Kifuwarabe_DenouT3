@@ -61,7 +61,7 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
         public static void A_Write_KifuTreeLog(
             KaisetuBoards logF_kiki,
             KifuTree kifu,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
 #if DEBUG
@@ -158,7 +158,7 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
             KifuTree kifu,
             string relFolder,
             KyokumenPngEnvironment reportEnvironment,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
 
@@ -212,7 +212,7 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
             KifuTree kifu,
             string relFolder,
             KyokumenPngEnvironment reportEnvironment,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             string fileName = "";
@@ -282,7 +282,7 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
             }
             catch (System.Exception ex)
             {
-                errH.DonimoNaranAkirameta(ex, "盤１個分のログを出力しようとしていたときです。\n fileName=[" + fileName + "]\n relFolder=[" + relFolder + "]"); throw ex;
+                errH.Panic(ex, "盤１個分のログを出力しようとしていたときです。\n fileName=[" + fileName + "]\n relFolder=[" + relFolder + "]"); throw ex;
             }
         }
 

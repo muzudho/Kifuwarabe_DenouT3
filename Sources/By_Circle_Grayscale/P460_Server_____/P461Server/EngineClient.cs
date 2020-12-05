@@ -33,17 +33,17 @@ namespace Grayscale.P461Server.I497EngineClient
         /// </summary>
         /// <param name="kifu"></param>
         /// <param name="errH"></param>
-        void OnChangedTurn(KifuTree kifu, IKwErrorHandler errH);
+        void OnChangedTurn(KifuTree kifu, IErrorController errH);
 
         /// <summary>
         /// 将棋エンジンに、終了するように促します。
         /// </summary>
-        void Send_Shutdown(IKwErrorHandler errH);
+        void Send_Shutdown(IErrorController errH);
 
         /// <summary>
         /// 将棋エンジンに、ログを出すように促します。
         /// </summary>
-        void Send_Logdase(IKwErrorHandler errH);
+        void Send_Logdase(IErrorController errH);
 
         ///// <summary>
         ///// 将棋エンジンを先手にするために、go を出します。

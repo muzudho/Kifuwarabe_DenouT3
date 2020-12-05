@@ -20,7 +20,7 @@ namespace Grayscale.P353ConvSasuEx.L500Converter
         public static KifuNode ToKifuNode(
             SasuEntry sasuEntry,
             SkyConst src_Sky,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             return new KifuNodeImpl(sasuEntry.NewSasite, new KyokumenWrapper(

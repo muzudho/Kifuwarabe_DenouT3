@@ -49,7 +49,7 @@ namespace Grayscale.P461Server.L250Util
             Model_Manual model_Manual,
             Node<Starbeamable, KyokumenWrapper> newNode,
             out string jsaFugoStr,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             Debug.Assert(null != newNode, "新規ノードがヌル。");
@@ -83,7 +83,7 @@ namespace Grayscale.P461Server.L250Util
             Model_Manual model_Manual,
             out bool toBreak,
             string hint,
-            IKwErrorHandler errH
+            IErrorController errH
             ,
             [CallerMemberName] string memberName = "",
             [CallerFilePath] string sourceFilePath = "",
@@ -277,7 +277,7 @@ namespace Grayscale.P461Server.L250Util
             out Finger foodKoma,
             out string jsaFugoStr,
             Model_Taikyoku model_Taikyoku,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             bool successful = false;
@@ -360,7 +360,7 @@ namespace Grayscale.P461Server.L250Util
             ref string inputLine,
             Model_Taikyoku model_Taikyoku,
             Model_Manual model_Manual,
-            IKwErrorHandler errH
+            IErrorController errH
             ,
             [CallerMemberName] string memberName = "",
             [CallerFilePath] string sourceFilePath = "",
@@ -406,7 +406,7 @@ namespace Grayscale.P461Server.L250Util
             Finger fig_btnTumandeiruKoma,
             RO_Star foodee_koma,//取られる対象の駒
             Model_Manual model_Manual,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
 

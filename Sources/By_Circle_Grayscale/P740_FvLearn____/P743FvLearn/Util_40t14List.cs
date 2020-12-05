@@ -21,7 +21,7 @@ namespace Grayscale.P743FvLearn.L400N54List
     public abstract class Util_40t14List
     {
 
-        private static void Error1(RO_Star koma, IKwErrorHandler errH)
+        private static void Error1(RO_Star koma, IErrorController errH)
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Util_40t14List#Error1：２駒関係FVの配列添え字がわからないぜ☆！処理は続けられない。");
@@ -29,7 +29,7 @@ namespace Grayscale.P743FvLearn.L400N54List
             sb.AppendLine("koma1.Komasyurui=[" + koma.Komasyurui + "]");
             sb.AppendLine("koma1.Masu=[" + koma.Masu + "]");
             sb.AppendLine("Conv_SyElement.ToOkiba(koma1.Masu)=[" + Conv_SyElement.ToOkiba(koma.Masu) + "]");
-            errH.DonimoNaranAkirameta(sb.ToString());
+            errH.Panic(sb.ToString());
         }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace Grayscale.P743FvLearn.L400N54List
         /// 盤上の40駒リスト。
         /// 駒台の14駒リスト。
         /// </summary>
-        public static N40t14List Calc_40t14List(SkyConst src_Sky, IKwErrorHandler errH)
+        public static N40t14List Calc_40t14List(SkyConst src_Sky, IErrorController errH)
         {
             N40t14List result_n40t14List = new N40t14ListImpl();
 

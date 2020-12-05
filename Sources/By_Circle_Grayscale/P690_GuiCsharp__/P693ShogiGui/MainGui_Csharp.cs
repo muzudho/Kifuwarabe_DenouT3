@@ -35,18 +35,18 @@ namespace Grayscale.P693ShogiGui.I500Gui
         /// 手番が替わったときの挙動を、ここに書きます。
         /// ************************************************************************************************************************
         /// </summary>
-        void ChangedTurn(IKwErrorHandler errH);
+        void ChangedTurn(IErrorController errH);
 
         /// <summary>
         /// 将棋エンジンに、終了するように促します。
         /// </summary>
-        void Shutdown(IKwErrorHandler errH);
+        void Shutdown(IErrorController errH);
 
 
         /// <summary>
         /// 将棋エンジンに、ログを出すように促します。
         /// </summary>
-        void Logdase(IKwErrorHandler errH);
+        void Logdase(IErrorController errH);
 
 
         /// <summary>
@@ -54,12 +54,12 @@ namespace Grayscale.P693ShogiGui.I500Gui
         /// 将棋エンジンを起動します。
         /// ************************************************************************************************************************
         /// </summary>
-        void Start_ShogiEngine(string shogiEngineFilePath, IKwErrorHandler errH);
+        void Start_ShogiEngine(string shogiEngineFilePath, IErrorController errH);
 
         /// <summary>
         /// コンピューターの先手
         /// </summary>
-        void Do_ComputerSente( IKwErrorHandler errH);
+        void Do_ComputerSente( IErrorController errH);
 
 
         RO_Star GetKoma(Finger finger);
@@ -109,7 +109,7 @@ namespace Grayscale.P693ShogiGui.I500Gui
         Timed TimedA { get; set; }
         Timed TimedB_MouseCapture { get; set; }
         Timed TimedC { get; set; }
-        void Timer_Tick( IKwErrorHandler errH);
+        void Timer_Tick( IErrorController errH);
 
         RepaintRequest RepaintRequest { get; set; }
 
@@ -136,7 +136,7 @@ namespace Grayscale.P693ShogiGui.I500Gui
         void SetScene(SceneName scene);
 
 
-        void Response(string mutexString, IKwErrorHandler errH);
+        void Response(string mutexString, IErrorController errH);
 
 
 

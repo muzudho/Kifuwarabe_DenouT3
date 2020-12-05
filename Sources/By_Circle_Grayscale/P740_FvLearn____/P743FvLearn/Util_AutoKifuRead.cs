@@ -29,7 +29,7 @@ namespace Grayscale.P743FvLearn.L510AutoKifuRead
         public static void Do_UpdateKyokumenHyoka(
             ref bool isRequest_ShowGohosyu,
             ref bool isRequest_ChangeKyokumenPng,
-            Uc_Main uc_Main, IKwErrorHandler errH)
+            Uc_Main uc_Main, IErrorController errH)
         {
 
             int renzokuTe;

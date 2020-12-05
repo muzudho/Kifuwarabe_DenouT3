@@ -89,7 +89,7 @@ namespace Grayscale.P699_Form_______
             //------------------------------
             // 画面の描画です。
             //------------------------------
-            shogibanGui.ConsoleWindowGui.Shape_Canvas.Paint(sender, e, shogibanGui, Shape_CanvasImpl.WINDOW_NAME_CONSOLE, UtilOwataMinister.CsharpGuiPaint);
+            shogibanGui.ConsoleWindowGui.Shape_Canvas.Paint(sender, e, shogibanGui, Shape_CanvasImpl.WINDOW_NAME_CONSOLE, ErrorControllerReference.CsharpGuiPaint);
 
         gt_EndMethod:
             ;
@@ -98,7 +98,7 @@ namespace Grayscale.P699_Form_______
 
         private void Uc_Form2Main_MouseDown(object sender, MouseEventArgs e)
         {
-            IKwErrorHandler errH = UtilOwataMinister.CsharpGuiDefault;
+            IErrorController errH = ErrorControllerReference.CsharpGuiDefault;
             MainGui_Csharp shogibanGui = ((Form2_Console)this.ParentForm).Form1_Shogi.Uc_Form1Main.MainGui;
 
             if (null == shogibanGui.Shape_PnlTaikyoku)
@@ -150,7 +150,7 @@ namespace Grayscale.P699_Form_______
 
         private void Uc_Form2Main_MouseUp(object sender, System.Windows.Forms.MouseEventArgs e)
         {
-            IKwErrorHandler errH = UtilOwataMinister.CsharpGuiDefault;
+            IErrorController errH = ErrorControllerReference.CsharpGuiDefault;
             MainGui_Csharp mainGui = ((Form2_Console)this.ParentForm).Form1_Shogi.Uc_Form1Main.MainGui;
 
             // このメインパネルに、何かして欲しいという要求は、ここに入れられます。

@@ -46,7 +46,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             KifuTree kifu,
             bool isHonshogi,
             Mode_Tansaku mode_Tansaku,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             // TODO:ここではログを出力せずに、ツリーの先端で出力したい。
@@ -199,7 +199,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             Mode_Tansaku mode_Tansaku,
             float alphabeta_otherBranchDecidedValue,
             EvaluationArgs args,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             int exceptionArea = 0;
@@ -331,7 +331,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             out Dictionary<string, SasuEntry> out_sasitebetuEntry,
             out int out_yomiDeep,
             out float out_a_childrenBest,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             out_sasitebetuEntry = Tansaku_FukasaYusen_Routine.WAAAA_Create_ChildNodes(
@@ -360,7 +360,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             KifuNode node_yomi,
             EvaluationArgs args,
             out float out_a_childrenBest,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             // 局面に評価値を付けます。
@@ -419,7 +419,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             KifuNode node_yomi,
             int sasitebetuEntry_count,
             EvaluationArgs args,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             int exceptionArea = 0;
@@ -562,15 +562,15 @@ namespace Grayscale.P554TansaFukasa.L500Struct
                 {
                     case 10:
                         {
-                            errH.DonimoNaranAkirameta(ex, "棋譜ツリーの読みループの前半１０です。"); throw ex;
+                            errH.Panic(ex, "棋譜ツリーの読みループの前半１０です。"); throw ex;
                         }
                     case 20:
                         {
-                            errH.DonimoNaranAkirameta(ex, "棋譜ツリーの読みループの前半２０です。"); throw ex;
+                            errH.Panic(ex, "棋譜ツリーの読みループの前半２０です。"); throw ex;
                         }
                     case 30:
                         {
-                            errH.DonimoNaranAkirameta(ex, "棋譜ツリーの読みループの後半７０です。"); throw ex;
+                            errH.Panic(ex, "棋譜ツリーの読みループの後半７０です。"); throw ex;
                         }
                     default: throw ex;
                 }
@@ -597,7 +597,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             Tansaku_Genjo genjo,
             Starbeamable src_Sky_sasite,
             SkyConst src_Sky,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             int exceptionArea = 0;
@@ -754,23 +754,23 @@ namespace Grayscale.P554TansaFukasa.L500Struct
                 {
                     case 10:
                         {
-                            errH.DonimoNaranAkirameta(ex, "棋譜ツリーの読みループの作成次ノードの前半１０です。"); throw ex;
+                            errH.Panic(ex, "棋譜ツリーの読みループの作成次ノードの前半１０です。"); throw ex;
                         }
                     case 20:
                         {
-                            errH.DonimoNaranAkirameta(ex, "棋譜ツリーの読みループの作成次ノードの前半３０です。"); throw ex;
+                            errH.Panic(ex, "棋譜ツリーの読みループの作成次ノードの前半３０です。"); throw ex;
                         }
                     case 30:
                         {
-                            errH.DonimoNaranAkirameta(ex, "棋譜ツリーの読みループの作成次ノードの中盤５０です。"); throw ex;
+                            errH.Panic(ex, "棋譜ツリーの読みループの作成次ノードの中盤５０です。"); throw ex;
                         }
                     case 40:
                         {
-                            errH.DonimoNaranAkirameta(ex, "王手局面除去後に成りの指し手を追加していた時です。"); throw ex;
+                            errH.Panic(ex, "王手局面除去後に成りの指し手を追加していた時です。"); throw ex;
                         }
                     case 50:
                         {
-                            errH.DonimoNaranAkirameta(ex, "棋譜ツリーの読みループの作成次ノードの後半９０です。"); throw ex;
+                            errH.Panic(ex, "棋譜ツリーの読みループの作成次ノードの後半９０です。"); throw ex;
                         }
                     default: throw ex;
                 }

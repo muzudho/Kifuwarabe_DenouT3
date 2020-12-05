@@ -42,7 +42,7 @@ namespace Grayscale.P720_FvWriter___
 
         private void btnRead_Click(object sender, EventArgs e)
         {
-            IKwErrorHandler errH = UtilOwataMinister.TestProgram;
+            IErrorController errH = ErrorControllerReference.TestProgram;
 
             string filepathR = Application.StartupPath + "/" + Const_Filepath.ENGINE_TO_DATA + "fv_00_Komawari.csv";
             string filepathR_KK = Application.StartupPath + "/" + Const_Filepath.ENGINE_TO_DATA + "fv_01_KK.csv";

@@ -71,11 +71,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="P003Log\IKwErrorHandler.cs" />
-    <Compile Include="P003Log\IKwLogger.cs" />
-    <Compile Include="P003Log\ErrorHandlerImpl.cs" />
-    <Compile Include="P003Log\KwLoggerImpl.cs" />
-    <Compile Include="P003Log\UtilOwataMinister.cs" />
+    <Compile Include="P003Log\IErrorController.cs" />
+    <Compile Include="P003Log\ILogger.cs" />
+    <Compile Include="P003Log\PartOfErrorControllerReference\ErrorHandlerImpl.cs" />
+    <Compile Include="P003Log\PartOfErrorControllerReference\KwLoggerImpl.cs" />
+    <Compile Include="P003Log\ErrorControllerReference.cs" />
     <Compile Include="P005Tushin\Util_Message.cs" />
     <Compile Include="P011Csv\CsvLineParserImpl.cs" />
     <Compile Include="P011Csv\Util_Csv.cs" />

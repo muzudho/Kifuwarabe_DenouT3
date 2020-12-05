@@ -27,7 +27,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// </summary>
         /// <param name="masus"></param>
         /// <returns></returns>
-        public static bool ExistsIn(Starlight sl, SySet<SyElement> masus, SkyConst src_Sky, IKwErrorHandler errH)
+        public static bool ExistsIn(Starlight sl, SySet<SyElement> masus, SkyConst srcSky, IErrorController errH)
         {
             bool matched = false;
 
@@ -36,7 +36,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
                 RO_Star koma = Util_Starlightable.AsKoma(sl.Now);
 
 
-                Finger finger = Util_Sky_FingerQuery.InShogibanMasuNow(src_Sky, koma.Pside, masu, errH);
+                Finger finger = Util_Sky_FingerQuery.InShogibanMasuNow(srcSky, koma.Pside, masu, errH);
 
                 if (
                     finger != Fingers.Error_1  //2014-07-21 先後も見るように追記。
@@ -234,7 +234,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
             }
             catch (Exception ex)
             {
-                UtilOwataMinister.ERROR.DonimoNaranAkirameta(ex, "IsDaAction:");// exceptionArea=" + exceptionArea
+                ErrorControllerReference.Error.Panic(ex, "IsDaAction:");// exceptionArea=" + exceptionArea
                 throw ex;
             }
 

@@ -74,7 +74,7 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
 
 #if DEBUG
             // 送信記録をつけます。
-            Util_OwataMinister.ENGINE_NETWORK.Logger.WriteLine_S(line);
+            ErrorControllerReference.ENGINE_NETWORK.Logger.WriteLine_S(line);
 #endif
         }
 
@@ -99,7 +99,7 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
             this.Option_enable_serverNoopable = false; // 独自実装のコマンドなので、ＯＦＦにしておきます。
         }
 
-        public void AtBegin(IKwErrorHandler errH)
+        public void AtBegin(IErrorController errH)
         {
             int exception_area = 0;
             try
@@ -116,7 +116,7 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
                     //          ├─ Engine.KifuWarabe.exe
                     //          └─ log.txt               ←これを削除
                     //
-                    UtilOwataMinister.RemoveAllLogFiles();
+                    ErrorControllerReference.RemoveAllLogFiles();
                 }
 
 
@@ -199,7 +199,7 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
 
                     //seihinName += " " + versionStr;
 #if DEBUG
-                    Util_OwataMinister.ENGINE_DEFAULT.Logger.WriteLine_AddMemo("v(^▽^)v ｲｪｰｲ☆ ... " + this.SeihinName + " " + versionStr);
+                    ErrorControllerReference.ENGINE_DEFAULT.Logger.WriteLine_AddMemo("v(^▽^)v ｲｪｰｲ☆ ... " + this.SeihinName + " " + versionStr);
 #endif
                 }
 
@@ -209,14 +209,14 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
                 switch (exception_area)
                 {
                     case 1000:
-                        UtilOwataMinister.EngineDefault.DonimoNaranAkirameta("フィーチャーベクターCSVを読み込んでいるとき。" + ex.GetType().Name + "：" + ex.Message);
+                        ErrorControllerReference.EngineDefault.Panic("フィーチャーベクターCSVを読み込んでいるとき。" + ex.GetType().Name + "：" + ex.Message);
                         break;
                 }
                 throw ex;
             }
         }
 
-        public void AtBody(out bool out_isTimeoutShutdown, IKwErrorHandler errH)
+        public void AtBody(out bool out_isTimeoutShutdown, IErrorController errH)
         {
             out_isTimeoutShutdown = false;
 
@@ -299,7 +299,7 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
                 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
                 // どうにもできないので  ログだけ取って無視します。
-                UtilOwataMinister.EngineDefault.DonimoNaranAkirameta("Program「大外枠でキャッチ」：" + ex.GetType().Name + " " + ex.Message);
+                ErrorControllerReference.EngineDefault.Panic("Program「大外枠でキャッチ」：" + ex.GetType().Name + " " + ex.Message);
             }
 
         gt_EndMethod:

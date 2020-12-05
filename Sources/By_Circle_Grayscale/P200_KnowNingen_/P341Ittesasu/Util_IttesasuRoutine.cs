@@ -46,7 +46,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
         public static void Before1(
             IttesasuArg ittesasuArg,
             out IttesasuResult ittesasuResult,
-            IKwErrorHandler errH,
+            IErrorController errH,
             string hint
             ,
             [CallerMemberName] string memberName = "",
@@ -235,7 +235,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
         /// <param name="errH"></param>
         public static void Before2(
             ref IttesasuResult ittesasuReference,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             Node<Starbeamable, KyokumenWrapper> editNodeRef = ittesasuReference.Get_SyuryoNode_OrNull;
@@ -271,7 +271,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             KifuTree kifu_mutable,
             string nextSasiteStr,
             Node<Starbeamable, KyokumenWrapper> edit_childNode_Ref,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
 
@@ -311,7 +311,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             Starbeamable sasite,
             Playerside kaisi_tebanside,
             SkyConst kaisi_Sky,
-            IKwErrorHandler errH,
+            IErrorController errH,
             string hint
             ,
             [CallerMemberName] string memberName = "",
@@ -346,7 +346,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
 
                     exceptionArea = 99002100;
                     // FIXME: 駒台の、どの駒を拾うか？
-                    figMovedKoma = Util_Sky_FingerQuery.InOkibaSyuruiNow_IgnoreCase(
+                    figMovedKoma = Util_Sky_FingerQuery.InOkibaSyuruiNowIgnoreCase(
                         kaisi_Sky,
                         Conv_SyElement.ToOkiba(srcKoma.Masu),
                         Util_Komahaiyaku184.Syurui(dstKoma.Haiyaku),
@@ -384,7 +384,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
                 //>>>>> エラーが起こりました。
 
                 // どうにもできないので  ログだけ取って無視します。
-                errH.DonimoNaranAkirameta(ex, "Util_IttesasuRoutine#Sasu24_UgokasuKoma_IdoSakiHe： exceptionArea=" + exceptionArea+"\n"+
+                errH.Panic(ex, "Util_IttesasuRoutine#Sasu24_UgokasuKoma_IdoSakiHe： exceptionArea=" + exceptionArea+"\n"+
                     "hint=["+hint+"]");
                 throw ex;
             }
@@ -434,7 +434,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             out RO_Star out_food_koma,
             out Playerside pside,
             out SyElement akiMasu,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             RO_Star dstKoma = Util_Starlightable.AsKoma(dst.Now);

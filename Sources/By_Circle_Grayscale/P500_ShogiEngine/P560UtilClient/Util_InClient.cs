@@ -23,7 +23,7 @@ namespace Grayscale.P560UtilClient.L500Util
         public static void OnChangeSky_Im_Client(
             Model_Taikyoku model_Taikyoku,
             KifuParserA_Genjo genjo,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             errH.Logger.WriteLineError("（＾△＾）「" + genjo.InputLine + "」Util_InClient　：　クライアントの委譲メソッドｷﾀｰ☆");

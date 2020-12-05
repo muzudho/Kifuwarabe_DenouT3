@@ -137,7 +137,7 @@ namespace Grayscale.P324KifuTree.L250Struct
             string memo,
             string hint,
             int temezumi_yomiGenTeban_forLog,//読み進めている現在の手目済
-            IKwErrorHandler errH)
+            IErrorController errH)
         {
             StringBuilder sb = new StringBuilder();
 

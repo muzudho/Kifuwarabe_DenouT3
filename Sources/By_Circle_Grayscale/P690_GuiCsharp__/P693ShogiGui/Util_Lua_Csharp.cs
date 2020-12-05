@@ -1,4 +1,5 @@
 ﻿using Grayscale.P003Log.I500Struct;
+using Grayscale.P003Log.L500Struct;
 //using Grayscale.P003Log.L500Struct;
 using Grayscale.P027Settei.L500Struct;
 using Grayscale.P211WordShogi.L250Masu;
@@ -26,7 +27,7 @@ namespace Grayscale.P693ShogiGui.L480Util
         private static Lua lua;
 
         public static MainGui_Csharp ShogiGui { get; set; }
-        public static IKwErrorHandler ErrH { get; set; }
+        public static IErrorController ErrH { get; set; }
 
         /// <summary>
         /// 
@@ -133,7 +134,7 @@ namespace Grayscale.P693ShogiGui.L480Util
         /// </summary>
         public static void ClearKifu(MainGui_Csharp mainGui, RepaintRequest repaintRequest)
         {
-            IKwErrorHandler errH = Util_OwataMinister.ERROR;
+            IErrorController errH = ErrorControllerReference.Error;
             mainGui.Link_Server.Model_Taikyoku.Kifu.Clear();// 棋譜を空っぽにします。
 
             SkyBuffer buffer_Sky = new SkyBuffer(mainGui.Model_Manual.GuiSkyConst);

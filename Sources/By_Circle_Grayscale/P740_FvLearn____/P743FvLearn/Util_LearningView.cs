@@ -43,7 +43,7 @@ namespace Grayscale.P743FvLearn.L260View
         public static void ShowSasiteList(
             LearningData learningData,
             Uc_Main uc_Main,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             //
@@ -196,7 +196,7 @@ namespace Grayscale.P743FvLearn.L260View
         /// ノード情報の表示
         /// </summary>
         /// <param name="uc_Main"></param>
-        public static void Aa_ShowNode2(LearningData learningData, Uc_Main uc_Main, IKwErrorHandler errH)
+        public static void Aa_ShowNode2(LearningData learningData, Uc_Main uc_Main, IErrorController errH)
         {
             // 手目済み
             uc_Main.TxtTemezumi.Text = learningData.Kifu.CurNode.Value.KyokumenConst.Temezumi.ToString();
@@ -212,7 +212,7 @@ namespace Grayscale.P743FvLearn.L260View
         /// 合法手リストの表示
         /// </summary>
         /// <param name="uc_Main"></param>
-        public static void Aa_ShowGohosyu2(LearningData learningData, Uc_Main uc_Main, IKwErrorHandler errH)
+        public static void Aa_ShowGohosyu2(LearningData learningData, Uc_Main uc_Main, IErrorController errH)
         {
             //----------------------------------------
             // フォルダー作成
@@ -309,33 +309,30 @@ namespace Grayscale.P743FvLearn.L260View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public static void Ittesasu_ByBtnClick(
+        public static void IttesasuByBtnClick(
             ref bool isRequestShowGohosyu,
             ref bool isRequestChangeKyokumenPng,
-            LearningData learningData, Uc_Main uc_Main, IKwErrorHandler errH)
+            LearningData learningData, Uc_Main ucMain, IErrorController errH)
         {
 #if DEBUG
             Stopwatch sw1 = new Stopwatch();
             sw1.Start();
 #endif
+            if (ucMain is null) throw new ArgumentNullException(nameof(ucMain));
+            if (errH is null) throw new ArgumentNullException(nameof(errH));
 
             //
             // リストの先頭の項目を取得したい。
             //
-            if (uc_Main.LstSasite.Items.Count < 1)
+            if (ucMain.LstSasite.Items.Count < 1)
             {
                 goto gt_EndMethod;
             }
 
-
-
             // リストボックスの先頭から指し手をSFEN形式で１つ取得。
-            HonpuSasiteListItemImpl item = (HonpuSasiteListItemImpl)uc_Main.LstSasite.Items[0];
+            HonpuSasiteListItemImpl item = (HonpuSasiteListItemImpl)ucMain.LstSasite.Items[0];
             string sfen = item.Sfen;
-            if (null != errH.DlgtOnLog1AppendOrNull)
-            {
-                errH.DlgtOnLog1AppendOrNull("sfen=" + sfen + Environment.NewLine);
-            }
+            errH.OnAppendLog?.Invoke("sfen=" + sfen + Environment.NewLine);
 
             //
             // 現局面の合法手は、既に読んであるとします。（棋譜ツリーのNextNodesが既に設定されていること）
@@ -361,7 +358,7 @@ namespace Grayscale.P743FvLearn.L260View
                     sb.Append("指し手[" + sfen + "]はありませんでした。\n" + learningData.DumpToAllGohosyu(learningData.Kifu.CurNode.Value.KyokumenConst));
 
                     //Debug.Fail(sb.ToString());
-                    errH.DonimoNaranAkirameta("Util_LearningView#Ittesasu_ByBtnClick：" + sb.ToString());
+                    errH.Panic("Util_LearningView#Ittesasu_ByBtnClick：" + sb.ToString());
                     MessageBox.Show(sb.ToString(), "エラー");
                 }
             }
@@ -405,7 +402,7 @@ namespace Grayscale.P743FvLearn.L260View
             // カレント・ノードより古い、以前読んだ手を削除したい。
             //----------------------------------------
             System.Console.WriteLine("カレント・ノード＝" + Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(learningData.Kifu.CurNode.Key));
-            int result_removedCount = Util_KifuTree282.IzennoHenkaCutter(learningData.Kifu, errH);
+            int result_removedCount = UtilKifuTree282.IzennoHenkaCutter(learningData.Kifu, errH);
             System.Console.WriteLine("削除した要素数＝" + result_removedCount);
 
             ////----------------------------------------
@@ -413,7 +410,7 @@ namespace Grayscale.P743FvLearn.L260View
             ////----------------------------------------
             learningData.Aa_Yomi(nextSasite, errH);
             // ノード情報の表示
-            Util_LearningView.Aa_ShowNode2(uc_Main.LearningData, uc_Main, errH);
+            Util_LearningView.Aa_ShowNode2(ucMain.LearningData, ucMain, errH);
 
             // 合法手表示の更新を要求します。 
             isRequestShowGohosyu = true;
@@ -423,7 +420,7 @@ namespace Grayscale.P743FvLearn.L260View
             //
             // リストの頭１個を除外します。
             //
-            uc_Main.LstSasite.Items.RemoveAt(0);
+            ucMain.LstSasite.Items.RemoveAt(0);
 
 #if DEBUG
             sw1.Stop();
@@ -436,9 +433,9 @@ namespace Grayscale.P743FvLearn.L260View
             //----------------------------------------
             // ボタン表示の回復
             //----------------------------------------
-            if (0 < uc_Main.LstSasite.Items.Count)
+            if (0 < ucMain.LstSasite.Items.Count)
             {
-                uc_Main.BtnUpdateKyokumenHyoka.Enabled = true;//[局面評価更新]ボタン連打防止解除。
+                ucMain.BtnUpdateKyokumenHyoka.Enabled = true;//[局面評価更新]ボタン連打防止解除。
             }
         }
 

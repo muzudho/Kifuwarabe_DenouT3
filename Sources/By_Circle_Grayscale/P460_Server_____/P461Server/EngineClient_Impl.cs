@@ -92,7 +92,7 @@ namespace Grayscale.P461Server.L497EngineClient
                 //------------------------------
                 // ログファイルを削除します。
                 //------------------------------
-                UtilOwataMinister.RemoveAllLogFiles();
+                ErrorControllerReference.RemoveAllLogFiles();
 
 
                 ProcessStartInfo startInfo = new ProcessStartInfo();
@@ -131,7 +131,7 @@ namespace Grayscale.P461Server.L497EngineClient
         /// <param name="e"></param>
         private void OnExited(object sender, System.EventArgs e)
         {
-            IKwErrorHandler errH = UtilOwataMinister.EngineDefault;
+            IErrorController errH = ErrorControllerReference.EngineDefault;
             this.ShogiEngineProcessWrapper.Send_Shutdown(errH);
         }
 
@@ -140,7 +140,7 @@ namespace Grayscale.P461Server.L497EngineClient
         /// 手番が替わったときの挙動を、ここに書きます。
         /// ************************************************************************************************************************
         /// </summary>
-        public void OnChangedTurn(KifuTree kifu, IKwErrorHandler errH)
+        public void OnChangedTurn(KifuTree kifu, IErrorController errH)
         {
             if (!this.ShogiEngineProcessWrapper.IsLive_ShogiEngine())
             {
@@ -176,7 +176,7 @@ namespace Grayscale.P461Server.L497EngineClient
         /// <summary>
         /// 将棋エンジンに、終了するように促します。
         /// </summary>
-        public void Send_Shutdown(IKwErrorHandler errH)
+        public void Send_Shutdown(IErrorController errH)
         {
             this.ShogiEngineProcessWrapper.Send_Shutdown(errH);
         }
@@ -184,7 +184,7 @@ namespace Grayscale.P461Server.L497EngineClient
         /// <summary>
         /// 将棋エンジンに、ログを出すように促します。
         /// </summary>
-        public void Send_Logdase(IKwErrorHandler errH)
+        public void Send_Logdase(IErrorController errH)
         {
             this.ShogiEngineProcessWrapper.Send_Logdase(errH);
         }

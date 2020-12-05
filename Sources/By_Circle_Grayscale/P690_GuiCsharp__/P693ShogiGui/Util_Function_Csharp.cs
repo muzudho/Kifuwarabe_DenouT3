@@ -33,7 +33,7 @@ namespace Grayscale.P693ShogiGui.L249Function
         /// </summary>
         public static void Perform_SyokiHaichi(
             MainGui_Csharp mainGui,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             mainGui.Link_Server.Model_Taikyoku.Kifu.Clear();// 棋譜を空っぽにします。
@@ -71,7 +71,7 @@ namespace Grayscale.P693ShogiGui.L249Function
             Finger foodKoma,
             string fugoJStr,
             string backedInputText,
-            IKwErrorHandler errH)
+            IErrorController errH)
         {
             //------------------------------
             // チェンジターン
@@ -109,7 +109,7 @@ namespace Grayscale.P693ShogiGui.L249Function
             return true;
         }
 
-        public static bool Komaokuri_Gui(string restText, MainGui_Csharp shogiGui, IKwErrorHandler errH)
+        public static bool Komaokuri_Gui(string restText, MainGui_Csharp shogiGui, IErrorController errH)
         {
             //------------------------------
             // 符号表示
@@ -219,7 +219,7 @@ namespace Grayscale.P693ShogiGui.L249Function
         public static void Redraw_KomaLocation(
             Finger figKoma,
             MainGui_Csharp mainGui,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             RO_Star koma = Util_Starlightable.AsKoma(mainGui.Model_Manual.GuiSkyConst.StarlightIndexOf(figKoma).Now);

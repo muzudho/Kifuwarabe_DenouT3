@@ -32,7 +32,7 @@ namespace Grayscale.P354UtilSasuEx.L500Util
         public static Dictionary<string, SasuEntry> CreateNariSasite(
             SkyConst src_Sky,
             Dictionary<string, SasuEntry> a_sasitebetuEntry,
-            IKwErrorHandler errH
+            IErrorController errH
             )
         {
             //----------------------------------------
@@ -130,7 +130,7 @@ namespace Grayscale.P354UtilSasuEx.L500Util
                         }
 
                         //>>>>> エラーが起こりました。
-                        errH.DonimoNaranAkirameta(ex, "新しく作った「成りの指し手」を既存ノードに追加していた時です。：追加したい指し手=「" + Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(newSasite) + "」既存の手=" + sb.ToString());
+                        errH.Panic(ex, "新しく作った「成りの指し手」を既存ノードに追加していた時です。：追加したい指し手=「" + Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(newSasite) + "」既存の手=" + sb.ToString());
                         throw ex;
                     }
 

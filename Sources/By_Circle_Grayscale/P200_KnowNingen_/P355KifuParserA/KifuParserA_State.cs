@@ -12,7 +12,7 @@ namespace Grayscale.P355_KifuParserA.I500Parser
             out KifuParserA_State nextState,
             KifuParserA owner,
             KifuParserA_Genjo genjo,
-            IKwErrorHandler errH
+            IErrorController errH
             );
 
     }
