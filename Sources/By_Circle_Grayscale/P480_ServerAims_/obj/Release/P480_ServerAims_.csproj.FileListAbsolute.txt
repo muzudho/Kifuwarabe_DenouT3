@@ -1,8 +1,0 @@
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Builds\Engine\Bin\P480_ServerAims_\Grayscale.P480_ServerAims_.exe.config
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Builds\Engine\Bin\P480_ServerAims_\Grayscale.P480_ServerAims_.exe
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Builds\Engine\Bin\P480_ServerAims_\Grayscale.P480_ServerAims_.pdb
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P480_ServerAims_\obj\Release\P480_ServerAims_.csprojAssemblyReference.cache
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P480_ServerAims_\obj\Release\P480_ServerAims_.csproj.CoreCompileInputs.cache
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P480_ServerAims_\obj\Release\P480_ServerAims_.csproj.CopyComplete
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P480_ServerAims_\obj\Release\Grayscale.P480_ServerAims_.exe
-C:\Users\むずでょ\Documents\GitHub\kifuwarabe-collection\Kifuwarabe_DenouT3\Sources\By_Circle_Grayscale\P480_ServerAims_\obj\Release\Grayscale.P480_ServerAims_.pdb
