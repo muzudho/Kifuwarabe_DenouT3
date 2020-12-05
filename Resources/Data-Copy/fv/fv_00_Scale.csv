@@ -1,0 +1,11 @@
+"#紹介文",
+"#",
+"#きふわらべ評価値　スケール",
+"#",
+"#ここにコメントを書いても、自動的に上書きされてしまうぜ☆？",
+
+"Version",1.0,
+"NikomaKankeiPp","二駒関係ＰＰへの倍率",0.02,
+"NikomaKankeiPp_TyoseiryoSmallest","二駒関係ＰＰの調整量最小値",1,
+"NikomaKankeiPp_TyoseiryoLargest","二駒関係ＰＰの調整量最大値",100,
+"NikomaKankeiPp_TyoseiryoInit","二駒関係ＰＰの調整量初期値",10,

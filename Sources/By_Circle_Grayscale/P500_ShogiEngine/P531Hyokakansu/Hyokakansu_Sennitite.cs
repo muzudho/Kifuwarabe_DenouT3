@@ -53,8 +53,8 @@ namespace Grayscale.P531Hyokakansu.L500Hyokakansu
             }
 
 
-        gt_EndMethod:
-            ;
+        //gt_EndMethod:
+        //    ;
 
             //----------------------------------------
             // 明細項目

@@ -54,12 +54,13 @@
     <Reference Include="DynamicJson">
       <HintPath>..\..\..\Resources\Lib_NeueCC\DynamicJson.dll</HintPath>
     </Reference>
-    <Reference Include="NLua">
-      <HintPath>..\..\..\Resources\Lib_NLua\NLua.dll</HintPath>
+    <Reference Include="NLua, Version=1.3.2.0, Culture=neutral, PublicKeyToken=8df2ab518030ea95, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\References\NLua\NLua.dll</HintPath>
     </Reference>
     <Reference Include="ProjectDark.KWSupport, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Resources\Lib_Circle_ProjectDark\ProjectDark.KWSupport.dll</HintPath>
+      <HintPath>..\..\..\References\CircleProjectDark\ProjectDark.KWSupport.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

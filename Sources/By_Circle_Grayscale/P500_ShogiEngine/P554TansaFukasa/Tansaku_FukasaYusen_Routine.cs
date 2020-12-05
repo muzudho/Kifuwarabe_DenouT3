@@ -550,8 +550,8 @@ namespace Grayscale.P554TansaFukasa.L500Struct
                     }
 
 
-                gt_NextLoop:
-                    ;
+                // gt_NextLoop:
+                //    ;
                 }
 
 
