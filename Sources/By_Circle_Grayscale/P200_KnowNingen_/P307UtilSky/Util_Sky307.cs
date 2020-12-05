@@ -1,4 +1,6 @@
-﻿using Grayscale.P145SfenStruct.L250Struct;
+﻿using System.Diagnostics;
+using System.Text;
+using Grayscale.P140KifuSfen;
 using Grayscale.P206Json.I500Struct;
 using Grayscale.P206Json.L500Struct;
 using Grayscale.P211WordShogi.L500Word;
@@ -9,8 +11,6 @@ using Grayscale.P238Seiza.L250Struct;
 using Grayscale.P238Seiza.L500Util;
 using Grayscale.P245_SfenTransla.L500Util;
 using Grayscale.P258UtilSky258.L505ConvLogJson;
-using System.Diagnostics;
-using System.Text;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
 
 namespace Grayscale.P307UtilSky.L500Util
@@ -18,18 +18,18 @@ namespace Grayscale.P307UtilSky.L500Util
     public abstract class Util_Sky307
     {
 
-        public static SfenstringImpl ExportSfen(SkyConst src_Sky)
+        public static SfenStringImpl ExportSfen(SkyConst src_Sky)
         {
             Debug.Assert(src_Sky.Count == 40, "sky.Starlights.Count=[" + src_Sky.Count + "]");//将棋の駒の数
 
             StartposExporterImpl se = new StartposExporterImpl(src_Sky);
-            return new SfenstringImpl("sfen " + Util_StartposExporter.ToSfenstring(se, false));
+            return new SfenStringImpl("sfen " + Util_StartposExporter.ToSfenstring(se, false));
         }
 
-        public static SfenstringImpl ExportSfen_ForDebug(SkyConst src_Sky, bool psideIsBlack)
+        public static SfenStringImpl ExportSfen_ForDebug(SkyConst src_Sky, bool psideIsBlack)
         {
             StartposExporterImpl se = new StartposExporterImpl(src_Sky);
-            return new SfenstringImpl("sfen " + Util_StartposExporter.ToSfenstring(se, true));
+            return new SfenStringImpl("sfen " + Util_StartposExporter.ToSfenstring(se, true));
         }
 
         /// <summary>

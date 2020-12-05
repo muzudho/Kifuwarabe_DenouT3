@@ -1,6 +1,7 @@
-﻿using Grayscale.P003Log.I500Struct;
+﻿using System;
+using Grayscale.P003Log.I500Struct;
 using Grayscale.P003Log.L500Struct;
-using Grayscale.P146ConvSfen.L500Converter;
+using Grayscale.P140KifuSfen;
 using Grayscale.P213Komasyurui.L250Word;
 using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P224Sky.L500Struct;
@@ -11,8 +12,6 @@ using Grayscale.P341Ittesasu.I250OperationA;
 using Grayscale.P341Ittesasu.L250OperationA;
 using Grayscale.P341Ittesasu.L500UtilA;
 using Grayscale.P355_KifuParserA.I500Parser;
-using System;
-using System.Windows.Forms;
 
 namespace Grayscale.P355_KifuParserA.L500Parser
 {
@@ -83,7 +82,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                         string str7;
                         string str8;
                         string str9;
-                        if (Conv_SfenSasitesText.ToTokens(
+                        if (SfenSasitesTextConv.ToTokens(
                             genjo.InputLine, out str1, out str2, out str3, out str4, out str5, out rest, errH)
                             &&
                             !(str1=="" && str2=="" && str3=="" && str4=="" && str5=="")

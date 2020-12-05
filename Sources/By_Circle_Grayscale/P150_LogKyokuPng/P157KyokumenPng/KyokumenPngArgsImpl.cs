@@ -1,4 +1,4 @@
-﻿using Grayscale.P145SfenStruct.I250Struct;
+﻿using Grayscale.P140KifuSfen;
 using Grayscale.P157KyokumenPng.I500Struct;
 
 namespace Grayscale.P157KyokumenPng.L500Struct
@@ -19,8 +19,8 @@ namespace Grayscale.P157KyokumenPng.L500Struct
         public string OutFile { get { return this.outFile; } }
         private string outFile;
 
-        public RO_Kyokumen1_ForFormat Ro_Kyokumen1 { get { return this.ro_Kyokumen1; } }
-        private RO_Kyokumen1_ForFormat ro_Kyokumen1;
+        public ISfenPosition1 Ro_Kyokumen1 { get { return this.ro_Kyokumen1; } }
+        private ISfenPosition1 ro_Kyokumen1;
 
         /// <summary>
         /// 移動元升。１一を0とし、１二を1、９九を80とする。なければ-1。範囲外の数字は無視するだけ。
@@ -48,7 +48,7 @@ namespace Grayscale.P157KyokumenPng.L500Struct
 
 
         public KyokumenPngArgsImpl(
-            RO_Kyokumen1_ForFormat ro_Kyokumen1,
+            ISfenPosition1 ro_Kyokumen1,
             int srcMasu_orMinusOne,
             int dstMasu_orMinusOne,
             KyokumenPngArgs_FoodOrDropKoma foodKoma,

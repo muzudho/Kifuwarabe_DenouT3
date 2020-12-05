@@ -1,11 +1,10 @@
-﻿using Grayscale.P145SfenStruct.I250Struct;
-using System.Text;
+﻿using System.Text;
 
-namespace Grayscale.P147FormatSfen.L260Format
+namespace Grayscale.P140KifuSfen
 {
-    public abstract class Format_Kyokumen1
+    public abstract class AbstractSfenPosition1
     {
-        public static string ToSfenstring(RO_Kyokumen1_ForFormat ro_kyokumen1, bool white)
+        public static string ToSfenstring(ISfenPosition1 ro_kyokumen1, bool white)
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("sfen ");

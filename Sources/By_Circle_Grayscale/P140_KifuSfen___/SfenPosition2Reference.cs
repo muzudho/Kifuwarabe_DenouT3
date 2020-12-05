@@ -1,21 +1,18 @@
-﻿using Grayscale.P145SfenStruct.I250Struct;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Text;
 
-namespace Grayscale.P145SfenStruct.L500Util
+namespace Grayscale.P140KifuSfen
 {
 
     /// <summary>
-    /// ************************************************************************************************************************
     /// SFEN形式の初期配置の書き方の、データの持ち方です。
-    /// ************************************************************************************************************************
     /// </summary>
-    public class Util_RO_Kyokumen2
+    public static class SfenPosition2Reference
     {
 
 
 
-        public  static void Assert_Koma40(RO_Kyokumen2_ForTokenize result, string hint)
+        public  static void Assert_Koma40(ISfenPosition2 result, string hint)
         {
 //#if DEBUG
             StringBuilder sb = new StringBuilder();

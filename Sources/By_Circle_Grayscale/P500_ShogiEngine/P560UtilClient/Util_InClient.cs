@@ -1,7 +1,5 @@
 ﻿using Grayscale.P003Log.I500Struct;
-using Grayscale.P145SfenStruct.I250Struct;
-using Grayscale.P145SfenStruct.L250Struct;
-using Grayscale.P146ConvSfen.L500Converter;
+using Grayscale.P140KifuSfen;
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P224Sky.L500Struct;
 using Grayscale.P307UtilSky.L500Util;
@@ -31,8 +29,8 @@ namespace Grayscale.P560UtilClient.L500Util
 
             string old_inputLine = genjo.InputLine;//退避
             string rest;
-            RO_Kyokumen2_ForTokenize ro_Kyokumen2_ForTokenize;
-            Conv_Sfenstring146.ToKyokumen2(
+            ISfenPosition2 ro_Kyokumen2_ForTokenize;
+            Sfenstring146Conv.ToKyokumen2(
                 genjo.InputLine,
                 out rest,
                 out ro_Kyokumen2_ForTokenize
@@ -55,7 +53,7 @@ namespace Grayscale.P560UtilClient.L500Util
                 int temezumi = 0;
                 model_Taikyoku.Kifu.GetRoot().Value.SetKyokumen(
                     SkyConst.NewInstance(
-                        Conv_Sfenstring307.ToSkyConst(new SfenstringImpl(old_inputLine), pside, temezumi),
+                        Conv_Sfenstring307.ToSkyConst(new SfenStringImpl(old_inputLine), pside, temezumi),
                         temezumi//初期配置は 0手目済み。
                     )
                 );//SFENのstartpos解析時

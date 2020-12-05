@@ -1,13 +1,10 @@
-﻿using Grayscale.P144ConvSujiDan.L500Converter;
-using Grayscale.P145SfenStruct.I250Struct;
-
-namespace Grayscale.P145SfenStruct.L250Struct
+﻿namespace Grayscale.P140KifuSfen
 {
 
     /// <summary>
     /// SFENのstartpos。読取専用。
     /// </summary>
-    public class RO_Kyokumen2_ForTokenizeImpl : RO_Kyokumen2_ForTokenize
+    public class SfenPosition2Impl : ISfenPosition2
     {
 
         #region プロパティー
@@ -29,7 +26,7 @@ namespace Grayscale.P145SfenStruct.L250Struct
 
         public string GetKomaAs(int suji, int dan)
         {
-            return this.Masu201[ Conv_SujiDan.ToMasu(suji, dan)];
+            return this.Masu201[ Square.ToMasu(suji, dan)];
         }
 
         public void Foreach_Masu201(DELEGATE_Masu201 delegate_method)
@@ -209,7 +206,7 @@ namespace Grayscale.P145SfenStruct.L250Struct
 
 
 
-        public RO_Kyokumen2_ForTokenizeImpl(
+        public SfenPosition2Impl(
             string[] masu201,
             int moti1K, //持駒▲王
             int moti1R, //持駒▲飛
@@ -287,9 +284,9 @@ namespace Grayscale.P145SfenStruct.L250Struct
         }
 
 
-        public RO_Kyokumen1_ForFormat ToKyokumen1()
+        public ISfenPosition1 ToKyokumen1()
         {
-            RO_Kyokumen1_ForFormat ro_Kyokumen1 = new RO_Kyokumen1_ForFormatImpl();
+            ISfenPosition1 ro_Kyokumen1 = new SfenPosition1Impl();
 
             for (int suji = 1; suji < 10; suji++)
             {

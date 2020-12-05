@@ -1,11 +1,10 @@
 ﻿
-namespace Grayscale.P145SfenStruct.I250Struct
-{
+namespace Grayscale.P140KifuSfen {
 
     /// <summary>
     /// テーブル形式の局面データ。
     /// </summary>
-    public interface RO_Kyokumen1_ForFormat
+    public interface ISfenPosition1
     {
 
         /// <summary>

@@ -1,9 +1,9 @@
 ﻿
-namespace Grayscale.P144ConvSujiDan.L500Converter
+namespace Grayscale.P140KifuSfen
 {
 
 
-    public abstract class Conv_SujiDan
+    public abstract class Square
     {
         /// <summary>
         /// 本将棋の将棋盤の筋、段を、升番号へ変換。

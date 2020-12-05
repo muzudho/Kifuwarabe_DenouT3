@@ -1,6 +1,6 @@
-﻿using Grayscale.P003Log.I500Struct;
-using Grayscale.P145SfenStruct.I250Struct;
-using Grayscale.P145SfenStruct.L250Struct;
+﻿using System.Text;
+using Grayscale.P003Log.I500Struct;
+using Grayscale.P140KifuSfen;
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P213Komasyurui.L500Util;
 using Grayscale.P214Masu.L500Util;
@@ -10,7 +10,6 @@ using Grayscale.P238Seiza.L250Struct;
 using Grayscale.P238Seiza.L500Util;
 using Grayscale.P258UtilSky258.L500UtilSky;
 using Grayscale.P324KifuTree.I250Struct;
-using System.Text;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 namespace Grayscale.P339ConvKyokume.L500Converter
@@ -22,9 +21,9 @@ namespace Grayscale.P339ConvKyokume.L500Converter
         /// </summary>
         /// <param name="errH"></param>
         /// <returns></returns>
-        public static RO_Kyokumen1_ForFormat ToRO_Kyokumen1(KifuNode kifuNode, IErrorController errH)
+        public static ISfenPosition1 ToRO_Kyokumen1(KifuNode kifuNode, IErrorController errH)
         {
-            RO_Kyokumen1_ForFormat ro_Kyokumen1 = new RO_Kyokumen1_ForFormatImpl();
+            ISfenPosition1 ro_Kyokumen1 = new SfenPosition1Impl();
 
             SkyConst src_Sky = kifuNode.Value.KyokumenConst;
 

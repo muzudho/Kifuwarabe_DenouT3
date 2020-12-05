@@ -1,13 +1,11 @@
-﻿using Grayscale.P145SfenStruct.I250Struct;
-
-namespace Grayscale.P145SfenStruct.L250Struct
+﻿namespace Grayscale.P140KifuSfen
 {
 
     /// <summary>
     /// 盤上の駒を２次元配列で。
     /// 持ち駒を種類別の配列で。
     /// </summary>
-    public class RO_Kyokumen1_ForFormatImpl : RO_Kyokumen1_ForFormat
+    public class SfenPosition1Impl : ISfenPosition1
     {
 
         public string[,] Ban { get; set; }
@@ -17,7 +15,7 @@ namespace Grayscale.P145SfenStruct.L250Struct
         /// </summary>
         public int Temezumi { get; set; }
 
-        public RO_Kyokumen1_ForFormatImpl()
+        public SfenPosition1Impl()
         {
             this.Ban = new string[10,10];// 将棋盤。10×10。0は使わない。
             {// 全クリアー

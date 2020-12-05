@@ -1,25 +1,23 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Text;
 using Grayscale.P003Log.I500Struct;
-using Grayscale.P222LogKaisetu.L250Struct;
-using Grayscale.P324KifuTree.I250Struct;
+using Grayscale.P062ConvText.L500Converter;
 using Grayscale.P157KyokumenPng.I500Struct;
 using Grayscale.P157KyokumenPng.L500Struct;
-using Grayscale.P202GraphicLog.L500Util;
-using Grayscale.P062ConvText.L500Converter;
 using Grayscale.P158LogKyokuPng.L500UtilWriter;
+using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P212ConvPside.L500Converter;
 using Grayscale.P213Komasyurui.L250Word;
 using Grayscale.P213Komasyurui.L500Util;
 using Grayscale.P218Starlight.I500Struct;
+using Grayscale.P222LogKaisetu.L250Struct;
 using Grayscale.P226Tree.I500Struct;
 using Grayscale.P238Seiza.L250Struct;
 using Grayscale.P247KyokumenWra.L500Struct;
-using Grayscale.P339ConvKyokume.L500Converter;
-using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P321KyokumHyoka.I250Struct;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
+using Grayscale.P324KifuTree.I250Struct;
+using Grayscale.P339ConvKyokume.L500Converter;
 
 
 #if DEBUG

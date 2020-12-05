@@ -1,12 +1,12 @@
-﻿using Grayscale.P003Log.I500Struct;
-using Grayscale.P003Log.L500Struct;
-using System;
+﻿using System;
 using System.Text.RegularExpressions;
+using Grayscale.P003Log.I500Struct;
+using Grayscale.P003Log.L500Struct;
 
 
-namespace Grayscale.P146ConvSfen.L500Converter
+namespace Grayscale.P140KifuSfen
 {
-    public abstract class Conv_SfenSasitesText
+    public abstract class SfenSasitesTextConv
     {
         /// <summary>
         /// ************************************************************************************************************************

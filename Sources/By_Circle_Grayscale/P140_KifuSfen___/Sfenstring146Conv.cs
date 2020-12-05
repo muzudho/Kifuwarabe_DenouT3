@@ -1,12 +1,8 @@
-﻿using Grayscale.P144ConvSujiDan.L500Converter;
-using Grayscale.P145SfenStruct.I250Struct;
-using Grayscale.P145SfenStruct.L250Struct;
-using Grayscale.P145SfenStruct.L500Util;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
-namespace Grayscale.P146ConvSfen.L500Converter
+namespace Grayscale.P140KifuSfen
 {
-    public abstract class Conv_Sfenstring146
+    public abstract class Sfenstring146Conv
     {
         /// <summary>
         /// ************************************************************************************************************************
@@ -17,7 +13,7 @@ namespace Grayscale.P146ConvSfen.L500Converter
         public static bool ToKyokumen2(
             string inputLine,
             out string rest,
-            out RO_Kyokumen2_ForTokenize result_kyokumen2
+            out ISfenPosition2 result_kyokumen2
             )
         {
 
@@ -145,7 +141,7 @@ namespace Grayscale.P146ConvSfen.L500Converter
 
                             )
                         {
-                            result_kyokumen2 = Conv_Sfenstring146.ReadString2(
+                            result_kyokumen2 = Sfenstring146Conv.ReadString2(
                                 stra[1],  //1段目
                                 stra[2],  //2段目
                                 stra[3],  //3段目
@@ -236,7 +232,7 @@ namespace Grayscale.P146ConvSfen.L500Converter
         /// <param name="ml_Str"></param>
         /// <param name="mp_Str"></param>
         /// <param name="temezumi_Str"></param>
-        private static RO_Kyokumen2_ForTokenize ReadString2(
+        private static ISfenPosition2 ReadString2(
             string dan1,  //1段目
             string dan2,//2段目
             string dan3,//3段目
@@ -274,22 +270,22 @@ namespace Grayscale.P146ConvSfen.L500Converter
             int bN = 0;  //盤上 桂
             int bL = 0;  //盤上 香
             int bP = 0;  //盤上 歩
-            int mK = Conv_SfenMotigomaToken.CountMaisu(mK_Str);  //持駒▲王
-            int mR = Conv_SfenMotigomaToken.CountMaisu(mR_Str);  //持駒▲飛
-            int mB = Conv_SfenMotigomaToken.CountMaisu(mB_Str);  //持駒▲角
-            int mG = Conv_SfenMotigomaToken.CountMaisu(mG_Str);  //持駒▲金
-            int mS = Conv_SfenMotigomaToken.CountMaisu(mS_Str);  //持駒▲銀
-            int mN = Conv_SfenMotigomaToken.CountMaisu(mN_Str);  //持駒▲桂
-            int mL = Conv_SfenMotigomaToken.CountMaisu(mL_Str);  //持駒▲香
-            int mP = Conv_SfenMotigomaToken.CountMaisu(mP_Str);  //持駒▲歩
-            int mk = Conv_SfenMotigomaToken.CountMaisu(mk_Str);  //持駒△王
-            int mr = Conv_SfenMotigomaToken.CountMaisu(mr_Str);  //持駒△飛
-            int mb = Conv_SfenMotigomaToken.CountMaisu(mb_Str);  //持駒△角
-            int mg = Conv_SfenMotigomaToken.CountMaisu(mg_Str);  //持駒△金
-            int ms = Conv_SfenMotigomaToken.CountMaisu(ms_Str);  //持駒△銀
-            int mn = Conv_SfenMotigomaToken.CountMaisu(mn_Str);  //持駒△桂
-            int ml = Conv_SfenMotigomaToken.CountMaisu(ml_Str);  //持駒△香
-            int mp = Conv_SfenMotigomaToken.CountMaisu(mp_Str);  //持駒△歩
+            int mK = SfenMotigomaTokenConv.CountMaisu(mK_Str);  //持駒▲王
+            int mR = SfenMotigomaTokenConv.CountMaisu(mR_Str);  //持駒▲飛
+            int mB = SfenMotigomaTokenConv.CountMaisu(mB_Str);  //持駒▲角
+            int mG = SfenMotigomaTokenConv.CountMaisu(mG_Str);  //持駒▲金
+            int mS = SfenMotigomaTokenConv.CountMaisu(mS_Str);  //持駒▲銀
+            int mN = SfenMotigomaTokenConv.CountMaisu(mN_Str);  //持駒▲桂
+            int mL = SfenMotigomaTokenConv.CountMaisu(mL_Str);  //持駒▲香
+            int mP = SfenMotigomaTokenConv.CountMaisu(mP_Str);  //持駒▲歩
+            int mk = SfenMotigomaTokenConv.CountMaisu(mk_Str);  //持駒△王
+            int mr = SfenMotigomaTokenConv.CountMaisu(mr_Str);  //持駒△飛
+            int mb = SfenMotigomaTokenConv.CountMaisu(mb_Str);  //持駒△角
+            int mg = SfenMotigomaTokenConv.CountMaisu(mg_Str);  //持駒△金
+            int ms = SfenMotigomaTokenConv.CountMaisu(ms_Str);  //持駒△銀
+            int mn = SfenMotigomaTokenConv.CountMaisu(mn_Str);  //持駒△桂
+            int ml = SfenMotigomaTokenConv.CountMaisu(ml_Str);  //持駒△香
+            int mp = SfenMotigomaTokenConv.CountMaisu(mp_Str);  //持駒△歩
 
 
             string[] strDanArr = new string[]{
@@ -396,7 +392,7 @@ namespace Grayscale.P146ConvSfen.L500Converter
                                 case "+p": bP++; break;
                             }
 
-                            masu201[Conv_SujiDan.ToMasu(suji, dan)] = moji;
+                            masu201[Square.ToMasu(suji, dan)] = moji;
 
                             suji--;
                         }
@@ -453,7 +449,7 @@ namespace Grayscale.P146ConvSfen.L500Converter
             }
 
 
-            RO_Kyokumen2_ForTokenize result = new RO_Kyokumen2_ForTokenizeImpl(
+            ISfenPosition2 result = new SfenPosition2Impl(
                 masu201,//全升
 
                 mK,//持駒▲王
@@ -486,7 +482,7 @@ namespace Grayscale.P146ConvSfen.L500Converter
                 temezumi_Str  //手目
             );
 
-            Util_RO_Kyokumen2.Assert_Koma40(result,
+            SfenPosition2Reference.Assert_Koma40(result,
                 " dan1=[" + dan1 + "]\n"
                 + " dan2=[" + dan2 + "]\n"
                 + " dan3=[" + dan3 + "]\n"

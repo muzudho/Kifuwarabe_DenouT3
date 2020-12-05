@@ -1,13 +1,12 @@
-﻿using Grayscale.P145SfenStruct.I250Struct;
-using Grayscale.P146ConvSfen.L500Converter;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using Grayscale.P140KifuSfen;
 using Grayscale.P211WordShogi.L250Masu;
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P213Komasyurui.L250Word;
 using Grayscale.P224Sky.L500Struct;
 using Grayscale.P238Seiza.L250Struct;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
 
 namespace Grayscale.P276SeizaStartp.L500Struct
@@ -23,7 +22,7 @@ namespace Grayscale.P276SeizaStartp.L500Struct
         /// </summary>
         private Dictionary<int, RO_Star> masubetuKoma_banjo;
 
-        public RO_Kyokumen2_ForTokenize RO_SfenStartpos { get; set; }
+        public ISfenPosition2 RO_SfenStartpos { get; set; }
 
 
         public static bool TryParse(
@@ -34,8 +33,8 @@ namespace Grayscale.P276SeizaStartp.L500Struct
         {
             bool successful = true;
 
-            RO_Kyokumen2_ForTokenize ro_SfenStartpos;
-            if (!Conv_Sfenstring146.ToKyokumen2(inputLine, out rest, out ro_SfenStartpos))
+            ISfenPosition2 ro_SfenStartpos;
+            if (!Sfenstring146Conv.ToKyokumen2(inputLine, out rest, out ro_SfenStartpos))
             {
                 successful = false;
                 instance = null;
@@ -50,7 +49,7 @@ namespace Grayscale.P276SeizaStartp.L500Struct
 
         private StartposImporter(
             string inputLine,
-            RO_Kyokumen2_ForTokenize ro_SfenStartpos
+            ISfenPosition2 ro_SfenStartpos
             )
         {
             this.InputLine = inputLine;

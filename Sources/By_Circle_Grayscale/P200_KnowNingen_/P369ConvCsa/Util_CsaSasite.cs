@@ -1,6 +1,8 @@
-﻿using Grayscale.P056Syugoron.I250Struct;
+﻿using System.Diagnostics;
+using System.Text;
+using Grayscale.P056Syugoron.I250Struct;
 using Grayscale.P062ConvText.L500Converter;
-using Grayscale.P145SfenStruct.L250Struct;
+using Grayscale.P140KifuSfen;
 using Grayscale.P163KifuCsa.I250Struct;
 using Grayscale.P163KifuCsa.L250Struct;
 using Grayscale.P211WordShogi.L500Word;
@@ -10,8 +12,6 @@ using Grayscale.P214Masu.L500Util;
 using Grayscale.P224Sky.L500Struct;
 using Grayscale.P238Seiza.L250Struct;
 using Grayscale.P258UtilSky258.L500UtilSky;
-using System.Diagnostics;
-using System.Text;
 
 namespace Grayscale.P369ConvCsa.L500Converter
 {
@@ -127,15 +127,15 @@ namespace Grayscale.P369ConvCsa.L500Converter
                 string syurui;
                 switch (csa.Syurui)
                 {
-                    case Word_Csa.FU_FU_____: syurui = Word_Sfen.P_PAWN__; break;
-                    case Word_Csa.KY_KYO____: syurui = Word_Sfen.L_LANCE_; break;
-                    case Word_Csa.KE_KEI____: syurui = Word_Sfen.N_KNIGHT; break;
-                    case Word_Csa.GI_GIN____: syurui = Word_Sfen.S_SILVER; break;
-                    case Word_Csa.KI_KIN____: syurui = Word_Sfen.G_GOLD__; break;
-                    case Word_Csa.KA_KAKU___: syurui = Word_Sfen.B_BISHOP; break;
-                    case Word_Csa.HI_HISYA__: syurui = Word_Sfen.R_ROOK__; break;
-                    case Word_Csa.OU_OU_____: syurui = Word_Sfen.K_KING__; break;//おまけ
-                    default: syurui = Word_Sfen.ERROR___; break;//エラー
+                    case Word_Csa.FU_FU_____: syurui = SfenWord.P_PAWN__; break;
+                    case Word_Csa.KY_KYO____: syurui = SfenWord.L_LANCE_; break;
+                    case Word_Csa.KE_KEI____: syurui = SfenWord.N_KNIGHT; break;
+                    case Word_Csa.GI_GIN____: syurui = SfenWord.S_SILVER; break;
+                    case Word_Csa.KI_KIN____: syurui = SfenWord.G_GOLD__; break;
+                    case Word_Csa.KA_KAKU___: syurui = SfenWord.B_BISHOP; break;
+                    case Word_Csa.HI_HISYA__: syurui = SfenWord.R_ROOK__; break;
+                    case Word_Csa.OU_OU_____: syurui = SfenWord.K_KING__; break;//おまけ
+                    default: syurui = SfenWord.ERROR___; break;//エラー
                 }
 
                 sb.Append(syurui);

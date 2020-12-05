@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P145SfenStruct.I250Struct
+namespace Grayscale.P140KifuSfen
 {
 
     public delegate void DELEGATE_Masu201(int masuHandle, string masuString, ref bool toBreak);
@@ -11,10 +11,10 @@ namespace Grayscale.P145SfenStruct.I250Struct
     /// 
     /// プロパティ１つ１つごとにメソッド（アクセッサー）を用意している。
     /// </summary>
-    public interface RO_Kyokumen2_ForTokenize
+    public interface ISfenPosition2
     {
 
-        RO_Kyokumen1_ForFormat ToKyokumen1();
+        ISfenPosition1 ToKyokumen1();
 
         void Foreach_Masu201(DELEGATE_Masu201 delegate_method);
 

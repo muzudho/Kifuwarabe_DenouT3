@@ -1,10 +1,10 @@
 ﻿
-namespace Grayscale.P146ConvSfen.L500Converter
+namespace Grayscale.P140KifuSfen
 {
     /// <summary>
     /// SFENの持ち駒文字列トークン。
     /// </summary>
-    public abstract class Conv_SfenMotigomaToken
+    public abstract class SfenMotigomaTokenConv
     {
         /// <summary>
         /// 持ち駒の枚数を数えます。
