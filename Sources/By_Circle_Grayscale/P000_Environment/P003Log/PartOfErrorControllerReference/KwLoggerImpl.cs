@@ -123,10 +123,10 @@ namespace Grayscale.P003Log.PartOfErrorControllerReference
 
                 System.IO.File.AppendAllText(filepath2, sb.ToString());
             }
-            catch (Exception ex) {
+            catch (Exception)
+            {
                 // 循環参照になるので、ログを取れません。
-                // ErrorControllerReference.ERROR.Panic(ex, "ログ中☆");
-                // ログ出力に失敗しても、続行します。
+                // メモなので、ログ出力に失敗しても、続行します。
             }
 
         gt_EndMethod:
@@ -235,10 +235,10 @@ namespace Grayscale.P003Log.PartOfErrorControllerReference
 
                 System.IO.File.WriteAllText(filepath2, sb.ToString());
             }
-            catch (Exception ex) {
+            catch (Exception)
+            {
                 // 循環参照になるので、ログを取れません。
-                // ErrorControllerReference.ERROR.Panic(ex, "ログ取り中☆");
-                throw;
+                // メモなので、ログ出力に失敗しても、続行します。
             }
 
         gt_EndMethod:
@@ -253,9 +253,7 @@ namespace Grayscale.P003Log.PartOfErrorControllerReference
 
 
         /// <summary>
-        /// ************************************************************************************************************************
         /// サーバーへ送ったコマンドを、ログ・ファイルに記録します。
-        /// ************************************************************************************************************************
         /// </summary>
         /// <param name="line"></param>
         public void WriteLineS(
@@ -293,7 +291,7 @@ namespace Grayscale.P003Log.PartOfErrorControllerReference
 
                 System.IO.File.AppendAllText(filepath2, sb.ToString());
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // 循環参照になるので、ログを取れません。
                 // ErrorControllerReference.ERROR.Panic(ex, "ログ取り中☆");
@@ -305,9 +303,7 @@ namespace Grayscale.P003Log.PartOfErrorControllerReference
 
 
         /// <summary>
-        /// ************************************************************************************************************************
         /// サーバーから受け取ったコマンドを、ログ・ファイルに記録します。
-        /// ************************************************************************************************************************
         /// </summary>
         /// <param name="line"></param>
         public void WriteLineC(
@@ -345,11 +341,10 @@ namespace Grayscale.P003Log.PartOfErrorControllerReference
 
                 System.IO.File.AppendAllText(filepath2, sb.ToString());
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // 循環参照になるので、ログを取れません。
                 // ErrorControllerReference.ERROR.Panic(ex, "ログ取り中☆");
-                throw;
             }
 
         gt_EndMethod:
