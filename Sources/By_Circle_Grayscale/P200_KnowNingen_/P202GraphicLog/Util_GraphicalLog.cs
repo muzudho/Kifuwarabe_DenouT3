@@ -2,6 +2,7 @@
 #if DEBUG
 using System.IO;
 using System.Text;
+using Nett;
 #endif
 
 
@@ -81,7 +82,7 @@ namespace Grayscale.P202GraphicLog.L500Util
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
             string logsDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("LogsDirectory"));
 
-            File.WriteAllText(Path.Combine(logsDirectory, $"_log{Util_GraphicalLog.LogFileCounter}_{fileNameMemo}.html", sb.ToString()));
+            File.WriteAllText(Path.Combine(logsDirectory, $"_log{Util_GraphicalLog.LogFileCounter}_{fileNameMemo}.html"), sb.ToString());
             Util_GraphicalLog.LogFileCounter++;
 
         gt_EndMethod:

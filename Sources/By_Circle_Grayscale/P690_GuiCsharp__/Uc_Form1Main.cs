@@ -80,7 +80,7 @@ namespace Grayscale.P699_Form_______
         ///// ************************************************************************************************************************
         ///// </summary>
         ///// <returns></returns>
-        //public string ReadLine2(KwErrorHandler errH)
+        //public string ReadLine2(IErrorController errH)
         //{
         //    SkyConst src_Sky = this.ShogibanGui.Link_ShogiServer.Model_Operating.Manual.GuiSkyConst;
 
@@ -622,8 +622,8 @@ namespace Grayscale.P699_Form_______
                         form2.WriteLine_Syuturyoku("");
 
                         // ログ
-                        //errH.Logger.WriteLine_AddMemo( "");
-                        //errH.Logger.WriteLine_AddMemo( "");
+                        //errH.Logger.WriteLineAddMemo( "");
+                        //errH.Logger.WriteLineAddMemo( "");
                     }
                     break;
 
@@ -645,7 +645,7 @@ namespace Grayscale.P699_Form_______
 
 #if DEBUG
                         // ログ
-                        errH.Logger.WriteLine_AddMemo(form2.GetOutputareaText());
+                        errH.Logger.WriteLineAddMemo(form2.GetOutputareaText());
 #endif
                     }
                     break;

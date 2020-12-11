@@ -29,7 +29,7 @@ using Grayscale.P554TansaFukasa.I500Struct;
 
 
 #if DEBUG
-using Grayscale.P266_KyokumMoves.L250____Log;
+using Grayscale.P266KyokumMoves.L250Log;
 using Grayscale.P370LogGraphiEx.L500Util;
 #endif
 
@@ -292,7 +292,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
 #if DEBUG
                     case 20:
                         {
-                            errH.DonimoNaranAkirameta(ex, "棋譜ツリーの読みの後半９０です。"); throw;
+                            errH.Panic(ex, "棋譜ツリーの読みの後半９０です。"); throw;
                         }
 #endif
                     default: throw;
@@ -373,7 +373,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             out_a_childrenBest = node_yomi.Score;
 
 #if DEBUG_ALPHA_METHOD
-                    errH.Logger.WriteLine_AddMemo("1. 手(" + node_yomi.Value.ToKyokumenConst.Temezumi + ")読(" + yomiDeep + ") 兄弟最善=[" + a_siblingDecidedValue + "] 子ベスト=[" + a_childrenBest + "]");
+                    errH.Logger.WriteLineAddMemo("1. 手(" + node_yomi.Value.ToKyokumenConst.Temezumi + ")読(" + yomiDeep + ") 兄弟最善=[" + a_siblingDecidedValue + "] 子ベスト=[" + a_childrenBest + "]");
 #endif
 
 #if DEBUG
@@ -531,12 +531,12 @@ namespace Grayscale.P554TansaFukasa.L500Struct
                         wideCount1++;
 
 #if DEBUG_ALPHA_METHOD
-                errH.Logger.WriteLine_AddMemo("3. 手(" + node_yomi.Value.ToKyokumenConst.Temezumi + ")読(" + yomiDeep + ") 兄弟最善=[" + a_siblingDecidedValue + "] 子ベスト=[" + a_childrenBest + "] 自点=[" + a_myScore + "]");
+                errH.Logger.WriteLineAddMemo("3. 手(" + node_yomi.Value.ToKyokumenConst.Temezumi + ")読(" + yomiDeep + ") 兄弟最善=[" + a_siblingDecidedValue + "] 子ベスト=[" + a_childrenBest + "] 自点=[" + a_myScore + "]");
 #endif
                         if (alpha_cut)
                         {
 #if DEBUG_ALPHA_METHOD
-                        errH.Logger.WriteLine_AddMemo("アルファ・カット☆！");
+                        errH.Logger.WriteLineAddMemo("アルファ・カット☆！");
 #endif
                             //----------------------------------------
                             // 次の「子の弟」要素はもう読みません。
@@ -786,7 +786,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             SkyConst src_Sky,
             out MmLogGenjoImpl out_mm_log,
             out KaisetuBoard out_logBrd_move1,
-            KwErrorHandler errH
+            IErrorController errH
         )
         {
             out_logBrd_move1 = new KaisetuBoard();// 盤１個分のログの準備
@@ -803,14 +803,14 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             }
             catch (Exception ex)
             {
-                errH.DonimoNaranAkirameta(ex, "棋譜ツリーの読みループの作成次ノードの前半２０です。"); throw;
+                errH.Panic(ex, "棋譜ツリーの読みループの作成次ノードの前半２０です。"); throw;
             }
         }
         private static void Log2(
             Tansaku_Genjo genjo,
             KifuNode node_yomi,
             KaisetuBoard logBrd_move1,
-            KwErrorHandler errH
+            IErrorController errH
         )
         {
             try
@@ -828,7 +828,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             }
             catch (Exception ex)
             {
-                errH.DonimoNaranAkirameta(ex, "棋譜ツリーの読みループの作成次ノードの前半４０です。"); throw;
+                errH.Panic(ex, "棋譜ツリーの読みループの作成次ノードの前半４０です。"); throw;
             }
         }
 #endif

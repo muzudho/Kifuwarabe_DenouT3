@@ -31,6 +31,7 @@ using Grayscale.P693ShogiGui.L250Timed;
 using Grayscale.P693ShogiGui.L492Widgets;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 using Nett;
+using Grayscale.P031Random.L500Struct;
 
 namespace Grayscale.P693ShogiGui.L500GUI
 {
@@ -367,7 +368,7 @@ namespace Grayscale.P693ShogiGui.L500GUI
 
             {
 #if DEBUG
-                errH.Logger.WriteLine_AddMemo("(^o^)乱数のたね＝[" + KwRandom.Seed + "]");
+                errH.Logger.WriteLineAddMemo("(^o^)乱数のたね＝[" + KwRandom.Seed + "]");
 #endif
 
                 this.Data_Settei_Csv.Read_Add(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataSetteiCsv")), Encoding.UTF8);

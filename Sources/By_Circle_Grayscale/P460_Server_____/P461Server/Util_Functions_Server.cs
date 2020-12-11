@@ -90,7 +90,7 @@ namespace Grayscale.P461Server.L250Util
             [CallerLineNumber] int sourceLineNumber = 0
             )
         {
-            //KwErrorHandler errH = OwataMinister.SERVER_KIFU_YOMITORI;
+            //IErrorController errH = OwataMinister.SERVER_KIFU_YOMITORI;
 
             bool successful = false;
             KifuParserA_Impl kifuParserA_Impl = new KifuParserA_Impl();
@@ -105,8 +105,8 @@ namespace Grayscale.P461Server.L250Util
                     // 最初はここ
 
 #if DEBUG
-                    errH.Logger.WriteLine_AddMemo("(^o^)... ...");
-                    errH.Logger.WriteLine_AddMemo("ｻｲｼｮﾊｺｺ☆　：　" + memberName + "." + sourceFilePath + "." + sourceLineNumber);
+                    errH.Logger.WriteLineAddMemo("(^o^)... ...");
+                    errH.Logger.WriteLineAddMemo("ｻｲｼｮﾊｺｺ☆　：　" + memberName + "." + sourceFilePath + "." + sourceLineNumber);
 #endif
                     inputLine = kifuParserA_Impl.Execute_Step(
                         ref result,
@@ -137,7 +137,7 @@ namespace Grayscale.P461Server.L250Util
                     {
 #if DEBUG
                         string message = "(^o^)ﾂｷﾞﾊ　ﾋﾗﾃ　ﾏﾀﾊ　ｼﾃｲｷｮｸﾒﾝ　ｦ　ｼｮﾘｼﾀｲ☆ inputLine=[" + inputLine + "]";
-                        errH.Logger.WriteLine_AddMemo(message);
+                        errH.Logger.WriteLineAddMemo(message);
 #endif
 
                         inputLine = kifuParserA_Impl.Execute_Step(
@@ -158,7 +158,7 @@ namespace Grayscale.P461Server.L250Util
 
                     {
 #if DEBUG
-                        errH.Logger.WriteLine_AddMemo("(^o^)ﾂｷﾞﾊ　ﾑｰﾌﾞｽ　ｦ　ｼｮﾘｼﾀｲ☆");
+                        errH.Logger.WriteLineAddMemo("(^o^)ﾂｷﾞﾊ　ﾑｰﾌﾞｽ　ｦ　ｼｮﾘｼﾀｲ☆");
 #endif
 
                         inputLine = kifuParserA_Impl.Execute_Step(
@@ -188,7 +188,7 @@ namespace Grayscale.P461Server.L250Util
                 if (kifuParserA_Impl.State is KifuParserA_StateA2_SfenMoves)
                 {
 #if DEBUG
-                    errH.Logger.WriteLine_AddMemo("ﾂｷﾞﾊ　ｲｯﾃ　ｼｮﾘｼﾀｲ☆");
+                    errH.Logger.WriteLineAddMemo("ﾂｷﾞﾊ　ｲｯﾃ　ｼｮﾘｼﾀｲ☆");
 #endif
 
                     inputLine = kifuParserA_Impl.Execute_Step(

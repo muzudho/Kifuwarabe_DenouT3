@@ -174,7 +174,7 @@ namespace Grayscale.P481AimsServer.L125Receiver
                         ((Server)((EngineClient)this.Owner_EngineClient).Owner_Server).InputString99 + line.Substring("bestmove".Length + "".Length)
                         );
 
-                    OwataMinister.BY_GUI.Logger.WriteLine_AddMemo("USI受信：bestmove input99=[" + ((Server)((EngineClient)this.Owner_EngineClient).Owner_Server).InputString99 + "]");
+                    OwataMinister.BY_GUI.Logger.WriteLineAddMemo("USI受信：bestmove input99=[" + ((Server)((EngineClient)this.Owner_EngineClient).Owner_Server).InputString99 + "]");
                 }
                      */
             }

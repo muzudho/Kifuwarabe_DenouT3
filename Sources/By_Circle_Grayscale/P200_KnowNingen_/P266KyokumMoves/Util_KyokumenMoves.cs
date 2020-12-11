@@ -13,7 +13,7 @@ using System;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 #if DEBUG
-using Grayscale.P266_KyokumMoves.L___250_Log;
+using Grayscale.P266KyokumMoves.L250Log;
 #endif
 
 namespace Grayscale.P266KyokumMoves.L500Util
@@ -229,7 +229,7 @@ namespace Grayscale.P266KyokumMoves.L500Util
                     if (null != mmLog_orNull)
                     {
                         // どうにもできないので  ログだけ取って無視します。
-                        mmLog_orNull.ErrH.DonimoNaranAkirameta(ex,msg);
+                        mmLog_orNull.ErrH.Panic(ex,msg);
                     }
 #endif
 

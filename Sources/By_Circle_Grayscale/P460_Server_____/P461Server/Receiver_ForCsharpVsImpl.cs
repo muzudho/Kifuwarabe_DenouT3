@@ -61,7 +61,7 @@ namespace Grayscale.P461Server.L497EngineClient
             {
                 //>>>>>>>>>> メッセージを受け取りました。
 #if DEBUG
-                errH.Logger.WriteLine_S(line);
+                errH.Logger.WriteLineS(line);
 #endif
 
                 if("noop" == line)
@@ -135,7 +135,7 @@ namespace Grayscale.P461Server.L497EngineClient
                         );
 
 #if DEBUG
-                    errH.Logger.WriteLine_AddMemo("USI受信：bestmove input99=[" + ((Server)((EngineClient)this.Owner_EngineClient).Owner_Server).InputString99 + "]");
+                    errH.Logger.WriteLineAddMemo("USI受信：bestmove input99=[" + ((Server)((EngineClient)this.Owner_EngineClient).Owner_Server).InputString99 + "]");
 #endif
                 }
                 else

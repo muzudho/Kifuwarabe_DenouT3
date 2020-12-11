@@ -32,7 +32,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
 
 #if DEBUG
                 string message = "(^o^)timer入力 input99=[" + this.mainGui.ConsoleWindowGui.InputString99 + "]";
-                errH.Logger.WriteLine_AddMemo(message);
+                errH.Logger.WriteLineAddMemo(message);
 #endif
 
                 //

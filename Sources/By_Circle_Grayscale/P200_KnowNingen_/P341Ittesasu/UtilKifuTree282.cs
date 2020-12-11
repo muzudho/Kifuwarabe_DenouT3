@@ -140,7 +140,7 @@ namespace Grayscale.P341Ittesasu.L125UtilB
             KifuTree kifu282,
             out Node<ShootingStarlightable, KyokumenWrapper> out_swapedNode,
             string hint,
-            KwErrorHandler errH
+            IErrorController errH
             )
         {
             out_swapedNode = null;
@@ -156,7 +156,7 @@ namespace Grayscale.P341Ittesasu.L125UtilB
             {
                 string message = "ノードを追加しようとしましたが、指定されたnewSkyがヌルです。";
                 Exception ex1 = new Exception(message);
-                OwataMinister.ERROR.DonimoNaranAkirameta(ex1, "取った駒を差替え中☆"); throw ex1;
+                OwataMinister.ERROR.Panic(ex1, "取った駒を差替え中☆"); throw ex1;
             }
 
             // 現手番
@@ -179,7 +179,7 @@ namespace Grayscale.P341Ittesasu.L125UtilB
             kifu282.CurNode.Add_ChildNode(Util_Sky278.TranslateSasite_StarlightToText(out_swapedNode.Key), out_swapedNode);
             out_swapedNode.ParentNode = kifu282.CurNode;
 
-            errH.Logger.WriteLine_AddMemo("リンクトリストの、最終ノードは差し替えられた hint=[" + hint + "] item=[" + Util_Sky278.TranslateSasite_StarlightToText(swapedSasite) + "]");
+            errH.Logger.WriteLineAddMemo("リンクトリストの、最終ノードは差し替えられた hint=[" + hint + "] item=[" + Util_Sky278.TranslateSasite_StarlightToText(swapedSasite) + "]");
         // memberName=[" + memberName + "] sourceFilePath=[" + sourceFilePath + "] sourceLineNumber=[" + sourceLineNumber + "]
 
         gt_EndMethod:

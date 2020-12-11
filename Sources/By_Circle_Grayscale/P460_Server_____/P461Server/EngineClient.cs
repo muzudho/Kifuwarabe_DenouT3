@@ -48,7 +48,7 @@ namespace Grayscale.P461Server.I497EngineClient
         ///// <summary>
         ///// 将棋エンジンを先手にするために、go を出します。
         ///// </summary>
-        //void Send_Go(KwErrorHandler errH);
+        //void Send_Go(IErrorController errH);
 
     }
 }

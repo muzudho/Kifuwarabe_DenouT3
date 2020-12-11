@@ -47,8 +47,8 @@ namespace Grayscale.P355_KifuParserA.L500Parser
             try
             {
 #if DEBUG
-                errH.Logger.WriteLine_AddMemo("┏━━━━━┓(^o^)");
-                errH.Logger.WriteLine_AddMemo("わたしは　" + this.State.GetType().Name + "　の　Execute_Step　だぜ☆　：　呼出箇所＝" + memberName + "." + sourceFilePath + "." + sourceLineNumber);
+                errH.Logger.WriteLineAddMemo("┏━━━━━┓(^o^)");
+                errH.Logger.WriteLineAddMemo("わたしは　" + this.State.GetType().Name + "　の　Execute_Step　だぜ☆　：　呼出箇所＝" + memberName + "." + sourceFilePath + "." + sourceLineNumber);
 #endif
 
                 KifuParserA_State nextState;
@@ -85,8 +85,8 @@ namespace Grayscale.P355_KifuParserA.L500Parser
             try
             {
 #if DEBUG
-                errH.Logger.WriteLine_AddMemo("┏━━━━━━━━━━┓");
-                errH.Logger.WriteLine_AddMemo("わたしは　" + this.State.GetType().Name + "　の　Execute_All　だぜ☆　：　呼出箇所＝" + memberName + "." + sourceFilePath + "." + sourceLineNumber);
+                errH.Logger.WriteLineAddMemo("┏━━━━━━━━━━┓");
+                errH.Logger.WriteLineAddMemo("わたしは　" + this.State.GetType().Name + "　の　Execute_All　だぜ☆　：　呼出箇所＝" + memberName + "." + sourceFilePath + "." + sourceLineNumber);
 #endif
 
                 KifuParserA_State nextState = this.State;
@@ -98,7 +98,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                         // FIXME: コンピューターが先手のとき、ここにくる？
 
                         // 異常時。
-                        //FIXME: errH.Logger.WriteLine_Error("＼（＾ｏ＾）／「" + genjo.InputLine + "」入力がない3☆！　終わるぜ☆");
+                        //FIXME: errH.Logger.WriteLineError("＼（＾ｏ＾）／「" + genjo.InputLine + "」入力がない3☆！　終わるぜ☆");
                         genjo.ToBreak_Abnormal();
                         goto gt_NextLoop1;
                     }

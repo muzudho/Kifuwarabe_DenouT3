@@ -60,7 +60,7 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
 
 #if DEBUG
             // 送信記録をつけます。
-            ErrorControllerReference.ENGINE_NETWORK.Logger.WriteLine_S(line);
+            ErrorControllerReference.EngineNetwork.Logger.WriteLineS(line);
 #endif
         }
 
@@ -173,7 +173,8 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
 
                     //seihinName += " " + versionStr;
 #if DEBUG
-                    ErrorControllerReference.ENGINE_DEFAULT.Logger.WriteLine_AddMemo("v(^▽^)v ｲｪｰｲ☆ ... " + this.SeihinName + " " + versionStr);
+                    var engineName = toml.Get<TomlTable>("Engine").Get<string>("Name");
+                    ErrorControllerReference.EngineDefault.Logger.WriteLineAddMemo($"v(^▽^)v ｲｪｰｲ☆ ... {engineName} {versionStr}");
 #endif
                 }
 

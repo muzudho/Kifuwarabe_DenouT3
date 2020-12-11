@@ -312,34 +312,34 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
             //
             #endregion
 #if DEBUG
-            ErrorControllerReference.ENGINE_DEFAULT.Logger.WriteLine_AddMemo("KifuParserA_Impl.LOGGING_BY_ENGINE, ┏━確認━━━━setoptionDictionary ━┓");
+            ErrorControllerReference.EngineDefault.Logger.WriteLineAddMemo("KifuParserA_Impl.LOGGING_BY_ENGINE, ┏━確認━━━━setoptionDictionary ━┓");
             foreach (KeyValuePair<string, string> pair in this.owner.SetoptionDictionary)
             {
-                ErrorControllerReference.ENGINE_DEFAULT.Logger.WriteLine_AddMemo(pair.Key + "=" + pair.Value);
+                ErrorControllerReference.EngineDefault.Logger.WriteLineAddMemo(pair.Key + "=" + pair.Value);
             }
-            ErrorControllerReference.ENGINE_DEFAULT.Logger.WriteLine_AddMemo("┗━━━━━━━━━━━━━━━━━━┛");
-            ErrorControllerReference.ENGINE_DEFAULT.Logger.WriteLine_AddMemo("┏━確認━━━━goDictionary━━━━━┓");
+            ErrorControllerReference.EngineDefault.Logger.WriteLineAddMemo("┗━━━━━━━━━━━━━━━━━━┛");
+            ErrorControllerReference.EngineDefault.Logger.WriteLineAddMemo("┏━確認━━━━goDictionary━━━━━┓");
             foreach (KeyValuePair<string, string> pair in this.GoProperties)
             {
-                ErrorControllerReference.ENGINE_DEFAULT.Logger.WriteLine_AddMemo(pair.Key + "=" + pair.Value);
+                ErrorControllerReference.EngineDefault.Logger.WriteLineAddMemo(pair.Key + "=" + pair.Value);
             }
 
             //Dictionary<string, string> goMateProperties = new Dictionary<string, string>();
             //goMateProperties["mate"] = "";
-            //LarabeLoggerList_Warabe.ENGINE.WriteLine_AddMemo("┗━━━━━━━━━━━━━━━━━━┛");
-            //LarabeLoggerList_Warabe.ENGINE.WriteLine_AddMemo("┏━確認━━━━goMateDictionary━━━┓");
+            //LarabeLoggerList_Warabe.ENGINE.WriteLineAddMemo("┗━━━━━━━━━━━━━━━━━━┛");
+            //LarabeLoggerList_Warabe.ENGINE.WriteLineAddMemo("┏━確認━━━━goMateDictionary━━━┓");
             //foreach (KeyValuePair<string, string> pair in this.goMateProperties)
             //{
-            //    LarabeLoggerList_Warabe.ENGINE.WriteLine_AddMemo(pair.Key + "=" + pair.Value);
+            //    LarabeLoggerList_Warabe.ENGINE.WriteLineAddMemo(pair.Key + "=" + pair.Value);
             //}
 
-            ErrorControllerReference.ENGINE_DEFAULT.Logger.WriteLine_AddMemo("┗━━━━━━━━━━━━━━━━━━┛");
-            ErrorControllerReference.ENGINE_DEFAULT.Logger.WriteLine_AddMemo("┏━確認━━━━gameoverDictionary━━┓");
+            ErrorControllerReference.EngineDefault.Logger.WriteLineAddMemo("┗━━━━━━━━━━━━━━━━━━┛");
+            ErrorControllerReference.EngineDefault.Logger.WriteLineAddMemo("┏━確認━━━━gameoverDictionary━━┓");
             foreach (KeyValuePair<string, string> pair in this.GameoverProperties)
             {
-                ErrorControllerReference.ENGINE_DEFAULT.Logger.WriteLine_AddMemo(pair.Key + "=" + pair.Value);
+                ErrorControllerReference.EngineDefault.Logger.WriteLineAddMemo(pair.Key + "=" + pair.Value);
             }
-            ErrorControllerReference.ENGINE_DEFAULT.Logger.WriteLine_AddMemo("┗━━━━━━━━━━━━━━━━━━┛");
+            ErrorControllerReference.EngineDefault.Logger.WriteLineAddMemo("┗━━━━━━━━━━━━━━━━━━┛");
 #endif
         }
 
@@ -499,7 +499,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
 
-            //OwataMinister.WARABE_ENGINE.Logger.WriteLine_AddMemo(
+            //OwataMinister.WARABE_ENGINE.Logger.WriteLineAddMemo(
             //    Util_Sky307.Json_1Sky(this.Kifu.CurNode.Value.ToKyokumenConst, "現局面になっているのかなんだぜ☆？　line=[" + line + "]　棋譜＝" + KirokuGakari.ToJsaKifuText(this.Kifu, OwataMinister.WARABE_ENGINE),
             //        "PgCS",
             //        this.Kifu.CurNode.Value.ToKyokumenConst.Temezumi
@@ -695,7 +695,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
 
                 SkyConst src_Sky = this.Kifu.NodeAt(latestTemezumi).Value.KyokumenConst;//現局面
 
-                //errH.Logger.WriteLine_AddMemo("将棋サーバー「" + latestTemezumi + "手目、きふわらべ　さんの手番ですよ！」　" + line);
+                //errH.Logger.WriteLineAddMemo("将棋サーバー「" + latestTemezumi + "手目、きふわらべ　さんの手番ですよ！」　" + line);
 
 
                 //----------------------------------------
@@ -707,9 +707,9 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
 
                     RO_Star king1p = Util_Starlightable.AsKoma(src_Sky.StarlightIndexOf(Finger_Honshogi.SenteOh).Now);
                     RO_Star king2p = Util_Starlightable.AsKoma(src_Sky.StarlightIndexOf(Finger_Honshogi.GoteOh).Now);
-                    //OwataMinister.WARABE_ENGINE.Logger.WriteLine_AddMemo("将棋サーバー「ではここで、王さまがどこにいるか確認してみましょう」");
-                    //OwataMinister.WARABE_ENGINE.Logger.WriteLine_AddMemo("▲王の置き場＝" + Conv_SyElement.Masu_ToOkiba(koma1.Masu));
-                    //OwataMinister.WARABE_ENGINE.Logger.WriteLine_AddMemo("△王の置き場＝" + Conv_SyElement.Masu_ToOkiba(koma2.Masu));
+                    //OwataMinister.WARABE_ENGINE.Logger.WriteLineAddMemo("将棋サーバー「ではここで、王さまがどこにいるか確認してみましょう」");
+                    //OwataMinister.WARABE_ENGINE.Logger.WriteLineAddMemo("▲王の置き場＝" + Conv_SyElement.Masu_ToOkiba(koma1.Masu));
+                    //OwataMinister.WARABE_ENGINE.Logger.WriteLineAddMemo("△王の置き場＝" + Conv_SyElement.Masu_ToOkiba(koma2.Masu));
 
                     if (Conv_SyElement.ToOkiba(king1p.Masu) != Okiba.ShogiBan)
                     {
@@ -839,7 +839,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                                 string sfenText = Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(bestSasite2);
 
                                 // ログが重過ぎる☆！
-                                //OwataMinister.WARABE_ENGINE.Logger.WriteLine_AddMemo("(Warabe)指し手のチョイス： bestmove＝[" + sfenText + "]" +
+                                //OwataMinister.WARABE_ENGINE.Logger.WriteLineAddMemo("(Warabe)指し手のチョイス： bestmove＝[" + sfenText + "]" +
                                 //    "　棋譜＝" + KirokuGakari.ToJsaKifuText(this.Kifu, errH));
 
                                 //----------------------------------------
@@ -866,7 +866,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                             else // 指し手がないときは、SFENが書けない☆　投了だぜ☆
                             {
                                 // ログが重過ぎる☆！
-                                //OwataMinister.WARABE_ENGINE.Logger.WriteLine_AddMemo("(Warabe)指し手のチョイス： 指し手がないときは、SFENが書けない☆　投了だぜ☆ｗｗ（＞＿＜）" +
+                                //OwataMinister.WARABE_ENGINE.Logger.WriteLineAddMemo("(Warabe)指し手のチョイス： 指し手がないときは、SFENが書けない☆　投了だぜ☆ｗｗ（＞＿＜）" +
                                 //    "　棋譜＝" + KirokuGakari.ToJsaKifuText(this.Kifu, errH));
 
                                 //----------------------------------------

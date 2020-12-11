@@ -78,14 +78,14 @@ namespace Grayscale.P743FvLearn.L430Zooming
                     longest_positive = false;
                 }
 #if DEBUG
-                errH.Logger.WriteLine_AddMemo("topology");
-                errH.Logger.WriteLine_AddMemo("   negative_length =" + negative_length);
-                errH.Logger.WriteLine_AddMemo("   positive_length =" + positive_length);
-                errH.Logger.WriteLine_AddMemo("   longest_positive=" + longest_positive);
-                errH.Logger.WriteLine_AddMemo("   negative_average=" + (negative_items == 0 ? 0 : negative_total / negative_items));
-                errH.Logger.WriteLine_AddMemo("   positive_average=" + (positive_items == 0 ? 0 : positive_total / positive_items));
-                errH.Logger.WriteLine_AddMemo("   notZero         =" + notZero);
-                errH.Logger.WriteLine_AddMemo("----------------------------------------");
+                errH.Logger.WriteLineAddMemo("topology");
+                errH.Logger.WriteLineAddMemo("   negative_length =" + negative_length);
+                errH.Logger.WriteLineAddMemo("   positive_length =" + positive_length);
+                errH.Logger.WriteLineAddMemo("   longest_positive=" + longest_positive);
+                errH.Logger.WriteLineAddMemo("   negative_average=" + (negative_items == 0 ? 0 : negative_total / negative_items));
+                errH.Logger.WriteLineAddMemo("   positive_average=" + (positive_items == 0 ? 0 : positive_total / positive_items));
+                errH.Logger.WriteLineAddMemo("   notZero         =" + notZero);
+                errH.Logger.WriteLineAddMemo("----------------------------------------");
 #endif
             }
 
@@ -152,15 +152,15 @@ namespace Grayscale.P743FvLearn.L430Zooming
                 longest_positive = false;
             }
 #if DEBUG
-            errH.Logger.WriteLine_AddMemo("end");
-            errH.Logger.WriteLine_AddMemo("   negative_length =" + negative_length);
-            errH.Logger.WriteLine_AddMemo("   positive_length =" + positive_length);
-            errH.Logger.WriteLine_AddMemo("   longest_positive=" + longest_positive);
-            errH.Logger.WriteLine_AddMemo("   zoom            =" + zoom);
-            errH.Logger.WriteLine_AddMemo("   negative_average=" + (negative_items == 0 ? 0 : negative_total / negative_items));
-            errH.Logger.WriteLine_AddMemo("   positive_average=" + (positive_items == 0 ? 0 : positive_total / positive_items));
-            errH.Logger.WriteLine_AddMemo("   notZero         =" + notZero);
-            errH.Logger.WriteLine_AddMemo("----------------------------------------");
+            errH.Logger.WriteLineAddMemo("end");
+            errH.Logger.WriteLineAddMemo("   negative_length =" + negative_length);
+            errH.Logger.WriteLineAddMemo("   positive_length =" + positive_length);
+            errH.Logger.WriteLineAddMemo("   longest_positive=" + longest_positive);
+            errH.Logger.WriteLineAddMemo("   zoom            =" + zoom);
+            errH.Logger.WriteLineAddMemo("   negative_average=" + (negative_items == 0 ? 0 : negative_total / negative_items));
+            errH.Logger.WriteLineAddMemo("   positive_average=" + (positive_items == 0 ? 0 : positive_total / positive_items));
+            errH.Logger.WriteLineAddMemo("   notZero         =" + notZero);
+            errH.Logger.WriteLineAddMemo("----------------------------------------");
 #endif
         }
 

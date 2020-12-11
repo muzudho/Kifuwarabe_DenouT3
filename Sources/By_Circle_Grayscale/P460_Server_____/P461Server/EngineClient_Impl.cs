@@ -63,13 +63,13 @@ namespace Grayscale.P461Server.L497EngineClient
             this.ShogiEngineProcessWrapper = new EngineProcessWrapperImpl();
 
 #if DEBUG
-            this.ShogiEngineProcessWrapper.SetDelegate_ShogiServer_ToEngine( (string line, KwErrorHandler errH) =>
+            this.ShogiEngineProcessWrapper.SetDelegate_ShogiServer_ToEngine( (string line, IErrorController errH) =>
             {
                 //
                 // USIコマンドを将棋エンジンに送ったタイミングで、なにかすることがあれば、
                 // ここに書きます。
                 //
-                errH.Logger.WriteLine_C(line);
+                errH.Logger.WriteLineC(line);
             });
 #endif
         }
@@ -192,7 +192,7 @@ namespace Grayscale.P461Server.L497EngineClient
         ///// <summary>
         ///// 将棋エンジンを先手にするために、go を出します。
         ///// </summary>
-        //public void Send_Go(KwErrorHandler errH)
+        //public void Send_Go(IErrorController errH)
         //{
         //    this.ShogiEngineProcessWrapper.Send_Go(errH);
         //}

@@ -70,7 +70,7 @@ namespace Grayscale.P324KifuTree.I250Struct
         ///// <summary>
         ///// 王手がかかった局面は取り除きます。
         ///// </summary>
-        //Maps_OneAndMulti<Finger, Starbeamable> SplitSasite_ByStar(Node<Starbeamable, KyokumenWrapper> hubNode, KwErrorHandler errH);
+        //Maps_OneAndMulti<Finger, Starbeamable> SplitSasite_ByStar(Node<Starbeamable, KyokumenWrapper> hubNode, IErrorController errH);
 
         string Json_NextNodes_MultiSky(
             string memo,

@@ -16,7 +16,7 @@ namespace Grayscale.P743FvLearn.L460Scoreing
         ///// バッドな点が入っているものは　全て吸い取って　０　点にします。
         ///// 吸い取った　バッド点　を返却します。
         ///// </summary>
-        //public static float Spoil_MotiBad( Playerside selfPside, FeatureVector fv_mutable, N54List n54List, KwErrorHandler errH)
+        //public static float Spoil_MotiBad( Playerside selfPside, FeatureVector fv_mutable, N54List n54List, IErrorController errH)
         //{
         //    float result_sum = 0;
 
@@ -94,7 +94,7 @@ namespace Grayscale.P743FvLearn.L460Scoreing
         ///// <summary>
         ///// ２駒関係の54要素で表される箇所のうち、盤上の２駒に関する評価値に加算します。
         ///// </summary>
-        //public static void Fill54x54_Add_ToBanjo(float offset, SkyConst src_Sky, FeatureVector fv_mutable, N54List n54List, KwErrorHandler errH)
+        //public static void Fill54x54_Add_ToBanjo(float offset, SkyConst src_Sky, FeatureVector fv_mutable, N54List n54List, IErrorController errH)
         //{
         //    //----------------------------------------
         //    // [ＰＰ]　盤上の各駒１　×　盤上の各駒２

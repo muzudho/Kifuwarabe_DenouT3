@@ -5,7 +5,9 @@ using Grayscale.P223TedokuHisto.I250Struct;
 using System.Collections.Generic;
 
 #if DEBUG
-using Grayscale.P223_TedokuHisto.L240____Util;
+using Grayscale.P223TedokuHisto.L240Util;
+using Nett;
+using System.IO;
 #endif
 
 namespace Grayscale.P223TedokuHisto.L250Struct
@@ -81,7 +83,7 @@ namespace Grayscale.P223TedokuHisto.L250Struct
             //
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-            Util_TedokuHistory.WriteLog(Path.Combine(this.txtKifuFilepath.Text, toml.Get<TomlTable>("Resources").Get<string>("N19TedokuKeisanLog")), result);
+            Util_TedokuHistory.WriteLog(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("N19TedokuKeisanLog")), result);
 #endif
 
             return result;

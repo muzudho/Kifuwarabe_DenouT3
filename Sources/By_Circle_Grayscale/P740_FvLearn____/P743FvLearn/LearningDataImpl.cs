@@ -37,6 +37,9 @@ using Grayscale.P571KifuWarabe.L500KifuWarabe;
 using Grayscale.P743FvLearn.I250Learn;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 using Nett;
+using Grayscale.P321KyokumHyoka.I250Struct;
+using Grayscale.P222LogKaisetu.L250Struct;
+using System.Diagnostics;
 
 namespace Grayscale.P743FvLearn.L250Learn
 {

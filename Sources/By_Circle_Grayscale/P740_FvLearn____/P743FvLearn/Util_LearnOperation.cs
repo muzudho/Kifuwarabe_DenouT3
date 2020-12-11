@@ -56,16 +56,16 @@ namespace Grayscale.P743FvLearn.L600Operation
             {
                 string sfenSasiteStr = item.Sfen;
 #if DEBUG
-                errH.Logger.WriteLine_AddMemo("sfenSasiteStr=" + sfenSasiteStr);
+                errH.Logger.WriteLineAddMemo("sfenSasiteStr=" + sfenSasiteStr);
 #endif
 
                 if (uc_Main.LearningData.Kifu.CurNode.HasChildNode(sfenSasiteStr))
                 {
 #if DEBUG
-                    errH.Logger.WriteLine_AddMemo("----------------------------------------");
-                    errH.Logger.WriteLine_AddMemo("FV 総合点（読込前）1");
-                    errH.Logger.WriteLine_AddMemo("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(uc_Main.LearningData.Fv));
-                    errH.Logger.WriteLine_AddMemo("----------------------------------------");
+                    errH.Logger.WriteLineAddMemo("----------------------------------------");
+                    errH.Logger.WriteLineAddMemo("FV 総合点（読込前）1");
+                    errH.Logger.WriteLineAddMemo("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(uc_Main.LearningData.Fv));
+                    errH.Logger.WriteLineAddMemo("----------------------------------------");
 #endif
                     Node<Starbeamable, KyokumenWrapper> nextNode = uc_Main.LearningData.Kifu.CurNode.GetChildNode(sfenSasiteStr);
 
@@ -82,10 +82,10 @@ namespace Grayscale.P743FvLearn.L600Operation
                         errH
                         );//相手が有利になる点
 #if DEBUG
-                    errH.Logger.WriteLine_AddMemo("----------------------------------------");
-                    errH.Logger.WriteLine_AddMemo("FV 総合点（読込後）6");
-                    errH.Logger.WriteLine_AddMemo("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(uc_Main.LearningData.Fv));
-                    errH.Logger.WriteLine_AddMemo("----------------------------------------");
+                    errH.Logger.WriteLineAddMemo("----------------------------------------");
+                    errH.Logger.WriteLineAddMemo("FV 総合点（読込後）6");
+                    errH.Logger.WriteLineAddMemo("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(uc_Main.LearningData.Fv));
+                    errH.Logger.WriteLineAddMemo("----------------------------------------");
 #endif
                 }
             }
@@ -209,7 +209,7 @@ namespace Grayscale.P743FvLearn.L600Operation
         ///// <summary>
         ///// FVを0～999(*bairitu)に矯正。
         ///// </summary>
-        //public static void Do_FvRange999(ref bool isRequest_ShowGohosyu, Uc_Main uc_Main, KwErrorHandler errH)
+        //public static void Do_FvRange999(ref bool isRequest_ShowGohosyu, Uc_Main uc_Main, IErrorController errH)
         //{
         //    Util_LearnFunctions.FvParamRange_PP(uc_Main.LearningData.Fv, errH);
 

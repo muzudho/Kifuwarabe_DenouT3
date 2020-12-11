@@ -2,17 +2,17 @@
 using Grayscale.P003Log.I500Struct;
 using Grayscale.P035Collection.L500Struct;
 using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P157_KyokumenPng.I500Struct;
-using Grayscale.P211WordShogi.L500____Word;
+using Grayscale.P157KyokumenPng.I500Struct;
+using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P222LogKaisetu.L250Struct;
-using Grayscale.P226_Tree_______.I500Struct;
-using Grayscale.P247_KyokumenWra.L500Struct;
-using Grayscale.P266_KyokumMoves.L500Util;
+using Grayscale.P226Tree.I500Struct;
+using Grayscale.P247KyokumenWra.L500Struct;
+using Grayscale.P266KyokumMoves.L500Util;
 using Grayscale.P324KifuTree.I250Struct;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-using Grayscale.P266_KyokumMoves.L250____Log;
+using Grayscale.P266KyokumMoves.L250Log;
 
 namespace Grayscale.P542Scoreing.L061Util
 {
@@ -29,7 +29,7 @@ namespace Grayscale.P542Scoreing.L061Util
             //KifuTree kifu_forAssert,
             KyokumenPngEnvironment reportEnvironment,
             KaisetuBoards logF_kiki,
-            KwErrorHandler errH
+            IErrorController errH
             )
         {
             //

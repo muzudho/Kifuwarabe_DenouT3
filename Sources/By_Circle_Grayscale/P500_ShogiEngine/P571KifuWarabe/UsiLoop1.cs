@@ -351,13 +351,13 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
             // 将棋エンジン「おっおっ、設定を終わらせておかなければ（汗、汗…）」
             //------------------------------------------------------------
 #if DEBUG
-            ErrorControllerReference.ENGINE_DEFAULT.Logger.WriteLine_AddMemo("┏━━━━━設定━━━━━┓");
+            ErrorControllerReference.EngineDefault.Logger.WriteLineAddMemo("┏━━━━━設定━━━━━┓");
             foreach (KeyValuePair<string, string> pair in this.Owner.SetoptionDictionary)
             {
                 // ここで将棋エンジンの設定を済ませておいてください。
-                ErrorControllerReference.ENGINE_DEFAULT.Logger.WriteLine_AddMemo(pair.Key + "=" + pair.Value);
+                ErrorControllerReference.EngineDefault.Logger.WriteLineAddMemo(pair.Key + "=" + pair.Value);
             }
-            ErrorControllerReference.ENGINE_DEFAULT.Logger.WriteLine_AddMemo("┗━━━━━━━━━━━━┛");
+            ErrorControllerReference.EngineDefault.Logger.WriteLineAddMemo("┗━━━━━━━━━━━━┛");
 #endif
 
             //------------------------------------------------------------
@@ -442,7 +442,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
             //
             #endregion
 #if DEBUG
-            ErrorControllerReference.ENGINE_DEFAULT.Logger.WriteLine_AddMemo("(^-^)ﾉｼ");
+            ErrorControllerReference.EngineDefault.Logger.WriteLineAddMemo("(^-^)ﾉｼ");
 #endif
 
 

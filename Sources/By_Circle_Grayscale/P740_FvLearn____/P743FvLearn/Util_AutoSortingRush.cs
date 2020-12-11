@@ -73,7 +73,7 @@ namespace Grayscale.P743FvLearn.L506AutoSasiteSort
                     {
                         // 1位なら終了
 #if DEBUG
-                        errH.Logger.WriteLine_AddMemo("items.Count=[" + uc_Main.LstGohosyu.Items.Count + "] sfenSasiteStr=[" + sfenSasiteStr + "] gohosyuItem.Sfen=[" + gohosyuItem.Sfen + "]");
+                        errH.Logger.WriteLineAddMemo("items.Count=[" + uc_Main.LstGohosyu.Items.Count + "] sfenSasiteStr=[" + sfenSasiteStr + "] gohosyuItem.Sfen=[" + gohosyuItem.Sfen + "]");
 #endif
                         break;
                     }

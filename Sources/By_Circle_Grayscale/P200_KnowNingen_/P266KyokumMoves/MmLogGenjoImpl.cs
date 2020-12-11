@@ -2,21 +2,22 @@
 using Grayscale.P003Log.I500Struct;
 using Grayscale.P035Collection.L500Struct;
 using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P211WordShogi.L___250_Masu;
-using Grayscale.P211WordShogi.L500____Word;
-using Grayscale.P212_ConvPside__.L500Converter;
+using Grayscale.P211WordShogi.I250Masu;
+using Grayscale.P211WordShogi.L250Masu;
+using Grayscale.P211WordShogi.L500Word;
+using Grayscale.P212ConvPside.L500Converter;
 using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P222LogKaisetu.L250Struct;
 using Grayscale.P224Sky.L500Struct;
-using Grayscale.P234_Komahaiyaku.L500Util;
-using Grayscale.P238_Seiza______.L250Struct;
-using Grayscale.P238_Seiza______.L500Util;
-using Grayscale.P239_ConvWords__.L500Converter;
-using Grayscale.P258_UtilSky258_.L505____ConvLogJson;
-using Grayscale.P266_KyokumMoves.L___250_Log;
+using Grayscale.P234Komahaiyaku.L500Util;
+using Grayscale.P238Seiza.L250Struct;
+using Grayscale.P238Seiza.L500Util;
+using Grayscale.P239ConvWords.L500Converter;
+using Grayscale.P258UtilSky258.L505ConvLogJson;
+using Grayscale.P266KyokumMoves.L250Log;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P266_KyokumMoves.L250____Log
+namespace Grayscale.P266KyokumMoves.L250Log
 {
     /// <summary>
     /// ログを取るためのもの。
@@ -39,8 +40,8 @@ namespace Grayscale.P266_KyokumMoves.L250____Log
         public Starbeamable Sasite { get { return this.sasite; } }
         private Starbeamable sasite;
 
-        public KwErrorHandler ErrH { get { return this.errH; } }
-        private KwErrorHandler errH;
+        public IErrorController ErrH { get { return this.errH; } }
+        private IErrorController errH;
 
 
         public MmLogGenjoImpl(
@@ -48,7 +49,7 @@ namespace Grayscale.P266_KyokumMoves.L250____Log
             KaisetuBoard brdMove,
             int temezumi_yomiCur,
             Starbeamable sasite,
-            KwErrorHandler errH
+            IErrorController errH
             )
         {
             this.BrdMove = brdMove;

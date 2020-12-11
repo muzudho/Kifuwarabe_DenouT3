@@ -34,7 +34,7 @@ namespace Grayscale.P571KifuWarabe.L249Noop
         public void _02_AtEmptyMessage(ShogiEngine owner, out bool isTimeoutShutdown, IErrorController errH)
         {
             isTimeoutShutdown = false;
-            //errH.Logger.WriteLine_AddMemo("メッセージは届いていませんでした。this.sw_forNoop.Elapsed.Seconds=[" + this.sw_forNoop.Elapsed.Seconds + "]");
+            //errH.Logger.WriteLineAddMemo("メッセージは届いていませんでした。this.sw_forNoop.Elapsed.Seconds=[" + this.sw_forNoop.Elapsed.Seconds + "]");
 
             if (owner.Option_enable_serverNoopable && 10 < this.sw_forNoop.Elapsed.Seconds)//0 < this.sw_forNoop.Elapsed.Se.Minutes
             {
@@ -47,7 +47,7 @@ namespace Grayscale.P571KifuWarabe.L249Noop
 
                             // noop を投げて 1分過ぎていれば。
 #if DEBUG
-                            errH.Logger.WriteLine_AddMemo("計20秒ほど、サーバーからの応答がなかったぜ☆ (^-^)ﾉｼ");
+                            errH.Logger.WriteLineAddMemo("計20秒ほど、サーバーからの応答がなかったぜ☆ (^-^)ﾉｼ");
 #endif
 
                             // このプログラムを終了します。
@@ -58,7 +58,7 @@ namespace Grayscale.P571KifuWarabe.L249Noop
                     case NoopPhase.None:
                         {
 #if DEBUG
-                            errH.Logger.WriteLine_AddMemo("noopを投げるぜ☆");
+                            errH.Logger.WriteLineAddMemo("noopを投げるぜ☆");
 #endif
                             // まだ noop を投げていないなら
                             owner.Send("noop");// サーバーが生きていれば、"ok" と返してくるはず。（独自実装）

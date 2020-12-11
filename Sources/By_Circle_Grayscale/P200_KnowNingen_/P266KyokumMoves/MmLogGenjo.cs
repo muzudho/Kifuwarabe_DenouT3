@@ -2,13 +2,13 @@
 using Grayscale.P003Log.I500Struct;
 using Grayscale.P035Collection.L500Struct;
 using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P211WordShogi.L500____Word;
+using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P222LogKaisetu.L250Struct;
 using Grayscale.P224Sky.L500Struct;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P266_KyokumMoves.L___250_Log
+namespace Grayscale.P266KyokumMoves.L250Log
 {
     /// <summary>
     /// ログを取るためのもの。
@@ -26,7 +26,7 @@ namespace Grayscale.P266_KyokumMoves.L___250_Log
 
         Starbeamable Sasite { get; }
 
-        KwErrorHandler ErrH { get; }
+        IErrorController ErrH { get; }
 
         void Log1(Playerside pside_genTeban3);
 

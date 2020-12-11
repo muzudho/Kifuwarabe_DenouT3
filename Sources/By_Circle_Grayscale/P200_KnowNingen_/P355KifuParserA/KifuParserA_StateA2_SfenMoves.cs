@@ -167,7 +167,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                             //------------------------------
                             // ★棋譜読込専用  駒移動
                             //------------------------------
-                            //errH.Logger.WriteLine_AddMemo("一手指し開始　：　残りの符号つ「" + genjo.InputLine + "」");
+                            //errH.Logger.WriteLineAddMemo("一手指し開始　：　残りの符号つ「" + genjo.InputLine + "」");
 
 
                             exceptionArea = 1030;
@@ -211,7 +211,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                             //↑↑一手指し
 
                             //exceptionArea = 1090;
-                            //errH.Logger.WriteLine_AddMemo(Util_Sky307.Json_1Sky(
+                            //errH.Logger.WriteLineAddMemo(Util_Sky307.Json_1Sky(
                             //    src_Sky,
                             //    "一手指し終了",
                             //    "SFENパース2",
@@ -240,7 +240,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                 }
                 else
                 {
-                    //errH.Logger.WriteLine_AddMemo("（＾△＾）現局面まで進んだのかだぜ☆？\n" + Util_Sky307.Json_1Sky(
+                    //errH.Logger.WriteLineAddMemo("（＾△＾）現局面まで進んだのかだぜ☆？\n" + Util_Sky307.Json_1Sky(
                     //    src_Sky,
                     //    "棋譜パース",
                     //    "SFENパース3",

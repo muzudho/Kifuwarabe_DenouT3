@@ -89,10 +89,10 @@ namespace Grayscale.P262Play2.L500Struct
 #if DEBUG
                 //if (null != errH_orNull)
                 //{
-                //    errH_orNull.Logger.WriteLine_AddMemo("----------------------------------------");
-                //    errH_orNull.Logger.WriteLine_AddMemo("歩を置きたかった升＝" + Util_SySet.Dump_Elements(aMasus[(int)Komasyurui14.H01_Fu_____]));
-                //    errH_orNull.Logger.WriteLine_AddMemo("----------------------------------------");
-                //    errH_orNull.Logger.WriteLine_AddMemo("歩の置けない筋チェック（二歩チェック）開始");
+                //    errH_orNull.Logger.WriteLineAddMemo("----------------------------------------");
+                //    errH_orNull.Logger.WriteLineAddMemo("歩を置きたかった升＝" + Util_SySet.Dump_Elements(aMasus[(int)Komasyurui14.H01_Fu_____]));
+                //    errH_orNull.Logger.WriteLineAddMemo("----------------------------------------");
+                //    errH_orNull.Logger.WriteLineAddMemo("歩の置けない筋チェック（二歩チェック）開始");
                 //}
 #endif
                 // 将棋盤上の自歩一覧。
@@ -106,12 +106,12 @@ namespace Grayscale.P262Play2.L500Struct
 #if DEBUG
                 //if (null != errH_orNull)
                 //{
-                //    errH_orNull.Logger.WriteLine_AddMemo("banjoJiFus.Count=[" + banjoJiFus.Count + "]");
+                //    errH_orNull.Logger.WriteLineAddMemo("banjoJiFus.Count=[" + banjoJiFus.Count + "]");
                 //    foreach (Finger figKoma in banjoJiFus.Items)
                 //    {
-                //        errH_orNull.Logger.WriteLine_AddMemo("figKoma=[" + (int)figKoma + "]");
+                //        errH_orNull.Logger.WriteLineAddMemo("figKoma=[" + (int)figKoma + "]");
                 //    }
-                //    errH_orNull.Logger.WriteLine_AddMemo("----------------------------------------");
+                //    errH_orNull.Logger.WriteLineAddMemo("----------------------------------------");
                 //}
 #endif
 
@@ -145,10 +145,10 @@ namespace Grayscale.P262Play2.L500Struct
 #if DEBUG
                 //if (null != errH_orNull)
                 //{
-                //    errH_orNull.Logger.WriteLine_AddMemo("歩の置けない筋チェック（二歩チェック）終了");
-                //    errH_orNull.Logger.WriteLine_AddMemo("----------------------------------------");
-                //    errH_orNull.Logger.WriteLine_AddMemo("歩の置ける升＝" + Util_SySet.Dump_Elements(aMasus[(int)Komasyurui14.H01_Fu_____]));
-                //    errH_orNull.Logger.WriteLine_AddMemo("----------------------------------------");
+                //    errH_orNull.Logger.WriteLineAddMemo("歩の置けない筋チェック（二歩チェック）終了");
+                //    errH_orNull.Logger.WriteLineAddMemo("----------------------------------------");
+                //    errH_orNull.Logger.WriteLineAddMemo("歩の置ける升＝" + Util_SySet.Dump_Elements(aMasus[(int)Komasyurui14.H01_Fu_____]));
+                //    errH_orNull.Logger.WriteLineAddMemo("----------------------------------------");
                 //}
 #endif
 

@@ -71,7 +71,7 @@ namespace Grayscale.P461Server.L496EngineWrapper
         /// </summary>
         private void Download(string message, IErrorController errH)
         {
-            //KwErrorHandler errH = OwataMinister.SERVER_NETWORK;
+            //IErrorController errH = OwataMinister.SERVER_NETWORK;
 
             this.ShogiEngine.StandardInput.WriteLine(message);
 

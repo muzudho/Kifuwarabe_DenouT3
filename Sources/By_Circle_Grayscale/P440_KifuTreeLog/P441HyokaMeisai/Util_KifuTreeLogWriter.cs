@@ -19,6 +19,8 @@ using Grayscale.P321KyokumHyoka.I250Struct;
 using Grayscale.P324KifuTree.I250Struct;
 using Grayscale.P339ConvKyokume.L500Converter;
 using Nett;
+using System;
+using Grayscale.P202GraphicLog.L500Util;
 
 #if DEBUG
 using System.Diagnostics;
@@ -126,7 +128,7 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
                 Debug.Fail(message);
 
                 // どうにもできないので  ログだけ取って、上に投げます。
-                errH.Logger.WriteLine_Error(message);
+                errH.Logger.WriteLineError(message);
                 throw;
             }
 
@@ -148,7 +150,7 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
                     logF_kiki.boards.Clear();
                 }
             }
-            catch (Exception ex) { errH.DonimoNaranAkirameta(ex, "局面評価明細を出力しようとしたときです。"); throw; }
+            catch (Exception ex) { errH.Panic(ex, "局面評価明細を出力しようとしたときです。"); throw; }
 #endif
         }
 
@@ -364,7 +366,7 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
 //            //Shogisasi shogisasi,
 //            KaisetuBoards logF_kiki,
 //            KifuTree kifu,
-//            KwErrorHandler errH
+//            IErrorController errH
 //            )
 //        {
 //#if DEBUG
@@ -386,7 +388,7 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
 //                    logF_kiki.boards.Clear();
 //                }
 //            }
-//            catch (Exception ex) { errH.DonimoNaranAkirameta(ex, "HTML5ログを出力しようとしたときです。"); throw; }
+//            catch (Exception ex) { errH.Panic(ex, "HTML5ログを出力しようとしたときです。"); throw; }
 //#endif
 //        }
 

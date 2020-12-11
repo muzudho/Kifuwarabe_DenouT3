@@ -1,0 +1,10 @@
+2020/12/12 4:32:34  > usi
+2020/12/12 4:32:34<   option name 子 type check default true
+2020/12/12 4:32:34<   option name USI type spin default 2 min 1 max 13
+2020/12/12 4:32:34<   option name 寅 type combo default tiger var マウス var うし var tiger var ウー var 龍 var へび var 馬 var ひつじ var モンキー var バード var ドッグ var うりぼー
+2020/12/12 4:32:34<   option name 卯 type button default うさぎ
+2020/12/12 4:32:34<   option name 辰 type string default DRAGON
+2020/12/12 4:32:34<   option name 巳 type filename default スネーク.html
+2020/12/12 4:32:34<   id name Kifuwarakaku Bld3
+2020/12/12 4:32:34<   id author Satoshi TAKAHASHI
+2020/12/12 4:32:34<   usiok
