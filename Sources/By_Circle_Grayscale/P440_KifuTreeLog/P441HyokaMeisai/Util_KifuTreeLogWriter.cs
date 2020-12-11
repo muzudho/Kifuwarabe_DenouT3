@@ -18,7 +18,7 @@ using Grayscale.P247KyokumenWra.L500Struct;
 using Grayscale.P321KyokumHyoka.I250Struct;
 using Grayscale.P324KifuTree.I250Struct;
 using Grayscale.P339ConvKyokume.L500Converter;
-
+using Nett;
 
 #if DEBUG
 using System.Diagnostics;
@@ -38,11 +38,14 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
         public static KyokumenPngEnvironment REPORT_ENVIRONMENT;
         static Util_KifuTreeLogWriter()
         {
+            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+
             Util_KifuTreeLogWriter.REPORT_ENVIRONMENT = new KyokumenPngEnvironmentImpl(
                         "../../Logs/_log_KifuTreeLog/",//argsDic["outFolder"],
                         "../../Data/img/gkLog/",//argsDic["imgFolder"],
-                        "koma1.png",//argsDic["kmFile"],
-                        "suji1.png",//argsDic["sjFile"],
+                        toml.Get<TomlTable>("Resources").Get<string>("Koma1PngBasename"),//argsDic["kmFile"],
+                        toml.Get<TomlTable>("Resources").Get<string>("Suji1PngBasename"),//argsDic["sjFile"],
                         "20",//argsDic["kmW"],
                         "20",//argsDic["kmH"],
                         "8",//argsDic["sjW"],
@@ -92,10 +95,10 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
                 //----------------------------------------
                 // カレントノードまでの符号を使って、フォルダーパスを作成。
                 //----------------------------------------
-                StringBuilder sb_folder = new StringBuilder();
+                StringBuilder tree_folder = new StringBuilder();
                 kifu.ForeachHonpu(kifu.CurNode, (int temezumi2, KyokumenWrapper kWrap, Node<Starbeamable, KyokumenWrapper> node, ref bool toBreak) =>
                 {
-                    sb_folder.Append(Conv_SasiteStr_Sfen.ToSasiteStr_Sfen_ForFilename(node.Key) + "/");
+                    tree_folder.Append(Conv_SasiteStr_Sfen.ToSasiteStr_Sfen_ForFilename(node.Key) + "/");
                 });
                 //sb_folder.Append( Conv_SasiteStr_Sfen.ToSasiteStr_Sfen_ForFilename(kifu.CurNode.Key) + "/");
 
@@ -108,7 +111,7 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
                     sasiteText1,
                     kifuNode1,
                     kifu,
-                    sb_folder.ToString(),
+                    tree_folder.ToString(),
                     Util_KifuTreeLogWriter.REPORT_ENVIRONMENT,
                     errH
                     );
@@ -154,7 +157,7 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
             string nodePath,
             KifuNode node,
             KifuTree kifu,
-            string relFolder,
+            string treeFolder,
             KyokumenPngEnvironment reportEnvironment,
             IErrorController errH
             )
@@ -178,7 +181,7 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
                         nodePath + " " + Conv_SasiteStr_Sfen.ToSasiteStr_Sfen_ForFilename(nextNode.Key),
                         (KifuNode)nextNode,
                         kifu,
-                        relFolder + ((int)score).ToString() + "点_" + Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(nextNode.Key) + "/",
+                        treeFolder + ((int)score).ToString() + "点_" + Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(nextNode.Key) + "/",
                         reportEnvironment,
                         errH
                         );
@@ -193,7 +196,7 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
                 nodePath,
                 node,
                 kifu,
-                relFolder,
+                treeFolder,
                 reportEnvironment,
                 errH
             );
@@ -290,15 +293,17 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
         /// </summary>
         /// <param name="id"></param>
         /// <param name="node"></param>
-        /// <param name="relFolder"></param>
+        /// <param name="treeFolder"></param>
         /// <param name="env"></param>
         public static void AAAA_Write_HyokaMeisai(
             string id,
             KifuNode node,
-            string relFolder,
+            string treeFolder,
             KyokumenPngEnvironment env
             )
         {
+            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
 
             StringBuilder sb = new StringBuilder();
 
@@ -338,7 +343,7 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
             //sb.AppendLine(Conv_Sky.ToKyokumenHash(node.Value.ToKyokumenConst).ToString());
             //sb.AppendLine();
 
-            File.AppendAllText(env.OutFolder + relFolder + "/_log_評価明細.txt", sb.ToString());
+            File.AppendAllText($"{env.OutFolder}{treeFolder}{toml.Get<TomlTable>("Resources").Get<string>("HyokaMeisaiLogTxtBasename"))}", sb.ToString());
         }
 
 

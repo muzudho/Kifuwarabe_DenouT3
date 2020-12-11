@@ -313,6 +313,9 @@ namespace Grayscale.P699_Form_______
         /// <param name="e"></param>
         private void Uc_Form1Main_Load(object sender, EventArgs e)
         {
+            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+
             IErrorController errH = ErrorControllerReference.CsharpGuiDefault;
 
             Uc_Form2Main uc_Form2Main = ((Form1_Shogi)this.ParentForm).Form2_Console.Uc_Form2Main;
@@ -321,7 +324,7 @@ namespace Grayscale.P699_Form_______
             // 設定XMLファイル
             //
             {
-                this.setteiXmlFile = new SetteiXmlFile("../../Data/data_settei.xml");
+                this.setteiXmlFile = new SetteiXmlFile(toml.Get<TomlTable>("Resources").Get<string>("DataSetteiXml"));
                 if (!this.SetteiXmlFile.Exists())
                 {
                     // ファイルが存在しませんでした。

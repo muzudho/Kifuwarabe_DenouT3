@@ -134,9 +134,7 @@ namespace Grayscale.P003Log.PartOfErrorControllerReference
         }
 
         /// <summary>
-        /// ************************************************************************************************************************
         /// エラーを、ログ・ファイルに記録します。
-        /// ************************************************************************************************************************
         /// </summary>
         /// <param name="line"></param>
         public void WriteLineError(
@@ -174,13 +172,11 @@ namespace Grayscale.P003Log.PartOfErrorControllerReference
 
                 System.IO.File.AppendAllText(filepath2, message);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //>>>>> エラーが起こりました。
 
-                // どうにもできないので  ログだけ取って　無視します。
-                string message = "Util_Log#WriteLine_Error：" + ex.Message;
-                System.IO.File.AppendAllText("../../Logs/_log_致命的ｴﾗｰ.txt", message);
+                // どうにもできないので無視します。
             }
 
         gt_EndMethod:

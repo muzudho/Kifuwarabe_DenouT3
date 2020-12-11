@@ -18,8 +18,10 @@ namespace Grayscale.P489_Form_______
             IErrorController errH = ErrorControllerReference.AimsDefault;
             MessageBox.Show("AIMSサーバー");
 
+            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
 
-            string filepath = "./CSharp/Builds/Engine/Data/data_settei.xml";
+            string filepath = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("AimsDataSetteiXml"));
             MessageBox.Show("設定ファイルパス＝["+filepath+"]");
 
             //

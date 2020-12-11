@@ -66,7 +66,23 @@ Vs03Widgets = "../../Data/data_widgets_03_vs.csv"
 DataSetteiCsv = "../../Data/data_settei.csv"
 DataSetteiVsCsv = "../../Data/data_settei_vs.csv"
 
+DataSetteiXml = "../../Data/data_settei.xml"
+AimsDataSetteiXml = "./CSharp/Builds/Engine/Data/data_settei.xml"
+
+# .txt ファイル
+
+LogDaseMeirei = "../../Logs/_log_ログ出せ命令.txt"
+HyokaMeisaiLogTxtBasename = "_log_評価明細.txt"
+DataStyleText = "../../Data/data_style.txt"
+
 # 画像
 
 LearningPositionLogPng = "../../Logs/_log_学習局面.png"
 LearningPositionLogPngBasename = "_log_学習局面.png"
+Koma1PngBasename = "koma1.png"
+Suji1PngBasename = "suji1.png"
+ChokkinNoSasiteLogPngBasename = "_log_直近の指し手.png"
+
+N1PngBasename = "1.png" # 出力ファイル
+N2PngBasename = "2.png" # 駒画像へのパス。
+N3PngBasename = "3.png" # 数字・小

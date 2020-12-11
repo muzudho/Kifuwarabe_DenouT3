@@ -290,7 +290,10 @@ namespace Grayscale.P693ShogiGui.L500GUI
         {
             try
             {
-                string filepath2 = Path.Combine( Path.Combine( Application.StartupPath, "../../Data/"), "data_style.txt");
+                var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+                var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+
+                string filepath2 = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataStyleText"));
 #if DEBUG
                 MessageBox.Show("独自スタイルシート　filepath2=" + filepath2);
 #endif

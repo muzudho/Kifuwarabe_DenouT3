@@ -61,6 +61,9 @@ namespace Grayscale.P159_Form_______
         [STAThread]
         static void TestMain()
         {
+            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+
             //
             // コマンドライン引数の例
             //
@@ -81,12 +84,12 @@ namespace Grayscale.P159_Form_______
             Dictionary<string, string> argsDic = new Dictionary<string, string>();
             argsDic.Add("position", "position startpos moves");
             argsDic.Add("outFolder", "./");//出力フォルダー "../../Logs/"
-            argsDic.Add("outFile", "1.png");//出力ファイル
+            argsDic.Add("outFile", Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("N1PngBasename")));//出力ファイル
             argsDic.Add("imgFolder", ".");//画像フォルダーへのパス image path
-            argsDic.Add("kmFile", "2.png");//駒画像へのパス。
+            argsDic.Add("kmFile", Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("N2PngBasename")));//駒画像へのパス。
             argsDic.Add("kmW", "1");//駒の横幅。koma width
             argsDic.Add("kmH", "1");
-            argsDic.Add("sjFile", "3.png");//数字・小
+            argsDic.Add("sjFile", Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("N3PngBasename")));//数字・小
             argsDic.Add("sjW", "1");//数字の横幅。suji width
             argsDic.Add("sjH", "1");
             TestProgram.AppendCommandline(argsDic);

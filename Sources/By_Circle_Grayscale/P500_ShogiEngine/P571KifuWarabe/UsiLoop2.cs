@@ -496,6 +496,9 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
         }
         private void Log2_Png_Tyokkin(string line, KifuNode kifuNode, IErrorController errH)
         {
+            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+
             //OwataMinister.WARABE_ENGINE.Logger.WriteLine_AddMemo(
             //    Util_Sky307.Json_1Sky(this.Kifu.CurNode.Value.ToKyokumenConst, "現局面になっているのかなんだぜ☆？　line=[" + line + "]　棋譜＝" + KirokuGakari.ToJsaKifuText(this.Kifu, OwataMinister.WARABE_ENGINE),
             //        "PgCS",
@@ -508,7 +511,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
             //
             {
                 // 出力先
-                string fileName = "_log_直近の指し手.png";
+                string fileName = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("ChokkinNoSasiteLogPngBasename"));
 
                 int srcMasu_orMinusOne = -1;
                 int dstMasu_orMinusOne = -1;
@@ -1096,6 +1099,9 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
         /// <param name="result_Usi"></param>
         public void AtLoop_OnLogdase(string line, ref PhaseResult_UsiLoop2 result_Usi)
         {
+            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+
             StringBuilder sb = new StringBuilder();
             sb.Append("ログだせ～（＾▽＾）");
 
@@ -1115,7 +1121,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                     }
                 });
 
-            File.WriteAllText("../../Logs/_log_ログ出せ命令.txt", sb.ToString());
+            File.WriteAllText(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("LogDaseMeirei")), sb.ToString());
         }
     }
 }

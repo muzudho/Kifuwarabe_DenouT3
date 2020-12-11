@@ -55,11 +55,14 @@ namespace Grayscale.P743FvLearn.L250Learn
         public static KyokumenPngEnvironment REPORT_ENVIRONMENT;
         static LearningDataImpl()
         {
+            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+
             LearningDataImpl.REPORT_ENVIRONMENT = new KyokumenPngEnvironmentImpl(
                         "../../Logs/",
                         "../../Data/img/gkLog/",
-                        "koma1.png",//argsDic["kmFile"],
-                        "suji1.png",//argsDic["sjFile"],
+                        toml.Get<TomlTable>("Resources").Get<string>("Koma1PngBasename"),//argsDic["kmFile"],
+                        toml.Get<TomlTable>("Resources").Get<string>("Suji1PngBasename"),//argsDic["sjFile"],
                         "20",//argsDic["kmW"],
                         "20",//argsDic["kmH"],
                         "8",//argsDic["sjW"],
@@ -292,7 +295,7 @@ namespace Grayscale.P743FvLearn.L250Learn
                 foodKoma,
                 Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(this.Kifu.CurNode.Key),
                 "",
-                Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("LearningPositionLogPngBasename")),
+                toml.Get<TomlTable>("Resources").Get<string>("LearningPositionLogPngBasename"),
                 LearningDataImpl.REPORT_ENVIRONMENT,
                 errH
                 );
