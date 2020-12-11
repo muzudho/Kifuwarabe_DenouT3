@@ -346,7 +346,7 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
             //sb.AppendLine(Conv_Sky.ToKyokumenHash(node.Value.ToKyokumenConst).ToString());
             //sb.AppendLine();
 
-            File.AppendAllText($"{env.OutFolder}{treeFolder}{toml.Get<TomlTable>("Resources").Get<string>("HyokaMeisaiLogTxtBasename"))}", sb.ToString());
+            File.AppendAllText($"{env.OutFolder}{treeFolder}{toml.Get<TomlTable>("Resources").Get<string>("HyokaMeisaiLogTxtBasename")}", sb.ToString());
         }
 
 

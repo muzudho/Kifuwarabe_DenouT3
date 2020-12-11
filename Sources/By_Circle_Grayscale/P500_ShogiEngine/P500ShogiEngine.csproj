@@ -21,7 +21,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\Builds\Engine\Bin\P500_ShogiEngine\</OutputPath>
+    <OutputPath>..\..\..\Builds\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -30,7 +30,7 @@
     <PlatformTarget>x64</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\Builds\Engine\Bin\P500_ShogiEngine\</OutputPath>
+    <OutputPath>..\..\..\Builds\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -38,10 +38,10 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LEARN|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\..\..\Builds\Engine\Bin\P500_ShogiEngine\</OutputPath>
+    <OutputPath>..\..\..\Builds\Learn\</OutputPath>
     <DefineConstants>TRACE;LEARN</DefineConstants>
     <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
@@ -51,7 +51,7 @@
       <HintPath>..\packages\Nett.0.15.0\lib\net40\Nett.dll</HintPath>
     </Reference>
     <Reference Include="NLua">
-      <HintPath>..\..\..\Resources\Lib_NLua\NLua.dll</HintPath>
+      <HintPath>..\..\..\References\NLua\NLua.dll</HintPath>
     </Reference>
     <Reference Include="ProjectDark.KWSupport, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

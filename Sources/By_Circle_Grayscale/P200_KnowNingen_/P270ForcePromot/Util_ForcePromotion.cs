@@ -3,6 +3,7 @@ using Grayscale.P270ForcePromot.L250Struct;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Nett;
 
 namespace Grayscale.P270ForcePromot.L500Util
 {

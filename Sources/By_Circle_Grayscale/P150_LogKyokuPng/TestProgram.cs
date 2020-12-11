@@ -2,7 +2,9 @@
 using Grayscale.P157KyokumenPng.L500Struct;
 using Grayscale.P158LogKyokuPng.L500UtilWriter;
 using System;
+using System.IO;
 using System.Collections.Generic;
+using Nett;
 
 namespace Grayscale.P159_Form_______
 {

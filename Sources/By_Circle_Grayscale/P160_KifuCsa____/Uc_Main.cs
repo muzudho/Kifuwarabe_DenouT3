@@ -2,7 +2,9 @@
 using Grayscale.P163KifuCsa.L250Struct;
 using Grayscale.P163KifuCsa.L500Writer;
 using System;
+using System.IO;
 using System.Windows.Forms;
+using Nett;
 
 namespace Grayscale.P169_Form_______
 {

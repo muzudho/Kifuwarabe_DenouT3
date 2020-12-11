@@ -21,7 +21,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\Builds\Engine\Bin\P800_GuiCsharpVs\</OutputPath>
+    <OutputPath>..\..\..\BuildsOfAnothers\Debug\P800_GuiCsharpVs\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>2</WarningLevel>
@@ -30,7 +30,7 @@
     <PlatformTarget>x64</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\Builds\Engine\Bin\P800_GuiCsharpVs\</OutputPath>
+    <OutputPath>..\..\..\BuildsOfAnothers\Release\P800_GuiCsharpVs\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -38,11 +38,11 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LEARN|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\..\..\Builds\Engine\Bin\P800_GuiCsharpVs\</OutputPath>
+    <OutputPath>..\..\..\BuildsOfAnothers\Learn\P800_GuiCsharpVs\</OutputPath>
     <DefineConstants>TRACE;LEARN</DefineConstants>
     <WarningLevel>2</WarningLevel>
     <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
@@ -109,6 +109,10 @@
     <ProjectReference Include="..\P460_Server_____\P460Server.csproj">
       <Project>{70aef273-46c9-4e60-ac97-8aeada3ed5f7}</Project>
       <Name>P460Server</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\P500_ShogiEngine\P500ShogiEngine.csproj">
+      <Project>{e96a7341-b8e6-4979-8b2a-94ff2818962c}</Project>
+      <Name>P500ShogiEngine</Name>
     </ProjectReference>
     <ProjectReference Include="..\P690_GuiCsharp__\P690GuiCsharp.csproj">
       <Project>{9593acc7-348b-4868-892c-7bafbf925b9d}</Project>

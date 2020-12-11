@@ -1,7 +1,7 @@
-﻿using Grayscale.P003Log.I500Struct;
+﻿using System;
+using System.IO;
+using Grayscale.P003Log.I500Struct;
 using Grayscale.P003Log.L500Struct;
-//using Grayscale.P003Log.L500Struct;
-using Grayscale.P027Settei.L500Struct;
 using Grayscale.P211WordShogi.L250Masu;
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P213Komasyurui.L250Word;
@@ -17,8 +17,8 @@ using Grayscale.P693ShogiGui.I499Repaint;
 using Grayscale.P693ShogiGui.I500Gui;
 using Grayscale.P693ShogiGui.L125Scene;
 using Grayscale.P693ShogiGui.L250Timed;
+using Nett;
 using NLua;
-using System;
 
 namespace Grayscale.P693ShogiGui.L480Util
 {

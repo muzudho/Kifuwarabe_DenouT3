@@ -3,7 +3,7 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 using Grayscale.P003Log.PartOfErrorControllerReference;
-
+using Nett;
 
 namespace Grayscale.P003Log.L500Struct
 {
@@ -102,7 +102,7 @@ namespace Grayscale.P003Log.L500Struct
         /// </summary>
         public static readonly IErrorController SpeedKeisoku;
 
-        public static ErrorControllerReference()
+        static ErrorControllerReference()
         {
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));

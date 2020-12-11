@@ -1,6 +1,8 @@
 ﻿using Grayscale.P031Random.L500Struct;
 using NLua;
 using System;
+using System.IO;
+using Nett;
 
 namespace Grayscale.P531Hyokakansu.L060UtilLua
 {

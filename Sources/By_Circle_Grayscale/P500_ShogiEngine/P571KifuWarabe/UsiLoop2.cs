@@ -35,7 +35,7 @@ using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
-
+using Nett;
 
 
 namespace Grayscale.P571KifuWarabe.L250UsiLoop

@@ -1,5 +1,8 @@
-﻿using Grayscale.P003Log.I500Struct;
-using Grayscale.P027Settei.L500Struct;
+﻿using System;
+using System.Drawing;
+using System.IO;
+using System.Text;
+using Grayscale.P003Log.I500Struct;
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P234Komahaiyaku.L250Word;
 using Grayscale.P234Komahaiyaku.L500Util;
@@ -8,9 +11,7 @@ using Grayscale.P238Seiza.L500Util;
 using Grayscale.P239ConvWords.L500Converter;
 using Grayscale.P693ShogiGui.I080Shape;
 using Grayscale.P693ShogiGui.I500Gui;
-using System;
-using System.Drawing;
-using System.Text;
+using Nett;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 namespace Grayscale.P693ShogiGui.L080Shape

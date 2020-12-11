@@ -1,6 +1,9 @@
-﻿using Grayscale.P003Log.I500Struct;
+﻿using System;
+using System.IO;
+using System.Text;
+using System.Windows.Forms;
+using Grayscale.P003Log.I500Struct;
 using Grayscale.P003Log.L500Struct;
-using Grayscale.P027Settei.L500Struct;
 using Grayscale.P027Settei.L510Xml;
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P212ConvPside.L500Converter;
@@ -26,9 +29,7 @@ using Grayscale.P693ShogiGui.L081Canvas;
 using Grayscale.P693ShogiGui.L125Scene;
 using Grayscale.P693ShogiGui.L249Function;
 using Grayscale.P693ShogiGui.L250Timed;
-using System;
-using System.Text;
-using System.Windows.Forms;
+using Nett;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 namespace Grayscale.P699_Form_______

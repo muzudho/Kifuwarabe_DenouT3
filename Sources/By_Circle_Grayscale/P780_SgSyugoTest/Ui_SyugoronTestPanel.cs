@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using Nett;
 
 namespace Grayscale.P780_SgSyugoTest
 {
