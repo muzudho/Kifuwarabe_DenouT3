@@ -85,7 +85,7 @@ namespace Grayscale.P693ShogiGui.L480Util
 
                 //----------------------------------------------------------------------------------------------------
 
-                Util_Lua_Csharp.lua.DoFile(Const_Filepath.ENGINE_TO_DATA + "lua/KifuNarabe/data_gui.lua");//固定
+                Util_Lua_Csharp.lua.DoFile("../../Data/lua/KifuNarabe/data_gui.lua");//固定
                 Util_Lua_Csharp.lua.GetFunction(luaFuncName).Call();
 
                 // FIXME:Close()でエラーが起こってしまう。

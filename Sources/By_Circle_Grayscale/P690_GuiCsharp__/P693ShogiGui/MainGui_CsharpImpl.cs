@@ -30,6 +30,7 @@ using Grayscale.P693ShogiGui.L249Function;
 using Grayscale.P693ShogiGui.L250Timed;
 using Grayscale.P693ShogiGui.L492Widgets;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
+using Nett;
 
 namespace Grayscale.P693ShogiGui.L500GUI
 {
@@ -289,7 +290,7 @@ namespace Grayscale.P693ShogiGui.L500GUI
         {
             try
             {
-                string filepath2 = Path.Combine( Path.Combine( Application.StartupPath, Const_Filepath.ENGINE_TO_DATA), "data_style.txt");
+                string filepath2 = Path.Combine( Path.Combine( Application.StartupPath, "../../Data/"), "data_style.txt");
 #if DEBUG
                 MessageBox.Show("独自スタイルシート　filepath2=" + filepath2);
 #endif
@@ -351,6 +352,9 @@ namespace Grayscale.P693ShogiGui.L500GUI
         /// </summary>
         public virtual void Load_AsStart(IErrorController errH)
         {
+            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+
             //
             // 既存のログファイルを削除したい。
             //
@@ -363,7 +367,7 @@ namespace Grayscale.P693ShogiGui.L500GUI
                 errH.Logger.WriteLine_AddMemo("(^o^)乱数のたね＝[" + KwRandom.Seed + "]");
 #endif
 
-                this.Data_Settei_Csv.Read_Add(Const_Filepath.ENGINE_TO_DATA + "data_settei.csv", Encoding.UTF8);
+                this.Data_Settei_Csv.Read_Add(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataSetteiCsv")), Encoding.UTF8);
                 this.Data_Settei_Csv.DebugOut();
 
                 //----------

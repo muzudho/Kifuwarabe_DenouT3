@@ -19,7 +19,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
-
+using Nett;
 
 namespace Grayscale.P571KifuWarabe.L500KifuWarabe
 {
@@ -84,6 +84,9 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
             int exception_area = 0;
             try
             {
+                var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+                var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+
                 exception_area = 500;
                 //-------------------+----------------------------------------------------------------------------------------------------
                 // ログファイル削除  |
@@ -106,7 +109,7 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
                 //------------------------------------------------------------------------------------------------------------------------
                 {
                     this.shogisasi = new ShogisasiImpl(this);
-                    Util_FvLoad.OpenFv(this.shogisasi.FeatureVector, Const_Filepath.ENGINE_TO_DATA + "fv/fv_00_Komawari.csv", errH);
+                    Util_FvLoad.OpenFv(this.shogisasi.FeatureVector, Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv00Komawari")), errH);
                 }
 
 
@@ -115,38 +118,29 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
                 // ファイル読込み
                 //------------------------------------------------------------------------------------------------------------------------
                 {
-                    string dataFolder = Path.Combine(Application.StartupPath, Const_Filepath.ENGINE_TO_DATA);
-                    string logsFolder = Path.Combine(Application.StartupPath, Const_Filepath.ENGINE_TO_LOGS);
-
                     // データの読取「道」
-                    string filepath_Michi = Path.Combine(dataFolder, "data_michi187.csv");
-                    if (Michi187Array.Load(filepath_Michi))
+                    if (Michi187Array.Load(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Michi187"))))
                     {
                     }
 
                     // データの読取「配役」
-                    string filepath_Haiyaku = Path.Combine(dataFolder, "data_haiyaku185_UTF-8.csv");
-                    Util_Array_KomahaiyakuEx184.Load(filepath_Haiyaku, Encoding.UTF8);
+                    Util_Array_KomahaiyakuEx184.Load(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Haiyaku185")), Encoding.UTF8);
 
                     // データの読取「強制転成表」　※駒配役を生成した後で。
-                    string filepath_ForcePromotion = Path.Combine(dataFolder, "data_forcePromotion_UTF-8.csv");
-                    Array_ForcePromotion.Load(filepath_ForcePromotion, Encoding.UTF8);
+                    Array_ForcePromotion.Load(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("InputForcePromotion")), Encoding.UTF8);
 
 #if DEBUG
                     {
-                        string filepath_LogKyosei = Path.Combine(logsFolder, "_log_強制転成表.html");
-                        File.WriteAllText(filepath_LogKyosei, Array_ForcePromotion.LogHtml());
+                        File.WriteAllText(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("OutputForcePromotion")), Array_ForcePromotion.LogHtml());
                     }
 #endif
 
                     // データの読取「配役転換表」
-                    string filepath_HaiyakuTenkan = Path.Combine(dataFolder, "data_syuruiToHaiyaku.csv");
-                    Data_KomahaiyakuTransition.Load(filepath_HaiyakuTenkan, Encoding.UTF8);
+                    Data_KomahaiyakuTransition.Load(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("InputSyuruiToHaiyaku")), Encoding.UTF8);
 
 #if DEBUG
                     {
-                        string filepath_LogHaiyakuTenkan = Path.Combine(logsFolder, "_log_配役転換表.html");
-                        File.WriteAllText(filepath_LogHaiyakuTenkan, Data_KomahaiyakuTransition.Format_LogHtml());
+                        File.WriteAllText(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("OutputSyuruiToHaiyaku")), Data_KomahaiyakuTransition.Format_LogHtml());
                     }
 #endif
                 }
