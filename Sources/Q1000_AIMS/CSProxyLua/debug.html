@@ -1,0 +1,1387 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<TITLE>AIMS Application</TITLE>
+<STYLE type="text/css">
+<!--
+BODY{
+  font-size : 12px;
+  font-family : "ＭＳ ゴシック";
+}
+-->
+</STYLE>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#444444" vlink="#444444" alink="#444444">
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">Luna3Dクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">アダプター情報</FONT></B><BR>
+　　　Name [ Intel(R) HD Graphics ]<BR>
+　　　Driver [ igdumd32.dll ]<BR>
+　　　Product [ 8 ]<BR>
+　　　Version [ 15.10.2696 ]<BR>
+　Windows Hardware Quality Lab (WHQL) 認証レベル<BR>
+　　　認証されていない。<BR>
+<BR>
+<B><FONT color="BLUE">現在の画面情報</FONT></B><BR>
+　　　Width [ 1920 ]<BR>
+　　　Height [ 1080 ]<BR>
+　　　RefreshRate [ 60 ]<BR>
+　　　Format [ X8R8G8B8 ]<BR>
+<BR>
+<B><FONT color="BLUE">使用可能な画面モードを列挙</FONT></B><BR>
+<B>　BackBuffer Format [ X8R8G8B8 ]</B><BR>
+　　　[ 320 x 200 ] [ 60Hz ]<BR>
+　　　[ 320 x 240 ] [ 60Hz ]<BR>
+　　　[ 400 x 300 ] [ 60Hz ]<BR>
+　　　[ 512 x 384 ] [ 60Hz ]<BR>
+　　　[ 640 x 400 ] [ 60Hz ]<BR>
+　　　[ 640 x 480 ] [ 59Hz ]<BR>
+　　　[ 800 x 600 ] [ 60Hz ]<BR>
+　　　[ 1024 x 768 ] [ 60Hz ]<BR>
+　　　[ 1152 x 864 ] [ 60Hz ]<BR>
+　　　[ 1280 x 600 ] [ 60Hz ]<BR>
+　　　[ 1280 x 720 ] [ 60Hz ]<BR>
+　　　[ 1280 x 768 ] [ 60Hz ]<BR>
+　　　[ 1280 x 800 ] [ 60Hz ]<BR>
+　　　[ 1280 x 960 ] [ 60Hz ]<BR>
+　　　[ 1280 x 1024 ] [ 60Hz ]<BR>
+　　　[ 1360 x 765 ] [ 60Hz ]<BR>
+　　　[ 1360 x 768 ] [ 60Hz ]<BR>
+　　　[ 1366 x 768 ] [ 60Hz ]<BR>
+　　　[ 1400 x 1050 ] [ 60Hz ]<BR>
+　　　[ 1440 x 900 ] [ 60Hz ]<BR>
+　　　[ 1600 x 900 ] [ 60Hz ]<BR>
+　　　[ 1680 x 1050 ] [ 60Hz ]<BR>
+　　　[ 1920 x 1080 ] [ 60Hz ]<BR>
+<BR>
+<B>　BackBuffer Format [ R5G6B5 ]</B><BR>
+　　　[ 320 x 200 ] [ 60Hz ]<BR>
+　　　[ 320 x 240 ] [ 60Hz ]<BR>
+　　　[ 400 x 300 ] [ 60Hz ]<BR>
+　　　[ 512 x 384 ] [ 60Hz ]<BR>
+　　　[ 640 x 400 ] [ 60Hz ]<BR>
+　　　[ 640 x 480 ] [ 59Hz ]<BR>
+　　　[ 800 x 600 ] [ 60Hz ]<BR>
+　　　[ 1024 x 768 ] [ 60Hz ]<BR>
+　　　[ 1152 x 864 ] [ 60Hz ]<BR>
+　　　[ 1280 x 600 ] [ 60Hz ]<BR>
+　　　[ 1280 x 720 ] [ 60Hz ]<BR>
+　　　[ 1280 x 768 ] [ 60Hz ]<BR>
+　　　[ 1280 x 800 ] [ 60Hz ]<BR>
+　　　[ 1280 x 960 ] [ 60Hz ]<BR>
+　　　[ 1280 x 1024 ] [ 60Hz ]<BR>
+　　　[ 1360 x 765 ] [ 60Hz ]<BR>
+　　　[ 1360 x 768 ] [ 60Hz ]<BR>
+　　　[ 1366 x 768 ] [ 60Hz ]<BR>
+　　　[ 1400 x 1050 ] [ 60Hz ]<BR>
+　　　[ 1440 x 900 ] [ 60Hz ]<BR>
+　　　[ 1600 x 900 ] [ 60Hz ]<BR>
+　　　[ 1680 x 1050 ] [ 60Hz ]<BR>
+　　　[ 1920 x 1080 ] [ 60Hz ]<BR>
+<BR>
+<BR>
+<B><FONT color="BLUE">使用可能なテクスチャフォーマットを列挙</FONT></B><BR>
+<B>　BackBuffer Format [ X8R8G8B8 ]</B><BR>
+　　　○ [ R5G6B5 ]<BR>
+　　　○ [ A1R5G5B5 ]<BR>
+　　　○ [ A4R4G4B4 ]<BR>
+　　　○ [ A8R8G8B8 ]<BR>
+　　　○ [ X8R8G8B8 ]<BR>
+　　　× [ A8 ]<BR>
+　　　○ [ A2B10G10R10 ]<BR>
+　　　○ [ G16R16 ]<BR>
+　　　○ [ A2R10G10B10 ]<BR>
+　　　○ [ A16B16G16R16 ]<BR>
+　　　× [ L8 ]<BR>
+　　　× [ L16 ]<BR>
+　　　× [ A8L8 ]<BR>
+　　　× [ A4L4 ]<BR>
+　　　× [ V8U8 ]<BR>
+　　　× [ Q8W8V8U8 ]<BR>
+　　　× [ V16U16 ]<BR>
+　　　× [ Q16W16V16U16 ]<BR>
+　　　× [ L6V5U5 ]<BR>
+　　　× [ A2W10V10U10 ]<BR>
+　　　× [ DXT5 ]<BR>
+　　　× [ DXT4 ]<BR>
+　　　× [ DXT3 ]<BR>
+　　　× [ DXT2 ]<BR>
+　　　× [ DXT1 ]<BR>
+　　　× [ UYVY ]<BR>
+　　　× [ YUY2 ]<BR>
+　　　× [ D24S8 ]<BR>
+　　　× [ D24X8 ]<BR>
+　　　× [ D16 ]<BR>
+　　　○ [ R16F ]<BR>
+　　　○ [ G16R16F ]<BR>
+　　　○ [ A16B16G16R16F ]<BR>
+　　　○ [ R32F ]<BR>
+　　　○ [ G32R32F ]<BR>
+　　　○ [ A32B32G32R32F ]<BR>
+<BR>
+<B>　BackBuffer Format [ R5G6B5 ]</B><BR>
+　　　○ [ R5G6B5 ]<BR>
+　　　○ [ A1R5G5B5 ]<BR>
+　　　○ [ A4R4G4B4 ]<BR>
+　　　○ [ A8R8G8B8 ]<BR>
+　　　○ [ X8R8G8B8 ]<BR>
+　　　× [ A8 ]<BR>
+　　　○ [ A2B10G10R10 ]<BR>
+　　　○ [ G16R16 ]<BR>
+　　　○ [ A2R10G10B10 ]<BR>
+　　　○ [ A16B16G16R16 ]<BR>
+　　　× [ L8 ]<BR>
+　　　× [ L16 ]<BR>
+　　　× [ A8L8 ]<BR>
+　　　× [ A4L4 ]<BR>
+　　　× [ V8U8 ]<BR>
+　　　× [ Q8W8V8U8 ]<BR>
+　　　× [ V16U16 ]<BR>
+　　　× [ Q16W16V16U16 ]<BR>
+　　　× [ L6V5U5 ]<BR>
+　　　× [ A2W10V10U10 ]<BR>
+　　　× [ DXT5 ]<BR>
+　　　× [ DXT4 ]<BR>
+　　　× [ DXT3 ]<BR>
+　　　× [ DXT2 ]<BR>
+　　　× [ DXT1 ]<BR>
+　　　× [ UYVY ]<BR>
+　　　× [ YUY2 ]<BR>
+　　　× [ D24S8 ]<BR>
+　　　× [ D24X8 ]<BR>
+　　　× [ D16 ]<BR>
+　　　○ [ R16F ]<BR>
+　　　○ [ G16R16F ]<BR>
+　　　○ [ A16B16G16R16F ]<BR>
+　　　○ [ R32F ]<BR>
+　　　○ [ G32R32F ]<BR>
+　　　○ [ A32B32G32R32F ]<BR>
+<BR>
+<BR>
+<B><FONT color="BLUE">使用可能なレンダリングターゲットテクスチャフォーマットを列挙</FONT></B><BR>
+<B>　BackBuffer Format [ X8R8G8B8 ]</B><BR>
+　　　[ R5G6B5 ]<BR>
+　　　[ A1R5G5B5 ]<BR>
+　　　[ A4R4G4B4 ]<BR>
+　　　[ A8R8G8B8 ]<BR>
+　　　[ X8R8G8B8 ]<BR>
+　　　[ A2B10G10R10 ]<BR>
+　　　[ G16R16 ]<BR>
+　　　[ A2R10G10B10 ]<BR>
+　　　[ A16B16G16R16 ]<BR>
+　　　[ UYVY ]<BR>
+　　　[ R16F ]<BR>
+　　　[ G16R16F ]<BR>
+　　　[ A16B16G16R16F ]<BR>
+　　　[ R32F ]<BR>
+　　　[ G32R32F ]<BR>
+　　　[ A32B32G32R32F ]<BR>
+<BR>
+<B>　BackBuffer Format [ R5G6B5 ]</B><BR>
+　　　[ R5G6B5 ]<BR>
+　　　[ A1R5G5B5 ]<BR>
+　　　[ A4R4G4B4 ]<BR>
+　　　[ A8R8G8B8 ]<BR>
+　　　[ X8R8G8B8 ]<BR>
+　　　[ A2B10G10R10 ]<BR>
+　　　[ G16R16 ]<BR>
+　　　[ A2R10G10B10 ]<BR>
+　　　[ A16B16G16R16 ]<BR>
+　　　[ UYVY ]<BR>
+　　　[ R16F ]<BR>
+　　　[ G16R16F ]<BR>
+　　　[ A16B16G16R16F ]<BR>
+　　　[ R32F ]<BR>
+　　　[ G32R32F ]<BR>
+　　　[ A32B32G32R32F ]<BR>
+<BR>
+<BR>
+<B><FONT color="BLUE">使用可能な深度バッファフォーマットを列挙</FONT></B><BR>
+<B>　BackBuffer Format [ X8R8G8B8 ]</B><BR>
+　　　[ D16 ]<BR>
+　　　[ D24S8 ]<BR>
+　　　[ D24X8 ]<BR>
+<BR>
+<B>　BackBuffer Format [ R5G6B5 ]</B><BR>
+　　　[ D16 ]<BR>
+　　　[ D24S8 ]<BR>
+　　　[ D24X8 ]<BR>
+<BR>
+<BR>
+<B><FONT color="BLUE">フルスクリーン用ディスプレイモードの検索</FONT></B><BR>
+　　　16BitColor [ R5G6B5 ]<BR>
+　　　32BitColor [ X8R8G8B8 ]<BR>
+　　　32BitColorEx [ UNKNOWN ]<BR>
+<BR>
+<B><FONT color="BLUE">デバイス能力の取得</FONT></B><BR>
+<B>　デバイス能力</B><BR>
+　　　[ ○ ] ピュアデバイス<BR>
+　　　[ ○ ] ハードウェアＴｎＬ<BR>
+　　　[ ○ ] ハードウェアラスタライズ<BR>
+　　　[ ○ ] 異方性フィルタリング<BR>
+　　　[ ○ ] ディザリング<BR>
+　　　[ ○ ] 深度バイアス<BR>
+　　　[ × ] Ｗバッファ<BR>
+　　　[ ○ ] ミップマップ自動生成<BR>
+<B>　深度テスト能力</B><BR>
+　　　[ ○ ] 深度テスト ALWAYS<BR>
+　　　[ ○ ] 深度テスト EQUAL<BR>
+　　　[ ○ ] 深度テスト GREATER<BR>
+　　　[ ○ ] 深度テスト GREATER EQUA<BR>
+　　　[ ○ ] 深度テスト LESS<BR>
+　　　[ ○ ] 深度テスト LESS EQUAL<BR>
+　　　[ ○ ] 深度テスト NEVER<BR>
+　　　[ ○ ] 深度テスト NOT EQUAL<BR>
+<B>　ソースブレンド能力</B><BR>
+　　　[ ○ ] ソースブレンド BLEND FACTOR<BR>
+　　　[ ○ ] ソースブレンド BOTH INVSRC<BR>
+　　　[ ○ ] ソースブレンド BOTH SRC<BR>
+　　　[ ○ ] ソースブレンド DEST ALPHA<BR>
+　　　[ ○ ] ソースブレンド DEST COLOR<BR>
+　　　[ ○ ] ソースブレンド INV DEST ALPHA<BR>
+　　　[ ○ ] ソースブレンド INV DEST COLOR<BR>
+　　　[ ○ ] ソースブレンド INV SRC ALPHA<BR>
+　　　[ ○ ] ソースブレンド INV SRC COLOR<BR>
+　　　[ ○ ] ソースブレンド ONE<BR>
+　　　[ ○ ] ソースブレンド SRC ALPHA<BR>
+　　　[ ○ ] ソースブレンド SRC ALPHA SAT<BR>
+　　　[ ○ ] ソースブレンド SRC COLOR<BR>
+　　　[ ○ ] ソースブレンド ZERO<BR>
+<B>　デストブレンド能力</B><BR>
+　　　[ ○ ] デストブレンド BLEND FACTOR<BR>
+　　　[ × ] デストブレンド BOTH INVSRC<BR>
+　　　[ × ] デストブレンド BOTH SRC<BR>
+　　　[ ○ ] デストブレンド DEST ALPHA<BR>
+　　　[ ○ ] デストブレンド DEST COLOR<BR>
+　　　[ ○ ] デストブレンド INV DEST ALPHA<BR>
+　　　[ ○ ] デストブレンド INV DEST COLOR<BR>
+　　　[ ○ ] デストブレンド INV SRC ALPHA<BR>
+　　　[ ○ ] デストブレンド INV SRC COLOR<BR>
+　　　[ ○ ] デストブレンド ONE<BR>
+　　　[ ○ ] デストブレンド SRC ALPHA<BR>
+　　　[ ○ ] デストブレンド SRC ALPHA SAT<BR>
+　　　[ ○ ] デストブレンド SRC COLOR<BR>
+　　　[ ○ ] デストブレンド ZERO<BR>
+<B>　テクスチャ能力</B><BR>
+　　　[ ○ ] キューブマップ<BR>
+　　　[ ○ ] ミップマップ<BR>
+　　　[ ○ ] パースペクティブコレクト<BR>
+　　　[ ○ ] ２のべき乗以外のテクスチャ<BR>
+　　　[ ○ ] 正方形以外のテクスチャ<BR>
+　　　[ ○ ] テクスチャ BORDER<BR>
+　　　[ ○ ] テクスチャ CLAMP<BR>
+　　　[ ○ ] テクスチャ INDEPENDENT<BR>
+　　　[ ○ ] テクスチャ MIRROR<BR>
+　　　[ ○ ] テクスチャ MIRROR RONCE<BR>
+　　　[ ○ ] テクスチャ WRAP<BR>
+　　　テクスチャ最大横幅 [ 8192 ]<BR>
+　　　テクスチャ最大縦幅 [ 8192 ]<BR>
+　　　テクスチャ最大リピート数 [ 8192 ]<BR>
+　　　テクスチャ最大アスペクト [ 8192 ]<BR>
+<B>　ステンシル能力</B><BR>
+　　　[ ○ ] ステンシル KEEP<BR>
+　　　[ ○ ] ステンシル ZERO<BR>
+　　　[ ○ ] ステンシル REPLACE<BR>
+　　　[ ○ ] ステンシル INCRSAT<BR>
+　　　[ ○ ] ステンシル DECRSAT<BR>
+　　　[ ○ ] ステンシル INVERT<BR>
+　　　[ ○ ] ステンシル INCR<BR>
+　　　[ ○ ] ステンシル DECR<BR>
+　　　[ ○ ] ステンシル TWO SIDED<BR>
+<B>　その他</B><BR>
+　　　最大ｗ値 [ 10000000000.000000 ]<BR>
+　　　ガードバンド　左 [ -8192.000 ]<BR>
+　　　ガードバンド　上 [ -8192.000 ]<BR>
+　　　ガードバンド　右 [ 8192.000 ]<BR>
+　　　ガードバンド　下 [ 8192.000 ]<BR>
+　　　ポイントサイズ [ 256.000 ]<BR>
+　　　最大プリミティブ数 [ 1048575 ]<BR>
+　　　最大インデックス数 [ 16777215 ]<BR>
+　　　最大テクスチャステージ数 [ 8 ]<BR>
+　　　最大マルチテクスチャ数 [ 8 ]<BR>
+　　　最大ハードウェアライト数 [ 8 ]<BR>
+　　　最大ブレンドマトリックス数 [ 4 ]<BR>
+　　　最大ブレンドインデックス数 [ 8 ]<BR>
+　　　最大頂点シェーダー定数数 [ 256 ]<BR>
+　　　頂点シェーダーバージョン [ 3.0 ]<BR>
+　　　ピクセルシェーダーバージョン[ 3.0 ]<BR>
+　　　動的フロー制御命令のネスティング [ 24 ]<BR>
+　　　静的フロー制御命令のネスティング [ 4 ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">システム情報</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">Library Version</FONT></B><BR>
+　　　[ Luna for DirectX 9.0c - Phase 25.18 / 2005.06.15 ]<BR>
+<BR>
+<B><FONT color="BLUE">Boot Time</FONT></B><BR>
+　　　[ 2015年7月28日 4時15分50秒 ]<BR>
+<BR>
+<B><FONT color="BLUE">Operation System</FONT></B><BR>
+　　　Type [  ]<BR>
+　　　Version [ Version 6.1 ]<BR>
+　　　Build [ Build 7601 / Service Pack 1 ]<BR>
+<BR>
+<B><FONT color="BLUE">Drive Information</FONT></B><BR>
+　　　C: ハードディスク
+<BR>
+　　　D: CD-ROM
+<BR>
+　　　E: ハードディスク
+<BR>
+<BR>
+<B><FONT color="BLUE">Memory Information</FONT></B><BR>
+　　　Total [ 4096.000MB ]<BR>
+　　　Free [ 3348.180MB ]<BR>
+　　　Used [ 52% ]<BR>
+　　　Total PageFile [ 4096.000MB ]<BR>
+　　　Free PageFile [ 4096.000MB ]<BR>
+　　　Total Virtual [ 2047.875MB ]<BR>
+　　　Free Virtual [ 1882.441MB ]<BR>
+<BR>
+<BR>
+<B><FONT color="BLUE">System Information</FONT></B><BR>
+　Screen Mode<BR>
+　　　[ 1920 x 1080 ]<BR>
+　OS Boot Mode<BR>
+　　　[ Normal Boot ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaMemoryクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::SetWorkArea</FONT></B> : ALL [ 262144.000KB ] : ADDRESS [ 0x105F0000 ] : ALIGNED ADDRESS [ 0x105F0000 ] : MODE [ RELEASE ] : GUID [ 0x008A81C0 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaListクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B>リスト用メモリ確保</B><BR>
+<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 1.000KB ] : USE [ 1.254KB ] : FREE [ 262142.750KB ] : ADDRESS [ 0x105F0100 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaConsoleクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaMathクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 256.000KB ] : USE [ 256.254KB ] : FREE [ 261886.500KB ] : ADDRESS [ 0x105F0700 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 32.004KB ] : USE [ 32.258KB ] : FREE [ 261854.250KB ] : ADDRESS [ 0x10630900 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaAnimationクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B>アニメーション用メモリ確保</B><BR>
+<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 1792.000KB ] : USE [ 1792.254KB ] : FREE [ 260062.000KB ] : ADDRESS [ 0x10638B00 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaThreadクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B>スレッドクラス用メモリ確保</B><BR>
+　　　最大スレッドクラス数 [ 32 ]<BR>
+<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 1.805KB ] : USE [ 2.059KB ] : FREE [ 260060.000KB ] : ADDRESS [ 0x107F8D00 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaSurfaceクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B>サーフェイス用メモリ確保</B><BR>
+<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 18.500KB ] : USE [ 18.754KB ] : FREE [ 260041.250KB ] : ADDRESS [ 0x107F9600 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaTextureクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B>テクスチャ用メモリ確保</B><BR>
+テクスチャ最大数は 1024 に設定<BR>
+<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 312.000KB ] : USE [ 312.254KB ] : FREE [ 259729.000KB ] : ADDRESS [ 0x107FE200 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaPrimitiveクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B>プリミティブ用メモリ確保</B><BR>
+<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 37.750KB ] : USE [ 38.004KB ] : FREE [ 259691.000KB ] : ADDRESS [ 0x1084C400 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaPrimitive3Dクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B>プリミティブ用メモリ確保</B><BR>
+<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 37.750KB ] : USE [ 38.004KB ] : FREE [ 259653.000KB ] : ADDRESS [ 0x10855D00 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaPointクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B>ポイント用メモリ確保</B><BR>
+<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 31.750KB ] : USE [ 32.004KB ] : FREE [ 259621.000KB ] : ADDRESS [ 0x1085F600 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaPoint3Dクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B>ポイント用メモリ確保</B><BR>
+<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 31.750KB ] : USE [ 32.004KB ] : FREE [ 259589.000KB ] : ADDRESS [ 0x10867700 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaLineクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B>ライン用メモリ確保</B><BR>
+<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 31.750KB ] : USE [ 32.004KB ] : FREE [ 259557.000KB ] : ADDRESS [ 0x1086F800 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaLine3Dクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B>ライン用メモリ確保</B><BR>
+<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 31.750KB ] : USE [ 32.004KB ] : FREE [ 259525.000KB ] : ADDRESS [ 0x10877900 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaSheetクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B>シート用メモリ確保</B><BR>
+<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 17.750KB ] : USE [ 18.004KB ] : FREE [ 259507.000KB ] : ADDRESS [ 0x1087FA00 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaFontクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B>フォント用メモリ確保</B><BR>
+<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 5.500KB ] : USE [ 5.754KB ] : FREE [ 259501.250KB ] : ADDRESS [ 0x10884300 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaFontSpriteクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B>フォントスプライト用メモリ確保</B><BR>
+<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 811.625KB ] : USE [ 811.879KB ] : FREE [ 258689.500KB ] : ADDRESS [ 0x10885B00 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaFontSprite3Dクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B>フォントスプライト用メモリ確保</B><BR>
+<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 1623.250KB ] : USE [ 1623.504KB ] : FREE [ 257066.000KB ] : ADDRESS [ 0x10950B00 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaSpriteクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B>スプライト用メモリ確保</B><BR>
+<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 2.000KB ] : USE [ 2.254KB ] : FREE [ 257063.750KB ] : ADDRESS [ 0x10AE6A00 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaSprite3Dクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B>スプライト用メモリ確保</B><BR>
+<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 2.000KB ] : USE [ 2.254KB ] : FREE [ 257061.500KB ] : ADDRESS [ 0x10AE7400 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaCameraクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B>カメラ用メモリ確保</B><BR>
+<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 20.875KB ] : USE [ 21.129KB ] : FREE [ 257040.500KB ] : ADDRESS [ 0x10AE7E00 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaModelクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B>モデル用メモリ確保</B><BR>
+<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 50.000KB ] : USE [ 50.254KB ] : FREE [ 256990.250KB ] : ADDRESS [ 0x10AED300 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaModelExクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B>モデル用メモリ確保</B><BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaFieldクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B>フィールド用メモリ確保</B><BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaShaderFxクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B>エフェクト用メモリ確保</B><BR>
+<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 17.000KB ] : USE [ 17.254KB ] : FREE [ 256896.500KB ] : ADDRESS [ 0x10B0D100 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">Luna3Dクラスの起動</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B>　Direct3Dデバイスの生成</B><BR>
+　　　Direct3Dデバイスを ピュアデバイス で生成<BR>
+<B>　現在のデバイス情報を取得</B><BR>
+　　　ポイントサイズ [ 256.000 ]<BR>
+　　　最大プリミティブ数 [ 1048575 ]<BR>
+　　　最大インデックス数 [ 16777215 ]<BR>
+　　　最大テクスチャステージ数 [ 8 ]<BR>
+　　　最大マルチテクスチャ数 [ 8 ]<BR>
+　　　最大ハードウェアライト数 [ 10 ]<BR>
+　　　最大ブレンドマトリックス数 [ 4 ]<BR>
+　　　最大ブレンドインデックス数 [ 8 ]<BR>
+　　　最大頂点シェーダー定数数 [ 256 ]<BR>
+　　　頂点シェーダーバージョン [ 3.0 ]<BR>
+　　　ピクセルシェーダーバージョン[ 3.0 ]<BR>
+　　　動的フロー制御命令のネスティング [ 24 ]<BR>
+　　　静的フロー制御命令のネスティング [ 4 ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaSimpleクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaSpriteExクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaMediaクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B>メディア用メモリ確保</B><BR>
+<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 22.000KB ] : USE [ 22.254KB ] : FREE [ 256874.250KB ] : ADDRESS [ 0x10B11700 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaSoundクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B>サウンド用メモリ確保</B><BR>
+<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 80.000KB ] : USE [ 80.254KB ] : FREE [ 256794.000KB ] : ADDRESS [ 0x10B17100 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+　■ DirectSound8オブジェクトを生成<BR>
+　■ DirectSoundオブジェクトを取得<BR>
+　■ DirectSoundオブジェクトを初期化<BR>
+　■ 協調レベルを 優先レベル に設定<BR>
+　■ メモリのコンパクションを実行<BR>
+　■ プライマリサウンドバッファを生成<BR>
+　■ DirectSoundデバイスの性能をチェック<BR>
+　　・１６ビット サンプリングのプライマリ バッファをサポートする<BR>
+　　・８ビット サンプリングのプライマリ バッファをサポートする<BR>
+　　・モノラルのプライマリ バッファをサポートする<BR>
+　　・ステレオのプライマリ バッファをサポートする<BR>
+　　・１６ビット サンプリングでハードウェア ミキシングのセカンダリ サウンド バッファをサポートする<BR>
+　　・８ビット サンプリングでハードウェア ミキシングのセカンダリ バッファをサポートする<BR>
+　　・ハードウェア ミキシングのモノラル セカンダリ バッファをサポートする<BR>
+　　・ハードウェア ミキシングのステレオ セカンダリ バッファをサポートする<BR>
+　　　最小サンプリング レート [0.098KHz]<BR>
+　　　最大サンプリング レート [195.313KHz]<BR>
+　　　最大ハードウェアミキシング可能数 [1] <BR>
+　　　最大スタティックバッファ数 [1] <BR>
+　　　最大ストリーミングバッファ数 [1] <BR>
+　　　最大３Ｄバッファ数 [0] <BR>
+　　　最大３Ｄスタティックバッファ数 [0] <BR>
+　　　最大３Ｄストリーミングバッファ数 [0] <BR>
+　　　最大スタティックバッファメモリ容量 [0.000KB] <BR>
+　　　空きメモリ容量 [0.000KB] <BR>
+　　　ハードウェアスタティックバッファへのデータ転送速度 [0KB/s] <BR>
+　　　ソフトウェアミキシングの必要なプロセッサ時間 [0%] <BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaInputクラスの初期化</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B>　ジョイスティック用メモリを確保</B><BR>
+　　<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 6.813KB ] : USE [ 7.066KB ] : FREE [ 256787.000KB ] : ADDRESS [ 0x10B2B300 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<B>　DirectInputオブジェクトを生成</B><BR>
+<B>　DirectInputオブジェクトの初期化に成功</B><BR>
+<B>　キーボードデバイスの初期化</B><BR>
+　　キーボードデバイスの生成<BR>
+　　データフォーマットを設定<BR>
+　　協調レベルを設定<BR>
+　　プロパティを設定<BR>
+　　109キー キーボード<BR>
+<BR>
+<B>　ジョイスティックデバイスの初期化</B><BR>
+　　使用可能な最大ジョイスティック数 [16]<BR>
+　　ジョイスティックデバイスの列挙 [0]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">アプリケーション開始</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="GREEN">LunaThread::メインスレッドの起動</FONT></B><BR>
+<B><FONT color="BLUE">LunaThread::UpdateList</FONT></B><BR>
+　[32] -> [32]<BR>
+<B><FONT color="BLUE">LunaTexture::CreateFromPack</FONT></B>[ No.0 ] : [ 128 x 128 ] : [ A8R8G8B8 ] : Mipmap [ 1 ] : [ 128 x 128 ] : [ A8R8G8B8 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<B><FONT color="BLUE">LunaSprite::Create</FONT></B>[ No.0 ] : スプライト用プリミティブ取得 { <BR>
+　　<B><FONT color="BLUE">LunaPrimitive::Create</FONT></B> : [ No.0 ] : 描画用頂点バッファ生成 : 頂点保存用バッファ生成 { <BR>
+　　<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 512.000KB ] : USE [ 512.254KB ] : FREE [ 256274.750KB ] : ADDRESS [ 0x10B2D000 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+ }  VERTEX COUNT [ 16384 ] : VERTEX SIZE [ 32BYTE ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+ } : <B><FONT color="GREEN">Success</FONT></B><BR>
+<B><FONT color="BLUE">LunaFont::Create</FONT></B>[ No.0 ] : フォントバッファ用メモリ確保 { <BR>
+　　<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 0.563KB ] : USE [ 0.816KB ] : FREE [ 256274.000KB ] : ADDRESS [ 0x10BAD200 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+ }  FONT FACE [ ＭＳ ゴシック ] : FONT SIZE [ 12 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<B><FONT color="BLUE">LunaPrimitive::Create</FONT></B> : [ No.1 ] : 描画用頂点バッファ生成 : 頂点保存用バッファ生成 { <BR>
+　　<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 240.000KB ] : USE [ 240.254KB ] : FREE [ 256033.750KB ] : ADDRESS [ 0x10BAD600 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+ }  VERTEX COUNT [ 10240 ] : VERTEX SIZE [ 24BYTE ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<B><FONT color="BLUE">LunaLine::Create</FONT></B>[ No.0 ] : 描画用頂点バッファ生成 : 頂点保存用バッファ生成 { <BR>
+　　<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 240.000KB ] : USE [ 240.254KB ] : FREE [ 255793.500KB ] : ADDRESS [ 0x10BE9800 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+ }  VERTEX COUNT [ 10240 ] : VERTEX SIZE [ 24BYTE ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<B><FONT color="BLUE">LunaSprite::Create</FONT></B>[ No.1 ] : スプライト用プリミティブ取得 { <BR>
+　　<B><FONT color="BLUE">LunaPrimitive::Create</FONT></B> : [ No.2 ] : 描画用頂点バッファ生成 : 頂点ソート用バッファ生成 { <BR>
+　　<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 938.666KB ] : USE [ 938.920KB ] : FREE [ 254854.750KB ] : ADDRESS [ 0x10C25A00 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+頂点ソート用リストバッファ生成(1/2) { <BR>
+　　<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 31.996KB ] : USE [ 32.250KB ] : FREE [ 254822.750KB ] : ADDRESS [ 0x10D10600 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+頂点ソート用リストバッファ生成(2/2) { <BR>
+　　<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 31.996KB ] : USE [ 32.250KB ] : FREE [ 254790.750KB ] : ADDRESS [ 0x10D18700 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+ }  VERTEX COUNT [ 16384 ] : VERTEX SIZE [ 32BYTE ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+ } : <B><FONT color="GREEN">Success</FONT></B><BR>
+<B><FONT color="BLUE">LunaFont::Create</FONT></B>[ No.1 ] : フォントバッファ用メモリ確保 { <BR>
+　　<B><FONT color="BLUE">LunaMemory::Alloc</FONT></B> : [ 4.000KB ] : USE [ 4.254KB ] : FREE [ 254786.500KB ] : ADDRESS [ 0x10D20800 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+ }  FONT FACE [ Meiryo ] : FONT SIZE [ 32 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<B><FONT color="BLUE">LunaTexture::Create</FONT></B> : [ No.1 ] : [ 640 x 64 ] : [ A8R8G8B8 ] : MIPMAP [ 1 ] : [ 640 x 64 ] : [ A8R8G8B8 ] : <B><FONT color="GREEN">Success</FONT></B><BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 938.750KB ] : REST [ 255725.250KB ]<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 32.000KB ] : REST [ 255757.250KB ]<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 32.000KB ] : REST [ 255789.250KB ]<BR>
+<B><FONT color="RED">LunaPrimitive::Release</FONT></B> : [ No.2 ]<BR>
+<B><FONT color="RED">LunaSprite::Release</FONT></B> : [ No.1 ]<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 0.750KB ] : REST [ 255790.000KB ]<BR>
+<B><FONT color="RED">LunaFont::Release</FONT></B> : [ No.0 ]<BR>
+<B><FONT color="BLUE">DLM::Texture.Release:</FONT></B>File"" (#0) Released<BR>
+<B><FONT color="RED">LunaTexture::Release</FONT></B> : [ No.0 ] [Reference 0]<BR>
+<B><FONT color="RED">LunaTexture::Release</FONT></B> : [ No.1 ] [Reference 0]<BR>
+<B><FONT color="GREEN">LunaThread::全スレッドの終了</FONT></B><BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaThreadクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 2.000KB ] : REST [ 255792.000KB ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaInputクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+キーボード用デバイスの解放<BR>
+DirectInputオブジェクトの解放<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 7.000KB ] : REST [ 255799.000KB ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaSoundクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 80.250KB ] : REST [ 255879.250KB ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaMediaクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 22.250KB ] : REST [ 255901.500KB ]<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaSpriteExクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaModelクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaFieldクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 25.000KB ] : REST [ 255926.500KB ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaModelExクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 51.500KB ] : REST [ 255978.000KB ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaModelクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 50.250KB ] : REST [ 256028.250KB ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaCameraクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 21.000KB ] : REST [ 256049.250KB ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaFontSprite3Dクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 1623.500KB ] : REST [ 257672.750KB ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaFontSpriteクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 811.750KB ] : REST [ 258484.500KB ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaFontクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 4.250KB ] : REST [ 258488.750KB ]<BR>
+Font Destroy [ No.1 ]<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 5.750KB ] : REST [ 258494.500KB ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaSheetクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 18.000KB ] : REST [ 258512.500KB ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaSprite3Dクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 2.250KB ] : REST [ 258514.750KB ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaSpriteクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 512.250KB ] : REST [ 259027.000KB ]<BR>
+<B><FONT color="RED">LunaPrimitive::Release</FONT></B> : [ No.0 ]<BR>
+Sprite Destroy [ No.0 ]<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 2.250KB ] : REST [ 259029.250KB ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaPointクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 32.000KB ] : REST [ 259061.250KB ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaPoint3Dクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 32.000KB ] : REST [ 259093.250KB ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaLineクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 240.250KB ] : REST [ 259333.500KB ]<BR>
+Line Destroy [ No.0 ]<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 32.000KB ] : REST [ 259365.500KB ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaLine3Dクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 32.000KB ] : REST [ 259397.500KB ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaPrimitiveクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 240.250KB ] : REST [ 259637.750KB ]<BR>
+Primitive Destroy [ No.1 ]<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 38.000KB ] : REST [ 259675.750KB ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaPrimitive3Dクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 38.000KB ] : REST [ 259713.750KB ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaTextureクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 312.250KB ] : REST [ 260026.000KB ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaSurfaceクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 18.750KB ] : REST [ 260044.750KB ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaShaderFxクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 17.250KB ] : REST [ 260062.000KB ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaMathクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 256.250KB ] : REST [ 260318.250KB ]<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 32.250KB ] : REST [ 260350.500KB ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaAnimationクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 1792.250KB ] : REST [ 262142.750KB ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaListクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<B><FONT color="BLUE">LunaMemory::Free</FONT></B> : FREE [ 1.250KB ] : REST [ 262144.000KB ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaMemoryクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+瞬間最大使用メモリ容量 [ 7543040Byte (7.194MB) ]<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaConsoleクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">Luna3Dクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+IDirect3DQuery9インターフェースを解放<BR>
+IDirect3DQuery9インターフェースを解放<BR>
+Direct3Dデバイスを解放<BR>
+Direct3Dオブジェクトを解放<BR>
+DLLを解放<BR>
+<BR>
+<TABLE width="100%" bgcolor="#000000">
+  <TBODY>
+    <TR>
+      <TD align="center">
+        <B>
+          <FONT color="WHITE">LunaFileクラスの解放</FONT>
+        </B>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<BR>
+</BODY>
+</HTML>
