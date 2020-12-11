@@ -59,10 +59,14 @@ Fv17pp1pInFvDir = "fv_17_pp_1pMotiKaku.csv"
 Fv30pp2pInFvDir = "fv_30_pp_2pMotiHi__.csv"
 Fv31pp2pInFvDir = "fv_31_pp_2pMotiKaku.csv"
 
-
-LearningPositionLogPng = "../../Logs/_log_学習局面.png"
-
 Shogiban01Widgets = "../../Data/data_widgets_01_shogiban.csv"
 Console02Widgets = "../../Data/data_widgets_02_console.csv"
+Vs03Widgets = "../../Data/data_widgets_03_vs.csv"
 
 DataSetteiCsv = "../../Data/data_settei.csv"
+DataSetteiVsCsv = "../../Data/data_settei_vs.csv"
+
+# 画像
+
+LearningPositionLogPng = "../../Logs/_log_学習局面.png"
+LearningPositionLogPngBasename = "_log_学習局面.png"

@@ -77,7 +77,6 @@
     <Compile Include="P005Tushin\Util_Message.cs" />
     <Compile Include="P011Csv\CsvLineParserImpl.cs" />
     <Compile Include="P011Csv\Util_Csv.cs" />
-    <Compile Include="P027Settei\Const_Filepath.cs" />
     <Compile Include="P027Settei\Data_Settei_Csv.cs" />
     <Compile Include="P027Settei\SetteiXmlFile.cs" />
     <Compile Include="P031Random\KwRandom.cs" />

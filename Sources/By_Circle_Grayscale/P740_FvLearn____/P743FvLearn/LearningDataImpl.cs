@@ -252,6 +252,9 @@ namespace Grayscale.P743FvLearn.L250Learn
         /// </summary>
         public void WritePng(IErrorController errH)
         {
+            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+
             int srcMasu_orMinusOne = -1;
             int dstMasu_orMinusOne = -1;
             if(null!=this.Kifu.CurNode.Key)
@@ -289,7 +292,7 @@ namespace Grayscale.P743FvLearn.L250Learn
                 foodKoma,
                 Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(this.Kifu.CurNode.Key),
                 "",
-                "_log_学習局面.png",
+                Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("LearningPositionLogPngBasename")),
                 LearningDataImpl.REPORT_ENVIRONMENT,
                 errH
                 );

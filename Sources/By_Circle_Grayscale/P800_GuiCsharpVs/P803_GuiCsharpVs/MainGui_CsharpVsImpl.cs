@@ -4,6 +4,8 @@ using Grayscale.P693ShogiGui.I500Gui;
 using Grayscale.P693ShogiGui.L500GUI;
 using Grayscale.P803GuiCsharpVs.L492Widget;
 using System.Text;
+using Nett;
+using System.IO;
 
 namespace Grayscale.P803GuiCsharpVs.L500Gui
 {
@@ -74,9 +76,12 @@ namespace Grayscale.P803GuiCsharpVs.L500Gui
         {
             base.Load_AsStart(errH);
 
-            this.Data_Settei_Csv.Read_Add("../../Data/data_settei_vs.csv", Encoding.UTF8);
+            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+
+            this.Data_Settei_Csv.Read_Add(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataSetteiVsCsv")), Encoding.UTF8);
             this.Data_Settei_Csv.DebugOut();
-            this.WidgetLoaders.Add(new WidgetsLoader_CsharpVsImpl("../../Data/data_widgets_03_vs.csv", this));
+            this.WidgetLoaders.Add(new WidgetsLoader_CsharpVsImpl(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Vs03Widgets")), this));
         }
 
     }

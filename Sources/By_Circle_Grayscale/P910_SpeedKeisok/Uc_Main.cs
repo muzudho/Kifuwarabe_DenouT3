@@ -162,11 +162,10 @@ namespace Grayscale.P910_SpeedKeisok
                 case DialogResult.OK:
 
                     this.txtFvFilepath.Text = this.openFileDialog1.FileName;
-                    string filepath_base = this.txtFvFilepath.Text;
 
                     StringBuilder sb_result = new StringBuilder();
                     // フィーチャー・ベクターの外部ファイルを開きます。
-                    sb_result.Append(Util_FvLoad.OpenFv(this.FeatureVector, filepath_base,errH));
+                    sb_result.Append(Util_FvLoad.OpenFv(this.FeatureVector, this.txtFvFilepath.Text, errH));
 
                     this.txtResult.Text = sb_result.ToString();
 
