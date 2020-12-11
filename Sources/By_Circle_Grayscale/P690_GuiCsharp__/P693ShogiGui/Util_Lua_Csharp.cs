@@ -84,8 +84,11 @@ namespace Grayscale.P693ShogiGui.L480Util
 
 
                 //----------------------------------------------------------------------------------------------------
+                var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+                var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+                string dataDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataDirectory"));
 
-                Util_Lua_Csharp.lua.DoFile("../../Data/lua/KifuNarabe/data_gui.lua");//固定
+                Util_Lua_Csharp.lua.DoFile(Path.Combine(dataDirectory, "lua/KifuNarabe/data_gui.lua"));//固定
                 Util_Lua_Csharp.lua.GetFunction(luaFuncName).Call();
 
                 // FIXME:Close()でエラーが起こってしまう。

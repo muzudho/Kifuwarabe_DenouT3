@@ -138,11 +138,12 @@ namespace Grayscale.P720_FvWriter___
         {
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+            string dataDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataDirectory"));
 
             FeatureVector fv = new FeatureVectorImpl();
             Util_FeatureVectorInput.Make_FromFile_Komawari(fv, Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv00Komawari")));
 
-            Util_FeatureVectorOutput.Write_KK(fv, Application.StartupPath + "/../../Data/");
+            Util_FeatureVectorOutput.Write_KK(fv, Path.Combine(profilePath, dataDirectory));
         }
 
         /// <summary>
@@ -154,11 +155,12 @@ namespace Grayscale.P720_FvWriter___
         {
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+            string dataDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataDirectory"));
 
             FeatureVector fv = new FeatureVectorImpl();
             Util_FeatureVectorInput.Make_FromFile_Komawari(fv, Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv00Komawari")));
 
-            Util_FeatureVectorOutput.Write_KP(fv, Application.StartupPath + "/../../Data/");
+            Util_FeatureVectorOutput.Write_KP(fv, Path.Combine(profilePath, dataDirectory));
         }
 
         /// <summary>
@@ -170,14 +172,15 @@ namespace Grayscale.P720_FvWriter___
         {
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+            string dataDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataDirectory"));
 
             FeatureVector fv = new FeatureVectorImpl();
             Util_FeatureVectorInput.Make_FromFile_Komawari(fv, Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv00Komawari")));
 
-            Util_FeatureVectorOutput.Write_PP_Banjo(fv, Application.StartupPath + "/../../Data/");
-            Util_FeatureVectorOutput.Write_PP_19Mai(fv, Application.StartupPath + "/../../Data/");
-            Util_FeatureVectorOutput.Write_PP_5Mai(fv, Application.StartupPath + "/../../Data/");
-            Util_FeatureVectorOutput.Write_PP_3Mai(fv, Application.StartupPath + "/../../Data/");
+            Util_FeatureVectorOutput.Write_PP_Banjo(fv, Path.Combine(profilePath, dataDirectory));
+            Util_FeatureVectorOutput.Write_PP_19Mai(fv, Path.Combine(profilePath, dataDirectory));
+            Util_FeatureVectorOutput.Write_PP_5Mai(fv, Path.Combine(profilePath, dataDirectory));
+            Util_FeatureVectorOutput.Write_PP_3Mai(fv, Path.Combine(profilePath, dataDirectory));
         }
 
         /// <summary>

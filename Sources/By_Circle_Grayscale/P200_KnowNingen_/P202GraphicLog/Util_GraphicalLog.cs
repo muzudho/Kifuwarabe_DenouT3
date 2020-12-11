@@ -77,7 +77,11 @@ namespace Grayscale.P202GraphicLog.L500Util
             sb.AppendLine("</body>");
             sb.AppendLine("</html>");
 
-            File.WriteAllText("../../Logs/_log" + Util_GraphicalLog.LogFileCounter + "_" + fileNameMemo + ".html", sb.ToString());
+            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+            string logsDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("LogsDirectory"));
+
+            File.WriteAllText(Path.Combine(logsDirectory, $"_log{Util_GraphicalLog.LogFileCounter}_{fileNameMemo}.html", sb.ToString());
             Util_GraphicalLog.LogFileCounter++;
 
         gt_EndMethod:

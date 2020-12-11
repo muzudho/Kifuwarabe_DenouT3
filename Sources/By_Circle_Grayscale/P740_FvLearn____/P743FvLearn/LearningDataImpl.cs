@@ -57,10 +57,12 @@ namespace Grayscale.P743FvLearn.L250Learn
         {
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+            string logsDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("LogsDirectory"));
+            string dataDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataDirectory"));
 
             LearningDataImpl.REPORT_ENVIRONMENT = new KyokumenPngEnvironmentImpl(
-                        "../../Logs/",
-                        "../../Data/img/gkLog/",
+                        Path.Combine(profilePath, logsDirectory),
+                        Path.Combine(profilePath, dataDirectory, "img/gkLog/"),
                         toml.Get<TomlTable>("Resources").Get<string>("Koma1PngBasename"),//argsDic["kmFile"],
                         toml.Get<TomlTable>("Resources").Get<string>("Suji1PngBasename"),//argsDic["sjFile"],
                         "20",//argsDic["kmW"],

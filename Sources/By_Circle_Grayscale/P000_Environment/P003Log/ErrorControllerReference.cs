@@ -17,7 +17,7 @@ namespace Grayscale.P003Log.L500Struct
     /// </summary>
     public static class ErrorControllerReference // partial /// partial … ロガー定数を拡張できるクラスとして開放。
     {
-        public static readonly IErrorController DefaultByProcess = new ErrorHandlerImpl(new KwLoggerImpl($"../../Logs/_log_default_false_({System.Diagnostics.Process.GetCurrentProcess()})", ".txt", false, false));
+        public static readonly IErrorController DefaultByProcess = new ErrorHandlerImpl(new KwLoggerImpl($"./default({System.Diagnostics.Process.GetCurrentProcess()})", ".log", false, false));
         public static readonly IErrorController Error;
 
         /// <summary>
@@ -139,13 +139,17 @@ namespace Grayscale.P003Log.L500Struct
                 //string filepath2 = Path.Combine(Application.StartupPath, this.DefaultFile.FileName);
                 //System.IO.File.Delete(filepath2);
 
-                string[] paths = Directory.GetFiles(Path.Combine(Application.StartupPath, "../../Logs/"));
+                var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+                var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+                string logsDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("LogsDirectory"));
+
+                string[] paths = Directory.GetFiles(logsDirectory);
                 foreach(string path in paths)
                 {
                     string name = Path.GetFileName(path);
                     if (name.StartsWith("_log_", StringComparison.CurrentCulture))
                     {
-                        string fullpath = Path.Combine(Application.StartupPath, "../../Logs/", name);
+                        string fullpath = Path.Combine(logsDirectory, name);
                         //MessageBox.Show("fullpath=[" + fullpath + "]", "ログ・ファイルの削除");
                         System.IO.File.Delete(fullpath);
                     }

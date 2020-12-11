@@ -41,9 +41,12 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
 
+            string logsDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("LogsDirectory"));
+            string dataDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataDirectory"));
+
             Util_KifuTreeLogWriter.REPORT_ENVIRONMENT = new KyokumenPngEnvironmentImpl(
-                        "../../Logs/_log_KifuTreeLog/",//argsDic["outFolder"],
-                        "../../Data/img/gkLog/",//argsDic["imgFolder"],
+                        Path.Combine(logsDirectory, "_log_KifuTreeLog/"),//argsDic["outFolder"],
+                        Path.Combine(dataDirectory, "img/gkLog/"),//argsDic["imgFolder"],
                         toml.Get<TomlTable>("Resources").Get<string>("Koma1PngBasename"),//argsDic["kmFile"],
                         toml.Get<TomlTable>("Resources").Get<string>("Suji1PngBasename"),//argsDic["sjFile"],
                         "20",//argsDic["kmW"],

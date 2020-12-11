@@ -8,6 +8,9 @@ Author = "Satoshi TAKAHASHI"
 
 [Resources]
 
+LogsDirectory = "../../Logs"
+DataDirectory = "../../Data"
+
 Michi187 = "../../Data/data_michi187.csv"
 Haiyaku185 = "../../Data/data_haiyaku185_UTF-8.csv"
 InputForcePromotion = "../../Data/data_forcePromotion_UTF-8.csv"

@@ -158,8 +158,12 @@ namespace Grayscale.P693ShogiGui.L080Shape
                 //----------
                 // 駒画像
                 //----------
+                var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+                var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+                string dataDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataDirectory"));
+
                 StringBuilder sb = new StringBuilder();
-                sb.Append("../../Data/img/koma/");
+                sb.Append(Path.Combine(dataDirectory, "img/koma/"));
                 sb.Append(Conv_Komasyurui.ToStr_ImageName(koma.Komasyurui));
                 sb.Append(".png");
                 Image img = Image.FromFile(sb.ToString());
@@ -181,8 +185,12 @@ namespace Grayscale.P693ShogiGui.L080Shape
                 //----------
                 // 配役画像
                 //----------
+                var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+                var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+                string dataDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataDirectory"));
+
                 StringBuilder sb = new StringBuilder();
-                sb.Append("../../Data/img/mobility/");
+                sb.Append(Path.Combine(dataDirectory, "img/mobility/"));
                 sb.Append((int)koma.Haiyaku);//配役番号
                 sb.Append(".png");
                 Image img = Image.FromFile(sb.ToString());
