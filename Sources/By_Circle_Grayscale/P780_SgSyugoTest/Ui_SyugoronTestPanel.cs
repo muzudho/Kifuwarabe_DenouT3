@@ -217,8 +217,12 @@ namespace Grayscale.P780_SgSyugoTest
 
         private void Ui_Main_Load(object sender, EventArgs e)
         {
+            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+
             // UTF-8
-            string path = Application.StartupPath+ "\\dictionary.txt";
+            string path = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("SyugoronDirectoryText"));
+
             //MessageBox.Show(path);
             if (File.Exists(path))
             {
@@ -287,8 +291,12 @@ namespace Grayscale.P780_SgSyugoTest
         /// <param name="e"></param>
         private void btnOverwrite_Click(object sender, EventArgs e)
         {
+            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+
             // UTF-8
-            string path = Application.StartupPath + "\\dictionary.txt";
+            string path = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("SyugoronDirectoryText"));
+
             //MessageBox.Show(path);
             if (File.Exists(path))
             {

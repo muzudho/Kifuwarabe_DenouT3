@@ -122,7 +122,11 @@ namespace Grayscale.P743FvLearn
         public Uc_Main()
         {
             this.LearningData = new LearningDataImpl();
-            this.stopLearning = new StopLearningImpl(Path.Combine(Application.StartupPath, "Stop_learning.txt"));
+
+            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+            this.stopLearning = new StopLearningImpl(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("StopLearningFlag")));
+
             this.tyoseiryoSettings = new TyoseiryoSettingsImpl();
 
             //
@@ -206,7 +210,10 @@ namespace Grayscale.P743FvLearn
 
             // ファイル読込
             {
-                string path = Path.Combine(Application.StartupPath, "Search_kifu_folder.txt");
+                var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+                var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+
+                string path = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("SearchKifuFolderText"));
                 if(File.Exists(path))
                 {
                     this.search_kifu_folder_lines = File.ReadAllLines(path, Encoding.UTF8);

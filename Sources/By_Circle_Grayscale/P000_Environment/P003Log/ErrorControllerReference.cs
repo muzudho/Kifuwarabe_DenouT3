@@ -17,89 +17,114 @@ namespace Grayscale.P003Log.L500Struct
     /// </summary>
     public static class ErrorControllerReference // partial /// partial … ロガー定数を拡張できるクラスとして開放。
     {
-        /// <summary>
-        /// ログを入れておくフォルダーのホームは、固定しておきましょう。
-        /// </summary>
-        public const string LogsFolder = "../../Logs/";
-
-
-        public static readonly IErrorController DefaultByProcess = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(ErrorControllerReference.LogsFolder, "_log_default_false_(" + System.Diagnostics.Process.GetCurrentProcess() + ")"), ".txt", false, false));
-
-        public static readonly IErrorController Error = new ErrorHandlerImpl( new KwLoggerImpl( Path.Combine(ErrorControllerReference.LogsFolder, "_log_エラー"), ".txt", true, false));
+        public static readonly IErrorController DefaultByProcess = new ErrorHandlerImpl(new KwLoggerImpl($"../../Logs/_log_default_false_({System.Diagnostics.Process.GetCurrentProcess()})", ".txt", false, false));
+        public static readonly IErrorController Error;
 
         /// <summary>
         /// 汎用ログ。
         /// 千日手判定用。
         /// </summary>
-        public static readonly IErrorController DefaultSennitite = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(ErrorControllerReference.LogsFolder,"_log_Default_千日手判定"), ".txt", true, false));
+        public static readonly IErrorController DefaultSennitite;
 
         /// <summary>
         /// 擬似将棋サーバーのログ
         /// </summary>
-        public static readonly IErrorController ServerDefault = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(ErrorControllerReference.LogsFolder,"_log_ｻｰﾊﾞｰ_ﾃﾞﾌｫﾙﾄ"), ".txt", true, false));
+        public static readonly IErrorController ServerDefault;
+
         /// <summary>
         /// 擬似将棋サーバーのログ
         /// ログ。送受信内容の記録専用です。
         /// </summary>
-        public static readonly IErrorController ServerNetworkAsync = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(ErrorControllerReference.LogsFolder,"_log_ｻｰﾊﾞｰ_非同期通信"), ".txt", true, true));
+        public static readonly IErrorController ServerNetworkAsync;
 
         /// <summary>
         /// C# GUIのログ
         /// </summary>
-        public static readonly IErrorController CsharpGuiDefault = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(ErrorControllerReference.LogsFolder,"_log_CsharpGUI_ﾃﾞﾌｫﾙﾄ"), ".txt", true, false));
-        /// <summary>
-        /// C# GUIのログ
-        /// </summary>
-        public static readonly IErrorController CsharpGuiKifuYomitori = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(ErrorControllerReference.LogsFolder,"_log_CsharpGUI_棋譜読取"), ".txt", true, false));
-        /// <summary>
-        /// C# GUIのログ
-        /// </summary>
-        public static readonly IErrorController CsharpGuiNetwork = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(ErrorControllerReference.LogsFolder,"_log_CsharpGUI_通信"), ".txt", true, true));
-        /// <summary>
-        /// C# GUIのログ
-        /// </summary>
-        public static readonly IErrorController CsharpGuiPaint = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(ErrorControllerReference.LogsFolder,"_log_CsharpGUI_ﾍﾟｲﾝﾄ"), ".txt", true, false));
-        /// <summary>
-        /// C# GUIのログ
-        /// </summary>
-        public static readonly IErrorController CsharpGuiSennitite = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(ErrorControllerReference.LogsFolder,"_log_CsharpGui_千日手判定"), ".txt", true, false));
+        public static readonly IErrorController CsharpGuiDefault;
 
-        #region AIMS GUIに対応する用のログ
-        public static readonly IErrorController AimsDefault = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(ErrorControllerReference.LogsFolder,"_log_AIMS対応用_ﾃﾞﾌｫﾙﾄ"), ".txt", true, false));
-        #endregion
+        /// <summary>
+        /// C# GUIのログ
+        /// </summary>
+        public static readonly IErrorController CsharpGuiKifuYomitori;
+
+        /// <summary>
+        /// C# GUIのログ
+        /// </summary>
+        public static readonly IErrorController CsharpGuiNetwork;
+
+        /// <summary>
+        /// C# GUIのログ
+        /// </summary>
+        public static readonly IErrorController CsharpGuiPaint;
+
+        /// <summary>
+        /// C# GUIのログ
+        /// </summary>
+        public static readonly IErrorController CsharpGuiSennitite;
+
+        /// <summary>
+        /// AIMS GUIに対応する用のログ
+        /// </summary>
+        public static readonly IErrorController AimsDefault;
 
         /// <summary>
         /// 将棋エンジンのログ。将棋エンジンきふわらべで汎用に使います。
         /// </summary>
-        public static readonly IErrorController EngineDefault = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(ErrorControllerReference.LogsFolder,"_log_ｴﾝｼﾞﾝ_ﾃﾞﾌｫﾙﾄ"), ".txt", true, false));
+        public static readonly IErrorController EngineDefault;
 
         /// <summary>
         /// 将棋エンジンのログ。送受信内容の記録専用です。
         /// </summary>
-        public static readonly IErrorController EngineNetwork = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(ErrorControllerReference.LogsFolder,"_log_ｴﾝｼﾞﾝ_通信"), ".txt", true, true));
+        public static readonly IErrorController EngineNetwork;
+
         /// <summary>
         /// 将棋エンジンのログ。思考ルーチン専用です。
         /// </summary>
-        public static readonly IErrorController EngineMousouRireki = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(ErrorControllerReference.LogsFolder,"_log_ｴﾝｼﾞﾝ_妄想履歴"), ".txt", true, false));
+        public static readonly IErrorController EngineMousouRireki;
+
         /// <summary>
         /// 将棋エンジンのログ
         /// </summary>
-        public static readonly IErrorController EngineSennitite = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(ErrorControllerReference.LogsFolder,"_log_ｴﾝｼﾞﾝ_千日手判定"), ".txt", true, false));
+        public static readonly IErrorController EngineSennitite;
 
         /// <summary>
         /// その他のログ。汎用。テスト・プログラム用。
         /// </summary>
-        public static readonly IErrorController TestProgram = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(ErrorControllerReference.LogsFolder,"_log_テスト・プログラム用（汎用）"), ".txt", true, false));
+        public static readonly IErrorController TestProgram;
 
         /// <summary>
         /// その他のログ。棋譜学習ソフト用。
         /// </summary>
-        public static readonly IErrorController Learner = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(ErrorControllerReference.LogsFolder,"_log_棋譜学習ソフト用"), ".txt", true, false));
+        public static readonly IErrorController Learner;
 
         /// <summary>
         /// その他のログ。スピード計測ソフト用。
         /// </summary>
-        public static readonly IErrorController SpeedKeisoku = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(ErrorControllerReference.LogsFolder,"_log_スピード計測ソフト用"), ".txt", true, false));
+        public static readonly IErrorController SpeedKeisoku;
+
+        public static ErrorControllerReference()
+        {
+            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+
+            ErrorControllerReference.Error = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("N01ErrorLog")), ".txt", true, false));
+            ErrorControllerReference.DefaultSennitite = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("N02DefaultSennititeLog")), ".txt", true, false));
+            ErrorControllerReference.ServerDefault = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("N03ServerDefaultLog")), ".txt", true, false));
+            ErrorControllerReference.ServerNetworkAsync = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("N04ServerNetworkAsyncLog")), ".txt", true, true));
+            ErrorControllerReference.CsharpGuiDefault = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("N05CsharpGuiDefaultLog")), ".txt", true, false));
+            ErrorControllerReference.CsharpGuiKifuYomitori = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("N06CsharpGuiKifuYomitoriLog")), ".txt", true, false));
+            ErrorControllerReference.CsharpGuiNetwork = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("N07CsharpGuiNetworkLog")), ".txt", true, true));
+            ErrorControllerReference.CsharpGuiPaint = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("N08CsharpGuiPaintLog")), ".txt", true, false));
+            ErrorControllerReference.CsharpGuiSennitite = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("N09CsharpGuiSennititeLog")), ".txt", true, false));
+            ErrorControllerReference.AimsDefault = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("N10AimsDefaultLog")), ".txt", true, false));
+            ErrorControllerReference.EngineDefault = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("N11EngineDefaultLog")), ".txt", true, false));
+            ErrorControllerReference.EngineNetwork = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("N12EngineNetworkLog")), ".txt", true, true));
+            ErrorControllerReference.EngineMousouRireki = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("N13EngineMousouRirekiLog")), ".txt", true, false));
+            ErrorControllerReference.EngineSennitite = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("N14EngineSennititeLog")), ".txt", true, false));
+            ErrorControllerReference.TestProgram = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("N15TestProgramLog")), ".txt", true, false));
+            ErrorControllerReference.Learner = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("N16LearnerLog")), ".txt", true, false));
+            ErrorControllerReference.SpeedKeisoku = new ErrorHandlerImpl(new KwLoggerImpl(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("N17SpeedKeisokuLog")), ".txt", true, false));
+        }
 
         /// <summary>
         /// ログファイルを削除します。(連番がなければ)
@@ -114,13 +139,13 @@ namespace Grayscale.P003Log.L500Struct
                 //string filepath2 = Path.Combine(Application.StartupPath, this.DefaultFile.FileName);
                 //System.IO.File.Delete(filepath2);
 
-                string[] paths = Directory.GetFiles(Path.Combine(Application.StartupPath, ErrorControllerReference.LogsFolder));
+                string[] paths = Directory.GetFiles(Path.Combine(Application.StartupPath, "../../Logs/"));
                 foreach(string path in paths)
                 {
                     string name = Path.GetFileName(path);
                     if (name.StartsWith("_log_", StringComparison.CurrentCulture))
                     {
-                        string fullpath = Path.Combine(Application.StartupPath, ErrorControllerReference.LogsFolder, name);
+                        string fullpath = Path.Combine(Application.StartupPath, "../../Logs/", name);
                         //MessageBox.Show("fullpath=[" + fullpath + "]", "ログ・ファイルの削除");
                         System.IO.File.Delete(fullpath);
                     }

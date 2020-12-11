@@ -14,6 +14,8 @@ InputForcePromotion = "../../Data/data_forcePromotion_UTF-8.csv"
 OutputForcePromotion = "../../Logs/_log_強制転成表.html"
 InputSyuruiToHaiyaku = "../../Data/data_syuruiToHaiyaku.csv"
 OutputSyuruiToHaiyaku = "../../Logs/_log_配役転換表.html"
+OutputSyuruiToHaiyaku01DataRowOnly = "../../Logs/_log_配役転換表Load(1)_データ行のみ.txt"
+OutputSyuruiToHaiyaku02Load = "../../Logs/_log_配役転換表Load(2).txt"
 
 Fv00Komawari = "../../Data/fv/fv_00_Komawari.csv"
 Fv00KomawariSample = "../../Data/fv_00_Komawari(sample).csv"
@@ -69,11 +71,38 @@ DataSetteiVsCsv = "../../Data/data_settei_vs.csv"
 DataSetteiXml = "../../Data/data_settei.xml"
 AimsDataSetteiXml = "./CSharp/Builds/Engine/Data/data_settei.xml"
 
+# ログ・ファイル(拡張子は付けないでください)
+
+N01ErrorLog = "../../Logs/_log_エラー"
+N02DefaultSennititeLog = "../../Logs/_log_Default_千日手判定"
+N03ServerDefaultLog = "../../Logs/_log_ｻｰﾊﾞｰ_ﾃﾞﾌｫﾙﾄ"
+N04ServerNetworkAsyncLog = "../../Logs/_log_ｻｰﾊﾞｰ_非同期通信"
+N05CsharpGuiDefaultLog = "../../Logs/_log_CsharpGUI_ﾃﾞﾌｫﾙﾄ"
+N06CsharpGuiKifuYomitoriLog = "../../Logs/_log_CsharpGUI_棋譜読取"
+N07CsharpGuiNetworkLog = "../../Logs/_log_CsharpGUI_通信"
+N08CsharpGuiPaintLog = "../../Logs/_log_CsharpGUI_ﾍﾟｲﾝﾄ"
+N09CsharpGuiSennititeLog = "../../Logs/_log_CsharpGui_千日手判定"
+N10AimsDefaultLog = "../../Logs/_log_AIMS対応用_ﾃﾞﾌｫﾙﾄ"
+N11EngineDefaultLog = "../../Logs/_log_ｴﾝｼﾞﾝ_ﾃﾞﾌｫﾙﾄ"
+N12EngineNetworkLog = "../../Logs/_log_ｴﾝｼﾞﾝ_通信"
+N13EngineMousouRirekiLog = "../../Logs/_log_ｴﾝｼﾞﾝ_妄想履歴"
+N14EngineSennititeLog = "../../Logs/_log_ｴﾝｼﾞﾝ_千日手判定"
+N15TestProgramLog = "../../Logs/_log_テスト・プログラム用（汎用）"
+N16LearnerLog = "../../Logs/_log_棋譜学習ソフト用"
+N17SpeedKeisokuLog = "../../Logs/_log_スピード計測ソフト用"
+
+N18KifuCsaLogBasename = "CSA棋譜デバッグ.txt"
+N19TedokuKeisanLog = "../../Logs/_log_手得計算.txt"
+N20DebugForcePromotionLog = "../../Logs/#強制転成デバッグ.txt"
+
 # .txt ファイル
 
 LogDaseMeirei = "../../Logs/_log_ログ出せ命令.txt"
 HyokaMeisaiLogTxtBasename = "_log_評価明細.txt"
 DataStyleText = "../../Data/data_style.txt"
+StopLearningFlag = "Stop_learning.txt"
+SearchKifuFolderText = "Search_kifu_folder.txt"
+SyugoronDirectoryText = "dictionary.txt"
 
 # 画像
 

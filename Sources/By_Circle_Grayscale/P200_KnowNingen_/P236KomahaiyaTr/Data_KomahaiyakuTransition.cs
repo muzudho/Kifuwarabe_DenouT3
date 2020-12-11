@@ -157,6 +157,9 @@ namespace Grayscale.P236KomahaiyaTr.L500Table
 #if DEBUG
             // デバッグ出力
             {
+                var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+                var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+
                 StringBuilder sb = new StringBuilder();
 
                 foreach (List<string> row2 in rows2)
@@ -171,7 +174,7 @@ namespace Grayscale.P236KomahaiyaTr.L500Table
                     sb.AppendLine();
                 }
 
-                string filepath_HaiyakuLoad1 = Path.Combine(Application.StartupPath, "../../Logs/_log_配役転換表Load(1)_データ行のみ.txt");
+                string filepath_HaiyakuLoad1 = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("OutputSyuruiToHaiyaku01DataRowOnly"));
                 File.WriteAllText(filepath_HaiyakuLoad1, sb.ToString());
             }
 #endif
@@ -242,7 +245,10 @@ namespace Grayscale.P236KomahaiyaTr.L500Table
 
 #if DEBUG
             {
-                string filepath_HaiyakuLoad2 = Path.Combine(Application.StartupPath, "../../Logs/_log_配役転換表Load(2).txt");
+                var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+                var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+
+                string filepath_HaiyakuLoad2 = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("OutputSyuruiToHaiyaku02Load"));
                 File.WriteAllText(filepath_HaiyakuLoad2, sbLog.ToString());
             }
 #endif

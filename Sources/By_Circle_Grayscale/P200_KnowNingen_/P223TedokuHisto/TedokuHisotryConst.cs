@@ -79,7 +79,9 @@ namespace Grayscale.P223TedokuHisto.L250Struct
             //
             // ログ出力
             //
-            Util_TedokuHistory.WriteLog("../../Logs/_log_手得計算.txt", result);
+            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+            Util_TedokuHistory.WriteLog(Path.Combine(this.txtKifuFilepath.Text, toml.Get<TomlTable>("Resources").Get<string>("N19TedokuKeisanLog")), result);
 #endif
 
             return result;
