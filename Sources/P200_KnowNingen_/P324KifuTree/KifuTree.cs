@@ -7,7 +7,7 @@ using Grayscale.P323Sennitite.I500Struct;
 
 namespace Grayscale.P324KifuTree.I250Struct
 {
-    public interface KifuTree : Tree<Starbeamable, KyokumenWrapper>
+    public interface KifuTree : Tree<IMove, KyokumenWrapper>
     {
         /// <summary>
         /// 千日手カウンター。

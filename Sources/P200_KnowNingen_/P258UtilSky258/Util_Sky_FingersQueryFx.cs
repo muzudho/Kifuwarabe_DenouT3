@@ -48,7 +48,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
             Fingers fs_motiSeme_temp = new Fingers();// （３）持ち駒_攻め手
             Fingers fs_motiKurau_temp = new Fingers();// （４）持ち駒_食らう側
 
-            src_Sky.Foreach_Starlights((Finger finger, Starlight light, ref bool toBreak) =>
+            src_Sky.Foreach_Starlights((Finger finger, IMoveHalf light, ref bool toBreak) =>
             {
                 RO_Star star = Util_Starlightable.AsKoma(light.Now);//駒
 
@@ -139,7 +139,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
             Fingers fingers_moti1p_temp = new Fingers();// （３）持ち駒_攻め手
             Fingers fingers_moti2p_temp = new Fingers();// （４）持ち駒_食らう側
 
-            src_Sky.Foreach_Starlights((Finger finger, Starlight dd, ref bool toBreak) =>
+            src_Sky.Foreach_Starlights((Finger finger, IMoveHalf dd, ref bool toBreak) =>
             {
                 RO_Star koma = Util_Starlightable.AsKoma(dd.Now);
 
@@ -174,7 +174,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
             RO_Star koma_Jigyoku_temp = null;
             RO_Star koma_Aitegyoku_temp = null;
 
-            src_Sky.Foreach_Starlights((Finger finger, Starlight ds, ref bool toBreak) =>
+            src_Sky.Foreach_Starlights((Finger finger, IMoveHalf ds, ref bool toBreak) =>
             {
                 RO_Star koma = Util_Starlightable.AsKoma(ds.Now);
 
@@ -220,7 +220,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
             RO_Star koma_1PGyoku_temp = null;
             RO_Star koma_2PGyoku_temp = null;
 
-            src_Sky.Foreach_Starlights((Finger finger, Starlight ds, ref bool toBreak) =>
+            src_Sky.Foreach_Starlights((Finger finger, IMoveHalf ds, ref bool toBreak) =>
             {
                 RO_Star koma = Util_Starlightable.AsKoma(ds.Now);
 

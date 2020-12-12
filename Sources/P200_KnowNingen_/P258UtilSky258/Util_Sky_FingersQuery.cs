@@ -36,7 +36,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         {
             Fingers fingers = new Fingers();
 
-            src_Sky.Foreach_Starlights((Finger finger, Starlight dd, ref bool toBreak) =>
+            src_Sky.Foreach_Starlights((Finger finger, IMoveHalf dd, ref bool toBreak) =>
             {
                 RO_Star koma = Util_Starlightable.AsKoma(dd.Now);
 
@@ -124,7 +124,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         {
             Fingers fingers = new Fingers();
 
-            src_Sky.Foreach_Starlights((Finger finger, Starlight light, ref bool toBreak) =>
+            src_Sky.Foreach_Starlights((Finger finger, IMoveHalf light, ref bool toBreak) =>
             {
                 RO_Star koma = Util_Starlightable.AsKoma(light.Now);
 
@@ -240,7 +240,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         {
             Fingers fingers = new Fingers();
 
-            srcSky.Foreach_Starlights((Finger finger, Starlight ds, ref bool toBreak) =>
+            srcSky.Foreach_Starlights((Finger finger, IMoveHalf ds, ref bool toBreak) =>
             {
 
                 RO_Star koma = Util_Starlightable.AsKoma(ds.Now);

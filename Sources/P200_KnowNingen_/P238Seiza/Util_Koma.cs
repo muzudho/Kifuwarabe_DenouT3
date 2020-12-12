@@ -29,7 +29,7 @@ namespace Grayscale.P238Seiza.L500Util
         {
             RO_Star koma;
 
-            Starlightable lightable = src_Sky.StarlightIndexOf(finger).Now;
+            IMoveSource lightable = src_Sky.StarlightIndexOf(finger).Now;
 
             if (lightable is RO_Star)
             {

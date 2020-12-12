@@ -24,7 +24,7 @@ namespace Grayscale.P224Sky.I500Struct
         /// </summary>
         int Temezumi { get; }
 
-        Starlight StarlightIndexOf(
+        IMoveHalf StarlightIndexOf(
             Finger finger,
             [CallerMemberName] string memberName = "",
             [CallerFilePath] string sourceFilePath = "",

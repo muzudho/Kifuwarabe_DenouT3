@@ -12,7 +12,7 @@ using System.Text;
 
 namespace Grayscale.P324KifuTree.L250Struct
 {
-    public class KifuNodeImpl : NodeImpl<Starbeamable, KyokumenWrapper>, KifuNode
+    public class KifuNodeImpl : NodeImpl<IMove, KyokumenWrapper>, KifuNode
     {
         #region プロパティー
 
@@ -57,7 +57,7 @@ namespace Grayscale.P324KifuTree.L250Struct
         /// </summary>
         /// <param name="shootingStarlightable"></param>
         /// <param name="kyokumenWrapper"></param>
-        public KifuNodeImpl(Starbeamable shootingStarlightable, KyokumenWrapper kyokumenWrapper)
+        public KifuNodeImpl(IMove shootingStarlightable, KyokumenWrapper kyokumenWrapper)
             : base(shootingStarlightable, kyokumenWrapper)
         {
             this.kyHyokaSheet = new KyHyokaSheetImpl();
@@ -82,10 +82,10 @@ namespace Grayscale.P324KifuTree.L250Struct
         //}
 
         public bool HasTuginoitte(
-            string sasiteStr
+            string moveStr
             )
         {
-            return this.ContainsKey_ChildNodes(sasiteStr);
+            return this.ContainsKey_ChildNodes(moveStr);
         }
 
         /// <summary>
@@ -102,20 +102,20 @@ namespace Grayscale.P324KifuTree.L250Struct
         /// カレントノードは変更しません。
         /// </summary>
         public void PutTuginoitte_New(
-            Node<Starbeamable, KyokumenWrapper> newNode
+            Node<IMove, KyokumenWrapper> newNode
             )
         {
             // 同じ指し手があれば追加してはいけない？
 #if DEBUG
-            string sasiteStr = Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(newNode.Key);
+            string moveStr = ConvMoveStrSfen.ToMoveStrSfen(newNode.Key);
 
             System.Diagnostics.Debug.Assert(
-                !this.HasTuginoitte(sasiteStr),
-                "指し手[" + sasiteStr + "]は既に指されていました。"
+                !this.HasTuginoitte(moveStr),
+                "指し手[" + moveStr + "]は既に指されていました。"
                 );
 #endif
             // SFENをキーに、次ノードを増やします。
-            this.PutAdd_ChildNode(Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(newNode.Key), newNode);
+            this.PutAdd_ChildNode(ConvMoveStrSfen.ToMoveStrSfen(newNode.Key), newNode);
             //手番はここでは変更できない。
 
             newNode.SetParentNode( this);
@@ -125,11 +125,11 @@ namespace Grayscale.P324KifuTree.L250Struct
         /// </summary>
         /// <param name="existsNode"></param>
         public void PutTuginoitte_Override(
-            Node<Starbeamable, KyokumenWrapper> existsNode
+            Node<IMove, KyokumenWrapper> existsNode
             )
         {
             // SFENをキーに、次ノードを増やします。
-            this.NextNodes[Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(existsNode.Key)] = existsNode;
+            this.NextNodes[ConvMoveStrSfen.ToMoveStrSfen(existsNode.Key)] = existsNode;
             existsNode.SetParentNode( this);
         }
 
@@ -141,7 +141,7 @@ namespace Grayscale.P324KifuTree.L250Struct
         {
             StringBuilder sb = new StringBuilder();
 
-            this.Foreach_ChildNodes((string key, Node<Starbeamable, KyokumenWrapper> node, ref bool toBreak) =>
+            this.Foreach_ChildNodes((string key, Node<IMove, KyokumenWrapper> node, ref bool toBreak) =>
             {
                 sb.AppendLine(Util_Sky307.Json_1Sky(
                     node.Value.KyokumenConst,
@@ -169,7 +169,7 @@ namespace Grayscale.P324KifuTree.L250Struct
         //        }
         //        else
         //        {
-        //            folderpath = folderpath + "/" + Conv_SasiteStr_Sfen.ToSasiteStr_Sfen_ForFilename(this.Key);
+        //            folderpath = folderpath + "/" + Conv_MoveStr_Sfen.ToMoveStr_Sfen_ForFilename(this.Key);
         //            Directory.CreateDirectory(folderpath);
         //        }
 

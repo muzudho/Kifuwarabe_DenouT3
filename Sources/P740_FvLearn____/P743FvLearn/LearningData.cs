@@ -79,7 +79,7 @@ namespace Grayscale.P743FvLearn.I250Learn
         /// <summary>
         /// 合法手一覧を作成したい。
         /// </summary>
-        void Aa_Yomi( Starbeamable sasite, IErrorController errH);
+        void Aa_Yomi( IMove move, IErrorController errH);
 
     }
 }

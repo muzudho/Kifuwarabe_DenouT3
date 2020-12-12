@@ -106,12 +106,12 @@
     <Compile Include="P743FvLearn\StopLearningImpl.cs" />
     <Compile Include="P743FvLearn\Util_AutoSortingRush.cs" />
     <Compile Include="P743FvLearn\Util_AutoKifuRead.cs" />
-    <Compile Include="P743FvLearn\Util_AutoSasiteRush.cs" />
+    <Compile Include="P743FvLearn\UtilAutoMoveRush.cs" />
     <Compile Include="P743FvLearn\Util_LearnOperation.cs" />
     <Compile Include="P743FvLearn\LearningData.cs" />
     <Compile Include="P743FvLearn\GohosyuListItem.cs" />
     <Compile Include="P743FvLearn\LearningDataImpl.cs" />
-    <Compile Include="P743FvLearn\HonpuSasiteListItemImpl.cs" />
+    <Compile Include="P743FvLearn\HonpuMoveListItemImpl.cs" />
     <Compile Include="P743FvLearn\N40t14List.cs" />
     <Compile Include="P743FvLearn\N54List.cs" />
     <Compile Include="P743FvLearn\TyoseiryoSettings.cs" />

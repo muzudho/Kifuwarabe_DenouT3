@@ -13,7 +13,7 @@ namespace Grayscale.P222LogKaisetu.L250Struct
         /// <summary>
         /// あれば指し手。なければヌル。
         /// </summary>
-        public Starbeamable sasiteOrNull{get;set;}
+        public IMove moveOrNull{get;set;}
 
         /// <summary>
         /// 説明文章（１行）。

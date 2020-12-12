@@ -1,7 +1,7 @@
 ﻿
 namespace Grayscale.P163KifuCsa.I250Struct
 {
-    public interface CsaKifuSasite
+    public interface CsaKifuMove
     {
         /// <summary>
         /// 先手なら「+」、後手なら「-」。

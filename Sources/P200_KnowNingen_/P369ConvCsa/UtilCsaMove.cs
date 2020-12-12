@@ -15,7 +15,7 @@ using Grayscale.P258UtilSky258.L500UtilSky;
 
 namespace Grayscale.P369ConvCsa.L500Converter
 {
-    public abstract class Util_CsaSasite
+    public abstract class UtilCsaMove
     {
 
         /// <summary>
@@ -23,7 +23,7 @@ namespace Grayscale.P369ConvCsa.L500Converter
         /// </summary>
         /// <param name="csa"></param>
         /// <returns></returns>
-        public static SyElement ToSrcMasu(CsaKifuSasite csa)
+        public static SyElement ToSrcMasu(CsaKifuMove csa)
         {
             int suji;
             int dan;
@@ -38,7 +38,7 @@ namespace Grayscale.P369ConvCsa.L500Converter
         /// </summary>
         /// <param name="csa"></param>
         /// <returns></returns>
-        public static SyElement ToDstMasu(CsaKifuSasite csa)
+        public static SyElement ToDstMasu(CsaKifuMove csa)
         {
             int suji;
             int dan;
@@ -54,7 +54,7 @@ namespace Grayscale.P369ConvCsa.L500Converter
         /// </summary>
         /// <param name="csa"></param>
         /// <returns></returns>
-        public static Komasyurui14 ToKomasyurui(CsaKifuSasite csa)
+        public static Komasyurui14 ToKomasyurui(CsaKifuMove csa)
         {
             Komasyurui14 result_kifuwarabe;
 
@@ -85,7 +85,7 @@ namespace Grayscale.P369ConvCsa.L500Converter
         /// </summary>
         /// <param name="csa"></param>
         /// <returns></returns>
-        public static Playerside ToPside(CsaKifuSasite csa)
+        public static Playerside ToPside(CsaKifuMove csa)
         {
             Playerside result;
 
@@ -105,7 +105,7 @@ namespace Grayscale.P369ConvCsa.L500Converter
         /// <param name="csa"></param>
         /// <param name="ittemae_Sky">1手前の局面。ルート局面などの理由で１手前の局面がない場合はヌル。</param>
         /// <returns></returns>
-        public static string ToSfen(CsaKifuSasite csa, SkyConst ittemae_Sky_orNull)
+        public static string ToSfen(CsaKifuMove csa, SkyConst ittemae_Sky_orNull)
         {
             StringBuilder sb = new StringBuilder();
 

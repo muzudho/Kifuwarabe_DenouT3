@@ -47,7 +47,7 @@ namespace Grayscale.P461Server.L250Util
         public static void SetCurNode_Srv(
             Model_Taikyoku model_Taikyoku,// Taikyokuの内容をManualへ移す。
             Model_Manual model_Manual,
-            Node<Starbeamable, KyokumenWrapper> newNode,
+            Node<IMove, KyokumenWrapper> newNode,
             out string jsaFugoStr,
             IErrorController errH
             )
@@ -60,7 +60,7 @@ namespace Grayscale.P461Server.L250Util
             model_Manual.GuiTemezumi = model_Taikyoku.Kifu.CurNode.Value.KyokumenConst.Temezumi;
             model_Manual.GuiPside = model_Taikyoku.Kifu.CurNode.Value.KyokumenConst.KaisiPside;
 
-            jsaFugoStr = Conv_SasiteStr_Jsa.ToSasiteStr_Jsa(newNode, errH);
+            jsaFugoStr = ConvMoveStrJsa.ToMoveStrJsa(newNode, errH);
         }
 
         /// <summary>
@@ -285,7 +285,7 @@ namespace Grayscale.P461Server.L250Util
             //------------------------------
             // 棋譜から１手削ります
             //------------------------------
-            Node<Starbeamable, KyokumenWrapper> removeeLeaf = model_Taikyoku.Kifu.CurNode;
+            Node<IMove, KyokumenWrapper> removeeLeaf = model_Taikyoku.Kifu.CurNode;
             int korekaranoTemezumi = removeeLeaf.Value.KyokumenConst.Temezumi - 1;//１手前へ。
 
             if (removeeLeaf.IsRoot())
@@ -302,7 +302,7 @@ namespace Grayscale.P461Server.L250Util
             // 符号
             //------------------------------
             // [巻戻し]ボタン
-            jsaFugoStr = Conv_SasiteStr_Jsa.ToSasiteStr_Jsa(removeeLeaf,errH);
+            jsaFugoStr = ConvMoveStrJsa.ToMoveStrJsa(removeeLeaf,errH);
 
 
 
@@ -402,7 +402,7 @@ namespace Grayscale.P461Server.L250Util
         public static void Komamove1a_50Srv(
             out bool torareruKomaAri,
             out RO_Star koma_Food_after,
-            Starlight dst,
+            IMoveHalf dst,
             Finger fig_btnTumandeiruKoma,
             RO_Star foodee_koma,//取られる対象の駒
             Model_Manual model_Manual,

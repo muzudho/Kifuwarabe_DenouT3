@@ -23,7 +23,7 @@ namespace Grayscale.P542Scoreing.L061Util
         /// 盤１個分のログ。
         /// </summary>
         public static void Build_LogBoard(
-            Node<Starbeamable, KyokumenWrapper> node_forLog,
+            Node<IMove, KyokumenWrapper> node_forLog,
             string nodePath,
             KifuNode niniNode,//任意のノード
             //KifuTree kifu_forAssert,
@@ -61,7 +61,7 @@ namespace Grayscale.P542Scoreing.L061Util
 //#endif
                 );
 
-                logBrd_move1.sasiteOrNull = niniNode.Key;
+                logBrd_move1.moveOrNull = niniNode.Key;
 
                 logBrd_move1.YomikaisiTemezumi = niniNode.Value.KyokumenConst.Temezumi;//読み開始手目済み    // int.MinValue;
                 logBrd_move1.Temezumi = int.MinValue;

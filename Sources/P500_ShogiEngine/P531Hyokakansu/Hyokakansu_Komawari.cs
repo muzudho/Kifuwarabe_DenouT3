@@ -47,7 +47,7 @@ namespace Grayscale.P531Hyokakansu.L500Hyokakansu
 
 
 
-            srcSky.Foreach_Starlights((Finger finger, Starlight light, ref bool toBreak) =>
+            srcSky.Foreach_Starlights((Finger finger, IMoveHalf light, ref bool toBreak) =>
             {
                 RO_Starlight ms = (RO_Starlight)light;
 

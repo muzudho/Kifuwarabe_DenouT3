@@ -31,32 +31,32 @@ using System.Diagnostics;
 
 namespace Grayscale.P339ConvKyokume.L500Converter
 {
-    public abstract class Conv_SfenSasiteTokens
+    public abstract class ConvSfenMoveTokens
     {
         /// <summary>
         /// ************************************************************************************************************************
-        /// 符号１「7g7f」を元に、sasite を作ります。
+        /// 符号１「7g7f」を元に、move を作ります。
         /// ************************************************************************************************************************
         /// 
         /// ＜[再生]、[コマ送り]で呼び出されます＞
         /// </summary>
         /// <returns></returns>
-        public static void ToSasite(
+        public static void ToMove(
             bool isHonshogi,
             string str1, //123456789 か、 PLNSGKRB
             string str2, //abcdefghi か、 *
             string str3, //123456789
             string str4, //abcdefghi
             string strNari, //+
-            out Starbeamable sasite,
+            out IMove move,
             KifuTree kifu,
             string hint,
             IErrorController errH
             )
         {
-            sasite = Util_Sky258A.NULL_OBJECT_SASITE;
+            move = Util_Sky258A.NullObjectMove;
 
-            Node<Starbeamable, KyokumenWrapper> siteiNode = kifu.CurNode;
+            Node<IMove, KyokumenWrapper> siteiNode = kifu.CurNode;
             SkyConst src_Sky = siteiNode.Value.KyokumenConst;
             //kifu.AssertPside(kifu.CurNode, "str1=" + str1, errH);
             Playerside pside1 = src_Sky.KaisiPside;
@@ -260,7 +260,7 @@ namespace Grayscale.P339ConvKyokume.L500Converter
                 // 結果
                 //------------------------------
                 // 棋譜
-                sasite = new RO_Starbeam(
+                move = new RO_Starbeam(
                     //koma,//TODO:
 
                     new RO_Star(

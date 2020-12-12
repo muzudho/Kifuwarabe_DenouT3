@@ -29,9 +29,9 @@ namespace Grayscale.P354UtilSasuEx.L500Util
         /// これが通称【水際のいんちきプログラム】なんだぜ☆
         /// 必要により、【成り】の指し手を追加します。
         /// </summary>
-        public static Dictionary<string, SasuEntry> CreateNariSasite(
+        public static Dictionary<string, SasuEntry> CreateNariMove(
             SkyConst src_Sky,
-            Dictionary<string, SasuEntry> a_sasitebetuEntry,
+            Dictionary<string, SasuEntry> a_moveBetuEntry,
             IErrorController errH
             )
         {
@@ -42,16 +42,16 @@ namespace Grayscale.P354UtilSasuEx.L500Util
 
             try
             {
-                Dictionary<string, Starbeamable> newSasiteList = new Dictionary<string, Starbeamable>();
+                Dictionary<string, IMove> newMoveList = new Dictionary<string, IMove>();
 
-                foreach(KeyValuePair<string, SasuEntry> entry in a_sasitebetuEntry)
+                foreach(KeyValuePair<string, SasuEntry> entry in a_moveBetuEntry)
                 {
                     // 
                     // ・移動元の駒
                     // ・移動先の駒
                     //
-                    RO_Star srcKoma = Util_Starlightable.AsKoma(entry.Value.NewSasite.LongTimeAgo);
-                    RO_Star dstKoma = Util_Starlightable.AsKoma(entry.Value.NewSasite.Now);
+                    RO_Star srcKoma = Util_Starlightable.AsKoma(entry.Value.NewMove.LongTimeAgo);
+                    RO_Star dstKoma = Util_Starlightable.AsKoma(entry.Value.NewMove.Now);
 
                     // 成りができる動きなら真。
                     bool isPromotionable;
@@ -63,7 +63,7 @@ namespace Grayscale.P354UtilSasuEx.L500Util
 
                     if (isPromotionable)
                     {
-                        Starbeamable sasite = new RO_Starbeam(
+                        IMove move = new RO_Starbeam(
                             srcKoma,// 移動元
                             new RO_Star(
                                 dstKoma.Pside,
@@ -74,10 +74,10 @@ namespace Grayscale.P354UtilSasuEx.L500Util
                         );
 
                         // TODO: 一段目の香車のように、既に駒は成っている場合があります。無い指し手だけ追加するようにします。
-                        string sasiteStr = Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(sasite);//重複防止用のキー
-                        if (!newSasiteList.ContainsKey(sasiteStr))
+                        string moveStr = ConvMoveStrSfen.ToMoveStrSfen(move);//重複防止用のキー
+                        if (!newMoveList.ContainsKey(moveStr))
                         {
-                            newSasiteList.Add(sasiteStr, sasite);
+                            newMoveList.Add(moveStr, move);
                         }
                     }
 
@@ -91,13 +91,13 @@ namespace Grayscale.P354UtilSasuEx.L500Util
 
 
                 // 新しく作った【成り】の指し手を追加します。
-                foreach (Starbeamable newSasite in newSasiteList.Values)
+                foreach (IMove newMove in newMoveList.Values)
                 {
                     // 指す前の駒
-                    RO_Star sasumaenoKoma = Util_Starlightable.AsKoma(newSasite.LongTimeAgo);
+                    RO_Star sasumaenoKoma = Util_Starlightable.AsKoma(newMove.LongTimeAgo);
 
                     // 指した駒
-                    RO_Star sasitaKoma = Util_Starlightable.AsKoma(newSasite.Now);
+                    RO_Star sasitaKoma = Util_Starlightable.AsKoma(newMove.Now);
 
                     // 指す前の駒を、盤上のマス目で指定
                     Finger figSasumaenoKoma = Util_Sky_FingersQuery.InMasuNow(src_Sky,
@@ -105,14 +105,14 @@ namespace Grayscale.P354UtilSasuEx.L500Util
 
                     try
                     {
-                        string sasiteStr = Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(newSasite);
+                        string moveStr = ConvMoveStrSfen.ToMoveStrSfen(newMove);
 
-                        if (!result_komabetuEntry.ContainsKey(sasiteStr))
+                        if (!result_komabetuEntry.ContainsKey(moveStr))
                         {
                             // 指し手が既存でない局面だけを追加します。
 
                             // 『進める駒』と、『移動先升』
-                            result_komabetuEntry.Add(sasiteStr, new SasuEntry(newSasite, figSasumaenoKoma, sasitaKoma.Masu,true));
+                            result_komabetuEntry.Add(moveStr, new SasuEntry(newMove, figSasumaenoKoma, sasitaKoma.Masu,true));
                         }
 
                     }
@@ -121,16 +121,16 @@ namespace Grayscale.P354UtilSasuEx.L500Util
                         // 既存の指し手
                         StringBuilder sb = new StringBuilder();
                         {
-                            foreach (KeyValuePair<string, SasuEntry> entry in a_sasitebetuEntry)
+                            foreach (KeyValuePair<string, SasuEntry> entry in a_moveBetuEntry)
                             {
                                 sb.Append("「");
-                                sb.Append(Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(entry.Value.NewSasite));
+                                sb.Append(ConvMoveStrSfen.ToMoveStrSfen(entry.Value.NewMove));
                                 sb.Append("」");
                             }
                         }
 
                         //>>>>> エラーが起こりました。
-                        errH.Panic(ex, "新しく作った「成りの指し手」を既存ノードに追加していた時です。：追加したい指し手=「" + Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(newSasite) + "」既存の手=" + sb.ToString());
+                        errH.Panic(ex, "新しく作った「成りの指し手」を既存ノードに追加していた時です。：追加したい指し手=「" + ConvMoveStrSfen.ToMoveStrSfen(newMove) + "」既存の手=" + sb.ToString());
                         throw;
                     }
 
@@ -138,7 +138,7 @@ namespace Grayscale.P354UtilSasuEx.L500Util
             }
             catch (Exception ex)
             {
-                throw new Exception("Convert04.cs#AddNariSasiteでｴﾗｰ。:" + ex.GetType().Name + ":" + ex.Message);
+                throw new Exception("Convert04.cs#AddNariMoveでｴﾗｰ。:" + ex.GetType().Name + ":" + ex.Message);
             }
 
             return result_komabetuEntry;
@@ -164,17 +164,17 @@ namespace Grayscale.P354UtilSasuEx.L500Util
         //}
 
         //public static void PutAdd_ToHubNode(
-        //    string sasiteStr_sfen,
+        //    string moveStr_sfen,
         //    SasuEntry sasuEntry,
         //    SkyConst src_Sky,
         //    KifuNode hubNode_mutable,
         //    IErrorController errH
         //    )
         //{
-        //    if (!hubNode_mutable.ContainsKey_ChildNodes(sasiteStr_sfen))//チェックを追加
+        //    if (!hubNode_mutable.ContainsKey_ChildNodes(moveStr_sfen))//チェックを追加
         //    {
         //        hubNode_mutable.PutAdd_ChildNode(
-        //            sasiteStr_sfen,
+        //            moveStr_sfen,
         //            Conv_SasuEntry.ToKifuNode(sasuEntry, src_Sky, errH)
         //        );
         //    }

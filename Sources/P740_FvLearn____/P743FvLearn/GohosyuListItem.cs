@@ -25,8 +25,8 @@ namespace Grayscale.P743FvLearn.L250Learn
         /// <summary>
         /// JSAの指し手符号
         /// </summary>
-        public string JsaSasiteStr { get { return this.jsaSasiteStr; } }
-        private string jsaSasiteStr;
+        public string JsaMoveStr { get { return this.jsaMoveStr; } }
+        private string jsaMoveStr;
 
 #if DEBUG || LEARN
         /// <summary>
@@ -42,7 +42,7 @@ namespace Grayscale.P743FvLearn.L250Learn
         private KyHyokaMeisai_Koumoku ppMeisai;
 #endif
 
-        public GohosyuListItem(int count, string sfen, string jsaSasiteStr
+        public GohosyuListItem(int count, string sfen, string jsaMoveStr
 #if DEBUG || LEARN
 ,
             KyHyokaMeisai_Koumoku komawariMeisai,
@@ -52,7 +52,7 @@ namespace Grayscale.P743FvLearn.L250Learn
         {
             this.count = count;
             this.sfen = sfen;
-            this.jsaSasiteStr = jsaSasiteStr;
+            this.jsaMoveStr = jsaMoveStr;
 #if DEBUG || LEARN
             this.komawariMeisai = komawariMeisai;
             this.ppMeisai = ppMeisai;
@@ -67,8 +67,8 @@ namespace Grayscale.P743FvLearn.L250Learn
             sb.Append(")");
 
             // 日本将棋連盟式の指し手の符号表示は全角。「▲５三銀右不成」の７文字幅を最大と想定。
-            sb.Append(this.JsaSasiteStr);
-            switch (this.JsaSasiteStr.Length)
+            sb.Append(this.JsaMoveStr);
+            switch (this.JsaMoveStr.Length)
             {
                 case 0: sb.Append("　　　　　　　"); break;
                 case 1: sb.Append("　　　　　　"); break;

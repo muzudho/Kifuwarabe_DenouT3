@@ -18,12 +18,12 @@ namespace Grayscale.P360ConvSasu.L500Converter
         /// <param name="komaBETUSusumeruMasus">駒別の進める升</param>
         /// <param name="siteiNode">指定ノード</param>
         /// <returns></returns>
-        public static Maps_OneAndMulti<Finger, Starbeamable> ToKomaBETUAllSasites(
+        public static Maps_OneAndMulti<Finger, IMove> ToKomaBetuAllMoves(
             List_OneAndMulti<Finger, SySet<SyElement>> komaBETUSusumeruMasus,
             SkyConst src_Sky//Node<Starbeamable, KyokumenWrapper> siteiNode
             )
         {
-            Maps_OneAndMulti<Finger, Starbeamable> result_komabetuAllSasite = new Maps_OneAndMulti<Finger, Starbeamable>();
+            Maps_OneAndMulti<Finger, IMove> result_komabetuAllMove = new Maps_OneAndMulti<Finger, IMove>();
 
             komaBETUSusumeruMasus.Foreach_Entry((Finger figKoma, SySet<SyElement> susumuMasuSet, ref bool toBreak) =>
             {
@@ -39,17 +39,17 @@ namespace Grayscale.P360ConvSasu.L500Converter
                         srcStar.Komasyurui// srcStar.Haiyaku//TODO:ここで、駒の種類が「成り」に上書きされているバージョンも考えたい
                     );
 
-                    Starbeamable sasite = new RO_Starbeam(
+                    IMove move = new RO_Starbeam(
                         srcStar,// 移動元
                         dstStar,// 移動先
                         Komasyurui14.H00_Null___//取った駒不明
                     );
-                    result_komabetuAllSasite.Put_NewOrOverwrite(figKoma, sasite);//FIXME: １つの駒に指し手は１つ？？
+                    result_komabetuAllMove.Put_NewOrOverwrite(figKoma, move);//FIXME: １つの駒に指し手は１つ？？
 
                     // これが通称【水際のいんちきプログラム】なんだぜ☆
                     // 必要により、【成り】の指し手を追加します。
-                    Util_Sasu269.Add_KomaBETUAllNariSasites(
-                        result_komabetuAllSasite,
+                    Util_Sasu269.Add_KomaBETUAllNariMoves(
+                        result_komabetuAllMove,
                         figKoma,//動かす駒
                         srcStar,//動かす星
                         dstStar//移動先の星
@@ -57,7 +57,7 @@ namespace Grayscale.P360ConvSasu.L500Converter
                 }
             });
 
-            return result_komabetuAllSasite;
+            return result_komabetuAllMove;
         }
 
     }

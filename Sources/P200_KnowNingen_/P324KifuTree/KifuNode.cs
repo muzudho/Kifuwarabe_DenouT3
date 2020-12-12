@@ -11,7 +11,7 @@ namespace Grayscale.P324KifuTree.I250Struct
     /// <summary>
     /// 棋譜ノード。
     /// </summary>
-    public interface KifuNode : Node<Starbeamable, KyokumenWrapper>
+    public interface KifuNode : Node<IMove, KyokumenWrapper>
     {
 
         #region プロパティー
@@ -59,18 +59,18 @@ namespace Grayscale.P324KifuTree.I250Struct
         /// 
         /// カレントノードは変更しません。
         /// </summary>
-        void PutTuginoitte_New(Node<Starbeamable, KyokumenWrapper> newNode);
+        void PutTuginoitte_New(Node<IMove, KyokumenWrapper> newNode);
         /// <summary>
         /// 既存の子要素を上書きします。
         /// </summary>
         /// <param name="existsNode"></param>
-        void PutTuginoitte_Override(Node<Starbeamable, KyokumenWrapper> existsNode);
-        bool HasTuginoitte(string sasiteStr);
+        void PutTuginoitte_Override(Node<IMove, KyokumenWrapper> existsNode);
+        bool HasTuginoitte(string moveStr);
 
         ///// <summary>
         ///// 王手がかかった局面は取り除きます。
         ///// </summary>
-        //Maps_OneAndMulti<Finger, Starbeamable> SplitSasite_ByStar(Node<Starbeamable, KyokumenWrapper> hubNode, IErrorController errH);
+        //Maps_OneAndMulti<Finger, Starbeamable> SplitMove_ByStar(Node<Starbeamable, KyokumenWrapper> hubNode, IErrorController errH);
 
         string Json_NextNodes_MultiSky(
             string memo,

@@ -1,22 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Windows.Forms;
 using Grayscale.P003Log.I500Struct;
 using Grayscale.P743FvLearn.L250Learn;
 using Grayscale.P743FvLearn.L260View;
 using Grayscale.P743FvLearn.L450Tyoseiryo;
 using Grayscale.P743FvLearn.L470StartZero;
 using Grayscale.P743FvLearn.L480Functions;
-using System.IO;
-using System.Windows.Forms;
-using Grayscale.P743FvLearn.I490StopLearning;
-using Grayscale.P743FvLearn.L490StopLearning;
-using Grayscale.P743FvLearn.L508AutoSasiteRush;
-using Grayscale.P743FvLearn.L506AutoSasiteSort;
 
-namespace Grayscale.P743FvLearn.L506AutoSasiteSort
+namespace Grayscale.P743FvLearn.L506AutoMoveSort
 {
     public abstract class Util_AutoSortingRush
     {
@@ -31,10 +21,10 @@ namespace Grayscale.P743FvLearn.L506AutoSasiteSort
         /// <param name="ref_isRequestDoEvents"></param>
         /// <param name="loopLimit"></param>
         /// <param name="ref_tyoseiryo"></param>
-        /// <param name="sfenSasiteStr"></param>
+        /// <param name="sfenMoveStr"></param>
         /// <param name="uc_Main"></param>
         /// <param name="errH"></param>
-        public static void Do_SortSasiteRush(
+        public static void DoSortMoveRush(
             out int out_pushCount,
             out bool out_isEndAutoLearn,
             ref bool ref_isRequest_ShowGohosyu,
@@ -42,7 +32,7 @@ namespace Grayscale.P743FvLearn.L506AutoSasiteSort
             ref bool ref_isRequestDoEvents,
             int loopLimit,
             ref float ref_tyoseiryo,
-            string sfenSasiteStr,
+            string sfenMoveStr,
             Uc_Main uc_Main, IErrorController errH
             )
         {
@@ -69,18 +59,18 @@ namespace Grayscale.P743FvLearn.L506AutoSasiteSort
                 {
                     GohosyuListItem gohosyuItem = (GohosyuListItem)uc_Main.LstGohosyu.Items[0];
 
-                    if (sfenSasiteStr == gohosyuItem.Sfen)
+                    if (sfenMoveStr == gohosyuItem.Sfen)
                     {
                         // 1位なら終了
 #if DEBUG
-                        errH.Logger.WriteLineAddMemo("items.Count=[" + uc_Main.LstGohosyu.Items.Count + "] sfenSasiteStr=[" + sfenSasiteStr + "] gohosyuItem.Sfen=[" + gohosyuItem.Sfen + "]");
+                        errH.Logger.WriteLineAddMemo("items.Count=[" + uc_Main.LstGohosyu.Items.Count + "] sfenMoveStr=[" + sfenMoveStr + "] gohosyuItem.Sfen=[" + gohosyuItem.Sfen + "]");
 #endif
                         break;
                     }
                 }
 
                 // １位ではないのでランクアップ。
-                Util_LearnFunctions.Do_RankUpHonpu(ref ref_isRequest_ShowGohosyu, uc_Main, sfenSasiteStr, ref_tyoseiryo);
+                Util_LearnFunctions.Do_RankUpHonpu(ref ref_isRequest_ShowGohosyu, uc_Main, sfenMoveStr, ref_tyoseiryo);
 
                 // 調整量の自動調整
                 if (uc_Main.ChkTyoseiryoAuto.Checked)

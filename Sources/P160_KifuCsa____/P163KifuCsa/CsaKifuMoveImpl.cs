@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Grayscale.P163KifuCsa.L250Struct
 {
-    public class CsaKifuSasiteImpl : CsaKifuSasite
+    public class CsaKifuMoveImpl : CsaKifuMove
     {
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace Grayscale.P163KifuCsa.L250Struct
         /// </summary>
         public int OptionTemezumi { get; set; }
 
-        public CsaKifuSasiteImpl()
+        public CsaKifuMoveImpl()
         {
             this.Sengo = "";
             this.SourceMasu = "";

@@ -11,7 +11,7 @@ using Grayscale.P295_JsaFugoWrit.L500Writer;
 
 namespace Grayscale.P296ConvJsa.L500Converter
 {
-    public abstract class Conv_SasiteStr_Jsa
+    public abstract class ConvMoveStrJsa
     {
         /// <summary>
         /// 「▲７六歩」といった符号にして返します。
@@ -20,13 +20,13 @@ namespace Grayscale.P296ConvJsa.L500Converter
         /// <param name="kyokumenWrapper">現局面です。</param>
         /// <param name="errH"></param>
         /// <returns></returns>
-        public static string ToSasiteStr_Jsa(
-            Node<Starbeamable, KyokumenWrapper> node,
+        public static string ToMoveStrJsa(
+            Node<IMove, KyokumenWrapper> node,
             //KyokumenWrapper kyokumenWrapper,
             IErrorController errH
             )
         {
-            RO_Star koma = Util_Starlightable.AsKoma(((Starbeamable)node.Key).LongTimeAgo);
+            RO_Star koma = Util_Starlightable.AsKoma(((IMove)node.Key).LongTimeAgo);
 
             JsaFugoImpl jsaFugo = Array_JsaFugoCreator15.ItemMethods[(int)Util_Komahaiyaku184.Syurui(koma.Haiyaku)](node.Key,
                 node.Value,// kyokumenWrapper,

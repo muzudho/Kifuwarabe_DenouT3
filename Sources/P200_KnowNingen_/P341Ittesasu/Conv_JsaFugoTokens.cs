@@ -38,7 +38,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
         /// ＜[再生]、[コマ送り]で呼び出されます＞
         /// </summary>
         /// <returns></returns>
-        public static void ToSasite(
+        public static void ToMove(
             string strPside, //▲△
             string strSuji, //123…9、１２３…９、一二三…九
             string strDan, //123…9、１２３…９、一二三…九
@@ -48,12 +48,12 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             string strAgaruHiku, // 上|引
             string strNariNarazu, //成|不成
             string strDaHyoji, //打
-            out Starbeamable sasite,
+            out IMove move,
             KifuTree kifu,
             IErrorController errH
             )
         {
-            Node<Starbeamable, KyokumenWrapper> siteiNode = kifu.CurNode;
+            Node<IMove, KyokumenWrapper> siteiNode = kifu.CurNode;
             SkyConst src_Sky = siteiNode.Value.KyokumenConst;
 
             //------------------------------
@@ -1018,7 +1018,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
 
 
             // １手を、データにします。
-            sasite = new RO_Starbeam(
+            move = new RO_Starbeam(
                 //foundKoma,//TODO:
 
                 new RO_Star(

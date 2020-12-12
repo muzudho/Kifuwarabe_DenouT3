@@ -19,7 +19,7 @@ namespace Grayscale.P341Ittesasu.I250OperationA
         /// <summary>
         /// 一手指し、終了局面。これから指されるはずの手。棋譜に記録するために「指す前／指した後」を含めた手。
         /// </summary>
-        Starbeamable KorekaranoSasite { get; }// set;
+        IMove KorekaranoMove { get; }// set;
 
         /// <summary>
         /// これから作る局面の、手目済み。

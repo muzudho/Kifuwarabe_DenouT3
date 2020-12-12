@@ -156,7 +156,7 @@ namespace Grayscale.P743FvLearn.L480Functions
         /// <summary>
         /// 本譜の手をランクアップ。
         /// </summary>
-        public static void Do_RankUpHonpu(ref bool ref_isRequestShowGohosyu, Uc_Main uc_Main, string sfenSasiteStr, float tyoseiryo)
+        public static void Do_RankUpHonpu(ref bool ref_isRequestShowGohosyu, Uc_Main uc_Main, string sfenMoveStr, float tyoseiryo)
         {
             IErrorController errH = ErrorControllerReference.Learner;
 
@@ -175,10 +175,10 @@ namespace Grayscale.P743FvLearn.L480Functions
             //
             // 合法手一覧
             //
-            uc_Main.LearningData.Kifu.CurNode.Foreach_ChildNodes((string key, Node<Starbeamable, KyokumenWrapper> node, ref bool toBreak) =>
+            uc_Main.LearningData.Kifu.CurNode.Foreach_ChildNodes((string key, Node<IMove, KyokumenWrapper> node, ref bool toBreak) =>
             {
                 // 本譜手はまだ計算しない。
-                if (key == sfenSasiteStr)
+                if (key == sfenMoveStr)
                 {
                     goto gt_NextLoop1;
                 }
@@ -203,7 +203,7 @@ namespace Grayscale.P743FvLearn.L480Functions
             //
             // 本譜手
             //
-            if (uc_Main.LearningData.Kifu.CurNode.HasChildNode(sfenSasiteStr))
+            if (uc_Main.LearningData.Kifu.CurNode.HasChildNode(sfenMoveStr))
             {
                 // 盤上の駒、持駒を数えます。
                 N54List currentNode_n54List = Util_54List.Calc_54List(uc_Main.LearningData.Kifu.CurNode.Value.KyokumenConst, errH);
@@ -211,7 +211,7 @@ namespace Grayscale.P743FvLearn.L480Functions
                 float real_tyoseiryo; //実際に調整した量。
                 Util_FvScoreing.UpdateKyokumenHyoka(
                     currentNode_n54List,
-                    uc_Main.LearningData.Kifu.CurNode.GetChildNode(sfenSasiteStr).Value.KyokumenConst,
+                    uc_Main.LearningData.Kifu.CurNode.GetChildNode(sfenMoveStr).Value.KyokumenConst,
                     uc_Main.LearningData.Fv,
                     tyoseiryo_good,
                     out real_tyoseiryo,
@@ -220,7 +220,7 @@ namespace Grayscale.P743FvLearn.L480Functions
             }
             else
             {
-                Debug.Fail("指し手[" + sfenSasiteStr +
+                Debug.Fail("指し手[" + sfenMoveStr +
                     "]に対応する次ノードは作成されていませんでした。\n" +
                     uc_Main.LearningData.DumpToAllGohosyu(
                         uc_Main.LearningData.Kifu.CurNode.Value.KyokumenConst));

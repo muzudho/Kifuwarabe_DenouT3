@@ -14,9 +14,9 @@ namespace Grayscale.P341Ittesasu.L250OperationA
 
         public Finger FigFoodKoma { get; set; }
 
-        public Node<Starbeamable, KyokumenWrapper> Get_SyuryoNode_OrNull { get { return this.syuryoNode_OrNull; } }
-        public Node<Starbeamable, KyokumenWrapper> Set_SyuryoNode_OrNull { set { this.syuryoNode_OrNull = value; } }
-        private Node<Starbeamable, KyokumenWrapper> syuryoNode_OrNull;
+        public Node<IMove, KyokumenWrapper> Get_SyuryoNode_OrNull { get { return this.syuryoNode_OrNull; } }
+        public Node<IMove, KyokumenWrapper> Set_SyuryoNode_OrNull { set { this.syuryoNode_OrNull = value; } }
+        private Node<IMove, KyokumenWrapper> syuryoNode_OrNull;
 
         public Komasyurui14 FoodKomaSyurui{ get; set; }
 
@@ -25,7 +25,7 @@ namespace Grayscale.P341Ittesasu.L250OperationA
         public IttesasuResultImpl(
             Finger figMovedKoma,
             Finger figFoodKoma,
-            Node<Starbeamable, KyokumenWrapper> syuryoNode_OrNull,
+            Node<IMove, KyokumenWrapper> syuryoNode_OrNull,
             Komasyurui14 foodKomaSyurui,
             SkyConst susunda_Sky_orNull
             )

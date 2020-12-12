@@ -237,7 +237,7 @@ namespace Grayscale.P693ShogiGui.L480Util
 
             {
                 KifuNode newNode = new KifuNodeImpl(
-                            Util_Sky258A.ROOT_SASITE,//ルートなので
+                            Util_Sky258A.RootMove,//ルートなので
                             new KyokumenWrapper( SkyConst.NewInstance(
                                 buffer_Sky,
                                 0//空っぽに戻すので、 0手済みに変更。

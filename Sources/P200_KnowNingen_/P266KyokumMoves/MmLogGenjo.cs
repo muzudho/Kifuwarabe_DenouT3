@@ -24,7 +24,7 @@ namespace Grayscale.P266KyokumMoves.L250Log
 
         int Temezumi_yomiCur { get; }
 
-        Starbeamable Sasite { get; }
+        IMove Move { get; }
 
         IErrorController ErrH { get; }
 

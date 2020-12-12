@@ -174,7 +174,7 @@ namespace Grayscale.P743FvLearn.L250Learn
         /// <summary>
         /// 合法手一覧を作成したい。
         /// </summary>
-        public void Aa_Yomi(Starbeamable sasite, IErrorController errH)
+        public void Aa_Yomi(IMove move, IErrorController errH)
         {
             //----------------------------------------
             // 合法手のNextNodesを作成します。
@@ -229,7 +229,7 @@ namespace Grayscale.P743FvLearn.L250Learn
             //sb.AppendLine("--------------------");
             //sb.AppendLine("カレントノード内部データ");
             //sb.AppendLine("--------------------");
-            src_Sky.Foreach_Starlights((Finger finger, Starlight light, ref bool toBreak) =>
+            src_Sky.Foreach_Starlights((Finger finger, IMoveHalf light, ref bool toBreak) =>
             {
                 // 番号
                 sb.Append("Fig.");
@@ -298,7 +298,7 @@ namespace Grayscale.P743FvLearn.L250Learn
                 srcMasu_orMinusOne,
                 dstMasu_orMinusOne,
                 foodKoma,
-                Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(this.Kifu.CurNode.Key),
+                ConvMoveStrSfen.ToMoveStrSfen(this.Kifu.CurNode.Key),
                 "",
                 toml.Get<TomlTable>("Resources").Get<string>("LearningPositionLogPngBasename"),
                 LearningDataImpl.REPORT_ENVIRONMENT,

@@ -17,7 +17,7 @@ namespace Grayscale.P360ConvSasu.L500Converter
     /// <summary>
     /// 星別指し手ユーティリティー。
     /// </summary>
-    public abstract class Conv_StarbetuSasites
+    public abstract class ConvStarbetuMoves
     {
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace Grayscale.P360ConvSasu.L500Converter
         /// <param name="pside_genTeban"></param>
         /// <returns>次の局面一覧を持った、入れ物ノード（ハブ・ノード）</returns>
         public static KifuNode ToNextNodes_AsHubNode(
-            Maps_OneAndMulti<Finger,Starbeamable> komabetuAllSasite,
+            Maps_OneAndMulti<Finger,IMove> komabetuAllMove,
             SkyConst src_Sky,//Node<Starbeamable, KyokumenWrapper> to_parentNode,//親となる予定のノード
             IErrorController errH
             )
@@ -35,16 +35,16 @@ namespace Grayscale.P360ConvSasu.L500Converter
             KifuNode hubNode = new KifuNodeImpl( null, null);//蝶番
 
 #if DEBUG
-            string dump = komabetuAllSasite.Dump();
+            string dump = komabetuAllMove.Dump();
 #endif
 
-            foreach (KeyValuePair<Finger, List<Starbeamable>> entry1 in komabetuAllSasite.Items)
+            foreach (KeyValuePair<Finger, List<IMove>> entry1 in komabetuAllMove.Items)
             {
                 Finger figKoma = entry1.Key;// 動かす駒
 
-                foreach (Starbeamable sasite in entry1.Value)// 駒の動ける升
+                foreach (IMove move in entry1.Value)// 駒の動ける升
                 {
-                    string sfenText = Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(sasite);
+                    string sfenText = ConvMoveStrSfen.ToMoveStrSfen(move);
                     if (hubNode.ContainsKey_ChildNodes(sfenText))
                     {
                         // 既存の指し手なら無視
@@ -53,11 +53,11 @@ namespace Grayscale.P360ConvSasu.L500Converter
                     else
                     {
                         // 指したあとの次の局面を作るだけ☆
-                        hubNode.PutAdd_ChildNode(Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(sasite), new KifuNodeImpl(sasite, new KyokumenWrapper(
+                        hubNode.PutAdd_ChildNode(ConvMoveStrSfen.ToMoveStrSfen(move), new KifuNodeImpl(move, new KyokumenWrapper(
                             Util_Sasu341.Sasu(
                                 src_Sky,// to_parentNode.Value.ToKyokumenConst,//指定局面
                                 figKoma,//動かす駒
-                                Util_Starlightable.AsKoma(sasite.Now).Masu,//移動先升
+                                Util_Starlightable.AsKoma(move.Now).Masu,//移動先升
                                 false,//成りません。
                                 errH
                         ))));

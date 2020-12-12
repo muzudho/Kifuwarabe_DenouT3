@@ -8,8 +8,8 @@ using System.IO;
 using System.Windows.Forms;
 using Grayscale.P743FvLearn.I490StopLearning;
 using Grayscale.P743FvLearn.L490StopLearning;
-using Grayscale.P743FvLearn.L508AutoSasiteRush;
-using Grayscale.P743FvLearn.L506AutoSasiteSort;
+using Grayscale.P743FvLearn.L508AutoMoveRush;
+using Grayscale.P743FvLearn.L506AutoMoveSort;
 
 namespace Grayscale.P743FvLearn.L510AutoKifuRead
 {
@@ -47,7 +47,7 @@ namespace Grayscale.P743FvLearn.L510AutoKifuRead
                 //----------------------------------------
                 // 繰り返し、指し手を進めます。
                 //----------------------------------------
-                Util_AutoSasiteRush.Do_SasiteRush(
+                UtilAutoMoveRush.DoMoveRush(
                     out isEndKifuread,
                     ref isRequest_ShowGohosyu,
                     ref isRequest_ChangeKyokumenPng,

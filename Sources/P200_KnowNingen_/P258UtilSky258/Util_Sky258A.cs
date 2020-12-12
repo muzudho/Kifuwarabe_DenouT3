@@ -23,13 +23,13 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
     public static class Util_Sky258A
     {
 
-        public static readonly Starbeamable ROOT_SASITE = new RO_Starbeam(
+        public static readonly IMove RootMove = new RO_Starbeam(
             new RO_Star(Playerside.Empty, Masu_Honshogi.Query_Basho(Masu_Honshogi.nError), Komasyurui14.H00_Null___),
             new RO_Star(Playerside.Empty, Masu_Honshogi.Query_Basho(Masu_Honshogi.nError), Komasyurui14.H00_Null___),
             null
             );
 
-        public static readonly Starbeamable NULL_OBJECT_SASITE = new RO_Starbeam(
+        public static readonly IMove NullObjectMove = new RO_Starbeam(
             new RO_Star(Playerside.Empty, Masu_Honshogi.Query_Basho(Masu_Honshogi.nError), Komasyurui14.H00_Null___),
             new RO_Star(Playerside.Empty, Masu_Honshogi.Query_Basho(Masu_Honshogi.nError), Komasyurui14.H00_Null___),
             null
@@ -75,13 +75,13 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// ************************************************************************************************************************
         /// </summary>
         /// <returns></returns>
-        public static Starbeamable Src(Starbeamable sasite)
+        public static IMove Src(IMove move)
         {
             RO_Starbeam result;
 
 
-            RO_Star srcKoma = Util_Starlightable.AsKoma(sasite.LongTimeAgo);
-            RO_Star dstKoma = Util_Starlightable.AsKoma(sasite.Now);
+            RO_Star srcKoma = Util_Starlightable.AsKoma(move.LongTimeAgo);
+            RO_Star dstKoma = Util_Starlightable.AsKoma(move.Now);
 
 
             result = new RO_Starbeam(
@@ -105,9 +105,9 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
             return result;
         }
 
-        public static RO_Starbeam BuildSasite(
-            Starlightable longTimeAgo,
-            Starlightable now,
+        public static RO_Starbeam BuildMove(
+            IMoveSource longTimeAgo,
+            IMoveSource now,
             Komasyurui14 tottaKomaSyurui
         )
         {
@@ -257,20 +257,20 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// <param name="hubNode">指し手一覧</param>
         /// <param name="errH"></param>
         /// <returns>駒毎の、全指し手</returns>
-        public static Maps_OneAndMulti<Finger, Starbeamable> SplitSasite_ByStar(
+        public static Maps_OneAndMulti<Finger, IMove> SplitMoveByStar(
             SkyConst src_Sky,
-            Node<Starbeamable, KyokumenWrapper> hubNode, IErrorController errH)
+            Node<IMove, KyokumenWrapper> hubNode, IErrorController errH)
         {
-            Maps_OneAndMulti<Finger, Starbeamable> enable_teMap = new Maps_OneAndMulti<Finger, Starbeamable>();
+            Maps_OneAndMulti<Finger, IMove> enable_teMap = new Maps_OneAndMulti<Finger, IMove>();
 
 
-            hubNode.Foreach_ChildNodes((string key, Node<Starbeamable, KyokumenWrapper> nextNode, ref bool toBreak) =>
+            hubNode.Foreach_ChildNodes((string key, Node<IMove, KyokumenWrapper> nextNode, ref bool toBreak) =>
             {
-                Starbeamable nextSasite = nextNode.Key;
+                IMove nextMove = nextNode.Key;
 
-                Finger figKoma = Util_Sky_FingersQuery.InMasuNow(src_Sky, Util_Starlightable.AsKoma(nextSasite.LongTimeAgo).Masu).ToFirst();
+                Finger figKoma = Util_Sky_FingersQuery.InMasuNow(src_Sky, Util_Starlightable.AsKoma(nextMove.LongTimeAgo).Masu).ToFirst();
 
-                enable_teMap.Put_NewOrOverwrite(figKoma, nextSasite);
+                enable_teMap.Put_NewOrOverwrite(figKoma, nextMove);
             });
 
             return enable_teMap;

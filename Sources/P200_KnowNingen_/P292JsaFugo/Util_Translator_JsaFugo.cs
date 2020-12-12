@@ -26,17 +26,17 @@ namespace Grayscale.P292JsaFugo.L500Util
         ///         “同”表記に「置き換えない」バージョンです。
         /// 
         /// </summary>
-        /// <param name="sasite"></param>
+        /// <param name="move"></param>
         /// <param name="previousKomaP"></param>
         /// <returns></returns>
         public static string ToString_NoUseDou(
             JsaFugoImpl jsaFugo,
-            RO_Starbeam sasite
+            RO_Starbeam move
             )
         {
             StringBuilder sb = new StringBuilder();
 
-            RO_Star koma = Util_Starlightable.AsKoma(sasite.Now);
+            RO_Star koma = Util_Starlightable.AsKoma(move.Now);
 
             sb.Append(Conv_Playerside.ToSankaku(koma.Pside));
 
@@ -93,15 +93,15 @@ namespace Grayscale.P292JsaFugo.L500Util
         /// <returns></returns>
         public static string ToString_UseDou(
             JsaFugoImpl jsaFugo,
-            Node<Starbeamable, KyokumenWrapper> siteiNode
+            Node<IMove, KyokumenWrapper> siteiNode
             )
         {
             StringBuilder sb = new StringBuilder();
 
 
-            Starbeamable curSasite = siteiNode.Key;
-            RO_Star curSrcKoma = Util_Starlightable.AsKoma(curSasite.LongTimeAgo);
-            RO_Star curDstKoma = Util_Starlightable.AsKoma(curSasite.Now);
+            IMove curMove = siteiNode.Key;
+            RO_Star curSrcKoma = Util_Starlightable.AsKoma(curMove.LongTimeAgo);
+            RO_Star curDstKoma = Util_Starlightable.AsKoma(curMove.Now);
 
 
             sb.Append(Conv_Playerside.ToSankaku(curDstKoma.Pside));
@@ -111,11 +111,11 @@ namespace Grayscale.P292JsaFugo.L500Util
             //------------------------------
             if (!siteiNode.IsRoot())
             {
-                Starbeamable preSasite = siteiNode.GetParentNode().Key;
-                if (null != preSasite)
+                IMove preMove = siteiNode.GetParentNode().Key;
+                if (null != preMove)
                 {
-                    //RO_Star_Koma preSrcKoma = Util_Starlightable.AsKoma(preSasite.LongTimeAgo);
-                    RO_Star preDstKoma = Util_Starlightable.AsKoma(preSasite.Now);
+                    //RO_Star_Koma preSrcKoma = Util_Starlightable.AsKoma(preMove.LongTimeAgo);
+                    RO_Star preDstKoma = Util_Starlightable.AsKoma(preMove.Now);
                     if (Conv_SyElement.ToMasuNumber(preDstKoma.Masu)==Conv_SyElement.ToMasuNumber(curDstKoma.Masu))
                     {
                         // “同”

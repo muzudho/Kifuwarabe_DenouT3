@@ -26,10 +26,10 @@ namespace Grayscale.P258UtilSky258.L510UtilLogJson
         /// </summary>
         /// <param name="enableLog"></param>
         /// <param name="src_Sky_base"></param>
-        /// <param name="km_sasite"></param>
+        /// <param name="km_move"></param>
         /// <param name="comment"></param>
         /// <returns></returns>
-        public static string JsonKyokumens_MultiKomabetuMasus(bool enableLog, SkyConst src_Sky_base, Maps_OneAndOne<Finger, SySet<SyElement>> km_sasite, string comment)
+        public static string JsonKyokumens_MultiKomabetuMasus(bool enableLog, SkyConst src_Sky_base, Maps_OneAndOne<Finger, SySet<SyElement>> km_move, string comment)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -38,7 +38,7 @@ namespace Grayscale.P258UtilSky258.L510UtilLogJson
                 goto gt_EndMethod;
             }
 
-            km_sasite.Foreach_Entry((Finger key, SySet<SyElement> value, ref bool toBreak) =>
+            km_move.Foreach_Entry((Finger key, SySet<SyElement> value, ref bool toBreak) =>
             {
                 // 駒１つ
                 RO_Star koma = Util_Starlightable.AsKoma(src_Sky_base.StarlightIndexOf(key).Now);
@@ -81,7 +81,7 @@ namespace Grayscale.P258UtilSky258.L510UtilLogJson
         /// <param name="comment"></param>
         /// <param name="errH"></param>
         /// <returns></returns>
-        public static string JsonElements_Node(bool enableLog, SkyConst src_Sky_base, Node<Starbeamable, KyokumenWrapper> thisNode, string comment, IErrorController errH)
+        public static string JsonElements_Node(bool enableLog, SkyConst src_Sky_base, Node<IMove, KyokumenWrapper> thisNode, string comment, IErrorController errH)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -90,10 +90,10 @@ namespace Grayscale.P258UtilSky258.L510UtilLogJson
                 goto gt_EndMethod;
             }
 
-            Starbeamable sasite = thisNode.Key;
+            IMove move = thisNode.Key;
 
-            RO_Star srcKoma = Util_Starlightable.AsKoma(sasite.LongTimeAgo);
-            RO_Star dstKoma = Util_Starlightable.AsKoma(sasite.Now);
+            RO_Star srcKoma = Util_Starlightable.AsKoma(move.LongTimeAgo);
+            RO_Star dstKoma = Util_Starlightable.AsKoma(move.Now);
 
 
             Finger finger = Util_Sky_FingersQuery.InMasuNow(src_Sky_base, srcKoma.Masu).ToFirst();
@@ -132,7 +132,7 @@ namespace Grayscale.P258UtilSky258.L510UtilLogJson
         /// <param name="comment"></param>
         /// <param name="errH"></param>
         /// <returns></returns>
-        public static string JsonKyokumens_NextNodes(bool enableLog, SkyConst src_Sky_base, Node<Starbeamable, KyokumenWrapper> hubNode, string comment, IErrorController errH)
+        public static string JsonKyokumens_NextNodes(bool enableLog, SkyConst src_Sky_base, Node<IMove, KyokumenWrapper> hubNode, string comment, IErrorController errH)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -141,12 +141,12 @@ namespace Grayscale.P258UtilSky258.L510UtilLogJson
                 goto gt_EndMethod;
             }
 
-            hubNode.Foreach_ChildNodes((string key, Node<Starbeamable, KyokumenWrapper> node, ref bool toBreak) =>
+            hubNode.Foreach_ChildNodes((string key, Node<IMove, KyokumenWrapper> node, ref bool toBreak) =>
             {
-                Starbeamable sasite = node.Key;
+                IMove move = node.Key;
 
-                RO_Star srcKoma1 = Util_Starlightable.AsKoma(sasite.LongTimeAgo);
-                RO_Star dstKoma = Util_Starlightable.AsKoma(sasite.Now);
+                RO_Star srcKoma1 = Util_Starlightable.AsKoma(move.LongTimeAgo);
+                RO_Star dstKoma = Util_Starlightable.AsKoma(move.Now);
 
 
                 Finger srcKoma2 = Util_Sky_FingersQuery.InMasuNow(src_Sky_base, srcKoma1.Masu).ToFirst();

@@ -36,7 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtKifuFilepath = new System.Windows.Forms.TextBox();
-            this.lstSasite = new System.Windows.Forms.ListBox();
+            this.lstMove = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtFvFilepath = new System.Windows.Forms.TextBox();
@@ -57,10 +57,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtNikomaHyokati = new System.Windows.Forms.TextBox();
             this.btnSiraberuHyokatiNikoma = new System.Windows.Forms.Button();
-            this.btnSasiteRankDown = new System.Windows.Forms.Button();
+            this.btnMoveRankDown = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.txtChoseiBairituB = new System.Windows.Forms.TextBox();
-            this.btnSasiteRankUp = new System.Windows.Forms.Button();
+            this.btnMoveRankUp = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.txtAllNodesCount = new System.Windows.Forms.TextBox();
@@ -150,14 +150,14 @@
             this.txtKifuFilepath.Size = new System.Drawing.Size(832, 19);
             this.txtKifuFilepath.TabIndex = 7;
             // 
-            // lstSasite
+            // lstMove
             // 
-            this.lstSasite.FormattingEnabled = true;
-            this.lstSasite.ItemHeight = 12;
-            this.lstSasite.Location = new System.Drawing.Point(293, 154);
-            this.lstSasite.Name = "lstSasite";
-            this.lstSasite.Size = new System.Drawing.Size(226, 184);
-            this.lstSasite.TabIndex = 9;
+            this.lstMove.FormattingEnabled = true;
+            this.lstMove.ItemHeight = 12;
+            this.lstMove.Location = new System.Drawing.Point(293, 154);
+            this.lstMove.Name = "lstMove";
+            this.lstMove.Size = new System.Drawing.Size(226, 184);
+            this.lstMove.TabIndex = 9;
             // 
             // label5
             // 
@@ -342,15 +342,15 @@
             this.btnSiraberuHyokatiNikoma.UseVisualStyleBackColor = true;
             this.btnSiraberuHyokatiNikoma.Click += new System.EventHandler(this.btnSiraberuHyokatiNikoma_Click);
             // 
-            // btnSasiteRankDown
+            // btnMoveRankDown
             // 
-            this.btnSasiteRankDown.Location = new System.Drawing.Point(305, 772);
-            this.btnSasiteRankDown.Name = "btnSasiteRankDown";
-            this.btnSasiteRankDown.Size = new System.Drawing.Size(117, 23);
-            this.btnSasiteRankDown.TabIndex = 31;
-            this.btnSasiteRankDown.Text = "指し手の順位下げ";
-            this.btnSasiteRankDown.UseVisualStyleBackColor = true;
-            this.btnSasiteRankDown.Click += new System.EventHandler(this.btnSasiteRankDown_Click);
+            this.btnMoveRankDown.Location = new System.Drawing.Point(305, 772);
+            this.btnMoveRankDown.Name = "btnMoveRankDown";
+            this.btnMoveRankDown.Size = new System.Drawing.Size(117, 23);
+            this.btnMoveRankDown.TabIndex = 31;
+            this.btnMoveRankDown.Text = "指し手の順位下げ";
+            this.btnMoveRankDown.UseVisualStyleBackColor = true;
+            this.btnMoveRankDown.Click += new System.EventHandler(this.btnMoveRankDown_Click);
             // 
             // label12
             // 
@@ -370,15 +370,15 @@
             this.txtChoseiBairituB.Text = "1.0";
             this.txtChoseiBairituB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // btnSasiteRankUp
+            // btnMoveRankUp
             // 
-            this.btnSasiteRankUp.Location = new System.Drawing.Point(305, 741);
-            this.btnSasiteRankUp.Name = "btnSasiteRankUp";
-            this.btnSasiteRankUp.Size = new System.Drawing.Size(117, 23);
-            this.btnSasiteRankUp.TabIndex = 34;
-            this.btnSasiteRankUp.Text = "指し手の順位上げ";
-            this.btnSasiteRankUp.UseVisualStyleBackColor = true;
-            this.btnSasiteRankUp.Click += new System.EventHandler(this.btnSasiteRankUp_Click);
+            this.btnMoveRankUp.Location = new System.Drawing.Point(305, 741);
+            this.btnMoveRankUp.Name = "btnMoveRankUp";
+            this.btnMoveRankUp.Size = new System.Drawing.Size(117, 23);
+            this.btnMoveRankUp.TabIndex = 34;
+            this.btnMoveRankUp.Text = "指し手の順位上げ";
+            this.btnMoveRankUp.UseVisualStyleBackColor = true;
+            this.btnMoveRankUp.Click += new System.EventHandler(this.btnMoveRankUp_Click);
             // 
             // label13
             // 
@@ -680,10 +680,10 @@
             this.Controls.Add(this.txtAllNodesCount);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.btnSasiteRankUp);
+            this.Controls.Add(this.btnMoveRankUp);
             this.Controls.Add(this.txtChoseiBairituB);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.btnSasiteRankDown);
+            this.Controls.Add(this.btnMoveRankDown);
             this.Controls.Add(this.btnSiraberuHyokatiNikoma);
             this.Controls.Add(this.txtNikomaHyokati);
             this.Controls.Add(this.label11);
@@ -702,7 +702,7 @@
             this.Controls.Add(this.txtFvFilepath);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.lstSasite);
+            this.Controls.Add(this.lstMove);
             this.Controls.Add(this.txtKifuFilepath);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -728,7 +728,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtKifuFilepath;
-        private System.Windows.Forms.ListBox lstSasite;
+        private System.Windows.Forms.ListBox lstMove;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtFvFilepath;
@@ -749,10 +749,10 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtNikomaHyokati;
         private System.Windows.Forms.Button btnSiraberuHyokatiNikoma;
-        private System.Windows.Forms.Button btnSasiteRankDown;
+        private System.Windows.Forms.Button btnMoveRankDown;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtChoseiBairituB;
-        private System.Windows.Forms.Button btnSasiteRankUp;
+        private System.Windows.Forms.Button btnMoveRankUp;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtAllNodesCount;

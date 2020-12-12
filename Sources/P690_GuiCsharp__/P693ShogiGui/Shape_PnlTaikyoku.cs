@@ -35,7 +35,7 @@ namespace Grayscale.P693ShogiGui.L081Canvas
         /// 棋譜[再生]中は使いません。
         /// 
         /// </summary>
-        Starlight MouseStarlightOrNull2 { get; }
+        IMoveHalf MouseStarlightOrNull2 { get; }
 
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Grayscale.P693ShogiGui.L081Canvas
 
         void SetHMovedKoma(Finger value);
 
-        void SetMouseStarlightOrNull2(Starlight mouseDd);
+        void SetMouseStarlightOrNull2(IMoveHalf mouseDd);
 
         void SetNaruMasu(Shape_BtnMasu naruMasu);
 

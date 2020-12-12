@@ -42,10 +42,10 @@ namespace Grayscale.P226Tree.L500Struct
         {
             get
             {
-                return this.teSasite;
+                return this.move;
             }
         }
-        private T1 teSasite;
+        private T1 move;
 
         /// <summary>
         /// キー：SFEN ※この仕様は暫定
@@ -118,10 +118,10 @@ namespace Grayscale.P226Tree.L500Struct
         }
 
 
-        public NodeImpl(T1 teSasite, T2 sky)
+        public NodeImpl(T1 move, T2 sky)
         {
             this.SetParentNode( null);
-            this.teSasite = teSasite;
+            this.move = move;
             this.Value = sky;
             this.NextNodes = new Dictionary<string, Node<T1, T2>>();
         }

@@ -46,13 +46,13 @@ namespace Grayscale.P341Ittesasu.L125UtilB
             //----------------------------------------
             // 本譜の手
             //----------------------------------------
-            string sasiteStr = Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(kifu_mutable.CurNode.Key);
+            string moveStr = ConvMoveStrSfen.ToMoveStrSfen(kifu_mutable.CurNode.Key);
 
 
             //----------------------------------------
             // １手前の分岐点
             //----------------------------------------
-            Node<Starbeamable, KyokumenWrapper> parentNode = kifu_mutable.CurNode.GetParentNode();
+            Node<IMove, KyokumenWrapper> parentNode = kifu_mutable.CurNode.GetParentNode();
 
             //----------------------------------------
             // 選ばなかった変化を、ここに入れます。
@@ -62,19 +62,19 @@ namespace Grayscale.P341Ittesasu.L125UtilB
             //----------------------------------------
             // 選んだ変化と、選ばなかった変化の一覧
             //----------------------------------------
-            parentNode.Foreach_ChildNodes((string key1, Node<Starbeamable, KyokumenWrapper> nextNode1, ref bool toBreak1) =>
+            parentNode.Foreach_ChildNodes((string key1, Node<IMove, KyokumenWrapper> nextNode1, ref bool toBreak1) =>
             {
-                if (key1 == sasiteStr)
+                if (key1 == moveStr)
                 {
                     //----------------------------------------
                     // 本譜の手はスキップ
                     //----------------------------------------
-                    //System.Console.WriteLine("残すsasiteStr=[" + sasiteStr + "] key1=[" + key1 + "] ★");
+                    //System.Console.WriteLine("残すmoveStr=[" + moveStr + "] key1=[" + key1 + "] ★");
                     goto gt_Next1;
                 }
                 //else
                 //{
-                //    System.Console.WriteLine("残すsasiteStr=[" + sasiteStr + "] key1=[" + key1 + "]");
+                //    System.Console.WriteLine("残すmoveStr=[" + moveStr + "] key1=[" + key1 + "]");
                 //}
 
                 //----------------------------------------
@@ -113,9 +113,9 @@ namespace Grayscale.P341Ittesasu.L125UtilB
             IErrorController errH
             )
         {
-            string sasiteStr = Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(nextNode_and_nextCurrent.Key);
+            string moveStr = ConvMoveStrSfen.ToMoveStrSfen(nextNode_and_nextCurrent.Key);
 
-            if (!((KifuNode)kifuRef.CurNode).HasTuginoitte(sasiteStr))
+            if (!((KifuNode)kifuRef.CurNode).HasTuginoitte(moveStr))
             {
                 //----------------------------------------
                 // 次ノート追加
@@ -165,21 +165,21 @@ namespace Grayscale.P341Ittesasu.L125UtilB
             ShootingStarlightable motoKey = (ShootingStarlightable)kifu282.PopCurrentNode().Key;
 
             // 元のキーの、取った駒の種類だけを差替えます。
-            RO_ShootingStarlight swapedSasite = Util_Sky258A.BuildSasite(motoKey.LongTimeAgo, motoKey.Now, tottaSyurui);
+            RO_ShootingStarlight swapedMove = Util_Sky258A.BuildMove(motoKey.LongTimeAgo, motoKey.Now, tottaSyurui);
 
             // キーを差替えたノード
-            out_swapedNode = new KifuNodeImpl(swapedSasite, new KyokumenWrapper(src_Sky), genTebanside);
+            out_swapedNode = new KifuNodeImpl(swapedMove, new KyokumenWrapper(src_Sky), genTebanside);
 
-            System.Diagnostics.Debug.Assert(!kifu282.CurNode.ContainsKey_ChildNodes(Util_Sky278.TranslateSasite_StarlightToText(out_swapedNode.Key)));
+            System.Diagnostics.Debug.Assert(!kifu282.CurNode.ContainsKey_ChildNodes(Util_Sky278.TranslateMove_StarlightToText(out_swapedNode.Key)));
 
 
             // さきほど　カレントノードを削除したので、
             // 今、カレントノードは、１つ前のノードになっています。
             // ここに、差替えたノードを追加します。
-            kifu282.CurNode.Add_ChildNode(Util_Sky278.TranslateSasite_StarlightToText(out_swapedNode.Key), out_swapedNode);
+            kifu282.CurNode.Add_ChildNode(Util_Sky278.TranslateMove_StarlightToText(out_swapedNode.Key), out_swapedNode);
             out_swapedNode.ParentNode = kifu282.CurNode;
 
-            errH.Logger.WriteLineAddMemo("リンクトリストの、最終ノードは差し替えられた hint=[" + hint + "] item=[" + Util_Sky278.TranslateSasite_StarlightToText(swapedSasite) + "]");
+            errH.Logger.WriteLineAddMemo("リンクトリストの、最終ノードは差し替えられた hint=[" + hint + "] item=[" + Util_Sky278.TranslateMove_StarlightToText(swapedMove) + "]");
         // memberName=[" + memberName + "] sourceFilePath=[" + sourceFilePath + "] sourceLineNumber=[" + sourceLineNumber + "]
 
         gt_EndMethod:

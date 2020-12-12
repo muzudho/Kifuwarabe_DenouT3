@@ -47,7 +47,7 @@ namespace Grayscale.P743FvLearn.L400N54List
             int p54Next = 0;
             int[] p54List = new int[54];
 
-            src_Sky.Foreach_Starlights((Finger finger, Starlight light, ref bool toBreak) =>
+            src_Sky.Foreach_Starlights((Finger finger, IMoveHalf light, ref bool toBreak) =>
             {
                 RO_Star koma = Util_Starlightable.AsKoma(light.Now);
 

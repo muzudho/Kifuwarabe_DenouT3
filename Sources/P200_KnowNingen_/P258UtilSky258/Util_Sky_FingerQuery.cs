@@ -39,7 +39,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
             foreach (Finger finger in Finger_Honshogi.Items_KomaOnly)
             {
 
-                Starlight sl = src_Sky.StarlightIndexOf(finger);
+                IMoveHalf sl = src_Sky.StarlightIndexOf(finger);
 
                 RO_Star koma = Util_Starlightable.AsKoma(sl.Now);
 
@@ -118,7 +118,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
             foreach (Finger finger in Finger_Honshogi.Items_KomaOnly)
             {
 
-                Starlight sl = src_Sky.StarlightIndexOf(finger);
+                IMoveHalf sl = src_Sky.StarlightIndexOf(finger);
 
                 RO_Star koma = Util_Starlightable.AsKoma(sl.Now);
 

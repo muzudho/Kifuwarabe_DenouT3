@@ -121,7 +121,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                 // FIXME:平手とは限らないが、平手という前提で作っておく。
                 this.SetKifu( new KifuTreeImpl(
                         new KifuNodeImpl(
-                            Util_Sky258A.ROOT_SASITE,
+                            Util_Sky258A.RootMove,
                             new KyokumenWrapper( SkyConst.NewInstance(
                                     Util_SkyWriter.New_Hirate(firstPside),
                                     0 // 初期局面は 0手目済み
@@ -511,7 +511,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
             //
             {
                 // 出力先
-                string fileName = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("ChokkinNoSasiteLogPngBasename"));
+                string fileName = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("ChokkinNoMoveLogPngBasename"));
 
                 int srcMasu_orMinusOne = -1;
                 int dstMasu_orMinusOne = -1;
@@ -548,7 +548,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                     srcMasu_orMinusOne,
                     dstMasu_orMinusOne,
                     foodKoma,
-                    Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(kifuNode.Key),//Conv_SasiteStr_Jsa.ToSasiteStr_Jsa(kifuNode, kifuNode.Value, errH),
+                    ConvMoveStrSfen.ToMoveStrSfen(kifuNode.Key),//Conv_MoveStr_Jsa.ToMoveStr_Jsa(kifuNode, kifuNode.Value, errH),
                     "",
                     fileName,
                     Util_KifuTreeLogWriter.REPORT_ENVIRONMENT,
@@ -799,7 +799,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                                 //StringBuilder sb = new StringBuilder();
                                 //for (int iMultiPV = 0; iMultiPV < 5; iMultiPV++)
                                 //{
-                                //    string sfenText = Util_Sky.ToSfenSasiteText(bestSasiteList[iMultiPV]);
+                                //    string sfenText = Util_Sky.ToSfenMoveText(bestMoveList[iMultiPV]);
                                 //    sb.AppendLine("[" + iMultiPV + "]" + sfenText);
                                 //}
                                 //System.Windows.Forms.MessageBox.Show(sb.ToString());
@@ -822,21 +822,21 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                             }
 
                             exceptionArea = 2300;
-                            Starbeamable bestSasite2;
+                            IMove bestMove2;
                             if (null == bestKifuNode)
                             {
                                 // 投了
-                                bestSasite2 = Util_Sky258A.NULL_OBJECT_SASITE;
+                                bestMove2 = Util_Sky258A.NullObjectMove;
                             }
                             else
                             {
-                                bestSasite2 = bestKifuNode.Key;
+                                bestMove2 = bestKifuNode.Key;
                             }
 
                             exceptionArea = 2400;
-                            if (Util_Sky_BoolQuery.isEnableSfen(bestSasite2))
+                            if (Util_Sky_BoolQuery.isEnableSfen(bestMove2))
                             {
-                                string sfenText = Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(bestSasite2);
+                                string sfenText = ConvMoveStrSfen.ToMoveStrSfen(bestMove2);
 
                                 // ログが重過ぎる☆！
                                 //OwataMinister.WARABE_ENGINE.Logger.WriteLineAddMemo("(Warabe)指し手のチョイス： bestmove＝[" + sfenText + "]" +
@@ -1106,7 +1106,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
             sb.Append("ログだせ～（＾▽＾）");
 
             this.Kifu.ForeachZenpuku(
-                this.Kifu.GetRoot(), (int temezumi, KyokumenWrapper sky, Node<Starbeamable, KyokumenWrapper> node, ref bool toBreak) =>
+                this.Kifu.GetRoot(), (int temezumi, KyokumenWrapper sky, Node<IMove, KyokumenWrapper> node, ref bool toBreak) =>
                 {
                     //sb.AppendLine("(^-^)");
 
@@ -1114,7 +1114,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                     {
                         if (null != node.Key)
                         {
-                            string sfenText = Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(node.Key);
+                            string sfenText = ConvMoveStrSfen.ToMoveStrSfen(node.Key);
                             sb.Append(sfenText);
                             sb.AppendLine();
                         }

@@ -28,13 +28,13 @@ namespace Grayscale.P360ConvSasu.L500Converter
         /// </summary>
         /// <param name="kmDic_Self"></param>
         /// <returns></returns>
-        public static Maps_OneAndMulti<Finger, Starbeamable> ToKomabetuSasite(
+        public static Maps_OneAndMulti<Finger, IMove> ToKomabetuMove(
             Maps_OneAndOne<Finger, SySet<SyElement>> kmDic_Self,
-            Node<Starbeamable, KyokumenWrapper> siteiNode_genzai
+            Node<IMove, KyokumenWrapper> siteiNode_genzai
             )
         {
 
-            Maps_OneAndMulti<Finger, Starbeamable> komaTe = new Maps_OneAndMulti<Finger, Starbeamable>();
+            Maps_OneAndMulti<Finger, IMove> komaTe = new Maps_OneAndMulti<Finger, IMove>();
 
             //
             //
@@ -45,7 +45,7 @@ namespace Grayscale.P360ConvSasu.L500Converter
                     RO_Star koma = Util_Starlightable.AsKoma(siteiNode_genzai.Value.KyokumenConst.StarlightIndexOf(key).Now);
 
 
-                    Starbeamable sasite = new RO_Starbeam(
+                    IMove move = new RO_Starbeam(
                         //key,
                         // 元
                             koma,
@@ -63,12 +63,12 @@ namespace Grayscale.P360ConvSasu.L500Converter
                     if (komaTe.ContainsKey(key))
                     {
                         // すでに登録されている駒
-                        komaTe.AddExists(key, sasite);
+                        komaTe.AddExists(key, move);
                     }
                     else
                     {
                         // まだ登録されていない駒
-                        komaTe.AddNew(key, sasite);
+                        komaTe.AddNew(key, move);
                     }
 
                 }
@@ -80,7 +80,7 @@ namespace Grayscale.P360ConvSasu.L500Converter
 
 
 
-        public static Dictionary<string, SasuEntry> ToSasitebetuSky1(
+        public static Dictionary<string, SasuEntry> ToMoveBetuSky1(
             Maps_OneAndOne<Finger, SySet<SyElement>> komabetuSusumuMasus,
             SkyConst src_Sky,
             IErrorController errH
@@ -96,21 +96,21 @@ namespace Grayscale.P360ConvSasu.L500Converter
                 foreach (SyElement dstMasu in value.Elements)
                 {
 
-                    Starbeamable sasite = Util_Sky258A.BuildSasite(
+                    IMove move = Util_Sky258A.BuildMove(
                         //key,
                         new RO_Star(src_Sky.KaisiPside, koma.Masu, koma.Haiyaku),
                         new RO_Star(src_Sky.KaisiPside, dstMasu, koma.Haiyaku),//FIXME:配役は適当。
                         Komasyurui14.H00_Null___
                         );
 
-                    string sasiteStr = Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(sasite);//重複防止用のキー
+                    string moveStr = ConvMoveStrSfen.ToMoveStrSfen(move);//重複防止用のキー
 
-                    if (!result_komabetuEntry.ContainsKey(sasiteStr))
+                    if (!result_komabetuEntry.ContainsKey(moveStr))
                     {
                         result_komabetuEntry.Add(
-                            sasiteStr,
+                            moveStr,
                             new SasuEntry(
-                                sasite,
+                                move,
                                 key,//動かす駒
                                 dstMasu,//移動先升
                                 false//成りません
@@ -125,10 +125,10 @@ namespace Grayscale.P360ConvSasu.L500Converter
 
 
         //Dictionary<Starbeamable, KyokumenWrapper>
-        public static Dictionary<string, SasuEntry> KomabetuMasus_ToSasitebetuSky(
+        public static Dictionary<string, SasuEntry> KomabetuMasusToMoveBetuSky(
             List_OneAndMulti<Finger, SySet<SyElement>> sMs, SkyConst src_Sky, IErrorController errH)
         {
-            Dictionary<string, SasuEntry> sasitebetuEntry = new Dictionary<string, SasuEntry>();
+            Dictionary<string, SasuEntry> moveBetuEntry = new Dictionary<string, SasuEntry>();
 
 
             sMs.Foreach_Entry((Finger key, SySet<SyElement> value, ref bool toBreak) =>
@@ -138,34 +138,34 @@ namespace Grayscale.P360ConvSasu.L500Converter
 
                 foreach (SyElement dstMasu in value.Elements)
                 {
-                    Starbeamable sasite = Util_Sky258A.BuildSasite(
+                    IMove move = Util_Sky258A.BuildMove(
                         new RO_Star(src_Sky.KaisiPside, koma.Masu, koma.Haiyaku),
                         new RO_Star(src_Sky.KaisiPside, dstMasu, koma.Haiyaku),//FIXME:配役は適当。
                         Komasyurui14.H00_Null___
                         );
 
-                    string sasiteStr = Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(sasite);//重複防止用のキー
+                    string moveStr = ConvMoveStrSfen.ToMoveStrSfen(move);//重複防止用のキー
                     SasuEntry sasuEntry = new SasuEntry(
-                        sasite,
+                        move,
                         key,//動かす駒
                         dstMasu,//移動先升
                         false//成りません。
                         );
-                    if (!sasitebetuEntry.ContainsKey(sasiteStr))
+                    if (!moveBetuEntry.ContainsKey(moveStr))
                     {
-                        sasitebetuEntry.Add(sasiteStr, sasuEntry);
+                        moveBetuEntry.Add(moveStr, sasuEntry);
                     }
                 }
             });
 
-            return sasitebetuEntry;
+            return moveBetuEntry;
 
             /*
             Dictionary<Starbeamable, KyokumenWrapper> result = new Dictionary<Starbeamable, KyokumenWrapper>();
-            foreach (KeyValuePair<string, SasuEntry> entry in sasitebetuEntry)
+            foreach (KeyValuePair<string, SasuEntry> entry in movebetuEntry)
             {
                 result.Add(
-                    entry.Value.NewSasite,
+                    entry.Value.NewMove,
                     new KyokumenWrapper(Util_Sasu341.Sasu(
                     src_Sky,//指定局面
                     entry.Value.Finger,//動かす駒

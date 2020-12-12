@@ -11,12 +11,12 @@ namespace Grayscale.P341Ittesasu.L250OperationA
         /// <summary>
         /// 一手指し局面開始ノード。
         /// </summary>
-        public Node<Starbeamable, KyokumenWrapper> KaisiNode { get; set; }
+        public Node<IMove, KyokumenWrapper> KaisiNode { get; set; }
 
         /// <summary>
         /// 指し手。
         /// </summary>
-        public Starbeamable Sasite { get; set; }
+        public IMove Move { get; set; }
 
         /// <summary>
         /// これから作る局面の、手目済み。
@@ -25,13 +25,13 @@ namespace Grayscale.P341Ittesasu.L250OperationA
         private int korekaranoTemezumi_orMinus1;
 
         public IttemodosuArgImpl(
-            Node<Starbeamable, KyokumenWrapper> kaisiNode,
-            Starbeamable sasite,
+            Node<IMove, KyokumenWrapper> kaisiNode,
+            IMove move,
             int korekaranoTemezumi_orMinus1
             )
         {
             this.KaisiNode = kaisiNode;
-            this.Sasite = sasite;
+            this.Move = move;
             this.korekaranoTemezumi_orMinus1 = korekaranoTemezumi_orMinus1;
         }
     }

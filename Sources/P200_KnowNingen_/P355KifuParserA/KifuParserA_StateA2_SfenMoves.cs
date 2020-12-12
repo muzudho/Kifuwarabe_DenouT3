@@ -67,7 +67,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
             {
                 if (0 < genjo.InputLine.Trim().Length)
                 {
-                    Starbeamable nextTe = Util_Sky258A.NULL_OBJECT_SASITE;
+                    IMove nextTe = Util_Sky258A.NullObjectMove;
                     string rest;
 
                     try
@@ -82,14 +82,14 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                         string str7;
                         string str8;
                         string str9;
-                        if (SfenSasitesTextConv.ToTokens(
+                        if (SfenMovesTextConv.ToTokens(
                             genjo.InputLine, out str1, out str2, out str3, out str4, out str5, out rest, errH)
                             &&
                             !(str1=="" && str2=="" && str3=="" && str4=="" && str5=="")
                             )
                         {
 
-                            Conv_SfenSasiteTokens.ToSasite(
+                            ConvSfenMoveTokens.ToMove(
                                 isHonshogi,
                                 str1,  //123456789 か、 PLNSGKRB
                                 str2,  //abcdefghi か、 *
@@ -112,7 +112,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                             {
                                 if (!(str1 == "" && str2 == "" && str3 == "" && str4 == "" && str5 == "" && str6 == "" && str7 == "" && str8 == "" && str9 == ""))
                                 {
-                                    Conv_JsaFugoTokens.ToSasite(
+                                    Conv_JsaFugoTokens.ToMove(
                                         str1,  //▲△
                                         str2,  //123…9、１２３…９、一二三…九
                                         str3,  //123…9、１２３…９、一二三…九
@@ -201,7 +201,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                             exceptionArea = 1070;
                             Util_IttesasuRoutine.After3_ChangeCurrent(
                                 model_Taikyoku.Kifu,
-                                Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(ittesasuResult.Get_SyuryoNode_OrNull.Key),
+                                ConvMoveStrSfen.ToMoveStrSfen(ittesasuResult.Get_SyuryoNode_OrNull.Key),
                                 ittesasuResult.Get_SyuryoNode_OrNull,
                                 errH
                                 );
@@ -233,7 +233,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                     else
                     {
                         genjo.ToBreak_Abnormal();
-                        string message = "＼（＾ｏ＾）／teSasiteオブジェクトがない☆！　inputLine=[" + genjo.InputLine + "]";
+                        string message = "＼（＾ｏ＾）／Moveオブジェクトがない☆！　inputLine=[" + genjo.InputLine + "]";
                         errH.Logger.WriteLineError(message);
                         throw new Exception(message);
                     }

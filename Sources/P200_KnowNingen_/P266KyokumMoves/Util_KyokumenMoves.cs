@@ -280,8 +280,8 @@ namespace Grayscale.P266KyokumMoves.L500Util
 //#if DEBUG
 //            if (caller_forLog == 1)
 //            {
-//                string jsaSasiteStr = Util_Translator_Sasite.ToSasite(node_forLog, node_forLog.Value, errH_orNull);
-//                System.Console.WriteLine("Util_Things: [" + node_forLog .Value.ToKyokumenConst.Temezumi+ "]手目済み 局面で、[" + jsaSasiteStr + "]の駒別置ける升 調べ（持ち駒編）\n" + Util_List_OneAndMultiEx<Finger, SySet<SyElement>>.Dump(result, node_forLog.Value.ToKyokumenConst));
+//                string jsaMoveStr = Util_Translator_Move.ToMove(node_forLog, node_forLog.Value, errH_orNull);
+//                System.Console.WriteLine("Util_Things: [" + node_forLog .Value.ToKyokumenConst.Temezumi+ "]手目済み 局面で、[" + jsaMoveStr + "]の駒別置ける升 調べ（持ち駒編）\n" + Util_List_OneAndMultiEx<Finger, SySet<SyElement>>.Dump(result, node_forLog.Value.ToKyokumenConst));
 //            }
 //#endif
             return result;

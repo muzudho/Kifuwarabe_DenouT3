@@ -9,13 +9,13 @@ namespace Grayscale.P361Util.L500Util
     {
 
 
-        public static void AssertNariSasite(Node<Starbeamable, KyokumenWrapper> hubNode, string hint)
+        public static void AssertNariMove(Node<IMove, KyokumenWrapper> hubNode, string hint)
         {
             /*
             hubNode.Foreach_NextNodes((string key, Node<ShootingStarlightable, KyokumenWrapper> nextNode, ref bool toBreak) =>
             {
-                ShootingStarlightable sasite = nextNode.Key;
-                Starlightable lightable = sasite.Now;
+                ShootingStarlightable move = nextNode.Key;
+                Starlightable lightable = move.Now;
                 RO_Star_Koma koma = Util_Starlightable.AsKoma(lightable);
 
                 if (KomaSyurui14Array.IsNari(koma.Syurui))

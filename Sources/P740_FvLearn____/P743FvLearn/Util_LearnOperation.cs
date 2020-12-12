@@ -47,19 +47,19 @@ namespace Grayscale.P743FvLearn.L600Operation
         /// </summary>
         /// <param name="uc_Main"></param>
         /// <param name="tyoseiryo"></param>
-        public static void A_RankUp_SelectedSasite(Uc_Main uc_Main, float tyoseiryo, IErrorController errH)
+        public static void ARankUpSelectedMove(Uc_Main uc_Main, float tyoseiryo, IErrorController errH)
         {
             //----------------------------------------
             // 選択したノードを参考に、減点を行う。
             //----------------------------------------
             foreach (GohosyuListItem item in uc_Main.LstGohosyu.SelectedItems)
             {
-                string sfenSasiteStr = item.Sfen;
+                string sfenMoveStr = item.Sfen;
 #if DEBUG
-                errH.Logger.WriteLineAddMemo("sfenSasiteStr=" + sfenSasiteStr);
+                errH.Logger.WriteLineAddMemo("sfenMoveStr=" + sfenMoveStr);
 #endif
 
-                if (uc_Main.LearningData.Kifu.CurNode.HasChildNode(sfenSasiteStr))
+                if (uc_Main.LearningData.Kifu.CurNode.HasChildNode(sfenMoveStr))
                 {
 #if DEBUG
                     errH.Logger.WriteLineAddMemo("----------------------------------------");
@@ -67,7 +67,7 @@ namespace Grayscale.P743FvLearn.L600Operation
                     errH.Logger.WriteLineAddMemo("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(uc_Main.LearningData.Fv));
                     errH.Logger.WriteLineAddMemo("----------------------------------------");
 #endif
-                    Node<Starbeamable, KyokumenWrapper> nextNode = uc_Main.LearningData.Kifu.CurNode.GetChildNode(sfenSasiteStr);
+                    Node<IMove, KyokumenWrapper> nextNode = uc_Main.LearningData.Kifu.CurNode.GetChildNode(sfenMoveStr);
 
                     // 盤上の駒、持駒を数えます。
                     N54List nextNode_n54List = Util_54List.Calc_54List(nextNode.Value.KyokumenConst, errH);
@@ -122,7 +122,7 @@ namespace Grayscale.P743FvLearn.L600Operation
         /// FIXME: 未実装
         /// 指し手の順位上げ。
         /// </summary>
-        public static void Do_RankUpSasite(
+        public static void DoRankUpMove(
             ref bool isRequest_ShowGohosyu,
             ref bool isRequest_ChangeKyokumenPng,
             Uc_Main uc_Main, IErrorController errH)
@@ -136,7 +136,7 @@ namespace Grayscale.P743FvLearn.L600Operation
                 chosei_bairitu *= -1; //後手はマイナスの方が有利。
             }
 
-            Util_LearnOperation.A_RankUp_SelectedSasite(uc_Main, chosei_bairitu, errH);
+            Util_LearnOperation.ARankUpSelectedMove(uc_Main, chosei_bairitu, errH);
 
             // 現局面の合法手表示の更新を要求
             isRequest_ShowGohosyu = true;
@@ -148,7 +148,7 @@ namespace Grayscale.P743FvLearn.L600Operation
         /// FIXME: 未実装
         /// 指し手の順位下げ。
         /// </summary>
-        public static void Do_RankDownSasite(
+        public static void DoRankDownMove(
             ref bool isRequest_ShowGohosyu,
             ref bool isRequest_ChangeKyokumenPng,
             Uc_Main uc_Main, IErrorController errH)
@@ -163,7 +163,7 @@ namespace Grayscale.P743FvLearn.L600Operation
                 badScore *= -1; //後手はプラスの方が不利。
             }
 
-            Util_LearnOperation.A_RankUp_SelectedSasite(uc_Main, badScore, errH);
+            Util_LearnOperation.ARankUpSelectedMove(uc_Main, badScore, errH);
 
             // 現局面の合法手表示の更新を要求
             isRequest_ShowGohosyu = true;
@@ -274,7 +274,7 @@ namespace Grayscale.P743FvLearn.L600Operation
         {
             uc_Main.LearningData.ReadKifu(uc_Main);
 
-            Util_LearningView.ShowSasiteList(uc_Main.LearningData, uc_Main, errH);
+            Util_LearningView.ShowMoveList(uc_Main.LearningData, uc_Main, errH);
         }
 
 

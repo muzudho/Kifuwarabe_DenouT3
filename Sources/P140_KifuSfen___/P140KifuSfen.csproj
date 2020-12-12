@@ -79,7 +79,7 @@
     <Compile Include="Square.cs" />
     <Compile Include="SfenPosition2Reference.cs" />
     <Compile Include="SfenWord.cs" />
-    <Compile Include="SfenSasitesTextConv.cs" />
+    <Compile Include="SfenMovesTextConv.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

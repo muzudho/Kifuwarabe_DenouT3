@@ -37,7 +37,7 @@ namespace Grayscale.P163KifuCsa.L250Struct
         /// <summary>
         /// 指し手データ。
         /// </summary>
-        public List<CsaKifuSasite> SasiteList { get; set; }
+        public List<CsaKifuMove> MoveList { get; set; }
 
         /// <summary>
         /// 対局終了の仕方の分類。
@@ -51,7 +51,7 @@ namespace Grayscale.P163KifuCsa.L250Struct
             this.Player2Name = "";
             this.Shogiban = new string[10,10];
             this.FirstSengo = "+";
-            this.SasiteList = new List<CsaKifuSasite>();
+            this.MoveList = new List<CsaKifuMove>();
             this.FinishedStatus = "";
         }
 

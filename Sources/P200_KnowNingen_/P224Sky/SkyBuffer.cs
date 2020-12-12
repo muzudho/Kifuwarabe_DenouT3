@@ -50,14 +50,14 @@ namespace Grayscale.P224Sky.L500Struct
         /// <summary>
         /// 「置き場に置けるものの素性」リストです。駒だけとは限りませんので、４０個以上になることもあります。
         /// </summary>
-        public List<Starlight> Starlights
+        public List<IMoveHalf> Starlights
         {
             get
             {
                 return this.starlights;
             }
         }
-        private List<Starlight> starlights;
+        private List<IMoveHalf> starlights;
 
         #endregion
 
@@ -88,7 +88,7 @@ namespace Grayscale.P224Sky.L500Struct
         /// <param name="kifu"></param>
         /// <param name="finger"></param>
         /// <param name="light"></param>
-        public void PutOverwriteOrAdd_Starlight(Finger finger, Starlight light)
+        public void PutOverwriteOrAdd_Starlight(Finger finger, IMoveHalf light)
         {
             if(this.starlights.Count==(int)finger)
             {
@@ -128,7 +128,7 @@ namespace Grayscale.P224Sky.L500Struct
 
             this.kaisiPside = kaisiPside;
             this.temezumi = temezumi;
-            this.starlights = new List<Starlight>();
+            this.starlights = new List<IMoveHalf>();
         }
 
         /// <summary>
@@ -145,21 +145,21 @@ namespace Grayscale.P224Sky.L500Struct
             this.temezumi = src.Temezumi;
 
             // 星々のクローン
-            this.starlights = new List<Starlight>();
-            src.Foreach_Starlights((Finger finger, Starlight light, ref bool toBreak) =>
+            this.starlights = new List<IMoveHalf>();
+            src.Foreach_Starlights((Finger finger, IMoveHalf light, ref bool toBreak) =>
             {
                 this.starlights.Add(light);
             });
         }
 
-        public Starlight StarlightIndexOf(
+        public IMoveHalf StarlightIndexOf(
             Finger finger,
             [CallerMemberName] string memberName = "",
             [CallerFilePath] string sourceFilePath = "",
             [CallerLineNumber] int sourceLineNumber = 0
         )
         {
-            Starlight found;
+            IMoveHalf found;
 
             if ((int)finger < this.starlights.Count)
             {
@@ -176,13 +176,13 @@ namespace Grayscale.P224Sky.L500Struct
         }
 
 
-        public delegate void DELEGATE_Sky_Foreach(Finger finger, Starlight light, ref bool toBreak);
+        public delegate void DELEGATE_Sky_Foreach(Finger finger, IMoveHalf light, ref bool toBreak);
         public void Foreach_Starlights(DELEGATE_Sky_Foreach delegate_Sky_Foreach)
         {
             bool toBreak = false;
 
             Finger finger = 0;
-            foreach (Starlight light in this.Starlights)
+            foreach (IMoveHalf light in this.Starlights)
             {
                 delegate_Sky_Foreach(finger, light, ref toBreak);
 
@@ -207,7 +207,7 @@ namespace Grayscale.P224Sky.L500Struct
         {
             Fingers fingers = new Fingers();
 
-            this.Foreach_Starlights((Finger finger, Starlight light, ref bool toBreak) =>
+            this.Foreach_Starlights((Finger finger, IMoveHalf light, ref bool toBreak) =>
             {
                 fingers.Add(finger);
             });

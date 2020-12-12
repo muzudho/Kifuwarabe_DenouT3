@@ -50,7 +50,7 @@ namespace Grayscale.P269UtilSasu.L500Util
         ///// <summary>
         ///// 変換『「指し手→局面」のコレクション』→『「駒、指し手」のペアのリスト』
         ///// </summary>
-        //public static List<Couple<Finger,Masu>> SasitebetuSky_ToKamList(
+        //public static List<Couple<Finger,Masu>> MovebetuSky_ToKamList(
         //    SkyConst src_Sky_genzai,
         //    Dictionary<ShootingStarlightable, SkyBuffer> ss,
         //    LarabeLoggerTag logTag
@@ -166,8 +166,8 @@ namespace Grayscale.P269UtilSasu.L500Util
         /// これが通称【水際のいんちきプログラム】なんだぜ☆
         /// 必要により、【成り】の指し手を追加します。
         /// </summary>
-        public static void Add_KomaBETUAllNariSasites(
-            Maps_OneAndMulti<Finger, Starbeamable> komaBETUAllSasites,
+        public static void Add_KomaBETUAllNariMoves(
+            Maps_OneAndMulti<Finger, IMove> komaBETUAllMoves,
             Finger figKoma,
             RO_Star srcKoma,
             RO_Star dstKoma
@@ -186,7 +186,7 @@ namespace Grayscale.P269UtilSasu.L500Util
                 {
                     //MessageBox.Show("成りの資格がある駒がありました。 src=["+srcKoma.Masu.Word+"]["+srcKoma.Syurui+"]");
 
-                    Starbeamable sasite = new RO_Starbeam(
+                    IMove move = new RO_Starbeam(
                         //figKoma,//駒
                         srcKoma,// 移動元
                         new RO_Star(
@@ -198,7 +198,7 @@ namespace Grayscale.P269UtilSasu.L500Util
                     );
 
                     // TODO: 一段目の香車のように、既に駒は成っている場合があります。無い指し手だけ追加するようにします。
-                    komaBETUAllSasites.AddNotOverwrite(figKoma, sasite);
+                    komaBETUAllMoves.AddNotOverwrite(figKoma, move);
                 }
 
             gt_EndMethod:
@@ -206,17 +206,17 @@ namespace Grayscale.P269UtilSasu.L500Util
             }
             catch (Exception ex)
             {
-                throw new Exception("Convert04.cs#AddNariSasiteでｴﾗｰ。:" + ex.GetType().Name + ":" + ex.Message);
+                throw new Exception("Convert04.cs#AddNariMoveでｴﾗｰ。:" + ex.GetType().Name + ":" + ex.Message);
             }
         }
-        public static void AssertNariSasite(Maps_OneAndMulti<Finger, Starbeamable> komabetuAllSasite, string hint)
+        public static void AssertNariMove(Maps_OneAndMulti<Finger, IMove> komabetuAllMove, string hint)
         {
             /*
-            foreach(KeyValuePair<Finger, List<ShootingStarlightable>> komaAllSasite in komabetuAllSasite.Items)
+            foreach(KeyValuePair<Finger, List<ShootingStarlightable>> komaAllMove in komabetuAllMove.Items)
             {
-                foreach(ShootingStarlightable sasite in komaAllSasite.Value)
+                foreach(ShootingStarlightable move in komaAllMove.Value)
                 {
-                    Starlightable lightable = sasite.Now;
+                    Starlightable lightable = move.Now;
                     RO_Star_Koma koma = Util_Starlightable.AsKoma(lightable);
 
                     if (KomaSyurui14Array.IsNari(koma.Syurui))

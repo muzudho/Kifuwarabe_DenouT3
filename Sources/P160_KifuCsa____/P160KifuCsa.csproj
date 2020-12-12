@@ -70,9 +70,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="P163KifuCsa\CsaKifu.cs" />
-    <Compile Include="P163KifuCsa\CsaKifuSasite.cs" />
+    <Compile Include="P163KifuCsa\CsaKifuMove.cs" />
     <Compile Include="P163KifuCsa\CsaKifuImpl.cs" />
-    <Compile Include="P163KifuCsa\CsaKifuSasiteImpl.cs" />
+    <Compile Include="P163KifuCsa\CsaKifuMoveImpl.cs" />
     <Compile Include="P163KifuCsa\Util_Csa.cs" />
     <Compile Include="P163KifuCsa\Word_Csa.cs" />
     <Compile Include="P163KifuCsa\CsaKifuWriterImpl.cs" />

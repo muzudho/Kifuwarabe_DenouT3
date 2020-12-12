@@ -16,15 +16,15 @@ namespace Grayscale.P238Seiza.L250Struct
     /// 盤上に置けるものです。
     /// 駒、矢印、色付きマスなどを想定していますが、現状では　駒　しかありません。
     /// </summary>
-    public class RO_Star : Starlightable
+    public class RO_Star : IMoveSource
     {
         /// <summary>
         /// ------------------------------------------------------------------------------------------------------------------------
         /// 星の型
         /// ------------------------------------------------------------------------------------------------------------------------
         /// </summary>
-        public Startype Startype { get { return this.startype; } }
-        protected Startype startype;
+        public BoardItem Startype { get { return this.startype; } }
+        protected BoardItem startype;
 
         /// <summary>
         /// ------------------------------------------------------------------------------------------------------------------------
@@ -60,7 +60,7 @@ namespace Grayscale.P238Seiza.L250Struct
 
         public RO_Star(Playerside pside, SyElement masu, Komasyurui14 syurui)
         {
-            this.startype = Startype.Koma;
+            this.startype = BoardItem.Koma;
             this.pside = pside;
             this.masu = masu;
             this.komasyurui = syurui;
@@ -68,7 +68,7 @@ namespace Grayscale.P238Seiza.L250Struct
 
         public RO_Star(Playerside pside, SyElement masu, Komahaiyaku185 haiyaku)
         {
-            this.startype = Startype.Koma;
+            this.startype = BoardItem.Koma;
             this.pside = pside;
             this.masu = masu;
             this.komasyurui = Util_Komahaiyaku184.Syurui(haiyaku);
@@ -76,7 +76,7 @@ namespace Grayscale.P238Seiza.L250Struct
 
         public RO_Star(RO_Star src)
         {
-            this.startype = Startype.Koma;
+            this.startype = BoardItem.Koma;
             this.pside = src.Pside;
             this.masu = src.Masu;
             this.komasyurui = src.Komasyurui;

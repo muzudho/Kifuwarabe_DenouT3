@@ -49,7 +49,7 @@ namespace Grayscale.P362LegalMove.L500Util
         public static Maps_OneAndOne<Finger, SySet<SyElement>> LA_RemoveMate(
             int yomikaisiTemezumi,
             bool isHonshogi,
-            Maps_OneAndMulti<Finger, Starbeamable> genTeban_komabetuAllSasite1,// 指定局面で、どの駒が、どんな手を指すことができるか
+            Maps_OneAndMulti<Finger, IMove> genTeban_komabetuAllMove1,// 指定局面で、どの駒が、どんな手を指すことができるか
             SkyConst src_Sky,//指定局面。
 
 #if DEBUG
@@ -59,12 +59,12 @@ namespace Grayscale.P362LegalMove.L500Util
             string hint,
             IErrorController errH)
         {
-            Node<Starbeamable, KyokumenWrapper> hubNode = Conv_StarbetuSasites.ToNextNodes_AsHubNode(
-                genTeban_komabetuAllSasite1,
+            Node<IMove, KyokumenWrapper> hubNode = ConvStarbetuMoves.ToNextNodes_AsHubNode(
+                genTeban_komabetuAllMove1,
                 src_Sky,
                 errH
                 );// ハブ・ノード自身はダミーノードなんだが、子ノードに、次のノードが入っている。
-            Util_NodeAssert361.AssertNariSasite(hubNode, "#LA_RemoveMate(1)");//ここはok
+            Util_NodeAssert361.AssertNariMove(hubNode, "#LA_RemoveMate(1)");//ここはok
 #if DEBUG
             Util_LegalMove.Log1(hubNode, src_Sky.Temezumi, hint, errH);
 #endif
@@ -84,25 +84,25 @@ namespace Grayscale.P362LegalMove.L500Util
 #endif
                     errH);
             }
-            Util_NodeAssert361.AssertNariSasite(hubNode, "#LA_RemoveMate(2)王手局面削除直後");//ここはok
+            Util_NodeAssert361.AssertNariMove(hubNode, "#LA_RemoveMate(2)王手局面削除直後");//ここはok
 
 
             // 「指し手一覧」を、「星別の全指し手」に分けます。
-            Maps_OneAndMulti<Finger, Starbeamable> starbetuAllSasites2 = Util_Sky258A.SplitSasite_ByStar(src_Sky, hubNode, errH);
-            Util_Sasu269.AssertNariSasite(starbetuAllSasites2, "#LA_RemoveMate(3)更に変換後");//ここはok
+            Maps_OneAndMulti<Finger, IMove> starbetuAllMoves2 = Util_Sky258A.SplitMoveByStar(src_Sky, hubNode, errH);
+            Util_Sasu269.AssertNariMove(starbetuAllMoves2, "#LA_RemoveMate(3)更に変換後");//ここはok
 
             //
             // 「星別の指し手一覧」を、「星別の進むマス一覧」になるよう、データ構造を変換します。
             //
             Maps_OneAndOne<Finger, SySet<SyElement>> starbetuSusumuMasus = new Maps_OneAndOne<Finger, SySet<SyElement>>();// 「どの星を、どこに進める」の一覧
-            foreach (KeyValuePair<Finger, List<Starbeamable>> entry in starbetuAllSasites2.Items)
+            foreach (KeyValuePair<Finger, List<IMove>> entry in starbetuAllMoves2.Items)
             {
                 Finger finger = entry.Key;
-                List<Starbeamable> teList = entry.Value;
+                List<IMove> teList = entry.Value;
 
                 // ポテンシャル・ムーブを調べます。
                 SySet<SyElement> masus_PotentialMove = new SySet_Default<SyElement>("ポテンシャルムーブ");
-                foreach (Starbeamable te in teList)
+                foreach (IMove te in teList)
                 {
                     RO_Star koma = Util_Starlightable.AsKoma(te.Now);
 
@@ -119,7 +119,7 @@ namespace Grayscale.P362LegalMove.L500Util
             return starbetuSusumuMasus;
         }
         private static void Log1(
-            Node<Starbeamable, KyokumenWrapper> hubNode,
+            Node<IMove, KyokumenWrapper> hubNode,
             int temezumi_yomiGenTeban,
             string hint,
             IErrorController errH
@@ -139,7 +139,7 @@ namespace Grayscale.P362LegalMove.L500Util
         /// </summary>
         public static void LAA_RemoveNextNode_IfMate(
             int yomikaisiTemezumi,
-            Node<Starbeamable, KyokumenWrapper> hubNode,
+            Node<IMove, KyokumenWrapper> hubNode,
             int temezumi_yomiGenTeban_forLog,//読み進めている現在の手目
             Playerside pside_genTeban,
 
@@ -151,9 +151,9 @@ namespace Grayscale.P362LegalMove.L500Util
             )
         {
             // Node<,>の形で。
-            Dictionary<string, Node<Starbeamable, KyokumenWrapper>> newNextNodes = new Dictionary<string, Node<Starbeamable, KyokumenWrapper>>();
+            Dictionary<string, Node<IMove, KyokumenWrapper>> newNextNodes = new Dictionary<string, Node<IMove, KyokumenWrapper>>();
 
-            hubNode.Foreach_ChildNodes((string key, Node<Starbeamable, KyokumenWrapper> node, ref bool toBreak) =>
+            hubNode.Foreach_ChildNodes((string key, Node<IMove, KyokumenWrapper> node, ref bool toBreak) =>
             {
                 System.Diagnostics.Debug.Assert(node.Key != null);//指し手がヌルなはず無いはず。
 
@@ -204,7 +204,7 @@ namespace Grayscale.P362LegalMove.L500Util
 #if DEBUG
             KaisetuBoards logF_kiki,
 #endif
-            Starbeamable sasite_forLog,
+            IMove move_forLog,
             IErrorController errH
             )
         {
@@ -225,7 +225,7 @@ namespace Grayscale.P362LegalMove.L500Util
 #endif
                 "玉自殺ﾁｪｯｸ",
                 temezumi_yomiCur_forLog,
-                sasite_forLog,
+                move_forLog,
                 errH);
 
             
@@ -288,7 +288,7 @@ namespace Grayscale.P362LegalMove.L500Util
 #endif
             string logBrd_caption,
             int temezumi_yomiCur_forLog,
-            Starbeamable sasite_forLog,
+            IMove move_forLog,
             IErrorController errH
             )
         {
@@ -393,7 +393,7 @@ namespace Grayscale.P362LegalMove.L500Util
                     masus_seme_BANJO,
                     masus_kurau_BANJO,
                     src_Sky,
-                    //Conv_Sasite.Sasite_To_KsString_ForLog(sasite_forLog, pside_genTeban3),
+                    //Conv_Move.Move_To_KsString_ForLog(move_forLog, pside_genTeban3),
                     errH
                     );// 利きを調べる側の利き（戦駒）
 

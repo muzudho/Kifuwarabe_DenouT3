@@ -6,9 +6,9 @@ namespace Grayscale.P353ConvSasuEx.L500Converter
 {
     public class SasuEntry
     {
-        public Starbeamable NewSasite { get; set; }
+        public IMove NewMove { get; set; }
 
-        //public string SasiteStr { get; set; }
+        //public string MoveStr { get; set; }
 
         public Finger Finger { get; set; }
 
@@ -20,15 +20,15 @@ namespace Grayscale.P353ConvSasuEx.L500Converter
         public bool Naru { get; set; }
 
         public SasuEntry(
-            Starbeamable newSasite,
-            //string sasiteStr,
+            IMove newMove,
+            //string moveStr,
             Finger finger,
             SyElement masu,
             bool naru
             )
         {
-            this.NewSasite = newSasite;
-            //this.SasiteStr = sasiteStr;
+            this.NewMove = newMove;
+            //this.MoveStr = moveStr;
             this.Finger = finger;
             this.Masu = masu;
             this.Naru = naru;

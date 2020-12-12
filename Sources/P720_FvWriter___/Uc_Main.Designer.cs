@@ -36,7 +36,7 @@
             this.txtKifuFilepath = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnReadKifu = new System.Windows.Forms.Button();
-            this.txtSasiteList = new System.Windows.Forms.TextBox();
+            this.txtMoveList = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnMakeZero_Tv = new System.Windows.Forms.Button();
@@ -123,14 +123,14 @@
             this.btnReadKifu.UseVisualStyleBackColor = true;
             this.btnReadKifu.Click += new System.EventHandler(this.btnReadKifu_Click);
             // 
-            // txtSasiteList
+            // txtMoveList
             // 
-            this.txtSasiteList.Location = new System.Drawing.Point(20, 281);
-            this.txtSasiteList.Multiline = true;
-            this.txtSasiteList.Name = "txtSasiteList";
-            this.txtSasiteList.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtSasiteList.Size = new System.Drawing.Size(235, 200);
-            this.txtSasiteList.TabIndex = 8;
+            this.txtMoveList.Location = new System.Drawing.Point(20, 281);
+            this.txtMoveList.Multiline = true;
+            this.txtMoveList.Name = "txtMoveList";
+            this.txtMoveList.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtMoveList.Size = new System.Drawing.Size(235, 200);
+            this.txtMoveList.TabIndex = 8;
             // 
             // label4
             // 
@@ -232,7 +232,7 @@
             this.Controls.Add(this.btnMakeZero_Tv);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtSasiteList);
+            this.Controls.Add(this.txtMoveList);
             this.Controls.Add(this.btnReadKifu);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtKifuFilepath);
@@ -258,7 +258,7 @@
         private System.Windows.Forms.TextBox txtKifuFilepath;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnReadKifu;
-        private System.Windows.Forms.TextBox txtSasiteList;
+        private System.Windows.Forms.TextBox txtMoveList;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnMakeZero_Tv;

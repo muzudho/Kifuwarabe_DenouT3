@@ -13,7 +13,7 @@ using Grayscale.P743FvLearn.L260View;
 using Grayscale.P743FvLearn.L450Tyoseiryo;
 using Grayscale.P743FvLearn.L480Functions;
 using Grayscale.P743FvLearn.L490StopLearning;
-using Grayscale.P743FvLearn.L508AutoSasiteRush;
+using Grayscale.P743FvLearn.L508AutoMoveRush;
 using Grayscale.P743FvLearn.L510AutoKifuRead;
 using Grayscale.P743FvLearn.L600Operation;
 using Nett;
@@ -47,7 +47,7 @@ namespace Grayscale.P743FvLearn
 
 
 
-        public ListBox LstSasite { get { return this.lstSasite; } }
+        public ListBox LstMove { get { return this.lstMove; } }
 
         public ListBox LstGohosyu { get { return this.lstGohosyu; } }
 
@@ -133,7 +133,7 @@ namespace Grayscale.P743FvLearn
             //
             // 調整量
             //
-            Util_Tyoseiryo.Init(this.tyoseiryoSettings, Util_AutoSasiteRush.RENZOKU_KAISU);
+            Util_Tyoseiryo.Init(this.tyoseiryoSettings, UtilAutoMoveRush.RENZOKU_KAISU);
 
             InitializeComponent();
         }
@@ -187,7 +187,7 @@ namespace Grayscale.P743FvLearn
             this.lblExplainStopLearning.Text = "自動学習の止め方：　次のファイルがあれば、そのうち止まります。「" + this.StopLearning.StopLearningFilePath + "」";
 
             // ラベル
-            this.chkHyakuretuken.Text = "1位になるまで繰返す(最大" + Util_AutoSasiteRush.RENZOKU_KAISU + "回)";
+            this.chkHyakuretuken.Text = "1位になるまで繰返す(最大" + UtilAutoMoveRush.RENZOKU_KAISU + "回)";
 
             // ファイル読込
             {
@@ -396,13 +396,13 @@ namespace Grayscale.P743FvLearn
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnSasiteRankDown_Click(object sender, EventArgs e)
+        private void btnMoveRankDown_Click(object sender, EventArgs e)
         {
             IErrorController errH = ErrorControllerReference.Learner;
             bool isRequest_ShowGohosyu = false;
             bool isRequest_ChangeKyokumenPng = false;
 
-            Util_LearnOperation.Do_RankDownSasite(
+            Util_LearnOperation.DoRankDownMove(
                 ref isRequest_ShowGohosyu,
                 ref isRequest_ChangeKyokumenPng,
                 this, errH);
@@ -427,13 +427,13 @@ namespace Grayscale.P743FvLearn
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnSasiteRankUp_Click(object sender, EventArgs e)
+        private void btnMoveRankUp_Click(object sender, EventArgs e)
         {
             IErrorController errH = ErrorControllerReference.Learner;
             bool isRequest_ShowGohosyu = false;
             bool isRequest_ChangeKyokumenPng = false;
 
-            Util_LearnOperation.Do_RankUpSasite(
+            Util_LearnOperation.DoRankUpMove(
                 ref isRequest_ShowGohosyu,
                 ref isRequest_ChangeKyokumenPng,
                 this, errH);

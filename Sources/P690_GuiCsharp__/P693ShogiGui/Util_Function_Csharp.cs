@@ -41,7 +41,7 @@ namespace Grayscale.P693ShogiGui.L249Function
             Playerside firstPside = Playerside.P1;
 
             KifuNode newNode = new KifuNodeImpl(
-                                        Util_Sky258A.ROOT_SASITE,//ルートなので
+                                        Util_Sky258A.RootMove,//ルートなので
                                         new KyokumenWrapper(Util_SkyWriter.New_Hirate(firstPside))//[初期配置]ボタン押下時
                                         );
 
@@ -115,10 +115,10 @@ namespace Grayscale.P693ShogiGui.L249Function
             // 符号表示
             //------------------------------
             {
-                Node<Starbeamable, KyokumenWrapper> node6 = shogiGui.Link_Server.Model_Taikyoku.Kifu.CurNode;
+                Node<IMove, KyokumenWrapper> node6 = shogiGui.Link_Server.Model_Taikyoku.Kifu.CurNode;
 
                 // [コマ送り][再生]ボタン
-                string jsaFugoStr = Conv_SasiteStr_Jsa.ToSasiteStr_Jsa(node6,errH);
+                string jsaFugoStr = ConvMoveStrJsa.ToMoveStrJsa(node6,errH);
 
                 shogiGui.Shape_PnlTaikyoku.SetFugo(jsaFugoStr);
             }
@@ -146,7 +146,7 @@ namespace Grayscale.P693ShogiGui.L249Function
 
         public static void Komamove1a_49Gui(
             out Komasyurui14 toSyurui,
-            out Starlight dst,
+            out IMoveHalf dst,
             Shape_BtnKoma btnKoma_Selected,
             Shape_BtnMasu btnMasu,
             MainGui_Csharp mainGui

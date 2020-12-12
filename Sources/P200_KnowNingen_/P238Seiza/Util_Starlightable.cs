@@ -7,7 +7,7 @@ namespace Grayscale.P238Seiza.L500Util
     public abstract class Util_Starlightable
     {
 
-        public static RO_Star AsKoma(Starlightable light)
+        public static RO_Star AsKoma(IMoveSource light)
         {
             RO_Star koma;
 

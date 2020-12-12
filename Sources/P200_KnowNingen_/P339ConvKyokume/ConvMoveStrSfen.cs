@@ -15,7 +15,7 @@ using System.Text;
 namespace Grayscale.P339ConvKyokume.L500Converter
 {
 
-    public abstract class Conv_SasiteStr_Sfen
+    public abstract class ConvMoveStrSfen
     {
         /// <summary>
         /// 自動で削除される、棋譜ツリー・ログのルートフォルダー名。
@@ -28,8 +28,8 @@ namespace Grayscale.P339ConvKyokume.L500Converter
         /// ************************************************************************************************************************
         /// </summary>
         /// <returns></returns>
-        public static string ToSasiteStr_Sfen(
-            Starbeamable sasite,
+        public static string ToMoveStrSfen(
+            IMove move,
             [CallerMemberName] string memberName = "",
             [CallerFilePath] string sourceFilePath = "",
             [CallerLineNumber] int sourceLineNumber = 0
@@ -39,14 +39,14 @@ namespace Grayscale.P339ConvKyokume.L500Converter
 
             try
             {
-                if (Util_Sky258A.ROOT_SASITE == sasite)
+                if (Util_Sky258A.RootMove == move)
                 {
-                    sb.Append( Conv_SasiteStr_Sfen.KIFU_TREE_LOG_ROOT_FOLDER);
+                    sb.Append( ConvMoveStrSfen.KIFU_TREE_LOG_ROOT_FOLDER);
                     goto gt_EndMethod;
                 }
 
-                RO_Star srcKoma = Util_Starlightable.AsKoma(sasite.LongTimeAgo);
-                RO_Star dstKoma = Util_Starlightable.AsKoma(sasite.Now);
+                RO_Star srcKoma = Util_Starlightable.AsKoma(move.LongTimeAgo);
+                RO_Star dstKoma = Util_Starlightable.AsKoma(move.Now);
 
 
 
@@ -67,7 +67,7 @@ namespace Grayscale.P339ConvKyokume.L500Converter
                 //}
 
 
-                if (Util_Sky_BoolQuery.IsDaAction(sasite))
+                if (Util_Sky_BoolQuery.IsDaAction(move))
                 {
                     // 打でした。
                     //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -144,7 +144,7 @@ namespace Grayscale.P339ConvKyokume.L500Converter
                 //------------------------------------------------------------
                 // 成
                 //------------------------------------------------------------
-                if (Util_Sky_BoolQuery.IsNatta_Sasite(sasite))
+                if (Util_Sky_BoolQuery.IsNattaMove(move))
                 {
                     sb.Append("+");
                 }
@@ -165,10 +165,10 @@ namespace Grayscale.P339ConvKyokume.L500Converter
         /// ************************************************************************************************************************
         /// </summary>
         /// <returns></returns>
-        public static string ToSasiteStr_Sfen_WithTottaKomasyurui(RO_Starbeam ss)
+        public static string ToMoveStrSfenWithTottaKomasyurui(RO_Starbeam ss)
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append(Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(ss));
+            sb.Append(ConvMoveStrSfen.ToMoveStrSfen(ss));
             if (Komasyurui14.H00_Null___ != (Komasyurui14)ss.FoodKomaSyurui)
             {
                 sb.Append("(");
@@ -188,16 +188,16 @@ namespace Grayscale.P339ConvKyokume.L500Converter
         /// ファイル名にも使えるように、ファイル名に使えない文字を置換します。
         /// </summary>
         /// <returns></returns>
-        public static string ToSasiteStr_Sfen_ForFilename(
-            Starbeamable sasite,
+        public static string ToMoveStrSfenForFilename(
+            IMove move,
             [CallerMemberName] string memberName = "",
             [CallerFilePath] string sourceFilePath = "",
             [CallerLineNumber] int sourceLineNumber = 0
             )
         {
-            string sasiteText = Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(sasite);
-            sasiteText = Conv_Filepath.ToEscape(sasiteText);
-            return sasiteText;
+            string moveText = ConvMoveStrSfen.ToMoveStrSfen(move);
+            moveText = Conv_Filepath.ToEscape(moveText);
+            return moveText;
         }
 
 

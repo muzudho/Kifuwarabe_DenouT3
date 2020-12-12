@@ -13,15 +13,15 @@ using System.IO;
 using System.Windows.Forms;
 using Grayscale.P743FvLearn.I490StopLearning;
 using Grayscale.P743FvLearn.L490StopLearning;
-using Grayscale.P743FvLearn.L508AutoSasiteRush;
-using Grayscale.P743FvLearn.L506AutoSasiteSort;
+using Grayscale.P743FvLearn.L508AutoMoveRush;
+using Grayscale.P743FvLearn.L506AutoMoveSort;
 
-namespace Grayscale.P743FvLearn.L508AutoSasiteRush
+namespace Grayscale.P743FvLearn.L508AutoMoveRush
 {
     /// <summary>
     /// 自動で棋譜を読み取ります。
     /// </summary>
-    public abstract class Util_AutoSasiteRush
+    public abstract class UtilAutoMoveRush
     {
         /// <summary>
         /// 評価更新繰り返し回数。1以上の数字が必要。
@@ -34,7 +34,7 @@ namespace Grayscale.P743FvLearn.L508AutoSasiteRush
         /// <summary>
         /// 繰り返し、指し手を進めます。
         /// </summary>
-        public static void Do_SasiteRush(
+        public static void DoMoveRush(
             out bool out_isEndKifuread,
             ref bool isRequest_ShowGohosyu,
             ref bool isRequest_ChangeKyokumenPng,
@@ -51,19 +51,19 @@ namespace Grayscale.P743FvLearn.L508AutoSasiteRush
             // N手を連続で自動実行。
             // 本譜の手が残っている間。
             //
-            for (int pushedButton = 0; pushedButton < renzokuTe && 0 < uc_Main.LstSasite.Items.Count; pushedButton++)
+            for (int pushedButton = 0; pushedButton < renzokuTe && 0 < uc_Main.LstMove.Items.Count; pushedButton++)
             { // 指し手ループ
                 isSaved = false;//リセット
                 float tyoseiryo;
                 float.TryParse(uc_Main.TxtTyoseiryo.Text, out tyoseiryo);
 
-                HonpuSasiteListItemImpl sasiteItem = (HonpuSasiteListItemImpl)uc_Main.LstSasite.Items[0];
-                string sfenSasiteStr = sasiteItem.Sfen;
+                HonpuMoveListItemImpl moveItem = (HonpuMoveListItemImpl)uc_Main.LstMove.Items[0];
+                string sfenMoveStr = moveItem.Sfen;
 
 
-                if (sfenSasiteStr == "")
+                if (sfenMoveStr == "")
                 {
-                    goto gt_EndSasiteList;
+                    goto gt_EndMoveList;
                 }
 
 
@@ -96,7 +96,7 @@ namespace Grayscale.P743FvLearn.L508AutoSasiteRush
                 int loopLimit = 1; // 通常1回
                 if (uc_Main.ChkHyakuretuken.Checked)
                 {
-                    loopLimit = Util_AutoSasiteRush.RENZOKU_KAISU;
+                    loopLimit = UtilAutoMoveRush.RENZOKU_KAISU;
                 }
 
                 //----------------------------------------
@@ -104,7 +104,7 @@ namespace Grayscale.P743FvLearn.L508AutoSasiteRush
                 //----------------------------------------
                 int pushCount;
                 bool isEndAutoLearn;
-                Util_AutoSortingRush.Do_SortSasiteRush(
+                Util_AutoSortingRush.DoSortMoveRush(
                     out pushCount,
                     out isEndAutoLearn,
                     ref isRequest_ShowGohosyu,
@@ -112,7 +112,7 @@ namespace Grayscale.P743FvLearn.L508AutoSasiteRush
                     ref isRequestDoEvents,
                     loopLimit,
                     ref tyoseiryo,
-                    sfenSasiteStr,
+                    sfenMoveStr,
                     uc_Main, errH
                     );
 
@@ -227,7 +227,7 @@ namespace Grayscale.P743FvLearn.L508AutoSasiteRush
                 }
             }//指し手ループ
 
-            gt_EndSasiteList:
+            gt_EndMoveList:
             ;
 
             // 終局時は、オートセーブ

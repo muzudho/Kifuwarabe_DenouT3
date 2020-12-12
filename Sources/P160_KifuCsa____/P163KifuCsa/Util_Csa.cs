@@ -85,7 +85,7 @@ namespace Grayscale.P163KifuCsa.L250Struct
                         switch (line[0])
                         {
                             case '+':
-                            case '-': Util_Csa.ReadPlaceMinus_Sasite(line, csaKifuData); break;
+                            case '-': Util_Csa.ReadPlaceMinusMove(line, csaKifuData); break;
                             case 'T': Util_Csa.ReadT(line, csaKifuData); break;
                             case '\'': break;// コメントは無視します。
                             default:
@@ -263,35 +263,35 @@ namespace Grayscale.P163KifuCsa.L250Struct
         /// <summary>
         /// 指し手の±部
         /// </summary>
-        private static void ReadPlaceMinus_Sasite(string line, CsaKifuImpl csaKifuData)
+        private static void ReadPlaceMinusMove(string line, CsaKifuImpl csaKifuData)
         {
             if (line.Length < 7)
             {
                 goto gt_EndMethod;
             }
 
-            CsaKifuSasite sasite = new CsaKifuSasiteImpl();
+            CsaKifuMove move = new CsaKifuMoveImpl();
 
             // 1文字目
             switch (line[0])
             {
-                case '+': sasite.Sengo = line[0].ToString(); break;
-                case '-': sasite.Sengo = line[0].ToString(); break;
+                case '+': move.Sengo = line[0].ToString(); break;
+                case '-': move.Sengo = line[0].ToString(); break;
             }
 
             // 2～3文字目
-            sasite.SourceMasu = line.Substring(1, 2);
+            move.SourceMasu = line.Substring(1, 2);
 
             // 4～5文字目
-            sasite.DestinationMasu = line.Substring(3, 2);
+            move.DestinationMasu = line.Substring(3, 2);
 
             // 6～7文字目
-            sasite.Syurui = line.Substring(5, 2);
+            move.Syurui = line.Substring(5, 2);
 
             // オプション。手目済み。
-            sasite.OptionTemezumi = csaKifuData.SasiteList.Count + 1;
+            move.OptionTemezumi = csaKifuData.MoveList.Count + 1;
 
-            csaKifuData.SasiteList.Add(sasite);
+            csaKifuData.MoveList.Add(move);
 
         gt_EndMethod:
             ;
@@ -308,7 +308,7 @@ namespace Grayscale.P163KifuCsa.L250Struct
                 goto gt_EndMethod;
             }
 
-            if (csaKifuData.SasiteList.Count < 1)
+            if (csaKifuData.MoveList.Count < 1)
             {
                 goto gt_EndMethod;
             }
@@ -316,7 +316,7 @@ namespace Grayscale.P163KifuCsa.L250Struct
             int second;
             if (int.TryParse(line.Substring(1), out second))
             {
-                csaKifuData.SasiteList.Last().Second = second;
+                csaKifuData.MoveList.Last().Second = second;
             }
 
         gt_EndMethod:

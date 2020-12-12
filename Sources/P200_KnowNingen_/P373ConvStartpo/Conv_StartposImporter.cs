@@ -53,7 +53,7 @@ namespace Grayscale.P373ConvStartpo.L500Converter
             // 駒の配置
             //------------------------------
             parsedKyokumen.KifuNode = new KifuNodeImpl(
-                    Util_Sky258A.ROOT_SASITE,//ルートなので
+                    Util_Sky258A.RootMove,//ルートなので
                     new KyokumenWrapper(
                         SkyConst.NewInstance(
                             startposImporter.ToSky(

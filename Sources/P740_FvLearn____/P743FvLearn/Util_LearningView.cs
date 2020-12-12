@@ -40,7 +40,7 @@ namespace Grayscale.P743FvLearn.L260View
         /// 指し手一覧を、リストボックスに表示します。
         /// </summary>
         /// <param name="uc_Main"></param>
-        public static void ShowSasiteList(
+        public static void ShowMoveList(
             LearningData learningData,
             Uc_Main uc_Main,
             IErrorController errH
@@ -49,40 +49,40 @@ namespace Grayscale.P743FvLearn.L260View
             //
             // まず、リストを空っぽにします。
             //
-            uc_Main.LstSasite.Items.Clear();
+            uc_Main.LstMove.Items.Clear();
 
             Playerside firstPside = Playerside.P1;
             KifuTree kifu1 = new KifuTreeImpl(
                 new KifuNodeImpl(
-                    Util_Sky258A.ROOT_SASITE,
+                    Util_Sky258A.RootMove,
                     new KyokumenWrapper(SkyConst.NewInstance(
                         Util_SkyWriter.New_Hirate(firstPside),
                         0//初期局面は 0手済み。
                         ))//日本の符号読取時
                 )
             );
-            //kifu1.AssertPside(kifu1.CurNode, "ShowSasiteList",errH);
+            //kifu1.AssertPside(kifu1.CurNode, "ShowMoveList",errH);
 
-            List<CsaKifuSasite> sasiteList = learningData.CsaKifu.SasiteList;
-            foreach (CsaKifuSasite csaSasite in sasiteList)
+            List<CsaKifuMove> moveList = learningData.CsaKifu.MoveList;
+            foreach (CsaKifuMove csaMove in moveList)
             {
                 // 開始局面
                 SkyConst kaisi_Sky = kifu1.CurNode.Value.KyokumenConst;
 
                 //
-                // csaSasite を データ指し手 に変換するには？
+                // csaMove を データ指し手 に変換するには？
                 //
-                Starbeamable nextSasite;
+                IMove nextMove;
                 {
-                    Playerside pside = Util_CsaSasite.ToPside(csaSasite);
+                    Playerside pside = UtilCsaMove.ToPside(csaMove);
 
                     // 元位置
-                    SyElement srcMasu = Util_CsaSasite.ToSrcMasu(csaSasite);
+                    SyElement srcMasu = UtilCsaMove.ToSrcMasu(csaMove);
                     Finger figSrcKoma;
                     if (Masu_Honshogi.IsErrorBasho(srcMasu))// 駒台の "00" かも。
                     {
                         //駒台の駒。
-                        Komasyurui14 utuKomasyurui = Util_Komasyurui14.NarazuCaseHandle(Util_CsaSasite.ToKomasyurui(csaSasite));// 打つ駒の種類。
+                        Komasyurui14 utuKomasyurui = Util_Komasyurui14.NarazuCaseHandle(UtilCsaMove.ToKomasyurui(csaMove));// 打つ駒の種類。
 
                         Okiba komadai;
                         switch (pside)
@@ -102,7 +102,7 @@ namespace Grayscale.P743FvLearn.L260View
                     RO_Star srcKoma = Util_Starlightable.AsKoma(kaisi_Sky.StarlightIndexOf(figSrcKoma).Now);
 
                     // 先位置
-                    SyElement dstMasu = Util_CsaSasite.ToDstMasu(csaSasite);
+                    SyElement dstMasu = UtilCsaMove.ToDstMasu(csaMove);
                     Finger figFoodKoma = Util_Sky_FingerQuery.InShogibanMasuNow(kaisi_Sky, pside, dstMasu, errH);
                     Komasyurui14 foodKomasyurui;
                     if (figFoodKoma == Fingers.Error_1)
@@ -115,13 +115,13 @@ namespace Grayscale.P743FvLearn.L260View
                         // 駒のある枡
                         foodKomasyurui = Util_Starlightable.AsKoma(kaisi_Sky.StarlightIndexOf(figFoodKoma).Now).Komasyurui;//取った駒有り。
                     }
-                    Starlightable dstKoma = new RO_Star(
+                    IMoveSource dstKoma = new RO_Star(
                         pside,
                         dstMasu,
-                        Util_CsaSasite.ToKomasyurui(csaSasite)
+                        UtilCsaMove.ToKomasyurui(csaMove)
                     );
 
-                    nextSasite = new RO_Starbeam(
+                    nextMove = new RO_Starbeam(
                         srcKoma,// 移動元
                         dstKoma,// 移動先
                         foodKomasyurui////取った駒
@@ -139,13 +139,13 @@ namespace Grayscale.P743FvLearn.L260View
                         new IttesasuArgImpl(
                             kifu1.CurNode.Value,
                             ((KifuNode)kifu1.CurNode).Value.KyokumenConst.KaisiPside,
-                            nextSasite,
+                            nextMove,
                             kifu1.CurNode.Value.KyokumenConst.Temezumi + 1//1手進める
                         ),
                         out ittesasuResult,
                         //kifu1,//診断用
                         errH,
-                        "Utli_LearningViews#ShowSasiteList"
+                        "Utli_LearningViews#ShowMoveList"
                     );
                     Debug.Assert(ittesasuResult.Get_SyuryoNode_OrNull != null, "ittesasuResult.Get_SyuryoNode_OrNull がヌル☆？！");
                     Util_IttesasuRoutine.Before2(
@@ -158,7 +158,7 @@ namespace Grayscale.P743FvLearn.L260View
                     //kifu1.AssertChildPside(kifu1.CurNode.Value.ToKyokumenConst.KaisiPside, ittesasuResult.Get_SyuryoNode_OrNull.Value.ToKyokumenConst.KaisiPside);
                     Util_IttesasuRoutine.After3_ChangeCurrent(
                         kifu1,
-                        Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(ittesasuResult.Get_SyuryoNode_OrNull.Key),// nextSasiteStr,
+                        ConvMoveStrSfen.ToMoveStrSfen(ittesasuResult.Get_SyuryoNode_OrNull.Key),// nextMoveStr,
                         ittesasuResult.Get_SyuryoNode_OrNull,
                         errH
                         );
@@ -170,21 +170,21 @@ namespace Grayscale.P743FvLearn.L260View
                 string sfen;
                 if (kifu1.CurNode.IsRoot())
                 {
-                    sfen = Util_CsaSasite.ToSfen(csaSasite, null);
+                    sfen = UtilCsaMove.ToSfen(csaMove, null);
                 }
                 else
                 {
-                    sfen = Util_CsaSasite.ToSfen(csaSasite, kifu1.CurNode.GetParentNode().Value.KyokumenConst);
+                    sfen = UtilCsaMove.ToSfen(csaMove, kifu1.CurNode.GetParentNode().Value.KyokumenConst);
                 }
-                HonpuSasiteListItemImpl listItem = new HonpuSasiteListItemImpl(csaSasite, sfen);
-                uc_Main.LstSasite.Items.Add(listItem);
+                HonpuMoveListItemImpl listItem = new HonpuMoveListItemImpl(csaMove, sfen);
+                uc_Main.LstMove.Items.Add(listItem);
             }
 
             //----------------------------------------
             // ソート
             //----------------------------------------
-            //List<SasiteListItemImpl> list = new List<SasiteListItemImpl>();
-            //list.Sort((SasiteListItemImpl a, SasiteListItemImpl b) =>
+            //List<MoveListItemImpl> list = new List<MoveListItemImpl>();
+            //list.Sort((MoveListItemImpl a, MoveListItemImpl b) =>
             //{
             //    return a - b;
             //});
@@ -227,7 +227,7 @@ namespace Grayscale.P743FvLearn.L260View
                 List<GohosyuListItem> list = new List<GohosyuListItem>();
                 //uc_Main.LstGohosyu.Items.Clear();
                 int itemNumber = 0;
-                ((KifuNode)learningData.Kifu.CurNode).Foreach_ChildNodes((string key, Node<Starbeamable, KyokumenWrapper> node, ref bool toBreak) =>
+                ((KifuNode)learningData.Kifu.CurNode).Foreach_ChildNodes((string key, Node<IMove, KyokumenWrapper> node, ref bool toBreak) =>
                 {
 #if DEBUG || LEARN
                     KyHyokaMeisai_Koumoku komawariMeisai;
@@ -245,7 +245,7 @@ namespace Grayscale.P743FvLearn.L260View
                     GohosyuListItem item = new GohosyuListItem(
                         itemNumber,
                         key,
-                        Conv_SasiteStr_Jsa.ToSasiteStr_Jsa(node, errH)
+                        ConvMoveStrJsa.ToMoveStrJsa(node, errH)
 #if DEBUG || LEARN
 ,
                         komawariMeisai,
@@ -326,13 +326,13 @@ namespace Grayscale.P743FvLearn.L260View
             //
             // リストの先頭の項目を取得したい。
             //
-            if (ucMain.LstSasite.Items.Count < 1)
+            if (ucMain.LstMove.Items.Count < 1)
             {
                 goto gt_EndMethod;
             }
 
             // リストボックスの先頭から指し手をSFEN形式で１つ取得。
-            HonpuSasiteListItemImpl item = (HonpuSasiteListItemImpl)ucMain.LstSasite.Items[0];
+            HonpuMoveListItemImpl item = (HonpuMoveListItemImpl)ucMain.LstMove.Items[0];
             string sfen = item.Sfen;
             errH.OnAppendLog?.Invoke("sfen=" + sfen + Environment.NewLine);
 
@@ -345,17 +345,17 @@ namespace Grayscale.P743FvLearn.L260View
             // 合法手の一覧は既に作成されているものとします。
             // 次の手に進みます。
             //
-            Starbeamable nextSasite;
+            IMove nextMove;
             {
                 if (learningData.Kifu.CurNode.HasChildNode(sfen))
                 {
-                    Node<Starbeamable, KyokumenWrapper> nextNode = learningData.Kifu.CurNode.GetChildNode(sfen);
-                    nextSasite = nextNode.Key;//次の棋譜ノードのキーが、指し手（きふわらべ式）になっています。
+                    Node<IMove, KyokumenWrapper> nextNode = learningData.Kifu.CurNode.GetChildNode(sfen);
+                    nextMove = nextNode.Key;//次の棋譜ノードのキーが、指し手（きふわらべ式）になっています。
 
                 }
                 else
                 {
-                    nextSasite = null;
+                    nextMove = null;
                     StringBuilder sb = new StringBuilder();
                     sb.Append("指し手[" + sfen + "]はありませんでした。\n" + learningData.DumpToAllGohosyu(learningData.Kifu.CurNode.Value.KyokumenConst));
 
@@ -374,7 +374,7 @@ namespace Grayscale.P743FvLearn.L260View
                 new IttesasuArgImpl(
                     learningData.Kifu.CurNode.Value,
                     ((KifuNode)learningData.Kifu.CurNode).Value.KyokumenConst.KaisiPside,
-                    nextSasite,// FIXME: これがヌルのことがあるのだろうか？
+                    nextMove,// FIXME: これがヌルのことがあるのだろうか？
                     learningData.Kifu.CurNode.Value.KyokumenConst.Temezumi + 1//1手進める
                 ),
                 out ittesasuResult,
@@ -393,7 +393,7 @@ namespace Grayscale.P743FvLearn.L260View
             //this.Kifu.AssertChildPside(this.Kifu.CurNode.Value.ToKyokumenConst.KaisiPside, ittesasuResult.Get_SyuryoNode_OrNull.Value.ToKyokumenConst.KaisiPside);
             Util_IttesasuRoutine.After3_ChangeCurrent(
                 learningData.Kifu,
-                Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(ittesasuResult.Get_SyuryoNode_OrNull.Key),
+                ConvMoveStrSfen.ToMoveStrSfen(ittesasuResult.Get_SyuryoNode_OrNull.Key),
                 ittesasuResult.Get_SyuryoNode_OrNull,
                 errH
                 );
@@ -403,14 +403,14 @@ namespace Grayscale.P743FvLearn.L260View
             //----------------------------------------
             // カレント・ノードより古い、以前読んだ手を削除したい。
             //----------------------------------------
-            System.Console.WriteLine("カレント・ノード＝" + Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(learningData.Kifu.CurNode.Key));
+            System.Console.WriteLine("カレント・ノード＝" + ConvMoveStrSfen.ToMoveStrSfen(learningData.Kifu.CurNode.Key));
             int result_removedCount = UtilKifuTree282.IzennoHenkaCutter(learningData.Kifu, errH);
             System.Console.WriteLine("削除した要素数＝" + result_removedCount);
 
             ////----------------------------------------
             //// 合法手一覧を作成したい。
             ////----------------------------------------
-            learningData.Aa_Yomi(nextSasite, errH);
+            learningData.Aa_Yomi(nextMove, errH);
             // ノード情報の表示
             Util_LearningView.Aa_ShowNode2(ucMain.LearningData, ucMain, errH);
 
@@ -422,7 +422,7 @@ namespace Grayscale.P743FvLearn.L260View
             //
             // リストの頭１個を除外します。
             //
-            ucMain.LstSasite.Items.RemoveAt(0);
+            ucMain.LstMove.Items.RemoveAt(0);
 
 #if DEBUG
             sw1.Stop();
@@ -435,7 +435,7 @@ namespace Grayscale.P743FvLearn.L260View
             //----------------------------------------
             // ボタン表示の回復
             //----------------------------------------
-            if (0 < ucMain.LstSasite.Items.Count)
+            if (0 < ucMain.LstMove.Items.Count)
             {
                 ucMain.BtnUpdateKyokumenHyoka.Enabled = true;//[局面評価更新]ボタン連打防止解除。
             }

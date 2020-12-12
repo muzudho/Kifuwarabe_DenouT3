@@ -51,7 +51,7 @@ namespace Grayscale.P224Sky.L500Struct
         /// <summary>
         /// 「置き場に置けるものの素性」リストです。駒だけとは限りませんので、４０個以上になることもあります。
         /// </summary>
-        private List<Starlight> starlights;
+        private List<IMoveHalf> starlights;
 
         #endregion
 
@@ -84,7 +84,7 @@ namespace Grayscale.P224Sky.L500Struct
 
         public static SkyConst NewInstance(Sky src, int temezumi_orMinus1)
         {
-            SkyConst result = new SkyConst(src, false, temezumi_orMinus1, new Finger[] { Fingers.Error_1 }, new Starlight[] { null },
+            SkyConst result = new SkyConst(src, false, temezumi_orMinus1, new Finger[] { Fingers.Error_1 }, new IMoveHalf[] { null },
                 // 手得計算
                 Komasyurui14.H00_Null___, 0, Masu_Honshogi.Query_Basho(Masu_Honshogi.nError)
                 );
@@ -93,7 +93,7 @@ namespace Grayscale.P224Sky.L500Struct
 
         public static SkyConst NewInstance_ReversePside(Sky src, int temezumi_orMinus1)
         {
-            SkyConst result = new SkyConst(src, true, temezumi_orMinus1, new Finger[]{Fingers.Error_1},new Starlight[]{null},
+            SkyConst result = new SkyConst(src, true, temezumi_orMinus1, new Finger[]{Fingers.Error_1},new IMoveHalf[]{null},
                 // 手得計算
                 Komasyurui14.H00_Null___, 0, Masu_Honshogi.Query_Basho(Masu_Honshogi.nError)
                 );
@@ -110,9 +110,9 @@ namespace Grayscale.P224Sky.L500Struct
         /// <param name="finger1"></param>
         /// <param name="light1"></param>
         /// <returns></returns>
-        public static SkyConst NewInstance_OverwriteOrAdd_Light(Sky src, int temezumi_orMinus1, Finger finger1, Starlight light1)
+        public static SkyConst NewInstance_OverwriteOrAdd_Light(Sky src, int temezumi_orMinus1, Finger finger1, IMoveHalf light1)
         {
-            SkyConst result = new SkyConst(src, false, temezumi_orMinus1, new Finger[]{finger1},new Starlight[]{light1},
+            SkyConst result = new SkyConst(src, false, temezumi_orMinus1, new Finger[]{finger1},new IMoveHalf[]{light1},
                 // 手得計算
                 Komasyurui14.H00_Null___, 0, Masu_Honshogi.Query_Basho(Masu_Honshogi.nError)
                 );
@@ -129,12 +129,12 @@ namespace Grayscale.P224Sky.L500Struct
         /// <param name="finger1"></param>
         /// <param name="light1"></param>
         /// <returns></returns>
-        public static SkyConst NewInstance_OverwriteOrAdd_Light(Sky src, int temezumi_orMinus1, Finger finger1, Starlight light1,
+        public static SkyConst NewInstance_OverwriteOrAdd_Light(Sky src, int temezumi_orMinus1, Finger finger1, IMoveHalf light1,
             // 手得計算
             Komasyurui14 tedokuKeisan_komasyurui, int tedokukeisan_index, SyElement tedokukeisan_sasitamasu
             )
         {
-            SkyConst result = new SkyConst(src, false, temezumi_orMinus1, new Finger[] { finger1 }, new Starlight[] { light1 },
+            SkyConst result = new SkyConst(src, false, temezumi_orMinus1, new Finger[] { finger1 }, new IMoveHalf[] { light1 },
                 // 手得計算
                 tedokuKeisan_komasyurui, tedokukeisan_index, tedokukeisan_sasitamasu
                 );
@@ -151,9 +151,9 @@ namespace Grayscale.P224Sky.L500Struct
         /// <param name="finger2">取った駒、取っていた駒</param>
         /// <param name="light2"></param>
         /// <returns></returns>
-        public static SkyConst NewInstance_OverwriteOrAdd_Light(Sky src, int temezumi_orMinus1, Finger finger1, Starlight light1, Finger finger2, Starlight light2)
+        public static SkyConst NewInstance_OverwriteOrAdd_Light(Sky src, int temezumi_orMinus1, Finger finger1, IMoveHalf light1, Finger finger2, IMoveHalf light2)
         {
-            SkyConst result = new SkyConst(src, false, temezumi_orMinus1, new Finger[] { finger1, finger2 }, new Starlight[] { light1, light2 },
+            SkyConst result = new SkyConst(src, false, temezumi_orMinus1, new Finger[] { finger1, finger2 }, new IMoveHalf[] { light1, light2 },
                 // 手得計算
                 Komasyurui14.H00_Null___, 0, Masu_Honshogi.Query_Basho(Masu_Honshogi.nError)
                 );
@@ -164,7 +164,7 @@ namespace Grayscale.P224Sky.L500Struct
         /// クローンを作ります。
         /// </summary>
         /// <param name="src"></param>
-        private SkyConst(Sky src, bool toReversePlayerside, int update_temezumi_orMinus1, Finger[] finger1, Starlight[] light1,
+        private SkyConst(Sky src, bool toReversePlayerside, int update_temezumi_orMinus1, Finger[] finger1, IMoveHalf[] light1,
             //
             // 手得計算
             //
@@ -220,8 +220,8 @@ namespace Grayscale.P224Sky.L500Struct
             }
 
             // 星々のクローン
-            this.starlights = new List<Starlight>();
-            src.Foreach_Starlights((Finger finger2, Starlight light2, ref bool toBreak2) =>
+            this.starlights = new List<IMoveHalf>();
+            src.Foreach_Starlights((Finger finger2, IMoveHalf light2, ref bool toBreak2) =>
             {
                 this.starlights.Add(light2);
             });
@@ -255,14 +255,14 @@ namespace Grayscale.P224Sky.L500Struct
             }
         }
 
-        public Starlight StarlightIndexOf(
+        public IMoveHalf StarlightIndexOf(
             Finger finger,
             [CallerMemberName] string memberName = "",
             [CallerFilePath] string sourceFilePath = "",
             [CallerLineNumber] int sourceLineNumber = 0
         )
         {
-            Starlight found;
+            IMoveHalf found;
 
             if (0<=(int)finger && (int)finger < this.starlights.Count)
             {
@@ -284,7 +284,7 @@ namespace Grayscale.P224Sky.L500Struct
             bool toBreak = false;
 
             Finger finger = 0;
-            foreach (Starlight light in this.starlights)
+            foreach (IMoveHalf light in this.starlights)
             {
                 delegate_Sky_Foreach(finger, light, ref toBreak);
 
@@ -309,7 +309,7 @@ namespace Grayscale.P224Sky.L500Struct
         {
             Fingers fingers = new Fingers();
 
-            this.Foreach_Starlights((Finger finger, Starlight light, ref bool toBreak) =>
+            this.Foreach_Starlights((Finger finger, IMoveHalf light, ref bool toBreak) =>
             {
                 fingers.Add(finger);
             });

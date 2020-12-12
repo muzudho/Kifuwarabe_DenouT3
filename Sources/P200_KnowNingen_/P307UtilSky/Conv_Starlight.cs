@@ -12,7 +12,7 @@ namespace Grayscale.P307UtilSky.L500Util
     public abstract class Conv_Starlight
     {
 
-        public static Json_Val ToJsonVal(Starlight light)
+        public static Json_Val ToJsonVal(IMoveHalf light)
         {
             Json_Obj obj = new Json_Obj();
 

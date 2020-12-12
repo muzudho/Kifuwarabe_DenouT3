@@ -13,7 +13,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 namespace Grayscale.P360ConvSasu.L500Converter
 {
-    public abstract class Conv_SasitebetuKyokumenwrappers361
+    public abstract class ConvMoveBetuKyokumenwrappers361
     {
         /// <summary>
         /// FIXME:使ってない？
@@ -22,14 +22,14 @@ namespace Grayscale.P360ConvSasu.L500Converter
         /// </summary>
         public static List<Couple<Finger, SyElement>> NextNodes_ToKamList(
             SkyConst src_Sky_genzai,
-            Node<Starbeamable, KyokumenWrapper> hubNode,
+            Node<IMove, KyokumenWrapper> hubNode,
             IErrorController errH
             )
         {
             List<Couple<Finger, SyElement>> kmList = new List<Couple<Finger, SyElement>>();
 
             // TODO:
-            hubNode.Foreach_ChildNodes((string key, Node<Starbeamable, KyokumenWrapper> nextNode, ref bool toBreak) =>
+            hubNode.Foreach_ChildNodes((string key, Node<IMove, KyokumenWrapper> nextNode, ref bool toBreak) =>
             {
                 RO_Star srcKoma = Util_Starlightable.AsKoma(nextNode.Key.LongTimeAgo);
                 RO_Star dstKoma = Util_Starlightable.AsKoma(nextNode.Key.Now);

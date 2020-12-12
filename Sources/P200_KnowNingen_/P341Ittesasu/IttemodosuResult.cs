@@ -29,7 +29,7 @@ namespace Grayscale.P341Ittesasu.I250OperationA
         /// 「進む」ときは、一手指す局面の「指した後」のツリー・ノード。
         /// 「巻き戻す」のときは、ヌル。
         /// </summary>
-        Node<Starbeamable, KyokumenWrapper> SyuryoNode_OrNull { get; set; }
+        Node<IMove, KyokumenWrapper> SyuryoNode_OrNull { get; set; }
 
         /// <summary>
         /// 終了ノードの局面データ。

@@ -23,7 +23,7 @@ namespace Grayscale.P353ConvSasuEx.L500Converter
             IErrorController errH
             )
         {
-            return new KifuNodeImpl(sasuEntry.NewSasite, new KyokumenWrapper(
+            return new KifuNodeImpl(sasuEntry.NewMove, new KyokumenWrapper(
                 Util_Sasu341.Sasu(
                     src_Sky,//指定局面
                     sasuEntry.Finger,//指す駒

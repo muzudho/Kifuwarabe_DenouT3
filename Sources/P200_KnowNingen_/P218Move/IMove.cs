@@ -9,7 +9,7 @@ namespace Grayscale.P218Starlight.I500Struct
     /// 「移動前の星」「移動後の星」「取った駒」です。
     /// 一局面の中に限れば、重複はなくてもよいはずです。
     /// </summary>
-    public interface Starbeamable : Starlight
+    public interface IMove : IMoveHalf
     {
 
         ///// <summary>
@@ -27,7 +27,7 @@ namespace Grayscale.P218Starlight.I500Struct
         /// 先後、升、配役
         /// ------------------------------------------------------------------------------------------------------------------------
         /// </summary>
-        Starlightable LongTimeAgo { get; }
+        IMoveSource LongTimeAgo { get; }
 
         /// <summary>
         /// ------------------------------------------------------------------------------------------------------------------------

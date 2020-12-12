@@ -58,7 +58,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
         {
             MainGui_Csharp shogiGui = (MainGui_Csharp)obj_shogiGui;
 
-            Starlight light = shogiGui.Model_Manual.GuiSkyConst.StarlightIndexOf(finger);
+            IMoveHalf light = shogiGui.Model_Manual.GuiSkyConst.StarlightIndexOf(finger);
             shogiGui.Shape_PnlTaikyoku.Shogiban.KikiBan = new SySet_Default<SyElement>("利き盤");// .Clear();
 
             // 駒の利き
@@ -66,7 +66,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
             //kikiZukei.DebugWrite("駒の利きLv1");
 
             // 味方の駒
-            Node<Starbeamable, KyokumenWrapper> siteiNode = shogiGui.Link_Server.Model_Taikyoku.Kifu.CurNode;
+            Node<IMove, KyokumenWrapper> siteiNode = shogiGui.Link_Server.Model_Taikyoku.Kifu.CurNode;
 
             //shogiGui.Model_PnlTaikyoku.Kifu.AssertPside(shogiGui.Model_PnlTaikyoku.Kifu.CurNode, "Check_MouseoverKomaKiki",errH);
             SySet<SyElement> mikataZukei = Util_Sky_SyugoQuery.Masus_Now(siteiNode.Value.KyokumenConst, shogiGui.Link_Server.Model_Taikyoku.Kifu.CurNode.Value.KyokumenConst.KaisiPside);
@@ -368,14 +368,14 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                                     //------------------------------
                                                     // 棋譜
 
-                                                    Starlight dstStarlight = mainGui.Shape_PnlTaikyoku.MouseStarlightOrNull2;
+                                                    IMoveHalf dstStarlight = mainGui.Shape_PnlTaikyoku.MouseStarlightOrNull2;
                                                     System.Diagnostics.Debug.Assert(null != dstStarlight, "mouseStarlightがヌル");
 
-                                                    Starlight srcStarlight = src_Sky.StarlightIndexOf(btnKoma.Koma);
+                                                    IMoveHalf srcStarlight = src_Sky.StarlightIndexOf(btnKoma.Koma);
                                                     System.Diagnostics.Debug.Assert(null != srcStarlight, "komaStarlightがヌル");
 
 
-                                                    Starbeamable sasite = new RO_Starbeam(
+                                                    IMove move = new RO_Starbeam(
                                                         dstStarlight.Now,
                                                         srcStarlight.Now,
                                                         mainGui.Shape_PnlTaikyoku.MousePos_FoodKoma != null ? mainGui.Shape_PnlTaikyoku.MousePos_FoodKoma.Komasyurui : Komasyurui14.H00_Null___
@@ -386,8 +386,8 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                                     //
                                                     SkyBuffer sky_newChild = new SkyBuffer(src_Sky);
                                                     sky_newChild.SetKaisiPside(Conv_Playerside.Reverse(Playerside.P1));//FIXME:人間が先手でハードコーディング中
-                                                    Node<Starbeamable, KyokumenWrapper> newNode = new KifuNodeImpl(
-                                                        sasite,
+                                                    Node<IMove, KyokumenWrapper> newNode = new KifuNodeImpl(
+                                                        move,
                                                         new KyokumenWrapper( SkyConst.NewInstance(
                                                             sky_newChild,
                                                             mainGui.Model_Manual.GuiTemezumi + 1//1手進ませる。
@@ -399,8 +399,8 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                                     //    "デバッグ");
 
                                                     //マウスの左ボタンを放したときです。
-                                                    string sasiteStr = Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(newNode.Key);
-                                                    if (!((KifuNode)mainGui.Link_Server.Model_Taikyoku.Kifu.CurNode).HasTuginoitte(sasiteStr))
+                                                    string moveStr = ConvMoveStrSfen.ToMoveStrSfen(newNode.Key);
+                                                    if (!((KifuNode)mainGui.Link_Server.Model_Taikyoku.Kifu.CurNode).HasTuginoitte(moveStr))
                                                     {
                                                         //----------------------------------------
                                                         // 次ノード追加
@@ -480,7 +480,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                 case MouseEventStateName.MouseLeftButtonUp:
                                     {
                                         #region マウス左ボタンアップ
-                                        Node<Starbeamable, KyokumenWrapper> siteiNode = mainGui.Link_Server.Model_Taikyoku.Kifu.CurNode;
+                                        Node<IMove, KyokumenWrapper> siteiNode = mainGui.Link_Server.Model_Taikyoku.Kifu.CurNode;
                                         SkyConst src_Sky = mainGui.Model_Manual.GuiSkyConst;
 
 
@@ -519,7 +519,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                                         // 棋譜に符号を追加（マウスボタンが放されたとき）TODO:まだ早い。駒が成るかもしれない。
                                                         //------------------------------
 
-                                                        Starbeamable sasite = new RO_Starbeam(
+                                                        IMove move = new RO_Starbeam(
                                                             //btnKoma.Koma,
                                                             mainGui.Shape_PnlTaikyoku.MouseStarlightOrNull2.Now,
 
@@ -528,15 +528,15 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                                             mainGui.Shape_PnlTaikyoku.MousePos_FoodKoma != null ? mainGui.Shape_PnlTaikyoku.MousePos_FoodKoma.Komasyurui : Komasyurui14.H00_Null___
                                                             );// 選択している駒の元の場所と、移動先
 
-                                                        Starbeamable last;
+                                                        IMove last;
                                                         {
                                                             last = siteiNode.Key;
                                                         }
-                                                        //ShootingStarlightable previousSasite = last; //符号の追加が行われる前に退避
+                                                        //ShootingStarlightable previousMove = last; //符号の追加が行われる前に退避
 
-                                                        Node<Starbeamable, KyokumenWrapper> newNode =
+                                                        Node<IMove, KyokumenWrapper> newNode =
                                                             new KifuNodeImpl(
-                                                                sasite,
+                                                                move,
                                                                 new KyokumenWrapper(SkyConst.NewInstance(
                                                                     src_Sky,
                                                                     mainGui.Model_Manual.GuiTemezumi + 1//1手進ませる。
@@ -619,7 +619,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
 
                                         //>>>>> 選択されている駒があるとき
 
-                                        Starlight tumandeiruLight = mainGui.Model_Manual.GuiSkyConst.StarlightIndexOf((int)btnTumandeiruKoma.Finger);
+                                        IMoveHalf tumandeiruLight = mainGui.Model_Manual.GuiSkyConst.StarlightIndexOf((int)btnTumandeiruKoma.Finger);
 
 
                                         //----------
@@ -659,7 +659,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                                 {
                                                     bool match = false;
 
-                                                    mainGui.Model_Manual.GuiSkyConst.Foreach_Starlights((Finger finger, Starlight ml, ref bool toBreak) =>
+                                                    mainGui.Model_Manual.GuiSkyConst.Foreach_Starlights((Finger finger, IMoveHalf ml, ref bool toBreak) =>
                                                     {
                                                         RO_Star koma = Util_Starlightable.AsKoma(ml.Now);
 
@@ -741,7 +741,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                                 {
                                                     // GuiからServerへ渡す情報
                                                     Komasyurui14 syurui;
-                                                    Starlight dst;
+                                                    IMoveHalf dst;
                                                     
                                                     Util_Function_Csharp.Komamove1a_49Gui(out syurui, out dst, btnTumandeiruKoma, btnSasitaiMasu, mainGui);
 

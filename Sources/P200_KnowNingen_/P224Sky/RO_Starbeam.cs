@@ -27,7 +27,7 @@ namespace Grayscale.P224Sky.L500Struct
     /// ・駒種類：「歩」「と金」など。補助で容易。
     /// </summary>
     [Serializable]
-    public class RO_Starbeam : RO_Starlight, Starbeamable
+    public class RO_Starbeam : RO_Starlight, IMove
     {
 
 
@@ -50,8 +50,8 @@ namespace Grayscale.P224Sky.L500Struct
         /// 先後、升、配役
         /// ------------------------------------------------------------------------------------------------------------------------
         /// </summary>
-        public Starlightable LongTimeAgo { get { return this.longTimeAgo; } }
-        protected Starlightable longTimeAgo;
+        public IMoveSource LongTimeAgo { get { return this.longTimeAgo; } }
+        protected IMoveSource longTimeAgo;
 
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Grayscale.P224Sky.L500Struct
         /// <param name="dstSyurui"></param>
         /// <param name="srcSyurui"></param>
         /// <param name="previousTe"></param>
-        public RO_Starbeam(Starlightable longTimeAgo, Starlightable now, object/*Ks14*/ tottaKomaSyurui)
+        public RO_Starbeam(IMoveSource longTimeAgo, IMoveSource now, object/*Ks14*/ tottaKomaSyurui)
             : base(now)
         {
             this.longTimeAgo = longTimeAgo;

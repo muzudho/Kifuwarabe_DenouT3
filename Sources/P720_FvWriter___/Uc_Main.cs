@@ -89,23 +89,23 @@ namespace Grayscale.P720_FvWriter___
             CsaKifu csaKifu = Util_Csa.ReadFile(this.txtKifuFilepath.Text);
 
             StringBuilder sb = new StringBuilder();
-            List<CsaKifuSasite> sasiteList = csaKifu.SasiteList;
-            foreach(CsaKifuSasite csaSasite in sasiteList)
+            List<CsaKifuMove> moveList = csaKifu.MoveList;
+            foreach(CsaKifuMove csaMove in moveList)
             {
-                sb.Append(csaSasite.OptionTemezumi);
+                sb.Append(csaMove.OptionTemezumi);
                 sb.Append("手目 ");
-                sb.Append(csaSasite.DestinationMasu);
+                sb.Append(csaMove.DestinationMasu);
                 sb.Append(" ");
-                sb.Append(csaSasite.Second);
+                sb.Append(csaMove.Second);
                 sb.Append(" ");
-                sb.Append(csaSasite.Sengo);
+                sb.Append(csaMove.Sengo);
                 sb.Append(" ");
-                sb.Append(csaSasite.SourceMasu);
+                sb.Append(csaMove.SourceMasu);
                 sb.Append(" ");
-                sb.Append(csaSasite.Syurui);
+                sb.Append(csaMove.Syurui);
                 sb.AppendLine();
             }
-            this.txtSasiteList.Text = sb.ToString();
+            this.txtMoveList.Text = sb.ToString();
 
         gt_EndMethod:
             ;

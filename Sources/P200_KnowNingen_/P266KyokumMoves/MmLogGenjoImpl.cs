@@ -37,8 +37,8 @@ namespace Grayscale.P266KyokumMoves.L250Log
         private int yomikaisiTemezumi;
 
 
-        public Starbeamable Sasite { get { return this.sasite; } }
-        private Starbeamable sasite;
+        public IMove Move { get { return this.move; } }
+        private IMove move;
 
         public IErrorController ErrH { get { return this.errH; } }
         private IErrorController errH;
@@ -48,20 +48,20 @@ namespace Grayscale.P266KyokumMoves.L250Log
             int yomikaisiTemezumi,
             KaisetuBoard brdMove,
             int temezumi_yomiCur,
-            Starbeamable sasite,
+            IMove move,
             IErrorController errH
             )
         {
             this.BrdMove = brdMove;
             this.yomikaisiTemezumi = yomikaisiTemezumi;
             this.temezumi_yomiCur = temezumi_yomiCur;
-            this.sasite = sasite;
+            this.move = move;
             this.errH = errH;
         }
 
         public void Log1(Playerside pside_genTeban3)
         {
-            this.BrdMove.Caption = "移動可能_" + Conv_Sasite.Sasite_To_KsString_ForLog(this.Sasite, pside_genTeban3);
+            this.BrdMove.Caption = "移動可能_" + ConvMove.ChangeMoveTo_KsString_ForLog(this.Move, pside_genTeban3);
             this.BrdMove.Temezumi = this.Temezumi_yomiCur;
             this.BrdMove.YomikaisiTemezumi = this.YomikaisiTemezumi;
             this.BrdMove.GenTeban = pside_genTeban3;// 現手番

@@ -106,7 +106,7 @@ namespace Grayscale.P481AimsServer.L125Receiver
                                 Playerside firstPside = Playerside.P1;
                                 this.Owner_AimsServer.Model_Taikyoku.SetKifu(new KifuTreeImpl(
                                         new KifuNodeImpl(
-                                            Util_Sky258A.ROOT_SASITE,
+                                            Util_Sky258A.RootMove,
                                             new KyokumenWrapper(SkyConst.NewInstance(
                                                     Util_SkyWriter.New_Hirate(firstPside),
                                                     0 // 初期局面は 0手目済み

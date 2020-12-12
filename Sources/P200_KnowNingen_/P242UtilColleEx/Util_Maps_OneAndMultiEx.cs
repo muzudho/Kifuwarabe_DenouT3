@@ -8,13 +8,13 @@ namespace Grayscale.P242UtilColleEx.L500Util
     public abstract class Util_Maps_OneAndMultiEx<T1, T2>
     {
 
-        public static int CountAllElements(Maps_OneAndMulti<Finger, Starbeamable> collection)
+        public static int CountAllElements(Maps_OneAndMulti<Finger, IMove> collection)
         {
             int count = 0;
 
-            foreach (KeyValuePair<Finger, List<Starbeamable>> entry in collection.Items)
+            foreach (KeyValuePair<Finger, List<IMove>> entry in collection.Items)
             {
-                foreach (Starbeamable starbeam in entry.Value)
+                foreach (IMove starbeam in entry.Value)
                 {
                     count++;
                 }

@@ -38,18 +38,18 @@ namespace Grayscale.P542Scoreing.L125ScoreSibori
 
 
                 exception_area = 1000;
-                List<Node<Starbeamable, KyokumenWrapper>> rankedNodes = this.RankingNode_WithJudge_ForeachNextNodes(
+                List<Node<IMove, KyokumenWrapper>> rankedNodes = this.RankingNode_WithJudge_ForeachNextNodes(
                     kifu.CurNode, errH);
 
 
                 exception_area = 1500;
-                Dictionary<string, Node<Starbeamable, KyokumenWrapper>> dic = new Dictionary<string, Node<Starbeamable, KyokumenWrapper>>();
+                Dictionary<string, Node<IMove, KyokumenWrapper>> dic = new Dictionary<string, Node<IMove, KyokumenWrapper>>();
                 if (kifu.CurNode.Value.KyokumenConst.KaisiPside == Playerside.P1)
                 {
                     exception_area = 2000;
                     // 1番高いスコアを調べます。
                     float goodestScore = float.MinValue;
-                    foreach (Node<Starbeamable, KyokumenWrapper> node in rankedNodes)
+                    foreach (Node<IMove, KyokumenWrapper> node in rankedNodes)
                     {
                         if (node is KifuNode)
                         {
@@ -64,7 +64,7 @@ namespace Grayscale.P542Scoreing.L125ScoreSibori
 
                     exception_area = 2500;
                     // 1番良いスコアのノードだけ残します。
-                    kifu.CurNode.Foreach_ChildNodes((string key, Node<Starbeamable, KyokumenWrapper> node, ref bool toBreak) =>
+                    kifu.CurNode.Foreach_ChildNodes((string key, Node<IMove, KyokumenWrapper> node, ref bool toBreak) =>
                     {
                         float score;
                         if (node is KifuNode)
@@ -88,7 +88,7 @@ namespace Grayscale.P542Scoreing.L125ScoreSibori
 
                     // 2Pは、マイナスの方が良い。
                     float goodestScore = float.MaxValue;
-                    foreach (Node<Starbeamable, KyokumenWrapper> node in rankedNodes)
+                    foreach (Node<IMove, KyokumenWrapper> node in rankedNodes)
                     {
                         if (node is KifuNode)
                         {
@@ -103,7 +103,7 @@ namespace Grayscale.P542Scoreing.L125ScoreSibori
 
                     exception_area = 3500;
                     // 1番良いスコアのノードだけ残します。
-                    kifu.CurNode.Foreach_ChildNodes((string key, Node<Starbeamable, KyokumenWrapper> node, ref bool toBreak) =>
+                    kifu.CurNode.Foreach_ChildNodes((string key, Node<IMove, KyokumenWrapper> node, ref bool toBreak) =>
                     {
                         float score;
                         if (node is KifuNode)
@@ -142,20 +142,20 @@ namespace Grayscale.P542Scoreing.L125ScoreSibori
         /// </summary>
         /// <param name="nextNodes"></param>
         /// <returns></returns>
-        private List<Node<Starbeamable, KyokumenWrapper>> RankingNode_WithJudge_ForeachNextNodes(
-            Node<Starbeamable, KyokumenWrapper> hubNode,
+        private List<Node<IMove, KyokumenWrapper>> RankingNode_WithJudge_ForeachNextNodes(
+            Node<IMove, KyokumenWrapper> hubNode,
             IErrorController errH
             )
         {
             int exception_area = 0;
-            List<Node<Starbeamable, KyokumenWrapper>> list = null;
+            List<Node<IMove, KyokumenWrapper>> list = null;
 
             try
             {
                 // ランク付けしたあと、リスト構造に移し変えます。
-                list = new List<Node<Starbeamable, KyokumenWrapper>>();
+                list = new List<Node<IMove, KyokumenWrapper>>();
 
-                hubNode.Foreach_ChildNodes((string key, Node<Starbeamable, KyokumenWrapper> node, ref bool toBreak) =>
+                hubNode.Foreach_ChildNodes((string key, Node<IMove, KyokumenWrapper> node, ref bool toBreak) =>
                 {
                     list.Add(node);
                 });
@@ -174,7 +174,7 @@ namespace Grayscale.P542Scoreing.L125ScoreSibori
         }
 
 
-        private static void Sort(List<Node<Starbeamable, KyokumenWrapper>> items)
+        private static void Sort(List<Node<IMove, KyokumenWrapper>> items)
         {
             items.Sort((a, b) =>
             {

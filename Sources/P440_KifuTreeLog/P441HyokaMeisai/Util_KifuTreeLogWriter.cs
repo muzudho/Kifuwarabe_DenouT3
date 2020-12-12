@@ -79,7 +79,7 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
                 // 既存の棋譜ツリー・ログを空に。
                 //----------------------------------------
                 {
-                    string rootFolder = Path.Combine(Util_KifuTreeLogWriter.REPORT_ENVIRONMENT.OutFolder, Conv_SasiteStr_Sfen.KIFU_TREE_LOG_ROOT_FOLDER);
+                    string rootFolder = Path.Combine(Util_KifuTreeLogWriter.REPORT_ENVIRONMENT.OutFolder, ConvMoveStrSfen.KIFU_TREE_LOG_ROOT_FOLDER);
                     if (Directory.Exists(rootFolder))
                     {
                         try
@@ -101,19 +101,19 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
                 // カレントノードまでの符号を使って、フォルダーパスを作成。
                 //----------------------------------------
                 StringBuilder tree_folder = new StringBuilder();
-                kifu.ForeachHonpu(kifu.CurNode, (int temezumi2, KyokumenWrapper kWrap, Node<Starbeamable, KyokumenWrapper> node, ref bool toBreak) =>
+                kifu.ForeachHonpu(kifu.CurNode, (int temezumi2, KyokumenWrapper kWrap, Node<IMove, KyokumenWrapper> node, ref bool toBreak) =>
                 {
-                    tree_folder.Append(Conv_SasiteStr_Sfen.ToSasiteStr_Sfen_ForFilename(node.Key) + "/");
+                    tree_folder.Append(ConvMoveStrSfen.ToMoveStrSfenForFilename(node.Key) + "/");
                 });
-                //sb_folder.Append( Conv_SasiteStr_Sfen.ToSasiteStr_Sfen_ForFilename(kifu.CurNode.Key) + "/");
+                //sb_folder.Append( Conv_MoveStr_Sfen.ToMoveStr_Sfen_ForFilename(kifu.CurNode.Key) + "/");
 
-                string sasiteText1 = Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(kifu.CurNode.Key);
+                string moveText1 = ConvMoveStrSfen.ToMoveStrSfen(kifu.CurNode.Key);
                 KifuNode kifuNode1 = (KifuNode)kifu.CurNode;
 
                 // 評価明細のログ出力。
                 Util_KifuTreeLogWriter.AA_Write_ForeachLeafs_ForDebug(
                     ref logFileCounter,
-                    sasiteText1,
+                    moveText1,
                     kifuNode1,
                     kifu,
                     tree_folder.ToString(),
@@ -175,7 +175,7 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
 
                 int logFileCounter_temp = logFileCounter;
                 // 先に奥の枝から。
-                node.Foreach_ChildNodes((string key, Node<Starbeamable, KyokumenWrapper> nextNode, ref bool toBreak) =>
+                node.Foreach_ChildNodes((string key, Node<IMove, KyokumenWrapper> nextNode, ref bool toBreak) =>
                 {
 
                     float score = ((KifuNode)nextNode).Score;
@@ -183,10 +183,10 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
                     // 再帰
                     Util_KifuTreeLogWriter.AA_Write_ForeachLeafs_ForDebug(
                         ref logFileCounter_temp,
-                        nodePath + " " + Conv_SasiteStr_Sfen.ToSasiteStr_Sfen_ForFilename(nextNode.Key),
+                        nodePath + " " + ConvMoveStrSfen.ToMoveStrSfenForFilename(nextNode.Key),
                         (KifuNode)nextNode,
                         kifu,
-                        treeFolder + ((int)score).ToString() + "点_" + Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(nextNode.Key) + "/",
+                        treeFolder + ((int)score).ToString() + "点_" + ConvMoveStrSfen.ToMoveStrSfen(nextNode.Key) + "/",
                         reportEnvironment,
                         errH
                         );
@@ -270,7 +270,7 @@ namespace Grayscale.P440KifuTreeLog.L500Struct
                         srcMasu_orMinusOne,
                         dstMasu_orMinusOne,
                         foodKoma,
-                        Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(node.Key),
+                        ConvMoveStrSfen.ToMoveStrSfen(node.Key),
                         relFolder,
                         fileName,
                         reportEnvironment,

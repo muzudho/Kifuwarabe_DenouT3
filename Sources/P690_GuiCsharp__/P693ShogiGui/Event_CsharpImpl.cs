@@ -487,7 +487,7 @@ namespace Grayscale.P693ShogiGui.L491Event
             {
                 // GuiからServerへ渡す情報
                 Komasyurui14 syurui;
-                Starlight dst;
+                IMoveHalf dst;
                 Util_Function_Csharp.Komamove1a_49Gui(out syurui, out dst, btnTumandeiruKoma, mainGui.Shape_PnlTaikyoku.NaruBtnMasu, mainGui);
 
                 // ServerからGuiへ渡す情報
@@ -509,7 +509,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                 //------------------------------
                 // 棋譜
 
-                Starbeamable sasite = new RO_Starbeam(
+                IMove move = new RO_Starbeam(
                     //btnTumandeiruKoma.Finger,
                     mainGui.Shape_PnlTaikyoku.MouseStarlightOrNull2.Now,
 
@@ -525,7 +525,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     //
                     StartposImporter.Assert_HirateHonsyogi(new SkyBuffer(mainGui.Model_Manual.GuiSkyConst), "newNode作成前");
                     newNode = new KifuNodeImpl(
-                        sasite,
+                        move,
                         new KyokumenWrapper(SkyConst.NewInstance_ReversePside(// 先後を反転させます。
                             mainGui.Model_Manual.GuiSkyConst,
                             mainGui.Model_Manual.GuiSkyConst.Temezumi + 1//１手進める
@@ -584,11 +584,11 @@ namespace Grayscale.P693ShogiGui.L491Event
             mainGui.RepaintRequest.SyuturyokuRequest = RepaintRequestGedanTxt.Kifu;
             mainGui.RepaintRequest.SetFlag_RefreshRequest();
 
-            Starbeamable last;
+            IMove last;
             {
-                Node<Starbeamable, KyokumenWrapper> kifuElement = mainGui.Link_Server.Model_Taikyoku.Kifu.CurNode;
+                Node<IMove, KyokumenWrapper> kifuElement = mainGui.Link_Server.Model_Taikyoku.Kifu.CurNode;
 
-                last = (Starbeamable)kifuElement.Key;
+                last = (IMove)kifuElement.Key;
             }
             mainGui.ChangedTurn(errH);//マウス左ボタンを押したのでチェンジターンします。
 

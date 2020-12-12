@@ -27,7 +27,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// </summary>
         /// <param name="masus"></param>
         /// <returns></returns>
-        public static bool ExistsIn(Starlight sl, SySet<SyElement> masus, SkyConst srcSky, IErrorController errH)
+        public static bool ExistsIn(IMoveHalf sl, SySet<SyElement> masus, SkyConst srcSky, IErrorController errH)
         {
             bool matched = false;
 
@@ -61,7 +61,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         ///         先手は 1,2,3 段。
         /// </summary>
         /// <returns></returns>
-        public static bool InAitejin(Starlight ms)
+        public static bool InAitejin(IMoveHalf ms)
         {
             bool result;
 
@@ -78,7 +78,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// <summary>
         /// 成り
         /// </summary>
-        public static bool IsNari(Starlight ms)
+        public static bool IsNari(IMoveHalf ms)
         {
             bool result;
 
@@ -103,7 +103,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
             return result;
         }
 
-        public static bool IsNareruKoma(Starlight ms)
+        public static bool IsNareruKoma(IMoveHalf ms)
         {
             bool result;
 
@@ -119,7 +119,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// 不一致判定：　先後、駒種類  が、自分と同じものが　＜ひとつもない＞
         /// </summary>
         /// <returns></returns>
-        public static bool NeverOnaji(Starlight ms, SkyConst src_Sky, params Fingers[] komaGroupArgs)
+        public static bool NeverOnaji(IMoveHalf ms, SkyConst src_Sky, params Fingers[] komaGroupArgs)
         {
             bool unmatched = true;
 
@@ -191,7 +191,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// 先手
         /// </summary>
         /// <returns></returns>
-        public static bool IsSente(Starlight ms)
+        public static bool IsSente(IMoveHalf ms)
         {
             bool result;
 
@@ -206,7 +206,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// 後手
         /// </summary>
         /// <returns></returns>
-        public static bool IsGote(Starlight ms)
+        public static bool IsGote(IMoveHalf ms)
         {
             bool result;
 
@@ -221,14 +221,14 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// “打” ＜アクション時＞
         /// </summary>
         /// <returns></returns>
-        public static bool IsDaAction(Starbeamable sasite)
+        public static bool IsDaAction(IMove move)
         {
-            Debug.Assert(null != sasite, "指し手がヌルでした。");
+            Debug.Assert(null != move, "指し手がヌルでした。");
             bool result;
 
             try
             {
-                RO_Star srcKoma = Util_Starlightable.AsKoma(sasite.LongTimeAgo);
+                RO_Star srcKoma = Util_Starlightable.AsKoma(move.LongTimeAgo);
                 result = Okiba.ShogiBan != Conv_SyElement.ToOkiba(srcKoma.Masu)//駒台（駒袋）から打ったとき。
                     && Okiba.Empty != Conv_SyElement.ToOkiba(srcKoma.Masu);//初期配置から移動しても、打にはしません。
             }
@@ -241,12 +241,12 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
             return result;
         }
 
-        public static bool isEnableSfen(Starbeamable sasite)
+        public static bool isEnableSfen(IMove move)
         {
             bool enable = true;
 
-            RO_Star srcKoma = Util_Starlightable.AsKoma(sasite.LongTimeAgo);
-            RO_Star dstKoma = Util_Starlightable.AsKoma(sasite.Now);
+            RO_Star srcKoma = Util_Starlightable.AsKoma(move.LongTimeAgo);
+            RO_Star dstKoma = Util_Starlightable.AsKoma(move.Now);
 
 
             int srcDan;
@@ -268,14 +268,14 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// 成った
         /// </summary>
         /// <returns></returns>
-        public static bool IsNatta_Sasite(Starbeamable sasite)
+        public static bool IsNattaMove(IMove move)
         {
             // 元種類が不成、現種類が成　の場合のみ真。
             bool natta = true;
 
 
-            RO_Star srcKoma = Util_Starlightable.AsKoma(sasite.LongTimeAgo);
-            RO_Star dstKoma = Util_Starlightable.AsKoma(sasite.Now);
+            RO_Star srcKoma = Util_Starlightable.AsKoma(move.LongTimeAgo);
+            RO_Star dstKoma = Util_Starlightable.AsKoma(move.Now);
 
 
             // 成立しない条件を１つでも満たしていれば、偽　確定。

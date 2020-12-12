@@ -53,7 +53,7 @@ namespace Grayscale.P341Ittesasu.L250OperationA
             {
                 saifuKifu = new KifuTreeImpl(
                         new KifuNodeImpl(
-                            Util_Sky258A.ROOT_SASITE,
+                            Util_Sky258A.RootMove,
                             new KyokumenWrapper(Util_SkyWriter.New_Hirate(Playerside.P1))//日本の符号読取時
                         )
                 );
@@ -61,7 +61,7 @@ namespace Grayscale.P341Ittesasu.L250OperationA
                 saifuKifu.SetProperty(Word_KifuTree.PropName_Startpos, "startpos");//平手の初期局面 // FIXME:平手とは限らないのでは？
             }
 
-            src_kifu.ForeachHonpu(src_kifu.CurNode, (int temezumi, KyokumenWrapper kWrap, Node<Starbeamable, KyokumenWrapper> node, ref bool toBreak) =>
+            src_kifu.ForeachHonpu(src_kifu.CurNode, (int temezumi, KyokumenWrapper kWrap, Node<IMove, KyokumenWrapper> node, ref bool toBreak) =>
             {
                 if (0 == temezumi)
                 {
@@ -88,10 +88,10 @@ namespace Grayscale.P341Ittesasu.L250OperationA
                 UtilKifuTree282.AppendChild_And_ChangeCurrentToChild(saifuKifu, saifu_newChild, hint+"/ToJsaKifuText", errH);// 新しい次ノードを追加。次ノードを、これからカレントとする。
 
                 // 後手の符号がまだ含まれていない。
-                string jsaFugoStr = Conv_SasiteStr_Jsa.ToSasiteStr_Jsa(saifu_newChild,
+                string jsaFugoStr = ConvMoveStrJsa.ToMoveStrJsa(saifu_newChild,
                     //saifu_newChild.Value,
                     errH);
-                //sb.Append(Conv_SasiteStr_Jsa.ToSasiteStr_Jsa(node, saifu_kWrap, errH));
+                //sb.Append(Conv_MoveStr_Jsa.ToMoveStr_Jsa(node, saifu_kWrap, errH));
                 sb.Append(jsaFugoStr);
 
             gt_EndLoop:
@@ -121,7 +121,7 @@ namespace Grayscale.P341Ittesasu.L250OperationA
 
             // 本譜
             int count = 0;
-            src_kifu.ForeachHonpu(src_kifu.CurNode, (int temezumi, KyokumenWrapper kWrap, Node<Starbeamable, KyokumenWrapper> node, ref bool toBreak) =>
+            src_kifu.ForeachHonpu(src_kifu.CurNode, (int temezumi, KyokumenWrapper kWrap, Node<IMove, KyokumenWrapper> node, ref bool toBreak) =>
             {
                 if (0 == temezumi)
                 {
@@ -129,17 +129,17 @@ namespace Grayscale.P341Ittesasu.L250OperationA
                     goto gt_EndLoop;
                 }
 
-                sb.Append(Conv_SasiteStr_Sfen.ToSasiteStr_Sfen(node.Key));
+                sb.Append(ConvMoveStrSfen.ToMoveStrSfen(node.Key));
 
                 //// TODO:デバッグ用
-                //switch (sasite.TottaKoma)
+                //switch (move.TottaKoma)
                 //{
                 //    case KomaSyurui.UNKNOWN:
                 //    case KomaSyurui.TOTTA_KOMA_NASI:
                 //        break;
                 //    default:
                 //        sb.Append("(");
-                //        sb.Append(Converter.SyuruiToSfen(sasite.Pside,sasite.TottaKoma));
+                //        sb.Append(Converter.SyuruiToSfen(move.Pside,move.TottaKoma));
                 //        sb.Append(")");
                 //        break;
                 //}

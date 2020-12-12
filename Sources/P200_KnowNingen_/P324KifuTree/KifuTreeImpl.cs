@@ -13,7 +13,7 @@ using System.Diagnostics;
 
 namespace Grayscale.P324KifuTree.L250Struct
 {
-    public class KifuTreeImpl : TreeImpl<Starbeamable, KyokumenWrapper>, KifuTree
+    public class KifuTreeImpl : TreeImpl<IMove, KyokumenWrapper>, KifuTree
     {
         /// <summary>
         /// 千日手カウンター。
@@ -25,7 +25,7 @@ namespace Grayscale.P324KifuTree.L250Struct
         }
         private SennititeCounter sennititeCounter;
 
-        public KifuTreeImpl(Node<Starbeamable, KyokumenWrapper> root)
+        public KifuTreeImpl(Node<IMove, KyokumenWrapper> root)
             : base(root)
         {
             //----------------------------------------

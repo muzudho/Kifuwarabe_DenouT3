@@ -23,7 +23,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         {
             SySet_Default<SyElement> masus = new SySet_Default<SyElement>("今の升");
 
-            src_Sky.Foreach_Starlights((Finger finger, Starlight mlLight, ref bool toBreak) =>
+            src_Sky.Foreach_Starlights((Finger finger, IMoveHalf mlLight, ref bool toBreak) =>
             {
                 RO_Star koma = Util_Starlightable.AsKoma(mlLight.Now);
 

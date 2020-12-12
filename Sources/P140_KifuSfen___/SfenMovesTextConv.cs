@@ -6,7 +6,7 @@ using Grayscale.P003Log.L500Struct;
 
 namespace Grayscale.P140KifuSfen
 {
-    public abstract class SfenSasitesTextConv
+    public abstract class SfenMovesTextConv
     {
         /// <summary>
         /// ************************************************************************************************************************

@@ -182,7 +182,7 @@ namespace Grayscale.P699_Form_______
         //    Fingers fingers = Util_Sky_FingersQuery.InOkibaPsideNow(this.ShogibanGui.Link_ShogiServer.Model_Operating.Manual.GuiSkyConst, Okiba.ShogiBan, pside);
         //    if (0<fingers.Count)
         //    {
-        //        Starbeamable tuginoSasiteData;
+        //        Starbeamable tuginoMoveData;
 
         //        Finger finger = fingers[KwRandom.Random.Next(fingers.Count)];//ランダムに１つ。
         //        Starlight sl = src_Sky.StarlightIndexOf(finger);
@@ -206,7 +206,7 @@ namespace Grayscale.P699_Form_______
         //                    Util_MasuNum.TryMasuToDan(koma.Masu, out dan);
 
         //                    // 前に１つ突き出させます。
-        //                    tuginoSasiteData = new RO_Starbeam(
+        //                    tuginoMoveData = new RO_Starbeam(
         //                        //sl.Finger,
         //                        new RO_Star(
         //                            pside_getTeban,
@@ -244,7 +244,7 @@ namespace Grayscale.P699_Form_______
         //                    Util_MasuNum.TryMasuToDan(koma.Masu, out dan);
 
         //                    // 前に１つ突き出させます。
-        //                    tuginoSasiteData = new RO_Starbeam(
+        //                    tuginoMoveData = new RO_Starbeam(
         //                        //sl.Finger,
         //                        new RO_Star(
         //                            pside_getTeban,
@@ -272,10 +272,10 @@ namespace Grayscale.P699_Form_______
         //                }
         //        }
 
-        //        jsaFugoStr_tuginoItte = Conv_SasiteStr_Jsa.ToSasiteStr_Jsa(this.ShogibanGui.Link_ShogiServer.Model_Operating.Taikyoku.Kifu.CurNode,errH);
-        //        //RO_Star koma2 = Util_Starlightable.ToKoma(tuginoSasiteData.LongTimeAgo);
+        //        jsaFugoStr_tuginoItte = Conv_MoveStr_Jsa.ToMoveStr_Jsa(this.ShogibanGui.Link_ShogiServer.Model_Operating.Taikyoku.Kifu.CurNode,errH);
+        //        //RO_Star koma2 = Util_Starlightable.ToKoma(tuginoMoveData.LongTimeAgo);
 
-        //        //JsaFugoImpl fugoJ = Array_JsaFugoCreator15.ItemMethods[(int)Util_Komahaiyaku184.Syurui(koma2.Haiyaku)](tuginoSasiteData, new KyokumenWrapper(src_Sky), errH);//「▲２二角成」なら、馬（dst）ではなくて角（src）。
+        //        //JsaFugoImpl fugoJ = Array_JsaFugoCreator15.ItemMethods[(int)Util_Komahaiyaku184.Syurui(koma2.Haiyaku)](tuginoMoveData, new KyokumenWrapper(src_Sky), errH);//「▲２二角成」なら、馬（dst）ではなくて角（src）。
         //        //jsaFugoStr_tuginoItte = Util_Translator_JsaFugo.ToString_UseDou(fugoJ, this.ShogibanGui.Link_ShogiServer.Model_Operating.Taikyoku.Kifu.CurNode);
         //    }
 
@@ -588,7 +588,7 @@ namespace Grayscale.P699_Form_______
             //------------------------------------------------------------
             if (mainGui.RepaintRequest.Is_StarlightsRecalculateRequested())
             {
-                this.MainGui.Model_Manual.GuiSkyConst.Foreach_Starlights((Finger finger, Starlight light, ref bool toBreak) =>
+                this.MainGui.Model_Manual.GuiSkyConst.Foreach_Starlights((Finger finger, IMoveHalf light, ref bool toBreak) =>
                 {
                     Util_Function_Csharp.Redraw_KomaLocation(finger, this.MainGui, errH);
                 });
@@ -726,7 +726,7 @@ namespace Grayscale.P699_Form_______
 
             SkyConst siteiSky = mainGui.Model_Manual.GuiSkyConst;
 
-            siteiSky.Foreach_Starlights((Finger finger, Starlight ml, ref bool toBreak) =>
+            siteiSky.Foreach_Starlights((Finger finger, IMoveHalf ml, ref bool toBreak) =>
             {
                 RO_Star koma = Util_Starlightable.AsKoma(ml.Now);
 
@@ -750,7 +750,7 @@ namespace Grayscale.P699_Form_______
                 {
                     bool isSpace = true;
 
-                    siteiSky.Foreach_Starlights((Finger finger, Starlight ml, ref bool toBreak) =>
+                    siteiSky.Foreach_Starlights((Finger finger, IMoveHalf ml, ref bool toBreak) =>
                     {
                         RO_Star koma2 = Util_Starlightable.AsKoma(ml.Now);
 
@@ -803,7 +803,7 @@ namespace Grayscale.P699_Form_______
             sb.AppendLine("        <div style=\"margin-top:10px; width:30px;\">");
             sb.Append("            ");
 
-            siteiSky.Foreach_Starlights((Finger finger, Starlight ml, ref bool toBreak) =>
+            siteiSky.Foreach_Starlights((Finger finger, IMoveHalf ml, ref bool toBreak) =>
             {
                 RO_Star koma = Util_Starlightable.AsKoma(ml.Now);
 
