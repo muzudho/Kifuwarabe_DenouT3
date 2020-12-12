@@ -4,14 +4,16 @@
 
 |                         | ファイル                                                                                      |
 | ----------------------- | --------------------------------------------------------------------------------------------- |
-| ソース                  | `Kifuwarabe_DenouT3/Sources/By_Circle_Grayscale/Kifuwarakaku.sln`                             |
+| ソース                  | `Kifuwarabe_DenouT3/Kifuwarakaku.sln`                             |
 | 将棋エンジン ソース     | P500ShogiEngine                                                                               |
 | 将棋GUI ソース          | P800GuiCshapeVs                                                                               |
 | 将棋エンジン ランタイム | `Kifuwarabe_DenouT3/Builds/Engine/Bin/P500_ShogiEngine/Grayscale.P500_ShogiEngine.exe`        |
 | 設定ファイル1           | `Kifuwarabe_DenouT3/Builds/Engine/Bin/P500_ShogiEngine/Grayscale.P500_ShogiEngine.exe.config` |
 | 設定ファイル2           | `Kifuwarabe_DenouT3/Profile/Engine.toml`                                                      |
 
-設定ファイル1 の `Grayscale.P500_ShogiEngine.exe.config` の中にある `Profile` のパスを、 設定ファイル2 の親ディレクトリー `Profile` に合わせてください。  
+* `Kifuwarabe_DenouT3` のトップ・ディレクトリーに `Logs` ディレクトリーを作成してください。
+* `Kifuwarakaku.sln` を `Release` モードで ビルドしてください。
+* 設定ファイル1 の `Grayscale.P500_ShogiEngine.exe.config` の中にある `Profile` のパスを、 設定ファイル2 の親ディレクトリー `Profile` に合わせてください。  
 
 ## Manual
 
