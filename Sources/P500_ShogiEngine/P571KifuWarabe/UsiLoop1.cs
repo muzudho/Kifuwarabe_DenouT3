@@ -53,6 +53,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                 // 将棋サーバーから何かメッセージが届いていないか、見てみます。
                 string line = Util_Message.Download_Nonstop();
 
+                // (2020-12-13 sun) ノン・ブロッキングなら このコードが意味あったんだが☆（＾～＾）
                 if (null == line)//次の行が無ければヌル。
                 {
                     // メッセージは届いていませんでした。

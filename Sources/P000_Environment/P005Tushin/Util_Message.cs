@@ -50,8 +50,8 @@ namespace Grayscale.P005Tushin.L500Util
         /// <returns></returns>
         public static string Download_Nonstop()
         {
-            string line = TimeoutReader.ReadLine(3000);//3秒だけブロック
-            //string line = Console.In.ReadLine();//改行が入ってくるまで、ブロックしてしまう。
+            // string line = TimeoutReader.ReadLine(3000);//3秒だけブロック。 (2020-12-13 sun) そのあと抜ける。頼んで作ってもらった関数、入力を取りこぼす不具合がある☆（＾～＾）？
+            string line = Console.In.ReadLine();//改行が入ってくるまで、ブロックしてしまう。
 
             return line;
         }
