@@ -13,7 +13,7 @@
 
 * `Kifuwarabe_DenouT3` のトップ・ディレクトリーに `Logs` ディレクトリーを作成してください。
 * `Kifuwarakaku.sln` を `Release` モードで ビルドしてください。
-* 設定ファイル1 の `Grayscale.P500_ShogiEngine.exe.config` の中にある `Profile` のパスを、 設定ファイル2 の親ディレクトリー `Profile` に合わせてください。  
+* 設定ファイル1 の中にある `Profile` のパスを、 設定ファイル2 の親ディレクトリー `Profile` に合わせてください。  
 
 ## Manual
 
