@@ -189,7 +189,6 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
             //------------------------------------------------------------
             // USI です！！
             //------------------------------------------------------------
-            #region ↓詳説
             //
             // 図.
             //
@@ -204,12 +203,14 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
             // プログラム名と、作者名を送り返す必要があります。
             // オプションも送り返せば、受け取ってくれます。
             // usi を受け取ってから、5秒以内に usiok を送り返して完了です。
-            #endregion
+
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
             var engineName = toml.Get<TomlTable>("Engine").Get<string>("Name");
+            Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
             var engineAuthor = toml.Get<TomlTable>("Engine").Get<string>("Author");
-            this.Owner.Send($"id name {engineName}");
+
+            this.Owner.Send($"id name {engineName} {version.Major}.{version.Minor}.{version.Build}");
             this.Owner.Send($"id author {engineAuthor}");
             this.Owner.Send("usiok");
         }
