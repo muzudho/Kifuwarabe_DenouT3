@@ -119,6 +119,20 @@
     <Compile Include="P140KifuSfen\SfenStringImpl.cs" />
     <Compile Include="P140KifuSfen\SfenWord.cs" />
     <Compile Include="P140KifuSfen\Square.cs" />
+    <Compile Include="P150LogKyokuPng\P157KyokumenPng\KyokumenPngArgs.cs" />
+    <Compile Include="P150LogKyokuPng\P157KyokumenPng\KyokumenPngArgsImpl.cs" />
+    <Compile Include="P150LogKyokuPng\P157KyokumenPng\KyokumenPngArgs_FoodOrDropKoma.cs" />
+    <Compile Include="P150LogKyokuPng\P157KyokumenPng\KyokumenPngEnvironment.cs" />
+    <Compile Include="P150LogKyokuPng\P157KyokumenPng\KyokumenPngEnvironmentImpl.cs" />
+    <Compile Include="P150LogKyokuPng\P158LogKyokuPng\Util_KyokumenPngPainter.cs" />
+    <Compile Include="P150LogKyokuPng\P158LogKyokuPng\Util_KyokumenPng_Writer.cs" />
+    <Compile Include="P160KifuCsa\P163KifuCsa\CsaKifu.cs" />
+    <Compile Include="P160KifuCsa\P163KifuCsa\CsaKifuImpl.cs" />
+    <Compile Include="P160KifuCsa\P163KifuCsa\CsaKifuMove.cs" />
+    <Compile Include="P160KifuCsa\P163KifuCsa\CsaKifuMoveImpl.cs" />
+    <Compile Include="P160KifuCsa\P163KifuCsa\CsaKifuWriterImpl.cs" />
+    <Compile Include="P160KifuCsa\P163KifuCsa\Util_Csa.cs" />
+    <Compile Include="P160KifuCsa\P163KifuCsa\Word_Csa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -154,6 +168,9 @@
     <Folder Include="P000Environment\P054_／／↓集合論\" />
     <Folder Include="P000Environment\P060_／／↓将棋定数と変換器\" />
     <Folder Include="P000Environment\P070_Form_______／／フォーム\" />
+    <Folder Include="P150LogKyokuPng\P159_Form_______／／フォーム\" />
+    <Folder Include="P160KifuCsa\P161_／／CSA棋譜\" />
+    <Folder Include="P160KifuCsa\P169_Form_______／／フォーム\" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\..\packages\Microsoft.CodeAnalysis.NetAnalyzers.5.0.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll" />

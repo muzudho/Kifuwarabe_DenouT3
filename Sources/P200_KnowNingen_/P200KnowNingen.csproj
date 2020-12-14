@@ -315,13 +315,13 @@
       <Project>{147b11e0-827b-4d3f-844c-adf2beafa53f}</Project>
       <Name>Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\P150_LogKyokuPng\P150LogKyokuPng.csproj">
+    <ProjectReference Include="..\P150_LogKyokuPng\UiOfLogKyokuPng.csproj">
       <Project>{6f26bae0-8e17-4fda-a242-d1d7c4db2507}</Project>
-      <Name>P150LogKyokuPng</Name>
+      <Name>UiOfLogKyokuPng</Name>
     </ProjectReference>
-    <ProjectReference Include="..\P160_KifuCsa____\P160KifuCsa.csproj">
+    <ProjectReference Include="..\P160_KifuCsa____\GuiOfKifuCsa.csproj">
       <Project>{abed6201-9999-44cd-a91b-4ca01cc89006}</Project>
-      <Name>P160KifuCsa</Name>
+      <Name>GuiOfKifuCsa</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

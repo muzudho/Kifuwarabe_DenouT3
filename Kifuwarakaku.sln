@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Sources\P000_Environment\Entities.csproj", "{147B11E0-827B-4D3F-844C-ADF2BEAFA53F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P150LogKyokuPng", "Sources\P150_LogKyokuPng\P150LogKyokuPng.csproj", "{6F26BAE0-8E17-4FDA-A242-D1D7C4DB2507}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UiOfLogKyokuPng", "Sources\P150_LogKyokuPng\UiOfLogKyokuPng.csproj", "{6F26BAE0-8E17-4FDA-A242-D1D7C4DB2507}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P160KifuCsa", "Sources\P160_KifuCsa____\P160KifuCsa.csproj", "{ABED6201-9999-44CD-A91B-4CA01CC89006}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiOfKifuCsa", "Sources\P160_KifuCsa____\GuiOfKifuCsa.csproj", "{ABED6201-9999-44CD-A91B-4CA01CC89006}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P200KnowNingen", "Sources\P200_KnowNingen_\P200KnowNingen.csproj", "{2CFB37AE-2D9E-4478-ABD8-1EAAAF98F223}"
 EndProject
