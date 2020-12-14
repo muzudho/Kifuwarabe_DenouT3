@@ -168,14 +168,6 @@
       <Project>{abed6201-9999-44cd-a91b-4ca01cc89006}</Project>
       <Name>GuiOfKifuCsa</Name>
     </ProjectReference>
-    <ProjectReference Include="..\P200_KnowNingen_\P200KnowNingen.csproj">
-      <Project>{2cfb37ae-2d9e-4478-abd8-1eaaaf98f223}</Project>
-      <Name>P200KnowNingen</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\P440_KifuTreeLog\P440KifuTreeLog.csproj">
-      <Project>{da78a967-e248-4fc3-a89c-11ebb03030b7}</Project>
-      <Name>P440KifuTreeLog</Name>
-    </ProjectReference>
     <ProjectReference Include="..\P500_ShogiEngine\Engine.csproj">
       <Project>{e96a7341-b8e6-4979-8b2a-94ff2818962c}</Project>
       <Name>Engine</Name>

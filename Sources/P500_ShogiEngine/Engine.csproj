@@ -134,14 +134,6 @@
       <Project>{6f26bae0-8e17-4fda-a242-d1d7c4db2507}</Project>
       <Name>UiOfLogKyokuPng</Name>
     </ProjectReference>
-    <ProjectReference Include="..\P200_KnowNingen_\P200KnowNingen.csproj">
-      <Project>{2cfb37ae-2d9e-4478-abd8-1eaaaf98f223}</Project>
-      <Name>P200KnowNingen</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\P440_KifuTreeLog\P440KifuTreeLog.csproj">
-      <Project>{da78a967-e248-4fc3-a89c-11ebb03030b7}</Project>
-      <Name>P440KifuTreeLog</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="P501_／／将棋エンジン\" />

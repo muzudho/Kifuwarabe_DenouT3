@@ -53,6 +53,10 @@
     <Reference Include="NLua">
       <HintPath>..\..\..\References\NLua\NLua.dll</HintPath>
     </Reference>
+    <Reference Include="ProjectDark.KWSupport, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\CircleProjectDark\ProjectDark.KWSupport.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -64,12 +68,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="P481AimsServer\Receiver_ForAimsImpl.cs" />
-    <Compile Include="P481AimsServer\PhaseResult_AimsServer.cs" />
-    <Compile Include="P481AimsServer\AimsServerBase.cs" />
-    <Compile Include="P481AimsServer\Phase_AimsServer.cs" />
-    <Compile Include="P481AimsServer\AimsServerImpl.cs" />
-    <Compile Include="P481AimsServer\Receiver_ForAims.cs" />
+    <Compile Include="P460Server\P461Server\EngineClient.cs" />
+    <Compile Include="P460Server\P461Server\EngineClient_Impl.cs" />
+    <Compile Include="P460Server\P461Server\EngineProcessWrapper.cs" />
+    <Compile Include="P460Server\P461Server\EngineProcessWrapperImpl.cs" />
+    <Compile Include="P460Server\P461Server\Receiver.cs" />
+    <Compile Include="P460Server\P461Server\Receiver_ForCsharpVsImpl.cs" />
+    <Compile Include="P460Server\P461Server\Server.cs" />
+    <Compile Include="P460Server\P461Server\Server_Impl.cs" />
+    <Compile Include="P460Server\P461Server\Util_Functions_Server.cs" />
+    <Compile Include="P480ServerAims\P481AimsServer\Receiver_ForAimsImpl.cs" />
+    <Compile Include="P480ServerAims\P481AimsServer\PhaseResult_AimsServer.cs" />
+    <Compile Include="P480ServerAims\P481AimsServer\AimsServerBase.cs" />
+    <Compile Include="P480ServerAims\P481AimsServer\Phase_AimsServer.cs" />
+    <Compile Include="P480ServerAims\P481AimsServer\AimsServerImpl.cs" />
+    <Compile Include="P480ServerAims\P481AimsServer\Receiver_ForAims.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -78,21 +91,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="P480_／／AIMSサーバー\" />
-    <Folder Include="P489_Form_______／／フォーム\" />
+    <Folder Include="P460Server\P460_／／将棋サーバー\" />
+    <Folder Include="P480ServerAims\P480_／／AIMSサーバー\" />
+    <Folder Include="P480ServerAims\P489_Form_______／／フォーム\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\P000_Environment\Entities.csproj">
       <Project>{147b11e0-827b-4d3f-844c-adf2beafa53f}</Project>
       <Name>Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\P200_KnowNingen_\P200KnowNingen.csproj">
-      <Project>{2cfb37ae-2d9e-4478-abd8-1eaaaf98f223}</Project>
-      <Name>P200KnowNingen</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\P460_Server_____\P460Server.csproj">
-      <Project>{70aef273-46c9-4e60-ac97-8aeada3ed5f7}</Project>
-      <Name>P460Server</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
