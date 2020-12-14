@@ -107,13 +107,9 @@
     <Folder Include="P159_Form_______／／フォーム\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\P000_Environment\P000Environment.csproj">
+    <ProjectReference Include="..\P000_Environment\Entities.csproj">
       <Project>{147b11e0-827b-4d3f-844c-adf2beafa53f}</Project>
-      <Name>P000Environment</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\P140_KifuSfen___\P140KifuSfen.csproj">
-      <Project>{b0982362-ab7f-45a6-af5f-c9fdfa49f9dd}</Project>
-      <Name>P140KifuSfen</Name>
+      <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

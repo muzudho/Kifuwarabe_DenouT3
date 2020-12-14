@@ -183,9 +183,8 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
 
                 PhaseResult_UsiLoop2 result_UsiLoop2 = PhaseResult_UsiLoop2.None;
 
-
                 //ノンストップ版
-                //string line = TimeoutReader.ReadLine(1000);//指定ミリ秒だけブロック
+                //string line = TimeoutReader.ReadLine(1000);//指定ミリ秒だけブロック。  (2020-12-13 sun) そのあと抜ける。頼んで作ってもらった関数、入力を取りこぼす不具合がある☆（＾～＾）？
 
                 //通常版
                 string line = System.Console.In.ReadLine();

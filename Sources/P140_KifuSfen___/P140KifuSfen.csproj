@@ -62,25 +62,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AbstractSfenPosition1.cs" />
-    <Compile Include="Sfenstring146Conv.cs" />
-    <Compile Include="SfenMotigomaTokenConv.cs" />
-    <Compile Include="ISfenPosition1.cs" />
-    <Compile Include="ISfenPosition2.cs" />
-    <Compile Include="SfenPosition1Impl.cs" />
-    <Compile Include="SfenPosition2Impl.cs" />
-    <Compile Include="SfenStringImpl.cs" />
-    <Compile Include="Square.cs" />
-    <Compile Include="SfenPosition2Reference.cs" />
-    <Compile Include="SfenWord.cs" />
-    <Compile Include="SfenMovesTextConv.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -92,7 +73,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -103,14 +83,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\P000_Environment\P000Environment.csproj">
+    <ProjectReference Include="..\P000_Environment\Entities.csproj">
       <Project>{147b11e0-827b-4d3f-844c-adf2beafa53f}</Project>
-      <Name>P000Environment</Name>
+      <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

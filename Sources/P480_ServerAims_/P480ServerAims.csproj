@@ -82,9 +82,9 @@
     <Folder Include="P489_Form_______／／フォーム\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\P000_Environment\P000Environment.csproj">
+    <ProjectReference Include="..\P000_Environment\Entities.csproj">
       <Project>{147b11e0-827b-4d3f-844c-adf2beafa53f}</Project>
-      <Name>P000Environment</Name>
+      <Name>Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\P200_KnowNingen_\P200KnowNingen.csproj">
       <Project>{2cfb37ae-2d9e-4478-abd8-1eaaaf98f223}</Project>
