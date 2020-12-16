@@ -116,7 +116,7 @@
     <Compile Include="P571KifuWarabe\UsiLoop1.cs" />
     <Compile Include="P571KifuWarabe\UsiLoop2.cs" />
     <Compile Include="P571KifuWarabe\PhaseResult_UsiLoop2.cs" />
-    <Compile Include="P571KifuWarabe\KifuWarabeImpl.cs" />
+    <Compile Include="ProgramSupport.cs" />
     <Compile Include="P542Scoreing\ShogiEngine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

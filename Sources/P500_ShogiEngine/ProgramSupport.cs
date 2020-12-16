@@ -1,30 +1,28 @@
 ﻿// noop 可
 //#define NOOPABLE
-
-using Grayscale.P003Log.I500Struct;
-using Grayscale.P003Log.L500Struct;
-using Grayscale.P005Tushin.L500Util;
-using Grayscale.P027Settei.L500Struct;
-using Grayscale.P236KomahaiyaTr.L500Table;
-using Grayscale.P248Michi.L500Word;
-using Grayscale.P250KomahaiyaEx.L500Util;
-using Grayscale.P270ForcePromot.L250Struct;
-using Grayscale.P523UtilFv.L510UtilFvLoad;
-using Grayscale.P542Scoreing.I005UsiLoop;
-using Grayscale.P542Scoreing.L240Shogisasi;
-using Grayscale.P571KifuWarabe.L100Shogisasi;
-using Grayscale.P571KifuWarabe.L250UsiLoop;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using System.Windows.Forms;
-using Nett;
-
 namespace Grayscale.P571KifuWarabe.L500KifuWarabe
 {
+    using Grayscale.P003Log.I500Struct;
+    using Grayscale.P003Log.L500Struct;
+    using Grayscale.P005Tushin.L500Util;
+    using Grayscale.P027Settei.L500Struct;
+    using Grayscale.P236KomahaiyaTr.L500Table;
+    using Grayscale.P248Michi.L500Word;
+    using Grayscale.P250KomahaiyaEx.L500Util;
+    using Grayscale.P270ForcePromot.L250Struct;
+    using Grayscale.P523UtilFv.L510UtilFvLoad;
+    using Grayscale.P542Scoreing.I005UsiLoop;
+    using Grayscale.P542Scoreing.L240Shogisasi;
+    using Grayscale.P571KifuWarabe.L100Shogisasi;
+    using Grayscale.P571KifuWarabe.L250UsiLoop;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Text;
+    using System.Windows.Forms;
+    using Nett;
 
-    public class KifuWarabeImpl : ShogiEngine
+    public class ProgramSupport : ShogiEngine
     {
         /// <summary>
         /// USI「setoption」コマンドのリストです。
@@ -36,7 +34,7 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
         /// 将棋エンジンの中の一大要素「思考エンジン」です。
         /// 指す１手の答えを出すのが仕事です。
         /// </summary>
-        private Shogisasi shogisasi;
+        public Shogisasi shogisasi;
 
         /// <summary>
         /// USI「ponder」の使用の有無です。
@@ -67,7 +65,7 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public KifuWarabeImpl()
+        public ProgramSupport()
         {
             //-------------+----------------------------------------------------------------------------------------------------------
             // データ設計  |
@@ -189,96 +187,6 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
                 }
                 throw;
             }
-        }
-
-        public void AtBody(out bool out_isTimeoutShutdown, IErrorController errH)
-        {
-            out_isTimeoutShutdown = false;
-
-            try
-            {
-
-                // 
-                // 図.
-                // 
-                //     プログラムの開始：  ここの先頭行から始まります。
-                //     プログラムの実行：  この中で、ずっと無限ループし続けています。
-                //     プログラムの終了：  この中の最終行を終えたとき、
-                //                         または途中で Environment.Exit(0); が呼ばれたときに終わります。
-                //                         また、コンソールウィンドウの[×]ボタンを押して強制終了されたときも  ぶつ切り  で突然終わります。
-
-
-                //************************************************************************************************************************
-                // ループ（全体）
-                //************************************************************************************************************************
-                //
-                // 図.
-                //
-                //      無限ループ（全体）
-                //          │
-                //          ├─無限ループ（１）
-                //          │                      将棋エンジンであることが認知されるまで、目で訴え続けます(^▽^)
-                //          │                      認知されると、無限ループ（２）に進みます。
-                //          │
-                //          └─無限ループ（２）
-                //                                  対局中、ずっとです。
-                //                                  対局が終わると、無限ループ（１）に戻ります。
-                //
-                // 無限ループの中に、２つの無限ループが入っています。
-                //
-
-                while (true)
-                {
-#if DEBUG_STOPPABLE
-            MessageBox.Show("きふわらべのMainの無限ループでブレイク☆！", "デバッグ");
-            System.Diagnostics.Debugger.Break();
-#endif
-                    //
-                    // USIループ（１つ目）
-                    //
-                    UsiLoop1 usiLoop1 = new UsiLoop1(this);
-                    usiLoop1.AtStart();
-                    bool isTimeoutShutdown_temp;
-                    PhaseResult_UsiLoop1 result_UsiLoop1 = usiLoop1.AtBody(out isTimeoutShutdown_temp);
-                    usiLoop1.AtEnd();
-                    if (isTimeoutShutdown_temp)
-                    {
-                        //MessageBox.Show("ループ１で矯正終了するんだぜ☆！");
-                        out_isTimeoutShutdown = isTimeoutShutdown_temp;
-                        goto gt_EndMethod;
-                    }
-                    else if (result_UsiLoop1 == PhaseResult_UsiLoop1.Quit)
-                    {
-                        goto gt_EndMethod;//全体ループを抜けます。
-                    }
-
-                    //
-                    // USIループ（２つ目）
-                    //
-                    UsiLoop2 usiLoop2 = new UsiLoop2(this.shogisasi, this);
-                    usiLoop2.AtBegin();
-                    usiLoop2.AtBody(out isTimeoutShutdown_temp, errH);
-                    usiLoop2.AtEnd();
-                    if (isTimeoutShutdown_temp)
-                    {
-                        //MessageBox.Show("ループ２で矯正終了するんだぜ☆！");
-                        out_isTimeoutShutdown = isTimeoutShutdown_temp;
-                        goto gt_EndMethod;//全体ループを抜けます。
-                    }
-                }
-
-            }
-            catch (Exception ex)
-            {
-                // エラーが起こりました。
-                //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-                // どうにもできないので  ログだけ取って無視します。
-                ErrorControllerReference.EngineDefault.Panic("Program「大外枠でキャッチ」：" + ex.GetType().Name + " " + ex.Message);
-            }
-
-        gt_EndMethod:
-            ;
         }
 
         public void AtEnd()

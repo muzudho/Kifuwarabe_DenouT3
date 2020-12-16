@@ -53,7 +53,7 @@ namespace Grayscale.P743FvLearn.L250Learn
         /// 読み用。
         /// </summary>
         private FeatureVector featureVector_ForYomi = new FeatureVectorImpl();
-        private Shogisasi shogisasi_ForYomi = new ShogisasiImpl(new KifuWarabeImpl());
+        private Shogisasi shogisasi_ForYomi = new ShogisasiImpl(new ProgramSupport());
 
         public static KyokumenPngEnvironment REPORT_ENVIRONMENT;
         static LearningDataImpl()

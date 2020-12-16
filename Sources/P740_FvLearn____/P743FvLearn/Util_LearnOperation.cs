@@ -329,7 +329,7 @@ namespace Grayscale.P743FvLearn.L600Operation
                 args = new EvaluationArgsImpl(
                     uc_Main.LearningData.Kifu.GetSennititeCounter(),
                     new FeatureVectorImpl(),
-                    new ShogisasiImpl(new KifuWarabeImpl()),
+                    new ShogisasiImpl(new ProgramSupport()),
                     Util_KifuTreeLogWriter.REPORT_ENVIRONMENT
 #if DEBUG
                     ,
