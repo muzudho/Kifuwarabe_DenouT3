@@ -292,7 +292,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
                     MainGui_Csharp shogibanGui2 = (MainGui_Csharp)obj_shogiGui2;
 
-                    UtilKifuTree282.SetStartpos_KokokaraSaifu(shogibanGui2.Link_Server.Model_Taikyoku.Kifu, shogibanGui2.Link_Server.Model_Taikyoku.Kifu.CurNode.Value.KyokumenConst.KaisiPside, logTag);
+                    UtilKifuTree282.SetStartpos_KokokaraSaifu(shogibanGui2.Link_Server.Model_Taikyoku.Kifu, shogibanGui2.Link_Server.Model_Taikyoku.Kifu.CurNode.Value.KyokumenConst.KaisiPside);
                     shogibanGui2.RepaintRequest.SyuturyokuRequest = RepaintRequestGedanTxt.Kifu;
                 };
 

@@ -213,7 +213,7 @@ namespace Grayscale.P743FvLearn.L600Operation
         //}
 
 
-        public static void Do_OpenFvCsv(Uc_Main uc_Main, ILogTag errH)
+        public static void Do_OpenFvCsv(Uc_Main uc_Main, ILogTag logTag)
         {
             if ("" != uc_Main.TxtFvFilepath.Text)
             {
@@ -233,7 +233,7 @@ namespace Grayscale.P743FvLearn.L600Operation
 
                     StringBuilder sb_result = new StringBuilder();
                     // フィーチャー・ベクターの外部ファイルを開きます。
-                    sb_result.Append(Util_FvLoad.OpenFv(uc_Main.LearningData.Fv, uc_Main.TxtFvFilepath.Text, errH));
+                    sb_result.Append(Util_FvLoad.OpenFv(uc_Main.LearningData.Fv, uc_Main.TxtFvFilepath.Text));
                     uc_Main.TxtStatus1.Text = sb_result.ToString();
 
                     // うまくいっていれば、フィーチャー・ベクターのセットアップが終わっているはず。

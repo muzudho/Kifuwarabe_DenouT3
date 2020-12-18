@@ -82,8 +82,7 @@ namespace Grayscale.P360ConvSasu.L500Converter
 
         public static Dictionary<string, SasuEntry> ToMoveBetuSky1(
             Maps_OneAndOne<Finger, SySet<SyElement>> komabetuSusumuMasus,
-            SkyConst src_Sky,
-            ILogTag logTag
+            SkyConst src_Sky
         )
         {
             Dictionary<string, SasuEntry> result_komabetuEntry = new Dictionary<string, SasuEntry>();
@@ -126,7 +125,7 @@ namespace Grayscale.P360ConvSasu.L500Converter
 
         //Dictionary<Starbeamable, KyokumenWrapper>
         public static Dictionary<string, SasuEntry> KomabetuMasusToMoveBetuSky(
-            List_OneAndMulti<Finger, SySet<SyElement>> sMs, SkyConst src_Sky, ILogTag logTag)
+            List_OneAndMulti<Finger, SySet<SyElement>> sMs, SkyConst src_Sky)
         {
             Dictionary<string, SasuEntry> moveBetuEntry = new Dictionary<string, SasuEntry>();
 

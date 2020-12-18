@@ -283,15 +283,14 @@ using Grayscale.P370LogGraphiEx.L500Util;
 
                     // 評価明細に添付
                     Util_KyokumenPng_Writer.Write1(
-                        Conv_KifuNode.ToRO_Kyokumen1(node, logTag),
+                        Conv_KifuNode.ToRO_Kyokumen1(node),
                         srcMasu_orMinusOne,
                         dstMasu_orMinusOne,
                         foodKoma,
                         ConvMoveStrSfen.ToMoveStrSfen(node.Key),
                         relFolder,
                         fileName,
-                        reportEnvironment,
-                        logTag
+                        reportEnvironment
                         );
                     logFileCounter++;
                 }

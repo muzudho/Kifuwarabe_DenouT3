@@ -18,7 +18,6 @@ namespace Grayscale.P140KifuSfen
         /// <param name="moji4"></param>
         /// <param name="moji5"></param>
         /// <param name="rest">残りの文字。</param>
-        /// <param name="logTag"></param>
         /// <returns></returns>
         public static bool ToTokens(
             string inputLine,
@@ -27,8 +26,7 @@ namespace Grayscale.P140KifuSfen
             out string moji3,
             out string moji4,
             out string moji5,
-            out string rest,
-            ILogTag logTag
+            out string rest
             )
         {
             bool successful = false;

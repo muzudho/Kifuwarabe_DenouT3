@@ -39,8 +39,7 @@ namespace Grayscale.P261Utifudume.L500Struct
             SkyConst src_Sky,
             SySet<SyElement> masus_mikata_onBanjo,//打ち歩詰めチェック用
             SySet<SyElement> masus_aite_onBanjo,//打ち歩詰めチェック用
-            SySet<SyElement>[] aMasus,//駒種類別、置こうとする升
-            ILogTag logTag
+            SySet<SyElement>[] aMasus//駒種類別、置こうとする升
             )
         {
             // 攻め側
@@ -94,8 +93,7 @@ namespace Grayscale.P261Utifudume.L500Struct
                     fingers_aiteKing,
                     masus_mikata_onBanjo,
                     masus_aite_onBanjo,
-                    src_Sky,
-                    logTag
+                    src_Sky
                 );
 
                 int gyokutouMasuNumber = Conv_SyElement.ToMasuNumber(masu_gyokutou);
@@ -131,8 +129,7 @@ namespace Grayscale.P261Utifudume.L500Struct
                     fingers_aiteKoma_Banjo,
                     masus_aite_onBanjo,//相手の駒は、味方
                     masus_mikata_onBanjo,//味方の駒は、障害物。
-                    src_Sky,
-                    logTag
+                    src_Sky
                 );
                 aitegyokuKiki = kikiMap.ElementAt(figKing_aite);
 

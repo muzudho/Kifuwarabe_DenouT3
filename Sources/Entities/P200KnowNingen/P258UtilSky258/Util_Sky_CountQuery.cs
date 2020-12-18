@@ -56,8 +56,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
             out int ms,
             out int mn,
             out int ml,
-            out int mp,
-            ILogTag logTag
+            out int mp
         )
         {
             mK = 0;
@@ -80,7 +79,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
 
             Fingers komas_moti1p;// 先手の持駒
             Fingers komas_moti2p;// 後手の持駒
-            Util_Sky_FingersQueryFx.Split_Moti1p_Moti2p(out komas_moti1p, out komas_moti2p, src_Sky, logTag);
+            Util_Sky_FingersQueryFx.Split_Moti1p_Moti2p(out komas_moti1p, out komas_moti2p, src_Sky);
 
             foreach (Finger figKoma in komas_moti1p.Items)
             {

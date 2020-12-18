@@ -25,8 +25,7 @@ namespace Grayscale.P341Ittesasu.L125UtilB
         /// 本譜を残して、カレントノードより以前の変化は　ツリーから削除します。
         /// </summary>
         public static int IzennoHenkaCutter(
-            KifuTree kifu_mutable,
-            ILogTag logTag
+            KifuTree kifu_mutable
             )
         {
             int result_removedCount = 0;
@@ -109,8 +108,7 @@ namespace Grayscale.P341Ittesasu.L125UtilB
         public static void AppendChild_And_ChangeCurrentToChild(
             KifuTree kifuRef,
             KifuNode nextNode_and_nextCurrent,
-            string hint,
-            ILogTag logTag
+            string hint
             )
         {
             string moveStr = ConvMoveStrSfen.ToMoveStrSfen(nextNode_and_nextCurrent.Key);
@@ -188,14 +186,14 @@ namespace Grayscale.P341Ittesasu.L125UtilB
         /// <summary>
         /// [ここから採譜]機能
         /// </summary>
-        public static void SetStartpos_KokokaraSaifu(KifuTree kifu, Playerside pside, ILogTag logTag)
+        public static void SetStartpos_KokokaraSaifu(KifuTree kifu, Playerside pside)
         {
 
             //------------------------------------------------------------
             // 棋譜を空に
             //------------------------------------------------------------
             kifu.Clear();
-            kifu.SetProperty(Word_KifuTree.PropName_Startpos, Conv_KifuNode.ToSfenstring((KifuNode)kifu.CurNode, pside, logTag));
+            kifu.SetProperty(Word_KifuTree.PropName_Startpos, Conv_KifuNode.ToSfenstring((KifuNode)kifu.CurNode, pside));
         }
 
     }

@@ -145,8 +145,7 @@ namespace Grayscale.P542Scoreing.L500Util
                     out meisai,
 #endif
                     node_yomi_mutable.Value.KyokumenConst,
-                    args.FeatureVector,
-                    logTag
+                    args.FeatureVector
                 );
 
                 node_yomi_mutable.AddScore(score);

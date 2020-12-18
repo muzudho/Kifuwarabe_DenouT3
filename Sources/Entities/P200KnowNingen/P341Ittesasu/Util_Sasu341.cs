@@ -29,8 +29,7 @@ namespace Grayscale.P341Ittesasu.L510OperationB
             SkyConst src_Sky,//指定局面
             Finger finger,//動かす駒
             SyElement masu,//移動先マス
-            bool toNaru,//成るなら真
-            ILogTag logTag
+            bool toNaru//成るなら真
             )
         {
             SkyBuffer sky_buf = new SkyBuffer(src_Sky); // 現局面を元に、新規局面を書き換えます。

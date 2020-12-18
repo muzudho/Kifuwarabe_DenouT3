@@ -68,8 +68,7 @@ namespace Grayscale.P324KifuTree.I250Struct
         string Json_NextNodes_MultiSky(
             string memo,
             string hint,
-            int temezumi_yomiGenTeban_forLog,//読み進めている現在の手目済
-            ILogTag logTag
+            int temezumi_yomiGenTeban_forLog//読み進めている現在の手目済
             );
 
         bool IsLeaf { get; }

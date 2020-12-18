@@ -31,8 +31,7 @@ namespace Grayscale.P531Hyokakansu.I500Hyokakansu
             out KyHyokaMeisai_Koumoku kyokumenScore,
 #endif
             SkyConst src_Sky,
-            FeatureVector featureVector,
-            ILogTag logTag
+            FeatureVector featureVector
             );
 
     }

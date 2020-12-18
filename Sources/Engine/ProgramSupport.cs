@@ -73,7 +73,7 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
             this.Option_enable_serverNoopable = false; // 独自実装のコマンドなので、ＯＦＦにしておきます。
         }
 
-        public void AtBegin(ILogTag logTag)
+        public void AtBegin()
         {
             int exception_area = 0;
             try
@@ -103,7 +103,7 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
                 //------------------------------------------------------------------------------------------------------------------------
                 {
                     this.shogisasi = new ShogisasiImpl(this);
-                    Util_FvLoad.OpenFv(this.shogisasi.FeatureVector, Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv00Komawari")), logTag);
+                    Util_FvLoad.OpenFv(this.shogisasi.FeatureVector, Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv00Komawari")));
                 }
 
 

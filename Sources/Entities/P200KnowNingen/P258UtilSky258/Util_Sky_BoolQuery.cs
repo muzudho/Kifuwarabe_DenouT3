@@ -33,7 +33,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
                 RO_Star koma = Util_Starlightable.AsKoma(sl.Now);
 
 
-                Finger finger = Util_Sky_FingerQuery.InShogibanMasuNow(srcSky, koma.Pside, masu, logTag);
+                Finger finger = Util_Sky_FingerQuery.InShogibanMasuNow(srcSky, koma.Pside, masu);
 
                 if (
                     finger != Fingers.Error_1  //2014-07-21 先後も見るように追記。

@@ -15,12 +15,10 @@ namespace Grayscale.P353ConvSasuEx.L500Converter
         /// </summary>
         /// <param name="sasuEntry"></param>
         /// <param name="src_Sky"></param>
-        /// <param name="logTag"></param>
         /// <returns></returns>
         public static KifuNode ToKifuNode(
             SasuEntry sasuEntry,
-            SkyConst src_Sky,
-            ILogTag logTag
+            SkyConst src_Sky
             )
         {
             return new KifuNodeImpl(sasuEntry.NewMove, new KyokumenWrapper(
@@ -28,8 +26,7 @@ namespace Grayscale.P353ConvSasuEx.L500Converter
                     src_Sky,//指定局面
                     sasuEntry.Finger,//指す駒
                     sasuEntry.Masu,//移動先升
-                    sasuEntry.Naru,//成ります。
-                    logTag
+                    sasuEntry.Naru//成ります。
             )));
         }
     }

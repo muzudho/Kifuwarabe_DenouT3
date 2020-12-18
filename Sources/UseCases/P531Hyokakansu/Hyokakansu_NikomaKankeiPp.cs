@@ -50,8 +50,7 @@ namespace Grayscale.P531Hyokakansu.L500Hyokakansu
             out KyHyokaMeisai_Koumoku out_meisaiKoumoku_orNull,
 #endif
             SkyConst src_Sky,
-            FeatureVector fv,
-            ILogTag errH
+            FeatureVector fv
             )
         {
             out_score = 0.0f;            // -999～999(*bairitu) が 40×40個ほど足し合わせた数になるはず。

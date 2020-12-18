@@ -253,7 +253,7 @@ namespace Grayscale.P743FvLearn.L250Learn
         /// <summary>
         /// 局面PNG画像書き出し。
         /// </summary>
-        public void WritePng(ILogTag errH)
+        public void WritePng(ILogTag logTag)
         {
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
@@ -289,15 +289,14 @@ namespace Grayscale.P743FvLearn.L250Learn
 
             // 学習フォーム
             Util_KyokumenPng_Writer.Write1(
-                Conv_KifuNode.ToRO_Kyokumen1(((KifuNode)this.Kifu.CurNode), errH),
+                Conv_KifuNode.ToRO_Kyokumen1(((KifuNode)this.Kifu.CurNode)),
                 srcMasu_orMinusOne,
                 dstMasu_orMinusOne,
                 foodKoma,
                 ConvMoveStrSfen.ToMoveStrSfen(this.Kifu.CurNode.Key),
                 "",
                 toml.Get<TomlTable>("Resources").Get<string>("LearningPositionLogPngBasename"),
-                LearningDataImpl.REPORT_ENVIRONMENT,
-                errH
+                LearningDataImpl.REPORT_ENVIRONMENT
                 );
         }
 
@@ -361,8 +360,7 @@ namespace Grayscale.P743FvLearn.L250Learn
                     out out_komawariMeisai,
 #endif
                     node.Value.KyokumenConst,
-                    this.Fv, //参照してもらうだけ。
-                    LogTags.Learner
+                    this.Fv //参照してもらうだけ。
                 );
             }
             //----------------------------------------
@@ -377,8 +375,7 @@ namespace Grayscale.P743FvLearn.L250Learn
                     out out_ppMeisai,
 #endif
                     node.Value.KyokumenConst,
-                    this.Fv, //参照してもらうだけ。
-                    LogTags.Learner
+                    this.Fv //参照してもらうだけ。
                 );
             }
         }

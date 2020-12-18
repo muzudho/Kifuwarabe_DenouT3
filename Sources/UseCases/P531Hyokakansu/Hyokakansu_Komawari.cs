@@ -38,8 +38,7 @@ namespace Grayscale.P531Hyokakansu.L500Hyokakansu
             out KyHyokaMeisai_Koumoku out_meisaiKoumoku_orNull,
 #endif
             SkyConst srcSky,
-            FeatureVector fv,
-            ILogTag errH
+            FeatureVector fv
             )
         {
             float score_p1 = 0.0f;

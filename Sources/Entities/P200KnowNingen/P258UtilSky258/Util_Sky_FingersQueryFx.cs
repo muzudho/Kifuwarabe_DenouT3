@@ -39,8 +39,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
             out Fingers fs_motiKurau,// 持駒（喰らう側）
             SkyConst src_Sky,
             Playerside tebanSeme,
-            Playerside tebanKurau,
-            ILogTag logTag
+            Playerside tebanKurau
         )
         {
             Fingers fs_banjoSeme_temp = new Fingers();// （１）盤上駒_攻め手
@@ -132,8 +131,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         public static void Split_Moti1p_Moti2p(
             out Fingers fingers_moti1p,// 持駒 1P
             out Fingers fingers_moti2p,// 持駒 2=
-            SkyConst src_Sky,
-            ILogTag logTag
+            SkyConst src_Sky
         )
         {
             Fingers fingers_moti1p_temp = new Fingers();// （３）持ち駒_攻め手

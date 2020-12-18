@@ -19,9 +19,8 @@ namespace Grayscale.P339ConvKyokume.L500Converter
         /// <summary>
         /// 表形式の局面データを出力します。SFENとの親和性高め。
         /// </summary>
-        /// <param name="logTag"></param>
         /// <returns></returns>
-        public static ISfenPosition1 ToRO_Kyokumen1(KifuNode kifuNode, ILogTag logTag)
+        public static ISfenPosition1 ToRO_Kyokumen1(KifuNode kifuNode)
         {
             ISfenPosition1 ro_Kyokumen1 = new SfenPosition1Impl();
 
@@ -84,8 +83,7 @@ namespace Grayscale.P339ConvKyokume.L500Converter
                 out ms,
                 out mn,
                 out ml,
-                out mp,
-                logTag
+                out mp
                 );
 
             int player;
@@ -118,9 +116,8 @@ namespace Grayscale.P339ConvKyokume.L500Converter
         /// 局面データから、SFEN文字列を作ります。
         /// </summary>
         /// <param name="pside"></param>
-        /// <param name="logTag"></param>
         /// <returns></returns>
-        public static string ToSfenstring(KifuNode kifuNode, Playerside pside, ILogTag logTag)
+        public static string ToSfenstring(KifuNode kifuNode, Playerside pside)
         {
             SkyConst src_Sky = kifuNode.Value.KyokumenConst;
 
@@ -231,8 +228,7 @@ namespace Grayscale.P339ConvKyokume.L500Converter
                     out ms,
                     out mn,
                     out ml,
-                    out mp,
-                    logTag
+                    out mp
                     );
 
 

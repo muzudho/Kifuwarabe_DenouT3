@@ -42,7 +42,7 @@ namespace Grayscale.P743FvLearn.L260View
         public static void ShowMoveList(
             LearningData learningData,
             Uc_Main uc_Main,
-            ILogTag errH
+            ILogTag logTag
             )
         {
             //
@@ -96,13 +96,13 @@ namespace Grayscale.P743FvLearn.L260View
                     else
                     {
                         // 盤上の駒。
-                        figSrcKoma = Util_Sky_FingerQuery.InMasuNow(kaisi_Sky, pside, srcMasu, errH);
+                        figSrcKoma = Util_Sky_FingerQuery.InMasuNow(kaisi_Sky, pside, srcMasu);
                     }
                     RO_Star srcKoma = Util_Starlightable.AsKoma(kaisi_Sky.StarlightIndexOf(figSrcKoma).Now);
 
                     // 先位置
                     SyElement dstMasu = UtilCsaMove.ToDstMasu(csaMove);
-                    Finger figFoodKoma = Util_Sky_FingerQuery.InShogibanMasuNow(kaisi_Sky, pside, dstMasu, errH);
+                    Finger figFoodKoma = Util_Sky_FingerQuery.InShogibanMasuNow(kaisi_Sky, pside, dstMasu);
                     Komasyurui14 foodKomasyurui;
                     if (figFoodKoma == Fingers.Error_1)
                     {
@@ -143,13 +143,11 @@ namespace Grayscale.P743FvLearn.L260View
                         ),
                         out ittesasuResult,
                         //kifu1,//診断用
-                        errH,
                         "Utli_LearningViews#ShowMoveList"
                     );
                     Debug.Assert(ittesasuResult.Get_SyuryoNode_OrNull != null, "ittesasuResult.Get_SyuryoNode_OrNull がヌル☆？！");
                     Util_IttesasuRoutine.Before2(
-                        ref ittesasuResult,
-                        errH
+                        ref ittesasuResult
                     );
                     //
                     //次ノートを追加します。次ノードを、これからのカレントとします。
@@ -158,8 +156,7 @@ namespace Grayscale.P743FvLearn.L260View
                     Util_IttesasuRoutine.After3_ChangeCurrent(
                         kifu1,
                         ConvMoveStrSfen.ToMoveStrSfen(ittesasuResult.Get_SyuryoNode_OrNull.Key),// nextMoveStr,
-                        ittesasuResult.Get_SyuryoNode_OrNull,
-                        errH
+                        ittesasuResult.Get_SyuryoNode_OrNull
                         );
                     // これで、棋譜ツリーに、構造変更があったはず。
                     //↑↑一手指し
@@ -380,13 +377,11 @@ namespace Grayscale.P743FvLearn.L260View
                 ),
                 out ittesasuResult,
                 //this.Kifu,//診断用
-                logTag,
                 "Util_LearningView#Ittesasu_ByBtnClick"
             );
             Debug.Assert(ittesasuResult.Get_SyuryoNode_OrNull != null, "ittesasuResult.Get_SyuryoNode_OrNull がヌル☆？！");
             Util_IttesasuRoutine.Before2(
-                ref ittesasuResult,
-                logTag
+                ref ittesasuResult
             );
             //
             //次ノートを追加します。次ノードを、これからのカレントとします。
@@ -395,8 +390,7 @@ namespace Grayscale.P743FvLearn.L260View
             Util_IttesasuRoutine.After3_ChangeCurrent(
                 learningData.Kifu,
                 ConvMoveStrSfen.ToMoveStrSfen(ittesasuResult.Get_SyuryoNode_OrNull.Key),
-                ittesasuResult.Get_SyuryoNode_OrNull,
-                logTag
+                ittesasuResult.Get_SyuryoNode_OrNull
                 );
             // これで、棋譜ツリーに、構造変更があったはず。
             //↑↑一手指し
@@ -405,7 +399,7 @@ namespace Grayscale.P743FvLearn.L260View
             // カレント・ノードより古い、以前読んだ手を削除したい。
             //----------------------------------------
             System.Console.WriteLine("カレント・ノード＝" + ConvMoveStrSfen.ToMoveStrSfen(learningData.Kifu.CurNode.Key));
-            int result_removedCount = UtilKifuTree282.IzennoHenkaCutter(learningData.Kifu, logTag);
+            int result_removedCount = UtilKifuTree282.IzennoHenkaCutter(learningData.Kifu);
             System.Console.WriteLine("削除した要素数＝" + result_removedCount);
 
             ////----------------------------------------

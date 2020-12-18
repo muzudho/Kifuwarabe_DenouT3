@@ -28,8 +28,7 @@ namespace Grayscale.P360ConvSasu.L500Converter
         /// <returns>次の局面一覧を持った、入れ物ノード（ハブ・ノード）</returns>
         public static KifuNode ToNextNodes_AsHubNode(
             Maps_OneAndMulti<Finger,IMove> komabetuAllMove,
-            SkyConst src_Sky,//Node<Starbeamable, KyokumenWrapper> to_parentNode,//親となる予定のノード
-            ILogTag logTag
+            SkyConst src_Sky//Node<Starbeamable, KyokumenWrapper> to_parentNode,//親となる予定のノード
             )
         {
             KifuNode hubNode = new KifuNodeImpl( null, null);//蝶番
@@ -58,8 +57,7 @@ namespace Grayscale.P360ConvSasu.L500Converter
                                 src_Sky,// to_parentNode.Value.ToKyokumenConst,//指定局面
                                 figKoma,//動かす駒
                                 Util_Starlightable.AsKoma(move.Now).Masu,//移動先升
-                                false,//成りません。
-                                logTag
+                                false//成りません。
                         ))));
                     }
                 }

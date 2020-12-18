@@ -39,14 +39,12 @@ namespace Grayscale.P341Ittesasu.L500UtilA
         /// <param name="ittesasuArg"></param>
         /// <param name="ittesasu_mutable"></param>
         /// <param name="ittesasuResult"></param>
-        /// <param name="logTag"></param>
         /// <param name="memberName"></param>
         /// <param name="sourceFilePath"></param>
         /// <param name="sourceLineNumber"></param>
         public static void Before1(
             IttesasuArg ittesasuArg,
             out IttesasuResult ittesasuResult,
-            ILogTag logTag,
             string hint
             ,
             [CallerMemberName] string memberName = "",
@@ -56,175 +54,161 @@ namespace Grayscale.P341Ittesasu.L500UtilA
         {
             int exceptionArea = 0;
 
-            try
+            //------------------------------
+            // 用意
+            //------------------------------
+            exceptionArea = 1010;
+            ittesasuResult = new IttesasuResultImpl(Fingers.Error_1, Fingers.Error_1, null, Komasyurui14.H00_Null___, null);
+            SkyConst kaisi_Sky = ittesasuArg.KaisiKyokumen.KyokumenConst;// 一手指し開始局面（不変）
+            Node<IMove, KyokumenWrapper> editNodeRef;// 編集対象ノード（巻き戻し時と、進む時で異なる）
+
+            exceptionArea = 1040;
+            //------------------------------
+            // 符号(局面)の追加
+            //------------------------------
             {
-                //------------------------------
-                // 用意
-                //------------------------------
-                exceptionArea = 1010;
-                ittesasuResult = new IttesasuResultImpl(Fingers.Error_1, Fingers.Error_1, null, Komasyurui14.H00_Null___, null);
-                SkyConst kaisi_Sky = ittesasuArg.KaisiKyokumen.KyokumenConst;// 一手指し開始局面（不変）
-                Node<IMove, KyokumenWrapper> editNodeRef;// 編集対象ノード（巻き戻し時と、進む時で異なる）
+                //進むときは、必ずノードの追加と、カレントの移動がある。
 
-                exceptionArea = 1040;
-                //------------------------------
-                // 符号(局面)の追加
-                //------------------------------
-                {
-                    //進むときは、必ずノードの追加と、カレントの移動がある。
-
-                    //現局面ノードのクローンを作成します。
-                    editNodeRef = new KifuNodeImpl(ittesasuArg.KorekaranoMove, new KyokumenWrapper(
-                        SkyConst.NewInstance_ReversePside(kaisi_Sky,ittesasuArg.KorekaranoTemezumi_orMinus1))
-                        );
-                    ittesasuResult.Susunda_Sky_orNull = editNodeRef.Value.KyokumenConst;
-                }
-
-
-                exceptionArea = 1050;
-                //------------------------------
-                // 動かす駒を移動先へ。
-                //------------------------------
-                Debug.Assert(null != ittesasuArg.KorekaranoMove, "これからの指し手がヌルでした。");
-                Finger figMovedKoma;
-                Util_IttesasuRoutine.Do24_UgokasuKoma_IdoSakiHe(
-                    out figMovedKoma,
-                    ittesasuArg.KorekaranoMove,
-                    ittesasuArg.KaisiTebanside,
-                    kaisi_Sky,
-                    logTag,
-                    hint
+                //現局面ノードのクローンを作成します。
+                editNodeRef = new KifuNodeImpl(ittesasuArg.KorekaranoMove, new KyokumenWrapper(
+                    SkyConst.NewInstance_ReversePside(kaisi_Sky, ittesasuArg.KorekaranoTemezumi_orMinus1))
                     );
-                ittesasuResult.FigMovedKoma = figMovedKoma; //動かした駒更新
-                Debug.Assert(Fingers.Error_1 != ittesasuResult.FigMovedKoma, "動かした駒がない☆！？エラーだぜ☆！");
+                ittesasuResult.Susunda_Sky_orNull = editNodeRef.Value.KyokumenConst;
+            }
 
 
-                exceptionArea = 1060;
-                RO_Star korekaranoKoma = Util_Starlightable.AsKoma(ittesasuArg.KorekaranoMove.Now);
-                IMoveHalf afterStar;
-                {
-                    afterStar = Util_IttesasuRoutine.Do36_KomaOnDestinationMasu(
-                        korekaranoKoma.Komasyurui,
-                        ittesasuArg.KorekaranoMove,
-                        ittesasuResult.Susunda_Sky_orNull
-                        );
-                }
+            exceptionArea = 1050;
+            //------------------------------
+            // 動かす駒を移動先へ。
+            //------------------------------
+            Debug.Assert(null != ittesasuArg.KorekaranoMove, "これからの指し手がヌルでした。");
+            Finger figMovedKoma;
+            Util_IttesasuRoutine.Do24_UgokasuKoma_IdoSakiHe(
+                out figMovedKoma,
+                ittesasuArg.KorekaranoMove,
+                ittesasuArg.KaisiTebanside,
+                kaisi_Sky,
+                hint
+                );
+            ittesasuResult.FigMovedKoma = figMovedKoma; //動かした駒更新
+            Debug.Assert(Fingers.Error_1 != ittesasuResult.FigMovedKoma, "動かした駒がない☆！？エラーだぜ☆！");
+
+
+            exceptionArea = 1060;
+            RO_Star korekaranoKoma = Util_Starlightable.AsKoma(ittesasuArg.KorekaranoMove.Now);
+            IMoveHalf afterStar;
+            {
+                afterStar = Util_IttesasuRoutine.Do36_KomaOnDestinationMasu(
+                    korekaranoKoma.Komasyurui,
+                    ittesasuArg.KorekaranoMove,
+                    ittesasuResult.Susunda_Sky_orNull
+                    );
+            }
 
 
 
-                exceptionArea = 1070;
-                // Sky 局面データは、この関数の途中で何回か変更されます。ローカル変数に退避しておくと、同期が取れなくなります。
+            exceptionArea = 1070;
+            // Sky 局面データは、この関数の途中で何回か変更されます。ローカル変数に退避しておくと、同期が取れなくなります。
 
-                //------------------------------------------------------------
-                // 駒を取る
-                //------------------------------------------------------------
-                Finger figFoodKoma = Fingers.Error_1;
-                RO_Star food_koma = null;
-                Playerside food_pside = Playerside.Empty;
-                SyElement food_akiMasu = Masu_Honshogi.Query_Basho(Masu_Honshogi.nError);
-                {
-                    Util_IttesasuRoutine.Do61_KomaToru(
-                        afterStar,
-                        ittesasuResult.Susunda_Sky_orNull,
-                        out figFoodKoma,
-                        out food_koma,
-                        out food_pside,
-                        out food_akiMasu,
-                        logTag
-                        );
+            //------------------------------------------------------------
+            // 駒を取る
+            //------------------------------------------------------------
+            Finger figFoodKoma = Fingers.Error_1;
+            RO_Star food_koma = null;
+            Playerside food_pside = Playerside.Empty;
+            SyElement food_akiMasu = Masu_Honshogi.Query_Basho(Masu_Honshogi.nError);
+            {
+                Util_IttesasuRoutine.Do61_KomaToru(
+                    afterStar,
+                    ittesasuResult.Susunda_Sky_orNull,
+                    out figFoodKoma,
+                    out food_koma,
+                    out food_pside,
+                    out food_akiMasu
+                    );
 
-                    if (Fingers.Error_1 != figFoodKoma)
-                    {
-                        //>>>>> 指した先に駒があったなら
-                        ittesasuResult.FoodKomaSyurui = food_koma.Komasyurui;
-                    }
-                    else
-                    {
-                        ittesasuResult.FoodKomaSyurui = Komasyurui14.H00_Null___;
-                    }
-                }
-                Debug.Assert(figMovedKoma != Fingers.Error_1, "駒を動かせなかった？1");
-
-
-                exceptionArea = 1080;
                 if (Fingers.Error_1 != figFoodKoma)
                 {
-                    //------------------------------------------------------------
-                    // 指した駒と、取った駒の移動
-                    //------------------------------------------------------------
-
-                    //------------------------------
-                    // 局面データの書き換え
-                    //------------------------------
-                    ittesasuResult.Susunda_Sky_orNull = SkyConst.NewInstance_OverwriteOrAdd_Light(
-                        ittesasuResult.Susunda_Sky_orNull,
-                        ittesasuArg.KorekaranoTemezumi_orMinus1,
-                        //
-                        // 指した駒
-                        //
-                        figMovedKoma,//指した駒番号
-                        afterStar,//指した駒
-                        //
-                        // 取った駒
-                        //
-                        figFoodKoma,
-                        new RO_Starlight(
-                            new RO_Star(
-                                food_pside,
-                                food_akiMasu,//駒台の空きマスへ
-                                food_koma.ToNarazuCase()// 取られた駒の種類。表面を上に向ける。
-                            )
-                        )
-                    );
+                    //>>>>> 指した先に駒があったなら
+                    ittesasuResult.FoodKomaSyurui = food_koma.Komasyurui;
                 }
                 else
                 {
-                    //------------------------------------------------------------
-                    // 指した駒の移動
-                    //------------------------------------------------------------
-
-                    ittesasuResult.Susunda_Sky_orNull = SkyConst.NewInstance_OverwriteOrAdd_Light(
-                        ittesasuResult.Susunda_Sky_orNull,//駒を取って変化しているかもしれない？
-                        ittesasuArg.KorekaranoTemezumi_orMinus1,// これから作る局面の、手目済み。
-                        //
-                        // 指した駒
-                        //
-                        figMovedKoma,
-                        afterStar,
-                        //
-                        // 手得計算
-                        //
-                        korekaranoKoma.Komasyurui,
-                        0,// TODO: suji or index
-                        korekaranoKoma.Masu
-                        );
+                    ittesasuResult.FoodKomaSyurui = Komasyurui14.H00_Null___;
                 }
-                editNodeRef.Value.SetKyokumen(ittesasuResult.Susunda_Sky_orNull);
-                // ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                // この時点で、必ず現局面データに差替えあり
-                // ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                //
-                // ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                // 局面データに変更があったものとして進めます。
-                // ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-
-
-                exceptionArea = 1090;
-                ittesasuResult.FigFoodKoma = figFoodKoma; //取った駒更新
-
-                //
-                // ノード
-                ittesasuResult.Set_SyuryoNode_OrNull = editNodeRef;// この変数を返すのがポイント。棋譜とは別に、現局面。
             }
-            catch (Exception ex)
+            Debug.Assert(figMovedKoma != Fingers.Error_1, "駒を動かせなかった？1");
+
+
+            exceptionArea = 1080;
+            if (Fingers.Error_1 != figFoodKoma)
             {
-                //>>>>> エラーが起こりました。
+                //------------------------------------------------------------
+                // 指した駒と、取った駒の移動
+                //------------------------------------------------------------
 
-                // どうにもできないので  ログだけ取って無視します。
-                string message = "Util_IttesasuRoutine#Execute（B）： exceptionArea=" + exceptionArea + "\n" + ex.GetType().Name + "：" + ex.Message;
-                Logger.WriteLineError(logTag, message);
-                throw;
+                //------------------------------
+                // 局面データの書き換え
+                //------------------------------
+                ittesasuResult.Susunda_Sky_orNull = SkyConst.NewInstance_OverwriteOrAdd_Light(
+                    ittesasuResult.Susunda_Sky_orNull,
+                    ittesasuArg.KorekaranoTemezumi_orMinus1,
+                    //
+                    // 指した駒
+                    //
+                    figMovedKoma,//指した駒番号
+                    afterStar,//指した駒
+                              //
+                              // 取った駒
+                              //
+                    figFoodKoma,
+                    new RO_Starlight(
+                        new RO_Star(
+                            food_pside,
+                            food_akiMasu,//駒台の空きマスへ
+                            food_koma.ToNarazuCase()// 取られた駒の種類。表面を上に向ける。
+                        )
+                    )
+                );
             }
+            else
+            {
+                //------------------------------------------------------------
+                // 指した駒の移動
+                //------------------------------------------------------------
+
+                ittesasuResult.Susunda_Sky_orNull = SkyConst.NewInstance_OverwriteOrAdd_Light(
+                    ittesasuResult.Susunda_Sky_orNull,//駒を取って変化しているかもしれない？
+                    ittesasuArg.KorekaranoTemezumi_orMinus1,// これから作る局面の、手目済み。
+                                                            //
+                                                            // 指した駒
+                                                            //
+                    figMovedKoma,
+                    afterStar,
+                    //
+                    // 手得計算
+                    //
+                    korekaranoKoma.Komasyurui,
+                    0,// TODO: suji or index
+                    korekaranoKoma.Masu
+                    );
+            }
+            editNodeRef.Value.SetKyokumen(ittesasuResult.Susunda_Sky_orNull);
+            // ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+            // この時点で、必ず現局面データに差替えあり
+            // ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+            //
+            // ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+            // 局面データに変更があったものとして進めます。
+            // ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+
+            exceptionArea = 1090;
+            ittesasuResult.FigFoodKoma = figFoodKoma; //取った駒更新
+
+            //
+            // ノード
+            ittesasuResult.Set_SyuryoNode_OrNull = editNodeRef;// この変数を返すのがポイント。棋譜とは別に、現局面。
         }
 
         /// <summary>
@@ -232,10 +216,8 @@ namespace Grayscale.P341Ittesasu.L500UtilA
         /// </summary>
         /// <param name="isMakimodosi"></param>
         /// <param name="ittesasuReference"></param>
-        /// <param name="logTag"></param>
         public static void Before2(
-            ref IttesasuResult ittesasuReference,
-            ILogTag logTag
+            ref IttesasuResult ittesasuReference
             )
         {
             Node<IMove, KyokumenWrapper> editNodeRef = ittesasuReference.Get_SyuryoNode_OrNull;
@@ -266,12 +248,10 @@ namespace Grayscale.P341Ittesasu.L500UtilA
         /// <param name="kifu_mutable"></param>
         /// <param name="nextMoveStr"></param>
         /// <param name="edit_childNode_Ref"></param>
-        /// <param name="logTag"></param>
         public static void After3_ChangeCurrent(
             KifuTree kifu_mutable,
             string nextMoveStr,
-            Node<IMove, KyokumenWrapper> edit_childNode_Ref,
-            ILogTag logTag
+            Node<IMove, KyokumenWrapper> edit_childNode_Ref
             )
         {
 
@@ -293,8 +273,8 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             }
 
             Node<IMove, KyokumenWrapper> temp = kifu_mutable.CurNode;
-            kifu_mutable.SetCurNode( edit_childNode_Ref);//次ノードを、これからのカレントとします。
-            edit_childNode_Ref.SetParentNode( temp);
+            kifu_mutable.SetCurNode(edit_childNode_Ref);//次ノードを、これからのカレントとします。
+            edit_childNode_Ref.SetParentNode(temp);
         }
 
 
@@ -311,7 +291,6 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             IMove move,
             Playerside kaisi_tebanside,
             SkyConst kaisi_Sky,
-            ILogTag logTag,
             string hint
             ,
             [CallerMemberName] string memberName = "",
@@ -321,72 +300,58 @@ namespace Grayscale.P341Ittesasu.L500UtilA
         {
             int exceptionArea = 0;
 
-            try
+            exceptionArea = 99001000;
+            figMovedKoma = Fingers.Error_1;
+
+            //------------------------------------------------------------
+            // 選択  ：  動かす駒
+            //------------------------------------------------------------
+            // 進むとき
+            //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+            //Debug.Assert(null != move, "Sasu24_UgokasuKoma_IdoSakiHe: 指し手がヌルでした。");
+            if (Util_Sky_BoolQuery.IsDaAction(move))// 多分、ここで move がヌルになるエラーがある☆
             {
-                exceptionArea = 99001000;
-                figMovedKoma = Fingers.Error_1;
+                //----------
+                // 駒台から “打”
+                //----------
+                exceptionArea = 99002000;
 
-                //------------------------------------------------------------
-                // 選択  ：  動かす駒
-                //------------------------------------------------------------
-                // 進むとき
-                //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-                //Debug.Assert(null != move, "Sasu24_UgokasuKoma_IdoSakiHe: 指し手がヌルでした。");
-                if (Util_Sky_BoolQuery.IsDaAction(move))// 多分、ここで move がヌルになるエラーがある☆
-                {
-                    //----------
-                    // 駒台から “打”
-                    //----------
-                    exceptionArea = 99002000;
-
-                    RO_Star srcKoma = Util_Starlightable.AsKoma(move.LongTimeAgo);
-                    RO_Star dstKoma = Util_Starlightable.AsKoma(move.Now);
+                RO_Star srcKoma = Util_Starlightable.AsKoma(move.LongTimeAgo);
+                RO_Star dstKoma = Util_Starlightable.AsKoma(move.Now);
 
 
-                    exceptionArea = 99002100;
-                    // FIXME: 駒台の、どの駒を拾うか？
-                    figMovedKoma = Util_Sky_FingerQuery.InOkibaSyuruiNowIgnoreCase(
-                        kaisi_Sky,
-                        Conv_SyElement.ToOkiba(srcKoma.Masu),
-                        Util_Komahaiyaku184.Syurui(dstKoma.Haiyaku),
-                        logTag
-                        );
-                    Debug.Assert(figMovedKoma != Fingers.Error_1, "駒を動かせなかった？14");
-                }
-                else
-                {
-                    exceptionArea = 99003000;
-                    //----------
-                    // 将棋盤から
-                    //----------
-
-                    RO_Star srcKoma = Util_Starlightable.AsKoma(move.LongTimeAgo);
-                    Debug.Assert( !Masu_Honshogi.IsErrorBasho( srcKoma.Masu), "srcKoma.Masuエラー。15");
-                    RO_Star dstKoma = Util_Starlightable.AsKoma(move.Now);
-
-
-                    exceptionArea = 99003100;
-                    figMovedKoma = Util_Sky_FingerQuery.InShogibanMasuNow(
-                        kaisi_Sky,
-                        dstKoma.Pside,
-                        Util_Masu10.OkibaSujiDanToMasu(
-                            Conv_SyElement.ToOkiba(Masu_Honshogi.Masus_All[Conv_SyElement.ToMasuNumber(dstKoma.Masu)]),
-                            Conv_SyElement.ToMasuNumber(srcKoma.Masu)
-                            ),
-                            logTag
-                            );
-                    Debug.Assert(figMovedKoma != Fingers.Error_1, "駒を動かせなかった？13");
-                }
+                exceptionArea = 99002100;
+                // FIXME: 駒台の、どの駒を拾うか？
+                figMovedKoma = Util_Sky_FingerQuery.InOkibaSyuruiNowIgnoreCase(
+                    kaisi_Sky,
+                    Conv_SyElement.ToOkiba(srcKoma.Masu),
+                    Util_Komahaiyaku184.Syurui(dstKoma.Haiyaku)
+                    );
+                Debug.Assert(figMovedKoma != Fingers.Error_1, "駒を動かせなかった？14");
             }
-            catch(Exception ex)
+            else
             {
-                //>>>>> エラーが起こりました。
+                exceptionArea = 99003000;
+                //----------
+                // 将棋盤から
+                //----------
 
-                // どうにもできないので  ログだけ取って無視します。
-                Logger.Panic(logTag, ex, "Util_IttesasuRoutine#Sasu24_UgokasuKoma_IdoSakiHe： exceptionArea=" + exceptionArea+"\n"+
-                    "hint=["+hint+"]");
-                throw;
+                RO_Star srcKoma = Util_Starlightable.AsKoma(move.LongTimeAgo);
+                Debug.Assert(!Masu_Honshogi.IsErrorBasho(srcKoma.Masu), "srcKoma.Masuエラー。15");
+                RO_Star dstKoma = Util_Starlightable.AsKoma(move.Now);
+
+
+                exceptionArea = 99003100;
+                figMovedKoma = Util_Sky_FingerQuery.InShogibanMasuNow(
+                    kaisi_Sky,
+                    dstKoma.Pside,
+                    Util_Masu10.OkibaSujiDanToMasu(
+                        Conv_SyElement.ToOkiba(Masu_Honshogi.Masus_All[Conv_SyElement.ToMasuNumber(dstKoma.Masu)]),
+                        Conv_SyElement.ToMasuNumber(srcKoma.Masu)
+                        )
+                        );
+                Debug.Assert(figMovedKoma != Fingers.Error_1, "駒を動かせなかった？13");
             }
         }
 
@@ -433,8 +398,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             out Finger out_figFoodKoma,
             out RO_Star out_food_koma,
             out Playerside pside,
-            out SyElement akiMasu,
-            ILogTag logTag
+            out SyElement akiMasu
             )
         {
             RO_Star dstKoma = Util_Starlightable.AsKoma(dst.Now);
@@ -493,7 +457,7 @@ dst.Pside={dstKoma.Pside}");
                     akiMasu = Util_IttesasuRoutine.GetKomadaiKomabukuroSpace(okiba, susunda_Sky_orNull_before);
 
 
-                    if (Masu_Honshogi.IsErrorBasho( akiMasu))
+                    if (Masu_Honshogi.IsErrorBasho(akiMasu))
                     {
                         //>>>>> エラー：　駒台に空きスペースがありませんでした。
                         throw new Exception($@"エラー：　駒台に空きスペースがありませんでした。
@@ -542,7 +506,7 @@ dst.Pside={dstKoma.Pside}");
 
 
             //駒台スペースは40マスです。
-            for (int i = 0; i < Util_Masu10.KOMADAI_KOMABUKURO_SPACE_LENGTH;i++ )
+            for (int i = 0; i < Util_Masu10.KOMADAI_KOMABUKURO_SPACE_LENGTH; i++)
             {
                 if (!exists[i])
                 {

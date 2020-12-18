@@ -136,8 +136,8 @@ namespace Grayscale.P324KifuTree.L250Struct
         public string Json_NextNodes_MultiSky(
             string memo,
             string hint,
-            int temezumi_yomiGenTeban_forLog,//読み進めている現在の手目済
-            ILogTag logTag)
+            int temezumi_yomiGenTeban_forLog//読み進めている現在の手目済
+            )
         {
             StringBuilder sb = new StringBuilder();
 

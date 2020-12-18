@@ -31,8 +31,7 @@ namespace Grayscale.P354UtilSasuEx.L500Util
         /// </summary>
         public static Dictionary<string, SasuEntry> CreateNariMove(
             SkyConst src_Sky,
-            Dictionary<string, SasuEntry> a_moveBetuEntry,
-            ILogTag logTag
+            Dictionary<string, SasuEntry> a_moveBetuEntry
             )
         {
             //----------------------------------------
@@ -44,7 +43,7 @@ namespace Grayscale.P354UtilSasuEx.L500Util
             {
                 Dictionary<string, IMove> newMoveList = new Dictionary<string, IMove>();
 
-                foreach(KeyValuePair<string, SasuEntry> entry in a_moveBetuEntry)
+                foreach (KeyValuePair<string, SasuEntry> entry in a_moveBetuEntry)
                 {
                     // 
                     // ・移動元の駒
@@ -103,37 +102,15 @@ namespace Grayscale.P354UtilSasuEx.L500Util
                     Finger figSasumaenoKoma = Util_Sky_FingersQuery.InMasuNow(src_Sky,
                         sasumaenoKoma.Masu).ToFirst();
 
-                    try
+                    string moveStr = ConvMoveStrSfen.ToMoveStrSfen(newMove);
+
+                    if (!result_komabetuEntry.ContainsKey(moveStr))
                     {
-                        string moveStr = ConvMoveStrSfen.ToMoveStrSfen(newMove);
+                        // 指し手が既存でない局面だけを追加します。
 
-                        if (!result_komabetuEntry.ContainsKey(moveStr))
-                        {
-                            // 指し手が既存でない局面だけを追加します。
-
-                            // 『進める駒』と、『移動先升』
-                            result_komabetuEntry.Add(moveStr, new SasuEntry(newMove, figSasumaenoKoma, sasitaKoma.Masu,true));
-                        }
-
+                        // 『進める駒』と、『移動先升』
+                        result_komabetuEntry.Add(moveStr, new SasuEntry(newMove, figSasumaenoKoma, sasitaKoma.Masu, true));
                     }
-                    catch (Exception ex)
-                    {
-                        // 既存の指し手
-                        StringBuilder sb = new StringBuilder();
-                        {
-                            foreach (KeyValuePair<string, SasuEntry> entry in a_moveBetuEntry)
-                            {
-                                sb.Append("「");
-                                sb.Append(ConvMoveStrSfen.ToMoveStrSfen(entry.Value.NewMove));
-                                sb.Append("」");
-                            }
-                        }
-
-                        //>>>>> エラーが起こりました。
-                        Logger.Panic(logTag,ex, "新しく作った「成りの指し手」を既存ノードに追加していた時です。：追加したい指し手=「" + ConvMoveStrSfen.ToMoveStrSfen(newMove) + "」既存の手=" + sb.ToString());
-                        throw;
-                    }
-
                 }
             }
             catch (Exception ex)

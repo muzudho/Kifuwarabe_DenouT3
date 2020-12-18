@@ -21,7 +21,7 @@
 
             // 将棋エンジン　きふわらべ
             ProgramSupport programSupport = new ProgramSupport();
-            programSupport.AtBegin(logTag);
+            programSupport.AtBegin();
             bool isTimeoutShutdown;
 
             isTimeoutShutdown = false;

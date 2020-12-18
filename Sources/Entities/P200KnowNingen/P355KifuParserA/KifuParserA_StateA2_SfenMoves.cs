@@ -82,7 +82,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                         string str8;
                         string str9;
                         if (SfenMovesTextConv.ToTokens(
-                            genjo.InputLine, out str1, out str2, out str3, out str4, out str5, out rest, logTag)
+                            genjo.InputLine, out str1, out str2, out str3, out str4, out str5, out rest)
                             &&
                             !(str1=="" && str2=="" && str3=="" && str4=="" && str5=="")
                             )
@@ -181,7 +181,6 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                                     korekaranoTemezumi//これから作る局面の、手目済み。
                                 ),
                                 out ittesasuResult,
-                                logTag,
                                 "KifuParserA_StateA2_SfenMoves#Execute"
                                 );
 
@@ -189,8 +188,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
 
                             exceptionArea = 1050;
                             Util_IttesasuRoutine.Before2(
-                                ref ittesasuResult,
-                                logTag
+                                ref ittesasuResult
                                 );
 
                             exceptionArea = 1060;
@@ -201,8 +199,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                             Util_IttesasuRoutine.After3_ChangeCurrent(
                                 model_Taikyoku.Kifu,
                                 ConvMoveStrSfen.ToMoveStrSfen(ittesasuResult.Get_SyuryoNode_OrNull.Key),
-                                ittesasuResult.Get_SyuryoNode_OrNull,
-                                logTag
+                                ittesasuResult.Get_SyuryoNode_OrNull
                                 );
 
                             exceptionArea = 1080;

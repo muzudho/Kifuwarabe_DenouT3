@@ -46,8 +46,6 @@ namespace Grayscale.P720_FvWriter___
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
 
-            ILogTag logTag = LogTags.TestProgram;
-
             string filepathR = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv00Komawari"));
             string filepathR_KK = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv01KK"));
             string filepathW = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv2Sample"));
@@ -58,7 +56,7 @@ namespace Grayscale.P720_FvWriter___
             {
             }
 
-            if (Util_FeatureVectorInput.Make_FromFile_KK(fv, filepathR_KK, logTag))
+            if (Util_FeatureVectorInput.Make_FromFile_KK(fv, filepathR_KK))
             {
             }
 

@@ -245,8 +245,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
                     node_yomi,
                     out moveBetuEntry,
                     out yomiDeep,
-                    out a_childrenBest,
-                    logTag
+                    out a_childrenBest
                     );
                 int moveBetuEntry_count = moveBetuEntry.Count;
 
@@ -347,21 +346,18 @@ using Grayscale.P370LogGraphiEx.L500Util;
         /// <param name="out_moveBetuEntry"></param>
         /// <param name="out_yomiDeep"></param>
         /// <param name="out_a_childrenBest"></param>
-        /// <param name="logTag"></param>
         private static void CreateEntries_BeforeLoop(
             Tansaku_Genjo genjo,
             KifuNode node_yomi,
             out Dictionary<string, SasuEntry> out_moveBetuEntry,
             out int out_yomiDeep,
-            out float out_a_childrenBest,
-            ILogTag logTag
+            out float out_a_childrenBest
             )
         {
             out_moveBetuEntry = Tansaku_FukasaYusen_Routine.WAAAA_Create_ChildNodes(
                 genjo,
                 node_yomi.Key,
-                node_yomi.Value.KyokumenConst,
-                logTag);
+                node_yomi.Value.KyokumenConst);
 
             out_yomiDeep = node_yomi.Value.KyokumenConst.Temezumi - genjo.YomikaisiTemezumi + 1;
 
@@ -445,158 +441,128 @@ using Grayscale.P370LogGraphiEx.L500Util;
             ILogTag logTag
             )
         {
-            int exceptionArea = 0;
             float a_childrenBest;
 
-            try
+            //
+            // まず前提として、
+            // 現手番の「被王手の局面」だけがピックアップされます。
+            // これはつまり、次の局面がないときは、その枝は投了ということです。
+            //
+
+            // 
+            // （１）合法手に一対一対応した子ノードを作成し、ハブ・ノードにぶら下げます。
+            //
+            Dictionary<string, SasuEntry> moveBetuEntry2;
+            int yomiDeep2;
+            Tansaku_FukasaYusen_Routine.CreateEntries_BeforeLoop(
+                genjo,
+                node_yomi,
+                out moveBetuEntry2,
+                out yomiDeep2,
+                out a_childrenBest
+                );
+
+            int wideCount1 = 0;
+            foreach (KeyValuePair<string, SasuEntry> entry in moveBetuEntry2)
             {
-                exceptionArea = 10;
-                //
-                // まず前提として、
-                // 現手番の「被王手の局面」だけがピックアップされます。
-                // これはつまり、次の局面がないときは、その枝は投了ということです。
-                //
-
-
-
-
-                // 
-                // （１）合法手に一対一対応した子ノードを作成し、ハブ・ノードにぶら下げます。
-                //
-                Dictionary<string, SasuEntry> moveBetuEntry2;
-                int yomiDeep2;
-                Tansaku_FukasaYusen_Routine.CreateEntries_BeforeLoop(
-                    genjo,
-                    node_yomi,
-                    out moveBetuEntry2,
-                    out yomiDeep2,
-                    out a_childrenBest,
-                    logTag
-                    );
-
-                int wideCount1 = 0;
-                foreach (KeyValuePair<string, SasuEntry> entry in moveBetuEntry2)
+                if (Tansaku_FukasaYusen_Routine.CanNotNextLoop(
+                    yomiDeep2,
+                    wideCount1,
+                    moveBetuEntry2.Count,
+                    genjo
+                ))
                 {
-                    if (Tansaku_FukasaYusen_Routine.CanNotNextLoop(
-                        yomiDeep2,
-                        wideCount1,
-                        moveBetuEntry2.Count,
-                        genjo
-                    ))
-                    {
-                        //----------------------------------------
-                        // もう深くよまないなら
-                        //----------------------------------------
-                        Tansaku_FukasaYusen_Routine.Do_Leaf(
-                            genjo,
-                            node_yomi,
-                            args,
-                            out a_childrenBest,
-                            logTag
-                            );
+                    //----------------------------------------
+                    // もう深くよまないなら
+                    //----------------------------------------
+                    Tansaku_FukasaYusen_Routine.Do_Leaf(
+                        genjo,
+                        node_yomi,
+                        args,
+                        out a_childrenBest,
+                        logTag
+                        );
 
-                        wideCount1++;
-                        break;
+                    wideCount1++;
+                    break;
+                }
+                else
+                {
+                    //----------------------------------------
+                    // 《９》まだ深く読むなら
+                    //----------------------------------------
+                    // 《８》カウンターを次局面へ
+
+
+                    // このノードは、途中節か葉か未確定。
+
+                    //
+                    // （２）指し手を、ノードに変換し、現在の局面に継ぎ足します。
+                    //
+                    KifuNode childNode1;
+
+                    if (node_yomi.ContainsKey_ChildNodes(entry.Key))
+                    {
+                        childNode1 = (KifuNode)node_yomi.GetChildNode(entry.Key);
                     }
                     else
                     {
-                        //----------------------------------------
-                        // 《９》まだ深く読むなら
-                        //----------------------------------------
-                        // 《８》カウンターを次局面へ
+                        // 既存でなければ、作成・追加
+                        childNode1 = Conv_SasuEntry.ToKifuNode(entry.Value, node_yomi.Value.KyokumenConst);
+                        node_yomi.PutAdd_ChildNode(entry.Key, childNode1);
+                    }
 
+                    // これを呼び出す回数を減らすのが、アルファ法。
+                    // 枝か、葉か、確定させにいきます。
+                    float a_myScore = Tansaku_FukasaYusen_Routine.WAAA_Yomu_Loop(
+                        genjo,
+                        a_childrenBest,
+                        childNode1,
+                        moveBetuEntry2.Count,
+                        args,
+                        logTag);
+                    Util_Scoreing.Update_Branch(
+                        a_myScore,//a_childrenBest,
+                        node_yomi//mutable
+                        );
 
-                        // このノードは、途中節か葉か未確定。
+                    //----------------------------------------
+                    // 子要素の検索が終わった時点
+                    //----------------------------------------
+                    bool alpha_cut;
+                    Util_Scoreing.Update_BestScore_And_Check_AlphaCut(
+                        yomiDeep2,// yomiDeep0,
+                        node_yomi,
+                        a_parentsiblingDecidedValue,
+                        a_myScore,
+                        ref a_childrenBest,
+                        out alpha_cut
+                        );
 
-                        //
-                        // （２）指し手を、ノードに変換し、現在の局面に継ぎ足します。
-                        //
-                        KifuNode childNode1;
-
-                        if (node_yomi.ContainsKey_ChildNodes(entry.Key))
-                        {
-                            childNode1 = (KifuNode)node_yomi.GetChildNode(entry.Key);
-                        }
-                        else
-                        {
-                            // 既存でなければ、作成・追加
-                            childNode1 = Conv_SasuEntry.ToKifuNode(entry.Value, node_yomi.Value.KyokumenConst, logTag);
-                            node_yomi.PutAdd_ChildNode(entry.Key, childNode1);
-                        }
-
-                        // これを呼び出す回数を減らすのが、アルファ法。
-                        // 枝か、葉か、確定させにいきます。
-                        float a_myScore = Tansaku_FukasaYusen_Routine.WAAA_Yomu_Loop(
-                            genjo,
-                            a_childrenBest,
-                            childNode1,
-                            moveBetuEntry2.Count,
-                            args,
-                            logTag);
-                        Util_Scoreing.Update_Branch(
-                            a_myScore,//a_childrenBest,
-                            node_yomi//mutable
-                            );
-
-                        //----------------------------------------
-                        // 子要素の検索が終わった時点
-                        //----------------------------------------
-                        bool alpha_cut;
-                        Util_Scoreing.Update_BestScore_And_Check_AlphaCut(
-                            yomiDeep2,// yomiDeep0,
-                            node_yomi,
-                            a_parentsiblingDecidedValue,
-                            a_myScore,
-                            ref a_childrenBest,
-                            out alpha_cut
-                            );
-
-                        wideCount1++;
+                    wideCount1++;
 
 #if DEBUG_ALPHA_METHOD
                 errH.Logger.WriteLineAddMemo("3. 手(" + node_yomi.Value.ToKyokumenConst.Temezumi + ")読(" + yomiDeep + ") 兄弟最善=[" + a_siblingDecidedValue + "] 子ベスト=[" + a_childrenBest + "] 自点=[" + a_myScore + "]");
 #endif
-                        if (alpha_cut)
-                        {
+                    if (alpha_cut)
+                    {
 #if DEBUG_ALPHA_METHOD
                         errH.Logger.WriteLineAddMemo("アルファ・カット☆！");
 #endif
-                            //----------------------------------------
-                            // 次の「子の弟」要素はもう読みません。
-                            //----------------------------------------
+                        //----------------------------------------
+                        // 次の「子の弟」要素はもう読みません。
+                        //----------------------------------------
 
-                            //*TODO:
-                            break;
-                            //toBreak1 = true;
-                            // */
-                        }
+                        //*TODO:
+                        break;
+                        //toBreak1 = true;
+                        // */
                     }
+                }
 
 
                 // gt_NextLoop:
                 //    ;
-                }
-
-
-            }
-            catch (Exception ex)
-            {
-                switch (exceptionArea)
-                {
-                    case 10:
-                        {
-                            Logger.Panic(logTag, ex, "棋譜ツリーの読みループの前半１０です。"); throw;
-                        }
-                    case 20:
-                        {
-                            Logger.Panic(logTag, ex, "棋譜ツリーの読みループの前半２０です。"); throw;
-                        }
-                    case 30:
-                        {
-                            Logger.Panic(logTag, ex, "棋譜ツリーの読みループの後半７０です。"); throw;
-                        }
-                    default: throw;
-                }
             }
 
             return a_childrenBest;
@@ -614,17 +580,13 @@ using Grayscale.P370LogGraphiEx.L500Util;
         /// <param name="pside_yomiCur"></param>
         /// <param name="node_yomiCur"></param>
         /// <param name="logF_moveKiki"></param>
-        /// <param name="logTag"></param>
         /// <returns>複数のノードを持つハブ・ノード</returns>
         private static Dictionary<string, SasuEntry> WAAAA_Create_ChildNodes(
             Tansaku_Genjo genjo,
             IMove src_Sky_move,
-            SkyConst src_Sky,
-            ILogTag logTag
+            SkyConst src_Sky
             )
         {
-            int exceptionArea = 0;
-
             //----------------------------------------
             // ハブ・ノードとは
             //----------------------------------------
@@ -633,172 +595,128 @@ using Grayscale.P370LogGraphiEx.L500Util;
             //
             Dictionary<string, SasuEntry> moveBetuEntry;
 
-            try
-            {
-                //----------------------------------------
-                // ①現手番の駒の移動可能場所_被王手含む
-                //----------------------------------------
-                exceptionArea = 10;
+            //----------------------------------------
+            // ①現手番の駒の移動可能場所_被王手含む
+            //----------------------------------------
 
-                //----------------------------------------
-                // 盤１個分のログの準備
-                //----------------------------------------
-                exceptionArea = 20;
+            //----------------------------------------
+            // 盤１個分のログの準備
+            //----------------------------------------
 #if DEBUG
                 MmLogGenjoImpl mm_log_orNull = null;
                 KaisetuBoard logBrd_move1;
                 Tansaku_FukasaYusen_Routine.Log1(genjo, src_Sky_move, src_Sky, out mm_log_orNull, out logBrd_move1, errH);
 #endif
 
-                //----------------------------------------
-                // 進めるマス
-                //----------------------------------------
-                List_OneAndMulti<Finger, SySet<SyElement>> komaBETUSusumeruMasus;
-                Util_KyokumenMoves.LA_Split_KomaBETUSusumeruMasus(
-                    1,
-                    out komaBETUSusumeruMasus,
-                    genjo.Args.IsHonshogi,//本将棋か
-                    src_Sky,//現在の局面  // FIXME:Lockすると、ここでヌルになる☆
-                    src_Sky.KaisiPside,//手番
-                    false//相手番か
+            //----------------------------------------
+            // 進めるマス
+            //----------------------------------------
+            List_OneAndMulti<Finger, SySet<SyElement>> komaBETUSusumeruMasus;
+            Util_KyokumenMoves.LA_Split_KomaBETUSusumeruMasus(
+                1,
+                out komaBETUSusumeruMasus,
+                genjo.Args.IsHonshogi,//本将棋か
+                src_Sky,//現在の局面  // FIXME:Lockすると、ここでヌルになる☆
+                src_Sky.KaisiPside,//手番
+                false//相手番か
 #if DEBUG
                     ,
                     mm_log_orNull
 #endif
                 );
 
-//#if DEBUG
-//                System.Console.WriteLine("komaBETUSusumeruMasusの全要素＝" + Util_List_OneAndMultiEx<Finger, SySet<SyElement>>.CountAllElements(komaBETUSusumeruMasus));
-//#endif
-//#if DEBUG
-//                string jsaMoveStr = Util_Translator_Move.ToMove(genjo.Node_yomiNext, genjo.Node_yomiNext.Value, errH);
-//                System.Console.WriteLine("[" + jsaMoveStr + "]の駒別置ける升 調べ\n" + Util_List_OneAndMultiEx<Finger, SySet<SyElement>>.Dump(komaBETUSusumeruMasus, genjo.Node_yomiNext.Value.ToKyokumenConst));
-//#endif
-                //Moveseisei_FukasaYusen_Routine.Log2(genjo, logBrd_move1, errH);//ログ試し
+            //#if DEBUG
+            //                System.Console.WriteLine("komaBETUSusumeruMasusの全要素＝" + Util_List_OneAndMultiEx<Finger, SySet<SyElement>>.CountAllElements(komaBETUSusumeruMasus));
+            //#endif
+            //#if DEBUG
+            //                string jsaMoveStr = Util_Translator_Move.ToMove(genjo.Node_yomiNext, genjo.Node_yomiNext.Value, errH);
+            //                System.Console.WriteLine("[" + jsaMoveStr + "]の駒別置ける升 調べ\n" + Util_List_OneAndMultiEx<Finger, SySet<SyElement>>.Dump(komaBETUSusumeruMasus, genjo.Node_yomiNext.Value.ToKyokumenConst));
+            //#endif
+            //Moveseisei_FukasaYusen_Routine.Log2(genjo, logBrd_move1, errH);//ログ試し
 
 
+
+
+            //----------------------------------------
+            // ②利きから、被王手の局面を除いたハブノード
+            //----------------------------------------
+            if (genjo.Args.IsHonshogi)
+            {
+                //----------------------------------------
+                // 本将棋
+                //----------------------------------------
+
+                //----------------------------------------
+                // 指定局面での全ての指し手。
+                //----------------------------------------
+                Maps_OneAndMulti<Finger, IMove> komaBetuAllMoves = Conv_KomabetuSusumeruMasus.ToKomaBetuAllMoves(
+                    komaBETUSusumeruMasus, src_Sky);
+
+                //#if DEBUG
+                //                    System.Console.WriteLine("komaBETUAllMovesの全要素＝" + Util_Maps_OneAndMultiEx<Finger, SySet<SyElement>>.CountAllElements(komaBETUAllMoves));
+                //#endif
 
 
                 //----------------------------------------
-                // ②利きから、被王手の局面を除いたハブノード
+                // 本将棋の場合、王手されている局面は削除します。
                 //----------------------------------------
-                if (genjo.Args.IsHonshogi)
-                {
-                    //----------------------------------------
-                    // 本将棋
-                    //----------------------------------------
-
-                    exceptionArea = 30;
-                    //----------------------------------------
-                    // 指定局面での全ての指し手。
-                    //----------------------------------------
-                    Maps_OneAndMulti<Finger, IMove> komaBetuAllMoves = Conv_KomabetuSusumeruMasus.ToKomaBetuAllMoves(
-                        komaBETUSusumeruMasus, src_Sky);
-
-//#if DEBUG
-//                    System.Console.WriteLine("komaBETUAllMovesの全要素＝" + Util_Maps_OneAndMultiEx<Finger, SySet<SyElement>>.CountAllElements(komaBETUAllMoves));
-//#endif
-
-
-                    //----------------------------------------
-                    // 本将棋の場合、王手されている局面は削除します。
-                    //----------------------------------------
-                    Maps_OneAndOne<Finger, SySet<SyElement>> starbetuSusumuMasus = Util_LegalMove.LA_RemoveMate(
-                        genjo.YomikaisiTemezumi,
-                        genjo.Args.IsHonshogi,
-                        komaBetuAllMoves,//駒別の全ての指し手
-                        src_Sky,
+                Maps_OneAndOne<Finger, SySet<SyElement>> starbetuSusumuMasus = Util_LegalMove.LA_RemoveMate(
+                    genjo.YomikaisiTemezumi,
+                    genjo.Args.IsHonshogi,
+                    komaBetuAllMoves,//駒別の全ての指し手
+                    src_Sky,
 #if DEBUG
                         genjo.Args.LogF_moveKiki,//利き用
 #endif
-                        "読みNextルーチン",
-                        logTag);
+                        "読みNextルーチン");
 
-                    exceptionArea = 40;
+                //----------------------------------------
+                // 『駒別升ズ』を、ハブ・ノードへ変換。
+                //----------------------------------------
+                //成り以外の手
+                moveBetuEntry = Conv_KomabetuMasus.ToMoveBetuSky1(
+                    starbetuSusumuMasus,
+                    src_Sky
+                );
 
-                    //----------------------------------------
-                    // 『駒別升ズ』を、ハブ・ノードへ変換。
-                    //----------------------------------------
-                    //成り以外の手
-                    moveBetuEntry = Conv_KomabetuMasus.ToMoveBetuSky1(
-                        starbetuSusumuMasus,
-                        src_Sky,
-                        logTag
-                    );
+                //----------------------------------------
+                // 成りの指し手を作成します。（拡張）
+                //----------------------------------------
+                //成りの手
+                Dictionary<string, SasuEntry> b_moveBetuEntry = Util_SasuEx.CreateNariMove(src_Sky,
+                    moveBetuEntry);
 
-                    //----------------------------------------
-                    // 成りの指し手を作成します。（拡張）
-                    //----------------------------------------
-                    //成りの手
-                    Dictionary<string, SasuEntry> b_moveBetuEntry = Util_SasuEx.CreateNariMove(src_Sky,
-                        moveBetuEntry,
-                        logTag);
-
-                    // マージ
-                    foreach(KeyValuePair<string, SasuEntry> entry in b_moveBetuEntry)
+                // マージ
+                foreach (KeyValuePair<string, SasuEntry> entry in b_moveBetuEntry)
+                {
+                    if (!moveBetuEntry.ContainsKey(entry.Key))
                     {
-                        if (!moveBetuEntry.ContainsKey(entry.Key))
-                        {
-                            moveBetuEntry.Add(entry.Key, entry.Value);
-                        }
+                        moveBetuEntry.Add(entry.Key, entry.Value);
                     }
                 }
-                else
-                {
-                    //----------------------------------------
-                    // 本将棋じゃないもの
-                    //----------------------------------------
-                    exceptionArea = 50;
-
-                    //----------------------------------------
-                    // 駒別置ける升　→　指し手別局面
-                    //----------------------------------------
-                    //
-                    // １対１変換
-                    //
-                    moveBetuEntry = Conv_KomabetuMasus.KomabetuMasusToMoveBetuSky(
-                        komaBETUSusumeruMasus,
-                        src_Sky,
-                        logTag
-                        );
-
-//#if DEBUG
-//                    System.Console.WriteLine("駒別置ける升="+komaBETUSusumeruMasus.Items.Count+"件。　指し手別局面="+ss.Count+"件。");
-//                    Debug.Assert(komaBETUSusumeruMasus.Items.Count == ss.Count, "変換後のデータ件数が異なります。[" + komaBETUSusumeruMasus.Items.Count + "]→["+ss.Count+"]");
-//#endif
-                }
-
-                exceptionArea = 0;
-
             }
-            catch (Exception ex)
+            else
             {
-                switch (exceptionArea)
-                {
-                    case 10:
-                        {
-                            Logger.Panic(logTag, ex, "棋譜ツリーの読みループの作成次ノードの前半１０です。"); throw;
-                        }
-                    case 20:
-                        {
-                            Logger.Panic(logTag, ex, "棋譜ツリーの読みループの作成次ノードの前半３０です。"); throw;
-                        }
-                    case 30:
-                        {
-                            Logger.Panic(logTag, ex, "棋譜ツリーの読みループの作成次ノードの中盤５０です。"); throw;
-                        }
-                    case 40:
-                        {
-                            Logger.Panic(logTag, ex, "王手局面除去後に成りの指し手を追加していた時です。"); throw;
-                        }
-                    case 50:
-                        {
-                            Logger.Panic(logTag, ex, "棋譜ツリーの読みループの作成次ノードの後半９０です。"); throw;
-                        }
-                    default: throw;
-                }
-            }
+                //----------------------------------------
+                // 本将棋じゃないもの
+                //----------------------------------------
 
+                //----------------------------------------
+                // 駒別置ける升　→　指し手別局面
+                //----------------------------------------
+                //
+                // １対１変換
+                //
+                moveBetuEntry = Conv_KomabetuMasus.KomabetuMasusToMoveBetuSky(
+                    komaBETUSusumeruMasus,
+                    src_Sky
+                    );
+
+                //#if DEBUG
+                //                    System.Console.WriteLine("駒別置ける升="+komaBETUSusumeruMasus.Items.Count+"件。　指し手別局面="+ss.Count+"件。");
+                //                    Debug.Assert(komaBETUSusumeruMasus.Items.Count == ss.Count, "変換後のデータ件数が異なります。[" + komaBETUSusumeruMasus.Items.Count + "]→["+ss.Count+"]");
+                //#endif
+            }
 
             return moveBetuEntry;// result_hubNode;
         }
@@ -808,14 +726,11 @@ using Grayscale.P370LogGraphiEx.L500Util;
             IMove src_Sky_move,
             SkyConst src_Sky,
             out MmLogGenjoImpl out_mm_log,
-            out KaisetuBoard out_logBrd_move1,
-            ILogTag logTag
+            out KaisetuBoard out_logBrd_move1
         )
         {
             out_logBrd_move1 = new KaisetuBoard();// 盤１個分のログの準備
 
-            try
-            {
                 out_mm_log = new MmLogGenjoImpl(
                         genjo.YomikaisiTemezumi,
                         out_logBrd_move1,//ログ？
@@ -823,21 +738,13 @@ using Grayscale.P370LogGraphiEx.L500Util;
                         src_Sky_move,//指し手
                         errH//ログ
                     );
-            }
-            catch (Exception ex)
-            {
-                Logger.Panic(logTag, ex, "棋譜ツリーの読みループの作成次ノードの前半２０です。"); throw;
-            }
         }
         private static void Log2(
             Tansaku_Genjo genjo,
             KifuNode node_yomi,
-            KaisetuBoard logBrd_move1,
-            ILogTag logTag
+            KaisetuBoard logBrd_move1
         )
         {
-            try
-            {
                 logBrd_move1.moveOrNull = node_yomi.Key;
 
 
@@ -848,11 +755,6 @@ using Grayscale.P370LogGraphiEx.L500Util;
                 // ログ試し
                 logBrd_move1.Arrow.Add(new Gkl_Arrow(Conv_SyElement.ToMasuNumber(srcKoma.Masu), Conv_SyElement.ToMasuNumber(dstKoma.Masu)));
                 genjo.Args.LogF_moveKiki.boards.Add(logBrd_move1);
-            }
-            catch (Exception ex)
-            {
-                Logger.Panic(logTag, ex, "棋譜ツリーの読みループの作成次ノードの前半４０です。"); throw;
-            }
         }
 #endif
     }

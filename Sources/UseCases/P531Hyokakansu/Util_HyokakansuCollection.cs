@@ -60,8 +60,7 @@ namespace Grayscale.P531Hyokakansu.L510HyokakansuColl
                     out meisai,
 #endif
                     node_mutable.Value.KyokumenConst,
-                    fv,
-                    logTag
+                    fv
                 );
 
                 node_mutable.AddScore(score);

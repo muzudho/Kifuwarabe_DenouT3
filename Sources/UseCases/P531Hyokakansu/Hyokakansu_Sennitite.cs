@@ -1,9 +1,9 @@
-﻿    using Grayscale.Kifuwarakaku.Entities.Logger;
+﻿using System;
+using Grayscale.Kifuwarakaku.Entities.Logger;
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P224Sky.L500Struct;
 using Grayscale.P321KyokumHyoka.I250Struct;
 using Grayscale.P521FeatureVect.I500Struct;
-using System;
 
 
 #if DEBUG || LEARN
@@ -39,8 +39,7 @@ namespace Grayscale.P531Hyokakansu.L500Hyokakansu
             out KyHyokaMeisai_Koumoku out_meisaiKoumoku_orNull,
 #endif
  SkyConst src_Sky,
-            FeatureVector featureVector,
-            ILogTag errH
+            FeatureVector featureVector
             )
         {
             out_score = 0.0f;//互角

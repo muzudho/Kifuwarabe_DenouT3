@@ -120,7 +120,7 @@ namespace Grayscale.P339ConvKyokume.L500Converter
                     koma = Util_Sky_FingerQuery.InOkibaSyuruiNowIgnoreCase(
                         siteiNode.Value.KyokumenConst,
                         Conv_Playerside.ToKomadai(pside1),//FIXME:
-                        uttaSyurui, logTag);
+                        uttaSyurui);
                     if (Fingers.Error_1 == koma)
                     {
                         throw new Exception($"TuginoItte_Sfen#GetData_FromTextSub：駒台から種類[{uttaSyurui}]の駒を掴もうとしましたが、エラーでした。");
@@ -205,7 +205,7 @@ src_Sky.Temezumi=[{src_Sky.Temezumi}]
                     }
 
 
-                    Finger srcKoma = Util_Sky_FingerQuery.InOkibaSyuruiNowIgnoreCase(siteiNode.Value.KyokumenConst, srcOkiba, srcSyurui, logTag);
+                    Finger srcKoma = Util_Sky_FingerQuery.InOkibaSyuruiNowIgnoreCase(siteiNode.Value.KyokumenConst, srcOkiba, srcSyurui);
 
                     RO_Star dstKoma = Util_Starlightable.AsKoma(src_Sky.StarlightIndexOf(srcKoma).Now);
 

@@ -269,8 +269,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             figMovedKoma = Util_Sky_FingerQuery.InShogibanMasuNow(
                 kaisi_Sky,
                 koma.Pside,
-                koma.Masu,//[巻戻し]のときは、先位置が　駒の居場所。
-                logTag
+                koma.Masu//[巻戻し]のときは、先位置が　駒の居場所。
                 );
             Debug.Assert(figMovedKoma != Fingers.Error_1, "駒を動かせなかった？5");
         }
@@ -364,7 +363,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
 
 
                 // 取った駒は、種類が同じなら、駒台のどの駒でも同じです。
-                out_figFoodKoma = Util_Sky_FingerQuery.InOkibaSyuruiNowIgnoreCase(kaisi_Sky, okiba, (Komasyurui14)move.FoodKomaSyurui, logTag);
+                out_figFoodKoma = Util_Sky_FingerQuery.InOkibaSyuruiNowIgnoreCase(kaisi_Sky, okiba, (Komasyurui14)move.FoodKomaSyurui);
             }
             else
             {

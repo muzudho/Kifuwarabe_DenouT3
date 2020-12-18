@@ -19,12 +19,10 @@ namespace Grayscale.P260Play.L250Calc
         /// </summary>
         /// <param name="srcSky"></param>
         /// <param name="fingers"></param>
-        /// <param name="logTag"></param>
         /// <returns></returns>
         public static Maps_OneAndOne<Finger, SySet<SyElement>> GetPotentialMoves(
             SkyConst srcSky,
-            Fingers fingers,
-            ILogTag logTag
+            Fingers fingers
             )
         {
             if (fingers is null) throw new ArgumentNullException(nameof(fingers));

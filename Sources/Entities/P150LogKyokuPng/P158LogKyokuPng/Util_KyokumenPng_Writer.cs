@@ -57,8 +57,7 @@ namespace Grayscale.P158LogKyokuPng.L500UtilWriter
                 "",//指し手SFEN
                 relFolder,
                 outFile,
-                reportEnvironment,
-                LogTags.TestProgram
+                reportEnvironment
                 );
 
         gt_EndMethod:
@@ -82,8 +81,7 @@ namespace Grayscale.P158LogKyokuPng.L500UtilWriter
             string sfenMoveStrOrEmpty,
             string appendFilepath,
             string outFile,
-            KyokumenPngEnvironment reportEnvironment,
-            ILogTag logTag
+            KyokumenPngEnvironment reportEnvironment
             )
         {
             bool successful = true;
@@ -110,8 +108,7 @@ namespace Grayscale.P158LogKyokuPng.L500UtilWriter
                         out moji3,
                         out moji4,
                         out moji5,
-                        out rest,
-                        logTag
+                        out rest
                         );
                     //System.Console.WriteLine("moji1=[" + moji1 + "] moji2=[" + moji2 + "] moji3=[" + moji3 + "] moji4=[" + moji4 + "] moji5=[" + moji5 + "] rest=[" + rest + "]");
 

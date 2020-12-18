@@ -42,7 +42,6 @@ namespace Grayscale.P362LegalMove.L500Util
         /// </summary>
         /// <param name="km_available">自軍の各駒の移動できる升セット</param>
         /// <param name="sbGohosyu"></param>
-        /// <param name="logTag"></param>
         public static Maps_OneAndOne<Finger, SySet<SyElement>> LA_RemoveMate(
             int yomikaisiTemezumi,
             bool isHonshogi,
@@ -53,13 +52,11 @@ namespace Grayscale.P362LegalMove.L500Util
             KaisetuBoards logF_kiki,
 #endif
 
-            string hint,
-            ILogTag logTag)
+            string hint)
         {
             Node<IMove, KyokumenWrapper> hubNode = ConvStarbetuMoves.ToNextNodes_AsHubNode(
                 genTeban_komabetuAllMove1,
-                src_Sky,
-                logTag
+                src_Sky
                 );// ハブ・ノード自身はダミーノードなんだが、子ノードに、次のノードが入っている。
             Util_NodeAssert361.AssertNariMove(hubNode, "#LA_RemoveMate(1)");//ここはok
 #if DEBUG
@@ -74,18 +71,18 @@ namespace Grayscale.P362LegalMove.L500Util
                     yomikaisiTemezumi,
                     hubNode,
                     src_Sky.Temezumi,
-                    src_Sky.KaisiPside,
+                    src_Sky.KaisiPside
 
 #if DEBUG
                     logF_kiki,
 #endif
-                    logTag);
+                    );
             }
             Util_NodeAssert361.AssertNariMove(hubNode, "#LA_RemoveMate(2)王手局面削除直後");//ここはok
 
 
             // 「指し手一覧」を、「星別の全指し手」に分けます。
-            Maps_OneAndMulti<Finger, IMove> starbetuAllMoves2 = Util_Sky258A.SplitMoveByStar(src_Sky, hubNode, logTag);
+            Maps_OneAndMulti<Finger, IMove> starbetuAllMoves2 = Util_Sky258A.SplitMoveByStar(src_Sky, hubNode);
             Util_Sasu269.AssertNariMove(starbetuAllMoves2, "#LA_RemoveMate(3)更に変換後");//ここはok
 
             //
@@ -119,8 +116,7 @@ namespace Grayscale.P362LegalMove.L500Util
         private static void Log1(
             Node<IMove, KyokumenWrapper> hubNode,
             int temezumi_yomiGenTeban,
-            string hint,
-            ILogTag logTag
+            string hint
             )
         {
             bool enableLog = false;//errH.Logger.Enable
@@ -128,8 +124,7 @@ namespace Grayscale.P362LegalMove.L500Util
                 ((KifuNode)hubNode).Json_NextNodes_MultiSky(
                     "(王手回避漏れ02." + temezumi_yomiGenTeban + "手目)",
                     hint + "_Lv3_RMHO",
-                    temezumi_yomiGenTeban,
-                    logTag) + "]");// ログ出力
+                    temezumi_yomiGenTeban) + "]");// ログ出力
         }
 
         /// <summary>
@@ -139,13 +134,11 @@ namespace Grayscale.P362LegalMove.L500Util
             int yomikaisiTemezumi,
             Node<IMove, KyokumenWrapper> hubNode,
             int temezumi_yomiGenTeban_forLog,//読み進めている現在の手目
-            Playerside pside_genTeban,
+            Playerside pside_genTeban
 
 #if DEBUG
             KaisetuBoards logF_kiki,
 #endif
-
-            ILogTag logTag
             )
         {
             // Node<,>の形で。
@@ -164,8 +157,7 @@ namespace Grayscale.P362LegalMove.L500Util
 #if DEBUG
                     logF_kiki,
 #endif
-                    node.Key,
-                    logTag
+                    node.Key
                     );
 
                 if (!kingSuicide)
@@ -202,8 +194,7 @@ namespace Grayscale.P362LegalMove.L500Util
 #if DEBUG
             KaisetuBoards logF_kiki,
 #endif
-            IMove move_forLog,
-            ILogTag logTag
+            IMove move_forLog
             )
         {
             bool isHonshogi = true;
@@ -223,10 +214,9 @@ namespace Grayscale.P362LegalMove.L500Util
 #endif
                 "玉自殺ﾁｪｯｸ",
                 temezumi_yomiCur_forLog,
-                move_forLog,
-                logTag);
+                move_forLog);
 
-            
+
             // 現手番側が受け手に回ったとします。現手番の、王の座標
             int genTeban_kingMasuNumber;
 
@@ -236,14 +226,14 @@ namespace Grayscale.P362LegalMove.L500Util
 
                 RO_Star koma = Util_Starlightable.AsKoma(src_Sky.StarlightIndexOf(Finger_Honshogi.GoteOh).Now);
 
-                    genTeban_kingMasuNumber = Conv_SyElement.ToMasuNumber(koma.Masu);
+                genTeban_kingMasuNumber = Conv_SyElement.ToMasuNumber(koma.Masu);
             }
             else
             {
                 // 現手番は、先手
                 RO_Star koma = Util_Starlightable.AsKoma(src_Sky.StarlightIndexOf(Finger_Honshogi.SenteOh).Now);
 
-                    genTeban_kingMasuNumber = Conv_SyElement.ToMasuNumber(koma.Masu);
+                genTeban_kingMasuNumber = Conv_SyElement.ToMasuNumber(koma.Masu);
             }
 
 
@@ -285,8 +275,7 @@ namespace Grayscale.P362LegalMove.L500Util
 #endif
             string logBrd_caption,
             int temezumi_yomiCur_forLog,
-            IMove move_forLog,
-            ILogTag logTag
+            IMove move_forLog
             )
         {
 #if DEBUG
@@ -300,7 +289,7 @@ namespace Grayscale.P362LegalMove.L500Util
 #endif
 
             // 《１》
-            List_OneAndMulti<Finger, SySet<SyElement>> sMs_effect = new List_OneAndMulti<Finger,SySet<SyElement>>();//盤上の駒の利き
+            List_OneAndMulti<Finger, SySet<SyElement>> sMs_effect = new List_OneAndMulti<Finger, SySet<SyElement>>();//盤上の駒の利き
             {
                 // 《１．１》
                 Playerside tebanSeme;//手番（利きを調べる側）
@@ -343,8 +332,7 @@ namespace Grayscale.P362LegalMove.L500Util
                         out dust2,
                         src_Sky,
                         tebanSeme,
-                        tebanKurau,
-                        logTag
+                        tebanKurau
                     );
 
 
@@ -389,9 +377,8 @@ namespace Grayscale.P362LegalMove.L500Util
                     fingers_seme_BANJO,//この中身がおかしい。
                     masus_seme_BANJO,
                     masus_kurau_BANJO,
-                    src_Sky,
+                    src_Sky
                     //Conv_Move.Move_To_KsString_ForLog(move_forLog, pside_genTeban3),
-                    logTag
                     );// 利きを調べる側の利き（戦駒）
 
                 // 盤上駒の利き
@@ -413,14 +400,8 @@ namespace Grayscale.P362LegalMove.L500Util
 #endif
 
 
-                try
-                {
-                    // 《１》　＝　《１．４》の盤上駒＋持駒
-                    sMs_effect.AddRange_New( kmEffect_seme_BANJO);
-
-                }
-                catch (Exception ex) { Logger.Panic(logTag, ex, "ランダムチョイス(50)"); throw; }
-
+                // 《１》　＝　《１．４》の盤上駒＋持駒
+                sMs_effect.AddRange_New(kmEffect_seme_BANJO);
             }
 
             return sMs_effect;

@@ -535,15 +535,14 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
 
                 // 直近の指し手。
                 Util_KyokumenPng_Writer.Write1(
-                    Conv_KifuNode.ToRO_Kyokumen1(kifuNode, logTag),
+                    Conv_KifuNode.ToRO_Kyokumen1(kifuNode),
                     srcMasu_orMinusOne,
                     dstMasu_orMinusOne,
                     foodKoma,
                     ConvMoveStrSfen.ToMoveStrSfen(kifuNode.Key),//Conv_MoveStr_Jsa.ToMoveStr_Jsa(kifuNode, kifuNode.Value, errH),
                     "",
                     fileName,
-                    Util_KifuTreeLogWriter.REPORT_ENVIRONMENT,
-                    logTag
+                    Util_KifuTreeLogWriter.REPORT_ENVIRONMENT
                     );
             }
         }
@@ -867,7 +866,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                             //------------------------------------------------------------
                             // 以前の手カッター
                             //------------------------------------------------------------
-                            UtilKifuTree282.IzennoHenkaCutter(this.Kifu, logTag);
+                            UtilKifuTree282.IzennoHenkaCutter(this.Kifu);
                         }
                         break;
                 }

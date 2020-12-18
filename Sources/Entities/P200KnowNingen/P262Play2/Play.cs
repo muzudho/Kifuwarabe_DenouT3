@@ -35,15 +35,13 @@ namespace Grayscale.P262Play2.L500Struct
         /// <param name="src_Sky"></param>
         /// <param name="fingers_sirabetaiMOTIkoma"></param>
         /// <param name="motiOkenaiMasus">持ち駒を置けないマス（味方駒、敵駒が置いてあるマス）</param>
-        /// <param name="logTag"></param>
         /// <returns></returns>
         public static List_OneAndMulti<Finger, SySet<SyElement>> Translate_Motikoma_ToMove(
             SkyConst src_Sky,
             Fingers fingers_sirabetaiMOTIkoma,
             SySet<SyElement> masus_mikata_onBanjo,//打ち歩詰めチェック用
             SySet<SyElement> masus_aite_onBanjo,//打ち歩詰めチェック用
-            SySet<SyElement> motiOkenaiMasus,
-            ILogTag logTag
+            SySet<SyElement> motiOkenaiMasus
             )
         {
             // 駒種類別、置こうとする升
@@ -161,8 +159,7 @@ namespace Grayscale.P262Play2.L500Struct
                         src_Sky,
                         masus_mikata_onBanjo,//打ち歩詰めチェック用
                         masus_aite_onBanjo,//打ち歩詰めチェック用
-                        aMasus,//駒種類別、置こうとする升
-                        logTag
+                        aMasus//駒種類別、置こうとする升
                     );
                 }
             }
