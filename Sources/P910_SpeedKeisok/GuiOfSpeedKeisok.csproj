@@ -111,6 +111,10 @@
       <Project>{147b11e0-827b-4d3f-844c-adf2beafa53f}</Project>
       <Name>Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\P480_ServerAims_\UseCases.csproj">
+      <Project>{dbea8b61-6f05-49a0-9ccb-6fcf2976bd17}</Project>
+      <Name>UseCases</Name>
+    </ProjectReference>
     <ProjectReference Include="..\P500_ShogiEngine\Engine.csproj">
       <Project>{e96a7341-b8e6-4979-8b2a-94ff2818962c}</Project>
       <Name>Engine</Name>

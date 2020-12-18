@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UiOfLogKyokuPng", "Sources\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiOfKifuCsa", "Sources\P160_KifuCsa____\GuiOfKifuCsa.csproj", "{ABED6201-9999-44CD-A91B-4CA01CC89006}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseCase", "Sources\P480_ServerAims_\UseCase.csproj", "{DBEA8B61-6F05-49A0-9CCB-6FCF2976BD17}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseCases", "Sources\P480_ServerAims_\UseCases.csproj", "{DBEA8B61-6F05-49A0-9CCB-6FCF2976BD17}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engine", "Sources\P500_ShogiEngine\Engine.csproj", "{E96A7341-B8E6-4979-8B2A-94FF2818962C}"
 EndProject

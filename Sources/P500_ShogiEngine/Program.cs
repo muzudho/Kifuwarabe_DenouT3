@@ -3,26 +3,8 @@
     using System;
     using Grayscale.P003Log.I500Struct;
     using Grayscale.P003Log.L500Struct;
-    using Grayscale.P571KifuWarabe.L500KifuWarabe;
-    using Grayscale.P003Log.I500Struct;
-    using Grayscale.P003Log.L500Struct;
-    using Grayscale.P005Tushin.L500Util;
-    using Grayscale.P027Settei.L500Struct;
-    using Grayscale.P236KomahaiyaTr.L500Table;
-    using Grayscale.P248Michi.L500Word;
-    using Grayscale.P250KomahaiyaEx.L500Util;
-    using Grayscale.P270ForcePromot.L250Struct;
-    using Grayscale.P523UtilFv.L510UtilFvLoad;
-    using Grayscale.P542Scoreing.I005UsiLoop;
-    using Grayscale.P542Scoreing.L240Shogisasi;
-    using Grayscale.P571KifuWarabe.L100Shogisasi;
     using Grayscale.P571KifuWarabe.L250UsiLoop;
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Text;
-    using System.Windows.Forms;
-    using Nett;
+    using Grayscale.P571KifuWarabe.L500KifuWarabe;
 
     /// <summary>
     /// プログラムのエントリー・ポイントです。

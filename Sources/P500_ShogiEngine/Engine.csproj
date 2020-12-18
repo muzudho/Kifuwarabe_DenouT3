@@ -67,57 +67,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="P522ConvFvKoumoku\Conv_FvKoumoku522.cs" />
-    <Compile Include="P523UtilFv\Util_FeatureVectorEdit.cs" />
-    <Compile Include="P523UtilFv\Format_FeatureVector_Scale.cs" />
-    <Compile Include="P531Hyokakansu\Hyokakansu_Sennitite.cs" />
-    <Compile Include="P531Hyokakansu\Util_HyokakansuCollection.cs" />
-    <Compile Include="P542Scoreing\EvaluationArgsImpl.cs" />
-    <Compile Include="P542Scoreing\Util_Scoreing.cs" />
-    <Compile Include="P542Scoreing\EvaluationArgs.cs" />
-    <Compile Include="P551Tansaku\Tansaku_ArgsImpl.cs" />
-    <Compile Include="P551Tansaku\Tansaku_GenjoImpl.cs" />
-    <Compile Include="P551Tansaku\Tansaku_Args.cs" />
-    <Compile Include="P551Tansaku\Tansaku_Genjo.cs" />
-    <Compile Include="P551Tansaku\Tansaku_Routine.cs" />
-    <Compile Include="P553TansakuHaba\Tansaku_HabaYusen_Routine.cs" />
-    <Compile Include="P554TansaFukasa\Tansaku_FukasaYusen_Routine.cs" />
-    <Compile Include="P523UtilFv\Const_FeatureVectorFormat.cs" />
-    <Compile Include="P523UtilFv\Format_FeatureVector_KK.cs" />
-    <Compile Include="P523UtilFv\Format_FeatureVector_KP.cs" />
-    <Compile Include="P523UtilFv\Format_FeatureVector_PP_P1Banjo.cs" />
-    <Compile Include="P523UtilFv\Format_FeatureVector_PP_P1Moti.cs" />
-    <Compile Include="P523UtilFv\Util_FeatureVectorInput.cs" />
-    <Compile Include="P523UtilFv\Util_FeatureVectorOutput.cs" />
-    <Compile Include="P521FeatureVect\FeatureVector.cs" />
-    <Compile Include="P521FeatureVect\Const_NikomaKankeiP_Param.cs" />
-    <Compile Include="P521FeatureVect\FeatureVectorImpl.cs" />
-    <Compile Include="P525ConvFv\Conv_FvKoumoku525.cs" />
-    <Compile Include="P523UtilFv\Format_FeatureVector_Komawari.cs" />
-    <Compile Include="P523UtilFv\Util_FvLoad.cs" />
-    <Compile Include="P531Hyokakansu\Util_FvParamIndex.cs" />
-    <Compile Include="P531Hyokakansu\Hyokakansu_NikomaKankeiPp.cs" />
-    <Compile Include="P531Hyokakansu\Hyokakansu.cs" />
-    <Compile Include="P531Hyokakansu\Util_Lua_KifuWarabe.cs" />
-    <Compile Include="P531Hyokakansu\Util_KomanoKyori.cs" />
-    <Compile Include="P531Hyokakansu\HyokakansuAbstract.cs" />
-    <Compile Include="P531Hyokakansu\Hyokakansu_Komawari.cs" />
-    <Compile Include="P554TansaFukasa\Mode_Tansaku.cs" />
-    <Compile Include="P560UtilClient\Util_InClient.cs" />
-    <Compile Include="P542Scoreing\Shogisasi.cs" />
-    <Compile Include="P542Scoreing\PerformanceMetrics.cs" />
     <Compile Include="P571KifuWarabe\Util_LogBuilder510.cs" />
-    <Compile Include="P542Scoreing\ScoreSiboriEngine.cs" />
     <Compile Include="P571KifuWarabe\ShogisasiImpl.cs" />
     <Compile Include="P571KifuWarabe\Result_KingState.cs" />
     <Compile Include="P571KifuWarabe\NoopPhase.cs" />
     <Compile Include="P571KifuWarabe\NoopTimerImpl.cs" />
     <Compile Include="P571KifuWarabe\PhaseResult_UsiLoop1.cs" />
-    <Compile Include="P571KifuWarabe\UsiLoop1.cs" />
-    <Compile Include="P571KifuWarabe\UsiLoop2.cs" />
+    <Compile Include="UsiLoop1.cs" />
+    <Compile Include="UsiLoop2.cs" />
     <Compile Include="P571KifuWarabe\PhaseResult_UsiLoop2.cs" />
     <Compile Include="ProgramSupport.cs" />
-    <Compile Include="P542Scoreing\ShogiEngine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -134,14 +93,12 @@
       <Project>{6f26bae0-8e17-4fda-a242-d1d7c4db2507}</Project>
       <Name>UiOfLogKyokuPng</Name>
     </ProjectReference>
+    <ProjectReference Include="..\P480_ServerAims_\UseCases.csproj">
+      <Project>{dbea8b61-6f05-49a0-9ccb-6fcf2976bd17}</Project>
+      <Name>UseCases</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="P501_／／将棋エンジン\" />
-    <Folder Include="P510_／／↓心\" />
-    <Folder Include="P520_／／↓右脳（二駒関係）\" />
-    <Folder Include="P530_／／↓評価\" />
-    <Folder Include="P540_／／↓点数付け・探索ルーチン\" />
-    <Folder Include="P556_／／↑探索ルーチン\" />
     <Folder Include="P570_／／↓きふわらべ\" />
     <Folder Include="P580_Form_______／／フォーム\" />
   </ItemGroup>
