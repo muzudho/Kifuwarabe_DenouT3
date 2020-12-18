@@ -95,12 +95,11 @@ namespace Grayscale.P270ForcePromot.L250Struct
                     int haiyakuHandle_target;
                     if(!int.TryParse(column, out haiyakuHandle_target))
                     {
-                        string message = "エラー。\n path=[" + path + "]\n" +
-                        "「強制転成表」に、int型数値でないものが指定されていました。\n" +
-                        "rowCount=[" + rowCount + "]\n" +
-                        "masuHandle=[" + masuHandle + "]\n";
-                        Exception ex1 = new Exception(message);
-                        Logger.Panic(LogTags.Error, ex1, "強制昇格中☆"); throw ex1;
+                        throw new Exception($@"エラー。
+path=[{path}]
+「強制転成表」に、int型数値でないものが指定されていました。
+rowCount=[{rowCount}]
+masuHandle=[{masuHandle}]");
                     }
 
                     map2.Add(masuHandle, Array_Komahaiyaku185.Items[ haiyakuHandle_target]);

@@ -138,7 +138,7 @@ namespace Grayscale.P354UtilSasuEx.L500Util
             }
             catch (Exception ex)
             {
-                throw new Exception("Convert04.cs#AddNariMoveでｴﾗｰ。:" + ex.GetType().Name + ":" + ex.Message);
+                throw new Exception($"Convert04.cs#AddNariMoveでｴﾗｰ。:{ex.GetType().Name}:{ex.Message}");
             }
 
             return result_komabetuEntry;

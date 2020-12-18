@@ -31,8 +31,7 @@ namespace Grayscale.P062ConvText.L500Converter
                 case 8: alphabet = "h"; break;
                 case 9: alphabet = "i"; break;
                 default:
-                    Exception ex1 = new Exception("筋[" + num + "]をアルファベットに変えることはできませんでした。");
-                    Logger.Panic(LogTags.Error, ex1, "筋をアルファベットに変換中☆"); throw ex1;
+                    throw new Exception($"筋[{num}]をアルファベットに変えることはできませんでした。");
             }
 
             return alphabet;

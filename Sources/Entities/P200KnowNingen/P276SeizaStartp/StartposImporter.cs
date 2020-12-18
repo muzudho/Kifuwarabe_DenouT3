@@ -104,7 +104,7 @@ namespace Grayscale.P276SeizaStartp.L500Struct
                         break;
 
                     default:
-                        throw new Exception("未対応のmoji=[" + masuString + "]");
+                        throw new Exception($"未対応のmoji=[{masuString}]");
                 }
             });
 
@@ -320,7 +320,7 @@ namespace Grayscale.P276SeizaStartp.L500Struct
                         }
                         break;
 
-                    default: throw new Exception("未対応の駒種類=[" + entry.Value.Komasyurui + "]");
+                    default: throw new Exception($"未対応の駒種類=[{entry.Value.Komasyurui}]");
                 }
 
                 Debug.Assert(0<=int_finger && int_finger<=39, "finger=["+int_finger+"]" );
@@ -460,7 +460,7 @@ namespace Grayscale.P276SeizaStartp.L500Struct
                         break;
 
                     default:
-                        throw new Exception("未対応の駒種類=[" + entry.Value.Komasyurui + "]");
+                        throw new Exception($"未対応の駒種類=[{entry.Value.Komasyurui}]");
                 }
             }
 

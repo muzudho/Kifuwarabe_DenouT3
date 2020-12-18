@@ -232,7 +232,7 @@ namespace Grayscale.P248Michi.L500Word
                                 case "味方陣": michiPart = new SySet_Ordered<SyElement>("味方陣"); michi187.AddSupersets(michiPart); goto gt_Next1;
                                 case "平野部": michiPart = new SySet_Ordered<SyElement>("平野部"); michi187.AddSupersets(michiPart); goto gt_Next1;
                                 case "敵陣": michiPart = new SySet_Ordered<SyElement>("敵陣"); michi187.AddSupersets(michiPart); goto gt_Next1;
-                                default: throw new Exception("未定義のキーワードです。[" + cell + "]");
+                                default: throw new Exception($"未定義のキーワードです。[{cell}]");
                             }
                         }
                     }
@@ -329,7 +329,7 @@ namespace Grayscale.P248Michi.L500Word
                             }
                             break;
                         default:
-                            throw new Exception("未定義の集合名です。["+superset.Word+"]");
+                            throw new Exception($"未定義の集合名です。[{superset.Word}]");
                     }
                 }
 

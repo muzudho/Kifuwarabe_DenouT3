@@ -84,8 +84,7 @@ namespace Grayscale.P055_Conv_Sy.L500Converter
             }
             else
             {
-                System.Windows.Forms.MessageBox.Show("エラー：bitfield登録なし。word=[" + word + "]", "エラー");
-                throw new Exception("エラー：bitfield登録なし。word=[" + word + "]");
+                throw new Exception($"bitfield登録なし。word=[{word}]");
             }
 
             return result_bitfield;

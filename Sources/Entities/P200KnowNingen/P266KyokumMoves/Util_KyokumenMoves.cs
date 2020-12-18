@@ -144,12 +144,12 @@ namespace Grayscale.P266KyokumMoves.L500Util
                     Util_Sky_FingersQueryFx.Split_BanjoSeme_BanjoKurau_MotiSeme_MotiKurau(
                         out fingers_seme_BANJO, out fingers_kurau_BANJO, out fingers_seme_MOTI, out fingers_kurau_MOTI, src_Sky, tebanSeme, tebanKurau,
                         logTag);
-//#if DEBUG
-//                    System.Console.WriteLine("◇fingers_seme_BANJOの要素数=" + fingers_seme_BANJO.Count);
-//                    System.Console.WriteLine("◇fingers_kurau_BANJOの要素数=" + fingers_kurau_BANJO.Count);
-//                    System.Console.WriteLine("◇fingers_seme_MOTIの要素数=" + fingers_seme_MOTI.Count);
-//                    System.Console.WriteLine("◇fingers_kurau_MOTIの要素数=" + fingers_kurau_MOTI.Count);
-//#endif
+                    //#if DEBUG
+                    //                    System.Console.WriteLine("◇fingers_seme_BANJOの要素数=" + fingers_seme_BANJO.Count);
+                    //                    System.Console.WriteLine("◇fingers_kurau_BANJOの要素数=" + fingers_kurau_BANJO.Count);
+                    //                    System.Console.WriteLine("◇fingers_seme_MOTIの要素数=" + fingers_seme_MOTI.Count);
+                    //                    System.Console.WriteLine("◇fingers_kurau_MOTIの要素数=" + fingers_kurau_MOTI.Count);
+                    //#endif
                     //if (null != log_orNull)
                     //{
                     //    log_orNull.Log3(mmGenjo.Src_Sky, tebanKurau, tebanSeme, fingers_kurau_IKUSA, fingers_kurau_MOTI, fingers_seme_IKUSA, fingers_seme_MOTI);
@@ -199,9 +199,9 @@ namespace Grayscale.P266KyokumMoves.L500Util
                     src_Sky,//これは、どの局面？
                     logTag
                     );
-//#if DEBUG
-//                System.Console.WriteLine("sMsSusumeruMasus_seme_MOTIの要素数=" + Util_List_OneAndMultiEx<Finger, SySet<SyElement>>.CountAllElements(sMsSusumeruMasus_seme_MOTI));
-//#endif
+                //#if DEBUG
+                //                System.Console.WriteLine("sMsSusumeruMasus_seme_MOTIの要素数=" + Util_List_OneAndMultiEx<Finger, SySet<SyElement>>.CountAllElements(sMsSusumeruMasus_seme_MOTI));
+                //#endif
 
                 //if (null != log_orNull)
                 //{
@@ -209,33 +209,13 @@ namespace Grayscale.P266KyokumMoves.L500Util
                 //}
 
 
+                // 《１》　＝　《１．４》の戦駒＋持駒
 
-                try
-                {
-                    // 《１》　＝　《１．４》の戦駒＋持駒
+                // 盤上の駒の移動できる場所を足します。
+                out_komaBETUSusumeruMasus.AddRange_New(kmSusumeruMasus_seme_BANJO);
 
-                    // 盤上の駒の移動できる場所を足します。
-                    out_komaBETUSusumeruMasus.AddRange_New(kmSusumeruMasus_seme_BANJO);
-
-                    // 持ち駒の置ける場所を足します。
-                    out_komaBETUSusumeruMasus.AddRange_New(sMsSusumeruMasus_seme_MOTI);
-                }
-                catch (Exception ex)
-                {
-                    //>>>>> エラーが起こりました。
-                    string msg = ex.GetType().Name + " " + ex.Message + "：ランダムチョイス(50)：";
-
-#if DEBUG
-                    if (null != mmLog_orNull)
-                    {
-                        // どうにもできないので  ログだけ取って無視します。
-                        mmLog_orNull.ErrH.Panic(ex,msg);
-                    }
-#endif
-
-                    throw new Exception( msg,ex);
-                }
-
+                // 持ち駒の置ける場所を足します。
+                out_komaBETUSusumeruMasus.AddRange_New(sMsSusumeruMasus_seme_MOTI);
             }
         }
 
@@ -277,13 +257,13 @@ namespace Grayscale.P266KyokumMoves.L500Util
                 okenaiMasus,
                 logTag
                 );
-//#if DEBUG
-//            if (caller_forLog == 1)
-//            {
-//                string jsaMoveStr = Util_Translator_Move.ToMove(node_forLog, node_forLog.Value, errH_orNull);
-//                System.Console.WriteLine("Util_Things: [" + node_forLog .Value.ToKyokumenConst.Temezumi+ "]手目済み 局面で、[" + jsaMoveStr + "]の駒別置ける升 調べ（持ち駒編）\n" + Util_List_OneAndMultiEx<Finger, SySet<SyElement>>.Dump(result, node_forLog.Value.ToKyokumenConst));
-//            }
-//#endif
+            //#if DEBUG
+            //            if (caller_forLog == 1)
+            //            {
+            //                string jsaMoveStr = Util_Translator_Move.ToMove(node_forLog, node_forLog.Value, errH_orNull);
+            //                System.Console.WriteLine("Util_Things: [" + node_forLog .Value.ToKyokumenConst.Temezumi+ "]手目済み 局面で、[" + jsaMoveStr + "]の駒別置ける升 調べ（持ち駒編）\n" + Util_List_OneAndMultiEx<Finger, SySet<SyElement>>.Dump(result, node_forLog.Value.ToKyokumenConst));
+            //            }
+            //#endif
             return result;
         }
 

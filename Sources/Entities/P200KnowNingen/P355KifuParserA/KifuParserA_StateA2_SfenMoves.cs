@@ -232,9 +232,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                     else
                     {
                         genjo.ToBreak_Abnormal();
-                        string message = "＼（＾ｏ＾）／Moveオブジェクトがない☆！　inputLine=[" + genjo.InputLine + "]";
-                        Logger.WriteLineError(logTag, message);
-                        throw new Exception(message);
+                        throw new Exception($"＼（＾ｏ＾）／Moveオブジェクトがない☆！　inputLine=[{genjo.InputLine}]");
                     }
                 }
                 else

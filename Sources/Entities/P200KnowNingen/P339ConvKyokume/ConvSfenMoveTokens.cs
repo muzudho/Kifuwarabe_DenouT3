@@ -123,9 +123,7 @@ namespace Grayscale.P339ConvKyokume.L500Converter
                         uttaSyurui, logTag);
                     if (Fingers.Error_1 == koma)
                     {
-                        string message = "TuginoItte_Sfen#GetData_FromTextSub：駒台から種類[" + uttaSyurui + "]の駒を掴もうとしましたが、エラーでした。";
-                        Exception ex1 = new Exception(message);
-                        Logger.Panic(LogTags.Error, ex1, "moves解析中☆"); throw ex1;
+                        throw new Exception($"TuginoItte_Sfen#GetData_FromTextSub：駒台から種類[{uttaSyurui}]の駒を掴もうとしましたが、エラーでした。");
                     }
 
 
@@ -147,52 +145,36 @@ namespace Grayscale.P339ConvKyokume.L500Converter
                         // 0手目、平手局面を想定していたが、駒がすべて駒袋に入っているときなど
                         //
 
-                        StringBuilder sb = new StringBuilder();
-                        sb.Append("TuginoItte_Sfen#GetData_FromTextSub：SFEN解析中の失敗：");
-                        sb.Append("SFENでは [");
-                        sb.Append(srcSuji);
-                        sb.Append("]筋、[");
-                        sb.Append(srcDan);
-                        sb.AppendLine("]段 にある駒を掴めと指示がありましたが、");
-                        sb.AppendLine("将棋盤データの[" + Conv_Sy.Query_Word( masu1.Bitfield) + "]マスには、（駒が全て駒袋に入っているのか）駒がありませんでした。");
-                        sb.AppendLine();
+                        var sky2 = Util_Sky307.Json_1Sky(src_Sky, "エラー駒になったとき",
+    hint + "_SF解3",
+    src_Sky.Temezumi);
 
-                        sb.AppendLine("hint=[" + hint + "]");
-                        sb.AppendLine();
-
+                        string text2;
                         if (masu1 is New_Basho)
                         {
-                            sb.AppendLine("masu1.masuNumber=[" + ((New_Basho)masu1).MasuNumber + "]");
-                            sb.AppendLine("komas1.Count=[" + komas1.Count + "]");
+                            text2 = $@"masu1.masuNumber=[{((New_Basho)masu1).MasuNumber}]
+komas1.Count=[{komas1.Count}]";
                         }
                         else
                         {
-                            sb.AppendLine("masu1.masuNumber=New_Basho型じゃない。");
-                        }
-                        sb.AppendLine();
-
-
-                        sb.AppendLine("isHonshogi=[" + isHonshogi + "]");
-                        sb.AppendLine("str1=[" + str1 + "]");
-                        sb.AppendLine("str2=[" + str2 + "]");
-                        sb.AppendLine("str3=[" + str3 + "]");
-                        sb.AppendLine("str4=[" + str4 + "]");
-                        sb.AppendLine("strNari=[" + strNari + "]");
-
-                        sb.AppendLine("src_Sky.Temezumi=[" + src_Sky.Temezumi + "]");
-
-                        // どんな局面なのか？
-                        {
-                            StartposExporterImpl se = new StartposExporterImpl(src_Sky);
-                            sb.AppendLine("局面=sfen " + Util_StartposExporter.ToSfenstring(se, true));
+                            text2 = "masu1.masuNumber=New_Basho型じゃない。";
                         }
 
-                        sb.Append(Util_Sky307.Json_1Sky(src_Sky, "エラー駒になったとき",
-                            hint + "_SF解3",
-                            src_Sky.Temezumi));
-
-                        Exception ex1 = new Exception(sb.ToString());
-                        Logger.Panic(LogTags.Error, ex1, "SFEN解析中の失敗"); throw ex1;
+                        StringBuilder sb = new StringBuilder();
+                        throw new Exception($@"TuginoItte_Sfen#GetData_FromTextSub：SFEN解析中の失敗：SFENでは [{srcSuji}]筋、[{srcDan}]段 にある駒を掴めと指示がありましたが、
+将棋盤データの[{Conv_Sy.Query_Word( masu1.Bitfield)}]マスには、（駒が全て駒袋に入っているのか）駒がありませんでした。
+hint=[{hint}]
+{text2}
+isHonshogi=[{isHonshogi}]
+str1=[{str1}]
+str2=[{str2}]
+str3=[{str3}]
+str4=[{str4}]
+strNari=[{strNari}]
+src_Sky.Temezumi=[{src_Sky.Temezumi}]
+局面 = sfen {Util_StartposExporter.ToSfenstring(new StartposExporterImpl(src_Sky), true)}
+{sky2}
+");
                     }
                 }
 

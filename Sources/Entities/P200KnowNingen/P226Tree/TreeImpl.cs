@@ -121,8 +121,7 @@ namespace Grayscale.P226Tree.L500Struct
             if (this.CurNode.IsRoot())
             {
                 // やってはいけない操作は、例外を返すようにします。
-                string message = "ルート局面を削除しようとしました。";
-                throw new Exception(message);
+                throw new Exception("ルート局面を削除しようとしました。");
             }
 
             //>>>>> ラスト要素がルートでなかったら
@@ -305,9 +304,7 @@ namespace Grayscale.P226Tree.L500Struct
 
             if (null == found)
             {
-                string message = "[" + sitei_temezumi + "]の局面ノード6はヌルでした。";
-                //LarabeLogger.GetInstance().WriteLineError(LarabeLoggerList.ERROR, message);
-                throw new Exception(message);
+                throw new Exception($"[{sitei_temezumi}]の局面ノード6はヌルでした。");
             }
 
             return found;

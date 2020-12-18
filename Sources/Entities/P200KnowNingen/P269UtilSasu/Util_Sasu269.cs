@@ -173,41 +173,34 @@ namespace Grayscale.P269UtilSasu.L500Util
             RO_Star dstKoma
             )
         {
-            try
+            bool isPromotionable;
+            if (!Util_Sasu269.IsPromotionable(out isPromotionable, srcKoma, dstKoma))
             {
-                bool isPromotionable;
-                if (!Util_Sasu269.IsPromotionable(out isPromotionable, srcKoma, dstKoma))
-                {
-                    goto gt_EndMethod;
-                }
-
-                // 成りの資格があれば、成りの指し手を作ります。
-                if (isPromotionable)
-                {
-                    //MessageBox.Show("成りの資格がある駒がありました。 src=["+srcKoma.Masu.Word+"]["+srcKoma.Syurui+"]");
-
-                    IMove move = new RO_Starbeam(
-                        //figKoma,//駒
-                        srcKoma,// 移動元
-                        new RO_Star(
-                            dstKoma.Pside,
-                            dstKoma.Masu,
-                            Util_Komasyurui14.ToNariCase(dstKoma.Komasyurui)//強制的に【成り】に駒の種類を変更
-                        ),// 移動先
-                        Komasyurui14.H00_Null___//取った駒不明
-                    );
-
-                    // TODO: 一段目の香車のように、既に駒は成っている場合があります。無い指し手だけ追加するようにします。
-                    komaBETUAllMoves.AddNotOverwrite(figKoma, move);
-                }
-
-            gt_EndMethod:
-                ;
+                goto gt_EndMethod;
             }
-            catch (Exception ex)
+
+            // 成りの資格があれば、成りの指し手を作ります。
+            if (isPromotionable)
             {
-                throw new Exception("Convert04.cs#AddNariMoveでｴﾗｰ。:" + ex.GetType().Name + ":" + ex.Message);
+                //MessageBox.Show("成りの資格がある駒がありました。 src=["+srcKoma.Masu.Word+"]["+srcKoma.Syurui+"]");
+
+                IMove move = new RO_Starbeam(
+                    //figKoma,//駒
+                    srcKoma,// 移動元
+                    new RO_Star(
+                        dstKoma.Pside,
+                        dstKoma.Masu,
+                        Util_Komasyurui14.ToNariCase(dstKoma.Komasyurui)//強制的に【成り】に駒の種類を変更
+                    ),// 移動先
+                    Komasyurui14.H00_Null___//取った駒不明
+                );
+
+                // TODO: 一段目の香車のように、既に駒は成っている場合があります。無い指し手だけ追加するようにします。
+                komaBETUAllMoves.AddNotOverwrite(figKoma, move);
             }
+
+        gt_EndMethod:
+            ;
         }
         public static void AssertNariMove(Maps_OneAndMulti<Finger, IMove> komabetuAllMove, string hint)
         {

@@ -243,9 +243,7 @@ namespace Grayscale.P224Sky.L500Struct
                         // エラー
                         Debug.Assert((int)finger1[i] < this.starlights.Count, "要素の個数より2大きいインデックスを指定しました。 インデックス[" + (int)finger1[i] + "]　要素の個数[" + this.starlights.Count + "]");
 
-                        string message = this.GetType().Name + "#SetStarPos：　リストの要素より2多いインデックスを指定されましたので、追加しません。starIndex=[" + finger1[i] + "] / this.stars.Count=[" + this.starlights.Count + "]";
-                        //LarabeLogger.GetInstance().WriteLineError(LarabeLoggerList.ERROR, message);
-                        throw new Exception(message);
+                        throw new Exception($"{this.GetType().Name}#SetStarPos：　リストの要素より2多いインデックスを指定されましたので、追加しません。starIndex=[{finger1[i]}] / this.stars.Count=[{this.starlights.Count}]");
                     }
                     else
                     {
@@ -270,9 +268,10 @@ namespace Grayscale.P224Sky.L500Struct
             }
             else
             {
-                string message = this.GetType().Name + "#StarIndexOf：　スプライト配列の範囲を外れた添え字を指定されましたので、取得できません。スプライト番号=[" + finger + "] / スプライトの数=[" + this.starlights.Count + "]\n memberName=" + memberName + "\n sourceFilePath=" + sourceFilePath + "\n sourceLineNumber=" + sourceLineNumber;
-                Debug.Fail(message);
-                throw new Exception(message);
+                throw new Exception($@"{this.GetType().Name}#StarIndexOf：　スプライト配列の範囲を外れた添え字を指定されましたので、取得できません。スプライト番号=[{finger}] / スプライトの数=[{this.starlights.Count}]
+memberName={memberName}
+sourceFilePath={sourceFilePath}
+sourceLineNumber={sourceLineNumber}");
             }
 
             return found;

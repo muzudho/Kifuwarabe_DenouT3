@@ -53,17 +53,13 @@ namespace Grayscale.P339ConvKyokume.L500Converter
                 //int srcDan;
                 //if (!Util_MasuNum.TryMasuToDan(srcKoma.Masu, out srcDan))
                 //{
-                //    string message = "指定の元マス[" + Util_Masu10.AsMasuNumber(srcKoma.Masu) + "]は、段に変換できません。　：　" + memberName + "." + sourceFilePath + "." + sourceLineNumber;
-                //    //LarabeLogger.GetInstance().WriteLineError(LarabeLoggerList.ERROR, message);
-                //    throw new Exception(message);
+                //    throw new Exception("指定の元マス[" + Util_Masu10.AsMasuNumber(srcKoma.Masu) + "]は、段に変換できません。　：　" + memberName + "." + sourceFilePath + "." + sourceLineNumber);
                 //}
 
                 //int dan;
                 //if (!Util_MasuNum.TryMasuToDan(dstKoma.Masu, out dan))
                 //{
-                //    string message = "指定の先マス[" + Util_Masu10.AsMasuNumber(dstKoma.Masu) + "]は、段に変換できません。　：　" + memberName + "." + sourceFilePath + "." + sourceLineNumber;
-                //    //LarabeLogger.GetInstance().WriteLineError(LarabeLoggerList.ERROR, message);
-                //    throw new Exception(message);
+                //    throw new Exception("指定の先マス[" + Util_Masu10.AsMasuNumber(dstKoma.Masu) + "]は、段に変換できません。　：　" + memberName + "." + sourceFilePath + "." + sourceLineNumber);
                 //}
 
 

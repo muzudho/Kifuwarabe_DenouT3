@@ -480,11 +480,8 @@ namespace Grayscale.P341Ittesasu.L500UtilA
                     default:
                         {
                             //>>>>> エラー：　先後がおかしいです。
-
-                            StringBuilder sb = new StringBuilder();
-                            sb.AppendLine("エラー：　先後がおかしいです。");
-                            sb.AppendLine("dst.Pside=" + dstKoma.Pside);
-                            throw new Exception(sb.ToString());
+                            throw new Exception($@"エラー：　先後がおかしいです。
+dst.Pside={dstKoma.Pside}");
                         }
                 }
 
@@ -499,11 +496,8 @@ namespace Grayscale.P341Ittesasu.L500UtilA
                     if (Masu_Honshogi.IsErrorBasho( akiMasu))
                     {
                         //>>>>> エラー：　駒台に空きスペースがありませんでした。
-
-                        StringBuilder sb = new StringBuilder();
-                        sb.AppendLine("エラー：　駒台に空きスペースがありませんでした。");
-                        sb.AppendLine("駒台=" + Okiba.Gote_Komadai);
-                        throw new Exception(sb.ToString());
+                        throw new Exception($@"エラー：　駒台に空きスペースがありませんでした。
+駒台={Okiba.Gote_Komadai}");
                     }
                     //>>>>> 駒台に空きスペースがありました。
                 }

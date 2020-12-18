@@ -456,7 +456,7 @@ namespace Grayscale.P523UtilFv.L491UtilFvIo
                                 case 11: pKoumoku_base = FeatureVectorImpl.CHOSA_KOMOKU_2P + FeatureVectorImpl.CHOSA_KOMOKU_____KIN____; break;
                                 case 12: pKoumoku_base = FeatureVectorImpl.CHOSA_KOMOKU_2P + FeatureVectorImpl.CHOSA_KOMOKU_____HISYA__; break;
                                 case 13: pKoumoku_base = FeatureVectorImpl.CHOSA_KOMOKU_2P + FeatureVectorImpl.CHOSA_KOMOKU_____KAKU___; break;
-                                default: throw new Exception("範囲外rowBanjo=[" + rowBanjo + "]");
+                                default: throw new Exception($"範囲外rowBanjo=[{rowBanjo}]");
                             }
                             int kDan = (int)(rowBanjo % 81 / 9) + 1;
                             int pDan = (int)(rowBanjo % 9) + 1;
@@ -554,7 +554,7 @@ namespace Grayscale.P523UtilFv.L491UtilFvIo
                             }
                             else
                             {
-                                throw new Exception("範囲外rowMoti=[" + rowMoti + "]");
+                                throw new Exception($"範囲外rowMoti=[{rowMoti}]");
                             }
 
                             int kDan = (int)(rowMoti % 9) + 1;
@@ -709,7 +709,7 @@ namespace Grayscale.P523UtilFv.L491UtilFvIo
                                 case 11: p2_base = FeatureVectorImpl.CHOSA_KOMOKU_2P + FeatureVectorImpl.CHOSA_KOMOKU_____KIN____; break;//2P金
                                 case 12: p2_base = FeatureVectorImpl.CHOSA_KOMOKU_2P + FeatureVectorImpl.CHOSA_KOMOKU_____HISYA__; break;//2P飛
                                 case 13: p2_base = FeatureVectorImpl.CHOSA_KOMOKU_2P + FeatureVectorImpl.CHOSA_KOMOKU_____KAKU___; break;//2P角
-                                default: throw new Exception("範囲外rowBanjo=[" + rowNestedShogiban + "]");
+                                default: throw new Exception($"範囲外rowBanjo=[{rowNestedShogiban}]");
                             }
                             //int p2_base = largeTableNo * ConstShogi.BAN_SIZE;//小テーブル番号ベースは、P2のベース。
 
@@ -811,7 +811,7 @@ namespace Grayscale.P523UtilFv.L491UtilFvIo
                             }
                             else
                             {
-                                throw new Exception("範囲外rowMoti=[" + rowSingleShogiban + "]");
+                                throw new Exception($"範囲外rowMoti=[{rowSingleShogiban}]");
                             }
 
                             // 小テーブルは、P1項目。
@@ -974,7 +974,7 @@ namespace Grayscale.P523UtilFv.L491UtilFvIo
                                 case 25: p2_base = FeatureVectorImpl.CHOSA_KOMOKU_2P + FeatureVectorImpl.CHOSA_KOMOKU_____HISYA__; break;//2P飛
                                 case 26:
                                 case 27: p2_base = FeatureVectorImpl.CHOSA_KOMOKU_2P + FeatureVectorImpl.CHOSA_KOMOKU_____KAKU___; break;//2P角
-                                default: throw new Exception("範囲外rowBanjo=[" + row_banjoArea + "]");
+                                default: throw new Exception($"範囲外rowBanjo=[{row_banjoArea}]");
                             }
                             int largeDan = row_LargeShogiban % 2 + 1;//1 or 2
                             int smallDan = (int)(row_banjoArea % 9) + 1;//1～9
@@ -1075,7 +1075,7 @@ namespace Grayscale.P523UtilFv.L491UtilFvIo
                                     p2_base = FeatureVectorImpl.CHOSA_KOMOKU_2P + FeatureVectorImpl.CHOSA_KOMOKU_MOTIKAKU___;
                                     p2MaisuLength = 3;
                                     break;
-                                default: throw new Exception("範囲外rowMoti=[" + row_motiArea + "]");
+                                default: throw new Exception($"範囲外rowMoti=[{row_motiArea}]");
                             }
 
                             int smallDan = (int)(row_motiArea % 9) + 1;
@@ -1215,7 +1215,7 @@ namespace Grayscale.P523UtilFv.L491UtilFvIo
                                 case 11: p2_base = FeatureVectorImpl.CHOSA_KOMOKU_2P + FeatureVectorImpl.CHOSA_KOMOKU_____KIN____; break;//2P金
                                 case 12: p2_base = FeatureVectorImpl.CHOSA_KOMOKU_2P + FeatureVectorImpl.CHOSA_KOMOKU_____HISYA__; break;//2P飛
                                 case 13: p2_base = FeatureVectorImpl.CHOSA_KOMOKU_2P + FeatureVectorImpl.CHOSA_KOMOKU_____KAKU___; break;//2P角
-                                default: throw new Exception("範囲外rowBanjo=[" + row_banjoArea + "]");
+                                default: throw new Exception($"範囲外rowBanjo=[{row_banjoArea}]");
                             }
                             //int largeMaisu = (int)(row_banjoArea % p1Koumoku3or5Length);//大グループの枚数。０枚～。
                             //int smallDan = largeMaisu + 1;//小テーブルの段。１スタート。
@@ -1318,8 +1318,7 @@ namespace Grayscale.P523UtilFv.L491UtilFvIo
                                     p2MaisuLength = 3;
                                     break;
                                 default:
-                                    throw new Exception("範囲外rowMoti=[" + row_motiArea + "]");
-                                    break;
+                                    throw new Exception($"範囲外rowMoti=[{row_motiArea}]");
                             }
 
                             int smallDan = (int)(row_motiArea % 9) + 1;
