@@ -16,3 +16,23 @@
 2020/12/18 19:28:28  > go btime 308000 wtime 301000 binc 2000 winc 2000
 2020/12/18 19:28:31  > position startpos moves 7g7f 8b4b 3i4h 7c7d 8h5e 8a7c 5e7c+ 5a5b N*5e 7a7b 7c9a 3c3d 9a8b 2b3c L*7c 7b7c 8b7c
 2020/12/18 19:28:31  > go btime 309000 wtime 301000 binc 2000 winc 2000
+2020/12/18 19:29:04  > position startpos moves 7g7f 8b4b 3i4h 7c7d 8h5e 8a7c 5e7c+ 5a5b N*5e 7a7b 7c9a 3c3d 9a8b 2b3c L*7c 7b7c 8b7c 4c4d S*6b
+2020/12/18 19:29:04  > go btime 310000 wtime 272000 binc 2000 winc 2000
+2020/12/18 19:29:12  > position startpos moves 7g7f 8b4b 3i4h 7c7d 8h5e 8a7c 5e7c+ 5a5b N*5e 7a7b 7c9a 3c3d 9a8b 2b3c L*7c 7b7c 8b7c 4c4d S*6b 6a6b 7c7d
+2020/12/18 19:29:12  > go btime 311000 wtime 268000 binc 2000 winc 2000
+2020/12/18 19:29:29  > position startpos moves 7g7f 8b4b 3i4h 7c7d 8h5e 8a7c 5e7c+ 5a5b N*5e 7a7b 7c9a 3c3d 9a8b 2b3c L*7c 7b7c 8b7c 4c4d S*6b 6a6b 7c7d 6b6a 5e6c+
+2020/12/18 19:29:29  > go btime 312000 wtime 255000 binc 2000 winc 2000
+2020/12/18 19:29:32  > position startpos moves 7g7f 8b4b 3i4h 7c7d 8h5e 8a7c 5e7c+ 5a5b N*5e 7a7b 7c9a 3c3d 9a8b 2b3c L*7c 7b7c 8b7c 4c4d S*6b 6a6b 7c7d 6b6a 5e6c+ 5b4c 7d6e
+2020/12/18 19:29:32  > go btime 313000 wtime 255000 binc 2000 winc 2000
+2020/12/18 19:29:35  > position startpos moves 7g7f 8b4b 3i4h 7c7d 8h5e 8a7c 5e7c+ 5a5b N*5e 7a7b 7c9a 3c3d 9a8b 2b3c L*7c 7b7c 8b7c 4c4d S*6b 6a6b 7c7d 6b6a 5e6c+ 5b4c 7d6e 5c5d 6e8c
+2020/12/18 19:29:35  > go btime 314000 wtime 256000 binc 2000 winc 2000
+2020/12/18 19:29:57  > position startpos moves 7g7f 8b4b 3i4h 7c7d 8h5e 8a7c 5e7c+ 5a5b N*5e 7a7b 7c9a 3c3d 9a8b 2b3c L*7c 7b7c 8b7c 4c4d S*6b 6a6b 7c7d 6b6a 5e6c+ 5b4c 7d6e 5c5d 6e8c 4c3b 8c6a
+2020/12/18 19:29:57  > go btime 315000 wtime 237000 binc 2000 winc 2000
+2020/12/18 19:30:14  > position startpos moves 7g7f 8b4b 3i4h 7c7d 8h5e 8a7c 5e7c+ 5a5b N*5e 7a7b 7c9a 3c3d 9a8b 2b3c L*7c 7b7c 8b7c 4c4d S*6b 6a6b 7c7d 6b6a 5e6c+ 5b4c 7d6e 5c5d 6e8c 4c3b 8c6a 2c2d 6c5c
+2020/12/18 19:30:14  > go btime 316000 wtime 224000 binc 2000 winc 2000
+2020/12/18 19:30:59  > position startpos moves 7g7f 8b4b 3i4h 7c7d 8h5e 8a7c 5e7c+ 5a5b N*5e 7a7b 7c9a 3c3d 9a8b 2b3c L*7c 7b7c 8b7c 4c4d S*6b 6a6b 7c7d 6b6a 5e6c+ 5b4c 7d6e 5c5d 6e8c 4c3b 8c6a 2c2d 6c5c 3b2c 5c4b
+2020/12/18 19:30:59  > go btime 317000 wtime 183000 binc 2000 winc 2000
+2020/12/18 19:31:20  > position startpos moves 7g7f 8b4b 3i4h 7c7d 8h5e 8a7c 5e7c+ 5a5b N*5e 7a7b 7c9a 3c3d 9a8b 2b3c L*7c 7b7c 8b7c 4c4d S*6b 6a6b 7c7d 6b6a 5e6c+ 5b4c 7d6e 5c5d 6e8c 4c3b 8c6a 2c2d 6c5c 3b2c 5c4b 3a4b 6a7a
+2020/12/18 19:31:20  > go btime 318000 wtime 165000 binc 2000 winc 2000
+2020/12/18 19:31:46  > position startpos moves 7g7f 8b4b 3i4h 7c7d 8h5e 8a7c 5e7c+ 5a5b N*5e 7a7b 7c9a 3c3d 9a8b 2b3c L*7c 7b7c 8b7c 4c4d S*6b 6a6b 7c7d 6b6a 5e6c+ 5b4c 7d6e 5c5d 6e8c 4c3b 8c6a 2c2d 6c5c 3b2c 5c4b 3a4b 6a7a 4b4c R*9a
+2020/12/18 19:31:46  > go btime 319000 wtime 144000 binc 2000 winc 2000
