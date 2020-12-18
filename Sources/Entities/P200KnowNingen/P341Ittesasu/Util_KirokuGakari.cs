@@ -32,8 +32,7 @@ namespace Grayscale.P341Ittesasu.L250OperationA
         /// <param name="fugoList"></param>
         public static string ToJsaFugoListString(
             KifuTree src_kifu,
-            string hint,
-            ILogTag logTag
+            string hint
             )
         {
             StringBuilder sb = new StringBuilder();
@@ -83,10 +82,10 @@ namespace Grayscale.P341Ittesasu.L250OperationA
                 UtilKifuTree282.AppendChild_And_ChangeCurrentToChild(saifuKifu, saifu_newChild, hint+"/ToJsaKifuText");// 新しい次ノードを追加。次ノードを、これからカレントとする。
 
                 // 後手の符号がまだ含まれていない。
-                string jsaFugoStr = ConvMoveStrJsa.ToMoveStrJsa(saifu_newChild,
+                string jsaFugoStr = ConvMoveStrJsa.ToMoveStrJsa(saifu_newChild
                     //saifu_newChild.Value,
-                    logTag);
-                //sb.Append(Conv_MoveStr_Jsa.ToMoveStr_Jsa(node, saifu_kWrap, errH));
+                    );
+                //sb.Append(Conv_MoveStr_Jsa.ToMoveStr_Jsa(node, saifu_kWrap, logTag));
                 sb.Append(jsaFugoStr);
 
             gt_EndLoop:

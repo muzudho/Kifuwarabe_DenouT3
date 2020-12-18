@@ -154,15 +154,14 @@ namespace Grayscale.P743FvLearn
                 ref isRequest_ShowGohosyu,
                 ref isRequest_ChangeKyokumenPng,
                 this.LearningData,
-                this,
-                logTag
+                this
             );
 
             if (isRequest_ShowGohosyu)
             {
                 // 合法手一覧を更新
                 Util_LearnFunctions.FvParamRange_PP(this.LearningData.Fv, logTag);// 自動で -999～999(*bairitu) に矯正。
-                Util_LearningView.Aa_ShowGohosyu2(this.LearningData, this, logTag);
+                Util_LearningView.Aa_ShowGohosyu2(this.LearningData, this);
                 isRequest_ShowGohosyu = false;
             }
 
@@ -229,14 +228,14 @@ namespace Grayscale.P743FvLearn
                     ref isRequest_ShowGohosyu,
                     ref isRequest_ChangeKyokumenPng,
                     kifuFilepath,
-                    this,logTag);
+                    this);
             }
 
             if (isRequest_ShowGohosyu)
             {
                 // 合法手一覧を更新
                 Util_LearnFunctions.FvParamRange_PP(this.LearningData.Fv, logTag);// 自動で -999～999(*bairitu) に矯正。
-                Util_LearningView.Aa_ShowGohosyu2(this.LearningData, this, LogTags.Learner);
+                Util_LearningView.Aa_ShowGohosyu2(this.LearningData, this);
                 isRequest_ShowGohosyu = false;
             }
 
@@ -292,7 +291,7 @@ namespace Grayscale.P743FvLearn
             {
                 // 合法手一覧を更新
                 Util_LearnFunctions.FvParamRange_PP(this.LearningData.Fv, logTag);// 自動で -999～999(*bairitu) に矯正。
-                Util_LearningView.Aa_ShowGohosyu2(this.LearningData, this, logTag);
+                Util_LearningView.Aa_ShowGohosyu2(this.LearningData, this);
                 isRequest_ShowGohosyu = false;
             }
 
@@ -412,7 +411,7 @@ namespace Grayscale.P743FvLearn
             {
                 // 合法手一覧を更新
                 Util_LearnFunctions.FvParamRange_PP(this.LearningData.Fv, logTag);// 自動で -999～999(*bairitu) に矯正。
-                Util_LearningView.Aa_ShowGohosyu2(this.LearningData, this, logTag);
+                Util_LearningView.Aa_ShowGohosyu2(this.LearningData, this);
                 isRequest_ShowGohosyu = false;
             }
 
@@ -443,7 +442,7 @@ namespace Grayscale.P743FvLearn
             {
                 // 合法手一覧を更新
                 Util_LearnFunctions.FvParamRange_PP(this.LearningData.Fv, logTag);// 自動で -999～999(*bairitu) に矯正。
-                Util_LearningView.Aa_ShowGohosyu2(this.LearningData, this, logTag);
+                Util_LearningView.Aa_ShowGohosyu2(this.LearningData, this);
                 isRequest_ShowGohosyu = false;
             }
 
@@ -471,7 +470,7 @@ namespace Grayscale.P743FvLearn
             {
                 // 合法手一覧を更新
                 Util_LearnFunctions.FvParamRange_PP(this.LearningData.Fv, logTag);// 自動で -999～999(*bairitu) に矯正。
-                Util_LearningView.Aa_ShowGohosyu2(this.LearningData, this, logTag);
+                Util_LearningView.Aa_ShowGohosyu2(this.LearningData, this);
                 isRequest_ShowGohosyu = false;
             }
         }
@@ -512,7 +511,7 @@ namespace Grayscale.P743FvLearn
                     ref ref_isRequest_ShowGohosyu,
                     ref ref_isRequest_ChangeKyokumenPng,
                     kifuFilepath,
-                    this, logTag);
+                    this);
                 out_isEmptyKifu = false;
             }
             else
@@ -540,7 +539,7 @@ namespace Grayscale.P743FvLearn
             {
                 // 合法手一覧を更新
                 Util_LearnFunctions.FvParamRange_PP(this.LearningData.Fv, logTag);// 自動で -999～999(*bairitu) に矯正。
-                Util_LearningView.Aa_ShowGohosyu2(this.LearningData, this, LogTags.Learner);
+                Util_LearningView.Aa_ShowGohosyu2(this.LearningData, this);
                 isRequest_ShowGohosyu = false;
             }
 

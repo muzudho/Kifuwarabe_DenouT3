@@ -1,5 +1,4 @@
 ﻿using System;
-using Grayscale.Kifuwarakaku.Entities.Logger;
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P224Sky.L500Struct;
 using Grayscale.P239ConvWords.L500Converter;
@@ -106,8 +105,7 @@ namespace Grayscale.P542Scoreing.L500Util
         /// </summary>
         public static void DoScoreing_Kyokumen(
             KifuNode node_yomi_mutable,
-            EvaluationArgs args,
-            ILogTag logTag
+            EvaluationArgs args
             )
         {
             //----------------------------------------
@@ -160,8 +158,7 @@ namespace Grayscale.P542Scoreing.L500Util
             {
                 Util_HyokakansuCollection.EvaluateAll_Normal(
                     node_yomi_mutable,
-                    args.FeatureVector,
-                    logTag
+                    args.FeatureVector
                     );
             }
 

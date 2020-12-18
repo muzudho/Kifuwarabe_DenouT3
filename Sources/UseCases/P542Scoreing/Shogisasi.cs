@@ -31,8 +31,7 @@ namespace Grayscale.P542Scoreing.L240Shogisasi
         /// <returns></returns>
         KifuNode WA_Bestmove(
             bool isHonshogi,
-            KifuTree kifu,
-            ILogTag logTag
+            KifuTree kifu
             );
 
     }

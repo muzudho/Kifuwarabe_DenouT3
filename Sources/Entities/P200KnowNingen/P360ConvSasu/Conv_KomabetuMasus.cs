@@ -170,7 +170,7 @@ namespace Grayscale.P360ConvSasu.L500Converter
                     entry.Value.Finger,//動かす駒
                     entry.Value.Masu,//移動先升
                     entry.Value.Naru,//成りません。
-                    errH
+                    logTag
                 )));
             }
 

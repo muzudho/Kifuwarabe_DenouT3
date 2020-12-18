@@ -40,11 +40,9 @@ namespace Grayscale.P531Hyokakansu.L510HyokakansuColl
         /// </summary>
         /// <param name="node_mutable">この評価シートに明細項目を追加します。</param>
         /// <param name="fv"></param>
-        /// <param name="logTag"></param>
         public static void EvaluateAll_Normal(
             KifuNode node_mutable,
-            FeatureVector fv,
-            ILogTag logTag
+            FeatureVector fv
             )
         {
             // 妄想と、指定のノードを比較し、点数付けします。

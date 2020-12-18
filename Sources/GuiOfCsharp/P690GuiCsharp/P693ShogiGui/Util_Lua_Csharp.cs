@@ -248,7 +248,7 @@ namespace Grayscale.P693ShogiGui.L480Util
                     mainGui.Link_Server.Model_Taikyoku,
                     mainGui.Model_Manual,
                     newNode,
-                    out jsaFugoStr, logTag);
+                    out jsaFugoStr);
                 repaintRequest.SetFlag_RefreshRequest();
 
                 mainGui.Link_Server.Model_Taikyoku.Kifu.SetProperty(Word_KifuTree.PropName_Startpos, "9/9/9/9/9/9/9/9/9 b K1R1B1G2S2N2L2P9 k1r1b1g2s2n2l2p9 1");

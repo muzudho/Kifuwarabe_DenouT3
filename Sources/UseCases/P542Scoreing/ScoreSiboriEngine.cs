@@ -1,4 +1,4 @@
-﻿    using Grayscale.Kifuwarakaku.Entities.Logger;
+﻿using Grayscale.Kifuwarakaku.Entities.Logger;
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P226Tree.I500Struct;
@@ -22,114 +22,97 @@ namespace Grayscale.P542Scoreing.L125ScoreSibori
         /// </summary>
         /// <param name="kifu"></param>
         /// <param name="atamanosumiCollection"></param>
-        public void EdaSibori_HighScore(KifuTree kifu, Shogisasi shogisasi, ILogTag logTag)
+        public void EdaSibori_HighScore(KifuTree kifu, Shogisasi shogisasi)
         {
-            int exception_area = 0;
-
-            try
+            //
+            // ノードが２つもないようなら、スキップします。
+            //
+            if (kifu.CurNode.Count_ChildNodes < 2)
             {
-                //
-                // ノードが２つもないようなら、スキップします。
-                //
-                if (kifu.CurNode.Count_ChildNodes < 2)
+                goto gt_EndMethod;
+            }
+
+
+            List<Node<IMove, KyokumenWrapper>> rankedNodes = this.RankingNode_WithJudge_ForeachNextNodes(
+                kifu.CurNode);
+
+            Dictionary<string, Node<IMove, KyokumenWrapper>> dic = new Dictionary<string, Node<IMove, KyokumenWrapper>>();
+            if (kifu.CurNode.Value.KyokumenConst.KaisiPside == Playerside.P1)
+            {
+                // 1番高いスコアを調べます。
+                float goodestScore = float.MinValue;
+                foreach (Node<IMove, KyokumenWrapper> node in rankedNodes)
                 {
-                    goto gt_EndMethod;
-                }
-
-
-                exception_area = 1000;
-                List<Node<IMove, KyokumenWrapper>> rankedNodes = this.RankingNode_WithJudge_ForeachNextNodes(
-                    kifu.CurNode, logTag);
-
-
-                exception_area = 1500;
-                Dictionary<string, Node<IMove, KyokumenWrapper>> dic = new Dictionary<string, Node<IMove, KyokumenWrapper>>();
-                if (kifu.CurNode.Value.KyokumenConst.KaisiPside == Playerside.P1)
-                {
-                    exception_area = 2000;
-                    // 1番高いスコアを調べます。
-                    float goodestScore = float.MinValue;
-                    foreach (Node<IMove, KyokumenWrapper> node in rankedNodes)
+                    if (node is KifuNode)
                     {
-                        if (node is KifuNode)
-                        {
-                            float score = ((KifuNode)node).Score;
+                        float score = ((KifuNode)node).Score;
 
-                            if (goodestScore < score)
-                            {
-                                goodestScore = score;
-                            }
+                        if (goodestScore < score)
+                        {
+                            goodestScore = score;
                         }
                     }
-
-                    exception_area = 2500;
-                    // 1番良いスコアのノードだけ残します。
-                    kifu.CurNode.Foreach_ChildNodes((string key, Node<IMove, KyokumenWrapper> node, ref bool toBreak) =>
-                    {
-                        float score;
-                        if (node is KifuNode)
-                        {
-                            score = ((KifuNode)node).Score;
-                        }
-                        else
-                        {
-                            score = 0.0f;
-                        }
-
-                        if (goodestScore <= score)
-                        {
-                            dic.Add(key, node);
-                        }
-                    });
                 }
-                else
+
+                // 1番良いスコアのノードだけ残します。
+                kifu.CurNode.Foreach_ChildNodes((string key, Node<IMove, KyokumenWrapper> node, ref bool toBreak) =>
                 {
-                    exception_area = 3000;
-
-                    // 2Pは、マイナスの方が良い。
-                    float goodestScore = float.MaxValue;
-                    foreach (Node<IMove, KyokumenWrapper> node in rankedNodes)
+                    float score;
+                    if (node is KifuNode)
                     {
-                        if (node is KifuNode)
-                        {
-                            float score = ((KifuNode)node).Score;
-
-                            if (score < goodestScore)//より負の値を選びます。
-                            {
-                                goodestScore = score;
-                            }
-                        }
+                        score = ((KifuNode)node).Score;
+                    }
+                    else
+                    {
+                        score = 0.0f;
                     }
 
-                    exception_area = 3500;
-                    // 1番良いスコアのノードだけ残します。
-                    kifu.CurNode.Foreach_ChildNodes((string key, Node<IMove, KyokumenWrapper> node, ref bool toBreak) =>
+                    if (goodestScore <= score)
                     {
-                        float score;
-                        if (node is KifuNode)
-                        {
-                            score = ((KifuNode)node).Score;
-                        }
-                        else
-                        {
-                            score = 0.0f;
-                        }
+                        dic.Add(key, node);
+                    }
+                });
+            }
+            else
+            {
+                // 2Pは、マイナスの方が良い。
+                float goodestScore = float.MaxValue;
+                foreach (Node<IMove, KyokumenWrapper> node in rankedNodes)
+                {
+                    if (node is KifuNode)
+                    {
+                        float score = ((KifuNode)node).Score;
 
-                        if (score <= goodestScore)//より負数の方がよい。
+                        if (score < goodestScore)//より負の値を選びます。
                         {
-                            dic.Add(key, node);
+                            goodestScore = score;
                         }
-                    });
+                    }
                 }
 
+                // 1番良いスコアのノードだけ残します。
+                kifu.CurNode.Foreach_ChildNodes((string key, Node<IMove, KyokumenWrapper> node, ref bool toBreak) =>
+                {
+                    float score;
+                    if (node is KifuNode)
+                    {
+                        score = ((KifuNode)node).Score;
+                    }
+                    else
+                    {
+                        score = 0.0f;
+                    }
 
-                // 枝を更新します。
-                kifu.CurNode.PutSet_ChildNodes(dic);
+                    if (score <= goodestScore)//より負数の方がよい。
+                        {
+                        dic.Add(key, node);
+                    }
+                });
             }
-            catch (Exception ex)
-            {
-                Logger.Panic(logTag, ex, "ベストムーブ／ハイスコア抽出中 exception_area=[" + exception_area + "]"); throw;
-            }
+
+
+            // 枝を更新します。
+            kifu.CurNode.PutSet_ChildNodes(dic);
 
         gt_EndMethod:
             ;
@@ -143,32 +126,24 @@ namespace Grayscale.P542Scoreing.L125ScoreSibori
         /// <param name="nextNodes"></param>
         /// <returns></returns>
         private List<Node<IMove, KyokumenWrapper>> RankingNode_WithJudge_ForeachNextNodes(
-            Node<IMove, KyokumenWrapper> hubNode,
-            ILogTag logTag
+            Node<IMove, KyokumenWrapper> hubNode
             )
         {
             int exception_area = 0;
             List<Node<IMove, KyokumenWrapper>> list = null;
 
-            try
+            // ランク付けしたあと、リスト構造に移し変えます。
+            list = new List<Node<IMove, KyokumenWrapper>>();
+
+            hubNode.Foreach_ChildNodes((string key, Node<IMove, KyokumenWrapper> node, ref bool toBreak) =>
             {
-                // ランク付けしたあと、リスト構造に移し変えます。
-                list = new List<Node<IMove, KyokumenWrapper>>();
+                list.Add(node);
+            });
 
-                hubNode.Foreach_ChildNodes((string key, Node<IMove, KyokumenWrapper> node, ref bool toBreak) =>
-                {
-                    list.Add(node);
-                });
+            exception_area = 1000;
+            // ランク付けするために、リスト構造に変換します。
 
-                exception_area = 1000;
-                // ランク付けするために、リスト構造に変換します。
-
-                ScoreSiboriEngine.Sort(list);
-            }
-            catch (Exception ex)
-            {
-                Logger.Panic(logTag, ex, "ベストムーブ／ハイスコア抽出中 exception_area=[" + exception_area + "]"); throw;
-            }
+            ScoreSiboriEngine.Sort(list);
 
             return list;
         }

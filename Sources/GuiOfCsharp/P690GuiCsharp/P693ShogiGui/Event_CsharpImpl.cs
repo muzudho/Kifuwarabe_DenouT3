@@ -139,7 +139,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                         mainGui3.Link_Server.Model_Taikyoku,
                         mainGui3.Model_Manual,
                         logTag);
-                    Util_Function_Csharp.Komaokuri_Gui(restText, mainGui3, logTag);
+                    Util_Function_Csharp.Komaokuri_Gui(restText, mainGui3);
                     Util_Menace.Menace(mainGui3, logTag);// メナス
                 };
 
@@ -373,7 +373,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                         Util_Functions_Server.SetCurNode_Srv(
                             mainGui3.Link_Server.Model_Taikyoku,
                             mainGui3.Model_Manual,
-                            modifyNode, out jsaFugoStr, logTag);
+                            modifyNode, out jsaFugoStr);
                         mainGui3.RepaintRequest.SetFlag_RefreshRequest();
                     }
                 };
@@ -550,7 +550,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     Util_Functions_Server.SetCurNode_Srv(
                         mainGui.Link_Server.Model_Taikyoku,
                         mainGui.Model_Manual,
-                        newNode, out jsaFugoStr, logTag);
+                        newNode, out jsaFugoStr);
                     mainGui.RepaintRequest.SetFlag_RefreshRequest();
 
                     //------------------------------

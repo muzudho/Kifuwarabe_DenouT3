@@ -125,7 +125,7 @@ namespace Grayscale.P354UtilSasuEx.L500Util
         //    Dictionary<string, SasuEntry> result_komabetuEntry,
         //    SkyConst src_Sky,
         //    KifuNode hubNode_mutable,
-        //    IErrorController errH
+        //    IErrorController logTag
         //    )
         //{
         //    foreach (KeyValuePair<string, SasuEntry> entry in result_komabetuEntry)
@@ -135,7 +135,7 @@ namespace Grayscale.P354UtilSasuEx.L500Util
         //            entry.Value,
         //            src_Sky,
         //            hubNode_mutable,
-        //            errH
+        //            logTag
         //            );
         //    }
         //}
@@ -145,14 +145,14 @@ namespace Grayscale.P354UtilSasuEx.L500Util
         //    SasuEntry sasuEntry,
         //    SkyConst src_Sky,
         //    KifuNode hubNode_mutable,
-        //    IErrorController errH
+        //    IErrorController logTag
         //    )
         //{
         //    if (!hubNode_mutable.ContainsKey_ChildNodes(moveStr_sfen))//チェックを追加
         //    {
         //        hubNode_mutable.PutAdd_ChildNode(
         //            moveStr_sfen,
-        //            Conv_SasuEntry.ToKifuNode(sasuEntry, src_Sky, errH)
+        //            Conv_SasuEntry.ToKifuNode(sasuEntry, src_Sky, logTag)
         //        );
         //    }
         //}

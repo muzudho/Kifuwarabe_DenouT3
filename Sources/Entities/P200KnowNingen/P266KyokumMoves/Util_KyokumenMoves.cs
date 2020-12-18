@@ -93,7 +93,7 @@ namespace Grayscale.P266KyokumMoves.L500Util
 #if DEBUG
                     if (mmLog_orNull != null)
                     {
-                        errH = mmLog_orNull.ErrH;
+                        logTag = mmLog_orNull.ErrH;
                     }
 #endif
 

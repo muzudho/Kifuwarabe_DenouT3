@@ -52,7 +52,7 @@ namespace Grayscale.P693ShogiGui.L249Function
             Util_Functions_Server.SetCurNode_Srv(
                 mainGui.Link_Server.Model_Taikyoku,
                 mainGui.Model_Manual,
-                newNode, out jsaFugoStr, logTag);
+                newNode, out jsaFugoStr);
             mainGui.RepaintRequest.SetFlag_RefreshRequest();
 
             mainGui.RepaintRequest.SetFlag_RecalculateRequested();// 駒の再描画要求
@@ -109,7 +109,7 @@ namespace Grayscale.P693ShogiGui.L249Function
             return true;
         }
 
-        public static bool Komaokuri_Gui(string restText, MainGui_Csharp shogiGui, ILogTag logTag)
+        public static bool Komaokuri_Gui(string restText, MainGui_Csharp shogiGui)
         {
             //------------------------------
             // 符号表示
@@ -118,7 +118,7 @@ namespace Grayscale.P693ShogiGui.L249Function
                 Node<IMove, KyokumenWrapper> node6 = shogiGui.Link_Server.Model_Taikyoku.Kifu.CurNode;
 
                 // [コマ送り][再生]ボタン
-                string jsaFugoStr = ConvMoveStrJsa.ToMoveStrJsa(node6,logTag);
+                string jsaFugoStr = ConvMoveStrJsa.ToMoveStrJsa(node6);
 
                 shogiGui.Shape_PnlTaikyoku.SetFugo(jsaFugoStr);
             }

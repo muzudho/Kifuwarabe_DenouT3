@@ -55,7 +55,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
         /// 盤上の40駒リスト。
         /// 駒台の14駒リスト。
         /// </summary>
-        public static N40t14List Calc_40t14List(SkyConst src_Sky, ILogTag errH)
+        public static N40t14List Calc_40t14List(SkyConst src_Sky, ILogTag logTag)
         {
             N40t14List result_n40t14List = new N40t14ListImpl();
 
@@ -87,7 +87,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
                     if (FeatureVectorImpl.CHOSA_KOMOKU_ERROR == pIndex)
                     {
                         // p1 がエラーでは、処理は続けられない。
-                        Util_40t14List.Error1(koma, errH);
+                        Util_40t14List.Error1(koma, logTag);
                         goto gt_NextLoop_player1;
                     }
 
@@ -113,7 +113,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
                     if (FeatureVectorImpl.CHOSA_KOMOKU_ERROR == pIndex)
                     {
                         // p1 がエラーでは、処理は続けられない。
-                        Util_40t14List.Error1(koma, errH);
+                        Util_40t14List.Error1(koma, logTag);
                         goto gt_NextLoop_player1;
                     }
 

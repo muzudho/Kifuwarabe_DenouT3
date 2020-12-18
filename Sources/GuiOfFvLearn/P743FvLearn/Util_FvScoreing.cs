@@ -14,7 +14,7 @@ namespace Grayscale.P743FvLearn.L460Scoreing
         ///// バッドな点が入っているものは　全て吸い取って　０　点にします。
         ///// 吸い取った　バッド点　を返却します。
         ///// </summary>
-        //public static float Spoil_MotiBad( Playerside selfPside, FeatureVector fv_mutable, N54List n54List, IErrorController errH)
+        //public static float Spoil_MotiBad( Playerside selfPside, FeatureVector fv_mutable, N54List n54List, IErrorController logTag)
         //{
         //    float result_sum = 0;
 
@@ -92,7 +92,7 @@ namespace Grayscale.P743FvLearn.L460Scoreing
         ///// <summary>
         ///// ２駒関係の54要素で表される箇所のうち、盤上の２駒に関する評価値に加算します。
         ///// </summary>
-        //public static void Fill54x54_Add_ToBanjo(float offset, SkyConst src_Sky, FeatureVector fv_mutable, N54List n54List, IErrorController errH)
+        //public static void Fill54x54_Add_ToBanjo(float offset, SkyConst src_Sky, FeatureVector fv_mutable, N54List n54List, IErrorController logTag)
         //{
         //    //----------------------------------------
         //    // [ＰＰ]　盤上の各駒１　×　盤上の各駒２
@@ -118,7 +118,7 @@ namespace Grayscale.P743FvLearn.L460Scoreing
         /// ２駒関係の54要素で表される箇所全ての評価値に加算します。
         /// </summary>
         public static void Fill54x54_Add(out int changedCells, float offset, SkyConst src_Sky, FeatureVector fv_mutable,
-            N54List n54List, ILogTag errH)
+            N54List n54List, ILogTag logTag)
         {
             changedCells = 0;
 
@@ -256,7 +256,7 @@ namespace Grayscale.P743FvLearn.L460Scoreing
             FeatureVector fv_mutable,
             float tyoseiryo,
             out float out_real_tyoseiryo,//実際に調整した量。
-            ILogTag errH
+            ILogTag logTag
             )
         {
             //
@@ -270,14 +270,14 @@ namespace Grayscale.P743FvLearn.L460Scoreing
                 float kizami_up = Util_Tyoseiryo.Average_54x54Parameters(tyoseiryo, n54List);
 
                 int changedCells;
-                Util_FvScoreing.Fill54x54_Add(out changedCells, kizami_up, src_Sky, fv_mutable, n54List, errH);
+                Util_FvScoreing.Fill54x54_Add(out changedCells, kizami_up, src_Sky, fv_mutable, n54List, logTag);
                 out_real_tyoseiryo = changedCells * kizami_up;
             }
 
             // 持ち駒の BAD値を矯正 FIXME: 持ち駒を打つのが悪手なのは、だいたい合っているのでは？
             //if(false)
             //{
-            //    float sum_bad = Util_FvScoreing.Spoil_MotiBad(src_Sky.KaisiPside, fv_mutable, n54List, errH);
+            //    float sum_bad = Util_FvScoreing.Spoil_MotiBad(src_Sky.KaisiPside, fv_mutable, n54List, logTag);
 
             //    // 盤上の三駒関係に、均等に BAD値 を配分。
             //    Util_FvScoreing.Fill54x54_Add_ToBanjo(
@@ -285,7 +285,7 @@ namespace Grayscale.P743FvLearn.L460Scoreing
             //        src_Sky,
             //        fv_mutable,
             //        n54List,
-            //        errH
+            //        logTag
             //        );
             //}
         }

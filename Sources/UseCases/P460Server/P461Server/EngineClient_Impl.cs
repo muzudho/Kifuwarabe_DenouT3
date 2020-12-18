@@ -179,9 +179,9 @@ namespace Grayscale.P461Server.L497EngineClient
         ///// <summary>
         ///// 将棋エンジンを先手にするために、go を出します。
         ///// </summary>
-        //public void Send_Go(IErrorController errH)
+        //public void Send_Go(IErrorController logTag)
         //{
-        //    this.ShogiEngineProcessWrapper.Send_Go(errH);
+        //    this.ShogiEngineProcessWrapper.Send_Go(logTag);
         //}
 
     }

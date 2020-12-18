@@ -350,7 +350,7 @@ namespace Grayscale.P693ShogiGui.L500GUI
 
             {
 #if DEBUG
-                errH.Logger.WriteLineAddMemo("(^o^)乱数のたね＝[" + KwRandom.Seed + "]");
+                logTag.Logger.WriteLineAddMemo("(^o^)乱数のたね＝[" + KwRandom.Seed + "]");
 #endif
 
                 this.Data_Settei_Csv.Read_Add(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataSetteiCsv")), Encoding.UTF8);

@@ -114,7 +114,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
         ///// ************************************************************************************************************************
         ///// </summary>
         ///// <returns></returns>
-        //public string ReadLine2(IErrorController errH)
+        //public string ReadLine2(IErrorController logTag)
         //{
         //    SkyConst src_Sky = this.ShogibanGui.Link_ShogiServer.Model_Operating.Manual.GuiSkyConst;
 
@@ -211,7 +211,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
         //    string jsaFugoStr_tuginoItte = "▲９九王嘘";
 
 
-        //    //this.ShogiGui.Model_PnlTaikyoku.Kifu.AssertPside(this.ShogiGui.Model_PnlTaikyoku.Kifu.CurNode, "ReadLine2", errH);
+        //    //this.ShogiGui.Model_PnlTaikyoku.Kifu.AssertPside(this.ShogiGui.Model_PnlTaikyoku.Kifu.CurNode, "ReadLine2", logTag);
         //    Playerside pside = this.ShogibanGui.Link_ShogiServer.Model_Operating.Taikyoku.Kifu.CurNode.Value.ToKyokumenConst.KaisiPside;
         //    Fingers fingers = Util_Sky_FingersQuery.InOkibaPsideNow(this.ShogibanGui.Link_ShogiServer.Model_Operating.Manual.GuiSkyConst, Okiba.ShogiBan, pside);
         //    if (0<fingers.Count)
@@ -223,7 +223,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
         //        RO_Star koma = Util_Starlightable.ToKoma(sl.Now);
 
-        //        //this.ShogiGui.Model_PnlTaikyoku.Kifu.AssertPside(this.ShogiGui.Model_PnlTaikyoku.Kifu.CurNode, "ReadLine2",errH);
+        //        //this.ShogiGui.Model_PnlTaikyoku.Kifu.AssertPside(this.ShogiGui.Model_PnlTaikyoku.Kifu.CurNode, "ReadLine2",logTag);
         //        Playerside pside2 = this.ShogibanGui.Link_ShogiServer.Model_Operating.Taikyoku.Kifu.CurNode.Value.ToKyokumenConst.KaisiPside;
         //        Playerside pside_getTeban = pside2;
         //        switch (pside_getTeban)
@@ -306,10 +306,10 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
         //                }
         //        }
 
-        //        jsaFugoStr_tuginoItte = Conv_MoveStr_Jsa.ToMoveStr_Jsa(this.ShogibanGui.Link_ShogiServer.Model_Operating.Taikyoku.Kifu.CurNode,errH);
+        //        jsaFugoStr_tuginoItte = Conv_MoveStr_Jsa.ToMoveStr_Jsa(this.ShogibanGui.Link_ShogiServer.Model_Operating.Taikyoku.Kifu.CurNode,logTag);
         //        //RO_Star koma2 = Util_Starlightable.ToKoma(tuginoMoveData.LongTimeAgo);
 
-        //        //JsaFugoImpl fugoJ = Array_JsaFugoCreator15.ItemMethods[(int)Util_Komahaiyaku184.Syurui(koma2.Haiyaku)](tuginoMoveData, new KyokumenWrapper(src_Sky), errH);//「▲２二角成」なら、馬（dst）ではなくて角（src）。
+        //        //JsaFugoImpl fugoJ = Array_JsaFugoCreator15.ItemMethods[(int)Util_Komahaiyaku184.Syurui(koma2.Haiyaku)](tuginoMoveData, new KyokumenWrapper(src_Sky), logTag);//「▲２二角成」なら、馬（dst）ではなくて角（src）。
         //        //jsaFugoStr_tuginoItte = Util_Translator_JsaFugo.ToString_UseDou(fugoJ, this.ShogibanGui.Link_ShogiServer.Model_Operating.Taikyoku.Kifu.CurNode);
         //    }
 
@@ -656,8 +656,8 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
                         form2.WriteLine_Syuturyoku("");
 
                         // ログ
-                        //errH.Logger.WriteLineAddMemo( "");
-                        //errH.Logger.WriteLineAddMemo( "");
+                        //logTag.Logger.WriteLineAddMemo( "");
+                        //logTag.Logger.WriteLineAddMemo( "");
                     }
                     break;
 
@@ -667,7 +667,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
                         switch (this.MainGui.SyuturyokuKirikae)
                         {
                             case SyuturyokuKirikae.Japanese:
-                                form2.WriteLine_Syuturyoku(Util_KirokuGakari.ToJsaFugoListString(this.MainGui.Link_Server.Model_Taikyoku.Kifu, "Ui_PnlMain.Response", logTag));
+                                form2.WriteLine_Syuturyoku(Util_KirokuGakari.ToJsaFugoListString(this.MainGui.Link_Server.Model_Taikyoku.Kifu, "Ui_PnlMain.Response"));
                                 break;
                             case SyuturyokuKirikae.Sfen:
                                 form2.WriteLine_Syuturyoku(Util_KirokuGakari.ToSfen_PositionCommand(this.MainGui.Link_Server.Model_Taikyoku.Kifu));
@@ -679,7 +679,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 #if DEBUG
                         // ログ
-                        errH.Logger.WriteLineAddMemo(form2.GetOutputareaText());
+                        logTag.Logger.WriteLineAddMemo(form2.GetOutputareaText());
 #endif
                     }
                     break;

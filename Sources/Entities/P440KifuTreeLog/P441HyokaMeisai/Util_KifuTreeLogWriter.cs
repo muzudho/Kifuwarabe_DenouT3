@@ -135,7 +135,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
                     kifu,
                     tree_folder.ToString(),
                     Util_KifuTreeLogWriter.REPORT_ENVIRONMENT,
-                    errH
+                    logTag
                     );
             }
             catch (Exception ex)
@@ -145,7 +145,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
                 Debug.Fail(message);
 
                 // どうにもできないので  ログだけ取って、上に投げます。
-                errH.Logger.WriteLineError(message);
+                logTag.Logger.WriteLineError(message);
                 throw;
             }
 
@@ -167,7 +167,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
                     logF_kiki.boards.Clear();
                 }
             }
-            catch (Exception ex) { errH.Panic(ex, "局面評価明細を出力しようとしたときです。"); throw; }
+            catch (Exception ex) { logTag.Panic(ex, "局面評価明細を出力しようとしたときです。"); throw; }
 #endif
         }
 
@@ -382,7 +382,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
         //            //Shogisasi shogisasi,
         //            KaisetuBoards logF_kiki,
         //            KifuTree kifu,
-        //            IErrorController errH
+        //            IErrorController logTag
         //            )
         //        {
         //#if DEBUG
@@ -404,7 +404,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
         //                    logF_kiki.boards.Clear();
         //                }
         //            }
-        //            catch (Exception ex) { errH.Panic(ex, "HTML5ログを出力しようとしたときです。"); throw; }
+        //            catch (Exception ex) { logTag.Panic(ex, "HTML5ログを出力しようとしたときです。"); throw; }
         //#endif
         //        }
 

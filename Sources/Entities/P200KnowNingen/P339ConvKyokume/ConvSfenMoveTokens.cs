@@ -55,7 +55,7 @@ namespace Grayscale.P339ConvKyokume.L500Converter
 
             Node<IMove, KyokumenWrapper> siteiNode = kifu.CurNode;
             SkyConst src_Sky = siteiNode.Value.KyokumenConst;
-            //kifu.AssertPside(kifu.CurNode, "str1=" + str1, errH);
+            //kifu.AssertPside(kifu.CurNode, "str1=" + str1, logTag);
             Playerside pside1 = src_Sky.KaisiPside;
 
 #if DEBUG

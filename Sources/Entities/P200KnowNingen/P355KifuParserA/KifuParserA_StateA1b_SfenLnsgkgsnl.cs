@@ -70,7 +70,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                     //    owner.Delegate_OnChangeSky_Im(
                     //        model_PnlTaikyoku,
                     //        genjo,
-                    //        errH
+                    //        logTag
                     //        );
                     //}
 

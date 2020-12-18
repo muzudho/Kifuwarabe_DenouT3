@@ -60,7 +60,7 @@ namespace Grayscale.P362LegalMove.L500Util
                 );// ハブ・ノード自身はダミーノードなんだが、子ノードに、次のノードが入っている。
             Util_NodeAssert361.AssertNariMove(hubNode, "#LA_RemoveMate(1)");//ここはok
 #if DEBUG
-            Util_LegalMove.Log1(hubNode, src_Sky.Temezumi, hint, errH);
+            Util_LegalMove.Log1(hubNode, src_Sky.Temezumi, hint, logTag);
 #endif
 
             if (isHonshogi)
@@ -119,7 +119,7 @@ namespace Grayscale.P362LegalMove.L500Util
             string hint
             )
         {
-            bool enableLog = false;//errH.Logger.Enable
+            bool enableLog = false;//logTag.Logger.Enable
             Util_GraphicalLog.WriteHtml5(enableLog, "Util_LegalMove(王手回避漏れ02)王手を回避するかどうかに関わらず、ひとまず全ての次の手", "[" +
                 ((KifuNode)hubNode).Json_NextNodes_MultiSky(
                     "(王手回避漏れ02." + temezumi_yomiGenTeban + "手目)",

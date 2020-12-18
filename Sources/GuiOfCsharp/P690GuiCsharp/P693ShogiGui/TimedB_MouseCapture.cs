@@ -68,7 +68,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
             // 味方の駒
             Node<IMove, KyokumenWrapper> siteiNode = shogiGui.Link_Server.Model_Taikyoku.Kifu.CurNode;
 
-            //shogiGui.Model_PnlTaikyoku.Kifu.AssertPside(shogiGui.Model_PnlTaikyoku.Kifu.CurNode, "Check_MouseoverKomaKiki",errH);
+            //shogiGui.Model_PnlTaikyoku.Kifu.AssertPside(shogiGui.Model_PnlTaikyoku.Kifu.CurNode, "Check_MouseoverKomaKiki",logTag);
             SySet<SyElement> mikataZukei = Util_Sky_SyugoQuery.Masus_Now(siteiNode.Value.KyokumenConst, shogiGui.Link_Server.Model_Taikyoku.Kifu.CurNode.Value.KyokumenConst.KaisiPside);
             //mikataZukei.DebugWrite("味方の駒");
 
@@ -413,7 +413,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                                     Util_Functions_Server.SetCurNode_Srv(
                                                         mainGui.Link_Server.Model_Taikyoku,
                                                         mainGui.Model_Manual,
-                                                        newNode, out jsaFugoStr, logTag);
+                                                        newNode, out jsaFugoStr);
                                                     mainGui.RepaintRequest.SetFlag_RefreshRequest();
 
 
@@ -557,7 +557,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                                         Util_Functions_Server.SetCurNode_Srv(
                                                             mainGui.Link_Server.Model_Taikyoku,
                                                             mainGui.Model_Manual,
-                                                            newNode, out jsaFugoStr, logTag);
+                                                            newNode, out jsaFugoStr);
                                                         mainGui.RepaintRequest.SetFlag_RefreshRequest();
 
 

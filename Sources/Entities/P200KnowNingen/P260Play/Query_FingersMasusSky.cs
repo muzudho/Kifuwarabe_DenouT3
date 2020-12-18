@@ -24,7 +24,6 @@ namespace Grayscale.P260Play.L500Query
         /// <param name="masus_mikata_Banjo"></param>
         /// <param name="masus_aite_Banjo"></param>
         /// <param name="src_Sky"></param>
-        /// <param name="logTag"></param>
         /// <returns></returns>
         public static Maps_OneAndOne<Finger, SySet<SyElement>> To_KomabetuKiki_OnBanjo(
             Fingers fs_sirabetaiKoma,

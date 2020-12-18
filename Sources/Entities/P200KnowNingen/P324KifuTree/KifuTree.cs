@@ -15,13 +15,13 @@ namespace Grayscale.P324KifuTree.I250Struct
         /// <returns></returns>
         SennititeCounter GetSennititeCounter();
 
-        //void AssertPside(Node<Starbeamable, KyokumenWrapper> node, string hint, IErrorController errH);
+        //void AssertPside(Node<Starbeamable, KyokumenWrapper> node, string hint, IErrorController logTag);
         /// <summary>
         /// これから追加する予定のノードの先後を診断します。
         /// </summary>
         /// <param name="node"></param>
         void AssertChildPside(Playerside parentPside, Playerside childPside);
-        //Playerside CountPside(Node<Starbeamable, KyokumenWrapper> node, IErrorController errH);
+        //Playerside CountPside(Node<Starbeamable, KyokumenWrapper> node, IErrorController logTag);
 
 
         
@@ -30,7 +30,7 @@ namespace Grayscale.P324KifuTree.I250Struct
         ///// [ここから採譜]機能
         ///// ************************************************************************************************************************
         ///// </summary>
-        //void SetStartpos_KokokaraSaifu(Playerside pside, IErrorController errH);
+        //void SetStartpos_KokokaraSaifu(Playerside pside, IErrorController logTag);
 
         ///// <summary>
         ///// この木の、全てのノードを、フォルダーとして作成します。

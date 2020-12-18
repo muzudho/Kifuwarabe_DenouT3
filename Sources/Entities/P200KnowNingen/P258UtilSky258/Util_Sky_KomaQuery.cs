@@ -16,7 +16,6 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// ************************************************************************************************************************
         /// </summary>
         /// <param name="masu">マス番号</param>
-        /// <param name="logTag">ログ名</param>
         /// <returns>スプライト番号。なければエラー番号。</returns>
         public static RO_Star InMasuNow(SkyConst src_Sky, SyElement masu)
         {
@@ -42,7 +41,6 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// ************************************************************************************************************************
         /// </summary>
         /// <param name="masu">マス番号</param>
-        /// <param name="logTag">ログ名</param>
         /// <returns>スプライト番号。なければエラー番号。</returns>
         public static RO_Star InMasuPsideNow(SkyConst src_Sky, SyElement masu, Playerside pside)
         {
@@ -74,7 +72,6 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// ************************************************************************************************************************
         /// </summary>
         /// <param name="masu">マス番号</param>
-        /// <param name="logTag">ログ名</param>
         /// <returns>スプライト番号。なければエラー番号。</returns>
         public static RO_Star InMasuPsideKomasyuruiNow(SkyConst src_Sky, SyElement masu, Playerside pside, Komasyurui14 syurui)
         {

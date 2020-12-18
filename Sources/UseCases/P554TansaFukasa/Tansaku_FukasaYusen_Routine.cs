@@ -68,8 +68,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
         public Tansaku_Genjo CreateGenjo(
             KifuTree kifu,
             bool isHonshogi,
-            Mode_Tansaku mode_Tansaku,
-            ILogTag logTag
+            Mode_Tansaku mode_Tansaku
             )
         {
             // TODO:ここではログを出力せずに、ツリーの先端で出力したい。
@@ -214,70 +213,61 @@ using Grayscale.P370LogGraphiEx.L500Util;
         /// <param name="kifu">この棋譜ツリーの現局面に、次局面をぶら下げて行きます。</param>
         /// <param name="enableLog"></param>
         /// <param name="isHonshogi"></param>
-        /// <param name="logTag"></param>
         /// <returns></returns>
         public void WAA_Yomu_Start(
             KifuTree kifu,
             bool isHonshogi,
             Mode_Tansaku mode_Tansaku,
             float alphabeta_otherBranchDecidedValue,
-            EvaluationArgs args,
-            ILogTag logTag
+            EvaluationArgs args
             )
         {
-            int exceptionArea = 0;
+            Tansaku_Genjo genjo = this.CreateGenjo(kifu, isHonshogi, mode_Tansaku);
+            KifuNode node_yomi = (KifuNode)kifu.CurNode;
+            int wideCount2 = 0;
 
-            try
+            // 
+            // （１）合法手に一対一対応した子ノードを作成し、ハブ・ノードにぶら下げます。
+            //
+            Dictionary<string, SasuEntry> moveBetuEntry;
+            int yomiDeep;
+            float a_childrenBest;
+            Tansaku_FukasaYusen_Routine.CreateEntries_BeforeLoop(
+                genjo,
+                node_yomi,
+                out moveBetuEntry,
+                out yomiDeep,
+                out a_childrenBest
+                );
+            int moveBetuEntry_count = moveBetuEntry.Count;
+
+            if (Tansaku_FukasaYusen_Routine.CanNotNextLoop(yomiDeep, wideCount2, moveBetuEntry_count, genjo))
             {
-                exceptionArea = 10;
-                Tansaku_Genjo genjo = this.CreateGenjo(kifu, isHonshogi, mode_Tansaku, logTag);
-                KifuNode node_yomi = (KifuNode)kifu.CurNode;
-                int wideCount2 = 0;
-
-                // 
-                // （１）合法手に一対一対応した子ノードを作成し、ハブ・ノードにぶら下げます。
-                //
-                Dictionary<string, SasuEntry> moveBetuEntry;
-                int yomiDeep;
-                float a_childrenBest;
-                Tansaku_FukasaYusen_Routine.CreateEntries_BeforeLoop(
+                // 1手も読まないのなら。
+                // FIXME: エラー？
+                //----------------------------------------
+                // もう深くよまないなら
+                //----------------------------------------
+                Tansaku_FukasaYusen_Routine.Do_Leaf(
                     genjo,
                     node_yomi,
-                    out moveBetuEntry,
-                    out yomiDeep,
+                    args,
                     out a_childrenBest
                     );
-                int moveBetuEntry_count = moveBetuEntry.Count;
-
-                if (Tansaku_FukasaYusen_Routine.CanNotNextLoop(yomiDeep, wideCount2, moveBetuEntry_count, genjo))
-                {
-                    // 1手も読まないのなら。
-                    // FIXME: エラー？
-                    //----------------------------------------
-                    // もう深くよまないなら
-                    //----------------------------------------
-                    Tansaku_FukasaYusen_Routine.Do_Leaf(
-                        genjo,
-                        node_yomi,
-                        args,
-                        out a_childrenBest,
-                        logTag
-                        );
-                }
-                else
-                {
-                }
+            }
+            else
+            {
+            }
 
 
 
-                float child_bestScore = Tansaku_FukasaYusen_Routine.WAAA_Yomu_Loop(
-                    genjo,
-                    alphabeta_otherBranchDecidedValue,
-                    node_yomi,
-                    moveBetuEntry.Count,
-                    args,
-                    logTag
-                    );
+            float child_bestScore = Tansaku_FukasaYusen_Routine.WAAA_Yomu_Loop(
+                genjo,
+                alphabeta_otherBranchDecidedValue,
+                node_yomi,
+                moveBetuEntry.Count,
+                args
+                );
 
 #if DEBUG
                 exceptionArea = 20;
@@ -296,30 +286,6 @@ using Grayscale.P370LogGraphiEx.L500Util;
                     genjo.Args.LogF_moveKiki.boards.Clear();
                 }
 #endif
-            }
-            catch (Exception ex)
-            {
-                switch (exceptionArea)
-                {
-                    case 10:
-                        {
-                            //>>>>> エラーが起こりました。
-                            string message = ex.GetType().Name + " " + ex.Message + "：棋譜ツリーの読みの中盤５０です。：";
-                            Debug.Fail(message);
-
-                            // どうにもできないので  ログだけ取って、上に投げます。
-                            Logger.WriteLineError(logTag, message);
-                            throw;
-                        }
-#if DEBUG
-                    case 20:
-                        {
-                            errH.Panic(ex, "棋譜ツリーの読みの後半９０です。"); throw;
-                        }
-#endif
-                    default: throw;
-                }
-            }
         }
 
 
@@ -378,21 +344,19 @@ using Grayscale.P370LogGraphiEx.L500Util;
             Tansaku_Genjo genjo,
             KifuNode node_yomi,
             EvaluationArgs args,
-            out float out_a_childrenBest,
-            ILogTag logTag
+            out float out_a_childrenBest
             )
         {
             // 局面に評価値を付けます。
             Util_Scoreing.DoScoreing_Kyokumen(
                 node_yomi,//mutable
-                args,
-                logTag
+                args
                 );
             // 局面の評価値。
             out_a_childrenBest = node_yomi.Score;
 
 #if DEBUG_ALPHA_METHOD
-                    errH.Logger.WriteLineAddMemo("1. 手(" + node_yomi.Value.ToKyokumenConst.Temezumi + ")読(" + yomiDeep + ") 兄弟最善=[" + a_siblingDecidedValue + "] 子ベスト=[" + a_childrenBest + "]");
+                    logTag.Logger.WriteLineAddMemo("1. 手(" + node_yomi.Value.ToKyokumenConst.Temezumi + ")読(" + yomiDeep + ") 兄弟最善=[" + a_siblingDecidedValue + "] 子ベスト=[" + a_childrenBest + "]");
 #endif
 
 #if DEBUG
@@ -419,7 +383,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
             //                        kifu_forAssert,
             //                        reportEnvironment,
             //                        logF_kiki,
-            //                        errH
+            //                        logTag
             //                    );
             //#endif
         }
@@ -430,15 +394,13 @@ using Grayscale.P370LogGraphiEx.L500Util;
         /// <param name="genjo"></param>
         /// <param name="alphabeta_otherBranchDecidedValue"></param>
         /// <param name="args"></param>
-        /// <param name="logTag"></param>
         /// <returns>子の中で最善の点</returns>
         private static float WAAA_Yomu_Loop(
             Tansaku_Genjo genjo,
             float a_parentsiblingDecidedValue,
             KifuNode node_yomi,
             int moveBetuEntry_count,
-            EvaluationArgs args,
-            ILogTag logTag
+            EvaluationArgs args
             )
         {
             float a_childrenBest;
@@ -479,8 +441,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
                         genjo,
                         node_yomi,
                         args,
-                        out a_childrenBest,
-                        logTag
+                        out a_childrenBest
                         );
 
                     wideCount1++;
@@ -519,8 +480,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
                         a_childrenBest,
                         childNode1,
                         moveBetuEntry2.Count,
-                        args,
-                        logTag);
+                        args);
                     Util_Scoreing.Update_Branch(
                         a_myScore,//a_childrenBest,
                         node_yomi//mutable
@@ -542,12 +502,12 @@ using Grayscale.P370LogGraphiEx.L500Util;
                     wideCount1++;
 
 #if DEBUG_ALPHA_METHOD
-                errH.Logger.WriteLineAddMemo("3. 手(" + node_yomi.Value.ToKyokumenConst.Temezumi + ")読(" + yomiDeep + ") 兄弟最善=[" + a_siblingDecidedValue + "] 子ベスト=[" + a_childrenBest + "] 自点=[" + a_myScore + "]");
+                logTag.Logger.WriteLineAddMemo("3. 手(" + node_yomi.Value.ToKyokumenConst.Temezumi + ")読(" + yomiDeep + ") 兄弟最善=[" + a_siblingDecidedValue + "] 子ベスト=[" + a_childrenBest + "] 自点=[" + a_myScore + "]");
 #endif
                     if (alpha_cut)
                     {
 #if DEBUG_ALPHA_METHOD
-                        errH.Logger.WriteLineAddMemo("アルファ・カット☆！");
+                        logTag.Logger.WriteLineAddMemo("アルファ・カット☆！");
 #endif
                         //----------------------------------------
                         // 次の「子の弟」要素はもう読みません。
@@ -605,7 +565,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
 #if DEBUG
                 MmLogGenjoImpl mm_log_orNull = null;
                 KaisetuBoard logBrd_move1;
-                Tansaku_FukasaYusen_Routine.Log1(genjo, src_Sky_move, src_Sky, out mm_log_orNull, out logBrd_move1, errH);
+                Tansaku_FukasaYusen_Routine.Log1(genjo, src_Sky_move, src_Sky, out mm_log_orNull, out logBrd_move1, logTag);
 #endif
 
             //----------------------------------------
@@ -629,10 +589,10 @@ using Grayscale.P370LogGraphiEx.L500Util;
             //                System.Console.WriteLine("komaBETUSusumeruMasusの全要素＝" + Util_List_OneAndMultiEx<Finger, SySet<SyElement>>.CountAllElements(komaBETUSusumeruMasus));
             //#endif
             //#if DEBUG
-            //                string jsaMoveStr = Util_Translator_Move.ToMove(genjo.Node_yomiNext, genjo.Node_yomiNext.Value, errH);
+            //                string jsaMoveStr = Util_Translator_Move.ToMove(genjo.Node_yomiNext, genjo.Node_yomiNext.Value, logTag);
             //                System.Console.WriteLine("[" + jsaMoveStr + "]の駒別置ける升 調べ\n" + Util_List_OneAndMultiEx<Finger, SySet<SyElement>>.Dump(komaBETUSusumeruMasus, genjo.Node_yomiNext.Value.ToKyokumenConst));
             //#endif
-            //Moveseisei_FukasaYusen_Routine.Log2(genjo, logBrd_move1, errH);//ログ試し
+            //Moveseisei_FukasaYusen_Routine.Log2(genjo, logBrd_move1, logTag);//ログ試し
 
 
 
@@ -736,7 +696,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
                         out_logBrd_move1,//ログ？
                         src_Sky.Temezumi,//手済み
                         src_Sky_move,//指し手
-                        errH//ログ
+                        logTag//ログ
                     );
         }
         private static void Log2(

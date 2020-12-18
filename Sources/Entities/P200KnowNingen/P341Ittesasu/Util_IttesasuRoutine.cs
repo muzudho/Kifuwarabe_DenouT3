@@ -418,9 +418,9 @@ namespace Grayscale.P341Ittesasu.L500UtilA
                 //
                 out_food_koma = Util_Starlightable.AsKoma(susunda_Sky_orNull_before.StarlightIndexOf(out_figFoodKoma).Now);
 #if DEBUG
-                if (null != errH.OnAppendLog)
+                if (null != logTag.OnAppendLog)
                 {
-                    errH.OnAppendLog("駒取った=" + out_food_koma.Komasyurui + Environment.NewLine);
+                    logTag.OnAppendLog("駒取った=" + out_food_koma.Komasyurui + Environment.NewLine);
                 }
 #endif
                 //

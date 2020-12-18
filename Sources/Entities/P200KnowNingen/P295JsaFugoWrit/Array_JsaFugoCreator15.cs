@@ -24,7 +24,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
     /// </summary>
     public abstract class Array_JsaFugoCreator15
     {
-        public delegate JsaFugoImpl DELEGATE_CreateJFugo(IMove move, KyokumenWrapper kWrap, ILogTag logTag);
+        public delegate JsaFugoImpl DELEGATE_CreateJFugo(IMove move, KyokumenWrapper kWrap);
 
         public static DELEGATE_CreateJFugo[] ItemMethods
         {
@@ -59,7 +59,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
         }
 
 
-        public static JsaFugoImpl CreateNullKoma(IMove move, KyokumenWrapper kWrap, ILogTag logTag)
+        public static JsaFugoImpl CreateNullKoma(IMove move, KyokumenWrapper kWrap)
         {
             JsaFugoImpl result;
 
@@ -96,7 +96,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
         /// </summary>
         /// <param name="move">移動先、移動元、両方のマス番号</param>
         /// <returns></returns>
-        public static JsaFugoImpl CreateFu(IMove move, KyokumenWrapper kWrap, ILogTag logTag)
+        public static JsaFugoImpl CreateFu(IMove move, KyokumenWrapper kWrap)
         {
             JsaFugoImpl result;
 
@@ -132,7 +132,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             //----------
 
 
-            Fingers kmE; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmE, srcE, src_Sky, dstKoma.Pside, move, logTag);
+            Fingers kmE; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmE, srcE, src_Sky, dstKoma.Pside, move);
 
             if (Util_Sky_BoolQuery.IsDaAction(move))
             {
@@ -143,7 +143,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 migiHidari = MigiHidari.No_Print;
                 daHyoji = DaHyoji.Visible;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcE, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcE, src_Sky))
             {
                 // Ｅにいた
                 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -193,7 +193,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             return result;
         }
 
-        public static JsaFugoImpl CreateKyo(IMove move, KyokumenWrapper kWrap, ILogTag logTag)
+        public static JsaFugoImpl CreateKyo(IMove move, KyokumenWrapper kWrap)
         {
             JsaFugoImpl fugo;
 
@@ -238,7 +238,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             //----------
 
 
-            Fingers kmE; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmE, srcE, src_Sky, dstKoma.Pside, move, logTag);
+            Fingers kmE; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmE, srcE, src_Sky, dstKoma.Pside, move);
 
             if (Util_Sky_BoolQuery.IsDaAction(move))
             {
@@ -249,7 +249,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 migiHidari = MigiHidari.No_Print;
                 daHyoji = DaHyoji.Visible;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcE, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcE, src_Sky))
             {
                 //----------
                 // 移動前はＥだった
@@ -303,7 +303,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             return fugo;
         }
 
-        public static JsaFugoImpl CreateKei(IMove move, KyokumenWrapper kWrap, ILogTag logTag)
+        public static JsaFugoImpl CreateKei(IMove move, KyokumenWrapper kWrap)
         {
             if (kWrap is null) throw new ArgumentNullException(nameof(kWrap));
 
@@ -345,8 +345,8 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             // 競合駒
             //----------
 
-            Fingers kmI; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmI, srcI, src_Sky, dstKoma.Pside, move, logTag);
-            Fingers kmJ; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmJ, srcJ, src_Sky, dstKoma.Pside, move, logTag);
+            Fingers kmI; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmI, srcI, src_Sky, dstKoma.Pside, move);
+            Fingers kmJ; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmJ, srcJ, src_Sky, dstKoma.Pside, move);
 
             if (Util_Sky_BoolQuery.IsDaAction(move))
             {
@@ -357,7 +357,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 migiHidari = MigiHidari.No_Print;
                 daHyoji = DaHyoji.Visible;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcI, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcI, src_Sky))
             {
                 //----------
                 // 移動前はＩだった
@@ -365,7 +365,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.No_Print;
                 migiHidari = MigiHidari.Migi;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcJ, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcJ, src_Sky))
             {
                 //----------
                 // 移動前はＪだった
@@ -419,7 +419,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             return fugo;
         }
 
-        public static JsaFugoImpl CreateGin(IMove move, KyokumenWrapper kWrap, ILogTag logTag)
+        public static JsaFugoImpl CreateGin(IMove move, KyokumenWrapper kWrap)
         {
             JsaFugoImpl fugo;
 
@@ -457,11 +457,11 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             // 競合駒
             //----------
 
-            Fingers kmB; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmB, srcB, src_Sky, dstKoma.Pside, move, logTag);
-            Fingers kmD; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmD, srcD, src_Sky, dstKoma.Pside, move, logTag);
-            Fingers kmE; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmE, srcE, src_Sky, dstKoma.Pside, move, logTag);
-            Fingers kmF; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmF, srcF, src_Sky, dstKoma.Pside, move, logTag);
-            Fingers kmH; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmH, srcH, src_Sky, dstKoma.Pside, move, logTag);
+            Fingers kmB; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmB, srcB, src_Sky, dstKoma.Pside, move);
+            Fingers kmD; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmD, srcD, src_Sky, dstKoma.Pside, move);
+            Fingers kmE; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmE, srcE, src_Sky, dstKoma.Pside, move);
+            Fingers kmF; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmF, srcF, src_Sky, dstKoma.Pside, move);
+            Fingers kmH; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmH, srcH, src_Sky, dstKoma.Pside, move);
 
             if (Util_Sky_BoolQuery.IsDaAction(move))
             {
@@ -472,7 +472,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 migiHidari = MigiHidari.No_Print;
                 daHyoji = DaHyoji.Visible;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcB, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcB, src_Sky))
             {
                 // 移動前はＢだった
                 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -480,7 +480,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Hiku;
                 migiHidari = MigiHidari.Migi;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcD, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcD, src_Sky))
             {
                 // 移動前はＤだった
                 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -488,7 +488,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Agaru;
                 migiHidari = MigiHidari.Migi;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcE, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcE, src_Sky))
             {
                 // 移動前はＥだった
                 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -496,7 +496,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Agaru;
                 migiHidari = MigiHidari.Sugu;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcF, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcF, src_Sky))
             {
                 // 移動前はＦだった
                 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -504,7 +504,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Agaru;
                 migiHidari = MigiHidari.Hidari;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcH, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcH, src_Sky))
             {
                 // 移動前はＨだった
                 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -590,7 +590,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             return fugo;
         }
 
-        public static JsaFugoImpl CreateKin(IMove move, KyokumenWrapper kWrap, ILogTag logTag)
+        public static JsaFugoImpl CreateKin(IMove move, KyokumenWrapper kWrap)
         {
             JsaFugoImpl fugo;
 
@@ -599,7 +599,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             NariNarazu nari;
             DaHyoji daHyoji;
 
-            Array_JsaFugoCreator15.CreateKin_static(move, kWrap, out migiHidari, out agaruHiku, out nari, out daHyoji, logTag);
+            Array_JsaFugoCreator15.CreateKin_static(move, kWrap, out migiHidari, out agaruHiku, out nari, out daHyoji);
 
             RO_Star koma = Util_Starlightable.AsKoma(move.LongTimeAgo);
 
@@ -617,8 +617,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
         public static void CreateKin_static(
             IMove move,//移動先、移動元、両方のマス番号
             KyokumenWrapper kWrap,
-            out MigiHidari migiHidari, out AgaruHiku agaruHiku, out NariNarazu nari, out DaHyoji daHyoji,
-            ILogTag logTag
+            out MigiHidari migiHidari, out AgaruHiku agaruHiku, out NariNarazu nari, out DaHyoji daHyoji
             )
         {
             SkyConst src_Sky = kWrap.KyokumenConst;
@@ -652,12 +651,12 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             // 競合駒
             //----------
 
-            Fingers kmA; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmA, srcA, src_Sky, koma.Pside, move, logTag);
-            Fingers kmC; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmC, srcC, src_Sky, koma.Pside, move, logTag);
-            Fingers kmD; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmD, srcD, src_Sky, koma.Pside, move, logTag);
-            Fingers kmE; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmE, srcE, src_Sky, koma.Pside, move, logTag);
-            Fingers kmF; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmF, srcF, src_Sky, koma.Pside, move, logTag);
-            Fingers kmG; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmG, srcG, src_Sky, koma.Pside, move, logTag);
+            Fingers kmA; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmA, srcA, src_Sky, koma.Pside, move);
+            Fingers kmC; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmC, srcC, src_Sky, koma.Pside, move);
+            Fingers kmD; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmD, srcD, src_Sky, koma.Pside, move);
+            Fingers kmE; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmE, srcE, src_Sky, koma.Pside, move);
+            Fingers kmF; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmF, srcF, src_Sky, koma.Pside, move);
+            Fingers kmG; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmG, srcG, src_Sky, koma.Pside, move);
 
 
             if (Util_Sky_BoolQuery.IsDaAction(move))
@@ -669,7 +668,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 migiHidari = MigiHidari.No_Print;
                 daHyoji = DaHyoji.Visible;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcA, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcA, src_Sky))
             {
                 //----------
                 // 移動前はＡだった
@@ -677,7 +676,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Hiku;
                 migiHidari = MigiHidari.No_Print;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcC, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcC, src_Sky))
             {
                 //----------
                 // 移動前はＣだった
@@ -685,7 +684,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Yoru;
                 migiHidari = MigiHidari.Migi;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcF, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcF, src_Sky))
             {
                 //----------
                 // 移動前はＤだった
@@ -693,7 +692,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Agaru;
                 migiHidari = MigiHidari.Hidari;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcE, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcE, src_Sky))
             {
                 //----------
                 // 移動前はＥだった
@@ -701,7 +700,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Agaru;
                 migiHidari = MigiHidari.Sugu;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcD, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcD, src_Sky))
             {
                 //----------
                 // 移動前はＦだった
@@ -709,7 +708,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Agaru;
                 migiHidari = MigiHidari.Migi;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcG, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcG, src_Sky))
             {
                 //----------
                 // 移動前はＧだった
@@ -776,7 +775,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             nari = NariNarazu.CTRL_SONOMAMA;
         }
 
-        public static JsaFugoImpl CreateOh(IMove move, KyokumenWrapper kWrap, ILogTag logTag)
+        public static JsaFugoImpl CreateOh(IMove move, KyokumenWrapper kWrap)
         {
             JsaFugoImpl fugo;
 
@@ -823,7 +822,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             return fugo;
         }
 
-        public static JsaFugoImpl CreateHisya(IMove move, KyokumenWrapper kWrap, ILogTag logTag)
+        public static JsaFugoImpl CreateHisya(IMove move, KyokumenWrapper kWrap)
         {
             JsaFugoImpl fugo;
 
@@ -889,10 +888,10 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             // 棋譜の現局面：競合駒
             //----------
 
-            Fingers kmA; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmA, srcA, src_Sky, dstKoma.Pside, move, logTag);
-            Fingers kmC; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmC, srcC, src_Sky, dstKoma.Pside, move, logTag);
-            Fingers kmE; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmE, srcE, src_Sky, dstKoma.Pside, move, logTag);
-            Fingers kmG; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmG, srcG, src_Sky, dstKoma.Pside, move, logTag);
+            Fingers kmA; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmA, srcA, src_Sky, dstKoma.Pside, move);
+            Fingers kmC; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmC, srcC, src_Sky, dstKoma.Pside, move);
+            Fingers kmE; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmE, srcE, src_Sky, dstKoma.Pside, move);
+            Fingers kmG; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmG, srcG, src_Sky, dstKoma.Pside, move);
 
             if (Util_Sky_BoolQuery.IsDaAction(move))
             {
@@ -903,7 +902,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 migiHidari = MigiHidari.No_Print;
                 daHyoji = DaHyoji.Visible;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcA, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcA, src_Sky))
             {
                 //----------
                 // Ａにいた
@@ -911,7 +910,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Hiku;
                 migiHidari = MigiHidari.No_Print;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcC, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcC, src_Sky))
             {
                 //----------
                 // Ｃにいた
@@ -919,7 +918,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Yoru;
                 migiHidari = MigiHidari.Migi;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcE, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcE, src_Sky))
             {
                 //----------
                 // Ｅにいた
@@ -927,7 +926,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Agaru;
                 migiHidari = MigiHidari.No_Print;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcG, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcG, src_Sky))
             {
                 //----------
                 // Ｇにいた
@@ -990,7 +989,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             return fugo;
         }
 
-        public static JsaFugoImpl CreateKaku(IMove move, KyokumenWrapper kWrap, ILogTag logTag)
+        public static JsaFugoImpl CreateKaku(IMove move, KyokumenWrapper kWrap)
         {
             JsaFugoImpl fugo;
 
@@ -1056,10 +1055,10 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             // 競合駒
             //----------
 
-            Fingers kmB; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmB, srcB, src_Sky, dstKoma.Pside, move, logTag);
-            Fingers kmD; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmD, srcD, src_Sky, dstKoma.Pside, move, logTag);
-            Fingers kmF; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmF, srcF, src_Sky, dstKoma.Pside, move, logTag);
-            Fingers kmH; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmH, srcH, src_Sky, dstKoma.Pside, move, logTag);
+            Fingers kmB; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmB, srcB, src_Sky, dstKoma.Pside, move);
+            Fingers kmD; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmD, srcD, src_Sky, dstKoma.Pside, move);
+            Fingers kmF; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmF, srcF, src_Sky, dstKoma.Pside, move);
+            Fingers kmH; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmH, srcH, src_Sky, dstKoma.Pside, move);
 
 
             if (Util_Sky_BoolQuery.IsDaAction(move))
@@ -1071,7 +1070,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 migiHidari = MigiHidari.No_Print;
                 daHyoji = DaHyoji.Visible;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcB, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcB, src_Sky))
             {
                 //----------
                 // 移動前はＢだった
@@ -1079,7 +1078,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Hiku;
                 migiHidari = MigiHidari.Migi;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcD, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcD, src_Sky))
             {
                 //----------
                 // 移動前はＤだった
@@ -1087,7 +1086,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Agaru;
                 migiHidari = MigiHidari.Migi;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcF, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcF, src_Sky))
             {
                 //----------
                 // 移動前はＦだった
@@ -1095,7 +1094,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Agaru;
                 migiHidari = MigiHidari.Hidari;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcH, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcH, src_Sky))
             {
                 //----------
                 // 移動前はＨだった
@@ -1157,7 +1156,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             return fugo;
         }
 
-        public static JsaFugoImpl CreateRyu(IMove move, KyokumenWrapper kWrap, ILogTag logTag)
+        public static JsaFugoImpl CreateRyu(IMove move, KyokumenWrapper kWrap)
         {
             JsaFugoImpl fugo;
 
@@ -1226,14 +1225,14 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             // 競合駒
             //----------
 
-            Fingers kmA; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmA, srcA, src_Sky, dstKoma.Pside, move, logTag);
-            Fingers kmB; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmB, srcB, src_Sky, dstKoma.Pside, move, logTag);
-            Fingers kmC; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmC, srcC, src_Sky, dstKoma.Pside, move, logTag);
-            Fingers kmD; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmD, srcD, src_Sky, dstKoma.Pside, move, logTag);
-            Fingers kmE; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmE, srcE, src_Sky, dstKoma.Pside, move, logTag);
-            Fingers kmF; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmF, srcF, src_Sky, dstKoma.Pside, move, logTag);
-            Fingers kmG; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmG, srcG, src_Sky, dstKoma.Pside, move, logTag);
-            Fingers kmH; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmH, srcH, src_Sky, dstKoma.Pside, move, logTag);
+            Fingers kmA; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmA, srcA, src_Sky, dstKoma.Pside, move);
+            Fingers kmB; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmB, srcB, src_Sky, dstKoma.Pside, move);
+            Fingers kmC; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmC, srcC, src_Sky, dstKoma.Pside, move);
+            Fingers kmD; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmD, srcD, src_Sky, dstKoma.Pside, move);
+            Fingers kmE; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmE, srcE, src_Sky, dstKoma.Pside, move);
+            Fingers kmF; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmF, srcF, src_Sky, dstKoma.Pside, move);
+            Fingers kmG; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmG, srcG, src_Sky, dstKoma.Pside, move);
+            Fingers kmH; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmH, srcH, src_Sky, dstKoma.Pside, move);
 
 
             if (Util_Sky_BoolQuery.IsDaAction(move))
@@ -1245,7 +1244,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 migiHidari = MigiHidari.No_Print;
                 daHyoji = DaHyoji.Visible;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcA, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcA, src_Sky))
             {
                 //----------
                 // 移動前はＡだった
@@ -1253,7 +1252,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Hiku;
                 migiHidari = MigiHidari.No_Print;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcB, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcB, src_Sky))
             {
                 //----------
                 // 移動前はＢだった
@@ -1261,7 +1260,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Hiku;
                 migiHidari = MigiHidari.Migi;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcC, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcC, src_Sky))
             {
                 //----------
                 // 移動前はＣだった
@@ -1269,7 +1268,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Yoru;
                 migiHidari = MigiHidari.Migi;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcD, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcD, src_Sky))
             {
                 //----------
                 // 移動前はＤだった
@@ -1277,7 +1276,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Agaru;
                 migiHidari = MigiHidari.Migi;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcE, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcE, src_Sky))
             {
                 //----------
                 // 移動前はＥだった
@@ -1285,7 +1284,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Agaru;
                 migiHidari = MigiHidari.No_Print;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcF, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcF, src_Sky))
             {
                 //----------
                 // 移動前はＦだった
@@ -1293,7 +1292,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Agaru;
                 migiHidari = MigiHidari.Hidari;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcG, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcG, src_Sky))
             {
                 //----------
                 // 移動前はＧだった
@@ -1301,7 +1300,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Yoru;
                 migiHidari = MigiHidari.Hidari;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcH, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcH, src_Sky))
             {
                 //----------
                 // 移動前はＨだった
@@ -1352,7 +1351,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             return fugo;
         }
 
-        public static JsaFugoImpl CreateUma(IMove move, KyokumenWrapper kWrap, ILogTag logTag)
+        public static JsaFugoImpl CreateUma(IMove move, KyokumenWrapper kWrap)
         {
             JsaFugoImpl fugo;
 
@@ -1423,14 +1422,14 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             //----------
 
 
-            Fingers kmA; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmA, srcA, src_Sky, dstKoma.Pside, move, logTag);
-            Fingers kmB; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmB, srcB, src_Sky, dstKoma.Pside, move, logTag);
-            Fingers kmC; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmC, srcC, src_Sky, dstKoma.Pside, move, logTag);
-            Fingers kmD; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmD, srcD, src_Sky, dstKoma.Pside, move, logTag);
-            Fingers kmE; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmE, srcE, src_Sky, dstKoma.Pside, move, logTag);
-            Fingers kmF; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmF, srcF, src_Sky, dstKoma.Pside, move, logTag);
-            Fingers kmG; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmG, srcG, src_Sky, dstKoma.Pside, move, logTag);
-            Fingers kmH; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmH, srcH, src_Sky, dstKoma.Pside, move, logTag);
+            Fingers kmA; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmA, srcA, src_Sky, dstKoma.Pside, move);
+            Fingers kmB; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmB, srcB, src_Sky, dstKoma.Pside, move);
+            Fingers kmC; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmC, srcC, src_Sky, dstKoma.Pside, move);
+            Fingers kmD; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmD, srcD, src_Sky, dstKoma.Pside, move);
+            Fingers kmE; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmE, srcE, src_Sky, dstKoma.Pside, move);
+            Fingers kmF; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmF, srcF, src_Sky, dstKoma.Pside, move);
+            Fingers kmG; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmG, srcG, src_Sky, dstKoma.Pside, move);
+            Fingers kmH; Util_Sky_FingersQueryEx.Fingers_EachSrcNow(out kmH, srcH, src_Sky, dstKoma.Pside, move);
 
             if (Util_Sky_BoolQuery.IsDaAction(move))
             {
@@ -1441,7 +1440,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 migiHidari = MigiHidari.No_Print;
                 daHyoji = DaHyoji.Visible;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcB, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcB, src_Sky))
             {
                 //----------
                 // 移動前はＢだった
@@ -1449,7 +1448,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Hiku;
                 migiHidari = MigiHidari.Migi;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcD, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcD, src_Sky))
             {
                 //----------
                 // 移動前はＤだった
@@ -1457,7 +1456,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Agaru;
                 migiHidari = MigiHidari.Migi;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcF, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcF, src_Sky))
             {
                 //----------
                 // 移動前はＦだった
@@ -1465,7 +1464,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Agaru;
                 migiHidari = MigiHidari.Hidari;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcH, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcH, src_Sky))
             {
                 //----------
                 // 移動前はＨだった
@@ -1473,7 +1472,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Hiku;
                 migiHidari = MigiHidari.Hidari;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcA, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcA, src_Sky))
             {
                 //----------
                 // 移動前はＡだった
@@ -1481,7 +1480,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Hiku;
                 migiHidari = MigiHidari.No_Print;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcC, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcC, src_Sky))
             {
                 //----------
                 // 移動前はＣだった
@@ -1489,7 +1488,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Yoru;
                 migiHidari = MigiHidari.Migi;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcE, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcE, src_Sky))
             {
                 //----------
                 // 移動前はＥだった
@@ -1497,7 +1496,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
                 agaruHiku = AgaruHiku.Agaru;
                 migiHidari = MigiHidari.No_Print;
             }
-            else if (Util_Sky_BoolQuery.ExistsIn(src, srcG, src_Sky, logTag))
+            else if (Util_Sky_BoolQuery.ExistsIn(src, srcG, src_Sky))
             {
                 //----------
                 // 移動前はＧだった
@@ -1548,7 +1547,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             return fugo;
         }
 
-        public static JsaFugoImpl CreateTokin(IMove move, KyokumenWrapper kWrap, ILogTag logTag)
+        public static JsaFugoImpl CreateTokin(IMove move, KyokumenWrapper kWrap)
         {
             JsaFugoImpl fugo;
 
@@ -1557,7 +1556,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             NariNarazu nari;
             DaHyoji daHyoji;
 
-            Array_JsaFugoCreator15.CreateKin_static(move, kWrap, out migiHidari, out agaruHiku, out nari, out daHyoji, logTag);
+            Array_JsaFugoCreator15.CreateKin_static(move, kWrap, out migiHidari, out agaruHiku, out nari, out daHyoji);
 
             RO_Star koma = Util_Starlightable.AsKoma(move.LongTimeAgo);
 
@@ -1572,14 +1571,14 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             return fugo;
         }
 
-        public static JsaFugoImpl CreateNariKyo(IMove move, KyokumenWrapper kWrap, ILogTag logTag)
+        public static JsaFugoImpl CreateNariKyo(IMove move, KyokumenWrapper kWrap)
         {
             MigiHidari migiHidari;
             AgaruHiku agaruHiku;
             NariNarazu nari;
             DaHyoji daHyoji;
 
-            Array_JsaFugoCreator15.CreateKin_static(move, kWrap, out migiHidari, out agaruHiku, out nari, out daHyoji, logTag);
+            Array_JsaFugoCreator15.CreateKin_static(move, kWrap, out migiHidari, out agaruHiku, out nari, out daHyoji);
 
             JsaFugoImpl fugo;
 
@@ -1596,7 +1595,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             return fugo;
         }
 
-        public static JsaFugoImpl CreateNariKei(IMove move, KyokumenWrapper kWrap, ILogTag logTag)
+        public static JsaFugoImpl CreateNariKei(IMove move, KyokumenWrapper kWrap)
         {
             JsaFugoImpl fugo;
 
@@ -1607,7 +1606,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
 
             RO_Star koma = Util_Starlightable.AsKoma(move.LongTimeAgo);
 
-            Array_JsaFugoCreator15.CreateKin_static(move, kWrap, out migiHidari, out agaruHiku, out nari, out daHyoji, logTag);
+            Array_JsaFugoCreator15.CreateKin_static(move, kWrap, out migiHidari, out agaruHiku, out nari, out daHyoji);
 
             fugo = new JsaFugoImpl(
                 Util_Komahaiyaku184.Syurui(koma.Haiyaku),//「▲２二角成」のとき、dstだと馬になってしまう。srcの角を使う。
@@ -1620,7 +1619,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             return fugo;
         }
 
-        public static JsaFugoImpl CreateNariGin(IMove move, KyokumenWrapper kWrap, ILogTag logTag)
+        public static JsaFugoImpl CreateNariGin(IMove move, KyokumenWrapper kWrap)
         {
             JsaFugoImpl fugo;
 
@@ -1632,7 +1631,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             NariNarazu nari;
             DaHyoji daHyoji;
 
-            Array_JsaFugoCreator15.CreateKin_static(move, kWrap, out migiHidari, out agaruHiku, out nari, out daHyoji, logTag);
+            Array_JsaFugoCreator15.CreateKin_static(move, kWrap, out migiHidari, out agaruHiku, out nari, out daHyoji);
 
             fugo = new JsaFugoImpl(
                 Util_Komahaiyaku184.Syurui(srcKoma.Haiyaku),//「▲２二角成」のとき、dstだと馬になってしまう。srcの角を使う。
@@ -1645,7 +1644,7 @@ namespace Grayscale.P295_JsaFugoWrit.L500Writer
             return fugo;
         }
 
-        public static JsaFugoImpl CreateErrorKoma(IMove move, KyokumenWrapper kWrap, ILogTag logTag)
+        public static JsaFugoImpl CreateErrorKoma(IMove move, KyokumenWrapper kWrap)
         {
             JsaFugoImpl fugo;
 

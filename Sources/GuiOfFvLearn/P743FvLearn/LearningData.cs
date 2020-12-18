@@ -52,14 +52,14 @@ using Grayscale.P542Scoreing.I250Args;
         /// <summary>
         /// 局面PNG画像書き出し。
         /// </summary>
-        void WritePng(ILogTag errH);
+        void WritePng();
 
 
         /// <summary>
         /// 合法手を一覧します。
         /// </summary>
         /// <param name="uc_Main"></param>
-        void Aaa_CreateNextNodes_Gohosyu( EvaluationArgs args, ILogTag errH);
+        void Aaa_CreateNextNodes_Gohosyu( EvaluationArgs args);
 
         /// <summary>
         /// 全合法手をダンプ。デバッグ用途。
@@ -84,7 +84,7 @@ using Grayscale.P542Scoreing.I250Args;
         /// <summary>
         /// 合法手一覧を作成したい。
         /// </summary>
-        void Aa_Yomi( IMove move, ILogTag errH);
+        void Aa_Yomi( IMove move);
 
     }
 }

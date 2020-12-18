@@ -922,7 +922,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
                 Fingers komas = Util_Sky_FingersQuery.InOkibaPsideKomasyuruiNow(
                     siteiNode.Value.KyokumenConst, srcOkiba1, pside, srcSyurui);//(2015-08-05 01:04)変更
                 //Fingers komas = Util_Sky051Fingers.Fingers_ByOkibaPsideSyuruiNow_OldSpec(
-                //    siteiNode.Value.ToKyokumenConst, srcOkiba1, pside, srcSyurui, errH);
+                //    siteiNode.Value.ToKyokumenConst, srcOkiba1, pside, srcSyurui, logTag);
 
                 if (0 < komas.Count)
                 {
@@ -983,7 +983,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
                 Fingers daiKomaFgs = Util_Sky_FingersQuery.InOkibaPsideKomasyuruiNow(
                     siteiNode.Value.KyokumenConst, srcOkiba1, pside, srcSyurui);//(2015-08-05 01:04)変更
                 //Fingers daiKomaFgs = Util_Sky051Fingers.Fingers_ByOkibaPsideSyuruiNow_OldSpec(
-                //    siteiNode.Value.ToKyokumenConst, srcOkiba1, pside, srcSyurui, errH);//(2014-10-04 12:46)変更
+                //    siteiNode.Value.ToKyokumenConst, srcOkiba1, pside, srcSyurui, logTag);//(2014-10-04 12:46)変更
 
 
                 Debug.Assert(0 < daiKomaFgs.Count, "フィンガーズが 1個未満。 srcOkiba1=[" + srcOkiba1 + "] pside=[" + pside + "] srcSyurui=[" + srcSyurui + "]");

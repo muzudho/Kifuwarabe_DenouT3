@@ -18,19 +18,17 @@ namespace Grayscale.P296ConvJsa.L500Converter
         /// </summary>
         /// <param name="node">keyで指し手の指定、かつ、１つ前のノードに移動するのに使います。</param>
         /// <param name="kyokumenWrapper">現局面です。</param>
-        /// <param name="logTag"></param>
         /// <returns></returns>
         public static string ToMoveStrJsa(
-            Node<IMove, KyokumenWrapper> node,
-            //KyokumenWrapper kyokumenWrapper,
-            ILogTag logTag
+            Node<IMove, KyokumenWrapper> node
+            //KyokumenWrapper kyokumenWrapper
             )
         {
             RO_Star koma = Util_Starlightable.AsKoma(((IMove)node.Key).LongTimeAgo);
 
             JsaFugoImpl jsaFugo = Array_JsaFugoCreator15.ItemMethods[(int)Util_Komahaiyaku184.Syurui(koma.Haiyaku)](node.Key,
-                node.Value,// kyokumenWrapper,
-                logTag);//「▲２二角成」なら、馬（dst）ではなくて角（src）。
+                node.Value// kyokumenWrapper,
+                );//「▲２二角成」なら、馬（dst）ではなくて角（src）。
 
             return Util_Translator_JsaFugo.ToString_UseDou(jsaFugo, node);
         }

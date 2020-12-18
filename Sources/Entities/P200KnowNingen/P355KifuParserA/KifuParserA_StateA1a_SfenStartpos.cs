@@ -47,7 +47,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                 {
                     //>>>>> 棋譜が始まります。
 #if DEUBG
-                    errH.Logger.WriteLineAddMemo("（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　ｳﾑ☆　moves 分かるぜ☆");
+                    logTag.Logger.WriteLineAddMemo("（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　ｳﾑ☆　moves 分かるぜ☆");
 #endif
 
                     genjo.InputLine = genjo.InputLine.Substring("moves".Length);

@@ -196,7 +196,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                     if (this.owner.Option_enable_serverNoopable)
                     {
                         bool isTimeoutShutdown_temp;
-                        noopTimer._02_AtEmptyMessage(this.owner, out isTimeoutShutdown_temp,errH);
+                        noopTimer._02_AtEmptyMessage(this.owner, out isTimeoutShutdown_temp,logTag);
                         if (isTimeoutShutdown_temp)
                         {
                             //MessageBox.Show("ループ２でタイムアウトだぜ☆！");
@@ -216,7 +216,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
 #if NOOPABLE
                 if (this.owner.Option_enable_serverNoopable)
                 {
-                    noopTimer._03_AtResponsed(this.owner, line, errH);
+                    noopTimer._03_AtResponsed(this.owner, line, logTag);
                 }
 #endif
 
@@ -464,7 +464,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
 
 
 #if DEBUG
-                this.Log2_Png_Tyokkin(line, (KifuNode)result.Out_newNode_OrNull, errH);
+                this.Log2_Png_Tyokkin(line, (KifuNode)result.Out_newNode_OrNull, logTag);
 #endif
 
                 //------------------------------------------------------------
@@ -539,7 +539,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                     srcMasu_orMinusOne,
                     dstMasu_orMinusOne,
                     foodKoma,
-                    ConvMoveStrSfen.ToMoveStrSfen(kifuNode.Key),//Conv_MoveStr_Jsa.ToMoveStr_Jsa(kifuNode, kifuNode.Value, errH),
+                    ConvMoveStrSfen.ToMoveStrSfen(kifuNode.Key),//Conv_MoveStr_Jsa.ToMoveStr_Jsa(kifuNode, kifuNode.Value, logTag),
                     "",
                     fileName,
                     Util_KifuTreeLogWriter.REPORT_ENVIRONMENT
@@ -681,7 +681,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
 
                 SkyConst src_Sky = this.Kifu.NodeAt(latestTemezumi).Value.KyokumenConst;//現局面
 
-                //errH.Logger.WriteLineAddMemo("将棋サーバー「" + latestTemezumi + "手目、きふわらべ　さんの手番ですよ！」　" + line);
+                //logTag.Logger.WriteLineAddMemo("将棋サーバー「" + latestTemezumi + "手目、きふわらべ　さんの手番ですよ！」　" + line);
 
 
                 //----------------------------------------
@@ -773,8 +773,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                                 {
                                     bestKifuNodeList.Add(this.shogisasi.WA_Bestmove(
                                         isHonshogi,
-                                        this.Kifu,
-                                        logTag)
+                                        this.Kifu)
                                         );
                                 }
 
@@ -826,7 +825,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
 
                                 // ログが重過ぎる☆！
                                 //OwataMinister.WARABE_ENGINE.Logger.WriteLineAddMemo("(Warabe)指し手のチョイス： bestmove＝[" + sfenText + "]" +
-                                //    "　棋譜＝" + KirokuGakari.ToJsaKifuText(this.Kifu, errH));
+                                //    "　棋譜＝" + KirokuGakari.ToJsaKifuText(this.Kifu, logTag));
 
                                 //----------------------------------------
                                 // スコア 試し
@@ -853,7 +852,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                             {
                                 // ログが重過ぎる☆！
                                 //OwataMinister.WARABE_ENGINE.Logger.WriteLineAddMemo("(Warabe)指し手のチョイス： 指し手がないときは、SFENが書けない☆　投了だぜ☆ｗｗ（＞＿＜）" +
-                                //    "　棋譜＝" + KirokuGakari.ToJsaKifuText(this.Kifu, errH));
+                                //    "　棋譜＝" + KirokuGakari.ToJsaKifuText(this.Kifu, logTag));
 
                                 //----------------------------------------
                                 // 投了ｗ！

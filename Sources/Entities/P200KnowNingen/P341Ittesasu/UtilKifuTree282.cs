@@ -138,7 +138,7 @@ namespace Grayscale.P341Ittesasu.L125UtilB
             KifuTree kifu282,
             out Node<ShootingStarlightable, KyokumenWrapper> out_swapedNode,
             string hint,
-            IErrorController errH
+            IErrorController logTag
             )
         {
             out_swapedNode = null;
@@ -175,7 +175,7 @@ namespace Grayscale.P341Ittesasu.L125UtilB
             kifu282.CurNode.Add_ChildNode(Util_Sky278.TranslateMove_StarlightToText(out_swapedNode.Key), out_swapedNode);
             out_swapedNode.ParentNode = kifu282.CurNode;
 
-            errH.Logger.WriteLineAddMemo("リンクトリストの、最終ノードは差し替えられた hint=[" + hint + "] item=[" + Util_Sky278.TranslateMove_StarlightToText(swapedMove) + "]");
+            logTag.Logger.WriteLineAddMemo("リンクトリストの、最終ノードは差し替えられた hint=[" + hint + "] item=[" + Util_Sky278.TranslateMove_StarlightToText(swapedMove) + "]");
         // memberName=[" + memberName + "] sourceFilePath=[" + sourceFilePath + "] sourceLineNumber=[" + sourceLineNumber + "]
 
         gt_EndMethod:

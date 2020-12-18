@@ -24,7 +24,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// </summary>
         /// <param name="masus"></param>
         /// <returns></returns>
-        public static bool ExistsIn(IMoveHalf sl, SySet<SyElement> masus, SkyConst srcSky, ILogTag logTag)
+        public static bool ExistsIn(IMoveHalf sl, SySet<SyElement> masus, SkyConst srcSky)
         {
             bool matched = false;
 

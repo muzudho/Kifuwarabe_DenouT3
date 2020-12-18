@@ -60,7 +60,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                     // 
 
 #if DEBUG
-                    errH.Logger.WriteLineAddMemo("（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　ﾌﾑﾌﾑ... SFEN形式か...☆");
+                    logTag.Logger.WriteLineAddMemo("（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　ﾌﾑﾌﾑ... SFEN形式か...☆");
 #endif
                     genjo.InputLine = genjo.InputLine.Substring("position".Length);
                     genjo.InputLine = genjo.InputLine.Trim();
@@ -78,7 +78,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                 {
 #if DEBUG
                     Playerside pside = model_Taikyoku.Kifu.CurNode.Value.KyokumenConst.KaisiPside;
-                    errH.Logger.WriteLineAddMemo("（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　ﾌﾑﾌﾑ... positionじゃなかったぜ☆　日本式か☆？　SFENでmovesを読んだあとのプログラムに合流させるぜ☆　：　先後＝[" + pside + "]");
+                    logTag.Logger.WriteLineAddMemo("（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　ﾌﾑﾌﾑ... positionじゃなかったぜ☆　日本式か☆？　SFENでmovesを読んだあとのプログラムに合流させるぜ☆　：　先後＝[" + pside + "]");
 #endif
                     nextState = KifuParserA_StateA2_SfenMoves.GetInstance();
                 }

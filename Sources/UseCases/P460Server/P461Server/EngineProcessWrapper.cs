@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace Grayscale.P461Server.I496EngineWrapper
 {
-    public delegate void DELEGATE_ShogiServer_ToEngine(string line, ILogTag errH);
+    public delegate void DELEGATE_ShogiServer_ToEngine(string line, ILogTag logTag);
 
     /// <summary>
     /// 至将棋エンジン 通信インターフェース。

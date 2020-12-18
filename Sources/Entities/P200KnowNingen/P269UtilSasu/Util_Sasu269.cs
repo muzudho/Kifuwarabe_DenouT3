@@ -52,8 +52,7 @@ namespace Grayscale.P269UtilSasu.L500Util
         ///// </summary>
         //public static List<Couple<Finger,Masu>> MovebetuSky_ToKamList(
         //    SkyConst src_Sky_genzai,
-        //    Dictionary<ShootingStarlightable, SkyBuffer> ss,
-        //    LarabeLoggerTag logTag
+        //    Dictionary<ShootingStarlightable, SkyBuffer> ss
         //    )
         //{
         //    List<Couple<Finger, Masu>> kmList = new List<Couple<Finger, Masu>>();

@@ -53,7 +53,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                     //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 #if DEBUG
-                    errH.Logger.WriteLineAddMemo("（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　平手のようなんだぜ☆");
+                    logTag.Logger.WriteLineAddMemo("（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　平手のようなんだぜ☆");
 #endif
 
                     genjo.InputLine = genjo.InputLine.Substring("startpos".Length);

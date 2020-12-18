@@ -48,8 +48,7 @@ namespace Grayscale.P461Server.L250Util
             Model_Taikyoku model_Taikyoku,// Taikyokuの内容をManualへ移す。
             Model_Manual model_Manual,
             Node<IMove, KyokumenWrapper> newNode,
-            out string jsaFugoStr,
-            ILogTag logTag
+            out string jsaFugoStr
             )
         {
             Debug.Assert(null != newNode, "新規ノードがヌル。");
@@ -60,7 +59,7 @@ namespace Grayscale.P461Server.L250Util
             model_Manual.GuiTemezumi = model_Taikyoku.Kifu.CurNode.Value.KyokumenConst.Temezumi;
             model_Manual.GuiPside = model_Taikyoku.Kifu.CurNode.Value.KyokumenConst.KaisiPside;
 
-            jsaFugoStr = ConvMoveStrJsa.ToMoveStrJsa(newNode, logTag);
+            jsaFugoStr = ConvMoveStrJsa.ToMoveStrJsa(newNode);
         }
 
         /// <summary>
@@ -90,7 +89,7 @@ namespace Grayscale.P461Server.L250Util
             [CallerLineNumber] int sourceLineNumber = 0
             )
         {
-            //IErrorController errH = OwataMinister.SERVER_KIFU_YOMITORI;
+            //IErrorController logTag = OwataMinister.SERVER_KIFU_YOMITORI;
 
             bool successful = false;
             KifuParserA_Impl kifuParserA_Impl = new KifuParserA_Impl();
@@ -105,8 +104,8 @@ namespace Grayscale.P461Server.L250Util
                     // 最初はここ
 
 #if DEBUG
-                    errH.Logger.WriteLineAddMemo("(^o^)... ...");
-                    errH.Logger.WriteLineAddMemo("ｻｲｼｮﾊｺｺ☆　：　" + memberName + "." + sourceFilePath + "." + sourceLineNumber);
+                    logTag.Logger.WriteLineAddMemo("(^o^)... ...");
+                    logTag.Logger.WriteLineAddMemo("ｻｲｼｮﾊｺｺ☆　：　" + memberName + "." + sourceFilePath + "." + sourceLineNumber);
 #endif
                     inputLine = kifuParserA_Impl.Execute_Step(
                         ref result,
@@ -137,7 +136,7 @@ namespace Grayscale.P461Server.L250Util
                     {
 #if DEBUG
                         string message = "(^o^)ﾂｷﾞﾊ　ﾋﾗﾃ　ﾏﾀﾊ　ｼﾃｲｷｮｸﾒﾝ　ｦ　ｼｮﾘｼﾀｲ☆ inputLine=[" + inputLine + "]";
-                        errH.Logger.WriteLineAddMemo(message);
+                        logTag.Logger.WriteLineAddMemo(message);
 #endif
 
                         inputLine = kifuParserA_Impl.Execute_Step(
@@ -158,7 +157,7 @@ namespace Grayscale.P461Server.L250Util
 
                     {
 #if DEBUG
-                        errH.Logger.WriteLineAddMemo("(^o^)ﾂｷﾞﾊ　ﾑｰﾌﾞｽ　ｦ　ｼｮﾘｼﾀｲ☆");
+                        logTag.Logger.WriteLineAddMemo("(^o^)ﾂｷﾞﾊ　ﾑｰﾌﾞｽ　ｦ　ｼｮﾘｼﾀｲ☆");
 #endif
 
                         inputLine = kifuParserA_Impl.Execute_Step(
@@ -201,7 +200,7 @@ namespace Grayscale.P461Server.L250Util
                     if (null != result.Out_newNode_OrNull)
                     {
                         string jsaFugoStr;
-                        Util_Functions_Server.SetCurNode_Srv(model_Taikyoku, model_Manual, result.Out_newNode_OrNull, out jsaFugoStr, logTag);
+                        Util_Functions_Server.SetCurNode_Srv(model_Taikyoku, model_Manual, result.Out_newNode_OrNull, out jsaFugoStr);
                     }
 
                     if (genjo.IsBreak())
@@ -234,7 +233,7 @@ namespace Grayscale.P461Server.L250Util
                     // 駒の配置
                     //------------------------------
                     string jsaFugoStr;
-                    Util_Functions_Server.SetCurNode_Srv(model_Taikyoku, model_Manual, parsedKyokumen.KifuNode, out jsaFugoStr, logTag);// GUIに通知するだけ。
+                    Util_Functions_Server.SetCurNode_Srv(model_Taikyoku, model_Manual, parsedKyokumen.KifuNode, out jsaFugoStr);// GUIに通知するだけ。
 
                     ////------------------------------
                     //// 駒を、駒袋から駒台に移動させます。
@@ -302,7 +301,7 @@ namespace Grayscale.P461Server.L250Util
             // 符号
             //------------------------------
             // [巻戻し]ボタン
-            jsaFugoStr = ConvMoveStrJsa.ToMoveStrJsa(removeeLeaf,logTag);
+            jsaFugoStr = ConvMoveStrJsa.ToMoveStrJsa(removeeLeaf);
 
 
 

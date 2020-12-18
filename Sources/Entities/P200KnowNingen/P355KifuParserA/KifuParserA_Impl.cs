@@ -41,13 +41,13 @@ namespace Grayscale.P355_KifuParserA.L500Parser
             [CallerLineNumber] int sourceLineNumber = 0
             )
         {
-            //shogiGui_Base.Model_PnlTaikyoku.Kifu.AssertPside(shogiGui_Base.Model_PnlTaikyoku.Kifu.CurNode, "Execute_Step",errH);
+            //shogiGui_Base.Model_PnlTaikyoku.Kifu.AssertPside(shogiGui_Base.Model_PnlTaikyoku.Kifu.CurNode, "Execute_Step",logTag);
 
             try
             {
 #if DEBUG
-                errH.Logger.WriteLineAddMemo("┏━━━━━┓(^o^)");
-                errH.Logger.WriteLineAddMemo("わたしは　" + this.State.GetType().Name + "　の　Execute_Step　だぜ☆　：　呼出箇所＝" + memberName + "." + sourceFilePath + "." + sourceLineNumber);
+                logTag.Logger.WriteLineAddMemo("┏━━━━━┓(^o^)");
+                logTag.Logger.WriteLineAddMemo("わたしは　" + this.State.GetType().Name + "　の　Execute_Step　だぜ☆　：　呼出箇所＝" + memberName + "." + sourceFilePath + "." + sourceLineNumber);
 #endif
 
                 KifuParserA_State nextState;
@@ -84,8 +84,8 @@ namespace Grayscale.P355_KifuParserA.L500Parser
             try
             {
 #if DEBUG
-                errH.Logger.WriteLineAddMemo("┏━━━━━━━━━━┓");
-                errH.Logger.WriteLineAddMemo("わたしは　" + this.State.GetType().Name + "　の　Execute_All　だぜ☆　：　呼出箇所＝" + memberName + "." + sourceFilePath + "." + sourceLineNumber);
+                logTag.Logger.WriteLineAddMemo("┏━━━━━━━━━━┓");
+                logTag.Logger.WriteLineAddMemo("わたしは　" + this.State.GetType().Name + "　の　Execute_All　だぜ☆　：　呼出箇所＝" + memberName + "." + sourceFilePath + "." + sourceLineNumber);
 #endif
 
                 KifuParserA_State nextState = this.State;
@@ -97,7 +97,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                         // FIXME: コンピューターが先手のとき、ここにくる？
 
                         // 異常時。
-                        //FIXME: errH.Logger.WriteLineError("＼（＾ｏ＾）／「" + genjo.InputLine + "」入力がない3☆！　終わるぜ☆");
+                        //FIXME: logTag.Logger.WriteLineError("＼（＾ｏ＾）／「" + genjo.InputLine + "」入力がない3☆！　終わるぜ☆");
                         genjo.ToBreak_Abnormal();
                         goto gt_NextLoop1;
                     }
@@ -123,7 +123,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                 //    this.Delegate_OnChangeSky_Im(
                 //        model_PnlTaikyoku,
                 //        genjo,
-                //        errH
+                //        logTag
                 //        );
                 //}
 

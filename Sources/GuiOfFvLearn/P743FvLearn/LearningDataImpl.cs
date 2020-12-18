@@ -126,7 +126,7 @@ namespace Grayscale.P743FvLearn.L250Learn
         public void ChangeKyokumenPng(Uc_Main uc_Main)
         {
             uc_Main.PctKyokumen.Image = null;//掴んでいる画像ファイルを放します。
-            this.WritePng(LogTags.Learner);
+            this.WritePng();
 
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
@@ -169,7 +169,7 @@ namespace Grayscale.P743FvLearn.L250Learn
         /// <summary>
         /// 合法手一覧を作成したい。
         /// </summary>
-        public void Aa_Yomi(IMove move, ILogTag errH)
+        public void Aa_Yomi(IMove move)
         {
             //----------------------------------------
             // 合法手のNextNodesを作成します。
@@ -194,7 +194,7 @@ namespace Grayscale.P743FvLearn.L250Learn
 #endif
                     );
             }
-            this.Aaa_CreateNextNodes_Gohosyu(args, errH);
+            this.Aaa_CreateNextNodes_Gohosyu(args);
 #if DEBUG
             sw2.Stop();
             Console.WriteLine("合法手作成　　　 　= {0}", sw2.Elapsed);
@@ -206,10 +206,10 @@ namespace Grayscale.P743FvLearn.L250Learn
             //// 内部データ
             ////
             //{
-            //    if (null != errH.Dlgt_OnNaibuDataClear_or_Null)
+            //    if (null != logTag.Dlgt_OnNaibuDataClear_or_Null)
             //    {
-            //        errH.Dlgt_OnNaibuDataClear_or_Null();
-            //        errH.Dlgt_OnNaibuDataAppend_or_Null(this.DumpToAllGohosyu(this.Kifu.CurNode.Value.ToKyokumenConst));
+            //        logTag.Dlgt_OnNaibuDataClear_or_Null();
+            //        logTag.Dlgt_OnNaibuDataAppend_or_Null(this.DumpToAllGohosyu(this.Kifu.CurNode.Value.ToKyokumenConst));
             //    }
             //}
         }
@@ -238,7 +238,7 @@ namespace Grayscale.P743FvLearn.L250Learn
                 sb.Append("　");
 
                 // 升00
-                sb.Append(Conv_Sy.Query_Word( koma.Masu.Bitfield));
+                sb.Append(Conv_Sy.Query_Word(koma.Masu.Bitfield));
                 sb.Append("　");
 
                 // 歩、香…
@@ -253,14 +253,14 @@ namespace Grayscale.P743FvLearn.L250Learn
         /// <summary>
         /// 局面PNG画像書き出し。
         /// </summary>
-        public void WritePng(ILogTag logTag)
+        public void WritePng()
         {
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
 
             int srcMasu_orMinusOne = -1;
             int dstMasu_orMinusOne = -1;
-            if(null!=this.Kifu.CurNode.Key)
+            if (null != this.Kifu.CurNode.Key)
             {
                 srcMasu_orMinusOne = Conv_SyElement.ToMasuNumber(((RO_Star)this.Kifu.CurNode.Key.LongTimeAgo).Masu);
                 dstMasu_orMinusOne = Conv_SyElement.ToMasuNumber(((RO_Star)this.Kifu.CurNode.Key.Now).Masu);
@@ -305,35 +305,29 @@ namespace Grayscale.P743FvLearn.L250Learn
         /// </summary>
         /// <param name="uc_Main"></param>
         public void Aaa_CreateNextNodes_Gohosyu(
-            EvaluationArgs args,
-            ILogTag logTag)
+            EvaluationArgs args)
         {
-            try
+            //
+            // 指し手生成ルーチンで、棋譜ツリーを作ります。
+            //
+            bool isHonshogi = true;
+            float alphabeta_otherBranchDecidedValue;
+            switch (((KifuNode)this.Kifu.CurNode).Value.KyokumenConst.KaisiPside)
             {
-                //
-                // 指し手生成ルーチンで、棋譜ツリーを作ります。
-                //
-                bool isHonshogi = true;
-                float alphabeta_otherBranchDecidedValue;
-                switch (((KifuNode)this.Kifu.CurNode).Value.KyokumenConst.KaisiPside)
-                {
-                    case Playerside.P1:
-                        // 2プレイヤーはまだ、小さな数を見つけていないという設定。
-                        alphabeta_otherBranchDecidedValue = float.MaxValue;
-                        break;
-                    case Playerside.P2:
-                        // 1プレイヤーはまだ、大きな数を見つけていないという設定。
-                        alphabeta_otherBranchDecidedValue = float.MinValue;
-                        break;
-                    default: throw new Exception("探索直前、プレイヤーサイドのエラー");
-                }
-
-
-                new Tansaku_FukasaYusen_Routine().WAA_Yomu_Start(
-                    this.Kifu, isHonshogi, Mode_Tansaku.Learning, alphabeta_otherBranchDecidedValue, args, logTag);
+                case Playerside.P1:
+                    // 2プレイヤーはまだ、小さな数を見つけていないという設定。
+                    alphabeta_otherBranchDecidedValue = float.MaxValue;
+                    break;
+                case Playerside.P2:
+                    // 1プレイヤーはまだ、大きな数を見つけていないという設定。
+                    alphabeta_otherBranchDecidedValue = float.MinValue;
+                    break;
+                default: throw new Exception("探索直前、プレイヤーサイドのエラー");
             }
-            catch (Exception ex) { Logger.Panic(logTag, ex, "棋譜ツリーを作っていたときです。"); throw; }
 
+
+            new Tansaku_FukasaYusen_Routine().WAA_Yomu_Start(
+                this.Kifu, isHonshogi, Mode_Tansaku.Learning, alphabeta_otherBranchDecidedValue, args);
         }
 
         /// <summary>

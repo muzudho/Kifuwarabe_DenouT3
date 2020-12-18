@@ -53,7 +53,7 @@ namespace Grayscale.P461Server.L497EngineClient
             {
                 //>>>>>>>>>> メッセージを受け取りました。
 #if DEBUG
-                errH.Logger.WriteLineS(line);
+                logTag.Logger.WriteLineS(line);
 #endif
 
                 if("noop" == line)

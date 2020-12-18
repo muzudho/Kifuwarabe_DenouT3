@@ -29,7 +29,7 @@ namespace Grayscale.P542Scoreing.L061Util
             //KifuTree kifu_forAssert,
             KyokumenPngEnvironment reportEnvironment,
             KaisetuBoards logF_kiki,
-            IErrorController errH
+            IErrorController logTag
             )
         {
             //
@@ -56,7 +56,7 @@ namespace Grayscale.P542Scoreing.L061Util
                         logBrd_move1,
                         0,//現在の手済み
                         niniNode.Key,
-                        errH
+                        logTag
                     )
 //#endif
                 );

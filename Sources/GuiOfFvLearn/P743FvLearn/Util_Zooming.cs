@@ -17,7 +17,7 @@ namespace Grayscale.P743FvLearn.L430Zooming
         /// 
         /// 順位を点数に変換します。
         /// </summary>
-        public static void ZoomTo_FvParamRange(FeatureVector fv, ILogTag errH)
+        public static void ZoomTo_FvParamRange(FeatureVector fv, ILogTag logTag)
         {
             float negative_length;// 負の数の一番小さな値の絶対値。
             float positive_length;// 正の数の一番大きな値の絶対値。
@@ -78,14 +78,14 @@ namespace Grayscale.P743FvLearn.L430Zooming
                     longest_positive = false;
                 }
 #if DEBUG
-                errH.Logger.WriteLineAddMemo("topology");
-                errH.Logger.WriteLineAddMemo("   negative_length =" + negative_length);
-                errH.Logger.WriteLineAddMemo("   positive_length =" + positive_length);
-                errH.Logger.WriteLineAddMemo("   longest_positive=" + longest_positive);
-                errH.Logger.WriteLineAddMemo("   negative_average=" + (negative_items == 0 ? 0 : negative_total / negative_items));
-                errH.Logger.WriteLineAddMemo("   positive_average=" + (positive_items == 0 ? 0 : positive_total / positive_items));
-                errH.Logger.WriteLineAddMemo("   notZero         =" + notZero);
-                errH.Logger.WriteLineAddMemo("----------------------------------------");
+                logTag.Logger.WriteLineAddMemo("topology");
+                logTag.Logger.WriteLineAddMemo("   negative_length =" + negative_length);
+                logTag.Logger.WriteLineAddMemo("   positive_length =" + positive_length);
+                logTag.Logger.WriteLineAddMemo("   longest_positive=" + longest_positive);
+                logTag.Logger.WriteLineAddMemo("   negative_average=" + (negative_items == 0 ? 0 : negative_total / negative_items));
+                logTag.Logger.WriteLineAddMemo("   positive_average=" + (positive_items == 0 ? 0 : positive_total / positive_items));
+                logTag.Logger.WriteLineAddMemo("   notZero         =" + notZero);
+                logTag.Logger.WriteLineAddMemo("----------------------------------------");
 #endif
             }
 
@@ -152,15 +152,15 @@ namespace Grayscale.P743FvLearn.L430Zooming
                 longest_positive = false;
             }
 #if DEBUG
-            errH.Logger.WriteLineAddMemo("end");
-            errH.Logger.WriteLineAddMemo("   negative_length =" + negative_length);
-            errH.Logger.WriteLineAddMemo("   positive_length =" + positive_length);
-            errH.Logger.WriteLineAddMemo("   longest_positive=" + longest_positive);
-            errH.Logger.WriteLineAddMemo("   zoom            =" + zoom);
-            errH.Logger.WriteLineAddMemo("   negative_average=" + (negative_items == 0 ? 0 : negative_total / negative_items));
-            errH.Logger.WriteLineAddMemo("   positive_average=" + (positive_items == 0 ? 0 : positive_total / positive_items));
-            errH.Logger.WriteLineAddMemo("   notZero         =" + notZero);
-            errH.Logger.WriteLineAddMemo("----------------------------------------");
+            logTag.Logger.WriteLineAddMemo("end");
+            logTag.Logger.WriteLineAddMemo("   negative_length =" + negative_length);
+            logTag.Logger.WriteLineAddMemo("   positive_length =" + positive_length);
+            logTag.Logger.WriteLineAddMemo("   longest_positive=" + longest_positive);
+            logTag.Logger.WriteLineAddMemo("   zoom            =" + zoom);
+            logTag.Logger.WriteLineAddMemo("   negative_average=" + (negative_items == 0 ? 0 : negative_total / negative_items));
+            logTag.Logger.WriteLineAddMemo("   positive_average=" + (positive_items == 0 ? 0 : positive_total / positive_items));
+            logTag.Logger.WriteLineAddMemo("   notZero         =" + notZero);
+            logTag.Logger.WriteLineAddMemo("----------------------------------------");
 #endif
         }
 

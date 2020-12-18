@@ -24,12 +24,12 @@ namespace Grayscale.P743FvLearn.L480Functions
         /// <summary>
         /// FVを、-999.0～999.0(*bairitu)に矯正。
         /// </summary>
-        public static void FvParamRange_PP(FeatureVector fv, ILogTag errH)
+        public static void FvParamRange_PP(FeatureVector fv, ILogTag logTag)
         {
             //--------------------------------------------------------------------------------
             // 変換前のデータを確認。 
             //--------------------------------------------------------------------------------
-            Util_Inspection.Inspection1(fv, errH);
+            Util_Inspection.Inspection1(fv, logTag);
 
             //--------------------------------------------------------------------------------
             // 点数を、順位に変換します。
@@ -39,14 +39,14 @@ namespace Grayscale.P743FvLearn.L480Functions
             //--------------------------------------------------------------------------------
             // トポロジー的に加工したあとのデータを確認。 
             //--------------------------------------------------------------------------------
-            Util_Zooming.ZoomTo_FvParamRange(fv, errH);
+            Util_Zooming.ZoomTo_FvParamRange(fv, logTag);
 
         }
         /// <summary>
         /// FVの保存。
         /// </summary>
         /// <param name="uc_Main"></param>
-        public static void Do_Save(Uc_Main uc_Main, ILogTag errH)
+        public static void Do_Save(Uc_Main uc_Main, ILogTag logTag)
         {
             FeatureVector fv = uc_Main.LearningData.Fv;
 
@@ -131,7 +131,7 @@ namespace Grayscale.P743FvLearn.L480Functions
             //----------------------------------------
             // -999～999 に調整
             //----------------------------------------
-            Util_LearnFunctions.FvParamRange_PP(uc_Main.LearningData.Fv, errH);// 自動で -999～999(*bairitu) に矯正。
+            Util_LearnFunctions.FvParamRange_PP(uc_Main.LearningData.Fv, logTag);// 自動で -999～999(*bairitu) に矯正。
 
 
             // 駒割
@@ -227,7 +227,7 @@ namespace Grayscale.P743FvLearn.L480Functions
             ////----------------------------------------
             //// 合法手一覧を作成したい。
             ////----------------------------------------
-            //uc_Main.LearningData.Aa_Yomi(uc_Main.LearningData.Kifu.CurNode.Key, errH);
+            //uc_Main.LearningData.Aa_Yomi(uc_Main.LearningData.Kifu.CurNode.Key, logTag);
 
             // 局面の合法手表示の更新を要求します。
             ref_isRequestShowGohosyu = true;

@@ -32,7 +32,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
 
 #if DEBUG
                 string message = "(^o^)timer入力 input99=[" + this.mainGui.ConsoleWindowGui.InputString99 + "]";
-                errH.Logger.WriteLineAddMemo(message);
+                logTag.Logger.WriteLineAddMemo(message);
 #endif
 
                 //
@@ -62,7 +62,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                         this.mainGui.Link_Server.Model_Taikyoku,
                         this.mainGui.Model_Manual,
                         logTag);// 棋譜の[コマ送り]を実行します。
-                    Util_Function_Csharp.Komaokuri_Gui(restText, this.mainGui, logTag);//追加
+                    Util_Function_Csharp.Komaokuri_Gui(restText, this.mainGui);//追加
                     // ↑チェンジターン済み
                     Util_Menace.Menace((MainGui_Csharp)this.mainGui, logTag);// メナス
                 }

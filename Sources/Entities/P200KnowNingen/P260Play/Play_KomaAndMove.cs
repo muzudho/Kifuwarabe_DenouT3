@@ -59,7 +59,6 @@ namespace Grayscale.P260Play.L250Calc
         /// <param name="a"></param>
         /// <param name="b"></param>
         /// <param name="sbGohosyu"></param>
-        /// <param name="logTag"></param>
         public static Maps_OneAndOne<Finger, SySet<SyElement>> Minus_OverThereMasus(
             SkyConst src_srcSky_forLog,
             Maps_OneAndOne<Finger, SySet<SyElement>> a,

@@ -1,5 +1,4 @@
-﻿    using Grayscale.Kifuwarakaku.Entities.Logger;
-using Grayscale.P324KifuTree.I250Struct;
+﻿using Grayscale.P324KifuTree.I250Struct;
 using Grayscale.P542Scoreing.I250Args;
 using Grayscale.P551Tansaku.I500Tansaku;
 using Grayscale.P554TansaFukasa.I500Struct;
@@ -8,9 +7,6 @@ namespace Grayscale.P553TansakuHaba.L500Struct
 {
     public class Tansaku_HabaYusen_Routine : Tansaku_Routine
     {
-
-
-        
         /// <summary>
         /// 読む。
         /// 
@@ -26,8 +22,7 @@ namespace Grayscale.P553TansakuHaba.L500Struct
             bool isHonshogi,
             Mode_Tansaku mode_Tansaku,
             float alphabeta_otherBranchDecidedValue,
-            EvaluationArgs args,
-            ILogTag log
+            EvaluationArgs args
             )
         {
         }

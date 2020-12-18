@@ -81,12 +81,10 @@ using System.Collections.Generic;
         /// <param name="enableLog"></param>
         /// <param name="isHonshogi"></param>
         /// <param name="kifu"></param>
-        /// <param name="logTag"></param>
         /// <returns></returns>
         public KifuNode WA_Bestmove(
             bool isHonshogi,
-            KifuTree kifu,
-            ILogTag logTag
+            KifuTree kifu
             )
         {
 #if DEBUG
@@ -117,16 +115,11 @@ using System.Collections.Generic;
                 default: throw new Exception("探索直前、プレイヤーサイドのエラー");
             }
 
-            try
-            {
-                //
-                // 指し手生成ルーチンで、棋譜ツリーを作ります。
-                //
-                new Tansaku_FukasaYusen_Routine().WAA_Yomu_Start(
-                    kifu, isHonshogi, Mode_Tansaku.Shogi_ENgine, alphabeta_otherBranchDecidedValue, args, logTag);
-            }
-            catch (Exception ex) { Logger.Panic(logTag,ex, "棋譜ツリーを作っていたときです。"); throw; }
-
+            //
+            // 指し手生成ルーチンで、棋譜ツリーを作ります。
+            //
+            new Tansaku_FukasaYusen_Routine().WAA_Yomu_Start(
+                kifu, isHonshogi, Mode_Tansaku.Shogi_ENgine, alphabeta_otherBranchDecidedValue, args);
 
 #if DEBUG
             //
@@ -135,33 +128,23 @@ using System.Collections.Generic;
             Util_KifuTreeLogWriter.A_Write_KifuTreeLog(
                 logF_kiki,
                 kifu,
-                errH
+                logTag
                 );
             //Util_LogWriter500_HyokaMeisai.Log_Html5(
             //    this,
             //    logF_kiki,
             //    kifu,
             //    playerInfo,
-            //    errH
+            //    logTag
             //    );
 #endif
 
-            try
-            {
-                // 評価値の高いノードだけを残します。
-                this.EdagariEngine.EdaSibori_HighScore(kifu, this, logTag);
-            }
-            catch (Exception ex) { Logger.Panic(logTag,ex, "ベストムーブ後半２０：ハイスコア抽出"); throw; }
-
+            // 評価値の高いノードだけを残します。
+            this.EdagariEngine.EdaSibori_HighScore(kifu, this);
 
             // 評価値の同点があれば、同点決勝をして　1手に決めます。
             KifuNode bestKifuNode = null;
-            try
-            {
-                bestKifuNode = this.ChoiceNode_DoutenKessyou(kifu, isHonshogi, logTag);
-            }
-            catch (Exception ex) { Logger.Panic(logTag,ex, "ベストムーブ後半３０：同点決勝"); throw; }
-
+            bestKifuNode = this.ChoiceNode_DoutenKessyou(kifu, isHonshogi);
 
             return bestKifuNode;
         }
@@ -172,11 +155,10 @@ using System.Collections.Generic;
         /// 評価値が同点のノード（指し手）の中で、ランダムに１つ選びます。
         /// </summary>
         /// <param name="kifu">ツリー構造になっている棋譜</param>
-        /// <param name="logTag">ログ</param>
         /// <returns></returns>
         private KifuNode ChoiceNode_DoutenKessyou(
             KifuTree kifu,
-            bool isHonshogi, ILogTag logTag)
+            bool isHonshogi)
         {
             KifuNode bestKifuNode = null;
 

@@ -85,7 +85,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                 //------------------------------
                                 // 再描画
                                 //------------------------------
-                                Util_Function_Csharp.Komaokuri_Gui(restText, mainGui, eventState.Flg_logTag);//追加
+                                Util_Function_Csharp.Komaokuri_Gui(restText, mainGui);//追加
 
                                 //------------------------------
                                 // メナス

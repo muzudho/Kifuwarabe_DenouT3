@@ -42,7 +42,7 @@ namespace Grayscale.P743FvLearn.L600Operation
         /// </summary>
         /// <param name="uc_Main"></param>
         /// <param name="tyoseiryo"></param>
-        public static void ARankUpSelectedMove(Uc_Main uc_Main, float tyoseiryo, ILogTag errH)
+        public static void ARankUpSelectedMove(Uc_Main uc_Main, float tyoseiryo, ILogTag logTag)
         {
             //----------------------------------------
             // 選択したノードを参考に、減点を行う。
@@ -51,21 +51,21 @@ namespace Grayscale.P743FvLearn.L600Operation
             {
                 string sfenMoveStr = item.Sfen;
 #if DEBUG
-                errH.Logger.WriteLineAddMemo("sfenMoveStr=" + sfenMoveStr);
+                logTag.Logger.WriteLineAddMemo("sfenMoveStr=" + sfenMoveStr);
 #endif
 
                 if (uc_Main.LearningData.Kifu.CurNode.HasChildNode(sfenMoveStr))
                 {
 #if DEBUG
-                    errH.Logger.WriteLineAddMemo("----------------------------------------");
-                    errH.Logger.WriteLineAddMemo("FV 総合点（読込前）1");
-                    errH.Logger.WriteLineAddMemo("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(uc_Main.LearningData.Fv));
-                    errH.Logger.WriteLineAddMemo("----------------------------------------");
+                    logTag.Logger.WriteLineAddMemo("----------------------------------------");
+                    logTag.Logger.WriteLineAddMemo("FV 総合点（読込前）1");
+                    logTag.Logger.WriteLineAddMemo("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(uc_Main.LearningData.Fv));
+                    logTag.Logger.WriteLineAddMemo("----------------------------------------");
 #endif
                     Node<IMove, KyokumenWrapper> nextNode = uc_Main.LearningData.Kifu.CurNode.GetChildNode(sfenMoveStr);
 
                     // 盤上の駒、持駒を数えます。
-                    N54List nextNode_n54List = Util_54List.Calc_54List(nextNode.Value.KyokumenConst, errH);
+                    N54List nextNode_n54List = Util_54List.Calc_54List(nextNode.Value.KyokumenConst, logTag);
 
                     float real_tyoseiryo; //実際に調整した量。
                     Util_FvScoreing.UpdateKyokumenHyoka(
@@ -74,13 +74,13 @@ namespace Grayscale.P743FvLearn.L600Operation
                         uc_Main.LearningData.Fv,
                         tyoseiryo,
                         out real_tyoseiryo,
-                        errH
+                        logTag
                         );//相手が有利になる点
 #if DEBUG
-                    errH.Logger.WriteLineAddMemo("----------------------------------------");
-                    errH.Logger.WriteLineAddMemo("FV 総合点（読込後）6");
-                    errH.Logger.WriteLineAddMemo("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(uc_Main.LearningData.Fv));
-                    errH.Logger.WriteLineAddMemo("----------------------------------------");
+                    logTag.Logger.WriteLineAddMemo("----------------------------------------");
+                    logTag.Logger.WriteLineAddMemo("FV 総合点（読込後）6");
+                    logTag.Logger.WriteLineAddMemo("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(uc_Main.LearningData.Fv));
+                    logTag.Logger.WriteLineAddMemo("----------------------------------------");
 #endif
                 }
             }
@@ -94,20 +94,20 @@ namespace Grayscale.P743FvLearn.L600Operation
             // ネクスト・ノードを再作成
             //----------------------------------------
             // TODO:本譜のネクスト・ノードは？
-            uc_Main.LearningData.Aa_Yomi(uc_Main.LearningData.Kifu.CurNode.Key, LogTags.Learner);
+            uc_Main.LearningData.Aa_Yomi(uc_Main.LearningData.Kifu.CurNode.Key);
         }
 
 
         /// <summary>
         /// 初期局面の評価値を 0 点にするようにFVを調整します。
         /// </summary>
-        public static void Do_ZeroStart(ref bool isRequest_ShowGohosyu, Uc_Main uc_Main, ILogTag errH)
+        public static void Do_ZeroStart(ref bool isRequest_ShowGohosyu, Uc_Main uc_Main, ILogTag logTag)
         {
             bool isRequestDoEvents = false;
-            Util_StartZero.Adjust_HirateSyokiKyokumen_0ten_AndFvParamRange(ref isRequestDoEvents, uc_Main.LearningData.Fv, errH);
+            Util_StartZero.Adjust_HirateSyokiKyokumen_0ten_AndFvParamRange(ref isRequestDoEvents, uc_Main.LearningData.Fv, logTag);
 
             //// 合法手一覧を作成
-            //uc_Main.LearningData.Aa_Yomi(uc_Main.LearningData.Kifu.CurNode.Key, errH);
+            //uc_Main.LearningData.Aa_Yomi(uc_Main.LearningData.Kifu.CurNode.Key, logTag);
 
             // 局面の合法手表示の更新を要求
             isRequest_ShowGohosyu = true;
@@ -120,7 +120,7 @@ namespace Grayscale.P743FvLearn.L600Operation
         public static void DoRankUpMove(
             ref bool isRequest_ShowGohosyu,
             ref bool isRequest_ChangeKyokumenPng,
-            Uc_Main uc_Main, ILogTag errH)
+            Uc_Main uc_Main, ILogTag logTag)
         {
             // 評価値変化量
             float chosei_bairitu;
@@ -131,7 +131,7 @@ namespace Grayscale.P743FvLearn.L600Operation
                 chosei_bairitu *= -1; //後手はマイナスの方が有利。
             }
 
-            Util_LearnOperation.ARankUpSelectedMove(uc_Main, chosei_bairitu, errH);
+            Util_LearnOperation.ARankUpSelectedMove(uc_Main, chosei_bairitu, logTag);
 
             // 現局面の合法手表示の更新を要求
             isRequest_ShowGohosyu = true;
@@ -146,7 +146,7 @@ namespace Grayscale.P743FvLearn.L600Operation
         public static void DoRankDownMove(
             ref bool isRequest_ShowGohosyu,
             ref bool isRequest_ChangeKyokumenPng,
-            Uc_Main uc_Main, ILogTag errH)
+            Uc_Main uc_Main, ILogTag logTag)
         {
             // 評価値変化量
             float badScore;
@@ -158,7 +158,7 @@ namespace Grayscale.P743FvLearn.L600Operation
                 badScore *= -1; //後手はプラスの方が不利。
             }
 
-            Util_LearnOperation.ARankUpSelectedMove(uc_Main, badScore, errH);
+            Util_LearnOperation.ARankUpSelectedMove(uc_Main, badScore, logTag);
 
             // 現局面の合法手表示の更新を要求
             isRequest_ShowGohosyu = true;
@@ -204,9 +204,9 @@ namespace Grayscale.P743FvLearn.L600Operation
         ///// <summary>
         ///// FVを0～999(*bairitu)に矯正。
         ///// </summary>
-        //public static void Do_FvRange999(ref bool isRequest_ShowGohosyu, Uc_Main uc_Main, IErrorController errH)
+        //public static void Do_FvRange999(ref bool isRequest_ShowGohosyu, Uc_Main uc_Main, IErrorController logTag)
         //{
-        //    Util_LearnFunctions.FvParamRange_PP(uc_Main.LearningData.Fv, errH);
+        //    Util_LearnFunctions.FvParamRange_PP(uc_Main.LearningData.Fv, logTag);
 
         //    // 局面の合法手表示の更新を要求します。
         //    isRequest_ShowGohosyu = true;
@@ -265,11 +265,11 @@ namespace Grayscale.P743FvLearn.L600Operation
 
 
 
-        public static void Load_CsaKifu(Uc_Main uc_Main, ILogTag errH)
+        public static void Load_CsaKifu(Uc_Main uc_Main)
         {
             uc_Main.LearningData.ReadKifu(uc_Main);
 
-            Util_LearningView.ShowMoveList(uc_Main.LearningData, uc_Main, errH);
+            Util_LearningView.ShowMoveList(uc_Main.LearningData, uc_Main);
         }
 
 
@@ -277,7 +277,7 @@ namespace Grayscale.P743FvLearn.L600Operation
             ref bool isRequest_ShowGohosyu,
             ref bool isRequest_ChangeKyokumenPng,
             string kifuFilepath,
-            Uc_Main uc_Main, ILogTag errH)
+            Uc_Main uc_Main)
         {
             uc_Main.TxtKifuFilepath.Text = kifuFilepath;
 
@@ -285,18 +285,18 @@ namespace Grayscale.P743FvLearn.L600Operation
             Util_LearnOperation.Setup_KifuTree(
                 ref isRequest_ShowGohosyu,
                 ref isRequest_ChangeKyokumenPng,
-                uc_Main,errH);
+                uc_Main);
 
             // 処理が重いので。
             Application.DoEvents();
 
             // CSA棋譜を読み込みます。
-            Util_LearnOperation.Load_CsaKifu(uc_Main,errH);
+            Util_LearnOperation.Load_CsaKifu(uc_Main);
 
             // 合法手を調べます。
-            uc_Main.LearningData.Aa_Yomi(uc_Main.LearningData.Kifu.CurNode.Key, errH);
+            uc_Main.LearningData.Aa_Yomi(uc_Main.LearningData.Kifu.CurNode.Key);
             // ノード情報の表示
-            Util_LearningView.Aa_ShowNode2(uc_Main.LearningData, uc_Main, LogTags.Learner);
+            Util_LearningView.Aa_ShowNode2(uc_Main.LearningData, uc_Main);
 
         //gt_EndMethod:
         //    ;
@@ -308,7 +308,7 @@ namespace Grayscale.P743FvLearn.L600Operation
         public static void Setup_KifuTree(
             ref bool isRequest_ShowGohosyu,
             ref bool isRequest_ChangeKyokumenPng,
-            Uc_Main uc_Main, ILogTag errH)
+            Uc_Main uc_Main)
         {
             {
                 KifuTree kifu_newHirate;
@@ -334,7 +334,7 @@ namespace Grayscale.P743FvLearn.L600Operation
             }
 
             // 合法手を数えたい。
-            uc_Main.LearningData.Aaa_CreateNextNodes_Gohosyu(args, errH);
+            uc_Main.LearningData.Aaa_CreateNextNodes_Gohosyu(args);
 
             // 現局面の合法手表示の更新を要求
             isRequest_ShowGohosyu = true;

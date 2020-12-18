@@ -23,7 +23,7 @@ namespace Grayscale.P743FvLearn.L506AutoMoveSort
         /// <param name="ref_tyoseiryo"></param>
         /// <param name="sfenMoveStr"></param>
         /// <param name="uc_Main"></param>
-        /// <param name="errH"></param>
+        /// <param name="logTag"></param>
         public static void DoSortMoveRush(
             out int out_pushCount,
             out bool out_isEndAutoLearn,
@@ -33,7 +33,7 @@ namespace Grayscale.P743FvLearn.L506AutoMoveSort
             int loopLimit,
             ref float ref_tyoseiryo,
             string sfenMoveStr,
-            Uc_Main uc_Main, ILogTag errH
+            Uc_Main uc_Main, ILogTag logTag
             )
         {
             out_isEndAutoLearn = false;
@@ -63,7 +63,7 @@ namespace Grayscale.P743FvLearn.L506AutoMoveSort
                     {
                         // 1位なら終了
 #if DEBUG
-                        errH.Logger.WriteLineAddMemo("items.Count=[" + uc_Main.LstGohosyu.Items.Count + "] sfenMoveStr=[" + sfenMoveStr + "] gohosyuItem.Sfen=[" + gohosyuItem.Sfen + "]");
+                        logTag.Logger.WriteLineAddMemo("items.Count=[" + uc_Main.LstGohosyu.Items.Count + "] sfenMoveStr=[" + sfenMoveStr + "] gohosyuItem.Sfen=[" + gohosyuItem.Sfen + "]");
 #endif
                         break;
                     }
@@ -80,14 +80,14 @@ namespace Grayscale.P743FvLearn.L506AutoMoveSort
 
                 if (uc_Main.ChkStartZero.Checked)// 自動で、平手初期局面の点数を 0 点に近づけるよう調整します。
                 {
-                    Util_StartZero.Adjust_HirateSyokiKyokumen_0ten_AndFvParamRange(ref ref_isRequestDoEvents, uc_Main.LearningData.Fv, errH);
+                    Util_StartZero.Adjust_HirateSyokiKyokumen_0ten_AndFvParamRange(ref ref_isRequestDoEvents, uc_Main.LearningData.Fv, logTag);
                 }
 
                 // 局面の表示を更新します。
                 if (ref_isRequest_ShowGohosyu)
                 {
                     // 合法手一覧を更新
-                    Util_LearningView.Aa_ShowGohosyu2(uc_Main.LearningData, uc_Main, errH);
+                    Util_LearningView.Aa_ShowGohosyu2(uc_Main.LearningData, uc_Main);
                     // 局面PNG画像の更新は、ここでは行いません。
                     ref_isRequest_ShowGohosyu = false;
 

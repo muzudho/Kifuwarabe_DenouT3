@@ -41,8 +41,7 @@ namespace Grayscale.P743FvLearn.L260View
         /// <param name="uc_Main"></param>
         public static void ShowMoveList(
             LearningData learningData,
-            Uc_Main uc_Main,
-            ILogTag logTag
+            Uc_Main uc_Main
             )
         {
             //
@@ -60,7 +59,7 @@ namespace Grayscale.P743FvLearn.L260View
                         ))//日本の符号読取時
                 )
             );
-            //kifu1.AssertPside(kifu1.CurNode, "ShowMoveList",errH);
+            //kifu1.AssertPside(kifu1.CurNode, "ShowMoveList",logTag);
 
             List<CsaKifuMove> moveList = learningData.CsaKifu.MoveList;
             foreach (CsaKifuMove csaMove in moveList)
@@ -192,7 +191,7 @@ namespace Grayscale.P743FvLearn.L260View
         /// ノード情報の表示
         /// </summary>
         /// <param name="uc_Main"></param>
-        public static void Aa_ShowNode2(LearningData learningData, Uc_Main uc_Main, ILogTag errH)
+        public static void Aa_ShowNode2(LearningData learningData, Uc_Main uc_Main)
         {
             // 手目済み
             uc_Main.TxtTemezumi.Text = learningData.Kifu.CurNode.Value.KyokumenConst.Temezumi.ToString();
@@ -208,7 +207,7 @@ namespace Grayscale.P743FvLearn.L260View
         /// 合法手リストの表示
         /// </summary>
         /// <param name="uc_Main"></param>
-        public static void Aa_ShowGohosyu2(LearningData learningData, Uc_Main uc_Main, ILogTag errH)
+        public static void Aa_ShowGohosyu2(LearningData learningData, Uc_Main uc_Main)
         {
             //----------------------------------------
             // フォルダー作成
@@ -241,7 +240,7 @@ namespace Grayscale.P743FvLearn.L260View
                     GohosyuListItem item = new GohosyuListItem(
                         itemNumber,
                         key,
-                        ConvMoveStrJsa.ToMoveStrJsa(node, errH)
+                        ConvMoveStrJsa.ToMoveStrJsa(node)
 #if DEBUG || LEARN
 ,
                         komawariMeisai,
@@ -310,14 +309,14 @@ namespace Grayscale.P743FvLearn.L260View
         public static void IttesasuByBtnClick(
             ref bool isRequestShowGohosyu,
             ref bool isRequestChangeKyokumenPng,
-            LearningData learningData, Uc_Main ucMain, ILogTag logTag)
+            LearningData learningData, Uc_Main ucMain)
         {
 #if DEBUG
             Stopwatch sw1 = new Stopwatch();
             sw1.Start();
 #endif
             if (ucMain is null) throw new ArgumentNullException(nameof(ucMain));
-            if (logTag is null) throw new ArgumentNullException(nameof(logTag));
+            // if (logTag is null) throw new ArgumentNullException(nameof(logTag));
 
             //
             // リストの先頭の項目を取得したい。
@@ -354,12 +353,8 @@ namespace Grayscale.P743FvLearn.L260View
                 else
                 {
                     nextMove = null;
-                    StringBuilder sb = new StringBuilder();
-                    sb.Append("指し手[" + sfen + "]はありませんでした。\n" + learningData.DumpToAllGohosyu(learningData.Kifu.CurNode.Value.KyokumenConst));
-
-                    //Debug.Fail(sb.ToString());
-                    Logger.Panic(logTag,"Util_LearningView#Ittesasu_ByBtnClick：" + sb.ToString());
-                    MessageBox.Show(sb.ToString(), "エラー");
+                    throw new Exception($@"指し手[{sfen}]はありませんでした。
+{learningData.DumpToAllGohosyu(learningData.Kifu.CurNode.Value.KyokumenConst)}");
                 }
             }
 
@@ -405,9 +400,9 @@ namespace Grayscale.P743FvLearn.L260View
             ////----------------------------------------
             //// 合法手一覧を作成したい。
             ////----------------------------------------
-            learningData.Aa_Yomi(nextMove, logTag);
+            learningData.Aa_Yomi(nextMove);
             // ノード情報の表示
-            Util_LearningView.Aa_ShowNode2(ucMain.LearningData, ucMain, logTag);
+            Util_LearningView.Aa_ShowNode2(ucMain.LearningData, ucMain);
 
             // 合法手表示の更新を要求します。 
             isRequestShowGohosyu = true;
