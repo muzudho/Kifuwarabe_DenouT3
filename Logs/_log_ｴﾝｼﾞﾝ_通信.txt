@@ -1,10 +1,10 @@
-2020/12/18 19:28:03  > usi
-2020/12/18 19:28:03  > setoption name USI_Ponder value true
-2020/12/18 19:28:03  > setoption name USI_Hash value 256
-2020/12/18 19:28:03  > setoption name 子 value true
-2020/12/18 19:28:03  > setoption name USI value 2
-2020/12/18 19:28:03  > setoption name 寅 value tiger
-2020/12/18 19:28:03  > setoption name 辰 value DRAGON
-2020/12/18 19:28:03  > setoption name 巳 value スネーク.html
-2020/12/18 19:28:03  > isready
-2020/12/18 19:28:03  > usinewgame
+2020/12/18 20:28:27  > usi
+2020/12/18 20:28:27  > setoption name USI_Ponder value true
+2020/12/18 20:28:27  > setoption name USI_Hash value 256
+2020/12/18 20:28:27  > setoption name 子 value true
+2020/12/18 20:28:27  > setoption name USI value 2
+2020/12/18 20:28:27  > setoption name 寅 value tiger
+2020/12/18 20:28:27  > setoption name 辰 value DRAGON
+2020/12/18 20:28:27  > setoption name 巳 value スネーク.html
+2020/12/18 20:28:27  > isready
+2020/12/18 20:28:27  > usinewgame

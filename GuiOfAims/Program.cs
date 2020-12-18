@@ -1,14 +1,12 @@
-﻿using Grayscale.P003Log.I500Struct;
-using Grayscale.P003Log.L500Struct;
-using Grayscale.P027Settei.L500Struct;
-using Grayscale.P027Settei.L510Xml;
-using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P224Sky.L500Struct;
-using Grayscale.P258UtilSky258.L500UtilSky;
-using Grayscale.P481AimsServer.L500Server;
-using System.IO;
+﻿using System.IO;
 using System.Windows.Forms;
 using Nett;
+using Grayscale.Kifuwarakaku.Entities.Logger;
+using Grayscale.P027Settei.L510Xml;
+using Grayscale.P224Sky.L500Struct;
+using Grayscale.P258UtilSky258.L500UtilSky;
+using Grayscale.P211WordShogi.L500Word;
+using Grayscale.P481AimsServer.L500Server;
 
 namespace Grayscale.P489_Form_______
 {

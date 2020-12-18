@@ -56,11 +56,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sources\P000_Environment\Entities.csproj">
+    <ProjectReference Include="..\Sources\Entities\Entities.csproj">
       <Project>{147b11e0-827b-4d3f-844c-adf2beafa53f}</Project>
       <Name>Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Sources\P480_ServerAims_\UseCases.csproj">
+    <ProjectReference Include="..\Sources\UseCases\UseCases.csproj">
       <Project>{dbea8b61-6f05-49a0-9ccb-6fcf2976bd17}</Project>
       <Name>UseCases</Name>
     </ProjectReference>
