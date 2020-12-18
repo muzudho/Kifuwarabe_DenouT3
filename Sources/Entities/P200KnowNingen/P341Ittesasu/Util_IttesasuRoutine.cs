@@ -39,14 +39,14 @@ namespace Grayscale.P341Ittesasu.L500UtilA
         /// <param name="ittesasuArg"></param>
         /// <param name="ittesasu_mutable"></param>
         /// <param name="ittesasuResult"></param>
-        /// <param name="errH"></param>
+        /// <param name="logTag"></param>
         /// <param name="memberName"></param>
         /// <param name="sourceFilePath"></param>
         /// <param name="sourceLineNumber"></param>
         public static void Before1(
             IttesasuArg ittesasuArg,
             out IttesasuResult ittesasuResult,
-            IErrorController errH,
+            ILogTag logTag,
             string hint
             ,
             [CallerMemberName] string memberName = "",
@@ -92,7 +92,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
                     ittesasuArg.KorekaranoMove,
                     ittesasuArg.KaisiTebanside,
                     kaisi_Sky,
-                    errH,
+                    logTag,
                     hint
                     );
                 ittesasuResult.FigMovedKoma = figMovedKoma; //動かした駒更新
@@ -130,7 +130,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
                         out food_koma,
                         out food_pside,
                         out food_akiMasu,
-                        errH
+                        logTag
                         );
 
                     if (Fingers.Error_1 != figFoodKoma)
@@ -222,7 +222,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
 
                 // どうにもできないので  ログだけ取って無視します。
                 string message = "Util_IttesasuRoutine#Execute（B）： exceptionArea=" + exceptionArea + "\n" + ex.GetType().Name + "：" + ex.Message;
-                errH.Logger.WriteLineError(message);
+                Logger.WriteLineError(logTag, message);
                 throw;
             }
         }
@@ -232,10 +232,10 @@ namespace Grayscale.P341Ittesasu.L500UtilA
         /// </summary>
         /// <param name="isMakimodosi"></param>
         /// <param name="ittesasuReference"></param>
-        /// <param name="errH"></param>
+        /// <param name="logTag"></param>
         public static void Before2(
             ref IttesasuResult ittesasuReference,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             Node<IMove, KyokumenWrapper> editNodeRef = ittesasuReference.Get_SyuryoNode_OrNull;
@@ -266,12 +266,12 @@ namespace Grayscale.P341Ittesasu.L500UtilA
         /// <param name="kifu_mutable"></param>
         /// <param name="nextMoveStr"></param>
         /// <param name="edit_childNode_Ref"></param>
-        /// <param name="errH"></param>
+        /// <param name="logTag"></param>
         public static void After3_ChangeCurrent(
             KifuTree kifu_mutable,
             string nextMoveStr,
             Node<IMove, KyokumenWrapper> edit_childNode_Ref,
-            IErrorController errH
+            ILogTag logTag
             )
         {
 
@@ -311,7 +311,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             IMove move,
             Playerside kaisi_tebanside,
             SkyConst kaisi_Sky,
-            IErrorController errH,
+            ILogTag logTag,
             string hint
             ,
             [CallerMemberName] string memberName = "",
@@ -350,7 +350,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
                         kaisi_Sky,
                         Conv_SyElement.ToOkiba(srcKoma.Masu),
                         Util_Komahaiyaku184.Syurui(dstKoma.Haiyaku),
-                        errH
+                        logTag
                         );
                     Debug.Assert(figMovedKoma != Fingers.Error_1, "駒を動かせなかった？14");
                 }
@@ -374,7 +374,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
                             Conv_SyElement.ToOkiba(Masu_Honshogi.Masus_All[Conv_SyElement.ToMasuNumber(dstKoma.Masu)]),
                             Conv_SyElement.ToMasuNumber(srcKoma.Masu)
                             ),
-                            errH
+                            logTag
                             );
                     Debug.Assert(figMovedKoma != Fingers.Error_1, "駒を動かせなかった？13");
                 }
@@ -384,7 +384,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
                 //>>>>> エラーが起こりました。
 
                 // どうにもできないので  ログだけ取って無視します。
-                errH.Panic(ex, "Util_IttesasuRoutine#Sasu24_UgokasuKoma_IdoSakiHe： exceptionArea=" + exceptionArea+"\n"+
+                Logger.Panic(logTag, ex, "Util_IttesasuRoutine#Sasu24_UgokasuKoma_IdoSakiHe： exceptionArea=" + exceptionArea+"\n"+
                     "hint=["+hint+"]");
                 throw;
             }
@@ -434,7 +434,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             out RO_Star out_food_koma,
             out Playerside pside,
             out SyElement akiMasu,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             RO_Star dstKoma = Util_Starlightable.AsKoma(dst.Now);

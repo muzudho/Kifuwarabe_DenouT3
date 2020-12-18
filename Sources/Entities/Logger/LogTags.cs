@@ -5,6 +5,7 @@
     /// </summary>
     public class LogTags
     {
+        public static readonly ILogTag Default = new LogTag("Default");
         public static readonly ILogTag Error = new LogTag("Error");
         public static readonly ILogTag DefaultSennitite = new LogTag("DefaultSennitite");
         public static readonly ILogTag ServerDefault = new LogTag("ServerDefault");

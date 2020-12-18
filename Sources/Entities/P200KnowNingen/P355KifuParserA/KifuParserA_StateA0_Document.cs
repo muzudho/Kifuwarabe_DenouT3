@@ -39,7 +39,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
             out KifuParserA_State nextState,
             KifuParserA owner,
             KifuParserA_Genjo genjo,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             nextState = this;
@@ -71,7 +71,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                 else if (""==genjo.InputLine)
                 {
                     // 異常時。
-                    errH.Logger.WriteLineError("＼（＾ｏ＾）／「" + genjo.InputLine + "」入力がない2☆！　終わるぜ☆");
+                    Logger.WriteLineError(logTag,"＼（＾ｏ＾）／「" + genjo.InputLine + "」入力がない2☆！　終わるぜ☆");
                     genjo.ToBreak_Abnormal();
                 }
                 else
@@ -84,7 +84,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                 }
 
             }
-            catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "棋譜ドキュメント解析中☆"); throw; }
+            catch (Exception ex) { Logger.Panic(LogTags.Error, ex, "棋譜ドキュメント解析中☆"); throw; }
 
 
             return genjo.InputLine;

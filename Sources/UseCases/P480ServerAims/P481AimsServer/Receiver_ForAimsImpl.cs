@@ -30,9 +30,7 @@ namespace Grayscale.P481AimsServer.L125Receiver
         private AimsServerBase owner_AimsServer;
         
         /// <summary>
-        /// ************************************************************************************************************************
         /// 将棋エンジンから、データを非同期受信(*1)します。
-        /// ************************************************************************************************************************
         /// 
         ///         *1…こっちの都合に合わせず、データが飛んできます。
         /// 
@@ -41,7 +39,7 @@ namespace Grayscale.P481AimsServer.L125Receiver
         /// <param name="e"></param>
         public override void OnListenUpload_Async(object sender, DataReceivedEventArgs e)
         {
-            IErrorController errH = ErrorControllerReference.AimsDefault;
+            ILogTag logTag = LogTags.AimsDefault;
 
             string line = e.Data;
 
@@ -99,7 +97,7 @@ namespace Grayscale.P481AimsServer.L125Receiver
                                 // 対局開始！
                                 //------------------------------------------------------------
                                 Console.Out.WriteLine("usinewgame");
-                                ((EngineClient)this.Owner_EngineClient).ShogiEngineProcessWrapper.Send_Usinewgame(errH);
+                                ((EngineClient)this.Owner_EngineClient).ShogiEngineProcessWrapper.Send_Usinewgame(logTag);
 
                                 // FIXME:平手とは限らないが、平手という前提で、毎回一から作りなおします。
                                 Playerside firstPside = Playerside.P1;
@@ -128,7 +126,7 @@ namespace Grayscale.P481AimsServer.L125Receiver
                                 // 将棋エンジンに対して
                                 // 例：「position startpos moves 7g7f」
                                 ((EngineClient)this.Owner_EngineClient).ShogiEngineProcessWrapper.Send_Position(
-                                    Util_KirokuGakari.ToSfen_PositionCommand(this.Owner_AimsServer.Model_Taikyoku.Kifu), errH
+                                    Util_KirokuGakari.ToSfen_PositionCommand(this.Owner_AimsServer.Model_Taikyoku.Kifu), logTag
                                 );
 
                                 // AIMS GUIに対して

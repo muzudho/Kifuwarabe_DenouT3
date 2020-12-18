@@ -34,7 +34,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
             ref KifuParserA_Result result,
             Model_Taikyoku model_Taikyoku,
             KifuParserA_Genjo genjo,
-            IErrorController errH
+            ILogTag logTag
             ,
             [CallerMemberName] string memberName = "",
             [CallerFilePath] string sourceFilePath = "",
@@ -55,11 +55,11 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                     ref result,
                     model_Taikyoku,
                     out nextState, this,
-                    genjo, errH);
+                    genjo, logTag);
                 this.State = nextState;
 
             }
-            catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "棋譜解析中☆"); throw; }
+            catch (Exception ex) { Logger.Panic(LogTags.Error, ex, "棋譜解析中☆"); throw; }
 
             return genjo.InputLine;
         }
@@ -74,7 +74,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
             ref KifuParserA_Result result,
             Model_Taikyoku model_Taikyoku,
             KifuParserA_Genjo genjo,
-            IErrorController errH
+            ILogTag logTag
             ,
             [CallerMemberName] string memberName = "",
             [CallerFilePath] string sourceFilePath = "",
@@ -107,7 +107,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                         ref result,
                         model_Taikyoku,
                         out nextState, this,
-                        genjo, errH);
+                        genjo, logTag);
                     this.State = nextState;
 
                 gt_NextLoop1:
@@ -129,7 +129,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
 
 
             }
-            catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "棋譜解析中☆"); throw; }
+            catch (Exception ex) { Logger.Panic(LogTags.Error, ex, "棋譜解析中☆"); throw; }
         }
 
     }

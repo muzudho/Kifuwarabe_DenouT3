@@ -39,7 +39,7 @@ namespace Grayscale.P531Hyokakansu.L500Hyokakansu
 #endif
             SkyConst srcSky,
             FeatureVector fv,
-            IErrorController errH
+            ILogTag errH
             )
         {
             float score_p1 = 0.0f;

@@ -20,7 +20,6 @@ namespace Grayscale.P461Server.I497EngineClient
         /// </summary>
         Receiver Receiver { get; }
 
-
         void Start(string shogiEngineFilePath);
 
         /// <summary>
@@ -32,23 +31,23 @@ namespace Grayscale.P461Server.I497EngineClient
         /// 手番が変わったときに、実行する処理をここに書いてください。
         /// </summary>
         /// <param name="kifu"></param>
-        /// <param name="errH"></param>
-        void OnChangedTurn(KifuTree kifu, IErrorController errH);
+        /// <param name="logTag"></param>
+        void OnChangedTurn(KifuTree kifu, ILogTag logTag);
 
         /// <summary>
         /// 将棋エンジンに、終了するように促します。
         /// </summary>
-        void Send_Shutdown(IErrorController errH);
+        void Send_Shutdown(ILogTag logTag);
 
         /// <summary>
         /// 将棋エンジンに、ログを出すように促します。
         /// </summary>
-        void Send_Logdase(IErrorController errH);
+        void Send_Logdase(ILogTag logTag);
 
         ///// <summary>
         ///// 将棋エンジンを先手にするために、go を出します。
         ///// </summary>
-        //void Send_Go(IErrorController errH);
+        //void Send_Go(ILogTag logTag);
 
     }
 }

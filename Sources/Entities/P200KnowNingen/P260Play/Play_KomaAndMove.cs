@@ -27,7 +27,7 @@ namespace Grayscale.P260Play.L250Calc
             SkyConst src_Sky_forLog,
             Maps_OneAndOne<Finger, SySet<SyElement>> a1,
             SySet<SyElement> b,
-            IErrorController errH_orNull
+            ILogTag logTag
             )
         {
             //GraphicalLogUtil.Log(enableLog, "Thought_KomaAndMove#MinusMasus",
@@ -66,7 +66,7 @@ namespace Grayscale.P260Play.L250Calc
             SkyConst src_srcSky_forLog,
             Maps_OneAndOne<Finger, SySet<SyElement>> a,
             SySet<SyElement> b,
-            IErrorController errH_orNull
+            ILogTag logTag
         )
         {
             Maps_OneAndOne<Finger, SySet<SyElement>> c = new Maps_OneAndOne<Finger, SySet<SyElement>>(a);

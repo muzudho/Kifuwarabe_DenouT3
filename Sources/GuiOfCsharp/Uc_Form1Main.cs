@@ -333,8 +333,8 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            IErrorController errH = ErrorControllerReference.CsharpGuiDefault;
-            this.MainGui.Timer_Tick(errH);
+            ILogTag logTag = LogTags.CsharpGuiDefault;
+            this.MainGui.Timer_Tick(logTag);
         }
 
 
@@ -351,7 +351,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
 
-            IErrorController errH = ErrorControllerReference.CsharpGuiDefault;
+            ILogTag logTag = LogTags.CsharpGuiDefault;
 
             Uc_Form2Main uc_Form2Main = ((Form1_Shogi)this.ParentForm).Form2_Console.Uc_Form2Main;
 
@@ -438,7 +438,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 
 
-            this.MainGui.Response("Launch", errH);
+            this.MainGui.Response("Launch", logTag);
 
             // これで、最初に見える画面の準備は終えました。
             // あとは、操作者の入力を待ちます。
@@ -462,7 +462,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
             //------------------------------
             // 画面の描画です。
             //------------------------------
-            this.MainGui.Shape_PnlTaikyoku.Paint(sender, e, this.MainGui, Shape_CanvasImpl.WINDOW_NAME_SHOGIBAN, ErrorControllerReference.CsharpGuiPaint);
+            this.MainGui.Shape_PnlTaikyoku.Paint(sender, e, this.MainGui, Shape_CanvasImpl.WINDOW_NAME_SHOGIBAN, LogTags.CsharpGuiPaint);
 
         gt_EndMethod:
             ;
@@ -480,7 +480,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
         /// <param name="e"></param>
         private void Uc_Form1Main_MouseMove(object sender, MouseEventArgs e)
         {
-            IErrorController errH = ErrorControllerReference.CsharpGuiDefault;
+            ILogTag logTag = LogTags.CsharpGuiDefault;
 
             if (null != this.MainGui.Shape_PnlTaikyoku)
             {
@@ -491,13 +491,13 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
                 {
                     TimedB_MouseCapture timeB = ((TimedB_MouseCapture)this.MainGui.TimedB_MouseCapture);
                     timeB.MouseEventQueue.Enqueue(
-                        new MouseEventState(this.MainGui.Scene, Shape_CanvasImpl.WINDOW_NAME_SHOGIBAN, MouseEventStateName.MouseMove, e.Location, errH));
+                        new MouseEventState(this.MainGui.Scene, Shape_CanvasImpl.WINDOW_NAME_SHOGIBAN, MouseEventStateName.MouseMove, e.Location, logTag));
                 }
 
                 //------------------------------
                 // このメインパネルの反応
                 //------------------------------
-                this.MainGui.Response("MouseOperation", errH);
+                this.MainGui.Response("MouseOperation", logTag);
             }
         }
 
@@ -513,7 +513,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
         /// <param name="e"></param>
         private void Uc_Form1Main_MouseDown(object sender, MouseEventArgs e)
         {
-            IErrorController errH = ErrorControllerReference.CsharpGuiDefault;
+            ILogTag logTag = LogTags.CsharpGuiDefault;
 
             if (null == this.MainGui.Shape_PnlTaikyoku)
             {
@@ -531,7 +531,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
                 //------------------------------------------------------------
                 TimedB_MouseCapture timeB = ((TimedB_MouseCapture)this.MainGui.TimedB_MouseCapture);
                 timeB.MouseEventQueue.Enqueue(
-                    new MouseEventState(this.MainGui.Scene, Shape_CanvasImpl.WINDOW_NAME_SHOGIBAN, MouseEventStateName.MouseLeftButtonDown, e.Location, errH));
+                    new MouseEventState(this.MainGui.Scene, Shape_CanvasImpl.WINDOW_NAME_SHOGIBAN, MouseEventStateName.MouseLeftButtonDown, e.Location, logTag));
             }
             else if (e.Button == MouseButtons.Right)
             {
@@ -540,13 +540,13 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
                 //------------------------------------------------------------
                 TimedB_MouseCapture timeB = ((TimedB_MouseCapture)this.MainGui.TimedB_MouseCapture);
                 timeB.MouseEventQueue.Enqueue(
-                    new MouseEventState(this.MainGui.Scene, Shape_CanvasImpl.WINDOW_NAME_SHOGIBAN, MouseEventStateName.MouseRightButtonDown, e.Location, errH));
+                    new MouseEventState(this.MainGui.Scene, Shape_CanvasImpl.WINDOW_NAME_SHOGIBAN, MouseEventStateName.MouseRightButtonDown, e.Location, logTag));
 
 
                 //------------------------------
                 // このメインパネルの反応
                 //------------------------------
-                this.MainGui.Response("MouseOperation", errH);
+                this.MainGui.Response("MouseOperation", logTag);
 
             }
             else
@@ -554,7 +554,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
                 //------------------------------
                 // このメインパネルの反応
                 //------------------------------
-                this.MainGui.Response("MouseOperation", errH);
+                this.MainGui.Response("MouseOperation", logTag);
             }
 
         gt_EndMethod:
@@ -570,7 +570,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
         /// <param name="e"></param>
         private void Uc_Form1Main_MouseUp(object sender, MouseEventArgs e)
         {
-            IErrorController errH = ErrorControllerReference.CsharpGuiDefault;
+            ILogTag logTag = LogTags.CsharpGuiDefault;
 
             // このメインパネルに、何かして欲しいという要求は、ここに入れられます。
             this.MainGui.RepaintRequest = new RepaintRequestImpl();
@@ -585,7 +585,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
                 //------------------------------------------------------------
                 TimedB_MouseCapture timeB = ((TimedB_MouseCapture)this.MainGui.TimedB_MouseCapture);
                 timeB.MouseEventQueue.Enqueue(
-                    new MouseEventState(this.MainGui.Scene, Shape_CanvasImpl.WINDOW_NAME_SHOGIBAN, MouseEventStateName.MouseLeftButtonUp, e.Location, errH));
+                    new MouseEventState(this.MainGui.Scene, Shape_CanvasImpl.WINDOW_NAME_SHOGIBAN, MouseEventStateName.MouseLeftButtonUp, e.Location, logTag));
             }
             else if (e.Button == MouseButtons.Right)
             {
@@ -594,7 +594,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
                 //------------------------------------------------------------
                 TimedB_MouseCapture timeB = ((TimedB_MouseCapture)this.MainGui.TimedB_MouseCapture);
                 timeB.MouseEventQueue.Enqueue(
-                    new MouseEventState(this.MainGui.Scene, Shape_CanvasImpl.WINDOW_NAME_SHOGIBAN, MouseEventStateName.MouseRightButtonUp, e.Location, errH));
+                    new MouseEventState(this.MainGui.Scene, Shape_CanvasImpl.WINDOW_NAME_SHOGIBAN, MouseEventStateName.MouseRightButtonUp, e.Location, logTag));
             }
         }
 
@@ -613,7 +613,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
         /// </summary>
         /// <param name="response"></param>
         public void Solute_RepaintRequest(
-            Form1_Mutex mutex, MainGui_Csharp mainGui, IErrorController errH)
+            Form1_Mutex mutex, MainGui_Csharp mainGui, ILogTag logTag)
         {
             Uc_Form2Main form2 = ((Form1_Shogi)this.ParentForm).Form2_Console.Uc_Form2Main;
 
@@ -624,7 +624,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
             {
                 this.MainGui.Model_Manual.GuiSkyConst.Foreach_Starlights((Finger finger, IMoveHalf light, ref bool toBreak) =>
                 {
-                    Util_Function_Csharp.Redraw_KomaLocation(finger, this.MainGui, errH);
+                    Util_Function_Csharp.Redraw_KomaLocation(finger, this.MainGui, logTag);
                 });
             }
             mainGui.RepaintRequest.Clear_StarlightsRecalculateRequested();
@@ -667,7 +667,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
                         switch (this.MainGui.SyuturyokuKirikae)
                         {
                             case SyuturyokuKirikae.Japanese:
-                                form2.WriteLine_Syuturyoku(Util_KirokuGakari.ToJsaFugoListString(this.MainGui.Link_Server.Model_Taikyoku.Kifu, "Ui_PnlMain.Response", errH));
+                                form2.WriteLine_Syuturyoku(Util_KirokuGakari.ToJsaFugoListString(this.MainGui.Link_Server.Model_Taikyoku.Kifu, "Ui_PnlMain.Response", logTag));
                                 break;
                             case SyuturyokuKirikae.Sfen:
                                 form2.WriteLine_Syuturyoku(Util_KirokuGakari.ToSfen_PositionCommand(this.MainGui.Link_Server.Model_Taikyoku.Kifu));

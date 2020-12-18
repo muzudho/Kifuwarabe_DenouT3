@@ -11,11 +11,6 @@ namespace Grayscale.P693ShogiGui.L080Shape
     /// </summary>
     public class Shape_BtnBoxImpl : Shape_Abstract
     {
-
-
-
-        #region プロパティー
-
         /// <summary>
         /// 符号
         /// </summary>
@@ -64,8 +59,6 @@ namespace Grayscale.P693ShogiGui.L080Shape
             get;
             set;
         }
-
-        #endregion
 
         /// <summary>
         /// ************************************************************************************************************************

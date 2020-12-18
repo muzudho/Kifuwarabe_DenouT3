@@ -50,7 +50,7 @@ using Grayscale.P743FvLearn.L506AutoMoveSort;
             ref bool isRequest_ShowGohosyu,
             ref bool isRequest_ChangeKyokumenPng,
             int renzokuTe,
-            Uc_Main uc_Main, IErrorController errH
+            Uc_Main uc_Main, ILogTag errH
             )
         {
             out_isEndKifuread = false;

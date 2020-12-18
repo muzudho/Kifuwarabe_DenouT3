@@ -42,7 +42,7 @@ namespace Grayscale.P743FvLearn.L260View
         public static void ShowMoveList(
             LearningData learningData,
             Uc_Main uc_Main,
-            IErrorController errH
+            ILogTag errH
             )
         {
             //
@@ -195,7 +195,7 @@ namespace Grayscale.P743FvLearn.L260View
         /// ノード情報の表示
         /// </summary>
         /// <param name="uc_Main"></param>
-        public static void Aa_ShowNode2(LearningData learningData, Uc_Main uc_Main, IErrorController errH)
+        public static void Aa_ShowNode2(LearningData learningData, Uc_Main uc_Main, ILogTag errH)
         {
             // 手目済み
             uc_Main.TxtTemezumi.Text = learningData.Kifu.CurNode.Value.KyokumenConst.Temezumi.ToString();
@@ -211,7 +211,7 @@ namespace Grayscale.P743FvLearn.L260View
         /// 合法手リストの表示
         /// </summary>
         /// <param name="uc_Main"></param>
-        public static void Aa_ShowGohosyu2(LearningData learningData, Uc_Main uc_Main, IErrorController errH)
+        public static void Aa_ShowGohosyu2(LearningData learningData, Uc_Main uc_Main, ILogTag errH)
         {
             //----------------------------------------
             // フォルダー作成
@@ -313,14 +313,14 @@ namespace Grayscale.P743FvLearn.L260View
         public static void IttesasuByBtnClick(
             ref bool isRequestShowGohosyu,
             ref bool isRequestChangeKyokumenPng,
-            LearningData learningData, Uc_Main ucMain, IErrorController errH)
+            LearningData learningData, Uc_Main ucMain, ILogTag logTag)
         {
 #if DEBUG
             Stopwatch sw1 = new Stopwatch();
             sw1.Start();
 #endif
             if (ucMain is null) throw new ArgumentNullException(nameof(ucMain));
-            if (errH is null) throw new ArgumentNullException(nameof(errH));
+            if (logTag is null) throw new ArgumentNullException(nameof(logTag));
 
             //
             // リストの先頭の項目を取得したい。
@@ -333,7 +333,9 @@ namespace Grayscale.P743FvLearn.L260View
             // リストボックスの先頭から指し手をSFEN形式で１つ取得。
             HonpuMoveListItemImpl item = (HonpuMoveListItemImpl)ucMain.LstMove.Items[0];
             string sfen = item.Sfen;
-            errH.OnAppendLog?.Invoke("sfen=" + sfen + Environment.NewLine);
+
+            // (2020-12-18 fri)この機能むずかしいからいったん廃止☆（＾～＾）
+            // logTag.OnAppendLog?.Invoke("sfen=" + sfen + Environment.NewLine);
 
             //
             // 現局面の合法手は、既に読んであるとします。（棋譜ツリーのNextNodesが既に設定されていること）
@@ -359,7 +361,7 @@ namespace Grayscale.P743FvLearn.L260View
                     sb.Append("指し手[" + sfen + "]はありませんでした。\n" + learningData.DumpToAllGohosyu(learningData.Kifu.CurNode.Value.KyokumenConst));
 
                     //Debug.Fail(sb.ToString());
-                    errH.Panic("Util_LearningView#Ittesasu_ByBtnClick：" + sb.ToString());
+                    Logger.Panic(logTag,"Util_LearningView#Ittesasu_ByBtnClick：" + sb.ToString());
                     MessageBox.Show(sb.ToString(), "エラー");
                 }
             }
@@ -378,13 +380,13 @@ namespace Grayscale.P743FvLearn.L260View
                 ),
                 out ittesasuResult,
                 //this.Kifu,//診断用
-                errH,
+                logTag,
                 "Util_LearningView#Ittesasu_ByBtnClick"
             );
             Debug.Assert(ittesasuResult.Get_SyuryoNode_OrNull != null, "ittesasuResult.Get_SyuryoNode_OrNull がヌル☆？！");
             Util_IttesasuRoutine.Before2(
                 ref ittesasuResult,
-                errH
+                logTag
             );
             //
             //次ノートを追加します。次ノードを、これからのカレントとします。
@@ -394,7 +396,7 @@ namespace Grayscale.P743FvLearn.L260View
                 learningData.Kifu,
                 ConvMoveStrSfen.ToMoveStrSfen(ittesasuResult.Get_SyuryoNode_OrNull.Key),
                 ittesasuResult.Get_SyuryoNode_OrNull,
-                errH
+                logTag
                 );
             // これで、棋譜ツリーに、構造変更があったはず。
             //↑↑一手指し
@@ -403,15 +405,15 @@ namespace Grayscale.P743FvLearn.L260View
             // カレント・ノードより古い、以前読んだ手を削除したい。
             //----------------------------------------
             System.Console.WriteLine("カレント・ノード＝" + ConvMoveStrSfen.ToMoveStrSfen(learningData.Kifu.CurNode.Key));
-            int result_removedCount = UtilKifuTree282.IzennoHenkaCutter(learningData.Kifu, errH);
+            int result_removedCount = UtilKifuTree282.IzennoHenkaCutter(learningData.Kifu, logTag);
             System.Console.WriteLine("削除した要素数＝" + result_removedCount);
 
             ////----------------------------------------
             //// 合法手一覧を作成したい。
             ////----------------------------------------
-            learningData.Aa_Yomi(nextMove, errH);
+            learningData.Aa_Yomi(nextMove, logTag);
             // ノード情報の表示
-            Util_LearningView.Aa_ShowNode2(ucMain.LearningData, ucMain, errH);
+            Util_LearningView.Aa_ShowNode2(ucMain.LearningData, ucMain, logTag);
 
             // 合法手表示の更新を要求します。 
             isRequestShowGohosyu = true;

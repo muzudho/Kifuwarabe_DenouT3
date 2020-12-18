@@ -37,14 +37,14 @@ namespace Grayscale.P341Ittesasu.L500UtilA
         /// <param name="ittemodosuArg"></param>
         /// <param name="ittesasu_mutable"></param>
         /// <param name="ittemodosuResult"></param>
-        /// <param name="errH"></param>
+        /// <param name="logTag"></param>
         /// <param name="memberName"></param>
         /// <param name="sourceFilePath"></param>
         /// <param name="sourceLineNumber"></param>
         public static void Before1(
             IttemodosuArg ittemodosuArg,
             out IttemodosuResult ittemodosuResult,
-            IErrorController errH
+            ILogTag logTag
             ,
             [CallerMemberName] string memberName = "",
             [CallerFilePath] string sourceFilePath = "",
@@ -85,7 +85,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
                 ittemodosuArg.Move,
                 kaisi_tebanside,
                 kaisi_Sky,
-                errH
+                logTag
                 );
             ittemodosuResult.FigMovedKoma = figMovedKoma; //動かした駒更新
 
@@ -121,7 +121,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
                 kaisi_Sky,//巻き戻しのとき
                 ittemodosuResult.Susunda_Sky_orNull,
                 out figFoodKoma,//変更される場合あり。
-                errH
+                logTag
                 );
             ittemodosuResult.FigFoodKoma = figFoodKoma; //取られていた駒更新
 
@@ -191,10 +191,10 @@ namespace Grayscale.P341Ittesasu.L500UtilA
         /// </summary>
         /// <param name="isMakimodosi"></param>
         /// <param name="ittemodosuReference"></param>
-        /// <param name="errH"></param>
+        /// <param name="logTag"></param>
         public static void Before2(
             ref IttemodosuResult ittemodosuReference,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             Node<IMove, KyokumenWrapper> editNodeRef = ittemodosuReference.SyuryoNode_OrNull;
@@ -246,7 +246,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             IMove move,
             Playerside kaisi_tebanside,
             SkyConst kaisi_Sky,
-            IErrorController errH
+            ILogTag logTag
             ,
             [CallerMemberName] string memberName = "",
             [CallerFilePath] string sourceFilePath = "",
@@ -270,7 +270,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
                 kaisi_Sky,
                 koma.Pside,
                 koma.Masu,//[巻戻し]のときは、先位置が　駒の居場所。
-                errH
+                logTag
                 );
             Debug.Assert(figMovedKoma != Fingers.Error_1, "駒を動かせなかった？5");
         }
@@ -335,13 +335,13 @@ namespace Grayscale.P341Ittesasu.L500UtilA
         /// <param name="kaisi_Sky"></param>
         /// <param name="susunda_Sky_orNull"></param>
         /// <param name="out_figFoodKoma"></param>
-        /// <param name="errH"></param>
+        /// <param name="logTag"></param>
         private static void Do62_TorareteitaKoma_ifExists(
             IMove move,
             SkyConst kaisi_Sky,//巻き戻しのとき
             SkyConst susunda_Sky_orNull,
             out Finger out_figFoodKoma,
-            IErrorController errH
+            ILogTag logTag
         )
         {
             if (Komasyurui14.H00_Null___ != (Komasyurui14)move.FoodKomaSyurui)
@@ -364,7 +364,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
 
 
                 // 取った駒は、種類が同じなら、駒台のどの駒でも同じです。
-                out_figFoodKoma = Util_Sky_FingerQuery.InOkibaSyuruiNowIgnoreCase(kaisi_Sky, okiba, (Komasyurui14)move.FoodKomaSyurui, errH);
+                out_figFoodKoma = Util_Sky_FingerQuery.InOkibaSyuruiNowIgnoreCase(kaisi_Sky, okiba, (Komasyurui14)move.FoodKomaSyurui, logTag);
             }
             else
             {

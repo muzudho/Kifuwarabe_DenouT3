@@ -15,7 +15,7 @@ namespace Grayscale.P489_Form_______
 
         static void Main(string[] args)
         {
-            IErrorController errH = ErrorControllerReference.AimsDefault;
+            ILogTag logTag = LogTags.AimsDefault;
             MessageBox.Show("AIMSサーバー");
 
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
@@ -56,7 +56,7 @@ namespace Grayscale.P489_Form_______
             aimsServer.ShogiEngineFilePath = setteiXmlFile.ShogiEngineFilePath;
 
             aimsServer.AtBegin();
-            aimsServer.AtBody(errH);
+            aimsServer.AtBody(logTag);
             aimsServer.AtEnd();
         }
     }

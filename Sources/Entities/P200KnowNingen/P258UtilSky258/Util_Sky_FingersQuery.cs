@@ -52,9 +52,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         }
 
         /// <summary>
-        /// ************************************************************************************************************************
         /// 駒のハンドル(*1)を返します。
-        /// ************************************************************************************************************************
         /// 
         ///         *1…将棋の駒１つ１つに付けられた番号です。
         /// 
@@ -62,7 +60,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// <param name="syurui"></param>
         /// <param name="hKomas"></param>
         /// <returns></returns>
-        public static Fingers InKomasyuruiNow(SkyConst src_Sky, Komasyurui14 syurui, IErrorController errH)
+        public static Fingers InKomasyuruiNow(SkyConst src_Sky, Komasyurui14 syurui, ILogTag logTag)
         {
             Fingers figKomas = new Fingers();
 
@@ -203,14 +201,12 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         }
 
         /// <summary>
-        /// ************************************************************************************************************************
         /// 指定した置き場にある駒のハンドルを返します。
-        /// ************************************************************************************************************************
         /// </summary>
         /// <param name="kifu"></param>
         /// <param name="okiba"></param>
         /// <returns></returns>
-        public static Fingers InOkibaNow(SkyConst src_Sky, Okiba okiba, IErrorController errH)
+        public static Fingers InOkibaNow(SkyConst src_Sky, Okiba okiba, ILogTag logTag)
         {
             Fingers komas = new Fingers();
 
@@ -229,14 +225,12 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         }
 
         /// <summary>
-        /// ************************************************************************************************************************
         /// 駒のハンドルを返します。
-        /// ************************************************************************************************************************
         /// </summary>
         /// <param name="pside"></param>
         /// <param name="hKomas"></param>
         /// <returns></returns>
-        public static Fingers InPsideNow(SkyConst srcSky, Playerside pside, IErrorController errH)
+        public static Fingers InPsideNow(SkyConst srcSky, Playerside pside, ILogTag logTag)
         {
             Fingers fingers = new Fingers();
 

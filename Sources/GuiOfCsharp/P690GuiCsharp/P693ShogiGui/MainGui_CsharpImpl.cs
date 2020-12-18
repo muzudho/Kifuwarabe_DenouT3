@@ -42,9 +42,6 @@ namespace Grayscale.P693ShogiGui.L500GUI
     /// </summary>
     public class MainGui_CsharpImpl : MainGui_Csharp
     {
-
-        #region プロパティー
-
         /// <summary>
         /// 将棋サーバー。
         /// </summary>
@@ -148,7 +145,7 @@ namespace Grayscale.P693ShogiGui.L500GUI
                 return this.flowB;
             }
         }
-        public void SetFlowB(SceneName name1, IErrorController errH)
+        public void SetFlowB(SceneName name1, ILogTag logTag)
         {
             this.flowB = name1;
 
@@ -156,7 +153,7 @@ namespace Grayscale.P693ShogiGui.L500GUI
             {
                 TimedB_MouseCapture timeB = ((TimedB_MouseCapture)this.TimedB_MouseCapture);
                 timeB.MouseEventQueue.Enqueue(
-                    new MouseEventState(name1, Shape_CanvasImpl.WINDOW_NAME_SHOGIBAN, MouseEventStateName.Arive, Point.Empty, errH));
+                    new MouseEventState(name1, Shape_CanvasImpl.WINDOW_NAME_SHOGIBAN, MouseEventStateName.Arive, Point.Empty, logTag));
             }
         }
         private SceneName flowB;
@@ -166,13 +163,6 @@ namespace Grayscale.P693ShogiGui.L500GUI
         /// 設定データCSV
         /// </summary>
         public Data_Settei_Csv Data_Settei_Csv { get; set; }
-
-
-        #endregion
-
-
-
-        #region コンストラクター
 
         /// <summary>
         /// 生成後、OwnerFormをセットしてください。
@@ -211,31 +201,24 @@ namespace Grayscale.P693ShogiGui.L500GUI
             this.syuturyokuKirikae = SyuturyokuKirikae.Japanese;
         }
 
-        #endregion
-
-
         /// <summary>
-        /// ************************************************************************************************************************
         /// 将棋エンジンを起動します。
-        /// ************************************************************************************************************************
         /// </summary>
-        public virtual void Start_ShogiEngine(string shogiEngineFilePath, IErrorController errH)
+        public virtual void Start_ShogiEngine(string shogiEngineFilePath, ILogTag logTag)
         {
         }
 
         /// <summary>
         /// コンピューターの先手
         /// </summary>
-        public virtual void Do_ComputerSente(IErrorController errH)
+        public virtual void Do_ComputerSente(ILogTag logTag)
         {
         }
 
         /// <summary>
-        /// ************************************************************************************************************************
         /// 手番が替わったときの挙動を、ここに書きます。
-        /// ************************************************************************************************************************
         /// </summary>
-        public virtual void ChangedTurn(IErrorController errH)
+        public virtual void ChangedTurn(ILogTag logTag)
         {
         }
 
@@ -243,7 +226,7 @@ namespace Grayscale.P693ShogiGui.L500GUI
         /// <summary>
         /// 将棋エンジンに、終了するように促します。
         /// </summary>
-        public virtual void Shutdown(IErrorController errH)
+        public virtual void Shutdown(ILogTag logTag)
         {
         }
 
@@ -251,14 +234,14 @@ namespace Grayscale.P693ShogiGui.L500GUI
         /// <summary>
         /// 将棋エンジンに、ログを出すように促します。
         /// </summary>
-        public virtual void Logdase(IErrorController errH)
+        public virtual void Logdase(ILogTag logTag)
         {
         }
 
 
 
         private int noopSend_counter;
-        public void Timer_Tick( IErrorController errH)
+        public void Timer_Tick( ILogTag logTag)
         {
             if (this.server.EngineClient.ShogiEngineProcessWrapper.IsLive_ShogiEngine())
             {
@@ -266,7 +249,7 @@ namespace Grayscale.P693ShogiGui.L500GUI
                 if ( 20 * 3 < this.noopSend_counter) // 3秒に 1 回ぐらい ok を送れば？
                 {
                     // noop
-                    this.server.EngineClient.ShogiEngineProcessWrapper.Send_Noop_from_server(errH);
+                    this.server.EngineClient.ShogiEngineProcessWrapper.Send_Noop_from_server(logTag);
                     this.noopSend_counter = 0;
                 }
                 else
@@ -275,9 +258,9 @@ namespace Grayscale.P693ShogiGui.L500GUI
                 }
             }
 
-            this.TimedA.Step(errH);
-            this.TimedB_MouseCapture.Step(errH);
-            this.TimedC.Step(errH);
+            this.TimedA.Step(logTag);
+            this.TimedB_MouseCapture.Step(logTag);
+            this.TimedC.Step(logTag);
         }
 
 
@@ -353,7 +336,7 @@ namespace Grayscale.P693ShogiGui.L500GUI
         /// <summary>
         /// このアプリケーションソフトの開始時の処理。
         /// </summary>
-        public virtual void Load_AsStart(IErrorController errH)
+        public virtual void Load_AsStart(ILogTag logTag)
         {
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
@@ -419,7 +402,7 @@ namespace Grayscale.P693ShogiGui.L500GUI
             this.WidgetLoaders.Add(new WidgetsLoader_CsharpImpl(filepath_widgets02, this));
         }
 
-        public void LaunchForm_AsBody(IErrorController errH)
+        public void LaunchForm_AsBody(ILogTag logTag)
         {
             ((Form1_Shogiable)this.OwnerForm).Delegate_Form1_Load = (MainGui_Csharp shogiGui, object sender, EventArgs e) =>
             {
@@ -452,7 +435,7 @@ namespace Grayscale.P693ShogiGui.L500GUI
             {
                 Util_Function_Csharp.Perform_SyokiHaichi(
                     ((Form1_Shogiable)this.OwnerForm).Uc_Form1Main.MainGui,
-                    errH
+                    logTag
                 );
             }
 
@@ -461,7 +444,7 @@ namespace Grayscale.P693ShogiGui.L500GUI
         }
 
 
-        public void Response( string mutexString, IErrorController errH)
+        public void Response( string mutexString, ILogTag logTag)
         {
             Uc_Form1Mainable uc_Form1Main = ((Form1_Shogiable)this.OwnerForm).Uc_Form1Main;
 
@@ -500,7 +483,7 @@ namespace Grayscale.P693ShogiGui.L500GUI
                 default: break;
             }
 
-            uc_Form1Main.Solute_RepaintRequest(mutex2, this, errH);// 再描画
+            uc_Form1Main.Solute_RepaintRequest(mutex2, this, logTag);// 再描画
 
         gt_EndMethod:
             ;

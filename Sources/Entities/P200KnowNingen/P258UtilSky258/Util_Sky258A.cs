@@ -255,11 +255,11 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// TODO: これ、SkyConstに移動できないか☆？
         /// </summary>
         /// <param name="hubNode">指し手一覧</param>
-        /// <param name="errH"></param>
+        /// <param name="logTag"></param>
         /// <returns>駒毎の、全指し手</returns>
         public static Maps_OneAndMulti<Finger, IMove> SplitMoveByStar(
             SkyConst src_Sky,
-            Node<IMove, KyokumenWrapper> hubNode, IErrorController errH)
+            Node<IMove, KyokumenWrapper> hubNode, ILogTag logTag)
         {
             Maps_OneAndMulti<Finger, IMove> enable_teMap = new Maps_OneAndMulti<Finger, IMove>();
 

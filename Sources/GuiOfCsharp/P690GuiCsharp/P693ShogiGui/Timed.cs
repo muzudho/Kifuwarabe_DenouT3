@@ -4,8 +4,6 @@ namespace Grayscale.P693ShogiGui.I125Scene
 {
     public interface Timed
     {
-
-        void Step(IErrorController errH);
-
+        void Step(ILogTag logTag);
     }
 }

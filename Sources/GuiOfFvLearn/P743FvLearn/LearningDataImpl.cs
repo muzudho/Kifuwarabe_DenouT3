@@ -126,7 +126,7 @@ namespace Grayscale.P743FvLearn.L250Learn
         public void ChangeKyokumenPng(Uc_Main uc_Main)
         {
             uc_Main.PctKyokumen.Image = null;//掴んでいる画像ファイルを放します。
-            this.WritePng(ErrorControllerReference.Learner);
+            this.WritePng(LogTags.Learner);
 
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
@@ -169,7 +169,7 @@ namespace Grayscale.P743FvLearn.L250Learn
         /// <summary>
         /// 合法手一覧を作成したい。
         /// </summary>
-        public void Aa_Yomi(IMove move, IErrorController errH)
+        public void Aa_Yomi(IMove move, ILogTag errH)
         {
             //----------------------------------------
             // 合法手のNextNodesを作成します。
@@ -253,7 +253,7 @@ namespace Grayscale.P743FvLearn.L250Learn
         /// <summary>
         /// 局面PNG画像書き出し。
         /// </summary>
-        public void WritePng(IErrorController errH)
+        public void WritePng(ILogTag errH)
         {
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
@@ -307,7 +307,7 @@ namespace Grayscale.P743FvLearn.L250Learn
         /// <param name="uc_Main"></param>
         public void Aaa_CreateNextNodes_Gohosyu(
             EvaluationArgs args,
-            IErrorController errH)
+            ILogTag logTag)
         {
             try
             {
@@ -331,9 +331,9 @@ namespace Grayscale.P743FvLearn.L250Learn
 
 
                 new Tansaku_FukasaYusen_Routine().WAA_Yomu_Start(
-                    this.Kifu, isHonshogi, Mode_Tansaku.Learning, alphabeta_otherBranchDecidedValue, args, errH);
+                    this.Kifu, isHonshogi, Mode_Tansaku.Learning, alphabeta_otherBranchDecidedValue, args, logTag);
             }
-            catch (Exception ex) { errH.Panic(ex, "棋譜ツリーを作っていたときです。"); throw; }
+            catch (Exception ex) { Logger.Panic(logTag, ex, "棋譜ツリーを作っていたときです。"); throw; }
 
         }
 
@@ -362,7 +362,7 @@ namespace Grayscale.P743FvLearn.L250Learn
 #endif
                     node.Value.KyokumenConst,
                     this.Fv, //参照してもらうだけ。
-                    ErrorControllerReference.Learner
+                    LogTags.Learner
                 );
             }
             //----------------------------------------
@@ -378,7 +378,7 @@ namespace Grayscale.P743FvLearn.L250Learn
 #endif
                     node.Value.KyokumenConst,
                     this.Fv, //参照してもらうだけ。
-                    ErrorControllerReference.Learner
+                    LogTags.Learner
                 );
             }
         }

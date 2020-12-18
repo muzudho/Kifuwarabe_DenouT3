@@ -23,7 +23,7 @@
         /// <summary>
         /// ログ出力の有無。
         /// </summary>
-        bool Enable { get; }
+        bool Enabled { get; }
 
         /// <summary>
         /// タイムスタンプの有無。

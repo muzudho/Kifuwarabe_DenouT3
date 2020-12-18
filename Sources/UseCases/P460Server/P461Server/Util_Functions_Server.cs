@@ -49,7 +49,7 @@ namespace Grayscale.P461Server.L250Util
             Model_Manual model_Manual,
             Node<IMove, KyokumenWrapper> newNode,
             out string jsaFugoStr,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             Debug.Assert(null != newNode, "新規ノードがヌル。");
@@ -60,7 +60,7 @@ namespace Grayscale.P461Server.L250Util
             model_Manual.GuiTemezumi = model_Taikyoku.Kifu.CurNode.Value.KyokumenConst.Temezumi;
             model_Manual.GuiPside = model_Taikyoku.Kifu.CurNode.Value.KyokumenConst.KaisiPside;
 
-            jsaFugoStr = ConvMoveStrJsa.ToMoveStrJsa(newNode, errH);
+            jsaFugoStr = ConvMoveStrJsa.ToMoveStrJsa(newNode, logTag);
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Grayscale.P461Server.L250Util
             Model_Manual model_Manual,
             out bool toBreak,
             string hint,
-            IErrorController errH
+            ILogTag logTag
             ,
             [CallerMemberName] string memberName = "",
             [CallerFilePath] string sourceFilePath = "",
@@ -112,7 +112,7 @@ namespace Grayscale.P461Server.L250Util
                         ref result,
                         model_Taikyoku,
                         genjo,
-                        errH
+                        logTag
                         );
 
                     Debug.Assert(result.Out_newNode_OrNull == null, "ここでノードに変化があるのはおかしい。");
@@ -144,7 +144,7 @@ namespace Grayscale.P461Server.L250Util
                             ref result,
                             model_Taikyoku,
                             genjo,
-                            errH
+                            logTag
                             );
                         Debug.Assert(result.Out_newNode_OrNull == null, "ここでノードに変化があるのはおかしい。");
 
@@ -165,7 +165,7 @@ namespace Grayscale.P461Server.L250Util
                             ref result,
                             model_Taikyoku,
                             genjo,
-                            errH
+                            logTag
                             );
                         Debug.Assert(result.Out_newNode_OrNull == null, "ここでノードに変化があるのはおかしい。");
 
@@ -188,20 +188,20 @@ namespace Grayscale.P461Server.L250Util
                 if (kifuParserA_Impl.State is KifuParserA_StateA2_SfenMoves)
                 {
 #if DEBUG
-                    errH.Logger.WriteLineAddMemo("ﾂｷﾞﾊ　ｲｯﾃ　ｼｮﾘｼﾀｲ☆");
+                    Logger.WriteLineAddMemo(logTag, "ﾂｷﾞﾊ　ｲｯﾃ　ｼｮﾘｼﾀｲ☆");
 #endif
 
                     inputLine = kifuParserA_Impl.Execute_Step(
                         ref result,
                         model_Taikyoku,
                         genjo,
-                        errH
+                        logTag
                         );
 
                     if (null != result.Out_newNode_OrNull)
                     {
                         string jsaFugoStr;
-                        Util_Functions_Server.SetCurNode_Srv(model_Taikyoku, model_Manual, result.Out_newNode_OrNull, out jsaFugoStr, errH);
+                        Util_Functions_Server.SetCurNode_Srv(model_Taikyoku, model_Manual, result.Out_newNode_OrNull, out jsaFugoStr, logTag);
                     }
 
                     if (genjo.IsBreak())
@@ -227,14 +227,14 @@ namespace Grayscale.P461Server.L250Util
                         model_Manual,
                         genjo.StartposImporter_OrNull,//指定されているはず。
                         genjo,
-                        errH
+                        logTag
                         );
 
                     //------------------------------
                     // 駒の配置
                     //------------------------------
                     string jsaFugoStr;
-                    Util_Functions_Server.SetCurNode_Srv(model_Taikyoku, model_Manual, parsedKyokumen.KifuNode, out jsaFugoStr, errH);// GUIに通知するだけ。
+                    Util_Functions_Server.SetCurNode_Srv(model_Taikyoku, model_Manual, parsedKyokumen.KifuNode, out jsaFugoStr, logTag);// GUIに通知するだけ。
 
                     ////------------------------------
                     //// 駒を、駒袋から駒台に移動させます。
@@ -277,7 +277,7 @@ namespace Grayscale.P461Server.L250Util
             out Finger foodKoma,
             out string jsaFugoStr,
             Model_Taikyoku model_Taikyoku,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             bool successful = false;
@@ -302,7 +302,7 @@ namespace Grayscale.P461Server.L250Util
             // 符号
             //------------------------------
             // [巻戻し]ボタン
-            jsaFugoStr = ConvMoveStrJsa.ToMoveStrJsa(removeeLeaf,errH);
+            jsaFugoStr = ConvMoveStrJsa.ToMoveStrJsa(removeeLeaf,logTag);
 
 
 
@@ -324,11 +324,11 @@ namespace Grayscale.P461Server.L250Util
                         korekaranoTemezumi
                     ),
                     out ittemodosuResult,
-                    errH
+                    logTag
                     );
                 Util_IttemodosuRoutine.Before2(
                     ref ittemodosuResult,
-                    errH
+                    logTag
                     );
                 Util_IttemodosuRoutine.After3_ChangeCurrent(
                     model_Taikyoku.Kifu
@@ -349,9 +349,7 @@ namespace Grayscale.P461Server.L250Util
 
 
         /// <summary>
-        /// ************************************************************************************************************************
         /// [コマ送り]ボタン
-        /// ************************************************************************************************************************
         /// 
         /// vsコンピューター対局でも、タイマーによって[コマ送り]が実行されます。
         /// 
@@ -360,7 +358,7 @@ namespace Grayscale.P461Server.L250Util
             ref string inputLine,
             Model_Taikyoku model_Taikyoku,
             Model_Manual model_Manual,
-            IErrorController errH
+            ILogTag logTag
             ,
             [CallerMemberName] string memberName = "",
             [CallerFilePath] string sourceFilePath = "",
@@ -380,7 +378,7 @@ namespace Grayscale.P461Server.L250Util
                 model_Manual,
                 out toBreak,
                 "hint",
-                errH
+                logTag
                 );
 
         gt_EndMethod:
@@ -392,9 +390,7 @@ namespace Grayscale.P461Server.L250Util
 
 
         /// <summary>
-        /// ************************************************************************************************************************
         /// 駒を動かします(1)。マウスボタンが押下されたとき。
-        /// ************************************************************************************************************************
         /// 
         /// 成る、成らない関連。
         /// 
@@ -406,13 +402,10 @@ namespace Grayscale.P461Server.L250Util
             Finger fig_btnTumandeiruKoma,
             RO_Star foodee_koma,//取られる対象の駒
             Model_Manual model_Manual,
-            IErrorController errH
+            ILogTag logTag
             )
         {
-
             Finger btnKoma_Food_Koma;
-
-
 
             // 取られることになる駒のボタン
             btnKoma_Food_Koma = Util_Sky_FingersQuery.InMasuNow(model_Manual.GuiSkyConst, foodee_koma.Masu).ToFirst();

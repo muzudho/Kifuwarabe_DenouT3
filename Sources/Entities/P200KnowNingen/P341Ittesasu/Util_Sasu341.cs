@@ -23,14 +23,14 @@ namespace Grayscale.P341Ittesasu.L510OperationB
         /// <param name="finger"></param>
         /// <param name="masu"></param>
         /// <param name="pside_genTeban"></param>
-        /// <param name="errH"></param>
+        /// <param name="logTag"></param>
         /// <returns></returns>
         public static SkyConst Sasu(
             SkyConst src_Sky,//指定局面
             Finger finger,//動かす駒
             SyElement masu,//移動先マス
             bool toNaru,//成るなら真
-            IErrorController errH
+            ILogTag logTag
             )
         {
             SkyBuffer sky_buf = new SkyBuffer(src_Sky); // 現局面を元に、新規局面を書き換えます。

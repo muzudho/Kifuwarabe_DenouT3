@@ -37,7 +37,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// <param name="mn"></param>
         /// <param name="ml"></param>
         /// <param name="mp"></param>
-        /// <param name="errH"></param>
+        /// <param name="logTag"></param>
         public static void CountMoti(
             SkyConst src_Sky,
             out int mK,
@@ -57,7 +57,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
             out int mn,
             out int ml,
             out int mp,
-            IErrorController errH
+            ILogTag logTag
         )
         {
             mK = 0;
@@ -80,7 +80,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
 
             Fingers komas_moti1p;// 先手の持駒
             Fingers komas_moti2p;// 後手の持駒
-            Util_Sky_FingersQueryFx.Split_Moti1p_Moti2p(out komas_moti1p, out komas_moti2p, src_Sky, errH);
+            Util_Sky_FingersQueryFx.Split_Moti1p_Moti2p(out komas_moti1p, out komas_moti2p, src_Sky, logTag);
 
             foreach (Finger figKoma in komas_moti1p.Items)
             {

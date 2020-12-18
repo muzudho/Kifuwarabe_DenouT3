@@ -18,9 +18,6 @@ namespace Grayscale.P481AimsServer.L500Server
     /// </summary>
     public class AimsServerImpl : Server_Impl, AimsServerBase
     {
-
-        #region プロパティー
-
         /// <summary>
         /// 将棋エンジンへのファイルパス。
         /// </summary>
@@ -36,9 +33,6 @@ namespace Grayscale.P481AimsServer.L500Server
         }
         private Phase_AimsServer phase_AimsServer;
 
-        #endregion
-
-
         public AimsServerImpl(SkyConst src_Sky, int temezumi)
             : base(src_Sky, temezumi, new Receiver_ForAimsImpl())
         {
@@ -53,7 +47,7 @@ namespace Grayscale.P481AimsServer.L500Server
         {
         }
 
-        public void AtBody(IErrorController errH)
+        public void AtBody(ILogTag logTag)
         {
             PhaseResult_AimsServer phaseResult = PhaseResult_AimsServer.None;
 
@@ -127,7 +121,7 @@ namespace Grayscale.P481AimsServer.L500Server
 
                                 // 将棋エンジンに usi コマンドを送るぜ☆
                                 //MessageBox.Show("サーバー「このあと、将棋エンジンにusiコマンドを送るぜ☆」");
-                                this.EngineClient.ShogiEngineProcessWrapper.Send_Usi(errH);
+                                this.EngineClient.ShogiEngineProcessWrapper.Send_Usi(logTag);
                             }
                             else
                             {
@@ -160,15 +154,15 @@ namespace Grayscale.P481AimsServer.L500Server
                                 //------------------------------------------------------------
 
                                 // 将棋エンジンへ：　「私は将棋サーバーですが、USIプロトコルのponderコマンドには対応していませんので、送ってこないでください」
-                                this.EngineClient.ShogiEngineProcessWrapper.Send_Setoption("setoption name USI_Ponder value false",errH);
+                                this.EngineClient.ShogiEngineProcessWrapper.Send_Setoption("setoption name USI_Ponder value false",logTag);
 
                                 // 将棋エンジンへ：　「私は将棋サーバーです。noop コマンドを送ってくれば、すぐに ok コマンドを返します。1分間を空けてください」
-                                this.EngineClient.ShogiEngineProcessWrapper.Send_Setoption("setoption name noopable value true",errH);
+                                this.EngineClient.ShogiEngineProcessWrapper.Send_Setoption("setoption name noopable value true",logTag);
 
                                 //------------------------------------------------------------
                                 // 将棋エンジンへ：　「準備はいいですか？」
                                 //------------------------------------------------------------
-                                this.EngineClient.ShogiEngineProcessWrapper.Send_Isready(errH);
+                                this.EngineClient.ShogiEngineProcessWrapper.Send_Isready(logTag);
 
                             }
                         }

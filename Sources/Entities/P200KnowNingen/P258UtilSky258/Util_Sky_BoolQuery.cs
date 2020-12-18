@@ -20,13 +20,11 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
     {
 
         /// <summary>
-        /// ************************************************************************************************************************
         /// 含まれるか判定。
-        /// ************************************************************************************************************************
         /// </summary>
         /// <param name="masus"></param>
         /// <returns></returns>
-        public static bool ExistsIn(IMoveHalf sl, SySet<SyElement> masus, SkyConst srcSky, IErrorController errH)
+        public static bool ExistsIn(IMoveHalf sl, SySet<SyElement> masus, SkyConst srcSky, ILogTag logTag)
         {
             bool matched = false;
 
@@ -35,7 +33,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
                 RO_Star koma = Util_Starlightable.AsKoma(sl.Now);
 
 
-                Finger finger = Util_Sky_FingerQuery.InShogibanMasuNow(srcSky, koma.Pside, masu, errH);
+                Finger finger = Util_Sky_FingerQuery.InShogibanMasuNow(srcSky, koma.Pside, masu, logTag);
 
                 if (
                     finger != Fingers.Error_1  //2014-07-21 先後も見るように追記。
@@ -52,9 +50,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         }
 
         /// <summary>
-        /// ************************************************************************************************************************
         /// 相手陣に入っていれば真。
-        /// ************************************************************************************************************************
         /// 
         ///         後手は 7,8,9 段。
         ///         先手は 1,2,3 段。
@@ -149,9 +145,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         }
 
         /// <summary>
-        /// ************************************************************************************************************************
         /// 駒台の上にあれば真。
-        /// ************************************************************************************************************************
         /// </summary>
         /// <returns></returns>
         public static bool OnKomadai(RO_Starlight ms)
@@ -167,9 +161,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         }
 
         /// <summary>
-        /// ************************************************************************************************************************
         /// 先後一致判定。
-        /// ************************************************************************************************************************
         /// </summary>
         /// <param name="ms2"></param>
         /// <returns></returns>
@@ -233,7 +225,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
             }
             catch (Exception ex)
             {
-                ErrorControllerReference.Error.Panic(ex, "IsDaAction:");// exceptionArea=" + exceptionArea
+                Logger.Panic(LogTags.Error, ex, "IsDaAction:");// exceptionArea=" + exceptionArea
                 throw;
             }
 

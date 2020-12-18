@@ -33,9 +33,7 @@ namespace Grayscale.P339ConvKyokume.L500Converter
     public abstract class ConvSfenMoveTokens
     {
         /// <summary>
-        /// ************************************************************************************************************************
         /// 符号１「7g7f」を元に、move を作ります。
-        /// ************************************************************************************************************************
         /// 
         /// ＜[再生]、[コマ送り]で呼び出されます＞
         /// </summary>
@@ -50,7 +48,7 @@ namespace Grayscale.P339ConvKyokume.L500Converter
             out IMove move,
             KifuTree kifu,
             string hint,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             move = Util_Sky258A.NullObjectMove;
@@ -122,12 +120,12 @@ namespace Grayscale.P339ConvKyokume.L500Converter
                     koma = Util_Sky_FingerQuery.InOkibaSyuruiNowIgnoreCase(
                         siteiNode.Value.KyokumenConst,
                         Conv_Playerside.ToKomadai(pside1),//FIXME:
-                        uttaSyurui, errH);
+                        uttaSyurui, logTag);
                     if (Fingers.Error_1 == koma)
                     {
                         string message = "TuginoItte_Sfen#GetData_FromTextSub：駒台から種類[" + uttaSyurui + "]の駒を掴もうとしましたが、エラーでした。";
                         Exception ex1 = new Exception(message);
-                        ErrorControllerReference.Error.Panic(ex1, "moves解析中☆"); throw ex1;
+                        Logger.Panic(LogTags.Error, ex1, "moves解析中☆"); throw ex1;
                     }
 
 
@@ -194,7 +192,7 @@ namespace Grayscale.P339ConvKyokume.L500Converter
                             src_Sky.Temezumi));
 
                         Exception ex1 = new Exception(sb.ToString());
-                        ErrorControllerReference.Error.Panic(ex1, "SFEN解析中の失敗"); throw ex1;
+                        Logger.Panic(LogTags.Error, ex1, "SFEN解析中の失敗"); throw ex1;
                     }
                 }
 
@@ -225,7 +223,7 @@ namespace Grayscale.P339ConvKyokume.L500Converter
                     }
 
 
-                    Finger srcKoma = Util_Sky_FingerQuery.InOkibaSyuruiNowIgnoreCase(siteiNode.Value.KyokumenConst, srcOkiba, srcSyurui, errH);
+                    Finger srcKoma = Util_Sky_FingerQuery.InOkibaSyuruiNowIgnoreCase(siteiNode.Value.KyokumenConst, srcOkiba, srcSyurui, logTag);
 
                     RO_Star dstKoma = Util_Starlightable.AsKoma(src_Sky.StarlightIndexOf(srcKoma).Now);
 
@@ -277,7 +275,7 @@ namespace Grayscale.P339ConvKyokume.L500Converter
                     Komasyurui14.H00_Null___//符号からは、取った駒は分からない
                 );
             }
-            catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "moves解析中☆　str1=「" + str1 + "」　str2=「" + str2 + "」　str3=「" + str3 + "」　str4=「" + str4 + "」　strNari=「" + strNari + "」　"); throw; }
+            catch (Exception ex) { Logger.Panic(LogTags.Error, ex, "moves解析中☆　str1=「" + str1 + "」　str2=「" + str2 + "」　str3=「" + str3 + "」　str4=「" + str4 + "」　strNari=「" + strNari + "」　"); throw; }
         }
     }
 }

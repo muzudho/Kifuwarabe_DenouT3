@@ -32,7 +32,7 @@ namespace Grayscale.P354UtilSasuEx.L500Util
         public static Dictionary<string, SasuEntry> CreateNariMove(
             SkyConst src_Sky,
             Dictionary<string, SasuEntry> a_moveBetuEntry,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             //----------------------------------------
@@ -130,7 +130,7 @@ namespace Grayscale.P354UtilSasuEx.L500Util
                         }
 
                         //>>>>> エラーが起こりました。
-                        errH.Panic(ex, "新しく作った「成りの指し手」を既存ノードに追加していた時です。：追加したい指し手=「" + ConvMoveStrSfen.ToMoveStrSfen(newMove) + "」既存の手=" + sb.ToString());
+                        Logger.Panic(logTag,ex, "新しく作った「成りの指し手」を既存ノードに追加していた時です。：追加したい指し手=「" + ConvMoveStrSfen.ToMoveStrSfen(newMove) + "」既存の手=" + sb.ToString());
                         throw;
                     }
 

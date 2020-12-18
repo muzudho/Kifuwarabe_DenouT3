@@ -100,7 +100,7 @@ namespace Grayscale.P270ForcePromot.L250Struct
                         "rowCount=[" + rowCount + "]\n" +
                         "masuHandle=[" + masuHandle + "]\n";
                         Exception ex1 = new Exception(message);
-                        ErrorControllerReference.Error.Panic(ex1, "強制昇格中☆"); throw ex1;
+                        Logger.Panic(LogTags.Error, ex1, "強制昇格中☆"); throw ex1;
                     }
 
                     map2.Add(masuHandle, Array_Komahaiyaku185.Items[ haiyakuHandle_target]);

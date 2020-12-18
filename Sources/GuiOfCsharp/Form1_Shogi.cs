@@ -84,14 +84,14 @@ namespace Grayscale.P699_Form_______
         /// <param name="e"></param>
         private void Ui_Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            IErrorController errH = ErrorControllerReference.CsharpGuiDefault;
-            this.owner.Shutdown(errH);
+            ILogTag logTag = LogTags.CsharpGuiDefault;
+            this.owner.Shutdown(logTag);
         }
 
         private void Ui_Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            IErrorController errH = ErrorControllerReference.CsharpGuiDefault;
-            this.owner.Shutdown(errH);
+            ILogTag logTag = LogTags.CsharpGuiDefault;
+            this.owner.Shutdown(logTag);
         }
     }
 }

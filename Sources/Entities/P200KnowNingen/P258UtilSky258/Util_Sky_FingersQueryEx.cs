@@ -24,13 +24,13 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// </summary>
         /// <param name="km"></param>
         /// <returns></returns>
-        public static void Fingers_EachSrcNow(out Fingers out_fingers, SySet<SyElement> srcList, SkyConst src_Sky, Playerside pside, IMoveHalf itaru, IErrorController errH)
+        public static void Fingers_EachSrcNow(out Fingers out_fingers, SySet<SyElement> srcList, SkyConst src_Sky, Playerside pside, IMoveHalf itaru, ILogTag logTag)
         {
             out_fingers = new Fingers();
 
             foreach (SyElement masu in srcList.Elements)
             {
-                Finger finger = Util_Sky_FingerQuery.InShogibanMasuNow(src_Sky, pside, masu, errH);
+                Finger finger = Util_Sky_FingerQuery.InShogibanMasuNow(src_Sky, pside, masu, logTag);
                 if (Util_Finger.ForHonshogi(finger))
                 {
                     // 指定の升に駒がありました。

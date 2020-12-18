@@ -1,6 +1,9 @@
 ﻿// アルファ法のデバッグ出力をする場合。
 //#define DEBUG_ALPHA_METHOD
 
+namespace Grayscale.P554TansaFukasa.L500Struct
+{
+#if DEBUG
     using Grayscale.Kifuwarakaku.Entities.Logger;
 using Grayscale.P035Collection.L500Struct;
 using Grayscale.P056Syugoron.I250Struct;
@@ -26,15 +29,35 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 using Grayscale.P353ConvSasuEx.L500Converter;
 using Grayscale.P202GraphicLog.L500Util;
 using Grayscale.P554TansaFukasa.I500Struct;
-
-
-#if DEBUG
 using Grayscale.P266KyokumMoves.L250Log;
 using Grayscale.P370LogGraphiEx.L500Util;
+#else
+    using Grayscale.Kifuwarakaku.Entities.Logger;
+    using Grayscale.P035Collection.L500Struct;
+    using Grayscale.P056Syugoron.I250Struct;
+    using Grayscale.P212ConvPside.L500Converter;
+    using Grayscale.P218Starlight.I500Struct;
+    using Grayscale.P222LogKaisetu.L250Struct;
+    using Grayscale.P224Sky.L500Struct;
+    using Grayscale.P238Seiza.L250Struct;
+    using Grayscale.P238Seiza.L500Util;
+    using Grayscale.P324KifuTree.I250Struct;
+    using Grayscale.P354UtilSasuEx.L500Util;
+    using Grayscale.P360ConvSasu.L500Converter;
+    using Grayscale.P362LegalMove.L500Util;
+    using Grayscale.P266KyokumMoves.L500Util;
+    using Grayscale.P542Scoreing.I250Args;
+    using Grayscale.P542Scoreing.L500Util;
+    using Grayscale.P551Tansaku.I500Tansaku;
+    using Grayscale.P551Tansaku.L500Struct;
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
+    using Grayscale.P353ConvSasuEx.L500Converter;
+    using Grayscale.P202GraphicLog.L500Util;
+    using Grayscale.P554TansaFukasa.I500Struct;
 #endif
-
-namespace Grayscale.P554TansaFukasa.L500Struct
-{
 
     /// <summary>
     /// 探索ルーチン
@@ -46,7 +69,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             KifuTree kifu,
             bool isHonshogi,
             Mode_Tansaku mode_Tansaku,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             // TODO:ここではログを出力せずに、ツリーの先端で出力したい。
@@ -199,7 +222,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             Mode_Tansaku mode_Tansaku,
             float alphabeta_otherBranchDecidedValue,
             EvaluationArgs args,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             int exceptionArea = 0;
@@ -207,7 +230,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             try
             {
                 exceptionArea = 10;
-                Tansaku_Genjo genjo = this.CreateGenjo(kifu, isHonshogi, mode_Tansaku, errH);
+                Tansaku_Genjo genjo = this.CreateGenjo(kifu, isHonshogi, mode_Tansaku, logTag);
                 KifuNode node_yomi = (KifuNode)kifu.CurNode;
                 int wideCount2 = 0;
 
@@ -223,7 +246,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
                     out moveBetuEntry,
                     out yomiDeep,
                     out a_childrenBest,
-                    errH
+                    logTag
                     );
                 int moveBetuEntry_count = moveBetuEntry.Count;
 
@@ -239,7 +262,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
                         node_yomi,
                         args,
                         out a_childrenBest,
-                        errH
+                        logTag
                         );
                 }
                 else
@@ -254,7 +277,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
                     node_yomi,
                     moveBetuEntry.Count,
                     args,
-                    errH
+                    logTag
                     );
 
 #if DEBUG
@@ -286,7 +309,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
                             Debug.Fail(message);
 
                             // どうにもできないので  ログだけ取って、上に投げます。
-                            errH.Logger.WriteLineError(message);
+                            Logger.WriteLineError(logTag, message);
                             throw;
                         }
 #if DEBUG
@@ -324,21 +347,21 @@ namespace Grayscale.P554TansaFukasa.L500Struct
         /// <param name="out_moveBetuEntry"></param>
         /// <param name="out_yomiDeep"></param>
         /// <param name="out_a_childrenBest"></param>
-        /// <param name="errH"></param>
+        /// <param name="logTag"></param>
         private static void CreateEntries_BeforeLoop(
             Tansaku_Genjo genjo,
             KifuNode node_yomi,
             out Dictionary<string, SasuEntry> out_moveBetuEntry,
             out int out_yomiDeep,
             out float out_a_childrenBest,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             out_moveBetuEntry = Tansaku_FukasaYusen_Routine.WAAAA_Create_ChildNodes(
                 genjo,
                 node_yomi.Key,
                 node_yomi.Value.KyokumenConst,
-                errH);
+                logTag);
 
             out_yomiDeep = node_yomi.Value.KyokumenConst.Temezumi - genjo.YomikaisiTemezumi + 1;
 
@@ -360,14 +383,14 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             KifuNode node_yomi,
             EvaluationArgs args,
             out float out_a_childrenBest,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             // 局面に評価値を付けます。
             Util_Scoreing.DoScoreing_Kyokumen(
                 node_yomi,//mutable
                 args,
-                errH
+                logTag
                 );
             // 局面の評価値。
             out_a_childrenBest = node_yomi.Score;
@@ -411,7 +434,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
         /// <param name="genjo"></param>
         /// <param name="alphabeta_otherBranchDecidedValue"></param>
         /// <param name="args"></param>
-        /// <param name="errH"></param>
+        /// <param name="logTag"></param>
         /// <returns>子の中で最善の点</returns>
         private static float WAAA_Yomu_Loop(
             Tansaku_Genjo genjo,
@@ -419,7 +442,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             KifuNode node_yomi,
             int moveBetuEntry_count,
             EvaluationArgs args,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             int exceptionArea = 0;
@@ -448,7 +471,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
                     out moveBetuEntry2,
                     out yomiDeep2,
                     out a_childrenBest,
-                    errH
+                    logTag
                     );
 
                 int wideCount1 = 0;
@@ -469,7 +492,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
                             node_yomi,
                             args,
                             out a_childrenBest,
-                            errH
+                            logTag
                             );
 
                         wideCount1++;
@@ -497,7 +520,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
                         else
                         {
                             // 既存でなければ、作成・追加
-                            childNode1 = Conv_SasuEntry.ToKifuNode(entry.Value, node_yomi.Value.KyokumenConst, errH);
+                            childNode1 = Conv_SasuEntry.ToKifuNode(entry.Value, node_yomi.Value.KyokumenConst, logTag);
                             node_yomi.PutAdd_ChildNode(entry.Key, childNode1);
                         }
 
@@ -509,7 +532,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
                             childNode1,
                             moveBetuEntry2.Count,
                             args,
-                            errH);
+                            logTag);
                         Util_Scoreing.Update_Branch(
                             a_myScore,//a_childrenBest,
                             node_yomi//mutable
@@ -562,15 +585,15 @@ namespace Grayscale.P554TansaFukasa.L500Struct
                 {
                     case 10:
                         {
-                            errH.Panic(ex, "棋譜ツリーの読みループの前半１０です。"); throw;
+                            Logger.Panic(logTag, ex, "棋譜ツリーの読みループの前半１０です。"); throw;
                         }
                     case 20:
                         {
-                            errH.Panic(ex, "棋譜ツリーの読みループの前半２０です。"); throw;
+                            Logger.Panic(logTag, ex, "棋譜ツリーの読みループの前半２０です。"); throw;
                         }
                     case 30:
                         {
-                            errH.Panic(ex, "棋譜ツリーの読みループの後半７０です。"); throw;
+                            Logger.Panic(logTag, ex, "棋譜ツリーの読みループの後半７０です。"); throw;
                         }
                     default: throw;
                 }
@@ -597,7 +620,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             Tansaku_Genjo genjo,
             IMove src_Sky_move,
             SkyConst src_Sky,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             int exceptionArea = 0;
@@ -689,7 +712,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
                         genjo.Args.LogF_moveKiki,//利き用
 #endif
                         "読みNextルーチン",
-                        errH);
+                        logTag);
 
                     exceptionArea = 40;
 
@@ -700,7 +723,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
                     moveBetuEntry = Conv_KomabetuMasus.ToMoveBetuSky1(
                         starbetuSusumuMasus,
                         src_Sky,
-                        errH
+                        logTag
                     );
 
                     //----------------------------------------
@@ -709,7 +732,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
                     //成りの手
                     Dictionary<string, SasuEntry> b_moveBetuEntry = Util_SasuEx.CreateNariMove(src_Sky,
                         moveBetuEntry,
-                        errH);
+                        logTag);
 
                     // マージ
                     foreach(KeyValuePair<string, SasuEntry> entry in b_moveBetuEntry)
@@ -736,7 +759,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
                     moveBetuEntry = Conv_KomabetuMasus.KomabetuMasusToMoveBetuSky(
                         komaBETUSusumeruMasus,
                         src_Sky,
-                        errH
+                        logTag
                         );
 
 //#if DEBUG
@@ -754,23 +777,23 @@ namespace Grayscale.P554TansaFukasa.L500Struct
                 {
                     case 10:
                         {
-                            errH.Panic(ex, "棋譜ツリーの読みループの作成次ノードの前半１０です。"); throw;
+                            Logger.Panic(logTag, ex, "棋譜ツリーの読みループの作成次ノードの前半１０です。"); throw;
                         }
                     case 20:
                         {
-                            errH.Panic(ex, "棋譜ツリーの読みループの作成次ノードの前半３０です。"); throw;
+                            Logger.Panic(logTag, ex, "棋譜ツリーの読みループの作成次ノードの前半３０です。"); throw;
                         }
                     case 30:
                         {
-                            errH.Panic(ex, "棋譜ツリーの読みループの作成次ノードの中盤５０です。"); throw;
+                            Logger.Panic(logTag, ex, "棋譜ツリーの読みループの作成次ノードの中盤５０です。"); throw;
                         }
                     case 40:
                         {
-                            errH.Panic(ex, "王手局面除去後に成りの指し手を追加していた時です。"); throw;
+                            Logger.Panic(logTag, ex, "王手局面除去後に成りの指し手を追加していた時です。"); throw;
                         }
                     case 50:
                         {
-                            errH.Panic(ex, "棋譜ツリーの読みループの作成次ノードの後半９０です。"); throw;
+                            Logger.Panic(logTag, ex, "棋譜ツリーの読みループの作成次ノードの後半９０です。"); throw;
                         }
                     default: throw;
                 }
@@ -786,7 +809,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             SkyConst src_Sky,
             out MmLogGenjoImpl out_mm_log,
             out KaisetuBoard out_logBrd_move1,
-            IErrorController errH
+            ILogTag logTag
         )
         {
             out_logBrd_move1 = new KaisetuBoard();// 盤１個分のログの準備
@@ -803,14 +826,14 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             }
             catch (Exception ex)
             {
-                errH.Panic(ex, "棋譜ツリーの読みループの作成次ノードの前半２０です。"); throw;
+                Logger.Panic(logTag, ex, "棋譜ツリーの読みループの作成次ノードの前半２０です。"); throw;
             }
         }
         private static void Log2(
             Tansaku_Genjo genjo,
             KifuNode node_yomi,
             KaisetuBoard logBrd_move1,
-            IErrorController errH
+            ILogTag logTag
         )
         {
             try
@@ -828,7 +851,7 @@ namespace Grayscale.P554TansaFukasa.L500Struct
             }
             catch (Exception ex)
             {
-                errH.Panic(ex, "棋譜ツリーの読みループの作成次ノードの前半４０です。"); throw;
+                Logger.Panic(logTag, ex, "棋譜ツリーの読みループの作成次ノードの前半４０です。"); throw;
             }
         }
 #endif

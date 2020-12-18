@@ -57,7 +57,7 @@ namespace Grayscale.P461Server.L496EngineWrapper
         /// </summary>
         public EngineProcessWrapperImpl()
         {
-            this.SetDelegate_ShogiServer_ToEngine((string line, IErrorController errH) =>
+            this.SetDelegate_ShogiServer_ToEngine((string line, ILogTag errH) =>
             {
                 // デフォルトでは何もしません。
             });
@@ -69,7 +69,7 @@ namespace Grayscale.P461Server.L496EngineWrapper
         /// 
         /// 二度手間なんだが、メソッドを１箇所に集約するためにこれを使う☆
         /// </summary>
-        private void Download(string message, IErrorController errH)
+        private void Download(string message, ILogTag errH)
         {
             //IErrorController errH = OwataMinister.SERVER_NETWORK;
 
@@ -84,7 +84,7 @@ namespace Grayscale.P461Server.L496EngineWrapper
         /// <summary>
         /// 将棋エンジンに、"position ～略～"を送信します。
         /// </summary>
-        public void Send_Position(string position, IErrorController errH)
+        public void Send_Position(string position, ILogTag errH)
         {
             // 将棋エンジンの標準入力へ、メッセージを送ります。
             this.Download(position, errH);
@@ -93,7 +93,7 @@ namespace Grayscale.P461Server.L496EngineWrapper
         /// <summary>
         /// 将棋エンジンに、"setoption ～略～"を送信します。
         /// </summary>
-        public void Send_Setoption(string setoption, IErrorController errH)
+        public void Send_Setoption(string setoption, ILogTag errH)
         {
             // 将棋エンジンの標準入力へ、メッセージを送ります。
             this.Download(setoption, errH);
@@ -102,7 +102,7 @@ namespace Grayscale.P461Server.L496EngineWrapper
         /// <summary>
         /// 将棋エンジンに、"usi"を送信します。
         /// </summary>
-        public void Send_Usi( IErrorController errH)
+        public void Send_Usi( ILogTag errH)
         {
             // 将棋エンジンの標準入力へ、メッセージを送ります。
             this.Download("usi", errH);
@@ -111,7 +111,7 @@ namespace Grayscale.P461Server.L496EngineWrapper
         /// <summary>
         /// 将棋エンジンに、"isready"を送信します。
         /// </summary>
-        public void Send_Isready( IErrorController errH)
+        public void Send_Isready( ILogTag errH)
         {
             this.Download("isready", errH);
         }
@@ -119,7 +119,7 @@ namespace Grayscale.P461Server.L496EngineWrapper
         /// <summary>
         /// 将棋エンジンに、"usinewgame"を送信します。
         /// </summary>
-        public void Send_Usinewgame( IErrorController errH)
+        public void Send_Usinewgame( ILogTag errH)
         {
             // 将棋エンジンの標準入力へ、メッセージを送ります。
             this.Download("usinewgame", errH);
@@ -128,7 +128,7 @@ namespace Grayscale.P461Server.L496EngineWrapper
         /// <summary>
         /// 将棋エンジンに、"gameover lose"を送信します。
         /// </summary>
-        public void Send_Gameover_lose( IErrorController errH)
+        public void Send_Gameover_lose( ILogTag errH)
         {
             // 将棋エンジンの標準入力へ、メッセージを送ります。
             this.Download("gameover lose",errH);
@@ -137,7 +137,7 @@ namespace Grayscale.P461Server.L496EngineWrapper
         /// <summary>
         /// 将棋エンジンに、"quit"を送信します。
         /// </summary>
-        public void Send_Quit( IErrorController errH)
+        public void Send_Quit( ILogTag errH)
         {
             // 将棋エンジンの標準入力へ、メッセージを送ります。
             this.Download("quit",errH);
@@ -146,7 +146,7 @@ namespace Grayscale.P461Server.L496EngineWrapper
         /// <summary>
         /// 将棋エンジンに、"ok"を送信します。"noop"への返事です。
         /// </summary>
-        public void Send_Noop_from_server( IErrorController errH)
+        public void Send_Noop_from_server( ILogTag errH)
         {
             // 将棋エンジンの標準入力へ、メッセージを送ります。
             this.Download("noop from server",errH);
@@ -155,7 +155,7 @@ namespace Grayscale.P461Server.L496EngineWrapper
         /// <summary>
         /// 将棋エンジンに、"go"を送信します。
         /// </summary>
-        public void Send_Go( IErrorController errH)
+        public void Send_Go( ILogTag errH)
         {
             // 将棋エンジンの標準入力へ、メッセージを送ります。
             this.Download("go",errH);
@@ -164,7 +164,7 @@ namespace Grayscale.P461Server.L496EngineWrapper
         /// <summary>
         /// 将棋エンジンに、終了するように促します。
         /// </summary>
-        public void Send_Shutdown( IErrorController errH)
+        public void Send_Shutdown( ILogTag errH)
         {
             if (this.IsLive_ShogiEngine())
             {
@@ -176,7 +176,7 @@ namespace Grayscale.P461Server.L496EngineWrapper
         /// <summary>
         /// 将棋エンジンに、ログを出すように促します。
         /// </summary>
-        public void Send_Logdase( IErrorController errH)
+        public void Send_Logdase( ILogTag errH)
         {
             if (this.IsLive_ShogiEngine())
             {

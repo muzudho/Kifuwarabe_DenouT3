@@ -24,7 +24,7 @@ namespace Grayscale.P743FvLearn.L480Functions
         /// <summary>
         /// FVを、-999.0～999.0(*bairitu)に矯正。
         /// </summary>
-        public static void FvParamRange_PP(FeatureVector fv, IErrorController errH)
+        public static void FvParamRange_PP(FeatureVector fv, ILogTag errH)
         {
             //--------------------------------------------------------------------------------
             // 変換前のデータを確認。 
@@ -46,7 +46,7 @@ namespace Grayscale.P743FvLearn.L480Functions
         /// FVの保存。
         /// </summary>
         /// <param name="uc_Main"></param>
-        public static void Do_Save(Uc_Main uc_Main, IErrorController errH)
+        public static void Do_Save(Uc_Main uc_Main, ILogTag errH)
         {
             FeatureVector fv = uc_Main.LearningData.Fv;
 
@@ -156,7 +156,7 @@ namespace Grayscale.P743FvLearn.L480Functions
         /// </summary>
         public static void Do_RankUpHonpu(ref bool ref_isRequestShowGohosyu, Uc_Main uc_Main, string sfenMoveStr, float tyoseiryo)
         {
-            IErrorController errH = ErrorControllerReference.Learner;
+            ILogTag logTag = LogTags.Learner;
 
             //----------------------------------------
             // 1P は正の数がグッド、2P は負の数がグッド。
@@ -182,7 +182,7 @@ namespace Grayscale.P743FvLearn.L480Functions
                 }
 
                 // 盤上の駒、持駒を数えます。
-                N54List childNode_n54List = Util_54List.Calc_54List(node.Value.KyokumenConst, errH);
+                N54List childNode_n54List = Util_54List.Calc_54List(node.Value.KyokumenConst, logTag);
 
                 float real_tyoseiryo; //実際に調整した量。
                 Util_FvScoreing.UpdateKyokumenHyoka(
@@ -191,7 +191,7 @@ namespace Grayscale.P743FvLearn.L480Functions
                     uc_Main.LearningData.Fv,
                     tyoseiryo_bad,
                     out real_tyoseiryo,
-                    errH
+                    logTag
                     );//相手が有利になる点
                 tyoseiryo_good += -real_tyoseiryo;
             gt_NextLoop1:
@@ -204,7 +204,7 @@ namespace Grayscale.P743FvLearn.L480Functions
             if (uc_Main.LearningData.Kifu.CurNode.HasChildNode(sfenMoveStr))
             {
                 // 盤上の駒、持駒を数えます。
-                N54List currentNode_n54List = Util_54List.Calc_54List(uc_Main.LearningData.Kifu.CurNode.Value.KyokumenConst, errH);
+                N54List currentNode_n54List = Util_54List.Calc_54List(uc_Main.LearningData.Kifu.CurNode.Value.KyokumenConst, logTag);
 
                 float real_tyoseiryo; //実際に調整した量。
                 Util_FvScoreing.UpdateKyokumenHyoka(
@@ -213,7 +213,7 @@ namespace Grayscale.P743FvLearn.L480Functions
                     uc_Main.LearningData.Fv,
                     tyoseiryo_good,
                     out real_tyoseiryo,
-                    errH
+                    logTag
                     );//自分が有利になる点
             }
             else

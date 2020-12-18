@@ -32,7 +32,7 @@ namespace Grayscale.P531Hyokakansu.I500Hyokakansu
 #endif
             SkyConst src_Sky,
             FeatureVector featureVector,
-            IErrorController errH
+            ILogTag logTag
             );
 
     }

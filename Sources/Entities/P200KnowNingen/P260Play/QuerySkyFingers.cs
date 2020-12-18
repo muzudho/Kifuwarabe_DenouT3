@@ -24,7 +24,7 @@ namespace Grayscale.P260Play.L250Calc
         public static Maps_OneAndOne<Finger, SySet<SyElement>> GetPotentialMoves(
             SkyConst srcSky,
             Fingers fingers,
-            IErrorController errHOrNull
+            ILogTag logTag
             )
         {
             if (fingers is null) throw new ArgumentNullException(nameof(fingers));

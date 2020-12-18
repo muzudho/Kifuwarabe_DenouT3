@@ -86,7 +86,7 @@ using System.Collections.Generic;
         public KifuNode WA_Bestmove(
             bool isHonshogi,
             KifuTree kifu,
-            IErrorController errH
+            ILogTag logTag
             )
         {
 #if DEBUG
@@ -123,9 +123,9 @@ using System.Collections.Generic;
                 // 指し手生成ルーチンで、棋譜ツリーを作ります。
                 //
                 new Tansaku_FukasaYusen_Routine().WAA_Yomu_Start(
-                    kifu, isHonshogi, Mode_Tansaku.Shogi_ENgine, alphabeta_otherBranchDecidedValue, args, errH);
+                    kifu, isHonshogi, Mode_Tansaku.Shogi_ENgine, alphabeta_otherBranchDecidedValue, args, logTag);
             }
-            catch (Exception ex) { errH.Panic(ex, "棋譜ツリーを作っていたときです。"); throw; }
+            catch (Exception ex) { Logger.Panic(logTag,ex, "棋譜ツリーを作っていたときです。"); throw; }
 
 
 #if DEBUG
@@ -149,18 +149,18 @@ using System.Collections.Generic;
             try
             {
                 // 評価値の高いノードだけを残します。
-                this.EdagariEngine.EdaSibori_HighScore(kifu, this, errH);
+                this.EdagariEngine.EdaSibori_HighScore(kifu, this, logTag);
             }
-            catch (Exception ex) { errH.Panic(ex, "ベストムーブ後半２０：ハイスコア抽出"); throw; }
+            catch (Exception ex) { Logger.Panic(logTag,ex, "ベストムーブ後半２０：ハイスコア抽出"); throw; }
 
 
             // 評価値の同点があれば、同点決勝をして　1手に決めます。
             KifuNode bestKifuNode = null;
             try
             {
-                bestKifuNode = this.ChoiceNode_DoutenKessyou(kifu, isHonshogi, errH);
+                bestKifuNode = this.ChoiceNode_DoutenKessyou(kifu, isHonshogi, logTag);
             }
-            catch (Exception ex) { errH.Panic(ex, "ベストムーブ後半３０：同点決勝"); throw; }
+            catch (Exception ex) { Logger.Panic(logTag,ex, "ベストムーブ後半３０：同点決勝"); throw; }
 
 
             return bestKifuNode;
@@ -176,7 +176,7 @@ using System.Collections.Generic;
         /// <returns></returns>
         private KifuNode ChoiceNode_DoutenKessyou(
             KifuTree kifu,
-            bool isHonshogi, IErrorController errH)
+            bool isHonshogi, ILogTag logTag)
         {
             KifuNode bestKifuNode = null;
 

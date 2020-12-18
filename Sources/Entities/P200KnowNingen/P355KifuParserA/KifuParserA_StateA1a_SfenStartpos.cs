@@ -36,7 +36,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
             out KifuParserA_State nextState,
             KifuParserA owner,
             KifuParserA_Genjo genjo,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             nextState = this;
@@ -61,17 +61,17 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                     // FIXME: コンピューターが先手のとき、ここにくる？
 
                     // 異常時。
-                    errH.Logger.WriteLineError("＼（＾ｏ＾）／「" + genjo.InputLine + "」入力がない1☆！　終わるぜ☆");
+                    Logger.WriteLineError(logTag,"＼（＾ｏ＾）／「" + genjo.InputLine + "」入力がない1☆！　終わるぜ☆");
                     genjo.ToBreak_Abnormal();
                 }
                 else
                 {
                     // 異常時。
-                    errH.Logger.WriteLineError("＼（＾ｏ＾）／「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　movesがない☆！　終わるぜ☆");
+                    Logger.WriteLineError(logTag,"＼（＾ｏ＾）／「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　movesがない☆！　終わるぜ☆");
                     genjo.ToBreak_Abnormal();
                 }
             }
-            catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "SFEN文字列の解析中。"); throw; }
+            catch (Exception ex) { Logger.Panic(LogTags.Error, ex, "SFEN文字列の解析中。"); throw; }
 
             return genjo.InputLine;
         }

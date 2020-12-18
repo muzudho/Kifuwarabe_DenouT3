@@ -35,7 +35,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
     public class Util_54List
     {
 
-        private static void Error1(RO_Star koma, IErrorController errH)
+        private static void Error1(RO_Star koma, ILogTag logTag)
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Util_54List#Error1：２駒関係FVの配列添え字がわからないぜ☆！処理は続けられない。");
@@ -43,7 +43,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
             sb.AppendLine("koma1.Komasyurui=[" + koma.Komasyurui + "]");
             sb.AppendLine("koma1.Masu=[" + koma.Masu + "]");
             sb.AppendLine("Conv_SyElement.ToOkiba(koma1.Masu)=[" + Conv_SyElement.ToOkiba(koma.Masu) + "]");
-            errH.Panic(sb.ToString());
+            Logger.Panic(logTag,sb.ToString());
         }
 
 
@@ -53,7 +53,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
         /// 盤上の40駒リスト。
         /// 駒台の14駒リスト。
         /// </summary>
-        public static N54List Calc_54List(SkyConst src_Sky, IErrorController errH)
+        public static N54List Calc_54List(SkyConst src_Sky, ILogTag logTag)
         {
             N54List result_n54List = new N54ListImpl();
 
@@ -82,7 +82,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
                     if (FeatureVectorImpl.CHOSA_KOMOKU_ERROR == pIndex)
                     {
                         // p1 がエラーでは、処理は続けられない。
-                        Util_54List.Error1(koma, errH);
+                        Util_54List.Error1(koma, logTag);
                         goto gt_NextLoop_player1;
                     }
 
@@ -108,7 +108,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
                     if (FeatureVectorImpl.CHOSA_KOMOKU_ERROR == pIndex)
                     {
                         // p1 がエラーでは、処理は続けられない。
-                        Util_54List.Error1(koma, errH);
+                        Util_54List.Error1(koma, logTag);
                         goto gt_NextLoop_player1;
                     }
 

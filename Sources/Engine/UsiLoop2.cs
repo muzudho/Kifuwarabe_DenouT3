@@ -161,7 +161,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
 
 
 
-        public void AtBody(out bool out_isTimeoutShutdown, IErrorController errH)
+        public void AtBody(out bool out_isTimeoutShutdown, ILogTag logTag)
         {
             out_isTimeoutShutdown = false;
             //PerformanceMetrics performanceMetrics = new PerformanceMetrics();//使ってない？
@@ -211,7 +211,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                 }
 
                 // 通信ログは必ず取ります。
-                errH.Logger.WriteLineC(line);
+                Logger.WriteLineC(logTag,line);
 
 #if NOOPABLE
                 if (this.owner.Option_enable_serverNoopable)
@@ -232,7 +232,6 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                     //------------------------------------------------------------
                     // ○△□×！？
                     //------------------------------------------------------------
-                    #region ↓詳説
                     //
                     // ／(＾×＾)＼
                     //
@@ -241,7 +240,6 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                     // USIプロトコルの独習を進め、対応／未対応を選んでください。
                     //
                     // ログだけ取って、スルーします。
-                    #endregion
                 }
 
                 switch (result_UsiLoop2)
@@ -309,16 +307,16 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
             //
             #endregion
 #if DEBUG
-            ErrorControllerReference.EngineDefault.Logger.WriteLineAddMemo("KifuParserA_Impl.LOGGING_BY_ENGINE, ┏━確認━━━━setoptionDictionary ━┓");
+            Logger.EngineDefault.Logger.WriteLineAddMemo("KifuParserA_Impl.LOGGING_BY_ENGINE, ┏━確認━━━━setoptionDictionary ━┓");
             foreach (KeyValuePair<string, string> pair in this.owner.SetoptionDictionary)
             {
-                ErrorControllerReference.EngineDefault.Logger.WriteLineAddMemo(pair.Key + "=" + pair.Value);
+                Logger.EngineDefault.Logger.WriteLineAddMemo(pair.Key + "=" + pair.Value);
             }
-            ErrorControllerReference.EngineDefault.Logger.WriteLineAddMemo("┗━━━━━━━━━━━━━━━━━━┛");
-            ErrorControllerReference.EngineDefault.Logger.WriteLineAddMemo("┏━確認━━━━goDictionary━━━━━┓");
+            Logger.EngineDefault.Logger.WriteLineAddMemo("┗━━━━━━━━━━━━━━━━━━┛");
+            Logger.EngineDefault.Logger.WriteLineAddMemo("┏━確認━━━━goDictionary━━━━━┓");
             foreach (KeyValuePair<string, string> pair in this.GoProperties)
             {
-                ErrorControllerReference.EngineDefault.Logger.WriteLineAddMemo(pair.Key + "=" + pair.Value);
+                Logger.EngineDefault.Logger.WriteLineAddMemo(pair.Key + "=" + pair.Value);
             }
 
             //Dictionary<string, string> goMateProperties = new Dictionary<string, string>();
@@ -330,27 +328,26 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
             //    LarabeLoggerList_Warabe.ENGINE.WriteLineAddMemo(pair.Key + "=" + pair.Value);
             //}
 
-            ErrorControllerReference.EngineDefault.Logger.WriteLineAddMemo("┗━━━━━━━━━━━━━━━━━━┛");
-            ErrorControllerReference.EngineDefault.Logger.WriteLineAddMemo("┏━確認━━━━gameoverDictionary━━┓");
+            Logger.EngineDefault.Logger.WriteLineAddMemo("┗━━━━━━━━━━━━━━━━━━┛");
+            Logger.EngineDefault.Logger.WriteLineAddMemo("┏━確認━━━━gameoverDictionary━━┓");
             foreach (KeyValuePair<string, string> pair in this.GameoverProperties)
             {
-                ErrorControllerReference.EngineDefault.Logger.WriteLineAddMemo(pair.Key + "=" + pair.Value);
+                Logger.EngineDefault.Logger.WriteLineAddMemo(pair.Key + "=" + pair.Value);
             }
-            ErrorControllerReference.EngineDefault.Logger.WriteLineAddMemo("┗━━━━━━━━━━━━━━━━━━┛");
+            Logger.EngineDefault.Logger.WriteLineAddMemo("┗━━━━━━━━━━━━━━━━━━┛");
 #endif
         }
 
 
         public void AtLoop_OnPosition(string line, ref PhaseResult_UsiLoop2 result_Usi)
         {
-            IErrorController errH = ErrorControllerReference.EngineDefault;
+            ILogTag logTag = LogTags.EngineDefault;
 
             try
             {
                 //------------------------------------------------------------
                 // これが棋譜です
                 //------------------------------------------------------------
-                #region ↓詳説
                 //
                 // 図.
                 //
@@ -440,7 +437,6 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                 // このメッセージを読むと、駒の配置が分かります。
                 //
                 // “が”、まだ指してはいけません。
-                #endregion
 #if DEBUG
                 this.Log1("（＾△＾）positionきたｺﾚ！");
 #endif
@@ -453,7 +449,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                     ref result,
                     model_Taikyoku,
                     genjo,
-                    errH
+                    logTag
                     );
                 if (null != genjo.StartposImporter_OrNull)
                 {
@@ -462,7 +458,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                     Util_InClient.OnChangeSky_Im_Client(
                         model_Taikyoku,
                         genjo,
-                        errH
+                        logTag
                         );
                 }
 
@@ -474,24 +470,22 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                 //------------------------------------------------------------
                 // じっとがまん
                 //------------------------------------------------------------
-                #region ↓詳説
                 //
                 // 応答は無用です。
                 // 多分、将棋所もまだ準備ができていないのではないでしょうか（？）
                 //
-                #endregion
             }
             catch (Exception ex)
             {
                 // エラー：どうにもできないので  ログだけ取って無視します。
-                ErrorControllerReference.EngineDefault.Panic("Program「position」：" + ex.GetType().Name + "：" + ex.Message);
+                Logger.Panic(LogTags.EngineDefault, "Program「position」：" + ex.GetType().Name + "：" + ex.Message);
             }
         }
         private void Log1(string message)
         {
-            ErrorControllerReference.EngineDefault.Logger.WriteLineAddMemo(message);
+            Logger.WriteLineAddMemo(LogTags.EngineDefault, message);
         }
-        private void Log2_Png_Tyokkin(string line, KifuNode kifuNode, IErrorController errH)
+        private void Log2_Png_Tyokkin(string line, KifuNode kifuNode, ILogTag logTag)
         {
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
@@ -541,7 +535,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
 
                 // 直近の指し手。
                 Util_KyokumenPng_Writer.Write1(
-                    Conv_KifuNode.ToRO_Kyokumen1(kifuNode, errH),
+                    Conv_KifuNode.ToRO_Kyokumen1(kifuNode, logTag),
                     srcMasu_orMinusOne,
                     dstMasu_orMinusOne,
                     foodKoma,
@@ -549,7 +543,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                     "",
                     fileName,
                     Util_KifuTreeLogWriter.REPORT_ENVIRONMENT,
-                    errH
+                    logTag
                     );
             }
         }
@@ -600,7 +594,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
                 // どうにもできないので  ログだけ取って無視します。
-                ErrorControllerReference.EngineDefault.Panic("Program「go ponder」：" + ex.GetType().Name + "：" + ex.Message);
+                Logger.Panic(LogTags.EngineDefault,"Program「go ponder」：" + ex.GetType().Name + "：" + ex.Message);
             }
         }
 
@@ -612,7 +606,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
         /// <param name="result_Usi"></param>
         public void AtLoop_OnGo(string line, ref PhaseResult_UsiLoop2 result_Usi)
         {
-            IErrorController errH = ErrorControllerReference.EngineDefault;
+            ILogTag logTag = LogTags.EngineDefault;
             int exceptionArea = 0;
 
             try
@@ -622,7 +616,6 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                 //------------------------------------------------------------
                 // あなたの手番です
                 //------------------------------------------------------------
-                #region ↓詳説
                 //
                 // 図.
                 //
@@ -634,13 +627,11 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                 //
                 // もう指していいときに、将棋所から送られてくる文字が go です。
                 //
-                #endregion
 
 
                 //------------------------------------------------------------
                 // 先手 3:00  後手 0:00  記録係「50秒ぉ～」
                 //------------------------------------------------------------
-                #region ↓詳説
                 //
                 // 上図のメッセージのままだと使いにくいので、
                 // あとで使いやすいように Key と Value の表に分けて持ち直します。
@@ -659,7 +650,6 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                 //      └──────┴──────┘
                 //      単位はミリ秒ですので、599000 は 59.9秒 です。
                 //
-                #endregion
                 Regex regex = new Regex(@"go btime (\d+) wtime (\d+) byoyomi (\d+)", RegexOptions.Singleline);
                 Match m = regex.Match(line);
 
@@ -785,7 +775,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                                     bestKifuNodeList.Add(this.shogisasi.WA_Bestmove(
                                         isHonshogi,
                                         this.Kifu,
-                                        errH)
+                                        logTag)
                                         );
                                 }
 
@@ -877,7 +867,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                             //------------------------------------------------------------
                             // 以前の手カッター
                             //------------------------------------------------------------
-                            UtilKifuTree282.IzennoHenkaCutter(this.Kifu, errH);
+                            UtilKifuTree282.IzennoHenkaCutter(this.Kifu, logTag);
                         }
                         break;
                 }
@@ -891,22 +881,22 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                 {
                     case 2100:
                         {
-                            ErrorControllerReference.EngineDefault.Panic(ex, "マルチＰＶから、ベスト指し手をチョイスしようとしたときの１０です。");
+                            Logger.Panic(LogTags.EngineDefault, ex, "マルチＰＶから、ベスト指し手をチョイスしようとしたときの１０です。");
                             throw;
                         }
                     case 2200:
                         {
-                            ErrorControllerReference.EngineDefault.Panic(ex, "マルチＰＶから、ベスト指し手をチョイスしようとしたときの４０です。");
+                            Logger.Panic(LogTags.EngineDefault, ex, "マルチＰＶから、ベスト指し手をチョイスしようとしたときの４０です。");
                             throw;
                         }
                     case 2300:
                         {
-                            ErrorControllerReference.EngineDefault.Panic(ex, "マルチＰＶから、ベスト指し手をチョイスしようとしたときの５０です。");
+                            Logger.Panic(LogTags.EngineDefault, ex, "マルチＰＶから、ベスト指し手をチョイスしようとしたときの５０です。");
                             throw;
                         }
                     case 2400:
                         {
-                            ErrorControllerReference.EngineDefault.Panic(ex, "マルチＰＶから、ベスト指し手をチョイスしようとしたときの９０です。");
+                            Logger.Panic(LogTags.EngineDefault, ex, "マルチＰＶから、ベスト指し手をチョイスしようとしたときの９０です。");
                             throw;
                         }
                     default:
@@ -915,7 +905,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                             //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
                             // どうにもできないので  ログだけ取って無視します。
-                            ErrorControllerReference.EngineDefault.Panic("Program「go」：" + ex.GetType().Name + " " + ex.Message + "：goを受け取ったときです。：");
+                            Logger.Panic(LogTags.EngineDefault, "Program「go」：" + ex.GetType().Name + " " + ex.Message + "：goを受け取ったときです。：");
                         }
                         break;
                 }
@@ -936,7 +926,6 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                 //------------------------------------------------------------
                 // あなたの手番です  （すぐ指してください！）
                 //------------------------------------------------------------
-                #region ↓詳説
                 //
                 // 図.
                 //
@@ -956,14 +945,12 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                 //  （２）「急いで指すボタン」が押されたときなどに送られてくるようです？
                 //
                 // stop するのは思考です。  stop を受け取ったら  すぐに最善手を指してください。
-                #endregion
 
                 if (this.GoPonderNow)
                 {
                     //------------------------------------------------------------
                     // 将棋エンジン「（予想手が間違っていたって？）  △９二香 を指そうと思っていたんだが」
                     //------------------------------------------------------------
-                    #region ↓詳説
                     //
                     // 図.
                     //
@@ -991,7 +978,6 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                     //          将棋エンジン「本当の指し手」
                     //
                     //      という流れと思います。
-                    #endregion
                     // この指し手は、無視されます。（無視されますが、送る必要があります）
                     this.owner.Send("bestmove 9a9b");
                 }
@@ -1000,7 +986,6 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                     //------------------------------------------------------------
                     // じゃあ、△９二香で
                     //------------------------------------------------------------
-                    #region ↓詳説
                     //
                     // 図.
                     //
@@ -1012,7 +997,6 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                     //
                     //
                     // 特に何もなく、すぐ指せというのですから、今考えている最善手をすぐに指します。
-                    #endregion
                     this.owner.Send("bestmove 9a9b");
                 }
 
@@ -1023,7 +1007,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
                 // どうにもできないので  ログだけ取って無視します。
-                ErrorControllerReference.EngineDefault.Panic("Program「stop」：" + ex.GetType().Name + " " + ex.Message);
+                Logger.Panic(LogTags.EngineDefault, "Program「stop」：" + ex.GetType().Name + " " + ex.Message);
             }
         }
 
@@ -1085,7 +1069,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
             catch (Exception ex)
             {
                 // エラー続行
-                ErrorControllerReference.EngineDefault.Panic(ex, "Program「gameover」：" + ex.GetType().Name + " " + ex.Message);
+                Logger.Panic(LogTags.EngineDefault,ex, "Program「gameover」：" + ex.GetType().Name + " " + ex.Message);
             }
         }
 

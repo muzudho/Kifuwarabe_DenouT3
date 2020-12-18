@@ -40,11 +40,11 @@ namespace Grayscale.P531Hyokakansu.L510HyokakansuColl
         /// </summary>
         /// <param name="node_mutable">この評価シートに明細項目を追加します。</param>
         /// <param name="fv"></param>
-        /// <param name="errH"></param>
+        /// <param name="logTag"></param>
         public static void EvaluateAll_Normal(
             KifuNode node_mutable,
             FeatureVector fv,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             // 妄想と、指定のノードを比較し、点数付けします。
@@ -61,7 +61,7 @@ namespace Grayscale.P531Hyokakansu.L510HyokakansuColl
 #endif
                     node_mutable.Value.KyokumenConst,
                     fv,
-                    errH
+                    logTag
                 );
 
                 node_mutable.AddScore(score);

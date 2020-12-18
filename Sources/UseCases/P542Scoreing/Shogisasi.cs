@@ -20,19 +20,19 @@ namespace Grayscale.P542Scoreing.L240Shogisasi
         /// </summary>
         void OnTaikyokuKaisi();
 
-                
+
         /// <summary>
         /// 指し手を決めます。
         /// </summary>
         /// <param name="enableLog"></param>
         /// <param name="isHonshogi"></param>
         /// <param name="kifu"></param>
-        /// <param name="errH"></param>
+        /// <param name="logTag"></param>
         /// <returns></returns>
         KifuNode WA_Bestmove(
             bool isHonshogi,
             KifuTree kifu,
-            IErrorController errH
+            ILogTag logTag
             );
 
     }

@@ -1,14 +1,13 @@
 ﻿// 進行が停止するテストを含むデバッグモードです。
 #define DEBUG_STOPPABLE
 
+using System;
+using System.IO;
+using System.Windows.Forms;
 using Grayscale.Kifuwarakaku.Entities.Logger;
-using Grayscale.P027Settei.L500Struct;
 using Grayscale.P693ShogiGui.L492Widgets;
 using Grayscale.P693ShogiGui.L500GUI;
-using System;
-using System.Windows.Forms;
 using Nett;
-using System.IO;
 
 namespace Grayscale.P699_Form_______
 {
@@ -24,7 +23,7 @@ namespace Grayscale.P699_Form_______
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
 
-            IErrorController errH = ErrorControllerReference.CsharpGuiDefault;
+            ILogTag logTag = LogTags.CsharpGuiDefault;
             MainGui_CsharpImpl mainGui = new MainGui_CsharpImpl();//new ShogiEngineVsClientImpl(this)
 
             //↓ [STAThread]指定のあるメソッドで フォームを作成してください。
@@ -33,10 +32,10 @@ namespace Grayscale.P699_Form_______
             mainGui.OwnerForm = new Form1_Shogi(mainGui);
             //↑ [STAThread]指定のあるメソッドで フォームを作成してください。
 
-            mainGui.Load_AsStart(errH);
+            mainGui.Load_AsStart(logTag);
             mainGui.WidgetLoaders.Add(new WidgetsLoader_CsharpImpl(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Shogiban01Widgets")), mainGui));
             mainGui.WidgetLoaders.Add(new WidgetsLoader_CsharpImpl(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Console02Widgets")), mainGui));
-            mainGui.LaunchForm_AsBody(errH);
+            mainGui.LaunchForm_AsBody(logTag);
         }
 
     }

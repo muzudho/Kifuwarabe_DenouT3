@@ -241,7 +241,7 @@ namespace Grayscale.P236KomahaiyaTr.L500Table
                         "rowCount=[" + rowCount2 + "]\n" +
                         "columnCount=[" + columnCount + "]\n";
                         Exception ex1 = new Exception(message);
-                        ErrorControllerReference.Error.Panic(ex1, "配役変換中☆"); throw ex1;
+                        Logger.Panic(LogTags.Error, ex1, "配役変換中☆"); throw ex1;
                     }
 
                     int masuHandle = (8 - columnCount) * 9 + (rowCount2 % 9);//0～80

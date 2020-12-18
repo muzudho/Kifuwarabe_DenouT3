@@ -38,7 +38,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
     public abstract class Util_40t14List
     {
 
-        private static void Error1(RO_Star koma, IErrorController errH)
+        private static void Error1(RO_Star koma, ILogTag logTag)
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Util_40t14List#Error1：２駒関係FVの配列添え字がわからないぜ☆！処理は続けられない。");
@@ -46,7 +46,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
             sb.AppendLine("koma1.Komasyurui=[" + koma.Komasyurui + "]");
             sb.AppendLine("koma1.Masu=[" + koma.Masu + "]");
             sb.AppendLine("Conv_SyElement.ToOkiba(koma1.Masu)=[" + Conv_SyElement.ToOkiba(koma.Masu) + "]");
-            errH.Panic(sb.ToString());
+            Logger.Panic(logTag,sb.ToString());
         }
 
         /// <summary>
@@ -55,7 +55,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
         /// 盤上の40駒リスト。
         /// 駒台の14駒リスト。
         /// </summary>
-        public static N40t14List Calc_40t14List(SkyConst src_Sky, IErrorController errH)
+        public static N40t14List Calc_40t14List(SkyConst src_Sky, ILogTag errH)
         {
             N40t14List result_n40t14List = new N40t14ListImpl();
 

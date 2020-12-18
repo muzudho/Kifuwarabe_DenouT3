@@ -31,35 +31,31 @@ namespace Grayscale.P693ShogiGui.I500Gui
 
 
         /// <summary>
-        /// ************************************************************************************************************************
         /// 手番が替わったときの挙動を、ここに書きます。
-        /// ************************************************************************************************************************
         /// </summary>
-        void ChangedTurn(IErrorController errH);
+        void ChangedTurn(ILogTag logTag);
 
         /// <summary>
         /// 将棋エンジンに、終了するように促します。
         /// </summary>
-        void Shutdown(IErrorController errH);
+        void Shutdown(ILogTag logTag);
 
 
         /// <summary>
         /// 将棋エンジンに、ログを出すように促します。
         /// </summary>
-        void Logdase(IErrorController errH);
+        void Logdase(ILogTag logTag);
 
 
         /// <summary>
-        /// ************************************************************************************************************************
         /// 将棋エンジンを起動します。
-        /// ************************************************************************************************************************
         /// </summary>
-        void Start_ShogiEngine(string shogiEngineFilePath, IErrorController errH);
+        void Start_ShogiEngine(string shogiEngineFilePath, ILogTag logTag);
 
         /// <summary>
         /// コンピューターの先手
         /// </summary>
-        void Do_ComputerSente( IErrorController errH);
+        void Do_ComputerSente(ILogTag logTag);
 
 
         RO_Star GetKoma(Finger finger);
@@ -72,9 +68,7 @@ namespace Grayscale.P693ShogiGui.I500Gui
         void SetFigTumandeiruKoma(int value);
 
         /// <summary>
-        /// ------------------------------------------------------------------------------------------------------------------------
         /// 成るフラグ
-        /// ------------------------------------------------------------------------------------------------------------------------
         /// 
         ///         マウスボタン押下時にセットされ、
         ///         マウスボタンを放したときに読み取られます。
@@ -90,9 +84,7 @@ namespace Grayscale.P693ShogiGui.I500Gui
         SubGui ConsoleWindowGui { get; }
 
         /// <summary>
-        /// ------------------------------------------------------------------------------------------------------------------------
         /// グラフィックを描くツールは全部この中です。
-        /// ------------------------------------------------------------------------------------------------------------------------
         /// </summary>
         Shape_PnlTaikyoku Shape_PnlTaikyoku { get; }
 
@@ -109,7 +101,7 @@ namespace Grayscale.P693ShogiGui.I500Gui
         Timed TimedA { get; set; }
         Timed TimedB_MouseCapture { get; set; }
         Timed TimedC { get; set; }
-        void Timer_Tick( IErrorController errH);
+        void Timer_Tick(ILogTag logTag);
 
         RepaintRequest RepaintRequest { get; set; }
 
@@ -128,24 +120,20 @@ namespace Grayscale.P693ShogiGui.I500Gui
 
 
         /// <summary>
-        /// ------------------------------------------------------------------------------------------------------------------------
         /// ゲームの流れの状態遷移図はこれです。
-        /// ------------------------------------------------------------------------------------------------------------------------
         /// </summary>
         SceneName Scene { get; }
         void SetScene(SceneName scene);
 
 
-        void Response(string mutexString, IErrorController errH);
+        void Response(string mutexString, ILogTag logTag);
 
 
 
 
 
         /// <summary>
-        /// ------------------------------------------------------------------------------------------------------------------------
         /// [出力切替]
-        /// ------------------------------------------------------------------------------------------------------------------------
         /// </summary>
         SyuturyokuKirikae SyuturyokuKirikae { get; }
         void SetSyuturyokuKirikae(SyuturyokuKirikae value);

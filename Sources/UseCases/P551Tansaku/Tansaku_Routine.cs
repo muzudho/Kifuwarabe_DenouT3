@@ -24,7 +24,7 @@ namespace Grayscale.P551Tansaku.I500Tansaku
             Mode_Tansaku mode_Tansaku,
             float alphabeta_otherBranchDecidedValue,
             EvaluationArgs args,
-            IErrorController log
+            ILogTag log
             );
 
     }

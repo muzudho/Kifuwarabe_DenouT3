@@ -18,9 +18,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
     {
 
         /// <summary>
-        /// ************************************************************************************************************************
         /// 将棋盤上での検索
-        /// ************************************************************************************************************************
         /// </summary>
         /// <param name="srcAll">候補マス</param>
         /// <param name="komas"></param>
@@ -31,7 +29,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             SySet<SyElement> srcAll,
             SkyConst src_Sky,//KifuTree kifu,
             out Finger foundKoma,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             //SkyConst src_Sky = kifu.CurNode.Value.ToKyokumenConst;

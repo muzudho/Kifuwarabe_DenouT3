@@ -39,15 +39,14 @@ namespace Grayscale.P355_KifuParserA.L500Parser
             out KifuParserA_State nextState,
             KifuParserA owner,
             KifuParserA_Genjo genjo,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             nextState = this;
 
             try
             {
-
-                errH.Logger.WriteLineError("（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　さて、どんな内容なんだぜ☆？");
+                Logger.WriteLineError(logTag,"（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　さて、どんな内容なんだぜ☆？");
 
                 StartposImporter startposImporter1;
                 string restText;
@@ -58,7 +57,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                     out restText
                     );
                 genjo.StartposImporter_OrNull = startposImporter1;
-                errH.Logger.WriteLineError("（＾△＾）restText=「" + restText + "」 successful=【" + successful + "】");
+                Logger.WriteLineError(logTag, "（＾△＾）restText=「" + restText + "」 successful=【" + successful + "】");
 
                 if (successful)
                 {
@@ -85,7 +84,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                 }
 
             }
-            catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "SFEN解析中☆"); throw; }
+            catch (Exception ex) { Logger.Panic(LogTags.Error, ex, "SFEN解析中☆"); throw; }
 
             return genjo.InputLine;
         }

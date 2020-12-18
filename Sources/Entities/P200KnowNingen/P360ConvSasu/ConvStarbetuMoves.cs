@@ -29,7 +29,7 @@ namespace Grayscale.P360ConvSasu.L500Converter
         public static KifuNode ToNextNodes_AsHubNode(
             Maps_OneAndMulti<Finger,IMove> komabetuAllMove,
             SkyConst src_Sky,//Node<Starbeamable, KyokumenWrapper> to_parentNode,//親となる予定のノード
-            IErrorController errH
+            ILogTag logTag
             )
         {
             KifuNode hubNode = new KifuNodeImpl( null, null);//蝶番
@@ -59,7 +59,7 @@ namespace Grayscale.P360ConvSasu.L500Converter
                                 figKoma,//動かす駒
                                 Util_Starlightable.AsKoma(move.Now).Masu,//移動先升
                                 false,//成りません。
-                                errH
+                                logTag
                         ))));
                     }
                 }

@@ -84,7 +84,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
         public static void A_Write_KifuTreeLog(
             KaisetuBoards logF_kiki,
             KifuTree kifu,
-            IErrorController errH
+            ILogTag logTag
             )
         {
 #if DEBUG
@@ -181,7 +181,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
             KifuTree kifu,
             string treeFolder,
             KyokumenPngEnvironment reportEnvironment,
-            IErrorController errH
+            ILogTag logTag
             )
         {
 
@@ -205,7 +205,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
                         kifu,
                         treeFolder + ((int)score).ToString() + "点_" + ConvMoveStrSfen.ToMoveStrSfen(nextNode.Key) + "/",
                         reportEnvironment,
-                        errH
+                        logTag
                         );
 
                 });
@@ -220,7 +220,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
                 kifu,
                 treeFolder,
                 reportEnvironment,
-                errH
+                logTag
             );
 
         }
@@ -235,7 +235,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
             KifuTree kifu,
             string relFolder,
             KyokumenPngEnvironment reportEnvironment,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             string fileName = "";
@@ -283,7 +283,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
 
                     // 評価明細に添付
                     Util_KyokumenPng_Writer.Write1(
-                        Conv_KifuNode.ToRO_Kyokumen1(node, errH),
+                        Conv_KifuNode.ToRO_Kyokumen1(node, logTag),
                         srcMasu_orMinusOne,
                         dstMasu_orMinusOne,
                         foodKoma,
@@ -291,7 +291,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
                         relFolder,
                         fileName,
                         reportEnvironment,
-                        errH
+                        logTag
                         );
                     logFileCounter++;
                 }
@@ -305,7 +305,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
             }
             catch (System.Exception ex)
             {
-                errH.Panic(ex, "盤１個分のログを出力しようとしていたときです。\n fileName=[" + fileName + "]\n relFolder=[" + relFolder + "]"); throw;
+                Logger.Panic(logTag, ex, "盤１個分のログを出力しようとしていたときです。\n fileName=[" + fileName + "]\n relFolder=[" + relFolder + "]"); throw;
             }
         }
 

@@ -33,7 +33,7 @@ namespace Grayscale.P693ShogiGui.L249Function
         /// </summary>
         public static void Perform_SyokiHaichi(
             MainGui_Csharp mainGui,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             mainGui.Link_Server.Model_Taikyoku.Kifu.Clear();// 棋譜を空っぽにします。
@@ -52,7 +52,7 @@ namespace Grayscale.P693ShogiGui.L249Function
             Util_Functions_Server.SetCurNode_Srv(
                 mainGui.Link_Server.Model_Taikyoku,
                 mainGui.Model_Manual,
-                newNode, out jsaFugoStr, errH);
+                newNode, out jsaFugoStr, logTag);
             mainGui.RepaintRequest.SetFlag_RefreshRequest();
 
             mainGui.RepaintRequest.SetFlag_RecalculateRequested();// 駒の再描画要求
@@ -71,12 +71,12 @@ namespace Grayscale.P693ShogiGui.L249Function
             Finger foodKoma,
             string fugoJStr,
             string backedInputText,
-            IErrorController errH)
+            ILogTag logTag)
         {
             //------------------------------
             // チェンジターン
             //------------------------------
-            shogiGui.ChangedTurn(errH);//[巻戻し]ボタンを押したあと
+            shogiGui.ChangedTurn(logTag);//[巻戻し]ボタンを押したあと
 
 
             //------------------------------
@@ -109,7 +109,7 @@ namespace Grayscale.P693ShogiGui.L249Function
             return true;
         }
 
-        public static bool Komaokuri_Gui(string restText, MainGui_Csharp shogiGui, IErrorController errH)
+        public static bool Komaokuri_Gui(string restText, MainGui_Csharp shogiGui, ILogTag logTag)
         {
             //------------------------------
             // 符号表示
@@ -118,7 +118,7 @@ namespace Grayscale.P693ShogiGui.L249Function
                 Node<IMove, KyokumenWrapper> node6 = shogiGui.Link_Server.Model_Taikyoku.Kifu.CurNode;
 
                 // [コマ送り][再生]ボタン
-                string jsaFugoStr = ConvMoveStrJsa.ToMoveStrJsa(node6,errH);
+                string jsaFugoStr = ConvMoveStrJsa.ToMoveStrJsa(node6,logTag);
 
                 shogiGui.Shape_PnlTaikyoku.SetFugo(jsaFugoStr);
             }
@@ -219,7 +219,7 @@ namespace Grayscale.P693ShogiGui.L249Function
         public static void Redraw_KomaLocation(
             Finger figKoma,
             MainGui_Csharp mainGui,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             RO_Star koma = Util_Starlightable.AsKoma(mainGui.Model_Manual.GuiSkyConst.StarlightIndexOf(figKoma).Now);

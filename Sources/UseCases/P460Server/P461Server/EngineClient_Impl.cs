@@ -12,12 +12,8 @@ using System.Diagnostics;
 
 namespace Grayscale.P461Server.L497EngineClient
 {
-
-
     /// <summary>
-    /// ************************************************************************************************************************
     ///  プロセスラッパー
-    /// ************************************************************************************************************************
     /// 
     ///     １つの将棋エンジンと通信します。１対１の関係になります。
     ///     このクラスを、将棋エンジンのコンソールだ、と想像して使います。
@@ -25,10 +21,6 @@ namespace Grayscale.P461Server.L497EngineClient
     /// </summary>
     public class EngineClient_Impl : EngineClient
     {
-
-
-        #region プロパティ類
-
         /// <summary>
         /// オーナー・サーバー
         /// </summary>
@@ -52,8 +44,6 @@ namespace Grayscale.P461Server.L497EngineClient
         /// </summary>
         public EngineProcessWrapper ShogiEngineProcessWrapper { get; set; }
 
-        #endregion
-
         public EngineClient_Impl(Receiver receiver)
         {
             this.receiver = receiver;
@@ -62,21 +52,19 @@ namespace Grayscale.P461Server.L497EngineClient
             this.ShogiEngineProcessWrapper = new EngineProcessWrapperImpl();
 
 #if DEBUG
-            this.ShogiEngineProcessWrapper.SetDelegate_ShogiServer_ToEngine( (string line, IErrorController errH) =>
+            this.ShogiEngineProcessWrapper.SetDelegate_ShogiServer_ToEngine( (string line, ILogTag logTag) =>
             {
                 //
                 // USIコマンドを将棋エンジンに送ったタイミングで、なにかすることがあれば、
                 // ここに書きます。
                 //
-                errH.Logger.WriteLineC(line);
+                Logger.WriteLineC(logTag, line);
             });
 #endif
         }
 
         /// <summary>
-        /// ************************************************************************************************************************
         /// 将棋エンジンを起動します。
-        /// ************************************************************************************************************************
         /// </summary>
         public void Start(string shogiEngineFilePath)
         {
@@ -91,7 +79,7 @@ namespace Grayscale.P461Server.L497EngineClient
                 //------------------------------
                 // ログファイルを削除します。
                 //------------------------------
-                ErrorControllerReference.RemoveAllLogFiles();
+                Logger.RemoveAllLogFiles();
 
 
                 ProcessStartInfo startInfo = new ProcessStartInfo();
@@ -130,8 +118,8 @@ namespace Grayscale.P461Server.L497EngineClient
         /// <param name="e"></param>
         private void OnExited(object sender, System.EventArgs e)
         {
-            IErrorController errH = ErrorControllerReference.EngineDefault;
-            this.ShogiEngineProcessWrapper.Send_Shutdown(errH);
+            ILogTag logTag = LogTags.EngineDefault;
+            this.ShogiEngineProcessWrapper.Send_Shutdown(logTag);
         }
 
         /// <summary>
@@ -139,7 +127,7 @@ namespace Grayscale.P461Server.L497EngineClient
         /// 手番が替わったときの挙動を、ここに書きます。
         /// ************************************************************************************************************************
         /// </summary>
-        public void OnChangedTurn(KifuTree kifu, IErrorController errH)
+        public void OnChangedTurn(KifuTree kifu, ILogTag logTag)
         {
             if (!this.ShogiEngineProcessWrapper.IsLive_ShogiEngine())
             {
@@ -158,9 +146,9 @@ namespace Grayscale.P461Server.L497EngineClient
                     //------------------------------------------------------------
 
                     // 例：「position startpos moves 7g7f」
-                    this.ShogiEngineProcessWrapper.Send_Position(Util_KirokuGakari.ToSfen_PositionCommand(kifu), errH);
+                    this.ShogiEngineProcessWrapper.Send_Position(Util_KirokuGakari.ToSfen_PositionCommand(kifu), logTag);
 
-                    this.ShogiEngineProcessWrapper.Send_Go(errH);
+                    this.ShogiEngineProcessWrapper.Send_Go(logTag);
 
                     break;
                 default:
@@ -175,17 +163,17 @@ namespace Grayscale.P461Server.L497EngineClient
         /// <summary>
         /// 将棋エンジンに、終了するように促します。
         /// </summary>
-        public void Send_Shutdown(IErrorController errH)
+        public void Send_Shutdown(ILogTag logTag)
         {
-            this.ShogiEngineProcessWrapper.Send_Shutdown(errH);
+            this.ShogiEngineProcessWrapper.Send_Shutdown(logTag);
         }
 
         /// <summary>
         /// 将棋エンジンに、ログを出すように促します。
         /// </summary>
-        public void Send_Logdase(IErrorController errH)
+        public void Send_Logdase(ILogTag logTag)
         {
-            this.ShogiEngineProcessWrapper.Send_Logdase(errH);
+            this.ShogiEngineProcessWrapper.Send_Logdase(logTag);
         }
 
         ///// <summary>

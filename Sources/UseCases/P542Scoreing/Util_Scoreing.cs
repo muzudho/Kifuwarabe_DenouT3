@@ -107,7 +107,7 @@ namespace Grayscale.P542Scoreing.L500Util
         public static void DoScoreing_Kyokumen(
             KifuNode node_yomi_mutable,
             EvaluationArgs args,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             //----------------------------------------
@@ -146,7 +146,7 @@ namespace Grayscale.P542Scoreing.L500Util
 #endif
                     node_yomi_mutable.Value.KyokumenConst,
                     args.FeatureVector,
-                    errH
+                    logTag
                 );
 
                 node_yomi_mutable.AddScore(score);
@@ -162,7 +162,7 @@ namespace Grayscale.P542Scoreing.L500Util
                 Util_HyokakansuCollection.EvaluateAll_Normal(
                     node_yomi_mutable,
                     args.FeatureVector,
-                    errH
+                    logTag
                     );
             }
 

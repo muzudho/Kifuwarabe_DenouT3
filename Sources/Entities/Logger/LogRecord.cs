@@ -24,18 +24,18 @@
         /// <summary>
         /// ログ出力の有無。
         /// </summary>
-        public bool Enable { get { return this.enable; } }
-        private bool enable;
+        public bool Enabled { get { return this.enabled; } }
+        private bool enabled;
 
         /// <summary>
         /// タイムスタンプの有無。
         /// </summary>
         public bool TimeStampPrintable { get; private set; } = false;
 
-        public LogRecord(string fileStem, bool enable, bool timeStampPrintable)
+        public LogRecord(string fileStem, bool enabled, bool timeStampPrintable)
         {
             this.FileStem = fileStem;
-            this.enable = enable;
+            this.enabled = enabled;
             this.TimeStampPrintable = timeStampPrintable;
         }
 

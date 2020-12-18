@@ -28,7 +28,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             out string str9,
             out string rest,
             KifuTree kifu,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             //nextTe = null;
@@ -88,7 +88,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
                 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
                 // どうにもできないので  ログだけ取って無視します。
-                errH.Panic("TuginoItte_JapanFugo.GetData_FromText（A）：" + ex.GetType().Name + "：" + ex.Message + "：text=「" + inputLine + "」");
+                Logger.Panic(logTag,"TuginoItte_JapanFugo.GetData_FromText（A）：" + ex.GetType().Name + "：" + ex.Message + "：text=「" + inputLine + "」");
             }
 
 

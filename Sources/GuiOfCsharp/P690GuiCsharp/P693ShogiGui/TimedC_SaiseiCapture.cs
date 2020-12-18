@@ -34,7 +34,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
             this.SaiseiEventQueue = new Queue<SaiseiEventState>();
         }
 
-        public override void Step(IErrorController errH)
+        public override void Step(ILogTag logTag)
         {
 
             // 入っているマウス操作イベントは、全部捨てていきます。
@@ -46,21 +46,17 @@ namespace Grayscale.P693ShogiGui.L250Timed
                 {
                     case SaiseiEventStateName.Start:
                         {
-                            #region スタート
                             //MessageBox.Show("再生を実行します2。");
 
                             mainGui.RepaintRequest = new RepaintRequestImpl();
 
                             this.restText = Util_Function_Csharp.ReadLine_FromTextbox();
                             this.SaiseiEventQueue.Enqueue(new SaiseiEventState(SaiseiEventStateName.Step, eventState.Flg_logTag));
-                            #endregion
                         }
                         break;
 
                     case SaiseiEventStateName.Step:
                         {
-                            #region ステップ
-
                             bool toBreak = false;
                             if ("" == restText)
                             {
@@ -75,7 +71,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                     this.mainGui.Model_Manual,
                                     out toBreak,
                                     "再生ボタン",
-                                    errH
+                                    logTag
                                     );
 
                                 //TimedC.Saisei_Step(restText, shogiGui, eventState.Flg_logTag);// 再描画（ループが１回も実行されなかったとき用）
@@ -99,7 +95,6 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                 mainGui.Response("Saisei", eventState.Flg_logTag);// 再描画
                             }
 
-
                             if (toBreak)
                             {
                                 // 終了
@@ -110,7 +105,6 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                 // 続行
                                 this.SaiseiEventQueue.Enqueue(new SaiseiEventState(SaiseiEventStateName.Step, eventState.Flg_logTag));
                             }
-                            #endregion
                         }
                         break;
                 }

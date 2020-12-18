@@ -2,15 +2,12 @@
 using System.Text.RegularExpressions;
 using Grayscale.Kifuwarakaku.Entities.Logger;
 
-
 namespace Grayscale.P140KifuSfen
 {
     public abstract class SfenMovesTextConv
     {
         /// <summary>
-        /// ************************************************************************************************************************
         /// テキスト形式の符号「7g7f 3c3d 6g6f…」の最初の１要素を、切り取ってトークンに分解します。
-        /// ************************************************************************************************************************
         /// 
         /// [再生]、[コマ送り]で利用。
         /// </summary>
@@ -21,7 +18,7 @@ namespace Grayscale.P140KifuSfen
         /// <param name="moji4"></param>
         /// <param name="moji5"></param>
         /// <param name="rest">残りの文字。</param>
-        /// <param name="errH"></param>
+        /// <param name="logTag"></param>
         /// <returns></returns>
         public static bool ToTokens(
             string inputLine,
@@ -31,7 +28,7 @@ namespace Grayscale.P140KifuSfen
             out string moji4,
             out string moji5,
             out string rest,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             bool successful = false;
@@ -82,13 +79,13 @@ namespace Grayscale.P140KifuSfen
                         // 最初の１件だけ処理して終わります。
                         break;
                     }
-                    catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "moves解析中☆"); throw; }
+                    catch (Exception ex) { Logger.Panic(LogTags.Error, ex, "moves解析中☆"); throw; }
                 }
 
                 rest = rest.Trim();
 
             }
-            catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "moves解析中☆"); throw; }
+            catch (Exception ex) { Logger.Panic(LogTags.Error, ex, "moves解析中☆"); throw; }
 
             return successful;
         }

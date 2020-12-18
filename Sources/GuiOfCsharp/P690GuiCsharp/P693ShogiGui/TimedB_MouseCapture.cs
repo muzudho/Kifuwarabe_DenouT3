@@ -54,7 +54,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
         public Queue<MouseEventState> MouseEventQueue { get; set; }
 
 
-        public static void Check_MouseoverKomaKiki(object obj_shogiGui, Finger finger, IErrorController errH)
+        public static void Check_MouseoverKomaKiki(object obj_shogiGui, Finger finger, ILogTag logTag)
         {
             MainGui_Csharp shogiGui = (MainGui_Csharp)obj_shogiGui;
 
@@ -89,7 +89,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
         }
 
 
-        public override void Step(IErrorController errH)
+        public override void Step(ILogTag logTag)
         {
             // 入っているマウス操作イベントのうち、マウスムーブは　１つに　集約　します。
             bool bMouseMove_SceneB_1TumamitaiKoma = false;
@@ -413,7 +413,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                                     Util_Functions_Server.SetCurNode_Srv(
                                                         mainGui.Link_Server.Model_Taikyoku,
                                                         mainGui.Model_Manual,
-                                                        newNode, out jsaFugoStr, errH);
+                                                        newNode, out jsaFugoStr, logTag);
                                                     mainGui.RepaintRequest.SetFlag_RefreshRequest();
 
 
@@ -557,7 +557,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                                         Util_Functions_Server.SetCurNode_Srv(
                                                             mainGui.Link_Server.Model_Taikyoku,
                                                             mainGui.Model_Manual,
-                                                            newNode, out jsaFugoStr, errH);
+                                                            newNode, out jsaFugoStr, logTag);
                                                         mainGui.RepaintRequest.SetFlag_RefreshRequest();
 
 

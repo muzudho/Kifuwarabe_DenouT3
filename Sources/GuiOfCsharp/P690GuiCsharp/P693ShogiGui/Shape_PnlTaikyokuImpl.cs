@@ -337,7 +337,7 @@ namespace Grayscale.P693ShogiGui.L081Canvas
             object sender, PaintEventArgs e,
             MainGui_Csharp shogiGui,
             string windowName,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             if (!this.Visible)
@@ -364,7 +364,7 @@ namespace Grayscale.P693ShogiGui.L081Canvas
             //----------
             foreach (Shape_BtnKomaImpl koma in this.Btn40Komas)
             {
-                koma.Paint(e.Graphics, shogiGui, errH);
+                koma.Paint(e.Graphics, shogiGui, logTag);
             }
 
             //----------
@@ -380,7 +380,7 @@ namespace Grayscale.P693ShogiGui.L081Canvas
             this.lblPside.Paint(e.Graphics);
 
 
-            base.Paint(sender, e, shogiGui, windowName, errH);
+            base.Paint(sender, e, shogiGui, windowName, logTag);
 
         gt_EndMethod:
             ;

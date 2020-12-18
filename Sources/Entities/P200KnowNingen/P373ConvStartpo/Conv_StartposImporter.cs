@@ -30,7 +30,7 @@ namespace Grayscale.P373ConvStartpo.L500Converter
             Model_Manual model_Manual,// Gui局面を使用
             StartposImporter startposImporter,
             KifuParserA_Genjo genjo,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             ParsedKyokumen parsedKyokumen = new ParsedKyokumenImpl();

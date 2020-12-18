@@ -90,7 +90,7 @@ namespace Grayscale.P266KyokumMoves.L500Util
 #endif
             )
         {
-            IErrorController errH = null;
+            ILogTag logTag = null;
 #if DEBUG
                     if (mmLog_orNull != null)
                     {
@@ -143,7 +143,7 @@ namespace Grayscale.P266KyokumMoves.L500Util
                 {
                     Util_Sky_FingersQueryFx.Split_BanjoSeme_BanjoKurau_MotiSeme_MotiKurau(
                         out fingers_seme_BANJO, out fingers_kurau_BANJO, out fingers_seme_MOTI, out fingers_kurau_MOTI, src_Sky, tebanSeme, tebanKurau,
-                        errH);
+                        logTag);
 //#if DEBUG
 //                    System.Console.WriteLine("◇fingers_seme_BANJOの要素数=" + fingers_seme_BANJO.Count);
 //                    System.Console.WriteLine("◇fingers_kurau_BANJOの要素数=" + fingers_kurau_BANJO.Count);
@@ -184,7 +184,7 @@ namespace Grayscale.P266KyokumMoves.L500Util
                     masus_seme_BANJO,
                     masus_kurau_BANJO,
                     src_Sky,
-                    errH
+                    logTag
                     );// 盤上の駒の移動できる場所
 
                 //
@@ -197,7 +197,7 @@ namespace Grayscale.P266KyokumMoves.L500Util
                     masus_seme_BANJO,
                     masus_kurau_BANJO,
                     src_Sky,//これは、どの局面？
-                    errH
+                    logTag
                     );
 //#if DEBUG
 //                System.Console.WriteLine("sMsSusumeruMasus_seme_MOTIの要素数=" + Util_List_OneAndMultiEx<Finger, SySet<SyElement>>.CountAllElements(sMsSusumeruMasus_seme_MOTI));
@@ -247,7 +247,7 @@ namespace Grayscale.P266KyokumMoves.L500Util
         /// <param name="masus_mikata_onBanjo">攻め側の盤上の駒の、利き</param>
         /// <param name="masus_aite_onBanjo">食らう側の盤上の駒の、利き</param>
         /// <param name="src_Sky">局面</param>
-        /// <param name="errH_orNull"></param>
+        /// <param name="logTag"></param>
         /// <returns></returns>
         public static List_OneAndMulti<Finger, SySet<SyElement>> Get_MotiDaihyo_ToMove(
             int caller_forLog,
@@ -255,7 +255,7 @@ namespace Grayscale.P266KyokumMoves.L500Util
             SySet<SyElement> masus_mikata_onBanjo,
             SySet<SyElement> masus_aite_onBanjo,
             SkyConst src_Sky,
-            IErrorController errH_orNull
+            ILogTag logTag
             )
         {
             // 持ち駒を置けない升
@@ -275,7 +275,7 @@ namespace Grayscale.P266KyokumMoves.L500Util
                 masus_mikata_onBanjo,
                 masus_aite_onBanjo,
                 okenaiMasus,
-                errH_orNull
+                logTag
                 );
 //#if DEBUG
 //            if (caller_forLog == 1)

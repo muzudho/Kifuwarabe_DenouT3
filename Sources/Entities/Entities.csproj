@@ -66,13 +66,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logger\ErrorHandler\IErrorController.cs" />
-    <Compile Include="Logger\ILogger.cs" />
-    <Compile Include="Logger\ErrorHandler\PartOfErrorControllerReference\ErrorHandlerImpl.cs" />
+    <Compile Include="Logger\ILogEvent.cs" />
+    <Compile Include="Logger\ErrorHandlerImpl.cs" />
     <Compile Include="Logger\ILogRecord.cs" />
     <Compile Include="Logger\ILogTag.cs" />
-    <Compile Include="Logger\KwLoggerImpl.cs" />
-    <Compile Include="Logger\ErrorHandler\ErrorControllerReference.cs" />
     <Compile Include="Logger\Logger.cs" />
     <Compile Include="Logger\LogRecord.cs" />
     <Compile Include="Logger\LogTag.cs" />

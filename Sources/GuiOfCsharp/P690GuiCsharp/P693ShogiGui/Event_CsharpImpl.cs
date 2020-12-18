@@ -49,7 +49,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , IErrorController errH2
+                    , ILogTag logTag2
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
@@ -59,7 +59,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     ins.After_NaruNaranai_ButtonPushed(
                         shogibanGui2
                         , btnKoma_Selected
-                        , errH2
+                        , logTag2
                         );
                 };
 
@@ -70,7 +70,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , IErrorController errH
+                    , ILogTag logTag
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
@@ -80,7 +80,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     ins.After_NaruNaranai_ButtonPushed(
                         shogibanGui2
                         , btnKoma_Selected
-                        , errH
+                        , logTag
                         );
                 };
 
@@ -91,14 +91,14 @@ namespace Grayscale.P693ShogiGui.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , IErrorController errH
+                    , ILogTag logTag
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
                     MainGui_Csharp shogibanGui2 = (MainGui_Csharp)obj_shogiGui2;
 
                     Util_Lua_Csharp.ShogiGui = shogibanGui2;
-                    Util_Lua_Csharp.ErrH = errH;
+                    Util_Lua_Csharp.LogTag = logTag;
                     Util_Lua_Csharp.Perform("click_clearButton");
                 };
 
@@ -109,14 +109,14 @@ namespace Grayscale.P693ShogiGui.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , IErrorController errH
+                    , ILogTag logTag
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
                     MainGui_Csharp shogibanGui2 = (MainGui_Csharp)obj_shogiGui2;
 
                     Util_Lua_Csharp.ShogiGui = shogibanGui2;
-                    Util_Lua_Csharp.ErrH = errH;
+                    Util_Lua_Csharp.LogTag = logTag;
                     Util_Lua_Csharp.Perform("click_playButton");
                 };
 
@@ -127,7 +127,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , IErrorController errH
+                    , ILogTag logTag
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
@@ -138,9 +138,9 @@ namespace Grayscale.P693ShogiGui.L491Event
                         ref restText,
                         mainGui3.Link_Server.Model_Taikyoku,
                         mainGui3.Model_Manual,
-                        errH);
-                    Util_Function_Csharp.Komaokuri_Gui(restText, mainGui3, errH);
-                    Util_Menace.Menace(mainGui3, errH);// メナス
+                        logTag);
+                    Util_Function_Csharp.Komaokuri_Gui(restText, mainGui3, logTag);
+                    Util_Menace.Menace(mainGui3, logTag);// メナス
                 };
 
                 //
@@ -150,7 +150,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , IErrorController errH
+                    , ILogTag logTag
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
@@ -160,13 +160,13 @@ namespace Grayscale.P693ShogiGui.L491Event
                     Finger foodKoma;//取られた駒
                     string fugoJStr;
 
-                    if (!Util_Functions_Server.Makimodosi_Srv(out movedKoma, out foodKoma, out fugoJStr, shogibanGui2.Link_Server.Model_Taikyoku, errH))
+                    if (!Util_Functions_Server.Makimodosi_Srv(out movedKoma, out foodKoma, out fugoJStr, shogibanGui2.Link_Server.Model_Taikyoku, logTag))
                     {
                         goto gt_EndBlock;
                     }
 
-                    Util_Function_Csharp.Makimodosi_Gui(shogibanGui2, movedKoma, foodKoma, fugoJStr, Util_Function_Csharp.ReadLine_FromTextbox(), errH);
-                    Util_Menace.Menace(shogibanGui2, errH);//メナス
+                    Util_Function_Csharp.Makimodosi_Gui(shogibanGui2, movedKoma, foodKoma, fugoJStr, Util_Function_Csharp.ReadLine_FromTextbox(), logTag);
+                    Util_Menace.Menace(shogibanGui2, logTag);//メナス
 
                 gt_EndBlock:
                     ;
@@ -179,13 +179,13 @@ namespace Grayscale.P693ShogiGui.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , IErrorController errH
+                    , ILogTag logTag
                     ) =>
                 {
                     MainGui_Csharp shogibanGui2 = (MainGui_Csharp)obj_shogiGui2;
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
 
-                    shogibanGui2.Logdase(errH);
+                    shogibanGui2.Logdase(logTag);
                 };
 
                 //
@@ -195,7 +195,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , IErrorController errH
+                    , ILogTag logTag
                     ) =>
                 {
                     MainGui_Csharp shogibanGui2 = (MainGui_Csharp)obj_shogiGui2;
@@ -223,7 +223,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , IErrorController errH2
+                    , ILogTag logTag
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
@@ -252,7 +252,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                         object obj_shogiGui2
                         , object userWidget2 // UerWidget
                         , object btnKoma_Selected2
-                        , IErrorController errH2
+                        , ILogTag logTag
                         ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
@@ -270,7 +270,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , IErrorController errH2
+                    , ILogTag logTag
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
@@ -286,13 +286,13 @@ namespace Grayscale.P693ShogiGui.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , IErrorController errH2
+                    , ILogTag logTag
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
                     MainGui_Csharp shogibanGui2 = (MainGui_Csharp)obj_shogiGui2;
 
-                    UtilKifuTree282.SetStartpos_KokokaraSaifu(shogibanGui2.Link_Server.Model_Taikyoku.Kifu, shogibanGui2.Link_Server.Model_Taikyoku.Kifu.CurNode.Value.KyokumenConst.KaisiPside, errH2);
+                    UtilKifuTree282.SetStartpos_KokokaraSaifu(shogibanGui2.Link_Server.Model_Taikyoku.Kifu, shogibanGui2.Link_Server.Model_Taikyoku.Kifu.CurNode.Value.KyokumenConst.KaisiPside, logTag);
                     shogibanGui2.RepaintRequest.SyuturyokuRequest = RepaintRequestGedanTxt.Kifu;
                 };
 
@@ -303,13 +303,13 @@ namespace Grayscale.P693ShogiGui.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , IErrorController errH2
+                    , ILogTag logTag
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
                     MainGui_Csharp shogibanGui2 = (MainGui_Csharp)obj_shogiGui2;
 
-                    Util_Function_Csharp.Perform_SyokiHaichi(shogibanGui2, errH2);
+                    Util_Function_Csharp.Perform_SyokiHaichi(shogibanGui2, logTag);
                 };
 
                 //
@@ -319,7 +319,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , IErrorController errH2
+                    , ILogTag logTag
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
@@ -373,7 +373,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                         Util_Functions_Server.SetCurNode_Srv(
                             mainGui3.Link_Server.Model_Taikyoku,
                             mainGui3.Model_Manual,
-                            modifyNode, out jsaFugoStr, errH2);
+                            modifyNode, out jsaFugoStr, logTag);
                         mainGui3.RepaintRequest.SetFlag_RefreshRequest();
                     }
                 };
@@ -475,11 +475,11 @@ namespace Grayscale.P693ShogiGui.L491Event
         /// </summary>
         /// <param name="mainGui"></param>
         /// <param name="btnTumandeiruKoma"></param>
-        /// <param name="errH"></param>
+        /// <param name="logTag"></param>
         private void After_NaruNaranai_ButtonPushed(
             MainGui_Csharp mainGui
             , Shape_BtnKoma btnTumandeiruKoma
-            , IErrorController errH
+            , ILogTag logTag
         )
         {
 
@@ -493,7 +493,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                 // ServerからGuiへ渡す情報
                 bool torareruKomaAri;
                 RO_Star koma_Food_after;
-                Util_Functions_Server.Komamove1a_50Srv(out torareruKomaAri, out koma_Food_after, dst, btnTumandeiruKoma.Koma, Util_Starlightable.AsKoma(dst.Now), mainGui.Model_Manual, errH);
+                Util_Functions_Server.Komamove1a_50Srv(out torareruKomaAri, out koma_Food_after, dst, btnTumandeiruKoma.Koma, Util_Starlightable.AsKoma(dst.Now), mainGui.Model_Manual, logTag);
 
                 Util_Function_Csharp.Komamove1a_51Gui(torareruKomaAri, koma_Food_after, mainGui);
             }
@@ -550,7 +550,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                     Util_Functions_Server.SetCurNode_Srv(
                         mainGui.Link_Server.Model_Taikyoku,
                         mainGui.Model_Manual,
-                        newNode, out jsaFugoStr, errH);
+                        newNode, out jsaFugoStr, logTag);
                     mainGui.RepaintRequest.SetFlag_RefreshRequest();
 
                     //------------------------------
@@ -569,7 +569,7 @@ namespace Grayscale.P693ShogiGui.L491Event
                 if (!mainGui.Shape_PnlTaikyoku.Requested_NaruDialogToShow)
                 {
                     //System.C onsole.WriteLine("マウス左ボタンを押したのでチェンジターンします。");
-                    mainGui.ChangedTurn(errH);
+                    mainGui.ChangedTurn(logTag);
                 }
             }
 
@@ -590,7 +590,7 @@ namespace Grayscale.P693ShogiGui.L491Event
 
                 last = (IMove)kifuElement.Key;
             }
-            mainGui.ChangedTurn(errH);//マウス左ボタンを押したのでチェンジターンします。
+            mainGui.ChangedTurn(logTag);//マウス左ボタンを押したのでチェンジターンします。
 
             mainGui.Shape_PnlTaikyoku.Request_NaruDialogToShow(false);
             mainGui.GetWidget("BtnNaru").Visible = false;

@@ -13,13 +13,13 @@ namespace Grayscale.P693ShogiGui.L081Canvas
         /// <param name="sender"></param>
         /// <param name="e"></param>
         /// <param name="shogiGui"></param>
-        /// <param name="errH"></param>
+        /// <param name="logTag"></param>
         void Paint(
             object sender,
             PaintEventArgs e,
             MainGui_Csharp shogiGui,
             string windowName,
-            IErrorController errH
+            ILogTag logTag
         );
 
     }

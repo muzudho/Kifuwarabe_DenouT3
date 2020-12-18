@@ -24,7 +24,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
         }
 
 
-        public override void Step(IErrorController errH)
+        public override void Step(ILogTag logTag)
         {
             // 将棋エンジンからの入力が、input99 に溜まるものとします。
             if (0 < this.mainGui.ConsoleWindowGui.InputString99.Length)
@@ -41,7 +41,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                 {
                     this.mainGui.RepaintRequest = new RepaintRequestImpl();
                     this.mainGui.RepaintRequest.SetNyuryokuTextTail(this.mainGui.ConsoleWindowGui.InputString99);// 受信文字列を、上部テキストボックスに入れるよう、依頼します。
-                    this.mainGui.Response("Timer", errH);// テキストボックスに、受信文字列を入れます。
+                    this.mainGui.Response("Timer", logTag);// テキストボックスに、受信文字列を入れます。
                     this.mainGui.ConsoleWindowGui.ClearInputString99();// 受信文字列の要求を空っぽにします。
                 }
 
@@ -61,10 +61,10 @@ namespace Grayscale.P693ShogiGui.L250Timed
                         ref restText,
                         this.mainGui.Link_Server.Model_Taikyoku,
                         this.mainGui.Model_Manual,
-                        errH);// 棋譜の[コマ送り]を実行します。
-                    Util_Function_Csharp.Komaokuri_Gui(restText, this.mainGui, errH);//追加
+                        logTag);// 棋譜の[コマ送り]を実行します。
+                    Util_Function_Csharp.Komaokuri_Gui(restText, this.mainGui, logTag);//追加
                     // ↑チェンジターン済み
-                    Util_Menace.Menace((MainGui_Csharp)this.mainGui, errH);// メナス
+                    Util_Menace.Menace((MainGui_Csharp)this.mainGui, logTag);// メナス
                 }
 
                 //
@@ -76,7 +76,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                 //
                 {
                     //this.ShogiGui.ResponseData.InputTextString = "";//空っぽにすることを要求する。
-                    this.mainGui.Response("Timer", errH);// GUIに反映させます。
+                    this.mainGui.Response("Timer", logTag);// GUIに反映させます。
                 }
 
             }

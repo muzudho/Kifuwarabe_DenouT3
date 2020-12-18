@@ -42,7 +42,7 @@ namespace Grayscale.P362LegalMove.L500Util
         /// </summary>
         /// <param name="km_available">自軍の各駒の移動できる升セット</param>
         /// <param name="sbGohosyu"></param>
-        /// <param name="errH"></param>
+        /// <param name="logTag"></param>
         public static Maps_OneAndOne<Finger, SySet<SyElement>> LA_RemoveMate(
             int yomikaisiTemezumi,
             bool isHonshogi,
@@ -54,12 +54,12 @@ namespace Grayscale.P362LegalMove.L500Util
 #endif
 
             string hint,
-            IErrorController errH)
+            ILogTag logTag)
         {
             Node<IMove, KyokumenWrapper> hubNode = ConvStarbetuMoves.ToNextNodes_AsHubNode(
                 genTeban_komabetuAllMove1,
                 src_Sky,
-                errH
+                logTag
                 );// ハブ・ノード自身はダミーノードなんだが、子ノードに、次のノードが入っている。
             Util_NodeAssert361.AssertNariMove(hubNode, "#LA_RemoveMate(1)");//ここはok
 #if DEBUG
@@ -79,13 +79,13 @@ namespace Grayscale.P362LegalMove.L500Util
 #if DEBUG
                     logF_kiki,
 #endif
-                    errH);
+                    logTag);
             }
             Util_NodeAssert361.AssertNariMove(hubNode, "#LA_RemoveMate(2)王手局面削除直後");//ここはok
 
 
             // 「指し手一覧」を、「星別の全指し手」に分けます。
-            Maps_OneAndMulti<Finger, IMove> starbetuAllMoves2 = Util_Sky258A.SplitMoveByStar(src_Sky, hubNode, errH);
+            Maps_OneAndMulti<Finger, IMove> starbetuAllMoves2 = Util_Sky258A.SplitMoveByStar(src_Sky, hubNode, logTag);
             Util_Sasu269.AssertNariMove(starbetuAllMoves2, "#LA_RemoveMate(3)更に変換後");//ここはok
 
             //
@@ -115,11 +115,12 @@ namespace Grayscale.P362LegalMove.L500Util
 
             return starbetuSusumuMasus;
         }
+
         private static void Log1(
             Node<IMove, KyokumenWrapper> hubNode,
             int temezumi_yomiGenTeban,
             string hint,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             bool enableLog = false;//errH.Logger.Enable
@@ -128,7 +129,7 @@ namespace Grayscale.P362LegalMove.L500Util
                     "(王手回避漏れ02." + temezumi_yomiGenTeban + "手目)",
                     hint + "_Lv3_RMHO",
                     temezumi_yomiGenTeban,
-                    errH) + "]");// ログ出力
+                    logTag) + "]");// ログ出力
         }
 
         /// <summary>
@@ -144,7 +145,7 @@ namespace Grayscale.P362LegalMove.L500Util
             KaisetuBoards logF_kiki,
 #endif
 
-            IErrorController errH
+            ILogTag logTag
             )
         {
             // Node<,>の形で。
@@ -164,7 +165,7 @@ namespace Grayscale.P362LegalMove.L500Util
                     logF_kiki,
 #endif
                     node.Key,
-                    errH
+                    logTag
                     );
 
                 if (!kingSuicide)
@@ -202,7 +203,7 @@ namespace Grayscale.P362LegalMove.L500Util
             KaisetuBoards logF_kiki,
 #endif
             IMove move_forLog,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             bool isHonshogi = true;
@@ -223,7 +224,7 @@ namespace Grayscale.P362LegalMove.L500Util
                 "玉自殺ﾁｪｯｸ",
                 temezumi_yomiCur_forLog,
                 move_forLog,
-                errH);
+                logTag);
 
             
             // 現手番側が受け手に回ったとします。現手番の、王の座標
@@ -262,7 +263,6 @@ namespace Grayscale.P362LegalMove.L500Util
 
             return mate;
         }
-        
 
         /// <summary>
         /// 指定された局面で、指定された手番の駒の、利きマスを算出します。
@@ -286,7 +286,7 @@ namespace Grayscale.P362LegalMove.L500Util
             string logBrd_caption,
             int temezumi_yomiCur_forLog,
             IMove move_forLog,
-            IErrorController errH
+            ILogTag logTag
             )
         {
 #if DEBUG
@@ -344,7 +344,7 @@ namespace Grayscale.P362LegalMove.L500Util
                         src_Sky,
                         tebanSeme,
                         tebanKurau,
-                        errH
+                        logTag
                     );
 
 
@@ -391,7 +391,7 @@ namespace Grayscale.P362LegalMove.L500Util
                     masus_kurau_BANJO,
                     src_Sky,
                     //Conv_Move.Move_To_KsString_ForLog(move_forLog, pside_genTeban3),
-                    errH
+                    logTag
                     );// 利きを調べる側の利き（戦駒）
 
                 // 盤上駒の利き
@@ -419,15 +419,11 @@ namespace Grayscale.P362LegalMove.L500Util
                     sMs_effect.AddRange_New( kmEffect_seme_BANJO);
 
                 }
-                catch (Exception ex) { errH.Panic(ex, "ランダムチョイス(50)"); throw; }
+                catch (Exception ex) { Logger.Panic(logTag, ex, "ランダムチョイス(50)"); throw; }
 
             }
 
             return sMs_effect;
         }
-
-
-
-
     }
 }

@@ -22,7 +22,7 @@ namespace Grayscale.P542Scoreing.L125ScoreSibori
         /// </summary>
         /// <param name="kifu"></param>
         /// <param name="atamanosumiCollection"></param>
-        public void EdaSibori_HighScore(KifuTree kifu, Shogisasi shogisasi, IErrorController errH)
+        public void EdaSibori_HighScore(KifuTree kifu, Shogisasi shogisasi, ILogTag logTag)
         {
             int exception_area = 0;
 
@@ -39,7 +39,7 @@ namespace Grayscale.P542Scoreing.L125ScoreSibori
 
                 exception_area = 1000;
                 List<Node<IMove, KyokumenWrapper>> rankedNodes = this.RankingNode_WithJudge_ForeachNextNodes(
-                    kifu.CurNode, errH);
+                    kifu.CurNode, logTag);
 
 
                 exception_area = 1500;
@@ -128,7 +128,7 @@ namespace Grayscale.P542Scoreing.L125ScoreSibori
             }
             catch (Exception ex)
             {
-                errH.Panic(ex, "ベストムーブ／ハイスコア抽出中 exception_area=[" + exception_area + "]"); throw;
+                Logger.Panic(logTag, ex, "ベストムーブ／ハイスコア抽出中 exception_area=[" + exception_area + "]"); throw;
             }
 
         gt_EndMethod:
@@ -144,7 +144,7 @@ namespace Grayscale.P542Scoreing.L125ScoreSibori
         /// <returns></returns>
         private List<Node<IMove, KyokumenWrapper>> RankingNode_WithJudge_ForeachNextNodes(
             Node<IMove, KyokumenWrapper> hubNode,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             int exception_area = 0;
@@ -167,7 +167,7 @@ namespace Grayscale.P542Scoreing.L125ScoreSibori
             }
             catch (Exception ex)
             {
-                errH.Panic(ex, "ベストムーブ／ハイスコア抽出中 exception_area=[" + exception_area + "]"); throw;
+                Logger.Panic(logTag, ex, "ベストムーブ／ハイスコア抽出中 exception_area=[" + exception_area + "]"); throw;
             }
 
             return list;

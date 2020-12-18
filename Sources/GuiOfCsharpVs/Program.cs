@@ -13,7 +13,7 @@ namespace Grayscale.P803GuiCsharpVs.L500Gui
         [STAThread]
         static void Main()
         {
-            IErrorController errH = ErrorControllerReference.CsharpGuiDefault;
+            ILogTag logTag = LogTags.CsharpGuiDefault;
             MainGui_CsharpVsImpl mainGuiVs = new MainGui_CsharpVsImpl();
 
             //↓ [STAThread]指定のあるメソッドで フォームを作成してください。
@@ -22,8 +22,8 @@ namespace Grayscale.P803GuiCsharpVs.L500Gui
             mainGuiVs.OwnerForm = new Form1_Shogi(mainGuiVs);
             //↑ [STAThread]指定のあるメソッドで フォームを作成してください。
 
-            mainGuiVs.Load_AsStart(errH);
-            mainGuiVs.LaunchForm_AsBody(errH);
+            mainGuiVs.Load_AsStart(logTag);
+            mainGuiVs.LaunchForm_AsBody(logTag);
 
         }
     }

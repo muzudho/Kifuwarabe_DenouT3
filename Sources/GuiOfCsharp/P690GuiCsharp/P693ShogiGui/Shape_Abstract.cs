@@ -11,9 +11,6 @@ namespace Grayscale.P693ShogiGui.L080Shape
     /// </summary>
     public abstract class Shape_Abstract
     {
-
-        #region プロパティー
-
         public string WidgetName { get { return this.widgetName; } }
         private string widgetName;
 
@@ -56,9 +53,6 @@ namespace Grayscale.P693ShogiGui.L080Shape
             get;
             set;
         }
-
-        #endregion
-
 
         /// <summary>
         /// ************************************************************************************************************************

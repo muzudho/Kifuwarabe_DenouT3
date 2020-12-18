@@ -13,9 +13,6 @@ namespace Grayscale.P324KifuTree.I250Struct
     /// </summary>
     public interface KifuNode : Node<IMove, KyokumenWrapper>
     {
-
-        #region プロパティー
-
         /// <summary>
         /// スコア
         /// </summary>
@@ -33,8 +30,6 @@ namespace Grayscale.P324KifuTree.I250Struct
         /// <param name="branchKyHyokaSheet"></param>
         void SetBranchKyHyokaSheet(KyHyokaSheet branchKyHyokaSheet);
 
-        #endregion
-
         /// <summary>
         /// この局面データを、読み込めないようにします。（移行用）
         /// </summary>
@@ -47,9 +42,7 @@ namespace Grayscale.P324KifuTree.I250Struct
 
 
         /// <summary>
-        /// ************************************************************************************************************************
         /// 棋譜に　次の一手　を追加します。
-        /// ************************************************************************************************************************
         /// 
         /// KifuIO を通して使ってください。
         /// 
@@ -70,13 +63,13 @@ namespace Grayscale.P324KifuTree.I250Struct
         ///// <summary>
         ///// 王手がかかった局面は取り除きます。
         ///// </summary>
-        //Maps_OneAndMulti<Finger, Starbeamable> SplitMove_ByStar(Node<Starbeamable, KyokumenWrapper> hubNode, IErrorController errH);
+        //Maps_OneAndMulti<Finger, Starbeamable> SplitMove_ByStar(Node<Starbeamable, KyokumenWrapper> hubNode, ILogTag logTag);
 
         string Json_NextNodes_MultiSky(
             string memo,
             string hint,
             int temezumi_yomiGenTeban_forLog,//読み進めている現在の手目済
-            IErrorController errH
+            ILogTag logTag
             );
 
         bool IsLeaf { get; }

@@ -21,9 +21,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
     public abstract class Util_Sky_FingerQuery
     {
         /// <summary>
-        /// ************************************************************************************************************************
         /// 指定の場所にある駒を返します。
-        /// ************************************************************************************************************************
         /// 
         ///         先後は見ますが、将棋盤限定です。
         /// 
@@ -32,7 +30,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// <param name="masu">筋、段</param>
         /// <param name="uc_Main">メインパネル</param>
         /// <returns>駒。無ければヌル。</returns>
-        public static Finger InMasuNow(SkyConst src_Sky, Playerside pside, SyElement masu, IErrorController errH)
+        public static Finger InMasuNow(SkyConst src_Sky, Playerside pside, SyElement masu, ILogTag logTag)
         {
             Finger foundKoma = Fingers.Error_1;
 
@@ -69,15 +67,13 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
 
 
         /// <summary>
-        /// ************************************************************************************************************************
         /// 駒の種類（不成として扱います）を指定して、駒を検索します。
-        /// ************************************************************************************************************************
         /// </summary>
         /// <param name="okiba"></param>
         /// <param name="komasyurui"></param>
         /// <param name="uc_Main"></param>
         /// <returns>無ければ -1</returns>
-        public static Finger InOkibaSyuruiNowIgnoreCase(SkyConst srcSky, Okiba okiba, Komasyurui14 komasyurui, IErrorController errH)
+        public static Finger InOkibaSyuruiNowIgnoreCase(SkyConst srcSky, Okiba okiba, Komasyurui14 komasyurui, ILogTag logTag)
         {
             Finger found = Fingers.Error_1;
 
@@ -100,9 +96,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
 
 
         /// <summary>
-        /// ************************************************************************************************************************
         /// 指定の場所にある駒を返します。
-        /// ************************************************************************************************************************
         /// 
         ///         先後は見ますが、将棋盤限定です。
         /// 
@@ -111,7 +105,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// <param name="masu">筋、段</param>
         /// <param name="uc_Main">メインパネル</param>
         /// <returns>駒。無ければヌル。</returns>
-        public static Finger InShogibanMasuNow(SkyConst src_Sky, Playerside pside, SyElement masu, IErrorController errH)
+        public static Finger InShogibanMasuNow(SkyConst src_Sky, Playerside pside, SyElement masu, ILogTag logTag)
         {
             Finger foundKoma = Fingers.Error_1;
 

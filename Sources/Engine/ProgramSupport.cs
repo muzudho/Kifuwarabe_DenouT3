@@ -54,7 +54,7 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
 
 #if DEBUG
             // 送信記録をつけます。
-            ErrorControllerReference.EngineNetwork.Logger.WriteLineS(line);
+            Logger.EngineNetwork.Logger.WriteLineS(line);
 #endif
         }
 
@@ -73,7 +73,7 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
             this.Option_enable_serverNoopable = false; // 独自実装のコマンドなので、ＯＦＦにしておきます。
         }
 
-        public void AtBegin(IErrorController errH)
+        public void AtBegin(ILogTag logTag)
         {
             int exception_area = 0;
             try
@@ -93,7 +93,7 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
                     //          ├─ Engine.KifuWarabe.exe
                     //          └─ log.txt               ←これを削除
                     //
-                    ErrorControllerReference.RemoveAllLogFiles();
+                    Logger.RemoveAllLogFiles();
                 }
 
 
@@ -103,7 +103,7 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
                 //------------------------------------------------------------------------------------------------------------------------
                 {
                     this.shogisasi = new ShogisasiImpl(this);
-                    Util_FvLoad.OpenFv(this.shogisasi.FeatureVector, Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv00Komawari")), errH);
+                    Util_FvLoad.OpenFv(this.shogisasi.FeatureVector, Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv00Komawari")), logTag);
                 }
 
 
@@ -168,7 +168,7 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
                     //seihinName += " " + versionStr;
 #if DEBUG
                     var engineName = toml.Get<TomlTable>("Engine").Get<string>("Name");
-                    ErrorControllerReference.EngineDefault.Logger.WriteLineAddMemo($"v(^▽^)v ｲｪｰｲ☆ ... {engineName} {versionStr}");
+                    Logger.EngineDefault.Logger.WriteLineAddMemo($"v(^▽^)v ｲｪｰｲ☆ ... {engineName} {versionStr}");
 #endif
                 }
 
@@ -178,7 +178,7 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
                 switch (exception_area)
                 {
                     case 1000:
-                        ErrorControllerReference.EngineDefault.Panic("フィーチャーベクターCSVを読み込んでいるとき。" + ex.GetType().Name + "：" + ex.Message);
+                        Logger.Panic(LogTags.EngineDefault, "フィーチャーベクターCSVを読み込んでいるとき。" + ex.GetType().Name + "：" + ex.Message);
                         break;
                 }
                 throw;

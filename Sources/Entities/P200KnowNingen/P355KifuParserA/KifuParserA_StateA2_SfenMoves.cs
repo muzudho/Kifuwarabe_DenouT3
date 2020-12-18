@@ -45,7 +45,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
             out KifuParserA_State nextState,
             KifuParserA owner,
             KifuParserA_Genjo genjo,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             int exceptionArea = 0;
@@ -82,7 +82,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                         string str8;
                         string str9;
                         if (SfenMovesTextConv.ToTokens(
-                            genjo.InputLine, out str1, out str2, out str3, out str4, out str5, out rest, errH)
+                            genjo.InputLine, out str1, out str2, out str3, out str4, out str5, out rest, logTag)
                             &&
                             !(str1=="" && str2=="" && str3=="" && str4=="" && str5=="")
                             )
@@ -98,7 +98,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                                 out nextTe,
                                 model_Taikyoku.Kifu,
                                 "棋譜パーサーA_SFENパース1",
-                                errH
+                                logTag
                                 );
                         }
                         else
@@ -107,7 +107,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
 
                             //「▲６六歩」形式と想定して、１手だけ読込み
                             if (Conv_JsaFugoText.ToTokens(
-                                genjo.InputLine, out str1, out str2, out str3, out str4, out str5, out str6, out str7, out str8, out str9, out rest, model_Taikyoku.Kifu, errH))
+                                genjo.InputLine, out str1, out str2, out str3, out str4, out str5, out str6, out str7, out str8, out str9, out rest, model_Taikyoku.Kifu, logTag))
                             {
                                 if (!(str1 == "" && str2 == "" && str3 == "" && str4 == "" && str5 == "" && str6 == "" && str7 == "" && str8 == "" && str9 == ""))
                                 {
@@ -123,7 +123,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                                         str9,  //打
                                         out nextTe,
                                         model_Taikyoku.Kifu,
-                                        errH
+                                        logTag
                                         );
                                 }
 
@@ -132,7 +132,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                             {
                                 //「6g6f」形式でもなかった☆
 
-                                errH.Logger.WriteLineError("（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　！？　次の一手が読めない☆　inputLine=[" + genjo.InputLine + "]");
+                                Logger.WriteLineError(logTag,"（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　！？　次の一手が読めない☆　inputLine=[" + genjo.InputLine + "]");
                                 genjo.ToBreak_Abnormal();
                                 goto gt_EndMethod;
                             }
@@ -141,7 +141,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
 
                         genjo.InputLine = rest;
                     }
-                    catch (Exception ex) { ErrorControllerReference.Error.Panic(ex, "moves解析中☆"); throw; }
+                    catch (Exception ex) { Logger.Panic(LogTags.Error, ex, "moves解析中☆"); throw; }
 
 
 
@@ -181,7 +181,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                                     korekaranoTemezumi//これから作る局面の、手目済み。
                                 ),
                                 out ittesasuResult,
-                                errH,
+                                logTag,
                                 "KifuParserA_StateA2_SfenMoves#Execute"
                                 );
 
@@ -190,7 +190,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                             exceptionArea = 1050;
                             Util_IttesasuRoutine.Before2(
                                 ref ittesasuResult,
-                                errH
+                                logTag
                                 );
 
                             exceptionArea = 1060;
@@ -202,7 +202,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                                 model_Taikyoku.Kifu,
                                 ConvMoveStrSfen.ToMoveStrSfen(ittesasuResult.Get_SyuryoNode_OrNull.Key),
                                 ittesasuResult.Get_SyuryoNode_OrNull,
-                                errH
+                                logTag
                                 );
 
                             exceptionArea = 1080;
@@ -225,7 +225,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
 
                             // どうにもできないので  ログだけ取って無視します。
                             string message = this.GetType().Name + "#Execute（B）： exceptionArea=" + exceptionArea + "\n" + ex.GetType().Name + "：" + ex.Message;
-                            errH.Logger.WriteLineError(message);
+                            Logger.WriteLineError(logTag, message);
                         }
 
                     }
@@ -233,7 +233,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                     {
                         genjo.ToBreak_Abnormal();
                         string message = "＼（＾ｏ＾）／Moveオブジェクトがない☆！　inputLine=[" + genjo.InputLine + "]";
-                        errH.Logger.WriteLineError(message);
+                        Logger.WriteLineError(logTag, message);
                         throw new Exception(message);
                     }
                 }
@@ -255,7 +255,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
 
                 // どうにもできないので  ログだけ取って無視します。
                 string message = this.GetType().Name + "#Execute：" + ex.GetType().Name + "：" + ex.Message;
-                errH.Logger.WriteLineError(message);
+                Logger.WriteLineError(logTag,message);
             }
 
         gt_EndMethod:

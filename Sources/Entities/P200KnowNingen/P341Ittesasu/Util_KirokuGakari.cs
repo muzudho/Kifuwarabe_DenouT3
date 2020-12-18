@@ -16,17 +16,12 @@ namespace Grayscale.P341Ittesasu.L250OperationA
 {
 
     /// <summary>
-    /// ************************************************************************************************************************
     /// 記録係
-    /// ************************************************************************************************************************
     /// </summary>
     public abstract class Util_KirokuGakari
     {
-
         /// <summary>
-        /// ************************************************************************************************************************
         /// 棋譜データを元に、符号リスト１(*1)を出力します。
-        /// ************************************************************************************************************************
         /// 
         ///     *1…「▲２六歩△８四歩▲７六歩」といった書き方。
         /// 
@@ -38,7 +33,7 @@ namespace Grayscale.P341Ittesasu.L250OperationA
         public static string ToJsaFugoListString(
             KifuTree src_kifu,
             string hint,
-            IErrorController errH
+            ILogTag logTag
             )
         {
             StringBuilder sb = new StringBuilder();
@@ -85,12 +80,12 @@ namespace Grayscale.P341Ittesasu.L250OperationA
                 );
 
                 // 記録係り用棋譜（採譜）
-                UtilKifuTree282.AppendChild_And_ChangeCurrentToChild(saifuKifu, saifu_newChild, hint+"/ToJsaKifuText", errH);// 新しい次ノードを追加。次ノードを、これからカレントとする。
+                UtilKifuTree282.AppendChild_And_ChangeCurrentToChild(saifuKifu, saifu_newChild, hint+"/ToJsaKifuText", logTag);// 新しい次ノードを追加。次ノードを、これからカレントとする。
 
                 // 後手の符号がまだ含まれていない。
                 string jsaFugoStr = ConvMoveStrJsa.ToMoveStrJsa(saifu_newChild,
                     //saifu_newChild.Value,
-                    errH);
+                    logTag);
                 //sb.Append(Conv_MoveStr_Jsa.ToMoveStr_Jsa(node, saifu_kWrap, errH));
                 sb.Append(jsaFugoStr);
 
@@ -103,9 +98,7 @@ namespace Grayscale.P341Ittesasu.L250OperationA
 
 
         /// <summary>
-        /// ************************************************************************************************************************
         /// 棋譜データを元に、符号リスト２(*1)を出力します。
-        /// ************************************************************************************************************************
         /// 
         ///     *1…「position startpos moves 7g7f 3c3d 2g2f」といった書き方。
         /// 

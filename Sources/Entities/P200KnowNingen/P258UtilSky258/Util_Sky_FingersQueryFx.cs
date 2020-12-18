@@ -31,7 +31,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// <param name="src_Sky"></param>
         /// <param name="tebanSeme"></param>
         /// <param name="tebanKurau"></param>
-        /// <param name="errH_OrNull"></param>
+        /// <param name="logTag"></param>
         public static void Split_BanjoSeme_BanjoKurau_MotiSeme_MotiKurau(
             out Fingers fs_banjoSeme,//戦駒（利きを調べる側）
             out Fingers fs_banjoKurau,//戦駒（喰らう側）
@@ -40,7 +40,7 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
             SkyConst src_Sky,
             Playerside tebanSeme,
             Playerside tebanKurau,
-            IErrorController errH_OrNull
+            ILogTag logTag
         )
         {
             Fingers fs_banjoSeme_temp = new Fingers();// （１）盤上駒_攻め手
@@ -128,12 +128,12 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
         /// <param name="src_Sky"></param>
         /// <param name="tebanSeme"></param>
         /// <param name="tebanKurau"></param>
-        /// <param name="errH_OrNull"></param>
+        /// <param name="logTag"></param>
         public static void Split_Moti1p_Moti2p(
             out Fingers fingers_moti1p,// 持駒 1P
             out Fingers fingers_moti2p,// 持駒 2=
             SkyConst src_Sky,
-            IErrorController errH_OrNull
+            ILogTag logTag
         )
         {
             Fingers fingers_moti1p_temp = new Fingers();// （３）持ち駒_攻め手

@@ -17,11 +17,11 @@
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            IErrorController errH = ErrorControllerReference.EngineDefault;
+            ILogTag logTag = LogTags.EngineDefault;
 
             // 将棋エンジン　きふわらべ
             ProgramSupport programSupport = new ProgramSupport();
-            programSupport.AtBegin(errH);
+            programSupport.AtBegin(logTag);
             bool isTimeoutShutdown;
 
             isTimeoutShutdown = false;
@@ -88,7 +88,7 @@
                     //
                     UsiLoop2 usiLoop2 = new UsiLoop2(programSupport.shogisasi, programSupport);
                     usiLoop2.AtBegin();
-                    usiLoop2.AtBody(out isTimeoutShutdown_temp, errH);
+                    usiLoop2.AtBody(out isTimeoutShutdown_temp, logTag);
                     usiLoop2.AtEnd();
                     if (isTimeoutShutdown_temp)
                     {
@@ -105,7 +105,7 @@
                 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
                 // どうにもできないので  ログだけ取って無視します。
-                ErrorControllerReference.EngineDefault.Panic("Program「大外枠でキャッチ」：" + ex.GetType().Name + " " + ex.Message);
+                Logger.Panic(LogTags.EngineDefault, "Program「大外枠でキャッチ」：" + ex.GetType().Name + " " + ex.Message);
             }
 
         gt_EndMethod:

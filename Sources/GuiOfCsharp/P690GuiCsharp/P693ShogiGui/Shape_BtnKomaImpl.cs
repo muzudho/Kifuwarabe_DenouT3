@@ -128,7 +128,7 @@ namespace Grayscale.P693ShogiGui.L080Shape
         /// ************************************************************************************************************************
         /// </summary>
         /// <param name="g1"></param>
-        public void Paint(Graphics g1, MainGui_Csharp mainGui, IErrorController errH)
+        public void Paint(Graphics g1, MainGui_Csharp mainGui, ILogTag logTag)
         {
 
             if (!this.Visible)

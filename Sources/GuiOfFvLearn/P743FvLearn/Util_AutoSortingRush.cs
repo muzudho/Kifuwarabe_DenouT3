@@ -33,7 +33,7 @@ namespace Grayscale.P743FvLearn.L506AutoMoveSort
             int loopLimit,
             ref float ref_tyoseiryo,
             string sfenMoveStr,
-            Uc_Main uc_Main, IErrorController errH
+            Uc_Main uc_Main, ILogTag errH
             )
         {
             out_isEndAutoLearn = false;
