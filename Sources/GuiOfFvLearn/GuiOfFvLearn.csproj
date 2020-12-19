@@ -63,7 +63,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DynamicJson">
-      <HintPath>..\..\..\References\NeueCC\DynamicJson.dll</HintPath>
+      <HintPath>..\..\References\NeueCC\DynamicJson.dll</HintPath>
     </Reference>
     <Reference Include="Nett, Version=0.15.0.0, Culture=neutral, PublicKeyToken=605dcfe7a1d3365b, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Nett.0.15.0\lib\net40\Nett.dll</HintPath>

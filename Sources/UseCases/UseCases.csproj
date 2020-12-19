@@ -54,7 +54,7 @@
       <HintPath>..\..\packages\Nett.0.15.0\lib\net40\Nett.dll</HintPath>
     </Reference>
     <Reference Include="NLua">
-      <HintPath>..\..\..\References\NLua\NLua.dll</HintPath>
+      <HintPath>..\..\References\NLua\NLua.dll</HintPath>
     </Reference>
     <Reference Include="ProjectDark.KWSupport, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
