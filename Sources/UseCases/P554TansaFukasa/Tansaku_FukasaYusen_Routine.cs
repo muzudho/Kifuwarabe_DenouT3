@@ -32,7 +32,7 @@ using Grayscale.P554TansaFukasa.I500Struct;
 using Grayscale.P266KyokumMoves.L250Log;
 using Grayscale.P370LogGraphiEx.L500Util;
 #else
-    using Grayscale.Kifuwarakaku.Entities.Logger;
+    using Grayscale.Kifuwarakaku.Entities.Logging;
     using Grayscale.P035Collection.L500Struct;
     using Grayscale.P056Syugoron.I250Struct;
     using Grayscale.P212ConvPside.L500Converter;

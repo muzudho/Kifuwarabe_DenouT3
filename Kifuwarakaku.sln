@@ -31,7 +31,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiOfSpeedKeisok", "Sources
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiOfUtifuduTest", "Sources\GuiOfUtifuduTest\GuiOfUtifuduTest.csproj", "{0E4A4B25-BF5A-47B5-8AAD-6DA1993673ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiOfAims", "GuiOfAims\GuiOfAims.csproj", "{EA7961EF-2C8B-42B5-BE7E-72B5DB99B333}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiOfAims", "Sources\GuiOfAims\GuiOfAims.csproj", "{EA7961EF-2C8B-42B5-BE7E-72B5DB99B333}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text;
-using Grayscale.Kifuwarakaku.Entities.Logger;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P055_Conv_Sy.L500Converter;
 using Grayscale.P157KyokumenPng.I500Struct;
 using Grayscale.P157KyokumenPng.L500Struct;

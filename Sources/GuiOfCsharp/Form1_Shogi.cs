@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using System.Windows.Forms;
-using Grayscale.Kifuwarakaku.Entities.Logger;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P693ShogiGui.I500Gui;
 using Grayscale.P693ShogiGui.I510Form;
 

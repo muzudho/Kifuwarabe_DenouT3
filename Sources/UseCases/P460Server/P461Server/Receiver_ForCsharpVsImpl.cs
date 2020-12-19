@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics;
-using Grayscale.Kifuwarakaku.Entities.Logger;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P461Server.I125Receiver;
 using Grayscale.P461Server.I497EngineClient;
 using Grayscale.P461Server.L498Server;

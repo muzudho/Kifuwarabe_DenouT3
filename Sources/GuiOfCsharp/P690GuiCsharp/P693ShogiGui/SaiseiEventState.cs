@@ -1,4 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logger;
+﻿using Grayscale.Kifuwarakaku.Entities.Logging;
 
 namespace Grayscale.P693ShogiGui.L125Scene
 {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text.RegularExpressions;
-using Grayscale.Kifuwarakaku.Entities.Logger;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P005Tushin.L500Util;
 using Grayscale.P542Scoreing.I005UsiLoop;
 using Nett;

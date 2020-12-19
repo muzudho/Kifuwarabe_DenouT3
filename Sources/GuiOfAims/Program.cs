@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Windows.Forms;
 using Nett;
-using Grayscale.Kifuwarakaku.Entities.Logger;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P027Settei.L510Xml;
 using Grayscale.P224Sky.L500Struct;
 using Grayscale.P258UtilSky258.L500UtilSky;

@@ -1,6 +1,6 @@
 ﻿using System.IO;
 using System.Text;
-using Grayscale.Kifuwarakaku.Entities.Logger;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P341Ittesasu.L250OperationA;
 using Grayscale.P693ShogiGui.I500Gui;
 using Grayscale.P693ShogiGui.L500GUI;

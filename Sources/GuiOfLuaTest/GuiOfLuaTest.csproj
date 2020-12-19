@@ -8,8 +8,8 @@
     <ProjectGuid>{B2DE7E01-2844-483A-B18F-4A6250FFEDF2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Grayscale</RootNamespace>
-    <AssemblyName>Grayscale.P770_LuaTest____</AssemblyName>
+    <RootNamespace>Grayscale.Kifuwarakaku.GuiOfLuaTest</RootNamespace>
+    <AssemblyName>Grayscale.Kifuwarakaku.GuiOfLuaTest</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

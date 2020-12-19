@@ -1,4 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logger;
+﻿using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P323Sennitite.I500Struct;
 using System;
 using System.Collections.Generic;

@@ -1,4 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logger;
+﻿using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P226Tree.I500Struct;
 using Grayscale.P234Komahaiyaku.L500Util;

@@ -1,4 +1,4 @@
-﻿    using Grayscale.Kifuwarakaku.Entities.Logger;
+﻿    using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P224Sky.L500Struct;
 using Grayscale.P461Server.L498Server;
 using Grayscale.P481AimsServer.I060Phase;

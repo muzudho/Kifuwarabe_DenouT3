@@ -1,4 +1,4 @@
-﻿    using Grayscale.Kifuwarakaku.Entities.Logger;
+﻿    using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P461Server.I496EngineWrapper;
 using System.Diagnostics;
 

@@ -1,4 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logger;
+﻿using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P325PnlTaikyoku.I250Struct;
 using Grayscale.P355_KifuParserA.I500Parser;
 using System;

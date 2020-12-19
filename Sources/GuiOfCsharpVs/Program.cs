@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using Grayscale.Kifuwarakaku.Entities.Logger;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P699_Form_______;
 
 namespace Grayscale.P803GuiCsharpVs.L500Gui

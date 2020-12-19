@@ -5,7 +5,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using Codeplex.Data;//DynamicJson
-using Grayscale.Kifuwarakaku.Entities.Logger;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P027Settei.L500Struct;
 using Grayscale.P236KomahaiyaTr.L500Table;
 using Grayscale.P238Seiza.L250Struct;

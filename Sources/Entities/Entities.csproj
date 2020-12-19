@@ -66,14 +66,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logger\ILogEvent.cs" />
-    <Compile Include="Logger\ErrorHandlerImpl.cs" />
-    <Compile Include="Logger\ILogRecord.cs" />
-    <Compile Include="Logger\ILogTag.cs" />
-    <Compile Include="Logger\Logger.cs" />
-    <Compile Include="Logger\LogRecord.cs" />
-    <Compile Include="Logger\LogTag.cs" />
-    <Compile Include="Logger\LogTags.cs" />
+    <Compile Include="Logging\ILogEvent.cs" />
+    <Compile Include="Logging\ErrorHandlerImpl.cs" />
+    <Compile Include="Logging\ILogRecord.cs" />
+    <Compile Include="Logging\ILogTag.cs" />
+    <Compile Include="Logging\Logger.cs" />
+    <Compile Include="Logging\LogRecord.cs" />
+    <Compile Include="Logging\LogTag.cs" />
+    <Compile Include="Logging\LogTags.cs" />
     <Compile Include="P000Environment\P005Tushin\Util_Message.cs" />
     <Compile Include="P000Environment\P011Csv\CsvLineParserImpl.cs" />
     <Compile Include="P000Environment\P011Csv\Util_Csv.cs" />

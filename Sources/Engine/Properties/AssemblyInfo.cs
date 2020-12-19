@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // アセンブリに関する一般情報は以下の属性セットをとおして制御されます。
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
-[assembly: AssemblyTitle("P500_ShogiEngine")]
+[assembly: AssemblyTitle("Kifuwarakaku")]
 [assembly: AssemblyDescription("将棋の思考エンジンです。(201511-SDT3)")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ぐれーすけーる")]
-[assembly: AssemblyProduct("Kifuwarakaku Bld2")]
+[assembly: AssemblyProduct("Kifuwarakaku")]
 [assembly: AssemblyCopyright("Copyright © ぐれーすけーる 2014-2015")]
 [assembly: AssemblyTrademark("きふわらべ")]
 [assembly: AssemblyCulture("")]
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // すべての値を指定するか、下のように '*' を使ってビルドおよびリビジョン番号を 
 // 既定値にすることができます:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.0.13.0")]
+[assembly: AssemblyVersion("2.0.19.0")]
 [assembly: AssemblyFileVersion("2.0.0.0")]

@@ -1,5 +1,5 @@
 ﻿using System.Drawing;
-using Grayscale.Kifuwarakaku.Entities.Logger;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P212ConvPside.L500Converter;
 using Grayscale.P213Komasyurui.L250Word;

@@ -1,4 +1,4 @@
-﻿    using Grayscale.Kifuwarakaku.Entities.Logger;
+﻿    using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P011Csv.L500Util;
 using Grayscale.P061ConstShogi_.L250Const;
 using Grayscale.P211WordShogi.L500Word;

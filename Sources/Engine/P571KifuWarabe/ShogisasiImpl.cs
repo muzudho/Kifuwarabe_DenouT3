@@ -22,7 +22,7 @@ using System.Collections.Generic;
 #else
     using System;
     using System.Collections.Generic;
-    using Grayscale.Kifuwarakaku.Entities.Logger;
+    using Grayscale.Kifuwarakaku.Entities.Logging;
     using Grayscale.P031Random.L500Struct;
     using Grayscale.P211WordShogi.L500Word;
     using Grayscale.P324KifuTree.I250Struct;

@@ -8,8 +8,8 @@
     <ProjectGuid>{52C00B8B-9FDD-4F0F-9570-6641EF65086E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Grayscale</RootNamespace>
-    <AssemblyName>Grayscale.P780_SgSyugoTest</AssemblyName>
+    <RootNamespace>Grayscale.Kifuwarakaku.GuiOfSgSyugoTest</RootNamespace>
+    <AssemblyName>Grayscale.Kifuwarakaku.GuiOfSgSyugoTest</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

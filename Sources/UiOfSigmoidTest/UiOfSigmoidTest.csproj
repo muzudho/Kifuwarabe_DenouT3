@@ -8,8 +8,8 @@
     <ProjectGuid>{77E59B81-8B78-45D3-98E4-1BF2269B08A7}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Grayscale</RootNamespace>
-    <AssemblyName>Grayscale.P760_SigmoidTest</AssemblyName>
+    <RootNamespace>Grayscale.Kifuwarakaku.UiOfSigmoidTest</RootNamespace>
+    <AssemblyName>Grayscale.Kifuwarakaku.UiOfSigmoidTest</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

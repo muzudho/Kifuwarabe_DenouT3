@@ -1,5 +1,5 @@
 ﻿using System.Windows.Forms;
-using Grayscale.Kifuwarakaku.Entities.Logger;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P693ShogiGui.I492Widgets;
 using Grayscale.P693ShogiGui.I500Gui;
 using Grayscale.P693ShogiGui.L080Shape;

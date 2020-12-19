@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{EA7961EF-2C8B-42B5-BE7E-72B5DB99B333}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>GuiOfAims</RootNamespace>
-    <AssemblyName>GuiOfAims</AssemblyName>
+    <RootNamespace>Grayscale.Kifuwarakaku.GuiOfAims</RootNamespace>
+    <AssemblyName>Grayscale.Kifuwarakaku.GuiOfAims</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -56,11 +56,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sources\Entities\Entities.csproj">
+    <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{147b11e0-827b-4d3f-844c-adf2beafa53f}</Project>
       <Name>Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Sources\UseCases\UseCases.csproj">
+    <ProjectReference Include="..\UseCases\UseCases.csproj">
       <Project>{dbea8b61-6f05-49a0-9ccb-6fcf2976bd17}</Project>
       <Name>UseCases</Name>
     </ProjectReference>

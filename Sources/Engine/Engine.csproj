@@ -8,7 +8,7 @@
     <ProjectGuid>{E96A7341-B8E6-4979-8B2A-94FF2818962C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Grayscale</RootNamespace>
+    <RootNamespace>Grayscale.Kifuwarakaku.Engine</RootNamespace>
     <AssemblyName>Grayscale.Kifuwarakaku.Engine</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

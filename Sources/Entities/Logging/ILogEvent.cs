@@ -1,4 +1,4 @@
-﻿namespace Grayscale.Kifuwarakaku.Entities.Logger
+﻿namespace Grayscale.Kifuwarakaku.Entities.Logging
 {
     /// <summary>
     /// ログを書くタイミングで。

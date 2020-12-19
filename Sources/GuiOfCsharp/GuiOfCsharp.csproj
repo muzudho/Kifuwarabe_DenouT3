@@ -8,8 +8,8 @@
     <ProjectGuid>{9593ACC7-348B-4868-892C-7BAFBF925B9D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Grayscale</RootNamespace>
-    <AssemblyName>Grayscale.P690_GuiCsharp__</AssemblyName>
+    <RootNamespace>Grayscale.Kifuwarakaku.GuiOfCsharp</RootNamespace>
+    <AssemblyName>Grayscale.Kifuwarakaku.GuiOfCsharp</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

@@ -8,8 +8,8 @@
     <ProjectGuid>{ABED6201-9999-44CD-A91B-4CA01CC89006}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Grayscale</RootNamespace>
-    <AssemblyName>Grayscale.P160_KifuCsa____</AssemblyName>
+    <RootNamespace>Grayscale.Kifuwarakaku.GuiOfKifuCsa</RootNamespace>
+    <AssemblyName>Grayscale.Kifuwarakaku.GuiOfKifuCsa</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

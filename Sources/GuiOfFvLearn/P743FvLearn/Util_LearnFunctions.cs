@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Text;
-using Grayscale.Kifuwarakaku.Entities.Logger;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P218Starlight.I500Struct;
 using Grayscale.P226Tree.I500Struct;

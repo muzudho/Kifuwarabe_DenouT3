@@ -1,4 +1,4 @@
-﻿namespace Grayscale.Kifuwarakaku.Entities.Logger
+﻿namespace Grayscale.Kifuwarakaku.Entities.Logging
 {
     using System;
     using System.Collections.Generic;

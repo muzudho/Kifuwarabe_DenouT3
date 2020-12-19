@@ -39,7 +39,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
     using System.IO;
     using System.Text;
     using System.Windows.Forms;
-    using Grayscale.Kifuwarakaku.Entities.Logger;
+    using Grayscale.Kifuwarakaku.Entities.Logging;
     using Grayscale.P027Settei.L510Xml;
     using Grayscale.P211WordShogi.L500Word;
     using Grayscale.P212ConvPside.L500Converter;

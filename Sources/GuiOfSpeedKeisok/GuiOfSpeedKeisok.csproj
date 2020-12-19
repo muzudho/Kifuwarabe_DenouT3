@@ -8,8 +8,8 @@
     <ProjectGuid>{9508AF0C-DE28-4762-A2CC-7674F60B68C7}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Grayscale</RootNamespace>
-    <AssemblyName>Grayscale.P910_SpeedKeisok</AssemblyName>
+    <RootNamespace>Grayscale.Kifuwarakaku.GuiOfSpeedKeisok</RootNamespace>
+    <AssemblyName>Grayscale.Kifuwarakaku.GuiOfSpeedKeisok</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

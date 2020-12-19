@@ -14,7 +14,7 @@ using System.Text;
 using System.Windows.Forms;
 using Nett;
 #else
-using Grayscale.Kifuwarakaku.Entities.Logger;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P011Csv.L250Parser;
 using Grayscale.P056Syugoron.I250Struct;
 using Grayscale.P211WordShogi.L500Word;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using System.Windows.Forms;
-using Grayscale.Kifuwarakaku.Entities.Logger;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P056Syugoron.I250Struct;
 using Grayscale.P163KifuCsa.I250Struct;
 using Grayscale.P211WordShogi.L250Masu;

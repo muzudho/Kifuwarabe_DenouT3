@@ -8,8 +8,8 @@
     <ProjectGuid>{0E4A4B25-BF5A-47B5-8AAD-6DA1993673ED}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>P920_UtifuduTest</RootNamespace>
-    <AssemblyName>Grayscale.P920_UtifuduTest</AssemblyName>
+    <RootNamespace>Grayscale.Kifuwarakaku.GuiOfUtifuduTest</RootNamespace>
+    <AssemblyName>Grayscale.Kifuwarakaku.GuiOfUtifuduTest</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

@@ -20,7 +20,7 @@ using Grayscale.P743FvLearn.L508AutoMoveRush;
 using Grayscale.P743FvLearn.L506AutoMoveSort;
 #else
     using System.Windows.Forms;
-    using Grayscale.Kifuwarakaku.Entities.Logger;
+    using Grayscale.Kifuwarakaku.Entities.Logging;
     using Grayscale.P743FvLearn.L250Learn;
     using Grayscale.P743FvLearn.L260View;
     using Grayscale.P743FvLearn.L450Tyoseiryo;

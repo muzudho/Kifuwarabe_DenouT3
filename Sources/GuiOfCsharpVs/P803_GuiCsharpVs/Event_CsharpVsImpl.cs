@@ -1,4 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logger;
+﻿using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P693ShogiGui.I080Shape;
 using Grayscale.P693ShogiGui.I491Event;
 using Grayscale.P693ShogiGui.I500Gui;

@@ -2,7 +2,7 @@
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using Grayscale.Kifuwarakaku.Entities.Logger;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P140KifuSfen;
 using Grayscale.P157KyokumenPng.I500Struct;
 using Grayscale.P157KyokumenPng.L500Struct;

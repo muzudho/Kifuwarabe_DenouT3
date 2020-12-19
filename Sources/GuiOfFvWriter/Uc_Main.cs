@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using Grayscale.Kifuwarakaku.Entities.Logger;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P163KifuCsa.I250Struct;
 using Grayscale.P163KifuCsa.L250Struct;
 using Grayscale.P521FeatureVect.I500Struct;

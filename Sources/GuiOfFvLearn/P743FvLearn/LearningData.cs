@@ -10,7 +10,7 @@ using Grayscale.P324KifuTree.I250Struct;
 using Grayscale.P521FeatureVect.I500Struct;
 using Grayscale.P542Scoreing.I250Args;
 #else
-    using Grayscale.Kifuwarakaku.Entities.Logger;
+    using Grayscale.Kifuwarakaku.Entities.Logging;
     using Grayscale.P163KifuCsa.I250Struct;
     using Grayscale.P218Starlight.I500Struct;
     using Grayscale.P224Sky.L500Struct;

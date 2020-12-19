@@ -1,7 +1,7 @@
 ﻿namespace Grayscale.P580_Form_______
 {
     using System;
-    using Grayscale.Kifuwarakaku.Entities.Logger;
+    using Grayscale.Kifuwarakaku.Entities.Logging;
     using Grayscale.P571KifuWarabe.L250UsiLoop;
     using Grayscale.P571KifuWarabe.L500KifuWarabe;
 

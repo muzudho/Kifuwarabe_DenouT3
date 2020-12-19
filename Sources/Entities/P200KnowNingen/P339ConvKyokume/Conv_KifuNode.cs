@@ -1,5 +1,5 @@
 ﻿using System.Text;
-using Grayscale.Kifuwarakaku.Entities.Logger;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P140KifuSfen;
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P213Komasyurui.L500Util;

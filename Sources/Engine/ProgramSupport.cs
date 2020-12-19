@@ -6,7 +6,7 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
     using System.Collections.Generic;
     using System.IO;
     using System.Text;
-    using Grayscale.Kifuwarakaku.Entities.Logger;
+    using Grayscale.Kifuwarakaku.Entities.Logging;
     using Grayscale.P005Tushin.L500Util;
     using Grayscale.P236KomahaiyaTr.L500Table;
     using Grayscale.P248Michi.L500Word;

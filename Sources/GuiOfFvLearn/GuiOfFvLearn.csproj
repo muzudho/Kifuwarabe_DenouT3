@@ -8,8 +8,8 @@
     <ProjectGuid>{974BA7C3-37B5-4575-9349-9E44CFECF2D6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Grayscale</RootNamespace>
-    <AssemblyName>Grayscale.P740_FvLearn____</AssemblyName>
+    <RootNamespace>Grayscale.Kifuwarakaku.GuiOfFvLearn</RootNamespace>
+    <AssemblyName>Grayscale.Kifuwarakaku.GuiOfFvLearn</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <PublishUrl>publish\</PublishUrl>

@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.IO;
 using System.Text;
-using Grayscale.Kifuwarakaku.Entities.Logger;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P211WordShogi.L500Word;
 using Grayscale.P234Komahaiyaku.L250Word;
 using Grayscale.P234Komahaiyaku.L500Util;

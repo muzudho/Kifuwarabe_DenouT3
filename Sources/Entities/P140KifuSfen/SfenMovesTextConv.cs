@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-using Grayscale.Kifuwarakaku.Entities.Logger;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 
 namespace Grayscale.P140KifuSfen
 {

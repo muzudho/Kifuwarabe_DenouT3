@@ -1,5 +1,5 @@
 ﻿using System.Windows.Forms;
-using Grayscale.Kifuwarakaku.Entities.Logger;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P743FvLearn.L508AutoMoveRush;
 
 namespace Grayscale.P743FvLearn.L510AutoKifuRead

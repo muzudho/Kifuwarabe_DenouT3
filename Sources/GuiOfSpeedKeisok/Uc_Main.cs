@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using Grayscale.Kifuwarakaku.Entities.Logger;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P224Sky.L500Struct;
 using Grayscale.P324KifuTree.I250Struct;
 using Grayscale.P521FeatureVect.I500Struct;

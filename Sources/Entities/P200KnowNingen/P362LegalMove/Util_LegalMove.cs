@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Grayscale.Kifuwarakaku.Entities.Logger;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P035Collection.L500Struct;
 using Grayscale.P056Syugoron.I250Struct;
 using Grayscale.P056Syugoron.L250Struct;

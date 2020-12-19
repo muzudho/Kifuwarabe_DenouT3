@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
-using Grayscale.Kifuwarakaku.Entities.Logger;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P157KyokumenPng.I500Struct;
 using Grayscale.P158LogKyokuPng.L500UtilWriter;
 using Grayscale.P211WordShogi.L500Word;
