@@ -67,15 +67,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="P571KifuWarabe\Util_LogBuilder510.cs" />
-    <Compile Include="P571KifuWarabe\ShogisasiImpl.cs" />
-    <Compile Include="P571KifuWarabe\Result_KingState.cs" />
-    <Compile Include="P571KifuWarabe\NoopPhase.cs" />
-    <Compile Include="P571KifuWarabe\NoopTimerImpl.cs" />
-    <Compile Include="P571KifuWarabe\PhaseResult_UsiLoop1.cs" />
+    <Compile Include="Features\Util_LogBuilder510.cs" />
+    <Compile Include="Features\ShogisasiImpl.cs" />
+    <Compile Include="Features\Result_KingState.cs" />
+    <Compile Include="Features\NoopPhase.cs" />
+    <Compile Include="Features\NoopTimerImpl.cs" />
+    <Compile Include="Features\PhaseResult_UsiLoop1.cs" />
     <Compile Include="UsiLoop1.cs" />
     <Compile Include="UsiLoop2.cs" />
-    <Compile Include="P571KifuWarabe\PhaseResult_UsiLoop2.cs" />
+    <Compile Include="Features\PhaseResult_UsiLoop2.cs" />
     <Compile Include="ProgramSupport.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,10 +98,7 @@
       <Name>UseCases</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="P570_／／↓きふわらべ\" />
-    <Folder Include="P580_Form_______／／フォーム\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Analyzer Include="..\..\packages\Microsoft.CodeAnalysis.NetAnalyzers.5.0.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll" />
     <Analyzer Include="..\..\packages\Microsoft.CodeAnalysis.NetAnalyzers.5.0.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.NetAnalyzers.dll" />
