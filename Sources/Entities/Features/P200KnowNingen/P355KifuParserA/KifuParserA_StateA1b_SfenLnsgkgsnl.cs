@@ -44,47 +44,42 @@ namespace Grayscale.P355_KifuParserA.L500Parser
         {
             nextState = this;
 
-            try
+            Logger.Error("（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　さて、どんな内容なんだぜ☆？");
+
+            StartposImporter startposImporter1;
+            string restText;
+
+            bool successful = StartposImporter.TryParse(
+                genjo.InputLine,
+                out startposImporter1,
+                out restText
+                );
+            genjo.StartposImporter_OrNull = startposImporter1;
+            Logger.Error("（＾△＾）restText=「" + restText + "」 successful=【" + successful + "】");
+
+            if (successful)
             {
-                Logger.WriteLineError(logTag,"（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　さて、どんな内容なんだぜ☆？");
+                genjo.InputLine = restText;
 
-                StartposImporter startposImporter1;
-                string restText;
+                //if(null!=genjo.StartposImporter_OrNull)
+                //{
+                //    // SFENの解析結果を渡すので、
+                //    // その解析結果をどう使うかは、委譲します。
+                //    owner.Delegate_OnChangeSky_Im(
+                //        model_PnlTaikyoku,
+                //        genjo,
+                //        logTag
+                //        );
+                //}
 
-                bool successful = StartposImporter.TryParse(
-                    genjo.InputLine,
-                    out startposImporter1,
-                    out restText
-                    );
-                genjo.StartposImporter_OrNull = startposImporter1;
-                Logger.WriteLineError(logTag, "（＾△＾）restText=「" + restText + "」 successful=【" + successful + "】");
-
-                if (successful)
-                {
-                    genjo.InputLine = restText;
-
-                    //if(null!=genjo.StartposImporter_OrNull)
-                    //{
-                    //    // SFENの解析結果を渡すので、
-                    //    // その解析結果をどう使うかは、委譲します。
-                    //    owner.Delegate_OnChangeSky_Im(
-                    //        model_PnlTaikyoku,
-                    //        genjo,
-                    //        logTag
-                    //        );
-                    //}
-
-                    nextState = KifuParserA_StateA2_SfenMoves.GetInstance();
-                }
-                else
-                {
-                    // 解析に失敗しました。
-                    //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-                    genjo.ToBreak_Abnormal();
-                }
-
+                nextState = KifuParserA_StateA2_SfenMoves.GetInstance();
             }
-            catch (Exception ex) { Logger.Panic(LogTags.Error, ex, "SFEN解析中☆"); throw; }
+            else
+            {
+                // 解析に失敗しました。
+                //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                genjo.ToBreak_Abnormal();
+            }
 
             return genjo.InputLine;
         }

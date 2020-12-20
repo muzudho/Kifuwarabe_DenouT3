@@ -41,40 +41,35 @@ namespace Grayscale.P355_KifuParserA.L500Parser
         {
             nextState = this;
 
-            try
+            if (genjo.InputLine.StartsWith("moves"))
             {
-                if (genjo.InputLine.StartsWith("moves"))
-                {
-                    //>>>>> 棋譜が始まります。
+                //>>>>> 棋譜が始まります。
 #if DEUBG
                     logTag.Logger.WriteLineAddMemo("（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　ｳﾑ☆　moves 分かるぜ☆");
 #endif
 
-                    genjo.InputLine = genjo.InputLine.Substring("moves".Length);
-                    genjo.InputLine = genjo.InputLine.Trim();
+                genjo.InputLine = genjo.InputLine.Substring("moves".Length);
+                genjo.InputLine = genjo.InputLine.Trim();
 
 
-                    nextState = KifuParserA_StateA2_SfenMoves.GetInstance();
-                }
-                else if (""==genjo.InputLine)
-                {
-                    // FIXME: コンピューターが先手のとき、ここにくる？
-
-                    // 異常時。
-                    Logger.WriteLineError(logTag,"＼（＾ｏ＾）／「" + genjo.InputLine + "」入力がない1☆！　終わるぜ☆");
-                    genjo.ToBreak_Abnormal();
-                }
-                else
-                {
-                    // 異常時。
-                    Logger.WriteLineError(logTag,"＼（＾ｏ＾）／「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　movesがない☆！　終わるぜ☆");
-                    genjo.ToBreak_Abnormal();
-                }
+                nextState = KifuParserA_StateA2_SfenMoves.GetInstance();
             }
-            catch (Exception ex) { Logger.Panic(LogTags.Error, ex, "SFEN文字列の解析中。"); throw; }
+            else if ("" == genjo.InputLine)
+            {
+                // FIXME: コンピューターが先手のとき、ここにくる？
+
+                // 異常時。
+                Logger.Error("＼（＾ｏ＾）／「" + genjo.InputLine + "」入力がない1☆！　終わるぜ☆");
+                genjo.ToBreak_Abnormal();
+            }
+            else
+            {
+                // 異常時。
+                Logger.Error("＼（＾ｏ＾）／「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　movesがない☆！　終わるぜ☆");
+                genjo.ToBreak_Abnormal();
+            }
 
             return genjo.InputLine;
         }
-
     }
 }

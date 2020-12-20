@@ -129,7 +129,6 @@ namespace Grayscale.P542Scoreing.L125ScoreSibori
             Node<IMove, KyokumenWrapper> hubNode
             )
         {
-            int exception_area = 0;
             List<Node<IMove, KyokumenWrapper>> list = null;
 
             // ランク付けしたあと、リスト構造に移し変えます。
@@ -140,7 +139,6 @@ namespace Grayscale.P542Scoreing.L125ScoreSibori
                 list.Add(node);
             });
 
-            exception_area = 1000;
             // ランク付けするために、リスト構造に変換します。
 
             ScoreSiboriEngine.Sort(list);

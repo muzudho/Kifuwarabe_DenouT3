@@ -28,7 +28,6 @@ namespace Grayscale.P743FvLearn.L420Inspection
         {
             float negative_length;// 負の数の一番小さな値の絶対値。
             float positive_length;// 正の数の一番大きな値の絶対値。
-            bool longest_positive; // 正の方の絶対値の方が大きければ真。
             int negative_items;//負の項目数。平均値を求めるのに使う。
             int positive_items;//正の項目数
             float negative_total;//負の合計。平均値を求めるのに使う。
@@ -75,6 +74,8 @@ namespace Grayscale.P743FvLearn.L420Inspection
                     }
                 }
 
+#if DEBUG
+                bool longest_positive; // 正の方の絶対値の方が大きければ真。
                 // 長いのは正負のどちらか。
                 if (negative_length < positive_length)
                 {
@@ -84,7 +85,7 @@ namespace Grayscale.P743FvLearn.L420Inspection
                 {
                     longest_positive = false;
                 }
-#if DEBUG
+
                 logTag.Logger.WriteLineAddMemo("PP");
                 logTag.Logger.WriteLineAddMemo("----------------------------------------");
                 logTag.Logger.WriteLineAddMemo("begin");

@@ -60,7 +60,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
 
-            string logsDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("LogsDirectory"));
+            string logsDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("LogDirectory"));
             string dataDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataDirectory"));
 
             Util_KifuTreeLogWriter.REPORT_ENVIRONMENT = new KyokumenPngEnvironmentImpl(
@@ -240,71 +240,64 @@ using Grayscale.P370LogGraphiEx.L500Util;
         {
             string fileName = "";
 
-            try
+
+            // 出力先
+            fileName = Conv_Filepath.ToEscape("_log_" + ((int)node.Score) + "点_" + logFileCounter + "_" + nodePath + ".png");
+            relFolder = Conv_Filepath.ToEscape(relFolder);
+            //
+            // 画像ﾛｸﾞ
+            //
+            if (true)
             {
-
-                // 出力先
-                fileName = Conv_Filepath.ToEscape("_log_" + ((int)node.Score) + "点_" + logFileCounter + "_" + nodePath + ".png");
-                relFolder = Conv_Filepath.ToEscape(relFolder);
-                //
-                // 画像ﾛｸﾞ
-                //
-                if (true)
+                int srcMasu_orMinusOne = -1;
+                int dstMasu_orMinusOne = -1;
+                if (null != node.Key)
                 {
-                    int srcMasu_orMinusOne = -1;
-                    int dstMasu_orMinusOne = -1;
-                    if (null != node.Key)
-                    {
-                        srcMasu_orMinusOne = Conv_SyElement.ToMasuNumber(((RO_Star)node.Key.LongTimeAgo).Masu);
-                        dstMasu_orMinusOne = Conv_SyElement.ToMasuNumber(((RO_Star)node.Key.Now).Masu);
-                    }
-
-                    KyokumenPngArgs_FoodOrDropKoma foodKoma;
-                    if (null != node.Key.FoodKomaSyurui)
-                    {
-                        switch (Util_Komasyurui14.NarazuCaseHandle((Komasyurui14)node.Key.FoodKomaSyurui))
-                        {
-                            case Komasyurui14.H00_Null___: foodKoma = KyokumenPngArgs_FoodOrDropKoma.NONE; break;
-                            case Komasyurui14.H01_Fu_____: foodKoma = KyokumenPngArgs_FoodOrDropKoma.FU__; break;
-                            case Komasyurui14.H02_Kyo____: foodKoma = KyokumenPngArgs_FoodOrDropKoma.KYO_; break;
-                            case Komasyurui14.H03_Kei____: foodKoma = KyokumenPngArgs_FoodOrDropKoma.KEI_; break;
-                            case Komasyurui14.H04_Gin____: foodKoma = KyokumenPngArgs_FoodOrDropKoma.GIN_; break;
-                            case Komasyurui14.H05_Kin____: foodKoma = KyokumenPngArgs_FoodOrDropKoma.KIN_; break;
-                            case Komasyurui14.H07_Hisya__: foodKoma = KyokumenPngArgs_FoodOrDropKoma.HI__; break;
-                            case Komasyurui14.H08_Kaku___: foodKoma = KyokumenPngArgs_FoodOrDropKoma.KAKU; break;
-                            default: foodKoma = KyokumenPngArgs_FoodOrDropKoma.UNKNOWN; break;
-                        }
-                    }
-                    else
-                    {
-                        foodKoma = KyokumenPngArgs_FoodOrDropKoma.NONE;
-                    }
-
-
-                    // 評価明細に添付
-                    Util_KyokumenPng_Writer.Write1(
-                        Conv_KifuNode.ToRO_Kyokumen1(node),
-                        srcMasu_orMinusOne,
-                        dstMasu_orMinusOne,
-                        foodKoma,
-                        ConvMoveStrSfen.ToMoveStrSfen(node.Key),
-                        relFolder,
-                        fileName,
-                        reportEnvironment
-                        );
-                    logFileCounter++;
+                    srcMasu_orMinusOne = Conv_SyElement.ToMasuNumber(((RO_Star)node.Key.LongTimeAgo).Masu);
+                    dstMasu_orMinusOne = Conv_SyElement.ToMasuNumber(((RO_Star)node.Key.Now).Masu);
                 }
 
-                //
-                // 評価明細
-                //
+                KyokumenPngArgs_FoodOrDropKoma foodKoma;
+                if (null != node.Key.FoodKomaSyurui)
                 {
-                    Util_KifuTreeLogWriter.AAAA_Write_HyokaMeisai(fileName, node, relFolder, reportEnvironment);
+                    switch (Util_Komasyurui14.NarazuCaseHandle((Komasyurui14)node.Key.FoodKomaSyurui))
+                    {
+                        case Komasyurui14.H00_Null___: foodKoma = KyokumenPngArgs_FoodOrDropKoma.NONE; break;
+                        case Komasyurui14.H01_Fu_____: foodKoma = KyokumenPngArgs_FoodOrDropKoma.FU__; break;
+                        case Komasyurui14.H02_Kyo____: foodKoma = KyokumenPngArgs_FoodOrDropKoma.KYO_; break;
+                        case Komasyurui14.H03_Kei____: foodKoma = KyokumenPngArgs_FoodOrDropKoma.KEI_; break;
+                        case Komasyurui14.H04_Gin____: foodKoma = KyokumenPngArgs_FoodOrDropKoma.GIN_; break;
+                        case Komasyurui14.H05_Kin____: foodKoma = KyokumenPngArgs_FoodOrDropKoma.KIN_; break;
+                        case Komasyurui14.H07_Hisya__: foodKoma = KyokumenPngArgs_FoodOrDropKoma.HI__; break;
+                        case Komasyurui14.H08_Kaku___: foodKoma = KyokumenPngArgs_FoodOrDropKoma.KAKU; break;
+                        default: foodKoma = KyokumenPngArgs_FoodOrDropKoma.UNKNOWN; break;
+                    }
                 }
+                else
+                {
+                    foodKoma = KyokumenPngArgs_FoodOrDropKoma.NONE;
+                }
+
+
+                // 評価明細に添付
+                Util_KyokumenPng_Writer.Write1(
+                    Conv_KifuNode.ToRO_Kyokumen1(node),
+                    srcMasu_orMinusOne,
+                    dstMasu_orMinusOne,
+                    foodKoma,
+                    ConvMoveStrSfen.ToMoveStrSfen(node.Key),
+                    relFolder,
+                    fileName,
+                    reportEnvironment
+                    );
+                logFileCounter++;
             }
-            catch (System.Exception ex)
+
+            //
+            // 評価明細
+            //
             {
-                Logger.Panic(logTag, ex, "盤１個分のログを出力しようとしていたときです。\n fileName=[" + fileName + "]\n relFolder=[" + relFolder + "]"); throw;
+                Util_KifuTreeLogWriter.AAAA_Write_HyokaMeisai(fileName, node, relFolder, reportEnvironment);
             }
         }
 

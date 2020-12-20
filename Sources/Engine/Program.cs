@@ -2,6 +2,7 @@
 {
     using System;
     using Grayscale.Kifuwarakaku.Entities.Logging;
+    using Grayscale.Kifuwarakaku.UseCases;
     using Grayscale.P571KifuWarabe.L250UsiLoop;
     using Grayscale.P571KifuWarabe.L500KifuWarabe;
 
@@ -105,7 +106,8 @@
                 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
                 // どうにもできないので  ログだけ取って無視します。
-                Logger.Panic(LogTags.EngineDefault, "Program「大外枠でキャッチ」：" + ex.GetType().Name + " " + ex.Message);
+                Logger.Fatal($"(^ー^)「大外枠でキャッチ」{ex}");
+                // TODO Playing.Send("bestmove resign");
             }
 
         gt_EndMethod:

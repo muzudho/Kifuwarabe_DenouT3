@@ -22,7 +22,7 @@ namespace Grayscale.P743FvLearn
     public partial class Uc_Main : UserControl
     {
 
-        public LearningData LearningData{get;set;}
+        public LearningData LearningData { get; set; }
 
         public Button BtnUpdateKyokumenHyoka { get { return this.btnUpdateKyokumenHyoka; } }
 
@@ -54,7 +54,7 @@ namespace Grayscale.P743FvLearn
 
         public OpenFileDialog OpenCsaFileDialog1 { get { return this.openCsaFileDialog1; } }
 
-        
+
 
         public PictureBox PctKyokumen { get { return this.pctKyokumen; } }
 
@@ -172,7 +172,7 @@ namespace Grayscale.P743FvLearn
             }
         }
 
-        private string[] search_kifu_folder_lines = new string[]{};
+        private string[] search_kifu_folder_lines = new string[] { };
 
         /// <summary>
         /// フォームの初期化が終わったあとに。
@@ -195,7 +195,7 @@ namespace Grayscale.P743FvLearn
                 var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
 
                 string path = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("SearchKifuFolderText"));
-                if(File.Exists(path))
+                if (File.Exists(path))
                 {
                     this.search_kifu_folder_lines = File.ReadAllLines(path, Encoding.UTF8);
                 }
@@ -222,7 +222,7 @@ namespace Grayscale.P743FvLearn
                 }
             }
 
-            if(""!=kifuFilepath)
+            if ("" != kifuFilepath)
             {
                 Util_LearnOperation.Do_OpenCsaKifu(
                     ref isRequest_ShowGohosyu,
@@ -245,7 +245,7 @@ namespace Grayscale.P743FvLearn
                 isRequest_ChangeKyokumenPng = false;
             }
         }
-        
+
 
         /// <summary>
         /// fv.csvを開くボタン。
@@ -256,7 +256,7 @@ namespace Grayscale.P743FvLearn
         {
             ILogTag logTag = LogTags.Learner;
 
-            Util_LearnOperation.Do_OpenFvCsv(this,logTag);
+            Util_LearnOperation.Do_OpenFvCsv(this, logTag);
         }
 
         /// <summary>
@@ -319,15 +319,8 @@ namespace Grayscale.P743FvLearn
                 //    "src=[" + src + "]\n" +
                 //    "dst=[" + dst + "]");
 
-                try
-                {
-                    File.Move(src, dst);
-                    this.TxtKifuFilepath.Text = "";
-                }
-                catch(Exception ex)
-                {
-                    Logger.Panic(logTag,"Uc_Main#SeikoIdo: " +ex.GetType().Name+"："+ ex.Message);
-                }
+                File.Move(src, dst);
+                this.TxtKifuFilepath.Text = "";
             }
         }
 
@@ -348,15 +341,8 @@ namespace Grayscale.P743FvLearn
                     "src=[" + src + "]\n" +
                     "dst=[" + dst + "]");
 
-                try
-                {
-                    File.Move(src, dst);
-                    this.TxtKifuFilepath.Text = "";
-                }
-                catch (Exception ex)
-                {
-                    Logger.Panic(logTag,"Uc_Main#SippaiIdo: " + ex.GetType().Name + "：" + ex.Message);
-                }
+                File.Move(src, dst);
+                this.TxtKifuFilepath.Text = "";
             }
         }
 
@@ -464,7 +450,7 @@ namespace Grayscale.P743FvLearn
             ILogTag logTag = LogTags.Learner;
             bool isRequest_ShowGohosyu = false;
 
-            Util_LearnOperation.Do_ZeroStart( ref isRequest_ShowGohosyu, this, logTag);
+            Util_LearnOperation.Do_ZeroStart(ref isRequest_ShowGohosyu, this, logTag);
 
             if (isRequest_ShowGohosyu)
             {

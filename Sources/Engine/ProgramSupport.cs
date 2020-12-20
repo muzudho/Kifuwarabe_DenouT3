@@ -75,53 +75,45 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
 
         public void AtBegin()
         {
-            int exception_area = 0;
-            try
+            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+
+            //-------------------+----------------------------------------------------------------------------------------------------
+            // ログファイル削除  |
+            //-------------------+----------------------------------------------------------------------------------------------------
             {
-                var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-                var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+                //
+                // 図.
+                //
+                //      フォルダー
+                //          ├─ Engine.KifuWarabe.exe
+                //          └─ log.txt               ←これを削除
+                //
+                Logger.RemoveAllLogFiles();
+            }
 
-                exception_area = 500;
-                //-------------------+----------------------------------------------------------------------------------------------------
-                // ログファイル削除  |
-                //-------------------+----------------------------------------------------------------------------------------------------
+            //------------------------------------------------------------------------------------------------------------------------
+            // 思考エンジンの、記憶を読み取ります。
+            //------------------------------------------------------------------------------------------------------------------------
+            {
+                this.shogisasi = new ShogisasiImpl(this);
+                Util_FvLoad.OpenFv(this.shogisasi.FeatureVector, Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv00Komawari")));
+            }
+
+            //------------------------------------------------------------------------------------------------------------------------
+            // ファイル読込み
+            //------------------------------------------------------------------------------------------------------------------------
+            {
+                // データの読取「道」
+                if (Michi187Array.Load(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Michi187"))))
                 {
-                    //
-                    // 図.
-                    //
-                    //      フォルダー
-                    //          ├─ Engine.KifuWarabe.exe
-                    //          └─ log.txt               ←これを削除
-                    //
-                    Logger.RemoveAllLogFiles();
                 }
 
+                // データの読取「配役」
+                Util_Array_KomahaiyakuEx184.Load(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Haiyaku185")), Encoding.UTF8);
 
-                exception_area = 1000;
-                //------------------------------------------------------------------------------------------------------------------------
-                // 思考エンジンの、記憶を読み取ります。
-                //------------------------------------------------------------------------------------------------------------------------
-                {
-                    this.shogisasi = new ShogisasiImpl(this);
-                    Util_FvLoad.OpenFv(this.shogisasi.FeatureVector, Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv00Komawari")));
-                }
-
-
-                exception_area = 2000;
-                //------------------------------------------------------------------------------------------------------------------------
-                // ファイル読込み
-                //------------------------------------------------------------------------------------------------------------------------
-                {
-                    // データの読取「道」
-                    if (Michi187Array.Load(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Michi187"))))
-                    {
-                    }
-
-                    // データの読取「配役」
-                    Util_Array_KomahaiyakuEx184.Load(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Haiyaku185")), Encoding.UTF8);
-
-                    // データの読取「強制転成表」　※駒配役を生成した後で。
-                    Array_ForcePromotion.Load(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("InputForcePromotion")), Encoding.UTF8);
+                // データの読取「強制転成表」　※駒配役を生成した後で。
+                Array_ForcePromotion.Load(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("InputForcePromotion")), Encoding.UTF8);
 
 #if DEBUG
                     {
@@ -129,59 +121,46 @@ namespace Grayscale.P571KifuWarabe.L500KifuWarabe
                     }
 #endif
 
-                    // データの読取「配役転換表」
-                    Data_KomahaiyakuTransition.Load(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("InputSyuruiToHaiyaku")), Encoding.UTF8);
+                // データの読取「配役転換表」
+                Data_KomahaiyakuTransition.Load(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("InputSyuruiToHaiyaku")), Encoding.UTF8);
 
 #if DEBUG
                     {
                         File.WriteAllText(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("OutputSyuruiToHaiyaku")), Data_KomahaiyakuTransition.Format_LogHtml());
                     }
 #endif
-                }
+            }
 
-                exception_area = 4000;
-                //-------------+----------------------------------------------------------------------------------------------------------
-                // ログ書込み  |  ＜この将棋エンジン＞  製品名、バージョン番号
-                //-------------+----------------------------------------------------------------------------------------------------------
-                //
-                // 図.
-                //
-                //      log.txt
-                //      ┌────────────────────────────────────────
-                //      │2014/08/02 1:04:59> v(^▽^)v ｲｪｰｲ☆ ... fugafuga 1.00.0
-                //      │
-                //      │
-                //
-                //
-                // 製品名とバージョン番号は、次のファイルに書かれているものを使っています。
-                // 場所：  [ソリューション エクスプローラー]-[ソリューション名]-[プロジェクト名]-[Properties]-[AssemblyInfo.cs] の中の、[AssemblyProduct]と[AssemblyVersion] を参照。
-                //
-                // バージョン番号を「1.00.0」形式（メジャー番号.マイナー番号.ビルド番号)で書くのは作者の趣味です。
-                //
-                {
-                    string versionStr;
+            //-------------+----------------------------------------------------------------------------------------------------------
+            // ログ書込み  |  ＜この将棋エンジン＞  製品名、バージョン番号
+            //-------------+----------------------------------------------------------------------------------------------------------
+            //
+            // 図.
+            //
+            //      log.txt
+            //      ┌────────────────────────────────────────
+            //      │2014/08/02 1:04:59> v(^▽^)v ｲｪｰｲ☆ ... fugafuga 1.00.0
+            //      │
+            //      │
+            //
+            //
+            // 製品名とバージョン番号は、次のファイルに書かれているものを使っています。
+            // 場所：  [ソリューション エクスプローラー]-[ソリューション名]-[プロジェクト名]-[Properties]-[AssemblyInfo.cs] の中の、[AssemblyProduct]と[AssemblyVersion] を参照。
+            //
+            // バージョン番号を「1.00.0」形式（メジャー番号.マイナー番号.ビルド番号)で書くのは作者の趣味です。
+            //
+            {
+                string versionStr;
 
-                    // バージョン番号
-                    Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
-                    versionStr = String.Format("{0}.{1}.{2}", version.Major, version.Minor.ToString("00"), version.Build);
+                // バージョン番号
+                Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+                versionStr = String.Format("{0}.{1}.{2}", version.Major, version.Minor.ToString("00"), version.Build);
 
-                    //seihinName += " " + versionStr;
+                //seihinName += " " + versionStr;
 #if DEBUG
                     var engineName = toml.Get<TomlTable>("Engine").Get<string>("Name");
                     Logger.EngineDefault.Logger.WriteLineAddMemo($"v(^▽^)v ｲｪｰｲ☆ ... {engineName} {versionStr}");
 #endif
-                }
-
-            }
-            catch (Exception ex)
-            {
-                switch (exception_area)
-                {
-                    case 1000:
-                        Logger.Panic(LogTags.EngineDefault, "フィーチャーベクターCSVを読み込んでいるとき。" + ex.GetType().Name + "：" + ex.Message);
-                        break;
-                }
-                throw;
             }
         }
 

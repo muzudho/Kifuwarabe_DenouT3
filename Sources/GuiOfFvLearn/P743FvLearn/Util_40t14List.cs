@@ -1,5 +1,6 @@
 ﻿namespace Grayscale.P743FvLearn.L400N54List
 {
+    using System;
 #if DEBUG
 using Grayscale.Kifuwarakaku.Entities.Logger;
 using Grayscale.P211WordShogi.L500Word;
@@ -38,7 +39,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
     public abstract class Util_40t14List
     {
 
-        private static void Error1(RO_Star koma, ILogTag logTag)
+        private static void Panic1(RO_Star koma, ILogTag logTag)
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Util_40t14List#Error1：２駒関係FVの配列添え字がわからないぜ☆！処理は続けられない。");
@@ -46,7 +47,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
             sb.AppendLine("koma1.Komasyurui=[" + koma.Komasyurui + "]");
             sb.AppendLine("koma1.Masu=[" + koma.Masu + "]");
             sb.AppendLine("Conv_SyElement.ToOkiba(koma1.Masu)=[" + Conv_SyElement.ToOkiba(koma.Masu) + "]");
-            Logger.Panic(logTag,sb.ToString());
+            throw new Exception(sb.ToString());
         }
 
         /// <summary>
@@ -87,7 +88,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
                     if (FeatureVectorImpl.CHOSA_KOMOKU_ERROR == pIndex)
                     {
                         // p1 がエラーでは、処理は続けられない。
-                        Util_40t14List.Error1(koma, logTag);
+                        Util_40t14List.Panic1(koma, logTag);
                         goto gt_NextLoop_player1;
                     }
 
@@ -113,7 +114,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
                     if (FeatureVectorImpl.CHOSA_KOMOKU_ERROR == pIndex)
                     {
                         // p1 がエラーでは、処理は続けられない。
-                        Util_40t14List.Error1(koma, logTag);
+                        Util_40t14List.Panic1(koma, logTag);
                         goto gt_NextLoop_player1;
                     }
 

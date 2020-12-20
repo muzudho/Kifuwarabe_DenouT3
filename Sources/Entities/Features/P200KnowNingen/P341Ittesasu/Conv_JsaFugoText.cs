@@ -45,51 +45,40 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             str8 = "";
             str9 = "";
 
-            try
+            //------------------------------------------------------------
+            // リスト作成
+            //------------------------------------------------------------
+            Regex regex = new Regex(
+                @"^\s*([▲△]?)(?:([123456789１２３４５６７８９])([123456789１２３４５６７８９一二三四五六七八九]))?(同)?[\s　]*(歩|香|桂|銀|金|飛|角|王|玉|と|成香|成桂|成銀|竜|龍|馬)(右|左|直)?(寄|引|上)?(成|不成)?(打?)",
+                RegexOptions.Singleline
+            );
+
+            MatchCollection mc = regex.Matches(inputLine);
+            foreach (Match m in mc)
             {
-                //------------------------------------------------------------
-                // リスト作成
-                //------------------------------------------------------------
-                Regex regex = new Regex(
-                    @"^\s*([▲△]?)(?:([123456789１２３４５６７８９])([123456789１２３４５６７８９一二三四五六七八九]))?(同)?[\s　]*(歩|香|桂|銀|金|飛|角|王|玉|と|成香|成桂|成銀|竜|龍|馬)(右|左|直)?(寄|引|上)?(成|不成)?(打?)",
-                    RegexOptions.Singleline
-                );
-
-                MatchCollection mc = regex.Matches(inputLine);
-                foreach (Match m in mc)
+                if (0 < m.Groups.Count)
                 {
-                    if (0 < m.Groups.Count)
-                    {
-                        successful = true;
+                    successful = true;
 
-                        // 残りのテキスト
-                        rest = inputLine.Substring(0, m.Index) + inputLine.Substring(m.Index + m.Length, inputLine.Length - (m.Index + m.Length));
+                    // 残りのテキスト
+                    rest = inputLine.Substring(0, m.Index) + inputLine.Substring(m.Index + m.Length, inputLine.Length - (m.Index + m.Length));
 
-                        str1 = m.Groups[1].Value;
-                        str2 = m.Groups[2].Value;
-                        str3 = m.Groups[3].Value;
-                        str4 = m.Groups[4].Value;
-                        str5 = m.Groups[5].Value;
-                        str6 = m.Groups[6].Value;
-                        str7 = m.Groups[7].Value;
-                        str8 = m.Groups[8].Value;
-                        str9 = m.Groups[9].Value;
-                    }
-
-                    // 最初の１件だけ処理して終わります。
-                    break;
+                    str1 = m.Groups[1].Value;
+                    str2 = m.Groups[2].Value;
+                    str3 = m.Groups[3].Value;
+                    str4 = m.Groups[4].Value;
+                    str5 = m.Groups[5].Value;
+                    str6 = m.Groups[6].Value;
+                    str7 = m.Groups[7].Value;
+                    str8 = m.Groups[8].Value;
+                    str9 = m.Groups[9].Value;
                 }
 
-                rest = rest.Trim();
+                // 最初の１件だけ処理して終わります。
+                break;
             }
-            catch (Exception ex)
-            {
-                // エラーが起こりました。
-                //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-                // どうにもできないので  ログだけ取って無視します。
-                Logger.Panic(logTag,"TuginoItte_JapanFugo.GetData_FromText（A）：" + ex.GetType().Name + "：" + ex.Message + "：text=「" + inputLine + "」");
-            }
+            rest = rest.Trim();
 
 
             return successful;

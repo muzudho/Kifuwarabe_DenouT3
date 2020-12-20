@@ -8,20 +8,29 @@
     using System.Windows.Forms;
     using Nett;
 
+    /// <summary>
+    /// * Panic( ) に相当するものは無いので、throw new Exception("") で代替してください。
+    /// </summary>
     public static class Logger
     {
-        public static readonly ILogRecord DefaultByProcess = new LogRecord($"./default({System.Diagnostics.Process.GetCurrentProcess()})", false, false);
-
-        static ILogRecord LogEntry(string profilePath, TomlTable toml, string resourceKey, bool enabled, bool timeStampPrintable)
-        {
-            return new LogRecord(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>(resourceKey)), enabled, timeStampPrintable);
-        }
+        private static readonly Guid unique = Guid.NewGuid();
+        public static Guid Unique { get { return unique; } }
 
         static Logger()
         {
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+            var logDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("LogDirectory"));
 
+            TraceRecord = LogEntry(logDirectory, toml, "Trace", true, true);
+            DebugRecord = LogEntry(logDirectory, toml, "Debug", true, true);
+            InfoRecord = LogEntry(logDirectory, toml, "Info", true, true);
+            NoticeRecord = LogEntry(logDirectory, toml, "Notice", true, true);
+            WarnRecord = LogEntry(logDirectory, toml, "Warn", true, true);
+            ErrorRecord = LogEntry(logDirectory, toml, "Error", true, true);
+            FatalRecord = LogEntry(logDirectory, toml, "Fatal", true, true);
+
+            /*
             AddLog(LogTags.Default, DefaultByProcess);
 
             AddLog(LogTags.Error, LogEntry(profilePath, toml, "N01ErrorLog", true, false));
@@ -73,47 +82,190 @@
 
             // その他のログ。スピード計測ソフト用。
             AddLog(LogTags.SpeedKeisoku, LogEntry(profilePath, toml, "N17SpeedKeisokuLog", true, false));
+            */
+        }
+
+        static ILogRecord LogEntry(string logDirectory, TomlTable toml, string resourceKey, bool enabled, bool timeStampPrintable)
+        {
+            var logFile = LogFile.AsLog(logDirectory, toml.Get<TomlTable>("Logs").Get<string>(resourceKey));
+            return new LogRecord(logFile, enabled, timeStampPrintable);
+        }
+
+        static readonly ILogRecord TraceRecord;
+        static readonly ILogRecord DebugRecord;
+        static readonly ILogRecord InfoRecord;
+        static readonly ILogRecord NoticeRecord;
+        static readonly ILogRecord WarnRecord;
+        static readonly ILogRecord ErrorRecord;
+        static readonly ILogRecord FatalRecord;
+
+        /// <summary>
+        /// テキストをそのまま、ファイルへ出力するためのものです。
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="contents"></param>
+        public static void WriteFile(ILogFile logFile, string contents)
+        {
+            File.WriteAllText(logFile.Name, contents);
+            // MessageBox.Show("ファイルを出力しました。\n[" + path + "]");
         }
 
         /// <summary>
-        /// アドレスの登録。ログ・ファイルのリムーブに使用。
+        /// トレース・レベル。
         /// </summary>
-        public static Dictionary<ILogTag, ILogRecord> LogMap
+        /// <param name="line"></param>
+        [Conditional("DEBUG")]
+        public static void Trace(string line, ILogFile targetOrNull = null)
         {
-            get
+            Logger.XLine(TraceRecord, "Trace", line, targetOrNull);
+        }
+
+        /// <summary>
+        /// デバッグ・レベル。
+        /// </summary>
+        /// <param name="line"></param>
+        [Conditional("DEBUG")]
+        public static void Debug(string line, ILogFile targetOrNull = null)
+        {
+            Logger.XLine(DebugRecord, "Debug", line, targetOrNull);
+        }
+
+        /// <summary>
+        /// インフォ・レベル。
+        /// </summary>
+        /// <param name="line"></param>
+        public static void Info(string line, ILogFile targetOrNull = null)
+        {
+            Logger.XLine(InfoRecord, "Info", line, targetOrNull);
+        }
+
+        /// <summary>
+        /// ノティス・レベル。
+        /// </summary>
+        /// <param name="line"></param>
+        public static void Notice(string line, ILogFile targetOrNull = null)
+        {
+            Logger.XLine(NoticeRecord, "Notice", line, targetOrNull);
+        }
+
+        /// <summary>
+        /// ワーン・レベル。
+        /// </summary>
+        /// <param name="line"></param>
+        public static void Warn(string line, ILogFile targetOrNull = null)
+        {
+            Logger.XLine(WarnRecord, "Warn", line, targetOrNull);
+        }
+
+        /// <summary>
+        /// エラー・レベル。
+        /// </summary>
+        /// <param name="line"></param>
+        public static void Error(string line, ILogFile targetOrNull = null)
+        {
+            Logger.XLine(ErrorRecord, "Error", line, targetOrNull);
+        }
+
+        /// <summary>
+        /// ファータル・レベル。
+        /// </summary>
+        /// <param name="line"></param>
+        public static void Fatal(string line, ILogFile targetOrNull = null)
+        {
+            Logger.XLine(FatalRecord, "Fatal", line, targetOrNull);
+        }
+
+        /// <summary>
+        /// ログ・ファイルに記録します。失敗しても無視します。
+        /// </summary>
+        /// <param name="line"></param>
+        static void XLine(ILogRecord record, string level, string line, ILogFile targetOrNull)
+        {
+            // ログ出力オフ
+            if (!record.Enabled)
             {
-                if (Logger.logMap == null)
-                {
-                    Logger.logMap = new Dictionary<ILogTag, ILogRecord>();
-                }
-                return Logger.logMap;
+                return;
             }
-        }
-        private static Dictionary<ILogTag, ILogRecord> logMap;
 
-        public static void AddLog(ILogTag key, ILogRecord value)
-        {
-            Logger.LogMap.Add(key, value);
-        }
-
-        public static ILogRecord GetRecord(ILogTag logTag)
-        {
+            // ログ追記
             try
             {
-                return LogMap[logTag];
+                StringBuilder sb = new StringBuilder();
+
+                // タイムスタンプ
+                if (record.TimeStampPrintable)
+                {
+                    sb.Append($"[{DateTime.Now.ToString()}] ");
+                }
+
+                sb.Append($"{level} {line}");
+                sb.AppendLine();
+
+                string message = sb.ToString();
+
+                if (targetOrNull != null)
+                {
+                    System.IO.File.AppendAllText(targetOrNull.Name, message);
+                }
+                else
+                {
+                    System.IO.File.AppendAllText(record.LogFile.Name, message);
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine($"エラー: GetRecord(). [{logTag.Name}] {ex.Message}");
-                throw;
+                //>>>>> エラーが起こりました。
+
+                // どうにもできないので 無視します。
             }
+        }
+
+        /// <summary>
+        /// サーバーから受け取ったコマンドを、ログ・ファイルに記録します。
+        /// Client の C☆（＾～＾）
+        /// </summary>
+        /// <param name="line"></param>
+        public static void WriteLineC(
+            string line
+            /*
+            ,
+            [CallerMemberName] string memberName = "",
+            [CallerFilePath] string sourceFilePath = "",
+            [CallerLineNumber] int sourceLineNumber = 0
+            */
+            )
+        {
+            // ログ追記
+            // ：{memberName}：{sourceFilePath}：{sourceLineNumber}
+            File.AppendAllText(NoticeRecord.LogFile.Name, $@"{DateTime.Now.ToString()}  > {line}
+");
+        }
+
+        /// <summary>
+        /// サーバーへ送ったコマンドを、ログ・ファイルに記録します。
+        /// </summary>
+        /// <param name="line"></param>
+        public static void WriteLineS(
+            string line
+            /*
+            ,
+            [CallerMemberName] string memberName = "",
+            [CallerFilePath] string sourceFilePath = "",
+            [CallerLineNumber] int sourceLineNumber = 0
+            */
+            )
+        {
+            // ログ追記
+            // ：{memberName}：{sourceFilePath}：{sourceLineNumber}
+            File.AppendAllText(NoticeRecord.LogFile.Name, $@"{DateTime.Now.ToString()}<   {line}
+");
         }
 
         /// <summary>
         /// ログファイルを削除します。(連番がなければ)
         /// 
-        /// FIXME: アプリ起動後、ログが少し取られ始めたあとに削除が開始されることがあります。
-        /// FIXME: 将棋エンジン起動時に、またログが削除されることがあります。
+        /// * 将棋エンジン起動後、ログが少し取られ始めたあとに削除を開始するようなところで実行しないでください。
+        /// * TODO usinewgame のタイミングでログを削除したい。
         /// </summary>
         public static void RemoveAllLogFiles()
         {
@@ -124,13 +276,14 @@
 
                 var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
                 var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-                string logsDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("LogsDirectory"));
+                string logsDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("LogDirectory"));
 
                 string[] paths = Directory.GetFiles(logsDirectory);
                 foreach (string path in paths)
                 {
                     string name = Path.GetFileName(path);
-                    if (name.StartsWith("_log_", StringComparison.CurrentCulture))
+                    // if (name.StartsWith("_log_", StringComparison.CurrentCulture))
+                    if (name.EndsWith(".log") || name.Contains(".log."))
                     {
                         string fullpath = Path.Combine(logsDirectory, name);
                         //MessageBox.Show("fullpath=[" + fullpath + "]", "ログ・ファイルの削除");
@@ -138,302 +291,10 @@
                     }
                 }
             }
-            catch (Exception ex) { Logger.Panic(LogTags.Error, ex, "ﾛｸﾞﾌｧｲﾙ削除中☆"); throw; }
-        }
-
-        /// <summary>
-        /// メモを、ログ・ファイルの末尾に追記します。
-        /// </summary>
-        /// <param name="line"></param>
-        public static void WriteLineAddMemo(
-            ILogTag logTag,
-            string line
-            )
-        {
-            ILogRecord record = GetRecord(logTag);
-
-            bool enable = record.Enabled;
-            string filepath2 = Path.Combine(Application.StartupPath, record.FileName);
-
-            if (!enable)
-            {
-                // ログ出力オフ
-                goto gt_EndMethod;
-            }
-
-            // ログ追記 TODO:非同期
-            try
-            {
-                StringBuilder sb = new StringBuilder();
-
-                // タイムスタンプ
-                if (record.TimeStampPrintable)
-                {
-                    sb.Append(DateTime.Now.ToString());
-                    sb.Append(" : ");
-                }
-                else
-                {
-                    sb.Append("Memo:   ");
-                }
-
-                sb.Append(line);
-                sb.AppendLine();
-
-                System.IO.File.AppendAllText(filepath2, sb.ToString());
-            }
             catch (Exception)
             {
-                // 循環参照になるので、ログを取れません。
-                // メモなので、ログ出力に失敗しても、続行します。
+                // ログ・ファイルの削除に失敗しても無視します。
             }
-
-        gt_EndMethod:
-            ;
-        }
-
-        /// <summary>
-        /// エラーを、ログ・ファイルに記録します。
-        /// </summary>
-        /// <param name="line"></param>
-        public static void WriteLineError(
-            ILogTag logTag,
-            string line
-            )
-        {
-            ILogRecord record = GetRecord(logTag);
-
-            bool enable = record.Enabled;
-            bool printTimestamp = record.TimeStampPrintable;
-            string filepath2 = Path.Combine(Application.StartupPath, record.FileName);
-
-            if (!enable)
-            {
-                // ログ出力オフ
-                goto gt_EndMethod;
-            }
-
-            // ログ追記 TODO:非同期
-            try
-            {
-                StringBuilder sb = new StringBuilder();
-                sb.Append("Error:   ");
-
-                // タイムスタンプ
-                if (printTimestamp)
-                {
-                    sb.Append(DateTime.Now.ToString());
-                    sb.Append(" : ");
-                }
-
-                sb.Append(line);
-                sb.AppendLine();
-
-                string message = sb.ToString();
-                MessageBox.Show(message, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                System.IO.File.AppendAllText(filepath2, message);
-            }
-            catch (Exception)
-            {
-                //>>>>> エラーが起こりました。
-
-                // どうにもできないので無視します。
-            }
-
-        gt_EndMethod:
-            ;
-        }
-
-        /// <summary>
-        /// メモを、ログ・ファイルに記録します。
-        /// </summary>
-        /// <param name="line"></param>
-        public static void WriteLineOverMemo(
-            ILogTag logTag,
-            string line
-            )
-        {
-            ILogRecord record = GetRecord(logTag);
-
-            bool enable = record.Enabled;
-            string filepath2 = Path.Combine(Application.StartupPath, record.FileName);
-
-            if (!enable)
-            {
-                // ログ出力オフ
-                goto gt_EndMethod;
-            }
-
-            // ログ追記 TODO:非同期
-            try
-            {
-                StringBuilder sb = new StringBuilder();
-
-                // タイムスタンプ
-                if (record.TimeStampPrintable)
-                {
-                    sb.Append(DateTime.Now.ToString());
-                    sb.Append(" : ");
-                }
-                else
-                {
-                    sb.Append("Memo:   ");
-                }
-
-                sb.Append(line);
-                sb.AppendLine();
-
-                System.IO.File.WriteAllText(filepath2, sb.ToString());
-            }
-            catch (Exception)
-            {
-                // 循環参照になるので、ログを取れません。
-                // メモなので、ログ出力に失敗しても、続行します。
-            }
-
-        gt_EndMethod:
-            ;
-        }
-
-        /// <summary>
-        /// サーバーへ送ったコマンドを、ログ・ファイルに記録します。
-        /// </summary>
-        /// <param name="line"></param>
-        public static void WriteLineS(
-            LogTag logTag,
-            string line
-            //,
-            //[CallerMemberName] string memberName = "",
-            //[CallerFilePath] string sourceFilePath = "",
-            //[CallerLineNumber] int sourceLineNumber = 0
-            )
-        {
-            ILogRecord record = GetRecord(logTag);
-
-            bool enable = record.Enabled;
-            bool print_TimeStamp = record.TimeStampPrintable;
-            string filepath2 = Path.Combine(Application.StartupPath, record.FileName);
-
-            if (!enable)
-            {
-                // ログ出力オフ
-                goto gt_EndMethod;
-            }
-
-            // ログ追記 TODO:非同期
-            try
-            {
-                StringBuilder sb = new StringBuilder();
-                sb.Append(DateTime.Now.ToString());
-                sb.Append("<   ");
-                sb.Append(line);
-                //sb.Append("：");
-                //sb.Append(memberName);
-                //sb.Append("：");
-                //sb.Append(sourceFilePath);
-                //sb.Append("：");
-                //sb.Append(sourceLineNumber);
-                sb.AppendLine();
-
-                System.IO.File.AppendAllText(filepath2, sb.ToString());
-            }
-            catch (Exception)
-            {
-                // 循環参照になるので、ログを取れません。
-                // Logger.ERROR.Panic(ex, "ログ取り中☆");
-            }
-
-        gt_EndMethod:
-            ;
-        }
-
-        /// <summary>
-        /// サーバーから受け取ったコマンドを、ログ・ファイルに記録します。
-        /// </summary>
-        /// <param name="line"></param>
-        public static void WriteLineC(
-            ILogTag logTag,
-            string line
-            //,
-            //[CallerMemberName] string memberName = "",
-            //[CallerFilePath] string sourceFilePath = "",
-            //[CallerLineNumber] int sourceLineNumber = 0
-            )
-        {
-            ILogRecord record = GetRecord(logTag);
-
-            bool enable = record.Enabled;
-            bool print_TimeStamp = record.TimeStampPrintable;
-            string filepath2 = Path.Combine(Application.StartupPath, record.FileName);
-
-            if (!enable)
-            {
-                // ログ出力オフ
-                goto gt_EndMethod;
-            }
-
-            // ログ追記 TODO:非同期
-            try
-            {
-                StringBuilder sb = new StringBuilder();
-                sb.Append(DateTime.Now.ToString());
-                sb.Append("  > ");
-                sb.Append(line);
-                //sb.Append("：");
-                //sb.Append(memberName);
-                //sb.Append("：");
-                //sb.Append(sourceFilePath);
-                //sb.Append("：");
-                //sb.Append(sourceLineNumber);
-                sb.AppendLine();
-
-                System.IO.File.AppendAllText(filepath2, sb.ToString());
-            }
-            catch (Exception)
-            {
-                // 循環参照になるので、ログを取れません。
-                // Logger.ERROR.Panic(ex, "ログ取り中☆");
-            }
-
-        gt_EndMethod:
-            ;
-        }
-
-        /// <summary>
-        /// 「どうにもならん、あきらめた」
-        /// 
-        /// 例外が発生したが、対応できないのでログだけ出します。
-        /// デバッグ時は、ダイアログボックスを出します。
-        /// </summary>
-        /// <param name="okottaBasho"></param>
-        public static void Panic(ILogTag logTag, string okottaBasho)
-        {
-            //>>>>> エラーが起こりました。
-            string message = "起こった場所：" + okottaBasho;
-            Debug.Fail(message);
-
-            // どうにもできないので  ログだけ取って、上に投げます。
-            Logger.WriteLineError(logTag, message);
-            // ログ出力に失敗することがありますが、無視します。
-        }
-
-        /// <summary>
-        /// 「どうにもならん、あきらめた」
-        /// 
-        /// 例外が発生したが、対応できないのでログだけ出します。
-        /// デバッグ時は、ダイアログボックスを出します。
-        /// </summary>
-        /// <param name="okottaBasho"></param>
-        public static void Panic(ILogTag logTag, Exception ex, string okottaBasho)
-        {
-            //>>>>> エラーが起こりました。
-            string message = ex.GetType().Name + " " + ex.Message + "：" + okottaBasho;
-            Debug.Fail(message);
-
-            // どうにもできないので  ログだけ取って、上に投げます。
-            Logger.WriteLineError(logTag, message);
-            // ログ出力に失敗することがありますが、無視します。
         }
     }
 }

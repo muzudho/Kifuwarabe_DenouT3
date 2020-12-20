@@ -82,7 +82,7 @@ namespace Grayscale.P571KifuWarabe.L249Noop
             //{
                 // noopを投げてなくても、毎回ストップウォッチはリスタートさせます。
 //#if DEBUG
-                Logger.WriteLineC(logTag,"サーバーから応答[" + command + "]があったのでタイマーをリスタートさせるぜ☆");
+                Logger.WriteLineC("サーバーから応答[" + command + "]があったのでタイマーをリスタートさせるぜ☆");
 //#endif
                 this.noopPhase = NoopPhase.None;
                 this.sw_forNoop.Restart();

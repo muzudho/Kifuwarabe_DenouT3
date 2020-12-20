@@ -72,7 +72,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                 }
 
                 // 通信ログは必ず取ります。
-                Logger.WriteLineC(LogTags.EngineNetwork, line);
+                Logger.WriteLineC(line);
 
 #if NOOPABLE
                 noopTimer._04_AtResponsed(this.Owner, line);

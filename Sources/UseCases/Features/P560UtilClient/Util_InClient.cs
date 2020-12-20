@@ -24,7 +24,7 @@ namespace Grayscale.P560UtilClient.L500Util
             ILogTag logTag
             )
         {
-            Logger.WriteLineError(logTag, "（＾△＾）「" + genjo.InputLine + "」Util_InClient　：　クライアントの委譲メソッドｷﾀｰ☆");
+            Logger.Trace("（＾△＾）「" + genjo.InputLine + "」Util_InClient　：　クライアントの委譲メソッドｷﾀｰ☆");
 
 
             string old_inputLine = genjo.InputLine;//退避
@@ -36,7 +36,7 @@ namespace Grayscale.P560UtilClient.L500Util
                 out ro_Kyokumen2_ForTokenize
                 );
 
-            Logger.WriteLineError(logTag, "（＾△＾）old_inputLine=「" + old_inputLine + "」 rest=「" + rest + "」 Util_InClient　：　ﾊﾊｯ☆");
+            Logger.Trace("（＾△＾）old_inputLine=「" + old_inputLine + "」 rest=「" + rest + "」 Util_InClient　：　ﾊﾊｯ☆");
 
             //string old_inputLine = genjo.InputLine;
             //genjo.InputLine = "";

@@ -1,3 +1,7 @@
+#
+# 特に説明の無いファイルパスは Profile フォルダーからの相対パスです。
+#
+
 [Engine]
 
 # 将棋ソフトの表示名です。 後ろにバージョン番号が付くなどの加工があることがあります。
@@ -8,7 +12,7 @@ Author = "Satoshi TAKAHASHI"
 
 [Resources]
 
-LogsDirectory = "../Logs"
+LogDirectory = "../Logs"
 DataDirectory = "./Data"
 
 Michi187 = "./Data/data_michi187.csv"
@@ -118,3 +122,17 @@ ChokkinNoSasiteLogPngBasename = "_log_直近の指し手.png"
 N1PngBasename = "1.png" # 出力ファイル
 N2PngBasename = "2.png" # 駒画像へのパス。
 N3PngBasename = "3.png" # 数字・小
+
+#
+# Resources.LogDirectory からの相対パスだぜ☆（＾～＾）
+# ファイル名には `.log.` を含むか、または末尾を `.log` としろだぜ☆（＾～＾） 削除対象の目印とするぜ☆（＾～＾）
+#
+[Logs]
+
+Trace = "Trace.log"
+Debug = "Debug.log"
+Info = "Info.log"
+Notice = "Notice.log"
+Warn = "Warn.log"
+Error = "Error.log"
+Fatal = "Fatal.log"

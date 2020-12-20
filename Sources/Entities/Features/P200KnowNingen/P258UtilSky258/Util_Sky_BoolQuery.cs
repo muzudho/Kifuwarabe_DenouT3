@@ -217,17 +217,9 @@ namespace Grayscale.P258UtilSky258.L500UtilSky
             Debug.Assert(null != move, "指し手がヌルでした。");
             bool result;
 
-            try
-            {
-                RO_Star srcKoma = Util_Starlightable.AsKoma(move.LongTimeAgo);
-                result = Okiba.ShogiBan != Conv_SyElement.ToOkiba(srcKoma.Masu)//駒台（駒袋）から打ったとき。
-                    && Okiba.Empty != Conv_SyElement.ToOkiba(srcKoma.Masu);//初期配置から移動しても、打にはしません。
-            }
-            catch (Exception ex)
-            {
-                Logger.Panic(LogTags.Error, ex, "IsDaAction:");// exceptionArea=" + exceptionArea
-                throw;
-            }
+            RO_Star srcKoma = Util_Starlightable.AsKoma(move.LongTimeAgo);
+            result = Okiba.ShogiBan != Conv_SyElement.ToOkiba(srcKoma.Masu)//駒台（駒袋）から打ったとき。
+                && Okiba.Empty != Conv_SyElement.ToOkiba(srcKoma.Masu);//初期配置から移動しても、打にはしません。
 
             return result;
         }

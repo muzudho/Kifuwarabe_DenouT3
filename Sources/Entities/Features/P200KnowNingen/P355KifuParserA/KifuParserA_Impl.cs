@@ -43,23 +43,18 @@ namespace Grayscale.P355_KifuParserA.L500Parser
         {
             //shogiGui_Base.Model_PnlTaikyoku.Kifu.AssertPside(shogiGui_Base.Model_PnlTaikyoku.Kifu.CurNode, "Execute_Step",logTag);
 
-            try
-            {
 #if DEBUG
                 logTag.Logger.WriteLineAddMemo("┏━━━━━┓(^o^)");
                 logTag.Logger.WriteLineAddMemo("わたしは　" + this.State.GetType().Name + "　の　Execute_Step　だぜ☆　：　呼出箇所＝" + memberName + "." + sourceFilePath + "." + sourceLineNumber);
 #endif
 
-                KifuParserA_State nextState;
-                genjo.InputLine = this.State.Execute(
-                    ref result,
-                    model_Taikyoku,
-                    out nextState, this,
-                    genjo, logTag);
-                this.State = nextState;
-
-            }
-            catch (Exception ex) { Logger.Panic(LogTags.Error, ex, "棋譜解析中☆"); throw; }
+            KifuParserA_State nextState;
+            genjo.InputLine = this.State.Execute(
+                ref result,
+                model_Taikyoku,
+                out nextState, this,
+                genjo, logTag);
+            this.State = nextState;
 
             return genjo.InputLine;
         }
@@ -81,56 +76,49 @@ namespace Grayscale.P355_KifuParserA.L500Parser
             [CallerLineNumber] int sourceLineNumber = 0
             )
         {
-            try
-            {
 #if DEBUG
                 logTag.Logger.WriteLineAddMemo("┏━━━━━━━━━━┓");
                 logTag.Logger.WriteLineAddMemo("わたしは　" + this.State.GetType().Name + "　の　Execute_All　だぜ☆　：　呼出箇所＝" + memberName + "." + sourceFilePath + "." + sourceLineNumber);
 #endif
 
-                KifuParserA_State nextState = this.State;
+            KifuParserA_State nextState = this.State;
 
-                while (!genjo.IsBreak())//breakするまでくり返し。
+            while (!genjo.IsBreak())//breakするまでくり返し。
+            {
+                if ("" == genjo.InputLine)
                 {
-                    if ("" == genjo.InputLine)
-                    {
-                        // FIXME: コンピューターが先手のとき、ここにくる？
+                    // FIXME: コンピューターが先手のとき、ここにくる？
 
-                        // 異常時。
-                        //FIXME: logTag.Logger.WriteLineError("＼（＾ｏ＾）／「" + genjo.InputLine + "」入力がない3☆！　終わるぜ☆");
-                        genjo.ToBreak_Abnormal();
-                        goto gt_NextLoop1;
-                    }
-
-
-                    genjo.InputLine = this.State.Execute(
-                        ref result,
-                        model_Taikyoku,
-                        out nextState, this,
-                        genjo, logTag);
-                    this.State = nextState;
-
-                gt_NextLoop1:
-                    ;
+                    // 異常時。
+                    //FIXME: logTag.Logger.WriteLineError("＼（＾ｏ＾）／「" + genjo.InputLine + "」入力がない3☆！　終わるぜ☆");
+                    genjo.ToBreak_Abnormal();
+                    goto gt_NextLoop1;
                 }
 
 
+                genjo.InputLine = this.State.Execute(
+                    ref result,
+                    model_Taikyoku,
+                    out nextState, this,
+                    genjo, logTag);
+                this.State = nextState;
 
-                //if (null != genjo.StartposImporter_OrNull)
-                //{
-                //    // SFENの解析結果を渡すので、
-                //    // その解析結果をどう使うかは、委譲します。
-                //    this.Delegate_OnChangeSky_Im(
-                //        model_PnlTaikyoku,
-                //        genjo,
-                //        logTag
-                //        );
-                //}
-
-
+            gt_NextLoop1:
+                ;
             }
-            catch (Exception ex) { Logger.Panic(LogTags.Error, ex, "棋譜解析中☆"); throw; }
-        }
 
+
+
+            //if (null != genjo.StartposImporter_OrNull)
+            //{
+            //    // SFENの解析結果を渡すので、
+            //    // その解析結果をどう使うかは、委譲します。
+            //    this.Delegate_OnChangeSky_Im(
+            //        model_PnlTaikyoku,
+            //        genjo,
+            //        logTag
+            //        );
+            //}
+        }
     }
 }

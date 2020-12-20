@@ -52,17 +52,13 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             [CallerLineNumber] int sourceLineNumber = 0
             )
         {
-            int exceptionArea = 0;
-
             //------------------------------
             // 用意
             //------------------------------
-            exceptionArea = 1010;
             ittesasuResult = new IttesasuResultImpl(Fingers.Error_1, Fingers.Error_1, null, Komasyurui14.H00_Null___, null);
             SkyConst kaisi_Sky = ittesasuArg.KaisiKyokumen.KyokumenConst;// 一手指し開始局面（不変）
             Node<IMove, KyokumenWrapper> editNodeRef;// 編集対象ノード（巻き戻し時と、進む時で異なる）
 
-            exceptionArea = 1040;
             //------------------------------
             // 符号(局面)の追加
             //------------------------------
@@ -76,8 +72,6 @@ namespace Grayscale.P341Ittesasu.L500UtilA
                 ittesasuResult.Susunda_Sky_orNull = editNodeRef.Value.KyokumenConst;
             }
 
-
-            exceptionArea = 1050;
             //------------------------------
             // 動かす駒を移動先へ。
             //------------------------------
@@ -93,8 +87,6 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             ittesasuResult.FigMovedKoma = figMovedKoma; //動かした駒更新
             Debug.Assert(Fingers.Error_1 != ittesasuResult.FigMovedKoma, "動かした駒がない☆！？エラーだぜ☆！");
 
-
-            exceptionArea = 1060;
             RO_Star korekaranoKoma = Util_Starlightable.AsKoma(ittesasuArg.KorekaranoMove.Now);
             IMoveHalf afterStar;
             {
@@ -105,9 +97,6 @@ namespace Grayscale.P341Ittesasu.L500UtilA
                     );
             }
 
-
-
-            exceptionArea = 1070;
             // Sky 局面データは、この関数の途中で何回か変更されます。ローカル変数に退避しておくと、同期が取れなくなります。
 
             //------------------------------------------------------------
@@ -139,8 +128,6 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             }
             Debug.Assert(figMovedKoma != Fingers.Error_1, "駒を動かせなかった？1");
 
-
-            exceptionArea = 1080;
             if (Fingers.Error_1 != figFoodKoma)
             {
                 //------------------------------------------------------------
@@ -202,8 +189,6 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             // 局面データに変更があったものとして進めます。
             // ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
-
-            exceptionArea = 1090;
             ittesasuResult.FigFoodKoma = figFoodKoma; //取った駒更新
 
             //
@@ -298,9 +283,6 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             [CallerLineNumber] int sourceLineNumber = 0
             )
         {
-            int exceptionArea = 0;
-
-            exceptionArea = 99001000;
             figMovedKoma = Fingers.Error_1;
 
             //------------------------------------------------------------
@@ -315,13 +297,9 @@ namespace Grayscale.P341Ittesasu.L500UtilA
                 //----------
                 // 駒台から “打”
                 //----------
-                exceptionArea = 99002000;
-
                 RO_Star srcKoma = Util_Starlightable.AsKoma(move.LongTimeAgo);
                 RO_Star dstKoma = Util_Starlightable.AsKoma(move.Now);
 
-
-                exceptionArea = 99002100;
                 // FIXME: 駒台の、どの駒を拾うか？
                 figMovedKoma = Util_Sky_FingerQuery.InOkibaSyuruiNowIgnoreCase(
                     kaisi_Sky,
@@ -332,7 +310,6 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             }
             else
             {
-                exceptionArea = 99003000;
                 //----------
                 // 将棋盤から
                 //----------
@@ -341,8 +318,6 @@ namespace Grayscale.P341Ittesasu.L500UtilA
                 Debug.Assert(!Masu_Honshogi.IsErrorBasho(srcKoma.Masu), "srcKoma.Masuエラー。15");
                 RO_Star dstKoma = Util_Starlightable.AsKoma(move.Now);
 
-
-                exceptionArea = 99003100;
                 figMovedKoma = Util_Sky_FingerQuery.InShogibanMasuNow(
                     kaisi_Sky,
                     dstKoma.Pside,
