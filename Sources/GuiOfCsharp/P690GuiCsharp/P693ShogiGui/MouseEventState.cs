@@ -27,25 +27,19 @@ namespace Grayscale.P693ShogiGui.L125Scene
         public Point MouseLocation { get { return this.mouseLocation; } }
         private Point mouseLocation;
 
-
-        public ILogTag Flg_logTag { get { return this.flg_logTag; } }
-        private ILogTag flg_logTag;
-
         public MouseEventState()
         {
             this.name1 = SceneName.Ignore;
             this.name2 = MouseEventStateName.Ignore;
             this.mouseLocation = Point.Empty;
-            this.flg_logTag = null;
         }
 
-        public MouseEventState(SceneName name1, string windowName, MouseEventStateName name2, Point mouseLocation, ILogTag logTag)
+        public MouseEventState(SceneName name1, string windowName, MouseEventStateName name2, Point mouseLocation)
         {
             this.name1 = name1;
             this.windowName = windowName;
             this.name2 = name2;
             this.mouseLocation = mouseLocation;
-            this.flg_logTag = logTag;
         }
 
     }

@@ -57,7 +57,7 @@ namespace Grayscale.P461Server.L496EngineWrapper
         /// </summary>
         public EngineProcessWrapperImpl()
         {
-            this.SetDelegate_ShogiServer_ToEngine((string line, ILogTag logTag) =>
+            this.SetDelegate_ShogiServer_ToEngine((string line) =>
             {
                 // デフォルトでは何もしません。
             });
@@ -69,7 +69,7 @@ namespace Grayscale.P461Server.L496EngineWrapper
         /// 
         /// 二度手間なんだが、メソッドを１箇所に集約するためにこれを使う☆
         /// </summary>
-        private void Download(string message, ILogTag logTag)
+        private void Download(string message)
         {
             //IErrorController logTag = OwataMinister.SERVER_NETWORK;
 
@@ -77,111 +77,111 @@ namespace Grayscale.P461Server.L496EngineWrapper
 
             if (null != this.Delegate_ShogiServer_ToEngine)
             {
-                this.Delegate_ShogiServer_ToEngine(message, logTag);
+                this.Delegate_ShogiServer_ToEngine(message);
             }
         }
 
         /// <summary>
         /// 将棋エンジンに、"position ～略～"を送信します。
         /// </summary>
-        public void Send_Position(string position, ILogTag logTag)
+        public void Send_Position(string position)
         {
             // 将棋エンジンの標準入力へ、メッセージを送ります。
-            this.Download(position, logTag);
+            this.Download(position);
         }
 
         /// <summary>
         /// 将棋エンジンに、"setoption ～略～"を送信します。
         /// </summary>
-        public void Send_Setoption(string setoption, ILogTag logTag)
+        public void Send_Setoption(string setoption)
         {
             // 将棋エンジンの標準入力へ、メッセージを送ります。
-            this.Download(setoption, logTag);
+            this.Download(setoption);
         }
 
         /// <summary>
         /// 将棋エンジンに、"usi"を送信します。
         /// </summary>
-        public void Send_Usi( ILogTag logTag)
+        public void Send_Usi()
         {
             // 将棋エンジンの標準入力へ、メッセージを送ります。
-            this.Download("usi", logTag);
+            this.Download("usi");
         }
 
         /// <summary>
         /// 将棋エンジンに、"isready"を送信します。
         /// </summary>
-        public void Send_Isready( ILogTag logTag)
+        public void Send_Isready()
         {
-            this.Download("isready", logTag);
+            this.Download("isready");
         }
 
         /// <summary>
         /// 将棋エンジンに、"usinewgame"を送信します。
         /// </summary>
-        public void Send_Usinewgame( ILogTag logTag)
+        public void Send_Usinewgame()
         {
             // 将棋エンジンの標準入力へ、メッセージを送ります。
-            this.Download("usinewgame", logTag);
+            this.Download("usinewgame");
         }
 
         /// <summary>
         /// 将棋エンジンに、"gameover lose"を送信します。
         /// </summary>
-        public void Send_Gameover_lose( ILogTag logTag)
+        public void Send_Gameover_lose()
         {
             // 将棋エンジンの標準入力へ、メッセージを送ります。
-            this.Download("gameover lose",logTag);
+            this.Download("gameover lose");
         }
 
         /// <summary>
         /// 将棋エンジンに、"quit"を送信します。
         /// </summary>
-        public void Send_Quit( ILogTag logTag)
+        public void Send_Quit()
         {
             // 将棋エンジンの標準入力へ、メッセージを送ります。
-            this.Download("quit",logTag);
+            this.Download("quit");
         }
 
         /// <summary>
         /// 将棋エンジンに、"ok"を送信します。"noop"への返事です。
         /// </summary>
-        public void Send_Noop_from_server( ILogTag logTag)
+        public void Send_Noop_from_server()
         {
             // 将棋エンジンの標準入力へ、メッセージを送ります。
-            this.Download("noop from server",logTag);
+            this.Download("noop from server");
         }
 
         /// <summary>
         /// 将棋エンジンに、"go"を送信します。
         /// </summary>
-        public void Send_Go( ILogTag logTag)
+        public void Send_Go()
         {
             // 将棋エンジンの標準入力へ、メッセージを送ります。
-            this.Download("go",logTag);
+            this.Download("go");
         }
 
         /// <summary>
         /// 将棋エンジンに、終了するように促します。
         /// </summary>
-        public void Send_Shutdown( ILogTag logTag)
+        public void Send_Shutdown()
         {
             if (this.IsLive_ShogiEngine())
             {
                 // 将棋エンジンの標準入力へ、メッセージを送ります。
-                this.Download("quit",logTag);
+                this.Download("quit");
             }
         }
 
         /// <summary>
         /// 将棋エンジンに、ログを出すように促します。
         /// </summary>
-        public void Send_Logdase( ILogTag logTag)
+        public void Send_Logdase()
         {
             if (this.IsLive_ShogiEngine())
             {
                 // 将棋エンジンの標準入力へ、メッセージを送ります。
-                this.Download("logdase",logTag);
+                this.Download("logdase");
             }
         }
 

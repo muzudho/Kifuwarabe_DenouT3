@@ -81,8 +81,7 @@ namespace Grayscale.P461Server.L250Util
             Model_Taikyoku model_Taikyoku,//SetCurNodeがある。[コマ送り][再生]などで使用。
             Model_Manual model_Manual,
             out bool toBreak,
-            string hint,
-            ILogTag logTag
+            string hint
             ,
             [CallerMemberName] string memberName = "",
             [CallerFilePath] string sourceFilePath = "",
@@ -110,8 +109,7 @@ namespace Grayscale.P461Server.L250Util
                     inputLine = kifuParserA_Impl.Execute_Step(
                         ref result,
                         model_Taikyoku,
-                        genjo,
-                        logTag
+                        genjo
                         );
 
                     Debug.Assert(result.Out_newNode_OrNull == null, "ここでノードに変化があるのはおかしい。");
@@ -142,8 +140,7 @@ namespace Grayscale.P461Server.L250Util
                         inputLine = kifuParserA_Impl.Execute_Step(
                             ref result,
                             model_Taikyoku,
-                            genjo,
-                            logTag
+                            genjo
                             );
                         Debug.Assert(result.Out_newNode_OrNull == null, "ここでノードに変化があるのはおかしい。");
 
@@ -163,8 +160,7 @@ namespace Grayscale.P461Server.L250Util
                         inputLine = kifuParserA_Impl.Execute_Step(
                             ref result,
                             model_Taikyoku,
-                            genjo,
-                            logTag
+                            genjo
                             );
                         Debug.Assert(result.Out_newNode_OrNull == null, "ここでノードに変化があるのはおかしい。");
 
@@ -193,8 +189,7 @@ namespace Grayscale.P461Server.L250Util
                     inputLine = kifuParserA_Impl.Execute_Step(
                         ref result,
                         model_Taikyoku,
-                        genjo,
-                        logTag
+                        genjo
                         );
 
                     if (null != result.Out_newNode_OrNull)
@@ -225,8 +220,7 @@ namespace Grayscale.P461Server.L250Util
                     ParsedKyokumen parsedKyokumen = Conv_StartposImporter.ToParsedKyokumen(
                         model_Manual,
                         genjo.StartposImporter_OrNull,//指定されているはず。
-                        genjo,
-                        logTag
+                        genjo
                         );
 
                     //------------------------------
@@ -275,8 +269,7 @@ namespace Grayscale.P461Server.L250Util
             out Finger movedKoma,
             out Finger foodKoma,
             out string jsaFugoStr,
-            Model_Taikyoku model_Taikyoku,
-            ILogTag logTag
+            Model_Taikyoku model_Taikyoku
             )
         {
             bool successful = false;
@@ -322,12 +315,10 @@ namespace Grayscale.P461Server.L250Util
                         removeeLeaf.Key,
                         korekaranoTemezumi
                     ),
-                    out ittemodosuResult,
-                    logTag
+                    out ittemodosuResult
                     );
                 Util_IttemodosuRoutine.Before2(
-                    ref ittemodosuResult,
-                    logTag
+                    ref ittemodosuResult
                     );
                 Util_IttemodosuRoutine.After3_ChangeCurrent(
                     model_Taikyoku.Kifu
@@ -356,8 +347,7 @@ namespace Grayscale.P461Server.L250Util
         public static bool Komaokuri_Srv(
             ref string inputLine,
             Model_Taikyoku model_Taikyoku,
-            Model_Manual model_Manual,
-            ILogTag logTag
+            Model_Manual model_Manual
             ,
             [CallerMemberName] string memberName = "",
             [CallerFilePath] string sourceFilePath = "",
@@ -376,8 +366,7 @@ namespace Grayscale.P461Server.L250Util
                 model_Taikyoku,//SetCurNodeがある。
                 model_Manual,
                 out toBreak,
-                "hint",
-                logTag
+                "hint"
                 );
 
         gt_EndMethod:
@@ -400,8 +389,7 @@ namespace Grayscale.P461Server.L250Util
             IMoveHalf dst,
             Finger fig_btnTumandeiruKoma,
             RO_Star foodee_koma,//取られる対象の駒
-            Model_Manual model_Manual,
-            ILogTag logTag
+            Model_Manual model_Manual
             )
         {
             Finger btnKoma_Food_Koma;

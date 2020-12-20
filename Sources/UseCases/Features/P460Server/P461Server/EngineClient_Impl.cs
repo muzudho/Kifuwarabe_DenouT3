@@ -52,7 +52,7 @@ namespace Grayscale.P461Server.L497EngineClient
             this.ShogiEngineProcessWrapper = new EngineProcessWrapperImpl();
 
 #if DEBUG
-            this.ShogiEngineProcessWrapper.SetDelegate_ShogiServer_ToEngine( (string line, ILogTag logTag) =>
+            this.ShogiEngineProcessWrapper.SetDelegate_ShogiServer_ToEngine( (string line) =>
             {
                 //
                 // USIコマンドを将棋エンジンに送ったタイミングで、なにかすることがあれば、
@@ -118,8 +118,7 @@ namespace Grayscale.P461Server.L497EngineClient
         /// <param name="e"></param>
         private void OnExited(object sender, System.EventArgs e)
         {
-            ILogTag logTag = LogTags.EngineDefault;
-            this.ShogiEngineProcessWrapper.Send_Shutdown(logTag);
+            this.ShogiEngineProcessWrapper.Send_Shutdown();
         }
 
         /// <summary>
@@ -127,7 +126,7 @@ namespace Grayscale.P461Server.L497EngineClient
         /// 手番が替わったときの挙動を、ここに書きます。
         /// ************************************************************************************************************************
         /// </summary>
-        public void OnChangedTurn(KifuTree kifu, ILogTag logTag)
+        public void OnChangedTurn(KifuTree kifu)
         {
             if (!this.ShogiEngineProcessWrapper.IsLive_ShogiEngine())
             {
@@ -146,9 +145,9 @@ namespace Grayscale.P461Server.L497EngineClient
                     //------------------------------------------------------------
 
                     // 例：「position startpos moves 7g7f」
-                    this.ShogiEngineProcessWrapper.Send_Position(Util_KirokuGakari.ToSfen_PositionCommand(kifu), logTag);
+                    this.ShogiEngineProcessWrapper.Send_Position(Util_KirokuGakari.ToSfen_PositionCommand(kifu));
 
-                    this.ShogiEngineProcessWrapper.Send_Go(logTag);
+                    this.ShogiEngineProcessWrapper.Send_Go();
 
                     break;
                 default:
@@ -163,17 +162,17 @@ namespace Grayscale.P461Server.L497EngineClient
         /// <summary>
         /// 将棋エンジンに、終了するように促します。
         /// </summary>
-        public void Send_Shutdown(ILogTag logTag)
+        public void Send_Shutdown()
         {
-            this.ShogiEngineProcessWrapper.Send_Shutdown(logTag);
+            this.ShogiEngineProcessWrapper.Send_Shutdown();
         }
 
         /// <summary>
         /// 将棋エンジンに、ログを出すように促します。
         /// </summary>
-        public void Send_Logdase(ILogTag logTag)
+        public void Send_Logdase()
         {
-            this.ShogiEngineProcessWrapper.Send_Logdase(logTag);
+            this.ShogiEngineProcessWrapper.Send_Logdase();
         }
 
         ///// <summary>

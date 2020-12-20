@@ -152,7 +152,7 @@ namespace Grayscale.P354UtilSasuEx.L500Util
         //    {
         //        hubNode_mutable.PutAdd_ChildNode(
         //            moveStr_sfen,
-        //            Conv_SasuEntry.ToKifuNode(sasuEntry, src_Sky, logTag)
+        //            Conv_SasuEntry.ToKifuNode(sasuEntry, src_Sky)
         //        );
         //    }
         //}

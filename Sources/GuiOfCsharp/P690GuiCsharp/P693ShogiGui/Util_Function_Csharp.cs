@@ -32,8 +32,7 @@ namespace Grayscale.P693ShogiGui.L249Function
         /// [初期配置]ボタン
         /// </summary>
         public static void Perform_SyokiHaichi(
-            MainGui_Csharp mainGui,
-            ILogTag logTag
+            MainGui_Csharp mainGui
             )
         {
             mainGui.Link_Server.Model_Taikyoku.Kifu.Clear();// 棋譜を空っぽにします。
@@ -70,13 +69,12 @@ namespace Grayscale.P693ShogiGui.L249Function
             Finger movedKoma,
             Finger foodKoma,
             string fugoJStr,
-            string backedInputText,
-            ILogTag logTag)
+            string backedInputText)
         {
             //------------------------------
             // チェンジターン
             //------------------------------
-            shogiGui.ChangedTurn(logTag);//[巻戻し]ボタンを押したあと
+            shogiGui.ChangedTurn();//[巻戻し]ボタンを押したあと
 
 
             //------------------------------
@@ -218,8 +216,7 @@ namespace Grayscale.P693ShogiGui.L249Function
         /// <param name="btnKoma">駒</param>
         public static void Redraw_KomaLocation(
             Finger figKoma,
-            MainGui_Csharp mainGui,
-            ILogTag logTag
+            MainGui_Csharp mainGui
             )
         {
             RO_Star koma = Util_Starlightable.AsKoma(mainGui.Model_Manual.GuiSkyConst.StarlightIndexOf(figKoma).Now);

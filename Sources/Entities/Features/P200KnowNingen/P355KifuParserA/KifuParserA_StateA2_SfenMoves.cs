@@ -44,8 +44,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
             Model_Taikyoku model_Taikyoku,
             out KifuParserA_State nextState,
             KifuParserA owner,
-            KifuParserA_Genjo genjo,
-            ILogTag logTag
+            KifuParserA_Genjo genjo
             )
         {
             // 現局面。
@@ -90,8 +89,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                         str5,  //+
                         out nextTe,
                         model_Taikyoku.Kifu,
-                        "棋譜パーサーA_SFENパース1",
-                        logTag
+                        "棋譜パーサーA_SFENパース1"
                         );
                 }
                 else
@@ -100,7 +98,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
 
                     //「▲６六歩」形式と想定して、１手だけ読込み
                     if (Conv_JsaFugoText.ToTokens(
-                        genjo.InputLine, out str1, out str2, out str3, out str4, out str5, out str6, out str7, out str8, out str9, out rest, model_Taikyoku.Kifu, logTag))
+                        genjo.InputLine, out str1, out str2, out str3, out str4, out str5, out str6, out str7, out str8, out str9, out rest, model_Taikyoku.Kifu))
                     {
                         if (!(str1 == "" && str2 == "" && str3 == "" && str4 == "" && str5 == "" && str6 == "" && str7 == "" && str8 == "" && str9 == ""))
                         {
@@ -115,8 +113,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                                 str8, //成|不成
                                 str9,  //打
                                 out nextTe,
-                                model_Taikyoku.Kifu,
-                                logTag
+                                model_Taikyoku.Kifu
                                 );
                         }
 

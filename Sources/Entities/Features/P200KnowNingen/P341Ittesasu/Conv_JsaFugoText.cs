@@ -27,8 +27,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             out string str8,
             out string str9,
             out string rest,
-            KifuTree kifu,
-            ILogTag logTag
+            KifuTree kifu
             )
         {
             //nextTe = null;

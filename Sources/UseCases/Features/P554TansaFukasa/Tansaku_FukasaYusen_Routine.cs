@@ -565,7 +565,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
 #if DEBUG
                 MmLogGenjoImpl mm_log_orNull = null;
                 KaisetuBoard logBrd_move1;
-                Tansaku_FukasaYusen_Routine.Log1(genjo, src_Sky_move, src_Sky, out mm_log_orNull, out logBrd_move1, logTag);
+                Tansaku_FukasaYusen_Routine.Log1(genjo, src_Sky_move, src_Sky, out mm_log_orNull, out logBrd_move1);
 #endif
 
             //----------------------------------------
@@ -589,10 +589,10 @@ using Grayscale.P370LogGraphiEx.L500Util;
             //                System.Console.WriteLine("komaBETUSusumeruMasusの全要素＝" + Util_List_OneAndMultiEx<Finger, SySet<SyElement>>.CountAllElements(komaBETUSusumeruMasus));
             //#endif
             //#if DEBUG
-            //                string jsaMoveStr = Util_Translator_Move.ToMove(genjo.Node_yomiNext, genjo.Node_yomiNext.Value, logTag);
+            //                string jsaMoveStr = Util_Translator_Move.ToMove(genjo.Node_yomiNext, genjo.Node_yomiNext.Value);
             //                System.Console.WriteLine("[" + jsaMoveStr + "]の駒別置ける升 調べ\n" + Util_List_OneAndMultiEx<Finger, SySet<SyElement>>.Dump(komaBETUSusumeruMasus, genjo.Node_yomiNext.Value.ToKyokumenConst));
             //#endif
-            //Moveseisei_FukasaYusen_Routine.Log2(genjo, logBrd_move1, logTag);//ログ試し
+            //Moveseisei_FukasaYusen_Routine.Log2(genjo, logBrd_move1);//ログ試し
 
 
 

@@ -29,8 +29,7 @@ namespace Grayscale.P373ConvStartpo.L500Converter
         public static ParsedKyokumen ToParsedKyokumen(
             Model_Manual model_Manual,// Gui局面を使用
             StartposImporter startposImporter,
-            KifuParserA_Genjo genjo,
-            ILogTag logTag
+            KifuParserA_Genjo genjo
             )
         {
             ParsedKyokumen parsedKyokumen = new ParsedKyokumenImpl();

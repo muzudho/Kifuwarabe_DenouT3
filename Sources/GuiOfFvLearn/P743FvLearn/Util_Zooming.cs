@@ -17,7 +17,7 @@ namespace Grayscale.P743FvLearn.L430Zooming
         /// 
         /// 順位を点数に変換します。
         /// </summary>
-        public static void ZoomTo_FvParamRange(FeatureVector fv, ILogTag logTag)
+        public static void ZoomTo_FvParamRange(FeatureVector fv)
         {
             float negative_length;// 負の数の一番小さな値の絶対値。
             float positive_length;// 正の数の一番大きな値の絶対値。

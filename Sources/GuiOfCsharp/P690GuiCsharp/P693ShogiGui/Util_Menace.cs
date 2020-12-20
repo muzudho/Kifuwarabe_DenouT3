@@ -19,7 +19,7 @@ namespace Grayscale.P693ShogiGui.L249Function
         /// <summary>
         /// v(^▽^)v超能力『メナス』だぜ☆ 未来の脅威を予測し、可視化するぜ☆ｗｗｗ
         /// </summary>
-        public static void Menace( MainGui_Csharp mainGui, ILogTag logTag)
+        public static void Menace( MainGui_Csharp mainGui)
         {
             if (0 < mainGui.Model_Manual.GuiTemezumi)
             {

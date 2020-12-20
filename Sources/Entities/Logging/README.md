@@ -1,10 +1,12 @@
-﻿namespace Grayscale.Kifuwarakaku.Entities.Logging
-{
-    /// <summary>
-    /// ログのタグ全集。
-    /// </summary>
-    public class LogTags
-    {
+﻿# Logging
+
+## 2020-12-20 sun
+
+削除したコード。  
+
+```plain
+        /*
+         * ログのタグ全集。
         public static readonly ILogTag Default = new LogTag("Default");
         public static readonly ILogTag Error = new LogTag("Error");
         public static readonly ILogTag DefaultSennitite = new LogTag("DefaultSennitite");
@@ -23,5 +25,5 @@
         public static readonly ILogTag TestProgram = new LogTag("TestProgram");
         public static readonly ILogTag Learner = new LogTag("Learner");
         public static readonly ILogTag SpeedKeisoku = new LogTag("SpeedKeisoku");
-    }
-}
+        */
+```

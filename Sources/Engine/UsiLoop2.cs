@@ -161,7 +161,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
 
 
 
-        public void AtBody(out bool out_isTimeoutShutdown, ILogTag logTag)
+        public void AtBody(out bool out_isTimeoutShutdown)
         {
             out_isTimeoutShutdown = false;
             //PerformanceMetrics performanceMetrics = new PerformanceMetrics();//使ってない？
@@ -216,7 +216,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
 #if NOOPABLE
                 if (this.owner.Option_enable_serverNoopable)
                 {
-                    noopTimer._03_AtResponsed(this.owner, line, logTag);
+                    noopTimer._03_AtResponsed(this.owner, line);
                 }
 #endif
 
@@ -341,8 +341,6 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
 
         public void AtLoop_OnPosition(string line, ref PhaseResult_UsiLoop2 result_Usi)
         {
-            ILogTag logTag = LogTags.EngineDefault;
-
             //------------------------------------------------------------
             // これが棋譜です
             //------------------------------------------------------------
@@ -446,8 +444,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
             kifuParserA.Execute_All(
                 ref result,
                 model_Taikyoku,
-                genjo,
-                logTag
+                genjo
                 );
             if (null != genjo.StartposImporter_OrNull)
             {
@@ -455,14 +452,13 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                 // その解析結果をどう使うかは、委譲します。
                 Util_InClient.OnChangeSky_Im_Client(
                     model_Taikyoku,
-                    genjo,
-                    logTag
+                    genjo
                     );
             }
 
 
 #if DEBUG
-                this.Log2_Png_Tyokkin(line, (KifuNode)result.Out_newNode_OrNull, logTag);
+                this.Log2_Png_Tyokkin(line, (KifuNode)result.Out_newNode_OrNull);
 #endif
 
             //------------------------------------------------------------
@@ -473,7 +469,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
             // 多分、将棋所もまだ準備ができていないのではないでしょうか（？）
             //
         }
-        private void Log2_Png_Tyokkin(string line, KifuNode kifuNode, ILogTag logTag)
+        private void Log2_Png_Tyokkin(string line, KifuNode kifuNode)
         {
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
@@ -527,7 +523,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                     srcMasu_orMinusOne,
                     dstMasu_orMinusOne,
                     foodKoma,
-                    ConvMoveStrSfen.ToMoveStrSfen(kifuNode.Key),//Conv_MoveStr_Jsa.ToMoveStr_Jsa(kifuNode, kifuNode.Value, logTag),
+                    ConvMoveStrSfen.ToMoveStrSfen(kifuNode.Key),//Conv_MoveStr_Jsa.ToMoveStr_Jsa(kifuNode, kifuNode.Value),
                     "",
                     fileName,
                     Util_KifuTreeLogWriter.REPORT_ENVIRONMENT
@@ -581,8 +577,6 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
         /// <param name="result_Usi"></param>
         public void AtLoop_OnGo(string line, ref PhaseResult_UsiLoop2 result_Usi)
         {
-            ILogTag logTag = LogTags.EngineDefault;
-
             //------------------------------------------------------------
             // あなたの手番です
             //------------------------------------------------------------
@@ -791,7 +785,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
 
                             // ログが重過ぎる☆！
                             //OwataMinister.WARABE_ENGINE.Logger.WriteLineAddMemo("(Warabe)指し手のチョイス： bestmove＝[" + sfenText + "]" +
-                            //    "　棋譜＝" + KirokuGakari.ToJsaKifuText(this.Kifu, logTag));
+                            //    "　棋譜＝" + KirokuGakari.ToJsaKifuText(this.Kifu));
 
                             //----------------------------------------
                             // スコア 試し
@@ -818,7 +812,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
                         {
                             // ログが重過ぎる☆！
                             //OwataMinister.WARABE_ENGINE.Logger.WriteLineAddMemo("(Warabe)指し手のチョイス： 指し手がないときは、SFENが書けない☆　投了だぜ☆ｗｗ（＞＿＜）" +
-                            //    "　棋譜＝" + KirokuGakari.ToJsaKifuText(this.Kifu, logTag));
+                            //    "　棋譜＝" + KirokuGakari.ToJsaKifuText(this.Kifu));
 
                             //----------------------------------------
                             // 投了ｗ！

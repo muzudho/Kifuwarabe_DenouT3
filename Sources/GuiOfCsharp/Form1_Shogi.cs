@@ -84,14 +84,12 @@ namespace Grayscale.P699_Form_______
         /// <param name="e"></param>
         private void Ui_Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            ILogTag logTag = LogTags.CsharpGuiDefault;
-            this.owner.Shutdown(logTag);
+            this.owner.Shutdown();
         }
 
         private void Ui_Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ILogTag logTag = LogTags.CsharpGuiDefault;
-            this.owner.Shutdown(logTag);
+            this.owner.Shutdown();
         }
     }
 }

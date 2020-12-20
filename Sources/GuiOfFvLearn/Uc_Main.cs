@@ -146,7 +146,6 @@ namespace Grayscale.P743FvLearn
         /// <param name="e"></param>
         private void btnSasu_Click(object sender, EventArgs e)
         {
-            ILogTag logTag = LogTags.Learner;
             bool isRequest_ShowGohosyu = false;
             bool isRequest_ChangeKyokumenPng = false;
 
@@ -160,7 +159,7 @@ namespace Grayscale.P743FvLearn
             if (isRequest_ShowGohosyu)
             {
                 // 合法手一覧を更新
-                Util_LearnFunctions.FvParamRange_PP(this.LearningData.Fv, logTag);// 自動で -999～999(*bairitu) に矯正。
+                Util_LearnFunctions.FvParamRange_PP(this.LearningData.Fv);// 自動で -999～999(*bairitu) に矯正。
                 Util_LearningView.Aa_ShowGohosyu2(this.LearningData, this);
                 isRequest_ShowGohosyu = false;
             }
@@ -204,7 +203,6 @@ namespace Grayscale.P743FvLearn
 
         private void btnOpenCsa_Click(object sender, EventArgs e)
         {
-            ILogTag logTag = LogTags.Learner;
             bool isRequest_ShowGohosyu = false;
             bool isRequest_ChangeKyokumenPng = false;
 
@@ -234,7 +232,7 @@ namespace Grayscale.P743FvLearn
             if (isRequest_ShowGohosyu)
             {
                 // 合法手一覧を更新
-                Util_LearnFunctions.FvParamRange_PP(this.LearningData.Fv, logTag);// 自動で -999～999(*bairitu) に矯正。
+                Util_LearnFunctions.FvParamRange_PP(this.LearningData.Fv);// 自動で -999～999(*bairitu) に矯正。
                 Util_LearningView.Aa_ShowGohosyu2(this.LearningData, this);
                 isRequest_ShowGohosyu = false;
             }
@@ -254,9 +252,7 @@ namespace Grayscale.P743FvLearn
         /// <param name="e"></param>
         private void btnOpenFvCsv_Click(object sender, EventArgs e)
         {
-            ILogTag logTag = LogTags.Learner;
-
-            Util_LearnOperation.Do_OpenFvCsv(this, logTag);
+            Util_LearnOperation.Do_OpenFvCsv(this);
         }
 
         /// <summary>
@@ -266,9 +262,7 @@ namespace Grayscale.P743FvLearn
         /// <param name="e"></param>
         private void btnWriteFv_Click(object sender, EventArgs e)
         {
-            ILogTag logTag = LogTags.Learner;
-
-            Util_LearnFunctions.Do_Save(this, logTag);
+            Util_LearnFunctions.Do_Save(this);
         }
 
         /// <summary>
@@ -278,19 +272,18 @@ namespace Grayscale.P743FvLearn
         /// <param name="e"></param>
         private void btnUpdateKyokumenHyoka_Click(object sender, EventArgs e)
         {
-            ILogTag logTag = LogTags.Learner;
             bool isRequest_ShowGohosyu = false;
             bool isRequest_ChangeKyokumenPng = false;
 
             Util_AutoKifuRead.Do_UpdateKyokumenHyoka(
                 ref isRequest_ShowGohosyu,
                 ref isRequest_ChangeKyokumenPng,
-                this, logTag);
+                this);
 
             if (isRequest_ShowGohosyu)
             {
                 // 合法手一覧を更新
-                Util_LearnFunctions.FvParamRange_PP(this.LearningData.Fv, logTag);// 自動で -999～999(*bairitu) に矯正。
+                Util_LearnFunctions.FvParamRange_PP(this.LearningData.Fv);// 自動で -999～999(*bairitu) に矯正。
                 Util_LearningView.Aa_ShowGohosyu2(this.LearningData, this);
                 isRequest_ShowGohosyu = false;
             }
@@ -307,8 +300,6 @@ namespace Grayscale.P743FvLearn
         /// </summary>
         public void SeikoIdo()
         {
-            ILogTag logTag = LogTags.Learner;
-
             // 今読んだ棋譜を移す先（成功時）
             if (2 <= this.search_kifu_folder_lines.Length)
             {
@@ -329,8 +320,6 @@ namespace Grayscale.P743FvLearn
         /// </summary>
         private void SippaiIdo()
         {
-            ILogTag logTag = LogTags.Learner;
-
             // 今読んだ棋譜を移す先（失敗時）
             if (3 <= this.search_kifu_folder_lines.Length)
             {
@@ -354,7 +343,6 @@ namespace Grayscale.P743FvLearn
         /// <param name="e"></param>
         private void btnFv999_999_Click(object sender, EventArgs e)
         {
-            ILogTag logTag = LogTags.Learner;
             bool isRequest_ShowGohosyu = false;
 
             isRequest_ShowGohosyu = true;
@@ -362,7 +350,7 @@ namespace Grayscale.P743FvLearn
             if (isRequest_ShowGohosyu)
             {
                 // 合法手一覧を更新
-                Util_LearnFunctions.FvParamRange_PP(this.LearningData.Fv, logTag);// 自動で -999～999(*bairitu) に矯正。
+                Util_LearnFunctions.FvParamRange_PP(this.LearningData.Fv);// 自動で -999～999(*bairitu) に矯正。
                 isRequest_ShowGohosyu = false;
             }
         }
@@ -384,19 +372,18 @@ namespace Grayscale.P743FvLearn
         /// <param name="e"></param>
         private void btnMoveRankDown_Click(object sender, EventArgs e)
         {
-            ILogTag logTag = LogTags.Learner;
             bool isRequest_ShowGohosyu = false;
             bool isRequest_ChangeKyokumenPng = false;
 
             Util_LearnOperation.DoRankDownMove(
                 ref isRequest_ShowGohosyu,
                 ref isRequest_ChangeKyokumenPng,
-                this, logTag);
+                this);
 
             if (isRequest_ShowGohosyu)
             {
                 // 合法手一覧を更新
-                Util_LearnFunctions.FvParamRange_PP(this.LearningData.Fv, logTag);// 自動で -999～999(*bairitu) に矯正。
+                Util_LearnFunctions.FvParamRange_PP(this.LearningData.Fv);// 自動で -999～999(*bairitu) に矯正。
                 Util_LearningView.Aa_ShowGohosyu2(this.LearningData, this);
                 isRequest_ShowGohosyu = false;
             }
@@ -415,19 +402,18 @@ namespace Grayscale.P743FvLearn
         /// <param name="e"></param>
         private void btnMoveRankUp_Click(object sender, EventArgs e)
         {
-            ILogTag logTag = LogTags.Learner;
             bool isRequest_ShowGohosyu = false;
             bool isRequest_ChangeKyokumenPng = false;
 
             Util_LearnOperation.DoRankUpMove(
                 ref isRequest_ShowGohosyu,
                 ref isRequest_ChangeKyokumenPng,
-                this, logTag);
+                this);
 
             if (isRequest_ShowGohosyu)
             {
                 // 合法手一覧を更新
-                Util_LearnFunctions.FvParamRange_PP(this.LearningData.Fv, logTag);// 自動で -999～999(*bairitu) に矯正。
+                Util_LearnFunctions.FvParamRange_PP(this.LearningData.Fv);// 自動で -999～999(*bairitu) に矯正。
                 Util_LearningView.Aa_ShowGohosyu2(this.LearningData, this);
                 isRequest_ShowGohosyu = false;
             }
@@ -447,15 +433,14 @@ namespace Grayscale.P743FvLearn
         /// <param name="e"></param>
         private void btnStartZero_Click(object sender, EventArgs e)
         {
-            ILogTag logTag = LogTags.Learner;
             bool isRequest_ShowGohosyu = false;
 
-            Util_LearnOperation.Do_ZeroStart(ref isRequest_ShowGohosyu, this, logTag);
+            Util_LearnOperation.Do_ZeroStart(ref isRequest_ShowGohosyu, this);
 
             if (isRequest_ShowGohosyu)
             {
                 // 合法手一覧を更新
-                Util_LearnFunctions.FvParamRange_PP(this.LearningData.Fv, logTag);// 自動で -999～999(*bairitu) に矯正。
+                Util_LearnFunctions.FvParamRange_PP(this.LearningData.Fv);// 自動で -999～999(*bairitu) に矯正。
                 Util_LearningView.Aa_ShowGohosyu2(this.LearningData, this);
                 isRequest_ShowGohosyu = false;
             }
@@ -477,8 +462,7 @@ namespace Grayscale.P743FvLearn
         public void Do_NextKifuSet(
             out bool out_isEmptyKifu,
             ref bool ref_isRequest_ShowGohosyu,
-            ref bool ref_isRequest_ChangeKyokumenPng,
-            ILogTag logTag
+            ref bool ref_isRequest_ChangeKyokumenPng
             )
         {
             //
@@ -513,18 +497,17 @@ namespace Grayscale.P743FvLearn
         /// <param name="e"></param>
         private void btnNextKifuSet_Click(object sender, EventArgs e)
         {
-            ILogTag logTag = LogTags.Learner;
             bool isRequest_ShowGohosyu = false;
             bool isRequest_ChangeKyokumenPng = false;
 
             bool isEmptyKifu;
-            this.Do_NextKifuSet(out isEmptyKifu, ref isRequest_ShowGohosyu, ref isRequest_ChangeKyokumenPng, logTag);
+            this.Do_NextKifuSet(out isEmptyKifu, ref isRequest_ShowGohosyu, ref isRequest_ChangeKyokumenPng);
 
 
             if (isRequest_ShowGohosyu)
             {
                 // 合法手一覧を更新
-                Util_LearnFunctions.FvParamRange_PP(this.LearningData.Fv, logTag);// 自動で -999～999(*bairitu) に矯正。
+                Util_LearnFunctions.FvParamRange_PP(this.LearningData.Fv);// 自動で -999～999(*bairitu) に矯正。
                 Util_LearningView.Aa_ShowGohosyu2(this.LearningData, this);
                 isRequest_ShowGohosyu = false;
             }

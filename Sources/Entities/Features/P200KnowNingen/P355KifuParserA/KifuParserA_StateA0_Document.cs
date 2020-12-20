@@ -38,8 +38,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
             Model_Taikyoku model_Taikyoku,
             out KifuParserA_State nextState,
             KifuParserA owner,
-            KifuParserA_Genjo genjo,
-            ILogTag logTag
+            KifuParserA_Genjo genjo
             )
         {
             nextState = this;

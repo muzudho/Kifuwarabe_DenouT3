@@ -11,19 +11,14 @@ namespace Grayscale.P693ShogiGui.L125Scene
         public SaiseiEventStateName Name2 { get { return this.name2; } }
         private SaiseiEventStateName name2;
 
-        public ILogTag Flg_logTag { get { return this.flg_logTag; } }
-        private ILogTag flg_logTag;
-
-
         public SaiseiEventState()
         {
             this.name2 = SaiseiEventStateName.Ignore;
         }
 
-        public SaiseiEventState(SaiseiEventStateName name2, ILogTag logTag)
+        public SaiseiEventState(SaiseiEventStateName name2)
         {
             this.name2 = name2;
-            this.flg_logTag = logTag;
         }
 
     }

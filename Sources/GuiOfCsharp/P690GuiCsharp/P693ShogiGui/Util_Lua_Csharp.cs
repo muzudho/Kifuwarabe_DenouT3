@@ -26,7 +26,6 @@ namespace Grayscale.P693ShogiGui.L480Util
         private static Lua lua;
 
         public static MainGui_Csharp ShogiGui { get; set; }
-        public static ILogTag LogTag { get; set; }
 
         /// <summary>
         /// 
@@ -112,7 +111,7 @@ namespace Grayscale.P693ShogiGui.L480Util
         public static void InputBox_Play()
         {
             // [再生]タイマー開始☆
-            ((TimedC_SaiseiCapture)Util_Lua_Csharp.ShogiGui.TimedC).SaiseiEventQueue.Enqueue(new SaiseiEventState(SaiseiEventStateName.Start, Util_Lua_Csharp.LogTag));
+            ((TimedC_SaiseiCapture)Util_Lua_Csharp.ShogiGui.TimedC).SaiseiEventQueue.Enqueue(new SaiseiEventState(SaiseiEventStateName.Start));
         }
 
         public static void OutputBox_Clear()
@@ -136,7 +135,6 @@ namespace Grayscale.P693ShogiGui.L480Util
         /// </summary>
         public static void ClearKifu(MainGui_Csharp mainGui, RepaintRequest repaintRequest)
         {
-            ILogTag logTag = LogTags.Error;
             mainGui.Link_Server.Model_Taikyoku.Kifu.Clear();// 棋譜を空っぽにします。
 
             SkyBuffer buffer_Sky = new SkyBuffer(mainGui.Model_Manual.GuiSkyConst);

@@ -33,7 +33,7 @@ namespace Grayscale.P743FvLearn.L506AutoMoveSort
             int loopLimit,
             ref float ref_tyoseiryo,
             string sfenMoveStr,
-            Uc_Main uc_Main, ILogTag logTag
+            Uc_Main uc_Main
             )
         {
             out_isEndAutoLearn = false;
@@ -80,7 +80,7 @@ namespace Grayscale.P743FvLearn.L506AutoMoveSort
 
                 if (uc_Main.ChkStartZero.Checked)// 自動で、平手初期局面の点数を 0 点に近づけるよう調整します。
                 {
-                    Util_StartZero.Adjust_HirateSyokiKyokumen_0ten_AndFvParamRange(ref ref_isRequestDoEvents, uc_Main.LearningData.Fv, logTag);
+                    Util_StartZero.Adjust_HirateSyokiKyokumen_0ten_AndFvParamRange(ref ref_isRequestDoEvents, uc_Main.LearningData.Fv);
                 }
 
                 // 局面の表示を更新します。

@@ -22,8 +22,7 @@ namespace Grayscale.P360ConvSasu.L500Converter
         /// </summary>
         public static List<Couple<Finger, SyElement>> NextNodes_ToKamList(
             SkyConst src_Sky_genzai,
-            Node<IMove, KyokumenWrapper> hubNode,
-            ILogTag logTag
+            Node<IMove, KyokumenWrapper> hubNode
             )
         {
             List<Couple<Finger, SyElement>> kmList = new List<Couple<Finger, SyElement>>();

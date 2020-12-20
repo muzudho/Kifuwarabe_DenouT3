@@ -32,17 +32,17 @@ namespace Grayscale.P461Server.I497EngineClient
         /// </summary>
         /// <param name="kifu"></param>
         /// <param name="logTag"></param>
-        void OnChangedTurn(KifuTree kifu, ILogTag logTag);
+        void OnChangedTurn(KifuTree kifu);
 
         /// <summary>
         /// 将棋エンジンに、終了するように促します。
         /// </summary>
-        void Send_Shutdown(ILogTag logTag);
+        void Send_Shutdown();
 
         /// <summary>
         /// 将棋エンジンに、ログを出すように促します。
         /// </summary>
-        void Send_Logdase(ILogTag logTag);
+        void Send_Logdase();
 
         ///// <summary>
         ///// 将棋エンジンを先手にするために、go を出します。

@@ -2,7 +2,6 @@
 {
     using System;
     using Grayscale.Kifuwarakaku.Entities.Logging;
-    using Grayscale.Kifuwarakaku.UseCases;
     using Grayscale.P571KifuWarabe.L250UsiLoop;
     using Grayscale.P571KifuWarabe.L500KifuWarabe;
 
@@ -18,8 +17,6 @@
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            ILogTag logTag = LogTags.EngineDefault;
-
             // 将棋エンジン　きふわらべ
             ProgramSupport programSupport = new ProgramSupport();
             programSupport.AtBegin();
@@ -89,7 +86,7 @@
                     //
                     UsiLoop2 usiLoop2 = new UsiLoop2(programSupport.shogisasi, programSupport);
                     usiLoop2.AtBegin();
-                    usiLoop2.AtBody(out isTimeoutShutdown_temp, logTag);
+                    usiLoop2.AtBody(out isTimeoutShutdown_temp);
                     usiLoop2.AtEnd();
                     if (isTimeoutShutdown_temp)
                     {

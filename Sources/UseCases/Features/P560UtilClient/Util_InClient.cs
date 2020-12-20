@@ -20,8 +20,7 @@ namespace Grayscale.P560UtilClient.L500Util
         /// <param name="logTag"></param>
         public static void OnChangeSky_Im_Client(
             Model_Taikyoku model_Taikyoku,
-            KifuParserA_Genjo genjo,
-            ILogTag logTag
+            KifuParserA_Genjo genjo
             )
         {
             Logger.Trace("（＾△＾）「" + genjo.InputLine + "」Util_InClient　：　クライアントの委譲メソッドｷﾀｰ☆");

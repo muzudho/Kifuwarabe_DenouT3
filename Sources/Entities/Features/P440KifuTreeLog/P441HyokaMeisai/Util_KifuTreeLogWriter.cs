@@ -83,8 +83,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
         /// </summary>
         public static void A_Write_KifuTreeLog(
             KaisetuBoards logF_kiki,
-            KifuTree kifu,
-            ILogTag logTag
+            KifuTree kifu
             )
         {
 #if DEBUG
@@ -180,8 +179,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
             KifuNode node,
             KifuTree kifu,
             string treeFolder,
-            KyokumenPngEnvironment reportEnvironment,
-            ILogTag logTag
+            KyokumenPngEnvironment reportEnvironment
             )
         {
 
@@ -204,8 +202,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
                         (KifuNode)nextNode,
                         kifu,
                         treeFolder + ((int)score).ToString() + "点_" + ConvMoveStrSfen.ToMoveStrSfen(nextNode.Key) + "/",
-                        reportEnvironment,
-                        logTag
+                        reportEnvironment
                         );
 
                 });
@@ -219,8 +216,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
                 node,
                 kifu,
                 treeFolder,
-                reportEnvironment,
-                logTag
+                reportEnvironment
             );
 
         }
@@ -234,8 +230,7 @@ using Grayscale.P370LogGraphiEx.L500Util;
             KifuNode node,
             KifuTree kifu,
             string relFolder,
-            KyokumenPngEnvironment reportEnvironment,
-            ILogTag logTag
+            KyokumenPngEnvironment reportEnvironment
             )
         {
             string fileName = "";

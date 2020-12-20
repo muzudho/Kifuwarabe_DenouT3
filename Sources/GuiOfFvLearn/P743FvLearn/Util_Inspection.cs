@@ -24,7 +24,7 @@ namespace Grayscale.P743FvLearn.L420Inspection
         /// <summary>
         /// フィーチャー・ベクターの概要をデバッグ出力します。
         /// </summary>
-        public static void Inspection1(FeatureVector fv, ILogTag logTag)
+        public static void Inspection1(FeatureVector fv)
         {
             float negative_length;// 負の数の一番小さな値の絶対値。
             float positive_length;// 正の数の一番大きな値の絶対値。

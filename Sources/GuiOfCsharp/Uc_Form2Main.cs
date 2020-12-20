@@ -100,7 +100,7 @@ using System.Windows.Forms;
             //------------------------------
             // 画面の描画です。
             //------------------------------
-            shogibanGui.ConsoleWindowGui.Shape_Canvas.Paint(sender, e, shogibanGui, Shape_CanvasImpl.WINDOW_NAME_CONSOLE, LogTags.CsharpGuiPaint);
+            shogibanGui.ConsoleWindowGui.Shape_Canvas.Paint(sender, e, shogibanGui, Shape_CanvasImpl.WINDOW_NAME_CONSOLE);
 
         gt_EndMethod:
             ;
@@ -109,7 +109,6 @@ using System.Windows.Forms;
 
         private void Uc_Form2Main_MouseDown(object sender, MouseEventArgs e)
         {
-            ILogTag logTag = LogTags.CsharpGuiDefault;
             MainGui_Csharp shogibanGui = ((Form2_Console)this.ParentForm).Form1_Shogi.Uc_Form1Main.MainGui;
 
             if (null == shogibanGui.Shape_PnlTaikyoku)
@@ -128,7 +127,7 @@ using System.Windows.Forms;
                 //------------------------------------------------------------
                 TimedB_MouseCapture timeB = ((TimedB_MouseCapture)shogibanGui.TimedB_MouseCapture);
                 timeB.MouseEventQueue.Enqueue(
-                    new MouseEventState(shogibanGui.Scene, Shape_CanvasImpl.WINDOW_NAME_CONSOLE, MouseEventStateName.MouseLeftButtonDown, e.Location, logTag));
+                    new MouseEventState(shogibanGui.Scene, Shape_CanvasImpl.WINDOW_NAME_CONSOLE, MouseEventStateName.MouseLeftButtonDown, e.Location));
             }
             else if (e.Button == MouseButtons.Right)
             {
@@ -137,13 +136,13 @@ using System.Windows.Forms;
                 //------------------------------------------------------------
                 TimedB_MouseCapture timeB = ((TimedB_MouseCapture)shogibanGui.TimedB_MouseCapture);
                 timeB.MouseEventQueue.Enqueue(
-                    new MouseEventState(shogibanGui.Scene, Shape_CanvasImpl.WINDOW_NAME_CONSOLE, MouseEventStateName.MouseRightButtonDown, e.Location, logTag));
+                    new MouseEventState(shogibanGui.Scene, Shape_CanvasImpl.WINDOW_NAME_CONSOLE, MouseEventStateName.MouseRightButtonDown, e.Location));
 
 
                 //------------------------------
                 // このメインパネルの反応
                 //------------------------------
-                shogibanGui.Response("MouseOperation", logTag);
+                shogibanGui.Response("MouseOperation");
 
             }
             else
@@ -151,7 +150,7 @@ using System.Windows.Forms;
                 //------------------------------
                 // このメインパネルの反応
                 //------------------------------
-                shogibanGui.Response("MouseOperation", logTag);
+                shogibanGui.Response("MouseOperation");
             }
 
         gt_EndMethod:
@@ -161,7 +160,6 @@ using System.Windows.Forms;
 
         private void Uc_Form2Main_MouseUp(object sender, System.Windows.Forms.MouseEventArgs e)
         {
-            ILogTag logTag = LogTags.CsharpGuiDefault;
             MainGui_Csharp mainGui = ((Form2_Console)this.ParentForm).Form1_Shogi.Uc_Form1Main.MainGui;
 
             // このメインパネルに、何かして欲しいという要求は、ここに入れられます。
@@ -177,7 +175,7 @@ using System.Windows.Forms;
                 //------------------------------------------------------------
                 TimedB_MouseCapture timeB = ((TimedB_MouseCapture)mainGui.TimedB_MouseCapture);
                 timeB.MouseEventQueue.Enqueue(
-                    new MouseEventState(mainGui.Scene, Shape_CanvasImpl.WINDOW_NAME_CONSOLE, MouseEventStateName.MouseLeftButtonUp, e.Location, logTag));
+                    new MouseEventState(mainGui.Scene, Shape_CanvasImpl.WINDOW_NAME_CONSOLE, MouseEventStateName.MouseLeftButtonUp, e.Location));
             }
             else if (e.Button == MouseButtons.Right)
             {
@@ -186,7 +184,7 @@ using System.Windows.Forms;
                 //------------------------------------------------------------
                 TimedB_MouseCapture timeB = ((TimedB_MouseCapture)mainGui.TimedB_MouseCapture);
                 timeB.MouseEventQueue.Enqueue(
-                    new MouseEventState(mainGui.Scene, Shape_CanvasImpl.WINDOW_NAME_CONSOLE, MouseEventStateName.MouseRightButtonUp, e.Location, logTag));
+                    new MouseEventState(mainGui.Scene, Shape_CanvasImpl.WINDOW_NAME_CONSOLE, MouseEventStateName.MouseRightButtonUp, e.Location));
             }
         }
 

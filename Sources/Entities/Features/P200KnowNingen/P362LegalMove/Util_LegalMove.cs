@@ -60,7 +60,7 @@ namespace Grayscale.P362LegalMove.L500Util
                 );// ハブ・ノード自身はダミーノードなんだが、子ノードに、次のノードが入っている。
             Util_NodeAssert361.AssertNariMove(hubNode, "#LA_RemoveMate(1)");//ここはok
 #if DEBUG
-            Util_LegalMove.Log1(hubNode, src_Sky.Temezumi, hint, logTag);
+            Util_LegalMove.Log1(hubNode, src_Sky.Temezumi, hint);
 #endif
 
             if (isHonshogi)

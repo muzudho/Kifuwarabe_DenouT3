@@ -34,7 +34,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
             this.SaiseiEventQueue = new Queue<SaiseiEventState>();
         }
 
-        public override void Step(ILogTag logTag)
+        public override void Step()
         {
 
             // 入っているマウス操作イベントは、全部捨てていきます。
@@ -51,7 +51,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                             mainGui.RepaintRequest = new RepaintRequestImpl();
 
                             this.restText = Util_Function_Csharp.ReadLine_FromTextbox();
-                            this.SaiseiEventQueue.Enqueue(new SaiseiEventState(SaiseiEventStateName.Step, eventState.Flg_logTag));
+                            this.SaiseiEventQueue.Enqueue(new SaiseiEventState(SaiseiEventStateName.Step));
                         }
                         break;
 
@@ -70,11 +70,10 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                     this.mainGui.Link_Server.Model_Taikyoku,
                                     this.mainGui.Model_Manual,
                                     out toBreak,
-                                    "再生ボタン",
-                                    logTag
+                                    "再生ボタン"
                                     );
 
-                                //TimedC.Saisei_Step(restText, shogiGui, eventState.Flg_logTag);// 再描画（ループが１回も実行されなかったとき用）
+                                //TimedC.Saisei_Step(restText, shogiGui);// 再描画（ループが１回も実行されなかったとき用）
                                 // 他のアプリが固まらないようにします。
                                 Application.DoEvents();
 
@@ -90,20 +89,20 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                 //------------------------------
                                 // メナス
                                 //------------------------------
-                                Util_Menace.Menace(mainGui, eventState.Flg_logTag);
+                                Util_Menace.Menace(mainGui);
 
-                                mainGui.Response("Saisei", eventState.Flg_logTag);// 再描画
+                                mainGui.Response("Saisei");// 再描画
                             }
 
                             if (toBreak)
                             {
                                 // 終了
-                                this.SaiseiEventQueue.Enqueue(new SaiseiEventState(SaiseiEventStateName.Finished, eventState.Flg_logTag));
+                                this.SaiseiEventQueue.Enqueue(new SaiseiEventState(SaiseiEventStateName.Finished));
                             }
                             else
                             {
                                 // 続行
-                                this.SaiseiEventQueue.Enqueue(new SaiseiEventState(SaiseiEventStateName.Step, eventState.Flg_logTag));
+                                this.SaiseiEventQueue.Enqueue(new SaiseiEventState(SaiseiEventStateName.Step));
                             }
                         }
                         break;

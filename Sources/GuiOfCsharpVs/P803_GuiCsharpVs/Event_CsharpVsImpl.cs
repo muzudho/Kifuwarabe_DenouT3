@@ -30,7 +30,6 @@ namespace Grayscale.P803GuiCsharpVs.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , ILogTag logTag
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
@@ -44,14 +43,13 @@ namespace Grayscale.P803GuiCsharpVs.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , ILogTag logTag
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
                     MainGui_Csharp shogiGui = (MainGui_Csharp)obj_shogiGui2;
                     Uc_Form1Mainable ui_PnlMain = ((Form1_Shogi)shogiGui.OwnerForm).Uc_Form1Main;
 
-                    ui_PnlMain.MainGui.Start_ShogiEngine(ui_PnlMain.SetteiXmlFile.ShogiEngineFilePath, logTag);
+                    ui_PnlMain.MainGui.Start_ShogiEngine(ui_PnlMain.SetteiXmlFile.ShogiEngineFilePath);
                 };
 
                 //
@@ -61,7 +59,6 @@ namespace Grayscale.P803GuiCsharpVs.L491Event
                     object obj_shogiGui2
                     , object userWidget2 // UerWidget
                     , object btnKoma_Selected2
-                    , ILogTag logTag
                     ) =>
                 {
                     Shape_BtnKoma btnKoma_Selected = (Shape_BtnKoma)btnKoma_Selected2;
@@ -70,7 +67,7 @@ namespace Grayscale.P803GuiCsharpVs.L491Event
                     MainGui_Csharp shogiGui = (MainGui_Csharp)obj_shogiGui2;
                     Uc_Form1Mainable ui_PnlMain = ((Form1_Shogi)shogiGui.OwnerForm).Uc_Form1Main;
 
-                    ui_PnlMain.MainGui.Do_ComputerSente( logTag);
+                    ui_PnlMain.MainGui.Do_ComputerSente( );
                 };
             }
             return Event_CsharpVsImpl.instance;

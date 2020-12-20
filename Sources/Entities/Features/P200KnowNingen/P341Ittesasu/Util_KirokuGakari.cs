@@ -85,7 +85,7 @@ namespace Grayscale.P341Ittesasu.L250OperationA
                 string jsaFugoStr = ConvMoveStrJsa.ToMoveStrJsa(saifu_newChild
                     //saifu_newChild.Value,
                     );
-                //sb.Append(Conv_MoveStr_Jsa.ToMoveStr_Jsa(node, saifu_kWrap, logTag));
+                //sb.Append(Conv_MoveStr_Jsa.ToMoveStr_Jsa(node, saifu_kWrap));
                 sb.Append(jsaFugoStr);
 
             gt_EndLoop:

@@ -81,7 +81,7 @@ namespace Grayscale.P258UtilSky258.L510UtilLogJson
         /// <param name="comment"></param>
         /// <param name="logTag"></param>
         /// <returns></returns>
-        public static string JsonElements_Node(bool enableLog, SkyConst src_Sky_base, Node<IMove, KyokumenWrapper> thisNode, string comment, ILogTag logTag)
+        public static string JsonElements_Node(bool enableLog, SkyConst src_Sky_base, Node<IMove, KyokumenWrapper> thisNode, string comment)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -132,7 +132,7 @@ namespace Grayscale.P258UtilSky258.L510UtilLogJson
         /// <param name="comment"></param>
         /// <param name="logTag"></param>
         /// <returns></returns>
-        public static string JsonKyokumens_NextNodes(bool enableLog, SkyConst src_Sky_base, Node<IMove, KyokumenWrapper> hubNode, string comment, ILogTag logTag)
+        public static string JsonKyokumens_NextNodes(bool enableLog, SkyConst src_Sky_base, Node<IMove, KyokumenWrapper> hubNode, string comment)
         {
             StringBuilder sb = new StringBuilder();
 

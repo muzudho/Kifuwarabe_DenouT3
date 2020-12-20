@@ -43,8 +43,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
         /// <param name="sourceLineNumber"></param>
         public static void Before1(
             IttemodosuArg ittemodosuArg,
-            out IttemodosuResult ittemodosuResult,
-            ILogTag logTag
+            out IttemodosuResult ittemodosuResult
             ,
             [CallerMemberName] string memberName = "",
             [CallerFilePath] string sourceFilePath = "",
@@ -84,8 +83,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
                 out figMovedKoma,
                 ittemodosuArg.Move,
                 kaisi_tebanside,
-                kaisi_Sky,
-                logTag
+                kaisi_Sky
                 );
             ittemodosuResult.FigMovedKoma = figMovedKoma; //動かした駒更新
 
@@ -120,8 +118,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
                 ittemodosuArg.Move,
                 kaisi_Sky,//巻き戻しのとき
                 ittemodosuResult.Susunda_Sky_orNull,
-                out figFoodKoma,//変更される場合あり。
-                logTag
+                out figFoodKoma//変更される場合あり。
                 );
             ittemodosuResult.FigFoodKoma = figFoodKoma; //取られていた駒更新
 
@@ -193,8 +190,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
         /// <param name="ittemodosuReference"></param>
         /// <param name="logTag"></param>
         public static void Before2(
-            ref IttemodosuResult ittemodosuReference,
-            ILogTag logTag
+            ref IttemodosuResult ittemodosuReference
             )
         {
             Node<IMove, KyokumenWrapper> editNodeRef = ittemodosuReference.SyuryoNode_OrNull;
@@ -245,8 +241,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             out Finger figMovedKoma,
             IMove move,
             Playerside kaisi_tebanside,
-            SkyConst kaisi_Sky,
-            ILogTag logTag
+            SkyConst kaisi_Sky
             ,
             [CallerMemberName] string memberName = "",
             [CallerFilePath] string sourceFilePath = "",
@@ -339,8 +334,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             IMove move,
             SkyConst kaisi_Sky,//巻き戻しのとき
             SkyConst susunda_Sky_orNull,
-            out Finger out_figFoodKoma,
-            ILogTag logTag
+            out Finger out_figFoodKoma
         )
         {
             if (Komasyurui14.H00_Null___ != (Komasyurui14)move.FoodKomaSyurui)

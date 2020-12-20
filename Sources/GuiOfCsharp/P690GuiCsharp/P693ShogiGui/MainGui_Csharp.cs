@@ -33,29 +33,29 @@ namespace Grayscale.P693ShogiGui.I500Gui
         /// <summary>
         /// 手番が替わったときの挙動を、ここに書きます。
         /// </summary>
-        void ChangedTurn(ILogTag logTag);
+        void ChangedTurn();
 
         /// <summary>
         /// 将棋エンジンに、終了するように促します。
         /// </summary>
-        void Shutdown(ILogTag logTag);
+        void Shutdown();
 
 
         /// <summary>
         /// 将棋エンジンに、ログを出すように促します。
         /// </summary>
-        void Logdase(ILogTag logTag);
+        void Logdase();
 
 
         /// <summary>
         /// 将棋エンジンを起動します。
         /// </summary>
-        void Start_ShogiEngine(string shogiEngineFilePath, ILogTag logTag);
+        void Start_ShogiEngine(string shogiEngineFilePath);
 
         /// <summary>
         /// コンピューターの先手
         /// </summary>
-        void Do_ComputerSente(ILogTag logTag);
+        void Do_ComputerSente();
 
 
         RO_Star GetKoma(Finger finger);
@@ -101,7 +101,7 @@ namespace Grayscale.P693ShogiGui.I500Gui
         Timed TimedA { get; set; }
         Timed TimedB_MouseCapture { get; set; }
         Timed TimedC { get; set; }
-        void Timer_Tick(ILogTag logTag);
+        void Timer_Tick();
 
         RepaintRequest RepaintRequest { get; set; }
 
@@ -126,7 +126,7 @@ namespace Grayscale.P693ShogiGui.I500Gui
         void SetScene(SceneName scene);
 
 
-        void Response(string mutexString, ILogTag logTag);
+        void Response(string mutexString);
 
 
 

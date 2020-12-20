@@ -54,7 +54,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
         public Queue<MouseEventState> MouseEventQueue { get; set; }
 
 
-        public static void Check_MouseoverKomaKiki(object obj_shogiGui, Finger finger, ILogTag logTag)
+        public static void Check_MouseoverKomaKiki(object obj_shogiGui, Finger finger)
         {
             MainGui_Csharp shogiGui = (MainGui_Csharp)obj_shogiGui;
 
@@ -89,7 +89,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
         }
 
 
-        public override void Step(ILogTag logTag)
+        public override void Step()
         {
             // 入っているマウス操作イベントのうち、マウスムーブは　１つに　集約　します。
             bool bMouseMove_SceneB_1TumamitaiKoma = false;
@@ -114,7 +114,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                         //------------------------------
                                         // メナス
                                         //------------------------------
-                                        Util_Menace.Menace(this.mainGui, eventState.Flg_logTag);
+                                        Util_Menace.Menace(this.mainGui);
                                         #endregion
                                     }
                                     break;
@@ -184,7 +184,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                                 if (Okiba.ShogiBan == Conv_SyElement.ToOkiba(koma.Masu))
                                                 {
                                                     // マウスオーバーした駒の利き
-                                                    TimedB_MouseCapture.Check_MouseoverKomaKiki(mainGui, btnKoma.Koma, eventState.Flg_logTag);
+                                                    TimedB_MouseCapture.Check_MouseoverKomaKiki(mainGui, btnKoma.Koma);
 
 
                                                     break;
@@ -285,7 +285,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                                             mainGui
                                                            , widget
                                                            , btnKoma_Selected
-                                                           , eventState.Flg_logTag
+                                                           
                                                            );
                                                     }
                                                 }
@@ -298,7 +298,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                         //------------------------------
                                         // このメインパネルの反応
                                         //------------------------------
-                                        mainGui.Response("MouseOperation", eventState.Flg_logTag);
+                                        mainGui.Response("MouseOperation");
                                         #endregion
                                     }
                                     break;
@@ -430,7 +430,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                                     //------------------------------
                                                     if (!mainGui.Shape_PnlTaikyoku.Requested_NaruDialogToShow)
                                                     {
-                                                        mainGui.ChangedTurn(eventState.Flg_logTag);//マウス左ボタンを放したのでチェンジターンします。
+                                                        mainGui.ChangedTurn();//マウス左ボタンを放したのでチェンジターンします。
                                                     }
 
                                                     mainGui.RepaintRequest.SyuturyokuRequest = RepaintRequestGedanTxt.Kifu;
@@ -460,7 +460,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                         //------------------------------
                                         // このメインパネルの反応
                                         //------------------------------
-                                        mainGui.Response("MouseOperation", eventState.Flg_logTag);
+                                        mainGui.Response("MouseOperation");
 
                                         #endregion
                                     }
@@ -579,7 +579,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                                         if (!mainGui.Shape_PnlTaikyoku.Requested_NaruDialogToShow)
                                                         {
                                                             //System.C onsole.WriteLine("マウス左ボタンを放したのでチェンジターンします。");
-                                                            mainGui.ChangedTurn(eventState.Flg_logTag);//マウス左ボタンを放したのでチェンジターンします。
+                                                            mainGui.ChangedTurn();//マウス左ボタンを放したのでチェンジターンします。
                                                         }
 
                                                         mainGui.RepaintRequest.SyuturyokuRequest = RepaintRequestGedanTxt.Kifu;
@@ -595,7 +595,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                         //------------------------------
                                         // このメインパネルの反応
                                         //------------------------------
-                                        mainGui.Response("MouseOperation", eventState.Flg_logTag);
+                                        mainGui.Response("MouseOperation");
                                         #endregion
                                     }
                                     break;
@@ -748,7 +748,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                                     // ServerからGuiへ渡す情報
                                                     bool torareruKomaAri;
                                                     RO_Star koma_Food_after;
-                                                    Util_Functions_Server.Komamove1a_50Srv(out torareruKomaAri, out koma_Food_after, dst, btnTumandeiruKoma.Koma, Util_Starlightable.AsKoma(dst.Now), mainGui.Model_Manual, eventState.Flg_logTag);
+                                                    Util_Functions_Server.Komamove1a_50Srv(out torareruKomaAri, out koma_Food_after, dst, btnTumandeiruKoma.Koma, Util_Starlightable.AsKoma(dst.Now), mainGui.Model_Manual);
 
                                                     Util_Function_Csharp.Komamove1a_51Gui(torareruKomaAri, koma_Food_after, mainGui);
                                                 }
@@ -813,7 +813,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                                             mainGui
                                                            , widget
                                                            , btnKoma_Selected
-                                                           , eventState.Flg_logTag
+                                                           
                                                            );
                                                     }
                                                 }
@@ -826,7 +826,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                         //------------------------------
                                         // このメインパネルの反応
                                         //------------------------------
-                                        mainGui.Response("MouseOperation", eventState.Flg_logTag);
+                                        mainGui.Response("MouseOperation");
                                         #endregion
                                     }
                                     break;
@@ -847,7 +847,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                         //------------------------------
                                         // このメインパネルの反応
                                         //------------------------------
-                                        mainGui.Response("MouseOperation", eventState.Flg_logTag);
+                                        mainGui.Response("MouseOperation");
                                         #endregion
                                     }
                                     break;
@@ -891,7 +891,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                                         mainGui
                                                        , widget
                                                        , btnKoma_Selected
-                                                       , eventState.Flg_logTag
+                                                       
                                                        );
                                                 }
                                             }
@@ -917,7 +917,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                                             mainGui
                                                            , widget
                                                            , btnKoma_Selected
-                                                           , eventState.Flg_logTag
+                                                           
                                                            );
                                                     }
                                                 }
@@ -930,7 +930,7 @@ namespace Grayscale.P693ShogiGui.L250Timed
                                         //------------------------------
                                         // このメインパネルの反応
                                         //------------------------------
-                                        mainGui.Response("MouseOperation", eventState.Flg_logTag);
+                                        mainGui.Response("MouseOperation");
                                         #endregion
                                     }
                                     break;

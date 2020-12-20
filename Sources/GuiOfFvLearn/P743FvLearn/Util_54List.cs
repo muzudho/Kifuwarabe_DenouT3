@@ -36,7 +36,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
     public class Util_54List
     {
 
-        private static void Panic1(RO_Star koma, ILogTag logTag)
+        private static void Panic1(RO_Star koma)
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Util_54List#Error1：２駒関係FVの配列添え字がわからないぜ☆！処理は続けられない。");
@@ -54,7 +54,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
         /// 盤上の40駒リスト。
         /// 駒台の14駒リスト。
         /// </summary>
-        public static N54List Calc_54List(SkyConst src_Sky, ILogTag logTag)
+        public static N54List Calc_54List(SkyConst src_Sky)
         {
             N54List result_n54List = new N54ListImpl();
 
@@ -83,7 +83,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
                     if (FeatureVectorImpl.CHOSA_KOMOKU_ERROR == pIndex)
                     {
                         // p1 がエラーでは、処理は続けられない。
-                        Util_54List.Panic1(koma, logTag);
+                        Util_54List.Panic1(koma);
                         goto gt_NextLoop_player1;
                     }
 
@@ -109,7 +109,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
                     if (FeatureVectorImpl.CHOSA_KOMOKU_ERROR == pIndex)
                     {
                         // p1 がエラーでは、処理は続けられない。
-                        Util_54List.Panic1(koma, logTag);
+                        Util_54List.Panic1(koma);
                         goto gt_NextLoop_player1;
                     }
 

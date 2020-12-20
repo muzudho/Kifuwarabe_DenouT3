@@ -61,7 +61,7 @@ namespace Grayscale.P743FvLearn.L470StartZero
         /// </summary>
         public static void Adjust_HirateSyokiKyokumen_0ten_AndFvParamRange(
             ref bool ref_isRequestDoEvents,
-            FeatureVector fv, ILogTag logTag)
+            FeatureVector fv)
         {
             if (null == Util_StartZero.src_Sky_hirateSyokikyokumen)
             {
@@ -77,7 +77,7 @@ namespace Grayscale.P743FvLearn.L470StartZero
                 //----------------------------------------
                 // ４０枚の駒、または１４種類の持駒。多くても５４要素。
                 //----------------------------------------
-                Util_StartZero.n54List_hirateSyokikyokumen = Util_54List.Calc_54List(Util_StartZero.src_Sky_hirateSyokikyokumen, logTag);
+                Util_StartZero.n54List_hirateSyokikyokumen = Util_54List.Calc_54List(Util_StartZero.src_Sky_hirateSyokikyokumen);
             }
 
             Hyokakansu_NikomaKankeiPp kansu = new Hyokakansu_NikomaKankeiPp();
@@ -135,10 +135,10 @@ namespace Grayscale.P743FvLearn.L470StartZero
 
                 int changedCells;
                 Util_FvScoreing.Fill54x54_Add(out changedCells, chosei_offset, src_Sky_hirateSyokikyokumen, fv,
-                    Util_StartZero.n54List_hirateSyokikyokumen, logTag);
+                    Util_StartZero.n54List_hirateSyokikyokumen);
 
                 // 順位を、点数に変換します。
-                Util_Zooming.ZoomTo_FvParamRange(fv, logTag);
+                Util_Zooming.ZoomTo_FvParamRange(fv);
 
                 // フォームの更新を要求します。
                 ref_isRequestDoEvents = true;

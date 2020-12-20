@@ -47,7 +47,7 @@ namespace Grayscale.P481AimsServer.L500Server
         {
         }
 
-        public void AtBody(ILogTag logTag)
+        public void AtBody()
         {
             PhaseResult_AimsServer phaseResult = PhaseResult_AimsServer.None;
 
@@ -121,7 +121,7 @@ namespace Grayscale.P481AimsServer.L500Server
 
                                 // 将棋エンジンに usi コマンドを送るぜ☆
                                 //MessageBox.Show("サーバー「このあと、将棋エンジンにusiコマンドを送るぜ☆」");
-                                this.EngineClient.ShogiEngineProcessWrapper.Send_Usi(logTag);
+                                this.EngineClient.ShogiEngineProcessWrapper.Send_Usi();
                             }
                             else
                             {
@@ -154,15 +154,15 @@ namespace Grayscale.P481AimsServer.L500Server
                                 //------------------------------------------------------------
 
                                 // 将棋エンジンへ：　「私は将棋サーバーですが、USIプロトコルのponderコマンドには対応していませんので、送ってこないでください」
-                                this.EngineClient.ShogiEngineProcessWrapper.Send_Setoption("setoption name USI_Ponder value false",logTag);
+                                this.EngineClient.ShogiEngineProcessWrapper.Send_Setoption("setoption name USI_Ponder value false");
 
                                 // 将棋エンジンへ：　「私は将棋サーバーです。noop コマンドを送ってくれば、すぐに ok コマンドを返します。1分間を空けてください」
-                                this.EngineClient.ShogiEngineProcessWrapper.Send_Setoption("setoption name noopable value true",logTag);
+                                this.EngineClient.ShogiEngineProcessWrapper.Send_Setoption("setoption name noopable value true");
 
                                 //------------------------------------------------------------
                                 // 将棋エンジンへ：　「準備はいいですか？」
                                 //------------------------------------------------------------
-                                this.EngineClient.ShogiEngineProcessWrapper.Send_Isready(logTag);
+                                this.EngineClient.ShogiEngineProcessWrapper.Send_Isready();
 
                             }
                         }

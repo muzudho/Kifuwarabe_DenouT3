@@ -18,8 +18,7 @@ namespace Grayscale.P355_KifuParserA.I500Parser
         string Execute_Step(
             ref KifuParserA_Result result,
             Model_Taikyoku model_Taikyoku,
-            KifuParserA_Genjo genjo,
-            ILogTag logTag
+            KifuParserA_Genjo genjo
             ,
             [CallerMemberName] string memberName = "",
             [CallerFilePath] string sourceFilePath = "",
@@ -35,8 +34,7 @@ namespace Grayscale.P355_KifuParserA.I500Parser
         void Execute_All(
             ref KifuParserA_Result result,
             Model_Taikyoku model_Taikyoku,
-            KifuParserA_Genjo genjo,
-            ILogTag logTag
+            KifuParserA_Genjo genjo
             ,
             [CallerMemberName] string memberName = "",
             [CallerFilePath] string sourceFilePath = "",

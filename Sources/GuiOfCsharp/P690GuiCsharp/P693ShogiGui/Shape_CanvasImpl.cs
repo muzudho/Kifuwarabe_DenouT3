@@ -34,8 +34,7 @@ namespace Grayscale.P693ShogiGui.L081Canvas
             object sender,
             PaintEventArgs e,
             MainGui_Csharp shogibanGui,
-            string windowName,
-            ILogTag logTag
+            string windowName
             )
         {
             //----------------------------------------

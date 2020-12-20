@@ -47,15 +47,14 @@ namespace Grayscale.P339ConvKyokume.L500Converter
             string strNari, //+
             out IMove move,
             KifuTree kifu,
-            string hint,
-            ILogTag logTag
+            string hint
             )
         {
             move = Util_Sky258A.NullObjectMove;
 
             Node<IMove, KyokumenWrapper> siteiNode = kifu.CurNode;
             SkyConst src_Sky = siteiNode.Value.KyokumenConst;
-            //kifu.AssertPside(kifu.CurNode, "str1=" + str1, logTag);
+            //kifu.AssertPside(kifu.CurNode, "str1=" + str1);
             Playerside pside1 = src_Sky.KaisiPside;
 
 #if DEBUG

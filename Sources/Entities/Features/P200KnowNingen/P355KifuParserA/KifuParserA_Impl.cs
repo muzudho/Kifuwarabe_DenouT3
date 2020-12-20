@@ -33,8 +33,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
         public string Execute_Step(
             ref KifuParserA_Result result,
             Model_Taikyoku model_Taikyoku,
-            KifuParserA_Genjo genjo,
-            ILogTag logTag
+            KifuParserA_Genjo genjo
             ,
             [CallerMemberName] string memberName = "",
             [CallerFilePath] string sourceFilePath = "",
@@ -53,7 +52,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                 ref result,
                 model_Taikyoku,
                 out nextState, this,
-                genjo, logTag);
+                genjo);
             this.State = nextState;
 
             return genjo.InputLine;
@@ -68,8 +67,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
         public void Execute_All(
             ref KifuParserA_Result result,
             Model_Taikyoku model_Taikyoku,
-            KifuParserA_Genjo genjo,
-            ILogTag logTag
+            KifuParserA_Genjo genjo
             ,
             [CallerMemberName] string memberName = "",
             [CallerFilePath] string sourceFilePath = "",
@@ -100,7 +98,7 @@ namespace Grayscale.P355_KifuParserA.L500Parser
                     ref result,
                     model_Taikyoku,
                     out nextState, this,
-                    genjo, logTag);
+                    genjo);
                 this.State = nextState;
 
             gt_NextLoop1:

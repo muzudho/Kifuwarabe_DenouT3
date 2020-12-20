@@ -28,8 +28,7 @@ namespace Grayscale.P341Ittesasu.L500UtilA
             Komasyurui14 syurui,
             SySet<SyElement> srcAll,
             SkyConst src_Sky,//KifuTree kifu,
-            out Finger foundKoma,
-            ILogTag logTag
+            out Finger foundKoma
             )
         {
             //SkyConst src_Sky = kifu.CurNode.Value.ToKyokumenConst;

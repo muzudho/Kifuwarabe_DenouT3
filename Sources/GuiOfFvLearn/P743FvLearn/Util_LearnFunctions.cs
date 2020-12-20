@@ -24,12 +24,12 @@ namespace Grayscale.P743FvLearn.L480Functions
         /// <summary>
         /// FVを、-999.0～999.0(*bairitu)に矯正。
         /// </summary>
-        public static void FvParamRange_PP(FeatureVector fv, ILogTag logTag)
+        public static void FvParamRange_PP(FeatureVector fv)
         {
             //--------------------------------------------------------------------------------
             // 変換前のデータを確認。 
             //--------------------------------------------------------------------------------
-            Util_Inspection.Inspection1(fv, logTag);
+            Util_Inspection.Inspection1(fv);
 
             //--------------------------------------------------------------------------------
             // 点数を、順位に変換します。
@@ -39,14 +39,14 @@ namespace Grayscale.P743FvLearn.L480Functions
             //--------------------------------------------------------------------------------
             // トポロジー的に加工したあとのデータを確認。 
             //--------------------------------------------------------------------------------
-            Util_Zooming.ZoomTo_FvParamRange(fv, logTag);
+            Util_Zooming.ZoomTo_FvParamRange(fv);
 
         }
         /// <summary>
         /// FVの保存。
         /// </summary>
         /// <param name="uc_Main"></param>
-        public static void Do_Save(Uc_Main uc_Main, ILogTag logTag)
+        public static void Do_Save(Uc_Main uc_Main)
         {
             FeatureVector fv = uc_Main.LearningData.Fv;
 
@@ -131,7 +131,7 @@ namespace Grayscale.P743FvLearn.L480Functions
             //----------------------------------------
             // -999～999 に調整
             //----------------------------------------
-            Util_LearnFunctions.FvParamRange_PP(uc_Main.LearningData.Fv, logTag);// 自動で -999～999(*bairitu) に矯正。
+            Util_LearnFunctions.FvParamRange_PP(uc_Main.LearningData.Fv);// 自動で -999～999(*bairitu) に矯正。
 
 
             // 駒割
@@ -156,8 +156,6 @@ namespace Grayscale.P743FvLearn.L480Functions
         /// </summary>
         public static void Do_RankUpHonpu(ref bool ref_isRequestShowGohosyu, Uc_Main uc_Main, string sfenMoveStr, float tyoseiryo)
         {
-            ILogTag logTag = LogTags.Learner;
-
             //----------------------------------------
             // 1P は正の数がグッド、2P は負の数がグッド。
             //----------------------------------------
@@ -182,7 +180,7 @@ namespace Grayscale.P743FvLearn.L480Functions
                 }
 
                 // 盤上の駒、持駒を数えます。
-                N54List childNode_n54List = Util_54List.Calc_54List(node.Value.KyokumenConst, logTag);
+                N54List childNode_n54List = Util_54List.Calc_54List(node.Value.KyokumenConst);
 
                 float real_tyoseiryo; //実際に調整した量。
                 Util_FvScoreing.UpdateKyokumenHyoka(
@@ -190,8 +188,7 @@ namespace Grayscale.P743FvLearn.L480Functions
                     node.Value.KyokumenConst,
                     uc_Main.LearningData.Fv,
                     tyoseiryo_bad,
-                    out real_tyoseiryo,
-                    logTag
+                    out real_tyoseiryo
                     );//相手が有利になる点
                 tyoseiryo_good += -real_tyoseiryo;
             gt_NextLoop1:
@@ -204,7 +201,7 @@ namespace Grayscale.P743FvLearn.L480Functions
             if (uc_Main.LearningData.Kifu.CurNode.HasChildNode(sfenMoveStr))
             {
                 // 盤上の駒、持駒を数えます。
-                N54List currentNode_n54List = Util_54List.Calc_54List(uc_Main.LearningData.Kifu.CurNode.Value.KyokumenConst, logTag);
+                N54List currentNode_n54List = Util_54List.Calc_54List(uc_Main.LearningData.Kifu.CurNode.Value.KyokumenConst);
 
                 float real_tyoseiryo; //実際に調整した量。
                 Util_FvScoreing.UpdateKyokumenHyoka(
@@ -212,8 +209,7 @@ namespace Grayscale.P743FvLearn.L480Functions
                     uc_Main.LearningData.Kifu.CurNode.GetChildNode(sfenMoveStr).Value.KyokumenConst,
                     uc_Main.LearningData.Fv,
                     tyoseiryo_good,
-                    out real_tyoseiryo,
-                    logTag
+                    out real_tyoseiryo
                     );//自分が有利になる点
             }
             else
@@ -227,7 +223,7 @@ namespace Grayscale.P743FvLearn.L480Functions
             ////----------------------------------------
             //// 合法手一覧を作成したい。
             ////----------------------------------------
-            //uc_Main.LearningData.Aa_Yomi(uc_Main.LearningData.Kifu.CurNode.Key, logTag);
+            //uc_Main.LearningData.Aa_Yomi(uc_Main.LearningData.Kifu.CurNode.Key);
 
             // 局面の合法手表示の更新を要求します。
             ref_isRequestShowGohosyu = true;
