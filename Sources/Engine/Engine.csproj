@@ -97,9 +97,7 @@
     <Compile Include="Features\NoopPhase.cs" />
     <Compile Include="Features\NoopTimerImpl.cs" />
     <Compile Include="Features\PhaseResult_UsiLoop1.cs" />
-    <Compile Include="UsiLoop2.cs" />
     <Compile Include="Features\PhaseResult_UsiLoop2.cs" />
-    <Compile Include="ProgramSupport.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

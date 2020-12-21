@@ -178,10 +178,5 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
         gt_EndLoop:
             ;
         }
-
-        public void AtEnd()
-        {
-        }
-
     }
 }

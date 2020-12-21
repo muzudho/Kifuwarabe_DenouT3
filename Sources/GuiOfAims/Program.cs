@@ -52,7 +52,6 @@ namespace Grayscale.Kifuwarakaku.CliOfAims
 
             aimsServer.AtBegin();
             aimsServer.AtBody();
-            aimsServer.AtEnd();
         }
     }
 }

@@ -32,12 +32,12 @@ namespace Grayscale.Kifuwarakaku.Engine.Features
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="isTimeoutShutdown"></param>
-        public void _02_AtEmptyMessage(ShogiEngine owner, out bool isTimeoutShutdown)
+        public void _02_AtEmptyMessage(Playing playing, out bool isTimeoutShutdown)
         {
             isTimeoutShutdown = false;
             //logTag.Logger.WriteLineAddMemo("メッセージは届いていませんでした。this.sw_forNoop.Elapsed.Seconds=[" + this.sw_forNoop.Elapsed.Seconds + "]");
 
-            if (owner.Option_enable_serverNoopable && 10 < this.sw_forNoop.Elapsed.Seconds)//0 < this.sw_forNoop.Elapsed.Se.Minutes
+            if (playing.Option_enable_serverNoopable && 10 < this.sw_forNoop.Elapsed.Seconds)//0 < this.sw_forNoop.Elapsed.Se.Minutes
             {
                 // 1分以上、サーバーからメッセージが届いていない場合。
                 switch (this.noopPhase)
@@ -74,7 +74,7 @@ namespace Grayscale.Kifuwarakaku.Engine.Features
         /// <summary>
         /// 応答があったとき。
         /// </summary>
-        public void _03_AtResponsed(ShogiEngine owner, string command)
+        public void _03_AtResponsed(string command)
         {
             //System.Windows.Forms.MessageBox.Show("メッセージが届いています [" + line + "]");
 

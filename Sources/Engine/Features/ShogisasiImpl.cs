@@ -33,9 +33,6 @@ using System.Collections.Generic;
     /// </summary>
     public class ShogisasiImpl : Shogisasi
     {
-        private ShogiEngine Owner { get { return this.owner; } }
-        private ShogiEngine owner;
-
         /// <summary>
         /// 枝狩りエンジン。
         /// </summary>
@@ -46,9 +43,8 @@ using System.Collections.Generic;
         /// </summary>
         public FeatureVector FeatureVector { get; set; }
 
-        public ShogisasiImpl(ShogiEngine owner)
+        public ShogisasiImpl()
         {
-            this.owner = owner;
             this.EdagariEngine = new ScoreSiboriEngine();
 
             this.FeatureVector = new FeatureVectorImpl();
