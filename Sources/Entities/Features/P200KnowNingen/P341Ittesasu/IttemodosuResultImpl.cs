@@ -1,8 +1,8 @@
-﻿using Grayscale.P213Komasyurui.L250Word;
-using Grayscale.P218Starlight.I500Struct;
-using Grayscale.P224Sky.L500Struct;
-using Grayscale.P226Tree.I500Struct;
-using Grayscale.P247KyokumenWra.L500Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P341Ittesasu.I250OperationA;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Grayscale.P149_Form_______
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public partial class Form1 : Form
     {

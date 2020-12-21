@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using Grayscale.Kifuwarakaku.Entities.Logging;
 
-namespace Grayscale.P140KifuSfen
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class SfenMovesTextConv
     {

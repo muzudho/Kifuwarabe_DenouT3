@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P571KifuWarabe.L125AjimiEngine
+namespace Grayscale.Kifuwarakaku.Engine.Features
 {
     public enum Result_KingState
     {

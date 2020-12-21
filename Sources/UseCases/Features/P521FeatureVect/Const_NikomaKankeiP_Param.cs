@@ -1,4 +1,4 @@
-﻿using Grayscale.P061ConstShogi_.L250Const;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 
 namespace Grayscale.P521FeatureVect.I500Struct
 {

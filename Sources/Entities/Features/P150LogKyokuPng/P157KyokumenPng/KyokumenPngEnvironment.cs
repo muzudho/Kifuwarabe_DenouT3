@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P157KyokumenPng.I500Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public interface KyokumenPngEnvironment
     {

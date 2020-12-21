@@ -1,7 +1,7 @@
-﻿using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P218Starlight.I500Struct;
-using Grayscale.P226Tree.I500Struct;
-using Grayscale.P247KyokumenWra.L500Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P323Sennitite.I500Struct;
 
 

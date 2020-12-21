@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace Grayscale.P011Csv.L250Parser
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     /// <summary>
     /// CSVの１行分のパーサー。

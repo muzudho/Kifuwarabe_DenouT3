@@ -1,6 +1,6 @@
-﻿using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P212ConvPside.L500Converter;
-using Grayscale.P214Masu.L500Util;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System;
 
 namespace Grayscale.P531Hyokakansu.L490UtilSokutei

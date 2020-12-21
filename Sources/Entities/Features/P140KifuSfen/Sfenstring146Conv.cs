@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace Grayscale.P140KifuSfen
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Sfenstring146Conv
     {

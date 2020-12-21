@@ -1,6 +1,6 @@
-﻿using Grayscale.P209KifuJsa.L500Word;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 
-namespace Grayscale.P239ConvWords.L500Converter
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Conv_AgaruHiku
     {

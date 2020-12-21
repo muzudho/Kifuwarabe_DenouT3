@@ -1,5 +1,5 @@
-﻿using Grayscale.P157KyokumenPng.I500Struct;
-using Grayscale.P222LogKaisetu.L250Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P323Sennitite.I500Struct;
 using Grayscale.P521FeatureVect.I500Struct;
 using Grayscale.P542Scoreing.L240Shogisasi;

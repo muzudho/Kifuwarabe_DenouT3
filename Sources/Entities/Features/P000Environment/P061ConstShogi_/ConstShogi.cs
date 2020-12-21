@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P061ConstShogi_.L250Const
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class ConstShogi
     {

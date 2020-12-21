@@ -6,7 +6,7 @@ using Nett;
 #endif
 
 
-namespace Grayscale.P202GraphicLog.L500Util
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Util_GraphicalLog
     {

@@ -2,14 +2,14 @@
 {
     using System;
     using System.IO;
-    using Grayscale.P211WordShogi.L250Masu;
-    using Grayscale.P211WordShogi.L500Word;
-    using Grayscale.P213Komasyurui.L250Word;
-    using Grayscale.P224Sky.L500Struct;
-    using Grayscale.P238Seiza.L250Struct;
-    using Grayscale.P247KyokumenWra.L500Struct;
-    using Grayscale.P256SeizaFinger.L250Struct;
-    using Grayscale.P258UtilSky258.L500UtilSky;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.P324KifuTree.I250Struct;
     using Grayscale.P324KifuTree.L250Struct;
     using Grayscale.P461Server.L250Util;

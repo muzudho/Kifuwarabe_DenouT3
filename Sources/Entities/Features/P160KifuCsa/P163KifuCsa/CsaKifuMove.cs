@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P163KifuCsa.I250Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public interface CsaKifuMove
     {

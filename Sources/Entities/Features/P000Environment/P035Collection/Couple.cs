@@ -1,4 +1,4 @@
-﻿namespace Grayscale.P035Collection.L500Struct
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>

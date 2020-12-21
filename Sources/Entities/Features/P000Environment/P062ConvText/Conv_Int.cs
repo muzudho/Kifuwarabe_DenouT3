@@ -1,8 +1,8 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P062ConvText.L250Const;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System;
 
-namespace Grayscale.P062ConvText.L500Converter
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Conv_Int
     {

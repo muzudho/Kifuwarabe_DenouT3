@@ -3,8 +3,8 @@
     using System.Collections.Generic;
     using System.Drawing;
     using System.Text;
-    using Grayscale.P011Csv.L500Util;
-    using Grayscale.P211WordShogi.L500Word;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
 
     /// <summary>
     /// ファイル１つにつき、１インスタンス作成？

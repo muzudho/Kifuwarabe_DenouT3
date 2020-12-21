@@ -1,6 +1,6 @@
-﻿using Grayscale.P211WordShogi.L500Word;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 
-namespace Grayscale.P214Masu.L500Util
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Util_Muki
     {

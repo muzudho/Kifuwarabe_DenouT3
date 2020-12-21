@@ -1,6 +1,6 @@
-﻿using Grayscale.P157KyokumenPng.I500Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 
-namespace Grayscale.P157KyokumenPng.L500Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public class KyokumenPngEnvironmentImpl : KyokumenPngEnvironment
     {

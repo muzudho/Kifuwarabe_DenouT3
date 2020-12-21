@@ -1,16 +1,16 @@
 ﻿using System;
 using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P209KifuJsa.L500Word;
-using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P215KomanoKidou.L500Struct;
-using Grayscale.P218Starlight.I500Struct;
-using Grayscale.P224Sky.L500Struct;
-using Grayscale.P234Komahaiyaku.L500Util;
-using Grayscale.P238Seiza.L250Struct;
-using Grayscale.P238Seiza.L500Util;
-using Grayscale.P247KyokumenWra.L500Struct;
-using Grayscale.P258UtilSky258.L500UtilSky;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P292JsaFugo.L250Struct;
 
 namespace Grayscale.P295_JsaFugoWrit.L500Writer

@@ -1,8 +1,8 @@
-﻿using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P218Starlight.I500Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System.Collections.Generic;
 
-namespace Grayscale.P222LogKaisetu.L250Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>

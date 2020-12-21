@@ -1,24 +1,24 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
-using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P056Syugoron.L250Struct;
-using Grayscale.P211WordShogi.L260Operator;
-using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P212ConvPside.L500Converter;
-using Grayscale.P213Komasyurui.L250Word;
-using Grayscale.P213Komasyurui.L500Util;
-using Grayscale.P214Masu.L500Util;
-using Grayscale.P218Starlight.I500Struct;
-using Grayscale.P224Sky.L500Struct;
-using Grayscale.P226Tree.I500Struct;
-using Grayscale.P238Seiza.L250Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
 #if DEBUG
-    using Grayscale.P238Seiza.L500Util;
-    using Grayscale.P239ConvWords.L500Converter;
-    using Grayscale.P247KyokumenWra.L500Struct;
-    using Grayscale.P258UtilSky258.L500UtilSky;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.P324KifuTree.I250Struct;
     using Grayscale.P324KifuTree.L250Struct;
     using Grayscale.P339ConvKyokume.L500Converter;
@@ -26,10 +26,10 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
     using System.Windows.Forms;
 #else
-    using Grayscale.P238Seiza.L500Util;
-    using Grayscale.P239ConvWords.L500Converter;
-    using Grayscale.P247KyokumenWra.L500Struct;
-    using Grayscale.P258UtilSky258.L500UtilSky;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.P324KifuTree.I250Struct;
     using Grayscale.P324KifuTree.L250Struct;
     using Grayscale.P339ConvKyokume.L500Converter;

@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P226Tree.I500Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>

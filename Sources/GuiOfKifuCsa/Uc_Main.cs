@@ -1,6 +1,6 @@
-﻿using Grayscale.P163KifuCsa.I250Struct;
-using Grayscale.P163KifuCsa.L250Struct;
-using Grayscale.P163KifuCsa.L500Writer;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System;
 using System.IO;
 using System.Windows.Forms;

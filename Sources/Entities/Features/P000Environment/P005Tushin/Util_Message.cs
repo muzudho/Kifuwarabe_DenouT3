@@ -2,7 +2,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace Grayscale.P005Tushin.L500Util
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
 

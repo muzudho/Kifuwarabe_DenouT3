@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P218Starlight.I500Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>

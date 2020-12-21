@@ -1,4 +1,4 @@
-﻿using Grayscale.P062ConvText.L500Converter;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 using System.Collections.Generic;
 using System.Text;
 

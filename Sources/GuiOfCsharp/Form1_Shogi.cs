@@ -1,10 +1,9 @@
-﻿using System;
-using System.Reflection;
-using System.Windows.Forms;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-
-namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
+﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
+    using System;
+    using System.Reflection;
+    using System.Windows.Forms;
+
     [Serializable]
     public partial class Form1_Shogi : Form, Form1_Shogiable
     {
@@ -39,7 +38,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
         {
             this.owner = owner;
             InitializeComponent();
-            this.uc_Form1Main.SetMainGui( this.owner);
+            this.uc_Form1Main.SetMainGui(this.owner);
 
             //----------------------------------------
             // 別窓を開きます。
@@ -67,7 +66,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
             Version version = Assembly.GetExecutingAssembly().GetName().Version;
             this.Text = String.Format("{0} {1}.{2}.{3}", this.Text, version.Major, version.Minor.ToString("00"), version.Build);
 
-            if(null!=this.Delegate_Form1_Load)
+            if (null != this.Delegate_Form1_Load)
             {
                 this.Delegate_Form1_Load(this.Uc_Form1Main.MainGui, sender, e);
             }

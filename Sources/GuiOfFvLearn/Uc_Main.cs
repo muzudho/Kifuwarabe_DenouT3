@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P031Random.L500Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P743FvLearn.I250Learn;
 using Grayscale.P743FvLearn.I450Tyoseiryo;
 using Grayscale.P743FvLearn.I490StopLearning;

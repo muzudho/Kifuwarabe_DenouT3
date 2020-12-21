@@ -1,20 +1,20 @@
 ﻿#if DEBUG
     using Grayscale.Kifuwarakaku.Entities.Logger;
-using Grayscale.P035Collection.L500Struct;
-using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P157KyokumenPng.I500Struct;
-using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P218Starlight.I500Struct;
-using Grayscale.P222LogKaisetu.L250Struct;
-using Grayscale.P226Tree.I500Struct;
-using Grayscale.P247KyokumenWra.L500Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P266KyokumMoves.L500Util;
 using Grayscale.P324KifuTree.I250Struct;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 using Grayscale.P266KyokumMoves.L250Log;
 
-namespace Grayscale.P542Scoreing.L061Util
+namespace Grayscale.Kifuwarakaku.Engine.Features
 {
     public abstract class Util_LogBuilder510
     {

@@ -1,16 +1,16 @@
-﻿using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P211WordShogi.L250Masu;
-using Grayscale.P213Komasyurui.L250Word;
-using Grayscale.P223TedokuHisto.I250Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System.Collections.Generic;
 
 #if DEBUG
-using Grayscale.P223TedokuHisto.L240Util;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Nett;
 using System.IO;
 #endif
 
-namespace Grayscale.P223TedokuHisto.L250Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     /// <summary>
     /// 手得ヒストリー

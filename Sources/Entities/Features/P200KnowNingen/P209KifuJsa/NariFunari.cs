@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P209KifuJsa.L500Word
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>

@@ -1,13 +1,13 @@
-﻿using Grayscale.P011Csv.L500Util;
-using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P213Komasyurui.L250Word;
-using Grayscale.P234Komahaiyaku.L250Word;
-using Grayscale.P234Komahaiyaku.L500Util;
-using Grayscale.P248Michi.L500Word;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Grayscale.P250KomahaiyaEx.L500Util
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Util_Array_KomahaiyakuEx184
     {

@@ -1,4 +1,4 @@
-﻿using Grayscale.P031Random.L500Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 using NLua;
 using System;
 using System.IO;

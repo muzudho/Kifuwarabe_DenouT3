@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Text;
 
-
-namespace Grayscale.P760_SigmoidTest
+namespace Grayscale.Kifuwarakaku.CliOfSigmoidTest
 {
     class Program
     {
@@ -99,7 +98,7 @@ namespace Grayscale.P760_SigmoidTest
 
         static void Display(float value_diff)
         {
-            string predi = string.Format("{0:0.00}", func(value_diff) );
+            string predi = string.Format("{0:0.00}", func(value_diff));
             string dLv = string.Format("{0:0.0}", dfunc(value_diff) * 1000);
             float d;
             float.TryParse(dLv, out d);
@@ -107,8 +106,8 @@ namespace Grayscale.P760_SigmoidTest
             //sb.Append("変化の本譜との誤差" + string.Format("{0,6:0.0}", value) + "→(※Ａ)→約" + level + "(※Ｂ)");
             sb.Append("評価値の差" + string.Format("{0,6:0.0}", value_diff) + "→(※Ａ)→約" + dLv + "(※Ｂ)p=" + predi);
 
-            int max = (int)(d*10.0/2);
-            for (int i = 0; i < max;i++ )
+            int max = (int)(d * 10.0 / 2);
+            for (int i = 0; i < max; i++)
             {
                 sb.Append(".");
             }
@@ -133,7 +132,7 @@ namespace Grayscale.P760_SigmoidTest
             if (x < -FV_WINDOW) { x = -FV_WINDOW; }
             else if (x > FV_WINDOW) { x = FV_WINDOW; }
 
-            d = 1.0f / (1.0f+(float)Math.Exp(-x/delta));
+            d = 1.0f / (1.0f + (float)Math.Exp(-x / delta));
 
             return d;
         }
@@ -152,7 +151,7 @@ namespace Grayscale.P760_SigmoidTest
             else if (x >= FV_WINDOW) { dret = 0.0f; }
             else
             {
-                dn = (float)Math.Exp(-x/delta);
+                dn = (float)Math.Exp(-x / delta);
                 dtemp = dn + 1.0f;
                 dd = delta * dtemp * dtemp;
                 dret = dn / dd;

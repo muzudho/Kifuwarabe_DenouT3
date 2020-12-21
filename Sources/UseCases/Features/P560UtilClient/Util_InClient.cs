@@ -1,7 +1,7 @@
 ﻿    using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P140KifuSfen;
-using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P224Sky.L500Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P307UtilSky.L500Util;
 using Grayscale.P324KifuTree.L250Struct;
 using Grayscale.P325PnlTaikyoku.I250Struct;

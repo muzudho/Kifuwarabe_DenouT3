@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P234Komahaiyaku.L250Word
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
 

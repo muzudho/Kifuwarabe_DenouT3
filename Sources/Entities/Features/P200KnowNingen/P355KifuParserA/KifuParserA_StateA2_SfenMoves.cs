@@ -1,10 +1,10 @@
 ﻿using System;
 using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P140KifuSfen;
-using Grayscale.P213Komasyurui.L250Word;
-using Grayscale.P218Starlight.I500Struct;
-using Grayscale.P224Sky.L500Struct;
-using Grayscale.P258UtilSky258.L500UtilSky;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P325PnlTaikyoku.I250Struct;
 using Grayscale.P339ConvKyokume.L500Converter;
 using Grayscale.P341Ittesasu.I250OperationA;

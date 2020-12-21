@@ -1,8 +1,8 @@
-﻿using Grayscale.P206Json.I500Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Grayscale.P206Json.L500Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public class Json_Obj : Json_Val
     {

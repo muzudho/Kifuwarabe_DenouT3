@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P571KifuWarabe.L249Noop
+namespace Grayscale.Kifuwarakaku.Engine.Features
 {
     enum NoopPhase
     {

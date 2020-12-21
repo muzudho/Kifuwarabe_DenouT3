@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P140KifuSfen {
+namespace Grayscale.Kifuwarakaku.Entities.Features {
 
     /// <summary>
     /// テーブル形式の局面データ。

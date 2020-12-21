@@ -1,9 +1,9 @@
 ﻿    using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P011Csv.L500Util;
-using Grayscale.P061ConstShogi_.L250Const;
-using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P213Komasyurui.L250Word;
-using Grayscale.P214Masu.L500Util;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
 using Grayscale.P521FeatureVect.L500Struct;
 using Grayscale.P522ConvFvKoumoku.L500Converter;

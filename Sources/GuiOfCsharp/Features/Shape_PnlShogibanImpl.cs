@@ -2,11 +2,11 @@
 {
     using System.Collections.Generic;
     using System.Drawing;
-    using Grayscale.P056Syugoron.I250Struct;
-    using Grayscale.P056Syugoron.L250Struct;
-    using Grayscale.P062ConvText.L500Converter;
-    using Grayscale.P211WordShogi.L250Masu;
-    using Grayscale.P211WordShogi.L500Word;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
 
     /// <summary>
     /// ************************************************************************************************************************

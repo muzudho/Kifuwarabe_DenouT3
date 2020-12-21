@@ -1,9 +1,9 @@
-﻿using Grayscale.P163KifuCsa.I250Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Grayscale.P163KifuCsa.L250Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     public abstract class Util_Csa

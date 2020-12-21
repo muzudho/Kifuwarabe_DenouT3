@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P062ConvText.L500Converter
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Conv_Filepath
     {

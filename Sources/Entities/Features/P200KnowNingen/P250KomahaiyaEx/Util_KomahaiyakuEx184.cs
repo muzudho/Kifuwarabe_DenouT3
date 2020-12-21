@@ -1,12 +1,12 @@
-﻿using Grayscale.P031Random.L500Struct;
-using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P211WordShogi.I250Masu;
-using Grayscale.P213Komasyurui.L250Word;
-using Grayscale.P234Komahaiyaku.L250Word;
-using Grayscale.P234Komahaiyaku.L500Util;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System.Collections.Generic;
 
-namespace Grayscale.P250KomahaiyaEx.L500Util
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>

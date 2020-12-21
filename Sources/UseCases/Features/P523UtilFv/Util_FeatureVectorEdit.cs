@@ -1,5 +1,5 @@
-﻿using Grayscale.P031Random.L500Struct;
-using Grayscale.P213Komasyurui.L250Word;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
 using Grayscale.P521FeatureVect.L500Struct;
 

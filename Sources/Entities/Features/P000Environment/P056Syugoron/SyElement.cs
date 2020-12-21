@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P056Syugoron.I250Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>

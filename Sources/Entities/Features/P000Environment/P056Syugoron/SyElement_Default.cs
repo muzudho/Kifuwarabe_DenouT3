@@ -1,6 +1,6 @@
-﻿using Grayscale.P056Syugoron.I250Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 
-namespace Grayscale.P056Syugoron.L250Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     public class SyElement_Default : SyElement

@@ -1,20 +1,20 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P211WordShogi.L250Masu;
-using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P212ConvPside.L500Converter;
-using Grayscale.P213Komasyurui.L250Word;
-using Grayscale.P213Komasyurui.L500Util;
-using Grayscale.P214Masu.L500Util;
-using Grayscale.P218Starlight.I500Struct;
-using Grayscale.P224Sky.L500Struct;
-using Grayscale.P234Komahaiyaku.L500Util;
-using Grayscale.P238Seiza.L250Struct;
-using Grayscale.P238Seiza.L500Util;
-using Grayscale.P256SeizaFinger.L250Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
 
-namespace Grayscale.P258UtilSky258.L500UtilSky
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>

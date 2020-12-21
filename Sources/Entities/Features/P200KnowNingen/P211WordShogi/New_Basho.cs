@@ -1,6 +1,6 @@
-﻿using Grayscale.P056Syugoron.I250Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 
-namespace Grayscale.P211WordShogi.I250Masu
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public interface New_Basho : SyElement
     {

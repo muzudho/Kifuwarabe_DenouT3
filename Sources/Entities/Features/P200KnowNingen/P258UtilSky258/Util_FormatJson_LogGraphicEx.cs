@@ -1,23 +1,23 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P035Collection.L500Struct;
-using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P211WordShogi.I250Masu;
-using Grayscale.P212ConvPside.L500Converter;
-using Grayscale.P213Komasyurui.L250Word;
-using Grayscale.P218Starlight.I500Struct;
-using Grayscale.P224Sky.L500Struct;
-using Grayscale.P226Tree.I500Struct;
-using Grayscale.P234Komahaiyaku.L500Util;
-using Grayscale.P238Seiza.L250Struct;
-using Grayscale.P238Seiza.L500Util;
-using Grayscale.P247KyokumenWra.L500Struct;
-using Grayscale.P258UtilSky258.L500UtilSky;
-using Grayscale.P258UtilSky258.L505ConvLogJson;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System.Collections.Generic;
 using System.Text;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P258UtilSky258.L510UtilLogJson
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Util_FormatJson_LogGraphicEx
     {

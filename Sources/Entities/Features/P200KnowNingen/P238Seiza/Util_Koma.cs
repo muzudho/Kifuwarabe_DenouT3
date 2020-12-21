@@ -1,10 +1,10 @@
-﻿using Grayscale.P218Starlight.I500Struct;
-using Grayscale.P224Sky.L500Struct;
-using Grayscale.P238Seiza.L250Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
 
-namespace Grayscale.P238Seiza.L500Util
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public class Util_Koma
     {

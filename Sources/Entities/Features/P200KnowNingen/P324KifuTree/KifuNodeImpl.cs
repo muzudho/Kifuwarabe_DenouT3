@@ -1,8 +1,8 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P218Starlight.I500Struct;
-using Grayscale.P226Tree.I500Struct;
-using Grayscale.P226Tree.L500Struct;
-using Grayscale.P247KyokumenWra.L500Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P307UtilSky.L500Util;
 using Grayscale.P321KyokumHyoka.I250Struct;
 using Grayscale.P321KyokumHyoka.L250Struct;

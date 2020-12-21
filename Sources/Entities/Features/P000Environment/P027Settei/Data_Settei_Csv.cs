@@ -1,10 +1,10 @@
-﻿using Grayscale.P005Tushin.L500Util;
-using Grayscale.P011Csv.L500Util;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace Grayscale.P027Settei.L500Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>

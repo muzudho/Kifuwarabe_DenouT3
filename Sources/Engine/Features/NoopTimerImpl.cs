@@ -2,7 +2,7 @@
 using Grayscale.P542Scoreing.I005UsiLoop;
 using System.Diagnostics;
 
-namespace Grayscale.P571KifuWarabe.L249Noop
+namespace Grayscale.Kifuwarakaku.Engine.Features
 {
     /// <summary>
     /// 

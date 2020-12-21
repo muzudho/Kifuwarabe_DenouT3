@@ -1,5 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {

@@ -1,17 +1,17 @@
-﻿using Grayscale.P011Csv.L500Util;
-using Grayscale.P055_Conv_Sy.L500Converter;
-using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P056Syugoron.L250Struct;
-using Grayscale.P211WordShogi.L250Masu;
-using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P214Masu.L500Util;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Grayscale.P248Michi.L500Word
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
 

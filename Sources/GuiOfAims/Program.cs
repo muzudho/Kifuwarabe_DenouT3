@@ -1,14 +1,13 @@
 ﻿using System.IO;
 using System.Windows.Forms;
-using Nett;
-using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P027Settei.L510Xml;
-using Grayscale.P224Sky.L500Struct;
-using Grayscale.P258UtilSky258.L500UtilSky;
-using Grayscale.P211WordShogi.L500Word;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P481AimsServer.L500Server;
+using Nett;
 
-namespace Grayscale.P489_Form_______
+namespace Grayscale.Kifuwarakaku.CliOfAims
 {
     class Program
     {

@@ -1,7 +1,7 @@
-﻿using Grayscale.P056Syugoron.L250Struct;
-using Grayscale.P211WordShogi.I250Masu;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 
-namespace Grayscale.P211WordShogi.L250Masu
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>

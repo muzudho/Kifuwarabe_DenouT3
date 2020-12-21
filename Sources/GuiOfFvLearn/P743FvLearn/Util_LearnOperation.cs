@@ -2,18 +2,18 @@
 using System.Text;
 using System.Windows.Forms;
 using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P218Starlight.I500Struct;
-using Grayscale.P226Tree.I500Struct;
-using Grayscale.P247KyokumenWra.L500Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P324KifuTree.I250Struct;
 using Grayscale.P440KifuTreeLog.L500Struct;
 using Grayscale.P521FeatureVect.L500Struct;
 using Grayscale.P523UtilFv.L510UtilFvLoad;
 using Grayscale.P542Scoreing.I250Args;
 using Grayscale.P542Scoreing.L250Args;
-using Grayscale.P571KifuWarabe.L100Shogisasi;
-using Grayscale.P571KifuWarabe.L500KifuWarabe;
+using Grayscale.Kifuwarakaku.Engine.Features;
+using Grayscale.Kifuwarakaku.Engine;
 using Grayscale.P743FvLearn.I400N54List;
 using Grayscale.P743FvLearn.L250Learn;
 using Grayscale.P743FvLearn.L260View;
@@ -27,7 +27,7 @@ using Grayscale.P523UtilFv.L480UtilFvEdit;
 #endif
 
 #if DEBUG
-using Grayscale.P222LogKaisetu.L250Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
 #endif
 
 namespace Grayscale.P743FvLearn.L600Operation

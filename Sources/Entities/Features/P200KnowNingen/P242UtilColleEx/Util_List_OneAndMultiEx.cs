@@ -1,13 +1,13 @@
-﻿using Grayscale.P035Collection.L500Struct;
-using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P213Komasyurui.L500Util;
-using Grayscale.P214Masu.L500Util;
-using Grayscale.P224Sky.L500Struct;
-using Grayscale.P238Seiza.L500Util;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System.Text;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P242UtilColleEx.L500Util
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Util_List_OneAndMultiEx<T1, T2>
     {

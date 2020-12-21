@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Grayscale.P163KifuCsa.I250Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     /// <summary>
     /// .csa棋譜の、解析後のデータ。

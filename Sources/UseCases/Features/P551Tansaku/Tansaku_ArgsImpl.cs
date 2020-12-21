@@ -1,4 +1,4 @@
-﻿using Grayscale.P222LogKaisetu.L250Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P551Tansaku.I500Tansaku;
 
 namespace Grayscale.P551Tansaku.L500Struct

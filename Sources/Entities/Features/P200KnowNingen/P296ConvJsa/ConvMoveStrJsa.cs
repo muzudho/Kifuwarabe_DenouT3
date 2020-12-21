@@ -1,10 +1,10 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P218Starlight.I500Struct;
-using Grayscale.P226Tree.I500Struct;
-using Grayscale.P234Komahaiyaku.L500Util;
-using Grayscale.P238Seiza.L250Struct;
-using Grayscale.P238Seiza.L500Util;
-using Grayscale.P247KyokumenWra.L500Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P292JsaFugo.L250Struct;
 using Grayscale.P292JsaFugo.L500Util;
 using Grayscale.P295_JsaFugoWrit.L500Writer;

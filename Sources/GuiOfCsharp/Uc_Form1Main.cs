@@ -7,17 +7,17 @@ using System.Text;
 using System.Windows.Forms;
     using Grayscale.Kifuwarakaku.Entities.Logger;
 using Grayscale.P003Log.L500Struct;
-using Grayscale.P027Settei.L510Xml;
-using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P212ConvPside.L500Converter;
-using Grayscale.P213Komasyurui.L500Util;
-using Grayscale.P214Masu.L500Util;
-using Grayscale.P218Starlight.I500Struct;
-using Grayscale.P224Sky.L500Struct;
-using Grayscale.P234Komahaiyaku.L500Util;
-using Grayscale.P238Seiza.L250Struct;
-using Grayscale.P238Seiza.L500Util;
-using Grayscale.P258UtilSky258.L500UtilSky;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P324KifuTree.L250Struct;
 using Grayscale.P341Ittesasu.L250OperationA;
 using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
@@ -39,32 +39,19 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
     using System.IO;
     using System.Text;
     using System.Windows.Forms;
-    using Grayscale.Kifuwarakaku.Entities.Logging;
-    using Grayscale.P027Settei.L510Xml;
-    using Grayscale.P211WordShogi.L500Word;
-    using Grayscale.P212ConvPside.L500Converter;
-    using Grayscale.P213Komasyurui.L500Util;
-    using Grayscale.P214Masu.L500Util;
-    using Grayscale.P218Starlight.I500Struct;
-    using Grayscale.P224Sky.L500Struct;
-    using Grayscale.P234Komahaiyaku.L500Util;
-    using Grayscale.P238Seiza.L250Struct;
-    using Grayscale.P238Seiza.L500Util;
-    using Grayscale.P258UtilSky258.L500UtilSky;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.P324KifuTree.L250Struct;
     using Grayscale.P341Ittesasu.L250OperationA;
-    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
     using Nett;
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 #endif
@@ -78,7 +65,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
     public partial class Uc_Form1Main : UserControl, Uc_Form1Mainable
     {
 
-#region プロパティー類
+        #region プロパティー類
 
         public MainGui_Csharp MainGui { get { return this.mainGui; } }
         public void SetMainGui(MainGui_Csharp mainGui)
@@ -101,10 +88,10 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 
 
-#endregion
+        #endregion
 
 
-#region ゲームエンジンの振りをするメソッド
+        #region ゲームエンジンの振りをするメソッド
 
         private const int NSQUARE = 9 * 9;
 
@@ -317,7 +304,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
         //    return jsaFugoStr_tuginoItte;
         //}
 
-#endregion
+        #endregion
 
 
         /// <summary>
@@ -633,7 +620,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
             {
                 // 指定のテキストを後ろに足します。
                 form2.AppendInputareaText(mainGui.RepaintRequest.NyuryokuTextTail);
-                mainGui.RepaintRequest.SetNyuryokuTextTail( "");//要求の解除
+                mainGui.RepaintRequest.SetNyuryokuTextTail("");//要求の解除
             }
 
             //------------------------------

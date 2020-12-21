@@ -1,10 +1,10 @@
-﻿using Grayscale.P035Collection.L500Struct;
-using Grayscale.P055_Conv_Sy.L500Converter;
-using Grayscale.P056Syugoron.I250Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System.Text;
 
 
-namespace Grayscale.P057UtilSyColle.L500Util
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Util_List_OneAndMulti<T1, T2>
     {

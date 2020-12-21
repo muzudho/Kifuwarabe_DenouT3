@@ -1,6 +1,6 @@
-﻿using Grayscale.P222LogKaisetu.L250Struct;
-using Grayscale.P222LogKaisetu.L500Util;
-using Grayscale.P239ConvWords.L500Converter;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System.Text;
 
 #if DEBUG

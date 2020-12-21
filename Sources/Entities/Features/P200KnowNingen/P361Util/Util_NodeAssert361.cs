@@ -1,6 +1,6 @@
-﻿using Grayscale.P218Starlight.I500Struct;
-using Grayscale.P226Tree.I500Struct;
-using Grayscale.P247KyokumenWra.L500Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 
 
 namespace Grayscale.P361Util.L500Util

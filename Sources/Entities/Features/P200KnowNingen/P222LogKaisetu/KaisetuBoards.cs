@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Grayscale.P222LogKaisetu.L250Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>

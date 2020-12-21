@@ -1,5 +1,5 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P224Sky.L500Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
 using Grayscale.P743FvLearn.I400N54List;
 using Grayscale.P743FvLearn.L450Tyoseiryo;

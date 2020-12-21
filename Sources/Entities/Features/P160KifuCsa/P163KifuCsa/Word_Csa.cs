@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P163KifuCsa.L250Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Word_Csa
     {

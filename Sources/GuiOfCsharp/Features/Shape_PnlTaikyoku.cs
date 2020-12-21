@@ -1,7 +1,7 @@
 ﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
-    using Grayscale.P218Starlight.I500Struct;
-    using Grayscale.P238Seiza.L250Struct;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
     public interface Shape_PnlTaikyoku : Shape, Shape_Canvas

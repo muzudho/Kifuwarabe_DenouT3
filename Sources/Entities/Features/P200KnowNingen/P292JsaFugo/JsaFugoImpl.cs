@@ -1,5 +1,5 @@
-﻿using Grayscale.P209KifuJsa.L500Word;
-using Grayscale.P213Komasyurui.L250Word;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 
 namespace Grayscale.P292JsaFugo.L250Struct
 {

@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P571KifuWarabe.L250UsiLoop
+namespace Grayscale.Kifuwarakaku.Engine.Features
 {
     public enum PhaseResult_UsiLoop2
     {

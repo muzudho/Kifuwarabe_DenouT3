@@ -7,12 +7,12 @@
     using System.Text;
     using System.Windows.Forms;
     using Codeplex.Data;//DynamicJson
-    using Grayscale.P027Settei.L500Struct;
-    using Grayscale.P236KomahaiyaTr.L500Table;
-    using Grayscale.P238Seiza.L250Struct;
-    using Grayscale.P238Seiza.L500Util;
-    using Grayscale.P248Michi.L500Word;
-    using Grayscale.P250KomahaiyaEx.L500Util;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.P270ForcePromot.L250Struct;
     using Grayscale.P325PnlTaikyoku.I250Struct;
     using Grayscale.P325PnlTaikyoku.L250Struct;

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Grayscale.P211WordShogi.L500Word
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>

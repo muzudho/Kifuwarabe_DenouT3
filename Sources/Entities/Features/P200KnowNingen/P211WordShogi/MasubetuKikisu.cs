@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 
-namespace Grayscale.P211WordShogi.I510Komanokiki
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>

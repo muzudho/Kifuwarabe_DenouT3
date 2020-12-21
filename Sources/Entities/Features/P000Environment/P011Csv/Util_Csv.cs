@@ -1,9 +1,9 @@
-﻿using Grayscale.P011Csv.L250Parser;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace Grayscale.P011Csv.L500Util
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
 

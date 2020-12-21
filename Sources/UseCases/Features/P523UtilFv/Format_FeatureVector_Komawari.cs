@@ -1,4 +1,4 @@
-﻿using Grayscale.P213Komasyurui.L250Word;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
 using System.Text;
 

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Grayscale.P226Tree.I500Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
 
-namespace Grayscale.P226Tree.L500Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>

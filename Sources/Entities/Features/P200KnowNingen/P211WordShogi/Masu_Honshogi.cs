@@ -1,10 +1,10 @@
-﻿using Grayscale.P055_Conv_Sy.L500Converter;
-using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P056Syugoron.L250Struct;
-using Grayscale.P211WordShogi.I250Masu;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System.Collections.Generic;
 
-namespace Grayscale.P211WordShogi.L250Masu
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     /// <summary>
     /// 駒を置ける場所２０１箇所だぜ☆

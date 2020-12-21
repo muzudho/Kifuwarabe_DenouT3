@@ -1,4 +1,4 @@
-﻿namespace Grayscale.P149_Form_______
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     partial class Form1
     {

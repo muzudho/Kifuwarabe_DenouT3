@@ -1,9 +1,9 @@
-﻿using Grayscale.P035Collection.L500Struct;
-using Grayscale.P056Syugoron.I250Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System.Collections.Generic;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P239ConvWords.L500Converter
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     /// <summary>
     /// 使ってない？

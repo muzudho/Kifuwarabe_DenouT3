@@ -1,7 +1,7 @@
-﻿using Grayscale.P056Syugoron.I250Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 using System.Collections.Generic;
 
-namespace Grayscale.P056Syugoron.L250Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>

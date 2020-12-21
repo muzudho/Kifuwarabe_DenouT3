@@ -1,6 +1,6 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P005Tushin.L500Util;
-using Grayscale.P211WordShogi.L500Word;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P324KifuTree.I250Struct;
 using Grayscale.P341Ittesasu.L250OperationA;
 using Grayscale.P461Server.I125Receiver;

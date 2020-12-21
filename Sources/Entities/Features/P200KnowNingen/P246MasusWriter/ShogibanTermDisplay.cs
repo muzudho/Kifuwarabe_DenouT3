@@ -1,12 +1,12 @@
-﻿using Grayscale.P035Collection.L500Struct;
-using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P211WordShogi.I250Masu;
-using Grayscale.P211WordShogi.L250Masu;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System.Collections.Generic;
 using System.Text;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P246MasusWriter.L250Writer
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     public abstract class ShogibanTermDisplay

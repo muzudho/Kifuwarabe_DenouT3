@@ -1,15 +1,15 @@
-﻿using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P218Starlight.I500Struct;
-using Grayscale.P223TedokuHisto.I250Struct;
-using Grayscale.P223TedokuHisto.L250Struct;
-using Grayscale.P224Sky.I500Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
 
-namespace Grayscale.P224Sky.L500Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>

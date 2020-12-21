@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P140KifuSfen
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     /// <summary>
     /// SFENの持ち駒文字列トークン。

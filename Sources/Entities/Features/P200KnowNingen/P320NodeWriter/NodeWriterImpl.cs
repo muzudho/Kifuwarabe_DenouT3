@@ -1,7 +1,7 @@
-﻿using Grayscale.P206Json.I500Struct;
-using Grayscale.P206Json.L500Struct;
-using Grayscale.P226Tree.L500Struct;
-using Grayscale.P247KyokumenWra.L500Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P307UtilSky.L500Util;
 using System.Diagnostics;
 

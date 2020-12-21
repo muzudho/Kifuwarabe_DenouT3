@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P157KyokumenPng.I500Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     /// <summary>
     /// 取った駒の種類の定数。打った駒との兼用。

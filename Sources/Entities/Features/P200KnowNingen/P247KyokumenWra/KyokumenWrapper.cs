@@ -1,7 +1,7 @@
-﻿using Grayscale.P224Sky.L500Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 using System.Diagnostics;
 
-namespace Grayscale.P247KyokumenWra.L500Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>

@@ -3,14 +3,14 @@
     using System;
 #if DEBUG
     using Grayscale.Kifuwarakaku.Entities.Logger;
-using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P212ConvPside.L500Converter;
-using Grayscale.P213Komasyurui.L250Word;
-using Grayscale.P218Starlight.I500Struct;
-using Grayscale.P224Sky.L500Struct;
-using Grayscale.P238Seiza.L250Struct;
-using Grayscale.P238Seiza.L500Util;
-using Grayscale.P258UtilSky258.L500UtilSky;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.L500Struct;
 using Grayscale.P525ConvFv.L500Converter;
 using Grayscale.P743FvLearn.I400N54List;
@@ -19,14 +19,14 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
 #else
     using System.Text;
     using Grayscale.Kifuwarakaku.Entities.Logging;
-    using Grayscale.P211WordShogi.L500Word;
-    using Grayscale.P212ConvPside.L500Converter;
-    using Grayscale.P213Komasyurui.L250Word;
-    using Grayscale.P218Starlight.I500Struct;
-    using Grayscale.P224Sky.L500Struct;
-    using Grayscale.P238Seiza.L250Struct;
-    using Grayscale.P238Seiza.L500Util;
-    using Grayscale.P258UtilSky258.L500UtilSky;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.P521FeatureVect.L500Struct;
     using Grayscale.P525ConvFv.L500Converter;
     using Grayscale.P743FvLearn.I400N54List;

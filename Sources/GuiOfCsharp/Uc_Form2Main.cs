@@ -13,13 +13,6 @@ using System.Windows.Forms;
 #else
     using System.Runtime.CompilerServices;
     using System.Windows.Forms;
-    using Grayscale.Kifuwarakaku.Entities.Logging;
-    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
 #endif
 
     public partial class Uc_Form2Main : UserControl
@@ -50,7 +43,7 @@ using System.Windows.Forms;
         }
 
 
-#region ゲームエンジンの振りをするメソッド
+        #region ゲームエンジンの振りをするメソッド
 
         /// <summary>
         /// ************************************************************************************************************************
@@ -74,7 +67,7 @@ using System.Windows.Forms;
             this.txtOutputarea.Text = text;
         }
 
-#endregion
+        #endregion
 
         private void txtInputarea_KeyDown(object sender, KeyEventArgs e)
         {

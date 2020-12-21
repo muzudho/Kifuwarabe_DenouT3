@@ -1,8 +1,8 @@
 ﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
     using System.Drawing;
-    using Grayscale.P211WordShogi.L500Word;
-    using Grayscale.P214Masu.L500Util;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
 
     /// <summary>
     /// ************************************************************************************************************************

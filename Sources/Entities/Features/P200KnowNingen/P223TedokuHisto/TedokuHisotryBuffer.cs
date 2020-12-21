@@ -1,8 +1,8 @@
-﻿using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P223TedokuHisto.I250Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System.Collections.Generic;
 
-namespace Grayscale.P223TedokuHisto.L250Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     /// <summary>
     /// 手得ヒストリー

@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P213Komasyurui.L250Word
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     /// <summary>
     /// 駒種類

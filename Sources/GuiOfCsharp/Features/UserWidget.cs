@@ -1,7 +1,7 @@
 ﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
     using System.Drawing;
-    using Grayscale.P211WordShogi.L500Word;
+    using Grayscale.Kifuwarakaku.Entities.Features;
 
     public interface UserWidget
     {

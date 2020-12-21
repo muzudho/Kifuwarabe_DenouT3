@@ -1,9 +1,9 @@
-﻿namespace Grayscale.P580_Form_______
+﻿namespace Grayscale.Kifuwarakaku.Engine
 {
     using System;
     using Grayscale.Kifuwarakaku.Entities.Logging;
-    using Grayscale.P571KifuWarabe.L250UsiLoop;
-    using Grayscale.P571KifuWarabe.L500KifuWarabe;
+    using Grayscale.Kifuwarakaku.Engine;
+    using Grayscale.Kifuwarakaku.Engine;
 
     /// <summary>
     /// プログラムのエントリー・ポイントです。

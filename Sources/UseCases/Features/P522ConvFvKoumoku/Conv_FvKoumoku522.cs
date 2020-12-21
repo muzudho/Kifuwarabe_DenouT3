@@ -1,5 +1,5 @@
-﻿using Grayscale.P140KifuSfen;
-using Grayscale.P211WordShogi.L500Word;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
 using System;
 

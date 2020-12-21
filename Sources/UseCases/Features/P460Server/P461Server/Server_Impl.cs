@@ -1,6 +1,6 @@
-﻿using Grayscale.P224Sky.L500Struct;
-using Grayscale.P247KyokumenWra.L500Struct;
-using Grayscale.P258UtilSky258.L500UtilSky;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P324KifuTree.L250Struct;
 using Grayscale.P325PnlTaikyoku.I250Struct;
 using Grayscale.P325PnlTaikyoku.L250Struct;

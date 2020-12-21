@@ -1,6 +1,6 @@
-﻿using Grayscale.P140KifuSfen;
-using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P224Sky.L500Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P276SeizaStartp.L500Struct;
 
 

@@ -1,7 +1,7 @@
-﻿using Grayscale.P206Json.I500Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 using System.Text;
 
-namespace Grayscale.P206Json.L500Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     /// <summary>
     /// 文字列

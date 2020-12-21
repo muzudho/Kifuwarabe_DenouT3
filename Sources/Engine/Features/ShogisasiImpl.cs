@@ -1,10 +1,10 @@
-﻿namespace Grayscale.P571KifuWarabe.L100Shogisasi
+﻿namespace Grayscale.Kifuwarakaku.Engine.Features
 {
 #if DEBUG
 using Grayscale.Kifuwarakaku.Entities.Logger;
-using Grayscale.P031Random.L500Struct;
-using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P222LogKaisetu.L250Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P324KifuTree.I250Struct;
 using Grayscale.P339ConvKyokume.L500Converter;
 using Grayscale.P521FeatureVect.I500Struct;
@@ -22,9 +22,8 @@ using System.Collections.Generic;
 #else
     using System;
     using System.Collections.Generic;
-    using Grayscale.Kifuwarakaku.Entities.Logging;
-    using Grayscale.P031Random.L500Struct;
-    using Grayscale.P211WordShogi.L500Word;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.P324KifuTree.I250Struct;
     using Grayscale.P339ConvKyokume.L500Converter;
     using Grayscale.P440KifuTreeLog.L500Struct;

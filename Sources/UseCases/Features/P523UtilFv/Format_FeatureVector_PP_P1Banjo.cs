@@ -1,6 +1,6 @@
-﻿using Grayscale.P062ConvText.L500Converter;
-using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P214Masu.L500Util;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
 using Grayscale.P521FeatureVect.L500Struct;
 using System;

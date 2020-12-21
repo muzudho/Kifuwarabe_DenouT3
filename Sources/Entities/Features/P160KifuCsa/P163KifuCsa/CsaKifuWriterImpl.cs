@@ -1,8 +1,8 @@
-﻿using Grayscale.P163KifuCsa.I250Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 using System.IO;
 using System.Text;
 
-namespace Grayscale.P163KifuCsa.L500Writer
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public class CsaKifuWriterImpl
     {

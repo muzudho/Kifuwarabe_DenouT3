@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P062ConvText.L250Const
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class TextConst
     {

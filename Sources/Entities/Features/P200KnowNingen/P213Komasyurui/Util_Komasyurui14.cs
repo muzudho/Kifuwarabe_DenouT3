@@ -1,7 +1,7 @@
-﻿using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P213Komasyurui.L250Word;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 
-namespace Grayscale.P213Komasyurui.L500Util
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
 

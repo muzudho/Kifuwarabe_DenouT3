@@ -1,8 +1,8 @@
-﻿using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P211WordShogi.L250Masu;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System.Diagnostics;
 
-namespace Grayscale.P212ConvPside.L500Converter
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Conv_MasuHandle
     {

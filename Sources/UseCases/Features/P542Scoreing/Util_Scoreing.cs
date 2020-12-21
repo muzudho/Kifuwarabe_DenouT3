@@ -1,7 +1,7 @@
 ﻿using System;
-using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P224Sky.L500Struct;
-using Grayscale.P239ConvWords.L500Converter;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P321KyokumHyoka.L250Struct;
 using Grayscale.P324KifuTree.I250Struct;
 using Grayscale.P531Hyokakansu.I500Hyokakansu;

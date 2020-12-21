@@ -1,14 +1,14 @@
-﻿using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P223TedokuHisto.I250Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System.Collections.Generic;
 using System.Text;
-using Grayscale.P055_Conv_Sy.L500Converter;
+using Grayscale.Kifuwarakaku.Entities.Features;
 
 #if DEBUG
 using System.IO;
 #endif
 
-namespace Grayscale.P223TedokuHisto.L240Util
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     public abstract class Util_TedokuHistory

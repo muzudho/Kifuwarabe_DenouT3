@@ -1,5 +1,5 @@
 ﻿    using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P224Sky.L500Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P461Server.L498Server;
 using Grayscale.P481AimsServer.I060Phase;
 using Grayscale.P481AimsServer.I070ServerBase;

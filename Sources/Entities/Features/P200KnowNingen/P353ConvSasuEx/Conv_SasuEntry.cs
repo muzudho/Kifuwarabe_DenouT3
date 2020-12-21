@@ -1,6 +1,6 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P224Sky.L500Struct;
-using Grayscale.P247KyokumenWra.L500Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P324KifuTree.I250Struct;
 using Grayscale.P324KifuTree.L250Struct;
 using Grayscale.P341Ittesasu.L510OperationB;

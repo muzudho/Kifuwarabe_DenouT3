@@ -1,10 +1,10 @@
-﻿using Grayscale.P005Tushin.L500Util;
-using Grayscale.P209KifuJsa.L500Word;
-using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P213Komasyurui.L250Word;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 
 
-namespace Grayscale.P239ConvWords.L500Converter
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Conv_String268
     {

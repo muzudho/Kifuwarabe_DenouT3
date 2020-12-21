@@ -2,10 +2,10 @@
 using System.Diagnostics;
 using System.Windows.Forms;
 using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P224Sky.L500Struct;
-using Grayscale.P247KyokumenWra.L500Struct;
-using Grayscale.P258UtilSky258.L500UtilSky;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P324KifuTree.L250Struct;
 using Grayscale.P341Ittesasu.L250OperationA;
 using Grayscale.P461Server.I497EngineClient;

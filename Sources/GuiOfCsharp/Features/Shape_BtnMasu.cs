@@ -1,6 +1,6 @@
 ﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
-    using Grayscale.P056Syugoron.I250Struct;
+    using Grayscale.Kifuwarakaku.Entities.Features;
 
     public interface Shape_BtnMasu
     {

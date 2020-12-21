@@ -1,7 +1,7 @@
 ﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
     using System.Drawing;
-    using Grayscale.P027Settei.L510Xml;
+    using Grayscale.Kifuwarakaku.Entities.Features;
 
     public interface Uc_Form1Mainable
     {

@@ -1,12 +1,12 @@
 ﻿#if DEBUG
 using Grayscale.P003Log.L500Struct;
-using Grayscale.P011Csv.L250Parser;
-using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P212ConvPside.L500Converter;
-using Grayscale.P213Komasyurui.L250Word;
-using Grayscale.P214Masu.L500Util;
-using Grayscale.P234Komahaiyaku.L250Word;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,13 +15,13 @@ using System.Windows.Forms;
 using Nett;
 #else
 using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P011Csv.L250Parser;
-using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P212ConvPside.L500Converter;
-using Grayscale.P213Komasyurui.L250Word;
-using Grayscale.P214Masu.L500Util;
-using Grayscale.P234Komahaiyaku.L250Word;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -29,7 +29,7 @@ using System.Text;
 using System.Windows.Forms;
 #endif
 
-namespace Grayscale.P236KomahaiyaTr.L500Table
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>

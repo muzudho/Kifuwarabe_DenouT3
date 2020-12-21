@@ -1,11 +1,11 @@
-﻿using Grayscale.P212ConvPside.L500Converter;
-using Grayscale.P213Komasyurui.L250Word;
-using Grayscale.P238Seiza.L250Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Grayscale.P245_SfenTransla.L250Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     /// <summary>
     /// 将棋盤上の情報を数えます。未使用？

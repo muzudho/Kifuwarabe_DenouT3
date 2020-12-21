@@ -4,9 +4,6 @@
 using System;
 using System.IO;
 using System.Windows.Forms;
-using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
 using Nett;
 
 namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features

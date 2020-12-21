@@ -1,17 +1,17 @@
 ﻿using System.Diagnostics;
 using System.Text;
-using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P062ConvText.L500Converter;
-using Grayscale.P140KifuSfen;
-using Grayscale.P163KifuCsa.I250Struct;
-using Grayscale.P163KifuCsa.L250Struct;
-using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P213Komasyurui.L250Word;
-using Grayscale.P213Komasyurui.L500Util;
-using Grayscale.P214Masu.L500Util;
-using Grayscale.P224Sky.L500Struct;
-using Grayscale.P238Seiza.L250Struct;
-using Grayscale.P258UtilSky258.L500UtilSky;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 
 namespace Grayscale.P369ConvCsa.L500Converter
 {

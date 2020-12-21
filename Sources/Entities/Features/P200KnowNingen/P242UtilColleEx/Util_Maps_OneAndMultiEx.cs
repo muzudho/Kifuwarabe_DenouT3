@@ -1,9 +1,9 @@
-﻿using Grayscale.P035Collection.L500Struct;
-using Grayscale.P218Starlight.I500Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System.Collections.Generic;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P242UtilColleEx.L500Util
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Util_Maps_OneAndMultiEx<T1, T2>
     {

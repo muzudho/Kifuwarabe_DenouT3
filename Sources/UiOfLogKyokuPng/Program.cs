@@ -1,12 +1,12 @@
-﻿using Grayscale.P157KyokumenPng.I500Struct;
-using Grayscale.P157KyokumenPng.L500Struct;
-using Grayscale.P158LogKyokuPng.L500UtilWriter;
-using System;
-using System.IO;
+﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Nett;
 
-namespace Grayscale.P159_Form_______
+namespace Grayscale.Kifuwarakaku.CliOfLogKyokuPng
 {
     static class Program
     {

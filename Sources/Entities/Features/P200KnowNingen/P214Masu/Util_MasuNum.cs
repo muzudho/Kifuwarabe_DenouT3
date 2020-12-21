@@ -1,10 +1,10 @@
-﻿using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P212ConvPside.L500Converter;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 
 
 
-namespace Grayscale.P214Masu.L500Util
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
 

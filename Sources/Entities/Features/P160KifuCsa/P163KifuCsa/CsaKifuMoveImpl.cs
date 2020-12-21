@@ -1,7 +1,7 @@
-﻿using Grayscale.P163KifuCsa.I250Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 using System.Text;
 
-namespace Grayscale.P163KifuCsa.L250Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public class CsaKifuMoveImpl : CsaKifuMove
     {

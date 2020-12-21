@@ -1,6 +1,6 @@
-﻿using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P224Sky.L500Struct;
-using Grayscale.P258UtilSky258.L500UtilSky;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P325PnlTaikyoku.I250Struct;
 
 namespace Grayscale.P325PnlTaikyoku.L250Struct

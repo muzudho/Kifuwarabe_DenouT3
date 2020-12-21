@@ -1,14 +1,14 @@
 ﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
-    using Grayscale.P212ConvPside.L500Converter;
-    using Grayscale.P213Komasyurui.L250Word;
-    using Grayscale.P218Starlight.I500Struct;
-    using Grayscale.P224Sky.L500Struct;
-    using Grayscale.P226Tree.I500Struct;
-    using Grayscale.P238Seiza.L250Struct;
-    using Grayscale.P238Seiza.L500Util;
-    using Grayscale.P239ConvWords.L500Converter;
-    using Grayscale.P247KyokumenWra.L500Struct;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.P276SeizaStartp.L500Struct;
     using Grayscale.P324KifuTree.I250Struct;
     using Grayscale.P324KifuTree.L250Struct;

@@ -1,9 +1,5 @@
-﻿using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P062ConvText.L500Converter;
-using Grayscale.P211WordShogi.L250Masu;
-using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P212ConvPside.L500Converter;
-using System.Text;
+﻿using System.Text;
+using Grayscale.Kifuwarakaku.Entities.Features;
 
 /*
      /// <summary>
@@ -47,7 +43,7 @@ using System.Text;
 
  */
 
-namespace Grayscale.P214Masu.L500Util
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Util_Masu10
     {

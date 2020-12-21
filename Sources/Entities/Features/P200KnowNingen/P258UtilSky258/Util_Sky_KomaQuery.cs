@@ -1,12 +1,12 @@
-﻿using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P213Komasyurui.L250Word;
-using Grayscale.P224Sky.L500Struct;
-using Grayscale.P238Seiza.L250Struct;
-using Grayscale.P238Seiza.L500Util;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P258UtilSky258.L500UtilSky
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Util_Sky_KomaQuery
     {

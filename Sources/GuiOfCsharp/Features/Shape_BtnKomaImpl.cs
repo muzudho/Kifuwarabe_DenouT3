@@ -4,12 +4,12 @@
     using System.Drawing;
     using System.IO;
     using System.Text;
-    using Grayscale.P211WordShogi.L500Word;
-    using Grayscale.P234Komahaiyaku.L250Word;
-    using Grayscale.P234Komahaiyaku.L500Util;
-    using Grayscale.P238Seiza.L250Struct;
-    using Grayscale.P238Seiza.L500Util;
-    using Grayscale.P239ConvWords.L500Converter;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
     using Nett;
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 

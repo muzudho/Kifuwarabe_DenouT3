@@ -1,9 +1,9 @@
-﻿using Grayscale.P031Random.L500Struct;
-using Grayscale.P061ConstShogi_.L250Const;
-using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P213Komasyurui.L250Word;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 
-namespace Grayscale.P216ZobrishHash.L500Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     /// <summary>
     /// 本将棋の千日手検出用のゾブリスト・ハッシュ・テーブルを作成します。

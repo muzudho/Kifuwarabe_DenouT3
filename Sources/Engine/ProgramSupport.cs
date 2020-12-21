@@ -1,21 +1,21 @@
 ﻿// noop 可
 //#define NOOPABLE
-namespace Grayscale.P571KifuWarabe.L500KifuWarabe
+namespace Grayscale.Kifuwarakaku.Engine
 {
     using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Text;
     using Grayscale.Kifuwarakaku.Entities.Logging;
-    using Grayscale.P005Tushin.L500Util;
-    using Grayscale.P236KomahaiyaTr.L500Table;
-    using Grayscale.P248Michi.L500Word;
-    using Grayscale.P250KomahaiyaEx.L500Util;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.P270ForcePromot.L250Struct;
     using Grayscale.P523UtilFv.L510UtilFvLoad;
     using Grayscale.P542Scoreing.I005UsiLoop;
     using Grayscale.P542Scoreing.L240Shogisasi;
-    using Grayscale.P571KifuWarabe.L100Shogisasi;
+    using Grayscale.Kifuwarakaku.Engine.Features;
     using Nett;
 
     public class ProgramSupport : ShogiEngine

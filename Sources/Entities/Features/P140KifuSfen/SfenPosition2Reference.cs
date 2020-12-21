@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Text;
 
-namespace Grayscale.P140KifuSfen
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>

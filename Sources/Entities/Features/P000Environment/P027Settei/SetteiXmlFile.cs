@@ -1,10 +1,10 @@
-﻿using Grayscale.P005Tushin.L500Util;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 using System;
 using System.IO;
 using System.Text;
 using System.Xml;
 
-namespace Grayscale.P027Settei.L510Xml
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>

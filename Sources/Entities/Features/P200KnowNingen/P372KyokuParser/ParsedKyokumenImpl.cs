@@ -1,5 +1,5 @@
-﻿using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P224Sky.L500Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P324KifuTree.I250Struct;
 using Grayscale.P372KyokuParser.I500Parser;
 using System.Collections.Generic;

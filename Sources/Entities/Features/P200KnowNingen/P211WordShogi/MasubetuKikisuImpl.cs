@@ -1,8 +1,8 @@
-﻿using Grayscale.P211WordShogi.I510Komanokiki;
-using Grayscale.P211WordShogi.L500Word;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System.Collections.Generic;
 
-namespace Grayscale.P211WordShogi.L510Komanokiki
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>

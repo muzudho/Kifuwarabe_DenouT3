@@ -1,13 +1,13 @@
-﻿using Grayscale.P056Syugoron.I250Struct;
-using Grayscale.P211WordShogi.L500Word;
-using Grayscale.P213Komasyurui.L250Word;
-using Grayscale.P213Komasyurui.L500Util;
-using Grayscale.P218Starlight.I500Struct;
-using Grayscale.P234Komahaiyaku.L250Word;
-using Grayscale.P234Komahaiyaku.L500Util;
-using Grayscale.P236KomahaiyaTr.L500Table;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 
-namespace Grayscale.P238Seiza.L250Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>

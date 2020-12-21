@@ -2,12 +2,12 @@
 using System.IO;
 using System.Text.RegularExpressions;
 using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P005Tushin.L500Util;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P542Scoreing.I005UsiLoop;
 using Nett;
 
 
-namespace Grayscale.P571KifuWarabe.L250UsiLoop
+namespace Grayscale.Kifuwarakaku.Engine
 {
 
     /// <summary>
@@ -43,7 +43,7 @@ namespace Grayscale.P571KifuWarabe.L250UsiLoop
             NoopTimerImpl noopTimer = new NoopTimerImpl();
             noopTimer._01_BeforeLoop();
 #endif
-            
+
             while (true)
             {
                 result_UsiLoop1 = PhaseResult_UsiLoop1.None;

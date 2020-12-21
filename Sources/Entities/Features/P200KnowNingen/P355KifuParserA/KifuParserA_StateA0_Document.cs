@@ -1,5 +1,5 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P211WordShogi.L500Word;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P325PnlTaikyoku.I250Struct;
 using Grayscale.P355_KifuParserA.I500Parser;
 using System;

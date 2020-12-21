@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 
 
-namespace Grayscale.P056Syugoron.L250Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public class SyFuncDictionary
     {

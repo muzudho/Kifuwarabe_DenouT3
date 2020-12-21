@@ -1,8 +1,8 @@
-﻿using Grayscale.P061ConstShogi_.L250Const;
-using Grayscale.P157KyokumenPng.I500Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System.Drawing;
 
-namespace Grayscale.P158LogKyokuPng.L250UtilPaint
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Util_KyokumenPngPainter
     {
