@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Grayscale.P169_Form_______
+namespace Grayscale.Kifuwarakaku.GuiOfKifuCsa
 {
     static class Program
     {

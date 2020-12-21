@@ -1,7 +1,7 @@
 ﻿
 using System.Runtime.InteropServices;
 
-namespace Grayscale.P542Scoreing.L010Log
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
 
     /// <summary>

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Grayscale.P542Scoreing.I005UsiLoop
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     public interface ShogiEngine
     {

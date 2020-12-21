@@ -1,4 +1,4 @@
-﻿namespace Grayscale.P720_FvWriter___
+﻿namespace Grayscale.Kifuwarakaku.GuiOfFvWriter.Features
 {
     partial class Form1
     {

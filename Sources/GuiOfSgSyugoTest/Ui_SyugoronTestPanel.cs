@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Nett;
 
-namespace Grayscale.P780_SgSyugoTest
+namespace Grayscale.Kifuwarakaku.GuiOfSgSyugoTest
 {
     public partial class Ui_SyugoronTestPanel : UserControl
     {

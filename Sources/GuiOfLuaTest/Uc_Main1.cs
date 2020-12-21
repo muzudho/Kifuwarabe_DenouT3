@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using NLua;
 
-namespace Grayscale.P771_LuaTest____
+namespace Grayscale.Kifuwarakaku.GuiOfLuaTest
 {
     public partial class Uc_Main1 : UserControl
     {

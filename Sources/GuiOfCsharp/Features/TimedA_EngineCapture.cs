@@ -1,6 +1,6 @@
 ﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
-    using Grayscale.P461Server.L250Util;
+    using Grayscale.Kifuwarakaku.UseCases.Features;
 
     /// <summary>
     /// ▲人間vs△コンピューター対局のやりとりです。

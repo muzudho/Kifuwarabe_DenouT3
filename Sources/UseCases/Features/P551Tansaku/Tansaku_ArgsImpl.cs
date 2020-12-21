@@ -1,7 +1,7 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P551Tansaku.I500Tansaku;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
-namespace Grayscale.P551Tansaku.L500Struct
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
 
     /// <summary>

@@ -1,4 +1,4 @@
-﻿namespace Grayscale.P169_Form_______
+﻿namespace Grayscale.Kifuwarakaku.GuiOfKifuCsa
 {
     partial class Uc_Main
     {

@@ -4,7 +4,7 @@ using Grayscale.Kifuwarakaku.Entities.Features;
 using Nett;
 using NLua;
 
-namespace Grayscale.P531Hyokakansu.L060UtilLua
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
 
 

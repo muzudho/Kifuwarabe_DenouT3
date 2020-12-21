@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P523UtilFv.L490UtilFvFormat
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     /// <summary>
     /// デバッグ・オプション。

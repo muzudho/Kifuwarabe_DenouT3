@@ -1,7 +1,7 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P481AimsServer.I060Phase;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
-namespace Grayscale.P481AimsServer.I070ServerBase
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     public interface AimsServerBase
     {

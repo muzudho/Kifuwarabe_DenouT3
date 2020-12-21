@@ -1,7 +1,7 @@
-﻿using Grayscale.P461Server.I125Receiver;
-using Grayscale.P481AimsServer.I070ServerBase;
+﻿using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
-namespace Grayscale.P481AimsServer.I125Receiver
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     public interface Receiver_ForAims : Receiver
     {

@@ -1,9 +1,9 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P521FeatureVect.L500Struct;
-using Grayscale.P522ConvFvKoumoku.L500Converter;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
 
-namespace Grayscale.P525ConvFv.L500Converter
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
 
     /// <summary>

@@ -1,7 +1,7 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P461Server.I497EngineClient;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
-namespace Grayscale.P461Server.L498Server
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     /// <summary>
     /// 将棋サーバー。

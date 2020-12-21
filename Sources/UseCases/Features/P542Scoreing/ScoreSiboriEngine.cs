@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P542Scoreing.L240Shogisasi;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
-namespace Grayscale.P542Scoreing.L125ScoreSibori
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
 
     /// <summary>

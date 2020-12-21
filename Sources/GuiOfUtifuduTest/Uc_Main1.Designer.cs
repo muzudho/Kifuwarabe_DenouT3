@@ -1,4 +1,4 @@
-﻿namespace P920_UtifuduTest
+﻿namespace Grayscale.Kifuwarakaku.GuiOfUtifuduTest
 {
     partial class Uc_Main1
     {

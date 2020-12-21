@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P521FeatureVect.I500Struct;
-using Grayscale.P521FeatureVect.L500Struct;
-using Grayscale.P522ConvFvKoumoku.L500Converter;
-using Grayscale.P523UtilFv.L490UtilFvFormat;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
 #if DEBUG
 //using Grayscale.P521_Atama_Unou_.L480UtilFvEdit;
 #endif
 
-namespace Grayscale.P523UtilFv.L491UtilFvIo
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     public abstract class Util_FeatureVectorInput
     {

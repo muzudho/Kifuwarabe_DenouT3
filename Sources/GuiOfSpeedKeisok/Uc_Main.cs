@@ -5,17 +5,17 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P521FeatureVect.I500Struct;
-using Grayscale.P521FeatureVect.L500Struct;
-using Grayscale.P523UtilFv.L510UtilFvLoad;
-using Grayscale.P531Hyokakansu.I500Hyokakansu;
-using Grayscale.P531Hyokakansu.L500Hyokakansu;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
 #if DEBUG || LEARN
 using Grayscale.Kifuwarakaku.Entities.Features;
 #endif
 
-namespace Grayscale.P910_SpeedKeisok
+namespace Grayscale.Kifuwarakaku.GuiOfSpeedKeisok
 {
 
     public partial class Uc_Main : UserControl

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Text;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P521FeatureVect.I500Struct;
-using Grayscale.P522ConvFvKoumoku.L500Converter;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
-namespace Grayscale.P523UtilFv.L490UtilFvFormat
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     /// <summary>
     /// TODO:

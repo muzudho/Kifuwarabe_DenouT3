@@ -2,12 +2,12 @@
 using System.Diagnostics;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P461Server.I125Receiver;
-using Grayscale.P461Server.I496EngineWrapper;
-using Grayscale.P461Server.I497EngineClient;
-using Grayscale.P461Server.L496EngineWrapper;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
-namespace Grayscale.P461Server.L497EngineClient
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     /// <summary>
     ///  プロセスラッパー

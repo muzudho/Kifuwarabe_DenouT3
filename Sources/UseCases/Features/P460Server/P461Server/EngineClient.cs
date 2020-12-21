@@ -1,8 +1,8 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P461Server.I125Receiver;
-using Grayscale.P461Server.I496EngineWrapper;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
-namespace Grayscale.P461Server.I497EngineClient
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
 
     /// <summary>

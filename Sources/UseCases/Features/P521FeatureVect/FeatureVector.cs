@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P521FeatureVect.I500Struct
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     public interface FeatureVector
     {

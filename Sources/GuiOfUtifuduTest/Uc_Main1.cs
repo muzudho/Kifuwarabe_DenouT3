@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace P920_UtifuduTest
+namespace Grayscale.Kifuwarakaku.GuiOfUtifuduTest
 {
     public partial class Uc_Main1 : UserControl
     {

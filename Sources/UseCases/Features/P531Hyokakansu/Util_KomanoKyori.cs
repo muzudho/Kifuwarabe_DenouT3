@@ -1,7 +1,7 @@
 ﻿using System;
 using Grayscale.Kifuwarakaku.Entities.Features;
 
-namespace Grayscale.P531Hyokakansu.L490UtilSokutei
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     /// <summary>
     /// 近似測定エンジン。

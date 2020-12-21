@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
-using Grayscale.P461Server.I496EngineWrapper;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
-namespace Grayscale.P461Server.L496EngineWrapper
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
 
     /// <summary>

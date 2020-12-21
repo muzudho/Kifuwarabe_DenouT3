@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P481AimsServer.I060Phase
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     /// <summary>
     /// 内部状態。

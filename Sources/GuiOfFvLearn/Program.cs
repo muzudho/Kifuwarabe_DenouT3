@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Grayscale.P743FvLearn
+namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
 {
     static class Program
     {

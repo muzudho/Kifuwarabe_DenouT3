@@ -1,11 +1,11 @@
 ﻿using System.Text;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P521FeatureVect.I500Struct;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
 #if DEBUG
 #endif
 
-namespace Grayscale.P521FeatureVect.L500Struct
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
 
     public class FeatureVectorImpl : FeatureVector

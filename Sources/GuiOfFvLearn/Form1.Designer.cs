@@ -1,4 +1,4 @@
-﻿namespace Grayscale.P743FvLearn
+﻿namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
 {
     partial class Form1
     {

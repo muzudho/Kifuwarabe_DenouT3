@@ -1,9 +1,9 @@
 ﻿using System.Diagnostics;
-using Grayscale.P461Server.I125Receiver;
-using Grayscale.P461Server.I497EngineClient;
-using Grayscale.P461Server.L498Server;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
-namespace Grayscale.P461Server.L497EngineClient
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     /// <summary>
     /// C# GUI のコンピューター対戦用。受信機能。

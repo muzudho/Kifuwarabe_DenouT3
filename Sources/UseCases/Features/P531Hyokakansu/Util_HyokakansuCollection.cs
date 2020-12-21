@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P521FeatureVect.I500Struct;
-using Grayscale.P531Hyokakansu.I500Hyokakansu;
-using Grayscale.P531Hyokakansu.L500Hyokakansu;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
 #if DEBUG || LEARN
 using Grayscale.Kifuwarakaku.Entities.Features;
 #endif
 
-namespace Grayscale.P531Hyokakansu.L510HyokakansuColl
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     public abstract class Util_HyokakansuCollection
     {

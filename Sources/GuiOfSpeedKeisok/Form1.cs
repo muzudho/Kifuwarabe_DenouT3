@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Grayscale.P910_SpeedKeisok
+namespace Grayscale.Kifuwarakaku.GuiOfSpeedKeisok
 {
     public partial class Form1 : Form
     {

@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P481AimsServer.L060Phase
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     public enum PhaseResult_AimsServer
     {

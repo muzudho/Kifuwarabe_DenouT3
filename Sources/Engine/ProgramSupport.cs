@@ -9,9 +9,9 @@ namespace Grayscale.Kifuwarakaku.Engine
     using Grayscale.Kifuwarakaku.Engine.Features;
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.Entities.Logging;
-    using Grayscale.P523UtilFv.L510UtilFvLoad;
-    using Grayscale.P542Scoreing.I005UsiLoop;
-    using Grayscale.P542Scoreing.L240Shogisasi;
+    using Grayscale.Kifuwarakaku.UseCases.Features;
+    using Grayscale.Kifuwarakaku.UseCases.Features;
+    using Grayscale.Kifuwarakaku.UseCases.Features;
     using Nett;
 
     public class ProgramSupport : ShogiEngine

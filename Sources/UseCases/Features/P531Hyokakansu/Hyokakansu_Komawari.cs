@@ -1,5 +1,5 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P521FeatureVect.I500Struct;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 #if DEBUG || LEARN
@@ -7,7 +7,7 @@ using System.Text;
 using Grayscale.Kifuwarakaku.Entities.Features;
 #endif
 
-namespace Grayscale.P531Hyokakansu.L500Hyokakansu
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
 
 

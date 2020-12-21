@@ -1,4 +1,4 @@
-﻿namespace Grayscale.P780_SgSyugoTest
+﻿namespace Grayscale.Kifuwarakaku.GuiOfSgSyugoTest
 {
     partial class Ui_SyugoronTestPanel
     {

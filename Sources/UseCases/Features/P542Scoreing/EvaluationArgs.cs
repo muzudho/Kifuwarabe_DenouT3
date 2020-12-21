@@ -1,8 +1,8 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P521FeatureVect.I500Struct;
-using Grayscale.P542Scoreing.L240Shogisasi;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
-namespace Grayscale.P542Scoreing.I250Args
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     public interface EvaluationArgs
     {

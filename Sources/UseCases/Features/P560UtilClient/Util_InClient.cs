@@ -1,7 +1,7 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Logging;
 
-namespace Grayscale.P560UtilClient.L500Util
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     public abstract class Util_InClient
     {

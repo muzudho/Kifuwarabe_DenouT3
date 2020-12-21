@@ -1,11 +1,11 @@
 ﻿using System.IO;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P521FeatureVect.I500Struct;
-using Grayscale.P521FeatureVect.L500Struct;
-using Grayscale.P523UtilFv.L490UtilFvFormat;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 using Nett;
 
-namespace Grayscale.P523UtilFv.L491UtilFvIo
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     public abstract class Util_FeatureVectorOutput
     {

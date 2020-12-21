@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Windows.Forms;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P481AimsServer.L500Server;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 using Nett;
 
 namespace Grayscale.Kifuwarakaku.CliOfAims

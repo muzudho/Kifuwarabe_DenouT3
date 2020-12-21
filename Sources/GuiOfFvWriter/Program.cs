@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Grayscale.P720_FvWriter___
+namespace Grayscale.Kifuwarakaku.GuiOfFvWriter.Features
 {
     static class Program
     {

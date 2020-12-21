@@ -1,8 +1,8 @@
 ﻿using System.Text;
-using Grayscale.P521FeatureVect.I500Struct;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
 
-namespace Grayscale.P523UtilFv.L490UtilFvFormat
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     public abstract class Format_FeatureVector_Scale
     {

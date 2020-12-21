@@ -1,8 +1,8 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P521FeatureVect.I500Struct;
-using Grayscale.P521FeatureVect.L500Struct;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
-namespace Grayscale.P523UtilFv.L480UtilFvEdit
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     /// <summary>
     /// 主に学習時、あるいはゲーム起動時にだけ使い、対局中（ゲーム中）に使わないメソッドは、こちらに移動します。

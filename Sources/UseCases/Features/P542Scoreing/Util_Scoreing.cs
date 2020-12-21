@@ -1,14 +1,14 @@
 ﻿using System;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P531Hyokakansu.I500Hyokakansu;
-using Grayscale.P531Hyokakansu.L510HyokakansuColl;
-using Grayscale.P542Scoreing.I250Args;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
 #if DEBUG || LEARN
 using Grayscale.Kifuwarakaku.Entities.Features;
 #endif
 
-namespace Grayscale.P542Scoreing.L500Util
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     /// <summary>
     /// 得点付けを行います。

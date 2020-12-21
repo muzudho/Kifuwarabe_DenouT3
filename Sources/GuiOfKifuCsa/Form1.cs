@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Grayscale.P169_Form_______
+namespace Grayscale.Kifuwarakaku.GuiOfKifuCsa
 {
     public partial class Form1 : Form
     {

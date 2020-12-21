@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P542Scoreing.I005UsiLoop;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
 namespace Grayscale.Kifuwarakaku.Engine.Features
 {

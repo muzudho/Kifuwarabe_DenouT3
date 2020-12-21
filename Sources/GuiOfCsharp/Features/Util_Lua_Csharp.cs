@@ -3,7 +3,7 @@
     using System;
     using System.IO;
     using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.P461Server.L250Util;
+    using Grayscale.Kifuwarakaku.UseCases.Features;
     using Nett;
     using NLua;
 

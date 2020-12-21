@@ -3,20 +3,20 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P743FvLearn.I250Learn;
-using Grayscale.P743FvLearn.I450Tyoseiryo;
-using Grayscale.P743FvLearn.I490StopLearning;
-using Grayscale.P743FvLearn.L250Learn;
-using Grayscale.P743FvLearn.L260View;
-using Grayscale.P743FvLearn.L450Tyoseiryo;
-using Grayscale.P743FvLearn.L480Functions;
-using Grayscale.P743FvLearn.L490StopLearning;
-using Grayscale.P743FvLearn.L508AutoMoveRush;
-using Grayscale.P743FvLearn.L510AutoKifuRead;
-using Grayscale.P743FvLearn.L600Operation;
+using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
+using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
+using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
+using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
+using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
+using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
+using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
+using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
+using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
+using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
+using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
 using Nett;
 
-namespace Grayscale.P743FvLearn
+namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
 {
     public partial class Uc_Main : UserControl
     {

@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using System.Windows.Forms;
     using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.P461Server.L498Server;
+    using Grayscale.Kifuwarakaku.UseCases.Features;
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
     /// <summary>

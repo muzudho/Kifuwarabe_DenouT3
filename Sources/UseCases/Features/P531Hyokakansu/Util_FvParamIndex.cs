@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P521FeatureVect.I500Struct;
-using Grayscale.P521FeatureVect.L500Struct;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
 
 
@@ -10,7 +10,7 @@ using Grayscale.P521FeatureVect.L500Struct;
 
 #endif
 
-namespace Grayscale.P531Hyokakansu.L499UtilFv
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     /// <summary>
     /// フィーチャー・ベクターのパラメーター・インデックスを返します。

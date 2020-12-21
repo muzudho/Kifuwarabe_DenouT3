@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 using Grayscale.Kifuwarakaku.Engine.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P542Scoreing.I005UsiLoop;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 using Nett;
 
 

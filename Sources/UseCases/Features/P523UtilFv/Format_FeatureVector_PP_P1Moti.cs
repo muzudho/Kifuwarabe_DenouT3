@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P521FeatureVect.I500Struct;
-using Grayscale.P521FeatureVect.L500Struct;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
-namespace Grayscale.P523UtilFv.L490UtilFvFormat
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     /// <summary>
     /// 二駒関係ＰＰで、Ｐ１が持ち駒のもの。

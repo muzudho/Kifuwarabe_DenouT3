@@ -1,6 +1,6 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Features;
 
-namespace Grayscale.P521FeatureVect.I500Struct
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     /// <summary>
     /// 二駒関係のＰ　パラメーター・インデックス

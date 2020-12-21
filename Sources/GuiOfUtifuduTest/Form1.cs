@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace P920_UtifuduTest
+namespace Grayscale.Kifuwarakaku.GuiOfUtifuduTest
 {
     public partial class Form1 : Form
     {

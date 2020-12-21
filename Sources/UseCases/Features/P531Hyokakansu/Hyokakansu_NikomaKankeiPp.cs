@@ -1,6 +1,6 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P521FeatureVect.I500Struct;
-using Grayscale.P531Hyokakansu.L499UtilFv;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
 
 #if DEBUG || LEARN
@@ -8,7 +8,7 @@ using System.Text;
 using Grayscale.Kifuwarakaku.Entities.Features;
 #endif
 
-namespace Grayscale.P531Hyokakansu.L500Hyokakansu
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
 
 

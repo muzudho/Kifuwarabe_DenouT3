@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Nett;
 
-namespace Grayscale.P169_Form_______
+namespace Grayscale.Kifuwarakaku.GuiOfKifuCsa
 {
     public partial class Uc_Main : UserControl
     {

@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P554TansaFukasa.I500Struct
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     public enum Mode_Tansaku
     {

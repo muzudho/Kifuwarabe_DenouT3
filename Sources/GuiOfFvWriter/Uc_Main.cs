@@ -4,14 +4,14 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P521FeatureVect.I500Struct;
-using Grayscale.P521FeatureVect.L500Struct;
-using Grayscale.P523UtilFv.L480UtilFvEdit;
-using Grayscale.P523UtilFv.L490UtilFvFormat;
-using Grayscale.P523UtilFv.L491UtilFvIo;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 using Nett;
 
-namespace Grayscale.P720_FvWriter___
+namespace Grayscale.Kifuwarakaku.GuiOfFvWriter.Features
 {
     public partial class Uc_Main : UserControl
     {

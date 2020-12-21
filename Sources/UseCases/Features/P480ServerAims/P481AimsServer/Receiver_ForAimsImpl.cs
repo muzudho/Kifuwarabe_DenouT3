@@ -2,13 +2,13 @@
 using System.Diagnostics;
 using System.Windows.Forms;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P461Server.I497EngineClient;
-using Grayscale.P461Server.L497EngineClient;
-using Grayscale.P481AimsServer.I060Phase;
-using Grayscale.P481AimsServer.I070ServerBase;
-using Grayscale.P481AimsServer.I125Receiver;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
-namespace Grayscale.P481AimsServer.L125Receiver
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     public class Receiver_ForAimsImpl : Receiver_ForCsharpVsImpl, Receiver_ForAims
     {

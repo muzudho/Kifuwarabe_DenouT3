@@ -1,4 +1,4 @@
-﻿namespace Grayscale.P169_Form_______
+﻿namespace Grayscale.Kifuwarakaku.GuiOfKifuCsa
 {
     partial class Form1
     {
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uc_Main1 = new Grayscale.P169_Form_______.Uc_Main();
+            this.uc_Main1 = new Grayscale.Kifuwarakaku.GuiOfKifuCsa.Uc_Main();
             this.SuspendLayout();
             // 
             // uc_Main1

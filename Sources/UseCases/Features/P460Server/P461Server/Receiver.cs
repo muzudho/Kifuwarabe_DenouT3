@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace Grayscale.P461Server.I125Receiver
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     /// <summary>
     /// 受信機能です。

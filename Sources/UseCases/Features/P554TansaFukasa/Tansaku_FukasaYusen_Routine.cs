@@ -1,7 +1,7 @@
 ﻿// アルファ法のデバッグ出力をする場合。
 //#define DEBUG_ALPHA_METHOD
 
-namespace Grayscale.P554TansaFukasa.L500Struct
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
 #if DEBUG
     using Grayscale.Kifuwarakaku.Entities.Logger;
@@ -18,27 +18,27 @@ using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P542Scoreing.I250Args;
-using Grayscale.P542Scoreing.L500Util;
-using Grayscale.P551Tansaku.I500Tansaku;
-using Grayscale.P551Tansaku.L500Struct;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P554TansaFukasa.I500Struct;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 #else
     using System.Collections.Generic;
     using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.P542Scoreing.I250Args;
-    using Grayscale.P542Scoreing.L500Util;
-    using Grayscale.P551Tansaku.I500Tansaku;
-    using Grayscale.P551Tansaku.L500Struct;
-    using Grayscale.P554TansaFukasa.I500Struct;
+    using Grayscale.Kifuwarakaku.UseCases.Features;
+    using Grayscale.Kifuwarakaku.UseCases.Features;
+    using Grayscale.Kifuwarakaku.UseCases.Features;
+    using Grayscale.Kifuwarakaku.UseCases.Features;
+    using Grayscale.Kifuwarakaku.UseCases.Features;
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 #endif
 

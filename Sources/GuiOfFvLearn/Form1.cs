@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Grayscale.P743FvLearn
+namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
 {
     public partial class Form1 : Form
     {

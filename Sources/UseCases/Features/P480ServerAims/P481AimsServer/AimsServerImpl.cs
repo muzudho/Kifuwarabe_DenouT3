@@ -1,12 +1,12 @@
 ﻿using System;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P461Server.L498Server;
-using Grayscale.P481AimsServer.I060Phase;
-using Grayscale.P481AimsServer.I070ServerBase;
-using Grayscale.P481AimsServer.L060Phase;
-using Grayscale.P481AimsServer.L125Receiver;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
-namespace Grayscale.P481AimsServer.L500Server
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
 
     /// <summary>

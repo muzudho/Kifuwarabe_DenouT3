@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // アセンブリに関する一般情報は以下の属性セットをとおして制御されます。
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
-[assembly: AssemblyTitle("P920_UtifuduTest")]
+[assembly: AssemblyTitle("Grayscale.Kifuwarakaku.GuiOfUtifuduTest")]
 [assembly: AssemblyDescription("打ち歩詰めのテストをしようとしたもの。")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ぐれーすけーる")]
-[assembly: AssemblyProduct("P920_UtifuduTest")]
+[assembly: AssemblyProduct("Grayscale.Kifuwarakaku.GuiOfUtifuduTest")]
 [assembly: AssemblyCopyright("Copyright © ぐれーすけーる 2015")]
 [assembly: AssemblyTrademark("きふわらべ")]
 [assembly: AssemblyCulture("")]

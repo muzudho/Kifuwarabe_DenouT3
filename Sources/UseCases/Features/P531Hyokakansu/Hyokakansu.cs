@@ -1,7 +1,7 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P521FeatureVect.I500Struct;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
-namespace Grayscale.P531Hyokakansu.I500Hyokakansu
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
 
     /// <summary>

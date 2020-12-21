@@ -1,8 +1,8 @@
 ﻿using System;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P521FeatureVect.I500Struct;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
-namespace Grayscale.P522ConvFvKoumoku.L500Converter
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     public abstract class Conv_FvKoumoku522
     {

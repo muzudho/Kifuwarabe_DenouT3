@@ -1,8 +1,8 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P542Scoreing.I250Args;
-using Grayscale.P554TansaFukasa.I500Struct;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
-namespace Grayscale.P551Tansaku.I500Tansaku
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     public interface Tansaku_Routine
     {

@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Windows.Forms;
-    using Grayscale.P461Server.L250Util;
+    using Grayscale.Kifuwarakaku.UseCases.Features;
 
     /// <summary>
     /// [再生]ボタンを押したときの処理。

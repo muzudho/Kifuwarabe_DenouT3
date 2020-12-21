@@ -3,13 +3,13 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P521FeatureVect.I500Struct;
-using Grayscale.P521FeatureVect.L500Struct;
-using Grayscale.P523UtilFv.L491UtilFvIo;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 using Nett;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P523UtilFv.L510UtilFvLoad
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     public abstract class Util_FvLoad
     {

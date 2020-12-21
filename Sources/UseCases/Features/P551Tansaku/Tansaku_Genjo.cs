@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P551Tansaku.I500Tansaku
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     public interface Tansaku_Genjo
     {

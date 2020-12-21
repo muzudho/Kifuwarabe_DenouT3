@@ -6,9 +6,9 @@ using System.Text.RegularExpressions;
 using Grayscale.Kifuwarakaku.Engine.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P542Scoreing.I005UsiLoop;
-using Grayscale.P542Scoreing.L240Shogisasi;
-using Grayscale.P560UtilClient.L500Util;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 using Nett;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 

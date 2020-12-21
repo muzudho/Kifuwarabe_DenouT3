@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace Grayscale.P461Server.I496EngineWrapper
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     public delegate void DELEGATE_ShogiServer_ToEngine(string line);
 

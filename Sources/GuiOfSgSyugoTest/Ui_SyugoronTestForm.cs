@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Grayscale.P780_SgSyugoTest
+namespace Grayscale.Kifuwarakaku.GuiOfSgSyugoTest
 {
     public partial class Ui_SyugoronTestForm : Form
     {

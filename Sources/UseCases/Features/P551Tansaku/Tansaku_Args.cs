@@ -2,7 +2,7 @@
 using Grayscale.Kifuwarakaku.Entities.Features;
 #endif
 
-namespace Grayscale.P551Tansaku.I500Tansaku
+namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
 
     /// <summary>
