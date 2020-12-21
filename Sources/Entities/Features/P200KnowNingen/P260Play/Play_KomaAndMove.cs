@@ -1,14 +1,7 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P260Play.L250Calc
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
 
@@ -44,7 +37,7 @@ namespace Grayscale.P260Play.L250Calc
             {
                 SySet<SyElement> srcMasus = c.ElementAt(selfKoma);
 
-                SySet<SyElement> minusedMasus = srcMasus.Minus_Closed( b, Util_SyElement_BinaryOperator.Dlgt_Equals_MasuNumber);
+                SySet<SyElement> minusedMasus = srcMasus.Minus_Closed(b, Util_SyElement_BinaryOperator.Dlgt_Equals_MasuNumber);
 
                 // 差替え
                 c.AddReplace(selfKoma, minusedMasus, false);//差分に差替えます。もともと無い駒なら何もしません。
@@ -82,7 +75,7 @@ namespace Grayscale.P260Play.L250Calc
                     "[\n" +
                     "    [\n" +
                     Util_FormatJson_LogGraphicEx.JsonElements_Masus(enableLog, srcMasus, "(1)引く前") +
-                    "    ],\n"+
+                    "    ],\n" +
                     "],\n"
                     );
                 SySet<SyElement> minusedMasus = srcMasus.Clone();
@@ -93,12 +86,12 @@ namespace Grayscale.P260Play.L250Calc
             }
 
             Util_GraphicalLog.WriteHtml5(enableLog, "Thought_KomaAndMove Minus_OverThereMasus2",
-                "[\n"+
+                "[\n" +
                 "    [\n" +
                 Util_FormatJson_LogGraphicEx.JsonKyokumens_MultiKomabetuMasus(enableLog, src_srcSky_forLog, a, "(1)a") +
                 Util_FormatJson_LogGraphicEx.JsonElements_Masus(enableLog, b, "(2)-overThere_b") +
                 Util_FormatJson_LogGraphicEx.JsonKyokumens_MultiKomabetuMasus(enableLog, src_srcSky_forLog, c, "(3)＝c") +
-                "    ],\n"+
+                "    ],\n" +
                 "],\n"
                 );
 

@@ -1,11 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P323Sennitite.I500Struct;
-
-
-namespace Grayscale.P324KifuTree.I250Struct
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public interface KifuTree : Tree<IMove, KyokumenWrapper>
     {
@@ -24,7 +17,7 @@ namespace Grayscale.P324KifuTree.I250Struct
         //Playerside CountPside(Node<Starbeamable, KyokumenWrapper> node, IErrorController logTag);
 
 
-        
+
         ///// <summary>
         ///// ************************************************************************************************************************
         ///// [ここから採譜]機能

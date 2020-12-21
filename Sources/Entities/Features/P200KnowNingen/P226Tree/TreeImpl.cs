@@ -1,5 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
@@ -47,7 +46,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value"></param>
-        public void SetProperty(string key,object value)
+        public void SetProperty(string key, object value)
         {
             if (this.properties.ContainsKey(key))
             {
@@ -55,7 +54,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             }
             else
             {
-                this.properties.Add(key,value);
+                this.properties.Add(key, value);
             }
         }
 
@@ -77,7 +76,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
             return result;
         }
-        private Dictionary<string,object> properties;
+        private Dictionary<string, object> properties;
 
         #endregion
 
@@ -89,8 +88,8 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             Node<T1, T2> root
             )
         {
-            this.properties = new Dictionary<string,object>();
-            this.SetCurNode( root);
+            this.properties = new Dictionary<string, object>();
+            this.SetCurNode(root);
         }
 
 
@@ -99,7 +98,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
         public void Move_Previous()
         {
-            this.SetCurNode( this.CurNode.GetParentNode());
+            this.SetCurNode(this.CurNode.GetParentNode());
         }
 
         #endregion
@@ -157,7 +156,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             // カレントからルートまで遡り、それを逆順にすれば、本譜になります。
             //
 
-            while (null!=endNode)//ルートを含むところまで遡ります。
+            while (null != endNode)//ルートを含むところまで遡ります。
             {
                 honpu.Add(endNode); // リスト作成
 
@@ -321,7 +320,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         {
             int result = 0;
 
-            if(null!=this.GetRoot())
+            if (null != this.GetRoot())
             {
                 result = this.GetRoot().CountAllNodes();
             }

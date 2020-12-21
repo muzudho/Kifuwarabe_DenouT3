@@ -8,10 +8,10 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
     /// 
     /// 例：どの駒が、どんな手を指せるか。
     /// </summary>
-    public class List_OneAndMulti<T1,T2>
+    public class List_OneAndMulti<T1, T2>
     {
 
-        public List<Couple<T1,T2>> Items { get; set; }
+        public List<Couple<T1, T2>> Items { get; set; }
 
         public List_OneAndMulti()
         {

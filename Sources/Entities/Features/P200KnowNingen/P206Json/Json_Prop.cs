@@ -1,5 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using System.Text;
+﻿using System.Text;
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
 {
@@ -14,7 +13,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         public Json_Prop(string name, string value)
         {
             this.Name = name;
-            this.Value = new Json_Str( value);
+            this.Value = new Json_Str(value);
         }
 
         public Json_Prop(string name, Json_Val value)
@@ -26,7 +25,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         public Json_Prop(string name, int value)
         {
             this.Name = name;
-            this.Value = new Json_Str( value.ToString());
+            this.Value = new Json_Str(value.ToString());
         }
 
         public override string ToString()
@@ -46,12 +45,12 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 // 数字
                 sb.Append(value2.ToString());
             }
-            else if(
+            else if (
                 this.Value is Json_Str// 文字
                 || this.Value is Json_Arr// 配列
                 || this.Value is Json_Obj// オブジェクト
                 )
-            {                
+            {
                 sb.Append(this.Value.ToString());
             }
             else

@@ -1,18 +1,6 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P296ConvJsa.L500Converter;
-using Grayscale.P324KifuTree.I250Struct;
-using Grayscale.P324KifuTree.L250Struct;
-using Grayscale.P339ConvKyokume.L500Converter;
-using Grayscale.P341Ittesasu.L125UtilB;
-using System.Text;
+﻿using System.Text;
 
-namespace Grayscale.P341Ittesasu.L250OperationA
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>
@@ -72,14 +60,14 @@ namespace Grayscale.P341Ittesasu.L250OperationA
                 // 採譜用新ノード
                 KifuNode saifu_newChild = new KifuNodeImpl(
                     node.Key,
-                    new KyokumenWrapper( SkyConst.NewInstance_ReversePside(
+                    new KyokumenWrapper(SkyConst.NewInstance_ReversePside(
                         saifu_kWrap.KyokumenConst,
                         temezumi//FIXME:合ってるのかどうか。
                         ))
                 );
 
                 // 記録係り用棋譜（採譜）
-                UtilKifuTree282.AppendChild_And_ChangeCurrentToChild(saifuKifu, saifu_newChild, hint+"/ToJsaKifuText");// 新しい次ノードを追加。次ノードを、これからカレントとする。
+                UtilKifuTree282.AppendChild_And_ChangeCurrentToChild(saifuKifu, saifu_newChild, hint + "/ToJsaKifuText");// 新しい次ノードを追加。次ノードを、これからカレントとする。
 
                 // 後手の符号がまだ含まれていない。
                 string jsaFugoStr = ConvMoveStrJsa.ToMoveStrJsa(saifu_newChild

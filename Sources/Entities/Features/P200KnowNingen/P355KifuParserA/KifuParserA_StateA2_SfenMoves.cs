@@ -1,15 +1,6 @@
 ﻿using System;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P325PnlTaikyoku.I250Struct;
-using Grayscale.P339ConvKyokume.L500Converter;
-using Grayscale.P341Ittesasu.I250OperationA;
-using Grayscale.P341Ittesasu.L250OperationA;
-using Grayscale.P341Ittesasu.L500UtilA;
 using Grayscale.P355_KifuParserA.I500Parser;
 
 namespace Grayscale.P355_KifuParserA.L500Parser

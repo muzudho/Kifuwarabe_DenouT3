@@ -6,7 +6,7 @@
     /// 
     /// 使用例：「スプライトと、升」、「スプライトと、升のリスト」など。
     /// </summary>
-    public class Couple<T1,T2>
+    public class Couple<T1, T2>
     {
 
         public T1 A { get { return this.a; } }

@@ -1,8 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +20,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         {
             StringBuilder sb = new StringBuilder();
 
-            if(masus is SySet_Default<SyElement>)
+            if (masus is SySet_Default<SyElement>)
             {
                 // まず自分の要素
                 foreach (SyElement hMasu1 in ((SySet_Default<SyElement>)masus).Elements_)

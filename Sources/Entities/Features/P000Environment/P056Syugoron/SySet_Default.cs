@@ -1,5 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
@@ -18,7 +17,8 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
         #region プロパティ
 
-        public string Word { get { return this.word; } }        private string word;
+        public string Word { get { return this.word; } }
+        private string word;
 
         /// <summary>
         /// 枡。
@@ -67,7 +67,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             get
             {
                 // 順序を保たなくても構わない、全要素
-                
+
 
                 // 全要素
                 HashSet<SySet<T1>> supersets2 = new HashSet<SySet<T1>>();
@@ -232,10 +232,10 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         {
             //if (Okiba.ShogiBan == Converter04.Masu_ToOkiba(masu))
             //{
-                if (!this.elements_.Contains(element))//マス番号の重複を除外
-                {
-                    this.elements_.Add(element);
-                }
+            if (!this.elements_.Contains(element))//マス番号の重複を除外
+            {
+                this.elements_.Add(element);
+            }
             //}
         }
 
@@ -299,7 +299,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             {
                 foreach (T1 element in b.Elements)
                 {
-                    c.Minus_Closed(element,dlgt_equals);
+                    c.Minus_Closed(element, dlgt_equals);
                 }
             }
 
@@ -342,7 +342,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                             goto gt_Next;
                         }
 
-                        this.Minus_Closed(element,dlgt_equals);
+                        this.Minus_Closed(element, dlgt_equals);
 
                     gt_Next:
                         index++;
@@ -380,7 +380,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         {
             StringBuilder sb = new StringBuilder();
 
-            foreach(T1 element in this.Elements)
+            foreach (T1 element in this.Elements)
             {
                 sb.Append(element.ToString());
                 sb.Append(" ");

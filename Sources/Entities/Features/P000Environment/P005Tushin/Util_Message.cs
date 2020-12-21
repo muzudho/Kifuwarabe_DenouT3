@@ -1,5 +1,4 @@
-﻿using ProjectDark.KWSupport;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace Grayscale.Kifuwarakaku.Entities.Features

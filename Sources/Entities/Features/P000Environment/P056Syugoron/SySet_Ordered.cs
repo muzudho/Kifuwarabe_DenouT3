@@ -1,5 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
 {
@@ -16,7 +15,8 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
         #region プロパティ
 
-        public string Word { get { return this.word; } }        private string word;
+        public string Word { get { return this.word; } }
+        private string word;
 
         /// <summary>
         /// 枡。
@@ -65,7 +65,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             get
             {
                 // 順序を保たなくても構わない、全要素
-                
+
 
                 // 全要素
                 HashSet<SySet<T1>> supersets2 = new HashSet<SySet<T1>>();
@@ -255,13 +255,13 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         {
             // 削除する要素を検索します。
             int index = this.elements_.IndexOf(b);
-            if(-1==index)
+            if (-1 == index)
             {
                 goto gt_Supersets;
             }
 
             // 削除したい要素を含む、その後ろごと丸ごと削除
-            this.elements_.RemoveRange( index, this.elements_.Count-index);
+            this.elements_.RemoveRange(index, this.elements_.Count - index);
 
         gt_Supersets:
 
@@ -291,20 +291,20 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 goto gt_Supersets;
             }
 
-            if(this.elements_.Count<=index+1)
+            if (this.elements_.Count <= index + 1)
             {
                 goto gt_Supersets;
             }
 
             // 削除したい要素を含めず、それより後ろを丸ごと削除
-            this.elements_.RemoveRange(index+1, this.elements_.Count - (index+1));
+            this.elements_.RemoveRange(index + 1, this.elements_.Count - (index + 1));
 
         gt_Supersets:
 
             // 親集合から削除
             foreach (SySet<T1> thisSuperset in this.supersets_)
             {
-                thisSuperset.Minus_Closed(b,dlgt_equals);
+                thisSuperset.Minus_Closed(b, dlgt_equals);
             }
         }
 
@@ -326,7 +326,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             // 要素の削除
             foreach (T1 bElement in b.Elements)
             {
-                c.Minus_Closed(bElement,dlgt_equals);
+                c.Minus_Closed(bElement, dlgt_equals);
             }
 
             return c;

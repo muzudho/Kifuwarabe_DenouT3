@@ -1,6 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-
-namespace Grayscale.Kifuwarakaku.Entities.Features
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Conv_MigiHidari
     {

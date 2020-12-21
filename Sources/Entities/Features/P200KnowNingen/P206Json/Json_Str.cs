@@ -1,5 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using System.Text;
+﻿using System.Text;
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
 {

@@ -9,10 +9,10 @@
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.P276SeizaStartp.L500Struct;
-    using Grayscale.P324KifuTree.I250Struct;
-    using Grayscale.P324KifuTree.L250Struct;
-    using Grayscale.P341Ittesasu.L125UtilB;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.P461Server.L250Util;
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 

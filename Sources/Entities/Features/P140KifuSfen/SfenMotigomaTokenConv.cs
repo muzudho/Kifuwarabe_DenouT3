@@ -11,7 +11,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// </summary>
         /// <param name="moti"></param>
         /// <returns></returns>
-        public  static int CountMaisu(string moti)
+        public static int CountMaisu(string moti)
         {
             int result;
 

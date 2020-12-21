@@ -1,6 +1,4 @@
-﻿using Grayscale.P274_KifuReaderB.I500Reader;
-
-namespace Grayscale.P274_KifuReaderB.L500Reader
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public class KifuReaderB_StateB0 : KifuReaderB_State
     {

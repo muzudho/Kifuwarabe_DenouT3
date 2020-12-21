@@ -1,7 +1,5 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
+﻿using System.Collections.Generic;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P324KifuTree.I250Struct;
-using System.Collections.Generic;
 
 namespace Grayscale.P372KyokuParser.I500Parser
 {

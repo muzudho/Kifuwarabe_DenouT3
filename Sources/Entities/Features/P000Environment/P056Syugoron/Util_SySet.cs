@@ -1,6 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using System.Text;
+﻿using System.Text;
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
 {
@@ -11,9 +9,9 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         {
             StringBuilder sb = new StringBuilder();
 
-            foreach(SyElement syElement in sySet.Elements)
+            foreach (SyElement syElement in sySet.Elements)
             {
-                sb.Append(Conv_Sy.Query_Word( syElement.Bitfield));
+                sb.Append(Conv_Sy.Query_Word(syElement.Bitfield));
                 sb.Append(",");
             }
 

@@ -1,6 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using System.Drawing;
+﻿using System.Drawing;
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
 {
@@ -49,7 +47,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             //----------------------------------------
             // 動かした先の升を黒く塗る
             //----------------------------------------
-            if (0 <= args.DstMasu_orMinusOne && args.DstMasu_orMinusOne<=80)
+            if (0 <= args.DstMasu_orMinusOne && args.DstMasu_orMinusOne <= 80)
             {
                 // 盤上に塗りつぶし矩形
                 g.FillRectangle(Brushes.Black, Util_KyokumenPngPainter.GetBanjoRectangle(args.DstMasu_orMinusOne, bOx, bOy, args));
@@ -89,7 +87,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 {
                     for (int dan = 1; dan < 10; dan++)
                     {
-                        string sign = args.Ro_Kyokumen1.Ban[suji,dan];
+                        string sign = args.Ro_Kyokumen1.Ban[suji, dan];
                         if ("" != sign)
                         {
                             Point pt = Util_KyokumenPngPainter.CropXyBySign(sign, args);
@@ -113,7 +111,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     Point pt = Util_KyokumenPngPainter.CropXyBySign(signs[moti], args);
                     // 枚数
                     int player = 2;
-                    int maisu = args.Ro_Kyokumen1.Moti[player,moti];
+                    int maisu = args.Ro_Kyokumen1.Moti[player, moti];
                     if (0 < maisu)
                     {
                         //駒
@@ -163,7 +161,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
                     // 枚数
                     int player = 1;
-                    int maisu = args.Ro_Kyokumen1.Moti[player,moti];
+                    int maisu = args.Ro_Kyokumen1.Moti[player, moti];
                     if (0 < maisu)
                     {
                         g.DrawImage(Image.FromFile(args.Env.ImgFolder + args.Env.KmFile),
@@ -204,9 +202,9 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             if (99 < args.Ro_Kyokumen1.Temezumi)// 3桁以上のとき
             {
                 x = 0.0f;
-                
+
             }
-            else if (9<args.Ro_Kyokumen1.Temezumi)// 2桁のとき
+            else if (9 < args.Ro_Kyokumen1.Temezumi)// 2桁のとき
             {
                 x = 9.0f;
             }

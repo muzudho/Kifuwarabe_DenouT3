@@ -2,13 +2,13 @@
 using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P321KyokumHyoka.I250Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
 
 
 #if DEBUG || LEARN
 using System.Text;
-using Grayscale.P321KyokumHyoka.L250Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
 #endif
 
 namespace Grayscale.P531Hyokakansu.L500Hyokakansu

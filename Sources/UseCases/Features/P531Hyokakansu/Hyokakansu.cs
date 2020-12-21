@@ -1,6 +1,6 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P321KyokumHyoka.I250Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
 
 namespace Grayscale.P531Hyokakansu.I500Hyokakansu

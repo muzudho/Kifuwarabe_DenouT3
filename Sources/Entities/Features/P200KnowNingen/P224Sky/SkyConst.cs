@@ -1,13 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
@@ -93,7 +84,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
         public static SkyConst NewInstance_ReversePside(Sky src, int temezumi_orMinus1)
         {
-            SkyConst result = new SkyConst(src, true, temezumi_orMinus1, new Finger[]{Fingers.Error_1},new IMoveHalf[]{null},
+            SkyConst result = new SkyConst(src, true, temezumi_orMinus1, new Finger[] { Fingers.Error_1 }, new IMoveHalf[] { null },
                 // 手得計算
                 Komasyurui14.H00_Null___, 0, Masu_Honshogi.Query_Basho(Masu_Honshogi.nError)
                 );
@@ -112,7 +103,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// <returns></returns>
         public static SkyConst NewInstance_OverwriteOrAdd_Light(Sky src, int temezumi_orMinus1, Finger finger1, IMoveHalf light1)
         {
-            SkyConst result = new SkyConst(src, false, temezumi_orMinus1, new Finger[]{finger1},new IMoveHalf[]{light1},
+            SkyConst result = new SkyConst(src, false, temezumi_orMinus1, new Finger[] { finger1 }, new IMoveHalf[] { light1 },
                 // 手得計算
                 Komasyurui14.H00_Null___, 0, Masu_Honshogi.Query_Basho(Masu_Honshogi.nError)
                 );
@@ -262,7 +253,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         {
             IMoveHalf found;
 
-            if (0<=(int)finger && (int)finger < this.starlights.Count)
+            if (0 <= (int)finger && (int)finger < this.starlights.Count)
             {
                 found = this.starlights[(int)finger];
             }

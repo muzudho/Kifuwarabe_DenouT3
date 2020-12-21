@@ -1,7 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -112,7 +109,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             // 1段目
             {
                 //マス番号は、72,63,54,45,36,27,18,9,0。
-                sb.Append( this.CreateDanString(72));
+                sb.Append(this.CreateDanString(72));
             }
             sb.Append("/");
 

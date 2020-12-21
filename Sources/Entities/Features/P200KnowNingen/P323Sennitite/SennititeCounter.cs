@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P323Sennitite.I500Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     /// <summary>
     /// TODO: 巻き戻しボタンへの対応がまだ。

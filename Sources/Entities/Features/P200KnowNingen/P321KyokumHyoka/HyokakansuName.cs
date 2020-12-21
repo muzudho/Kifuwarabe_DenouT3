@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P321KyokumHyoka.I250Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     /// <summary>
     /// 評価項目名＋自信クラス名
@@ -13,7 +13,7 @@ namespace Grayscale.P321KyokumHyoka.I250Struct
         /// <summary>
         /// エラー用。
         /// </summary>
-        N00_Unknown__________=0,
+        N00_Unknown__________ = 0,
 
         /// <summary>
         /// 千日手

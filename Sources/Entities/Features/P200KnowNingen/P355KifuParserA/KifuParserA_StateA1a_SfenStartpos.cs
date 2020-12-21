@@ -1,7 +1,6 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P325PnlTaikyoku.I250Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P355_KifuParserA.I500Parser;
-using System;
 
 namespace Grayscale.P355_KifuParserA.L500Parser
 {

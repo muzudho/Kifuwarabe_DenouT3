@@ -1,18 +1,6 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P292JsaFugo.L250Struct;
-using System.Text;
+﻿using System.Text;
 
-namespace Grayscale.P292JsaFugo.L500Util
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Util_Translator_JsaFugo
     {
@@ -116,7 +104,7 @@ namespace Grayscale.P292JsaFugo.L500Util
                 {
                     //RO_Star_Koma preSrcKoma = Util_Starlightable.AsKoma(preMove.LongTimeAgo);
                     RO_Star preDstKoma = Util_Starlightable.AsKoma(preMove.Now);
-                    if (Conv_SyElement.ToMasuNumber(preDstKoma.Masu)==Conv_SyElement.ToMasuNumber(curDstKoma.Masu))
+                    if (Conv_SyElement.ToMasuNumber(preDstKoma.Masu) == Conv_SyElement.ToMasuNumber(curDstKoma.Masu))
                     {
                         // “同”
                         sb.Append("同");

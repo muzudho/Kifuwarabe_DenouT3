@@ -1,8 +1,5 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
-using Grayscale.Kifuwarakaku.Entities.Features;
 
 #if DEBUG
 using System.IO;
@@ -27,14 +24,14 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             // 歩
             //
             i = 0;
-            foreach(List<SyElement> list in tedokuHistory.Fu___)
+            foreach (List<SyElement> list in tedokuHistory.Fu___)
             {
                 sb.Append("Fu___[");
                 sb.Append(string.Format("{0,2:0}", i));
                 sb.Append("] ");
                 foreach (SyElement masu in list)
                 {
-                    sb.Append(Conv_Sy.Query_Word( masu.Bitfield));
+                    sb.Append(Conv_Sy.Query_Word(masu.Bitfield));
                     sb.Append(",");
                 }
                 sb.AppendLine();
@@ -52,7 +49,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 sb.Append("] ");
                 foreach (SyElement masu in list)
                 {
-                    sb.Append(Conv_Sy.Query_Word( masu.Bitfield));
+                    sb.Append(Conv_Sy.Query_Word(masu.Bitfield));
                     sb.Append(",");
                 }
                 sb.AppendLine();
@@ -70,7 +67,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 sb.Append("] ");
                 foreach (SyElement masu in list)
                 {
-                    sb.Append(Conv_Sy.Query_Word( masu.Bitfield));
+                    sb.Append(Conv_Sy.Query_Word(masu.Bitfield));
                     sb.Append(",");
                 }
                 sb.AppendLine();
@@ -89,7 +86,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 sb.Append("] ");
                 foreach (SyElement masu in list)
                 {
-                    sb.Append(Conv_Sy.Query_Word( masu.Bitfield));
+                    sb.Append(Conv_Sy.Query_Word(masu.Bitfield));
                     sb.Append(",");
                 }
                 sb.AppendLine();
@@ -107,7 +104,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 sb.Append("] ");
                 foreach (SyElement masu in list)
                 {
-                    sb.Append(Conv_Sy.Query_Word( masu.Bitfield));
+                    sb.Append(Conv_Sy.Query_Word(masu.Bitfield));
                     sb.Append(",");
                 }
                 sb.AppendLine();
@@ -121,7 +118,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 sb.Append("Gyoku[--] ");
                 foreach (SyElement masu in tedokuHistory.Gyoku)
                 {
-                    sb.Append(Conv_Sy.Query_Word( masu.Bitfield));
+                    sb.Append(Conv_Sy.Query_Word(masu.Bitfield));
                     sb.Append(",");
                 }
                 sb.AppendLine();
@@ -138,7 +135,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 sb.Append("] ");
                 foreach (SyElement masu in list)
                 {
-                    sb.Append(Conv_Sy.Query_Word( masu.Bitfield));
+                    sb.Append(Conv_Sy.Query_Word(masu.Bitfield));
                     sb.Append(",");
                 }
                 sb.AppendLine();
@@ -156,7 +153,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 sb.Append("] ");
                 foreach (SyElement masu in list)
                 {
-                    sb.Append(Conv_Sy.Query_Word( masu.Bitfield));
+                    sb.Append(Conv_Sy.Query_Word(masu.Bitfield));
                     sb.Append(",");
                 }
                 sb.AppendLine();

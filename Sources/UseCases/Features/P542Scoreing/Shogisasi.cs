@@ -1,5 +1,5 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P324KifuTree.I250Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
 
 namespace Grayscale.P542Scoreing.L240Shogisasi

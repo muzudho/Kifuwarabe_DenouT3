@@ -1,7 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using System.Text;
+﻿using System.Text;
 
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
@@ -14,7 +11,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// </summary>
         /// <param name="collection"></param>
         /// <returns></returns>
-        public static string Dump(List_OneAndMulti<T1,T2> collection)
+        public static string Dump(List_OneAndMulti<T1, T2> collection)
         {
             int count = 0;
 

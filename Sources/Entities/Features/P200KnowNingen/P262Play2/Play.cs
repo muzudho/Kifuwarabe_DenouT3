@@ -1,24 +1,10 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
-using Grayscale.P261Utifudume.L500Struct;
-using Grayscale.Kifuwarakaku.Entities.Features;
+﻿using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 #if DEBUG
 using System.Diagnostics;
 #endif
 
-namespace Grayscale.P262Play2.L500Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
 
@@ -100,7 +86,7 @@ namespace Grayscale.P262Play2.L500Struct
                     aDaihyo[(int)Komasyurui14.H01_Fu_____].Pside,//持駒を持っているプレイヤー側の
                     Komasyurui14.H01_Fu_____//歩
                     );
-                    
+
 #if DEBUG
                 //if (null != errH_orNull)
                 //{

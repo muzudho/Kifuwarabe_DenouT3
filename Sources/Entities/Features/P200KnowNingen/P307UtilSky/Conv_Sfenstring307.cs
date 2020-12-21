@@ -1,10 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P276SeizaStartp.L500Struct;
-
-
-namespace Grayscale.P307UtilSky.L500Util
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Conv_Sfenstring307 : Sfenstring146Conv
     {

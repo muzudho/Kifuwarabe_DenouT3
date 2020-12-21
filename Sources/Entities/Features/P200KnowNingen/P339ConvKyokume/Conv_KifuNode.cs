@@ -1,18 +1,7 @@
 ﻿using System.Text;
-using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P324KifuTree.I250Struct;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P339ConvKyokume.L500Converter
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Conv_KifuNode
     {
@@ -39,7 +28,7 @@ namespace Grayscale.P339ConvKyokume.L500Converter
                     {
                         RO_Star koma1 = Util_Starlightable.AsKoma(src_Sky.StarlightIndexOf(koma0).Now);
 
-                        ro_Kyokumen1.Ban[suji,dan] = Util_Komasyurui14.SfenText(
+                        ro_Kyokumen1.Ban[suji, dan] = Util_Komasyurui14.SfenText(
                             Util_Komahaiyaku184.Syurui(koma1.Haiyaku),
                             koma1.Pside
                             );

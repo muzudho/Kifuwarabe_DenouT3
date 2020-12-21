@@ -1,5 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using System;
+﻿using System;
 using System.IO;
 using System.Text;
 using System.Xml;
@@ -131,11 +130,11 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     break;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 // エラー
                 successfule = false;
-                Util_Message.Whisper(ex.GetType().Name+"　"+ex.Message);
+                Util_Message.Whisper(ex.GetType().Name + "　" + ex.Message);
             }
 
             return successfule;

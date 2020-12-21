@@ -35,7 +35,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// <param name="value"></param>
         void SetProperty(string key, object value);
 
-        
+
         /// <summary>
         /// ************************************************************************************************************************
         /// 棋譜を空っぽにします。
@@ -47,7 +47,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         void Clear();
 
 
-        
+
         /// <summary>
         /// ************************************************************************************************************************
         /// 現在の要素を切り取って返します。なければヌル。
@@ -62,14 +62,14 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
         Node<T1, T2> GetRoot();
 
-        
+
         /// <summary>
         /// 使い方自由。
         /// </summary>
         object GetProperty(string key);
 
 
-        
+
         /// <summary>
         /// 本譜だけ。
         /// </summary>
@@ -77,7 +77,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// <param name="delegate_Foreach"></param>
         void ForeachHonpu(Node<T1, T2> endNode, DELEGATE_Foreach<T1, T2> delegate_Foreach);
 
-                
+
         /// <summary>
         /// 全て。
         /// </summary>

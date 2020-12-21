@@ -1,5 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
 {
@@ -10,7 +9,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
     /// 局面を入れるのに利用します。
     /// 根ノードに平手局面、最初の子ノードに１手目の局面、を入れるような使い方を想定しています。
     /// </summary>
-    public interface Node<T1,T2>
+    public interface Node<T1, T2>
     {
 
         /// <summary>
@@ -43,11 +42,11 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// <returns></returns>
         Node<T1, T2> GetChildNode(string key);
 
-        int Count_ChildNodes{get;}
+        int Count_ChildNodes { get; }
         void Clear_ChildNodes();
         bool ContainsKey_ChildNodes(string key);
         void PutAdd_ChildNode(string key, Node<T1, T2> newNode);
-        void PutSet_ChildNodes(Dictionary< string, Node<T1, T2>> newNextNodes);
+        void PutSet_ChildNodes(Dictionary<string, Node<T1, T2>> newNextNodes);
 
         void Foreach_ChildNodes(NodeImpl<T1, T2>.DELEGATE_NextNodes d);
 

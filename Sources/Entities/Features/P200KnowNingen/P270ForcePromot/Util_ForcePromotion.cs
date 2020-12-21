@@ -1,11 +1,9 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P270ForcePromot.L250Struct;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using Nett;
 
-namespace Grayscale.P270ForcePromot.L500Util
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
 
@@ -20,7 +18,7 @@ namespace Grayscale.P270ForcePromot.L500Util
         /// <param name="currentHaiyaku"></param>
         /// <param name="masuHandle"></param>
         /// <returns>転生しないなら　未設定　を返します。</returns>
-        public static Komahaiyaku185 MasuHandleTo_ForcePromotionHaiyaku(Komahaiyaku185 currentHaiyaku, int masuHandle,string hint)
+        public static Komahaiyaku185 MasuHandleTo_ForcePromotionHaiyaku(Komahaiyaku185 currentHaiyaku, int masuHandle, string hint)
         {
             Komahaiyaku185 result;
 

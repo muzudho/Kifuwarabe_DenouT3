@@ -1,9 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P325PnlTaikyoku.I250Struct;
-
-namespace Grayscale.P325PnlTaikyoku.L250Struct
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public class Model_ManualImpl : Model_Manual
     {

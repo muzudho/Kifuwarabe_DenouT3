@@ -1,22 +1,10 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P260Play.L500Query;
-using Grayscale.P262Play2.L500Struct;
-using System;
-using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
+﻿using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 #if DEBUG
-using Grayscale.P266KyokumMoves.L250Log;
+using Grayscale.Kifuwarakaku.Entities.Features;
 #endif
 
-namespace Grayscale.P266KyokumMoves.L500Util
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>

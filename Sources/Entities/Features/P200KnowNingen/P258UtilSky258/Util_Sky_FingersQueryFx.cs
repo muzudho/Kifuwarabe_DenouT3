@@ -1,12 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using System;
+﻿using System;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
 
 
@@ -220,7 +212,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             {
                 RO_Star koma = Util_Starlightable.AsKoma(ds.Now);
 
-                if(
+                if (
                     Okiba.ShogiBan == Conv_SyElement.ToOkiba(koma.Masu)
                     && Komasyurui14.H06_Gyoku__ == koma.Komasyurui
                     )

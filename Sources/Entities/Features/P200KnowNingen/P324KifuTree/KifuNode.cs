@@ -1,11 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P321KyokumHyoka.I250Struct;
-
-
-namespace Grayscale.P324KifuTree.I250Struct
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>

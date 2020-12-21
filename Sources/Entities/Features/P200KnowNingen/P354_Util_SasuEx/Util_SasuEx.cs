@@ -1,17 +1,7 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P269UtilSasu.L500Util;
-using Grayscale.P339ConvKyokume.L500Converter;
-using Grayscale.P353ConvSasuEx.L500Converter;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.P353ConvSasuEx.L500Converter;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 namespace Grayscale.P354UtilSasuEx.L500Util

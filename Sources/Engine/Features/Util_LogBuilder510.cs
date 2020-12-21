@@ -8,11 +8,11 @@ using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P266KyokumMoves.L500Util;
-using Grayscale.P324KifuTree.I250Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-using Grayscale.P266KyokumMoves.L250Log;
+using Grayscale.Kifuwarakaku.Entities.Features;
 
 namespace Grayscale.Kifuwarakaku.Engine.Features
 {

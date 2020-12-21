@@ -1,11 +1,6 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P324KifuTree.L250Struct;
-using Grayscale.P325PnlTaikyoku.I250Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P355_KifuParserA.I500Parser;
-using System;
 
 namespace Grayscale.P355_KifuParserA.L500Parser
 {
@@ -74,9 +69,9 @@ namespace Grayscale.P355_KifuParserA.L500Parser
             else
             {
                 //#if DEBUG
-                Logger.Error( "（＾△＾）ここはスルーして次に状態遷移するんだぜ☆\n「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】");//　：　局面の指定のようなんだぜ☆　対応していない☆？
-                                                                                                                                     // Logger.WriteLineError(logTag, "（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　局面の指定のようなんだぜ☆　対応していない☆？");
-                                                                                                                                     //#endif
+                Logger.Error("（＾△＾）ここはスルーして次に状態遷移するんだぜ☆\n「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】");//　：　局面の指定のようなんだぜ☆　対応していない☆？
+                                                                                                                    // Logger.WriteLineError(logTag, "（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　局面の指定のようなんだぜ☆　対応していない☆？");
+                                                                                                                    //#endif
                 nextState = KifuParserA_StateA1b_SfenLnsgkgsnl.GetInstance();
             }
 

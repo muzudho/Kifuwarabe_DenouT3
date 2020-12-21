@@ -1,4 +1,4 @@
-﻿using Grayscale.P324KifuTree.I250Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P542Scoreing.I250Args;
 using Grayscale.P554TansaFukasa.I500Struct;
 

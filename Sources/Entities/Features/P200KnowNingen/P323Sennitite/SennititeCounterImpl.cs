@@ -1,11 +1,9 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P323Sennitite.I500Struct;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 
-namespace Grayscale.P323Sennitite.L500Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public class SennititeCounterImpl : SennititeCounter
     {
@@ -17,7 +15,7 @@ namespace Grayscale.P323Sennitite.L500Struct
         public bool IsNextSennitite(ulong hash)
         {
             bool isNextSennitite;
-            if (this.douituKyokumenCounterDictionary.ContainsKey(hash) && 2<this.douituKyokumenCounterDictionary[hash])
+            if (this.douituKyokumenCounterDictionary.ContainsKey(hash) && 2 < this.douituKyokumenCounterDictionary[hash])
             {
                 isNextSennitite = true;
 
@@ -100,10 +98,10 @@ namespace Grayscale.P323Sennitite.L500Struct
         public void CountUp_Overwrite(ulong hash_old, ulong hash_new, string hint)
         {
             // カウントダウン。
-            this.CountDown(hash_old, hint+"/CountUp_Overwrite");
+            this.CountDown(hash_old, hint + "/CountUp_Overwrite");
 
             // カウントアップ。
-            this.CountUp_New(hash_new, hint+"/CountUp_Overwrite");
+            this.CountUp_New(hash_new, hint + "/CountUp_Overwrite");
         }
         /// <summary>
         /// 同一局面カウンター。

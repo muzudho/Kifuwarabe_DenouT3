@@ -1,6 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
@@ -31,7 +29,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
         public void Read_Add(string filepath, Encoding encoding)
         {
-            if(!File.Exists(filepath))
+            if (!File.Exists(filepath))
             {
                 Util_Message.Show("設定ファイルが見つかりません。[" + filepath + "]");
                 goto gt_EndMethod;
@@ -51,14 +49,14 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             }
             else
             {
-                this.FilepathsCsv = this.FilepathsCsv+","+filepath;
+                this.FilepathsCsv = this.FilepathsCsv + "," + filepath;
             }
             //this.Properties.Clear();
 
             foreach (List<string> row in rows)
             {
                 // 各行は、name,value の2列以上あるはずです。
-                if(row.Count<2)
+                if (row.Count < 2)
                 {
                     goto gt_NextColumn;
                 }
@@ -79,8 +77,8 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     this.Properties.Add(row[0], row[1]);
                 }
 
-                gt_NextColumn:
-                    ;
+            gt_NextColumn:
+                ;
             }
 
         gt_EndMethod:
@@ -89,24 +87,24 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
         public void DebugOut()
         {
-            System.Console.WriteLine("┏━━━━━━━━┓サイズ＝["+this.Properties.Count+"]");
+            System.Console.WriteLine("┏━━━━━━━━┓サイズ＝[" + this.Properties.Count + "]");
 
             foreach (KeyValuePair<string, string> entry in this.Properties)
             {
-                System.Console.WriteLine(entry.Key+"=「"+entry.Value+"」");
+                System.Console.WriteLine(entry.Key + "=「" + entry.Value + "」");
 
             }
 
             System.Console.WriteLine("┗━━━━━━━━┛");
         }
 
-        public string Get( string name )
+        public string Get(string name)
         {
             string result;
 
-            if(!this.Properties.ContainsKey(name))
+            if (!this.Properties.ContainsKey(name))
             {
-                Util_Message.Show("設定ファイル["+this.FilepathsCsv+"]の中に、項目が見つかりません。\n項目名[" + name + "]\n"
+                Util_Message.Show("設定ファイル[" + this.FilepathsCsv + "]の中に、項目が見つかりません。\n項目名[" + name + "]\n"
                     + "もしかして？\n"
                     + "・　.odsを編集していて、.csvに出力していないとか？\n"
                     + "・　エンコーディングは合っている？\n"

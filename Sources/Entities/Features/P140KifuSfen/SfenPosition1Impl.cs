@@ -17,7 +17,7 @@
 
         public SfenPosition1Impl()
         {
-            this.Ban = new string[10,10];// 将棋盤。10×10。0は使わない。
+            this.Ban = new string[10, 10];// 将棋盤。10×10。0は使わない。
             {// 全クリアー
                 // 将棋盤
                 for (int suji = 0; suji < 10; suji++)
@@ -40,7 +40,7 @@
 
 
 
-        public  void GetMoti(
+        public void GetMoti(
             out int mK,
             out int mR,
             out int mB,

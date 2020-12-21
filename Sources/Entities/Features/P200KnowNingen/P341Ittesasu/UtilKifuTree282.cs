@@ -1,16 +1,7 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P324KifuTree.I250Struct;
-using Grayscale.P324KifuTree.L250Struct;
-using Grayscale.P339ConvKyokume.L500Converter;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace Grayscale.P341Ittesasu.L125UtilB
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>
@@ -118,11 +109,11 @@ namespace Grayscale.P341Ittesasu.L125UtilB
                 //----------------------------------------
                 // 次ノート追加
                 //----------------------------------------
-                kifuRef.GetSennititeCounter().CountUp_New(Conv_Sky.ToKyokumenHash(nextNode_and_nextCurrent.Value.KyokumenConst), hint+"/AppendChild_And_ChangeCurrentToChild");
+                kifuRef.GetSennititeCounter().CountUp_New(Conv_Sky.ToKyokumenHash(nextNode_and_nextCurrent.Value.KyokumenConst), hint + "/AppendChild_And_ChangeCurrentToChild");
                 ((KifuNode)kifuRef.CurNode).PutTuginoitte_New(nextNode_and_nextCurrent);
             }
 
-            kifuRef.SetCurNode( nextNode_and_nextCurrent);//次ノードを、これからのカレントとします。
+            kifuRef.SetCurNode(nextNode_and_nextCurrent);//次ノードを、これからのカレントとします。
             Debug.Assert(kifuRef.CurNode != null, "カレントノードがヌル。");
         }
 

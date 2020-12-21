@@ -1,5 +1,4 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
 
 namespace Grayscale.P372KyokuParser.I500Parser
 {

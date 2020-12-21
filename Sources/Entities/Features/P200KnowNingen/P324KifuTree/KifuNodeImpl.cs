@@ -1,16 +1,6 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P307UtilSky.L500Util;
-using Grayscale.P321KyokumHyoka.I250Struct;
-using Grayscale.P321KyokumHyoka.L250Struct;
-using Grayscale.P324KifuTree.I250Struct;
-using Grayscale.P339ConvKyokume.L500Converter;
-using System.Text;
+﻿using System.Text;
 
-namespace Grayscale.P324KifuTree.L250Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public class KifuNodeImpl : NodeImpl<IMove, KyokumenWrapper>, KifuNode
     {
@@ -118,7 +108,7 @@ namespace Grayscale.P324KifuTree.L250Struct
             this.PutAdd_ChildNode(ConvMoveStrSfen.ToMoveStrSfen(newNode.Key), newNode);
             //手番はここでは変更できない。
 
-            newNode.SetParentNode( this);
+            newNode.SetParentNode(this);
         }
         /// <summary>
         /// 既存の子要素を上書きします。
@@ -130,7 +120,7 @@ namespace Grayscale.P324KifuTree.L250Struct
         {
             // SFENをキーに、次ノードを増やします。
             this.NextNodes[ConvMoveStrSfen.ToMoveStrSfen(existsNode.Key)] = existsNode;
-            existsNode.SetParentNode( this);
+            existsNode.SetParentNode(this);
         }
 
         public string Json_NextNodes_MultiSky(

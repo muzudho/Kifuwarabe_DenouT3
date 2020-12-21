@@ -1,11 +1,6 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P260Play.L250Calc;
-using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
+﻿using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P260Play.L500Query
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     //public class Arg_KmEffectSameIKUSA()
     //{

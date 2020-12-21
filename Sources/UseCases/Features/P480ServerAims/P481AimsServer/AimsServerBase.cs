@@ -1,4 +1,4 @@
-﻿using Grayscale.P325PnlTaikyoku.I250Struct;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P481AimsServer.I060Phase;
 
 namespace Grayscale.P481AimsServer.I070ServerBase

@@ -1,8 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-
-namespace Grayscale.Kifuwarakaku.Entities.Features
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Conv_Okiba
     {
@@ -32,7 +28,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             switch (okiba)
             {
                 case Okiba.ShogiBan:
-                    firstMasu = Masu_Honshogi.Query_Basho( Masu_Honshogi.nban11_１一);//[0]
+                    firstMasu = Masu_Honshogi.Query_Basho(Masu_Honshogi.nban11_１一);//[0]
                     break;
 
                 case Okiba.Sente_Komadai:

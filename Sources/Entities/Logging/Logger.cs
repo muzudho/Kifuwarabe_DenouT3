@@ -1,11 +1,9 @@
 ﻿namespace Grayscale.Kifuwarakaku.Entities.Logging
 {
     using System;
-    using System.Collections.Generic;
     using System.Diagnostics;
     using System.IO;
     using System.Text;
-    using System.Windows.Forms;
     using Nett;
 
     /// <summary>

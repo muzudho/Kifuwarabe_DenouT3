@@ -16,7 +16,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 for (int suji = 9; suji >= 1; suji--)
                 {
                     // 将棋盤上のどこかにある駒？
-                    string koma0 = ro_kyokumen1.Ban[suji,dan];
+                    string koma0 = ro_kyokumen1.Ban[suji, dan];
 
                     if ("" != koma0)
                     {

@@ -13,9 +13,9 @@
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.P270ForcePromot.L250Struct;
-    using Grayscale.P325PnlTaikyoku.I250Struct;
-    using Grayscale.P325PnlTaikyoku.L250Struct;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.P461Server.L497EngineClient;
     using Grayscale.P461Server.L498Server;
     using Nett;

@@ -1,11 +1,6 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P307UtilSky.L500Util;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
-namespace Grayscale.P320NodeWriter.L500Writer
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public class NodeWriterImpl<T1, T2>
     {

@@ -1,15 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P276SeizaStartp.L500Struct;
-using Grayscale.P324KifuTree.L250Struct;
-using Grayscale.P325PnlTaikyoku.I250Struct;
-using Grayscale.P341Ittesasu.L500UtilA;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P355_KifuParserA.I500Parser;
 using Grayscale.P372KyokuParser.I500Parser;
 using Grayscale.P372KyokuParser.L500Parser;
@@ -19,7 +8,7 @@ namespace Grayscale.P373ConvStartpo.L500Converter
 {
     public abstract class Conv_StartposImporter
     {
-                /// <summary>
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="kifu"></param>

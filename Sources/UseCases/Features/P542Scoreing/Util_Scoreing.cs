@@ -2,14 +2,14 @@
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P321KyokumHyoka.L250Struct;
-using Grayscale.P324KifuTree.I250Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P531Hyokakansu.I500Hyokakansu;
 using Grayscale.P531Hyokakansu.L510HyokakansuColl;
 using Grayscale.P542Scoreing.I250Args;
 
 #if DEBUG || LEARN
-using Grayscale.P321KyokumHyoka.I250Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
 #endif
 
 namespace Grayscale.P542Scoreing.L500Util

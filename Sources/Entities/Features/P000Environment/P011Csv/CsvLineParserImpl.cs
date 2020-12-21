@@ -21,7 +21,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             char ch;
 
             // 空か。
-            if(source.Length<1)
+            if (source.Length < 1)
             {
                 goto gt_EndMethod;
             }
@@ -32,14 +32,14 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             //１セル分の文字列
             StringBuilder cell = new StringBuilder();
             int index = 0;
-            while(index < length)
+            while (index < length)
             {
                 cell.Length = 0;
                 ch = source[index];
 
                 //ystem.C onsole.WriteLine("（２）index[" + index + "] ch[" + ch + "]");
 
-                if(','==ch)
+                if (',' == ch)
                 {
                     // 空を追加して次へ。
                     index++;
@@ -127,7 +127,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
                     // 1文字目が「"」でないなら、「,」が出てくるか、次がなくなるまでそのまま出力。
                     // フォーマットチェックは行わない。
-                    while(index < length)
+                    while (index < length)
                     {
                         ch = source[index];
 
@@ -165,7 +165,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 list_Destination.Add(cell.ToString());
             }
 
-            //ystem.C onsole.WriteLine("（２１）index[" + index + "] ");
+        //ystem.C onsole.WriteLine("（２１）index[" + index + "] ");
 
 
         gt_EndMethod:
@@ -190,7 +190,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
             StringBuilder s = new StringBuilder();
 
-            for (int index = 0; index < length; )
+            for (int index = 0; index < length;)
             {
                 ch = source[index];
                 if (',' == ch)

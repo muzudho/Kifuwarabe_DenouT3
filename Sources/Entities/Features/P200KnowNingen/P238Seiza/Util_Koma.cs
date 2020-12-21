@@ -1,7 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using System;
+﻿using System;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
@@ -25,7 +22,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
 
 
-        public static RO_Star FromFinger(SkyConst src_Sky,Finger finger)
+        public static RO_Star FromFinger(SkyConst src_Sky, Finger finger)
         {
             RO_Star koma;
 

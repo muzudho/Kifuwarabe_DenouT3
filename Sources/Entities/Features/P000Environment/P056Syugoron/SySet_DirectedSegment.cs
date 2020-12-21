@@ -1,5 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
 {
@@ -20,7 +19,8 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
         #region プロパティ
 
-        public string Word { get { return this.word; } }        private string word;
+        public string Word { get { return this.word; } }
+        private string word;
 
         /// <summary>
         /// 枡。
@@ -129,10 +129,10 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         public void Minus_Closed(T1 b, DLGT_SyElement_BynaryOperate dlgt_equals)
         {
 
-            int i=0;
+            int i = 0;
             foreach (T1 thisElement in this.orderedItems)
             {
-                if (dlgt_equals(thisElement,b))
+                if (dlgt_equals(thisElement, b))
                 {
                     // b 以降を切り捨てます。
                     this.orderedItems.RemoveRange(i, this.orderedItems.Count - i);
@@ -158,15 +158,15 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             int i = 0;
             foreach (T1 thisElement in this.orderedItems)
             {
-                if (dlgt_equals( thisElement,b))
+                if (dlgt_equals(thisElement, b))
                 {
                     // この次で切ります。
 
-                    if(this.orderedItems.Count<=i+1)
+                    if (this.orderedItems.Count <= i + 1)
                     {
                         break;
                     }
-                    this.orderedItems.RemoveRange(i+1, this.orderedItems.Count - (i+1));
+                    this.orderedItems.RemoveRange(i + 1, this.orderedItems.Count - (i + 1));
 
                     break;
                 }
@@ -287,7 +287,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             foreach (T1 bElement in b.Elements)
             {
                 // 要素を１つ１つ削除していきます。
-                c.Minus_Closed(bElement,dlgt_equals);
+                c.Minus_Closed(bElement, dlgt_equals);
             }
 
             return c;

@@ -8,7 +8,7 @@ using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P266KyokumMoves.L250Log
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     /// <summary>
     /// ログを取るためのもの。

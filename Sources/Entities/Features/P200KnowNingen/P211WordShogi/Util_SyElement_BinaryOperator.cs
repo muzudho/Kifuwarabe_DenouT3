@@ -1,7 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-
-namespace Grayscale.Kifuwarakaku.Entities.Features
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     /// <summary>
     /// 二項演算子
@@ -15,7 +12,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 return Util_SyElement_BinaryOperator.dlgt_Equals_MasuNumber;
             }
         }
-        private static DLGT_SyElement_BynaryOperate dlgt_Equals_MasuNumber = delegate(SyElement operand1, SyElement operand2)
+        private static DLGT_SyElement_BynaryOperate dlgt_Equals_MasuNumber = delegate (SyElement operand1, SyElement operand2)
         {
             bool result;
 
@@ -27,7 +24,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             }
 
             // 片方だけが null なら、等価ではないものとします。
-            if(operand1==null || operand2==null)
+            if (operand1 == null || operand2 == null)
             {
                 result = false;
                 goto gt_EndMethod;

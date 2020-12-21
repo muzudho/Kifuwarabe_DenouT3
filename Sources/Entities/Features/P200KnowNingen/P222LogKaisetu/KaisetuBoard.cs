@@ -1,6 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
 {
@@ -13,7 +11,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// <summary>
         /// あれば指し手。なければヌル。
         /// </summary>
-        public IMove moveOrNull{get;set;}
+        public IMove moveOrNull { get; set; }
 
         /// <summary>
         /// 説明文章（１行）。

@@ -11,7 +11,7 @@ namespace Grayscale.Kifuwarakaku.Engine
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.P270ForcePromot.L250Struct;
+    using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.P523UtilFv.L510UtilFvLoad;
     using Grayscale.P542Scoreing.I005UsiLoop;
     using Grayscale.P542Scoreing.L240Shogisasi;

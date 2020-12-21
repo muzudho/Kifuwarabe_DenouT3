@@ -1,14 +1,5 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
+﻿using System.Collections.Generic;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P324KifuTree.I250Struct;
-using Grayscale.P324KifuTree.L250Struct;
-using Grayscale.P339ConvKyokume.L500Converter;
-using Grayscale.P341Ittesasu.L510OperationB;
-using System.Collections.Generic;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 namespace Grayscale.P360ConvSasu.L500Converter
@@ -27,11 +18,11 @@ namespace Grayscale.P360ConvSasu.L500Converter
         /// <param name="pside_genTeban"></param>
         /// <returns>次の局面一覧を持った、入れ物ノード（ハブ・ノード）</returns>
         public static KifuNode ToNextNodes_AsHubNode(
-            Maps_OneAndMulti<Finger,IMove> komabetuAllMove,
+            Maps_OneAndMulti<Finger, IMove> komabetuAllMove,
             SkyConst src_Sky//Node<Starbeamable, KyokumenWrapper> to_parentNode,//親となる予定のノード
             )
         {
-            KifuNode hubNode = new KifuNodeImpl( null, null);//蝶番
+            KifuNode hubNode = new KifuNodeImpl(null, null);//蝶番
 
 #if DEBUG
             string dump = komabetuAllMove.Dump();

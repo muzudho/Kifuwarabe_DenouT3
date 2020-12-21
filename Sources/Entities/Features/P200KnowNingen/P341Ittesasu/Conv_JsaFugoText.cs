@@ -1,9 +1,6 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P324KifuTree.I250Struct;
-using System;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
-namespace Grayscale.P341Ittesasu.L500UtilA
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Conv_JsaFugoText
     {

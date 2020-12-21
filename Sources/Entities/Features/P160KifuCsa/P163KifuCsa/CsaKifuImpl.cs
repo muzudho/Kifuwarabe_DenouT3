@@ -1,5 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
 {
@@ -49,7 +48,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         {
             this.Player1Name = "";
             this.Player2Name = "";
-            this.Shogiban = new string[10,10];
+            this.Shogiban = new string[10, 10];
             this.FirstSengo = "+";
             this.MoveList = new List<CsaKifuMove>();
             this.FinishedStatus = "";

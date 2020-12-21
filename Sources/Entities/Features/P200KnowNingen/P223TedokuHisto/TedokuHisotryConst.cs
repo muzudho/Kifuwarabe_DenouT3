@@ -1,8 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 #if DEBUG
 using Grayscale.Kifuwarakaku.Entities.Features;
@@ -58,7 +54,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             TedokuHistoryConst result = (TedokuHistoryConst)TedokuHistoryConst.New_Clone(src);
 
             // 持駒を打った場合はどうする？
-            switch(komasyurui)
+            switch (komasyurui)
             {
                 case Komasyurui14.H11_Tokin__://どの歩？
                 case Komasyurui14.H01_Fu_____: result.Fu___[index].Add(masu); break;//suji-1=index

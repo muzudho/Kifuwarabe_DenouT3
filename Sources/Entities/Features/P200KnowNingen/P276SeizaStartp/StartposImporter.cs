@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
 
-namespace Grayscale.P276SeizaStartp.L500Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public class StartposImporter
     {
@@ -115,35 +109,35 @@ namespace Grayscale.P276SeizaStartp.L500Struct
         public static void Assert_HirateHonsyogi(SkyBuffer dst_Sky, string failMessage)
         {
             //平手本将棋用
-//#if DEBUG
-//            {
-//                StringBuilder sb = new StringBuilder();
-//                int fukuro = 0;
-//                int ban = 0;
-//                int dai = 0;
-//                dst_Sky.Foreach_Starlights((Finger finger, Starlight light, ref bool toBreak) =>
-//                {
-//                    RO_Star_Koma koma = Util_Starlightable.AsKoma(light.Now);
+            //#if DEBUG
+            //            {
+            //                StringBuilder sb = new StringBuilder();
+            //                int fukuro = 0;
+            //                int ban = 0;
+            //                int dai = 0;
+            //                dst_Sky.Foreach_Starlights((Finger finger, Starlight light, ref bool toBreak) =>
+            //                {
+            //                    RO_Star_Koma koma = Util_Starlightable.AsKoma(light.Now);
 
-//                    if (Util_MasuNum.OnKomabukuro(Util_Masu.AsMasuNumber(koma.Masu)))
-//                    {
-//                        sb.Append("[袋" + Util_Masu.AsMasuNumber(koma.Masu) + "]");
-//                        fukuro++;
-//                    }
-//                    else if (Util_MasuNum.OnShogiban(Util_Masu.AsMasuNumber(koma.Masu)))
-//                    {
-//                        sb.Append("[盤" + Util_Masu.AsMasuNumber(koma.Masu) + "]");
-//                        ban++;
-//                    }
-//                    else if (Util_MasuNum.OnKomadai(Util_Masu.AsMasuNumber(koma.Masu)))
-//                    {
-//                        sb.Append("[台" + Util_Masu.AsMasuNumber(koma.Masu) + "]");
-//                        dai++;
-//                    }
-//                });
-//                Debug.Assert(40 == ban + dai || 40 == fukuro, "駒袋に駒が！fukuro=[" + fukuro + "] ban=[" + ban + "] dai=[" + dai + "] " + failMessage + " "+sb.ToString());
-//            }
-//#endif
+            //                    if (Util_MasuNum.OnKomabukuro(Util_Masu.AsMasuNumber(koma.Masu)))
+            //                    {
+            //                        sb.Append("[袋" + Util_Masu.AsMasuNumber(koma.Masu) + "]");
+            //                        fukuro++;
+            //                    }
+            //                    else if (Util_MasuNum.OnShogiban(Util_Masu.AsMasuNumber(koma.Masu)))
+            //                    {
+            //                        sb.Append("[盤" + Util_Masu.AsMasuNumber(koma.Masu) + "]");
+            //                        ban++;
+            //                    }
+            //                    else if (Util_MasuNum.OnKomadai(Util_Masu.AsMasuNumber(koma.Masu)))
+            //                    {
+            //                        sb.Append("[台" + Util_Masu.AsMasuNumber(koma.Masu) + "]");
+            //                        dai++;
+            //                    }
+            //                });
+            //                Debug.Assert(40 == ban + dai || 40 == fukuro, "駒袋に駒が！fukuro=[" + fukuro + "] ban=[" + ban + "] dai=[" + dai + "] " + failMessage + " "+sb.ToString());
+            //            }
+            //#endif
         }
 
         public SkyConst ToSky(Playerside kaisiPside, int temezumi)
@@ -323,9 +317,9 @@ namespace Grayscale.P276SeizaStartp.L500Struct
                     default: throw new Exception($"未対応の駒種類=[{entry.Value.Komasyurui}]");
                 }
 
-                Debug.Assert(0<=int_finger && int_finger<=39, "finger=["+int_finger+"]" );
+                Debug.Assert(0 <= int_finger && int_finger <= 39, "finger=[" + int_finger + "]");
 
-                Debug.Assert(!komaDic.ContainsKey( int_finger), "finger=[" + int_finger + "]");
+                Debug.Assert(!komaDic.ContainsKey(int_finger), "finger=[" + int_finger + "]");
 
                 komaDic.Add(int_finger, entry.Value);
 

@@ -1,11 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
+﻿using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
 {
@@ -127,7 +120,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             foreach (Finger figKoma in komas_moti2p.Items)
             {
                 RO_Star koma = Util_Starlightable.AsKoma(src_Sky.StarlightIndexOf((int)figKoma).Now);
-                
+
                 Komasyurui14 syurui = Util_Komasyurui14.NarazuCaseHandle(Util_Komahaiyaku184.Syurui(koma.Haiyaku));
 
                 if (Komasyurui14.H06_Gyoku__ == syurui)

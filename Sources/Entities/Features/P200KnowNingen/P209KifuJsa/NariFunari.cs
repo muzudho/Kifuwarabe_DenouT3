@@ -9,7 +9,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
     /// </summary>
     public enum NariNarazu
     {
-        
+
         /// <summary>
         /// 成
         /// </summary>

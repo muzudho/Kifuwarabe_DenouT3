@@ -6,7 +6,7 @@ using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P324KifuTree.I250Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P440KifuTreeLog.L500Struct;
 using Grayscale.P521FeatureVect.L500Struct;
 using Grayscale.P523UtilFv.L510UtilFvLoad;

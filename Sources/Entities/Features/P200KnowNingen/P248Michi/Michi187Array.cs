@@ -1,11 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -22,7 +15,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
     public abstract class Michi187Array
     {
 
-                
+
         #region 静的プロパティー類
 
         public static List<SySet<SyElement>> Items
@@ -153,7 +146,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
             if (!File.Exists(filepath2))
             {
-                MessageBox.Show("ファイルがありません。\n"+
+                MessageBox.Show("ファイルがありません。\n" +
                     "filepath2=[" + filepath2 + "]", "情報");
                 rows = null;
                 goto gt_EndMethod;
@@ -194,7 +187,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 {
                     string cell = cell1.Trim();
 
-                    if(cell=="")
+                    if (cell == "")
                     {
                         goto gt_Next1;
                     }
@@ -222,7 +215,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                         if (isPart_Define_Member)
                         {
                             // 「１一」を「1」に変換します。
-                            SyElement masu81 = Masu_Honshogi.Query_Basho( Conv_Sy.Query_Bitfield(cell));
+                            SyElement masu81 = Masu_Honshogi.Query_Basho(Conv_Sy.Query_Bitfield(cell));
                             michiPart.AddElement(masu81);
                         }
                         else
@@ -245,8 +238,8 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                         }
                     }
 
-                    gt_Next1:
-                        ;
+                gt_Next1:
+                    ;
                 }
 
                 Michi187Array.Items.Add(michi187);
@@ -297,9 +290,9 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 Dictionary<SyElement, int> orderOnBanT = new Dictionary<SyElement, int>();
 
                 int order = 1;
-                foreach (SySet<SyElement>superset in michi.Supersets)
+                foreach (SySet<SyElement> superset in michi.Supersets)
                 {
-                    switch(superset.Word)
+                    switch (superset.Word)
                     {
                         case "味方陣":
                             {
@@ -334,7 +327,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 }
 
 
-                
+
 
                 sb.Append("<table>");
                 // ９一～１一、９二～１二、…９九～１九の順だぜ☆

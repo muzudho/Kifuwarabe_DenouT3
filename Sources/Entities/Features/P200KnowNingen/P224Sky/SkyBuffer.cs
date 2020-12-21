@@ -1,11 +1,5 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
 
@@ -90,12 +84,12 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// <param name="light"></param>
         public void PutOverwriteOrAdd_Starlight(Finger finger, IMoveHalf light)
         {
-            if(this.starlights.Count==(int)finger)
+            if (this.starlights.Count == (int)finger)
             {
                 // オブジェクトを追加します。
                 this.Starlights.Add(light);
             }
-            else if (this.starlights.Count+1 <= (int)finger)
+            else if (this.starlights.Count + 1 <= (int)finger)
             {
                 // エラー
                 throw new Exception($"{this.GetType().Name}#SetStarPos：　リストの要素より2多いインデックスを指定されましたので、追加しません。starIndex=[{finger}] / this.stars.Count=[{this.starlights.Count}]");
@@ -115,12 +109,12 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// </summary>
         public SkyBuffer(Playerside kaisiPside, int temezumi)
         {
-            switch(kaisiPside)
+            switch (kaisiPside)
             {
                 case Playerside.P1: this.tedokuHistory = TedokuHistoryConst.New_HirateSyokikyokumen_1P(); break;
                 case Playerside.P2: this.tedokuHistory = TedokuHistoryConst.New_HirateSyokikyokumen_2P(); break;
                 default: break;
-            }            
+            }
 
             this.kaisiPside = kaisiPside;
             this.temezumi = temezumi;
@@ -191,7 +185,7 @@ sourceLineNumber={sourceLineNumber}");
             }
         }
 
-        
+
         /// <summary>
         /// ************************************************************************************************************************
         /// 天上のすべての星の光

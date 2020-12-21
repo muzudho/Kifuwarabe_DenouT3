@@ -1,6 +1,4 @@
-﻿using System;
-using System.Text.RegularExpressions;
-using Grayscale.Kifuwarakaku.Entities.Logging;
+﻿using System.Text.RegularExpressions;
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
 {

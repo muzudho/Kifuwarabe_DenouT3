@@ -1,10 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 
 
@@ -469,7 +463,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
             if (Playerside.P2 == pside)
             {
-                for (int suji = 9; suji >= 1; suji-- )
+                for (int suji = 9; suji >= 1; suji--)
                 {
                     for (int dan = 9; dan >= 1; dan--)
                     {
@@ -480,7 +474,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             }
             else
             {
-                for (int suji = 1; suji <=9; suji++)
+                for (int suji = 1; suji <= 9; suji++)
                 {
                     for (int dan = 1; dan <= 9; dan++)
                     {
@@ -1685,9 +1679,9 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             )
         {
 
-            SySet_DirectedSegment<SyElement> thisObj = new SySet_DirectedSegment<SyElement>("有向線分",pside, muki, new List<SyElement>());
+            SySet_DirectedSegment<SyElement> thisObj = new SySet_DirectedSegment<SyElement>("有向線分", pside, muki, new List<SyElement>());
 
-            if (Masu_Honshogi.IsErrorBasho( masuOrigin))
+            if (Masu_Honshogi.IsErrorBasho(masuOrigin))
             {
                 goto gt_EndMethod;
             }

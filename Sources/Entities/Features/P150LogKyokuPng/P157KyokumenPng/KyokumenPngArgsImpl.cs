@@ -1,7 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-
-namespace Grayscale.Kifuwarakaku.Entities.Features
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
 
@@ -53,7 +50,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             int dstMasu_orMinusOne,
             KyokumenPngArgs_FoodOrDropKoma foodKoma,
             KyokumenPngArgs_FoodOrDropKoma dropKoma,
-            string outFile,  
+            string outFile,
             KyokumenPngEnvironment reportEnvironment)
         {
             this.ro_Kyokumen1 = ro_Kyokumen1;

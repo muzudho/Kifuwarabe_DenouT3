@@ -1,19 +1,6 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
+﻿using System.Collections.Generic;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P339ConvKyokume.L500Converter;
 using Grayscale.P353ConvSasuEx.L500Converter;
-using System.Collections.Generic;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 namespace Grayscale.P360ConvSasu.L500Converter
@@ -46,10 +33,10 @@ namespace Grayscale.P360ConvSasu.L500Converter
 
 
                     IMove move = new RO_Starbeam(
-                        //key,
-                        // 元
+                            //key,
+                            // 元
                             koma,
-                        // 先
+                            // 先
                             new RO_Star(
                                 koma.Pside,
                                 Masu_Honshogi.Masus_All[Conv_SyElement.ToMasuNumber(masuHandle)],

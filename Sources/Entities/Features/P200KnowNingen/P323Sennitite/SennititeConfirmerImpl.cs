@@ -1,6 +1,4 @@
-﻿using Grayscale.P323Sennitite.I500Struct;
-
-namespace Grayscale.P323Sennitite.L500Struct
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>
@@ -13,7 +11,7 @@ namespace Grayscale.P323Sennitite.L500Struct
         /// </summary>
         private SennititeConfirmer source;
 
-        public SennititeConfirmerImpl( SennititeConfirmer src )
+        public SennititeConfirmerImpl(SennititeConfirmer src)
         {
             this.source = src;
         }

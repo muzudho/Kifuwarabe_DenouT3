@@ -1,7 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-
-namespace Grayscale.P292JsaFugo.L250Struct
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>

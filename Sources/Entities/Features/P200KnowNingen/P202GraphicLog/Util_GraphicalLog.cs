@@ -14,7 +14,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// <summary>
         /// ログファイル通し番号。
         /// </summary>
-        private static int LogFileCounter{get;set;}
+        private static int LogFileCounter { get; set; }
 
 
 

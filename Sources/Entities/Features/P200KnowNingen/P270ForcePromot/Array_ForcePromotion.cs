@@ -1,16 +1,8 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Grayscale.P270ForcePromot.L250Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
 
@@ -66,7 +58,7 @@ namespace Grayscale.P270ForcePromot.L250Struct
             foreach (List<string> row in rows)
             {
                 // 偶数行はコメントなので無視します。
-                if(rowCount%2==0)
+                if (rowCount % 2 == 0)
                 {
                     goto gt_NextRow;
                 }
@@ -81,10 +73,10 @@ namespace Grayscale.P270ForcePromot.L250Struct
                     );
 
                 int masuHandle = 0;
-                foreach(string column in row)
+                foreach (string column in row)
                 {
                     // 空っぽの列は無視します。
-                    if(""==column)
+                    if ("" == column)
                     {
                         goto gt_NextColumn;
                     }
@@ -93,7 +85,7 @@ namespace Grayscale.P270ForcePromot.L250Struct
 
                     // 数値型のはずです。
                     int haiyakuHandle_target;
-                    if(!int.TryParse(column, out haiyakuHandle_target))
+                    if (!int.TryParse(column, out haiyakuHandle_target))
                     {
                         throw new Exception($@"エラー。
 path=[{path}]
@@ -102,7 +94,7 @@ rowCount=[{rowCount}]
 masuHandle=[{masuHandle}]");
                     }
 
-                    map2.Add(masuHandle, Array_Komahaiyaku185.Items[ haiyakuHandle_target]);
+                    map2.Add(masuHandle, Array_Komahaiyaku185.Items[haiyakuHandle_target]);
 
                 gt_NextColumn:
                     masuHandle++;
@@ -185,7 +177,7 @@ masuHandle=[{masuHandle}]");
 
                 sb.Append("<table>");
                 // ９一～１一、９二～１二、…９九～１九の順だぜ☆
-                for (int dan = 1; dan <= 9; dan++ )
+                for (int dan = 1; dan <= 9; dan++)
                 {
                     sb.AppendLine("<tr>");
 
@@ -209,7 +201,7 @@ masuHandle=[{masuHandle}]");
                             sb.Append("<img src=\"../Data/img/train");
 
 
-                            if (haiyakuHandle<10)
+                            if (haiyakuHandle < 10)
                             {
                                 sb.Append("00");
                             }

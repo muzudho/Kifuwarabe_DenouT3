@@ -18,8 +18,8 @@ using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P324KifuTree.L250Struct;
-using Grayscale.P341Ittesasu.L250OperationA;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
 using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
 using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
@@ -50,8 +50,8 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.P324KifuTree.L250Struct;
-    using Grayscale.P341Ittesasu.L250OperationA;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
     using Nett;
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 #endif

@@ -1,10 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-
-
-namespace Grayscale.Kifuwarakaku.Entities.Features
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>
@@ -65,7 +59,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 //----------------------------------------
                 dst.AddSupersets(KomanoKidou.DstIppo_上(pside, masu_ji));
             }
-            else if( (Okiba.Sente_Komadai|Okiba.Gote_Komadai).HasFlag(
+            else if ((Okiba.Sente_Komadai | Okiba.Gote_Komadai).HasFlag(
                 Conv_SyElement.ToOkiba(masu_ji)))
             {
                 //----------------------------------------

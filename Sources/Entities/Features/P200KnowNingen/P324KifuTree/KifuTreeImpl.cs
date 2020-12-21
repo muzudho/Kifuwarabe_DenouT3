@@ -1,17 +1,8 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P324KifuTree.I250Struct;
-using Grayscale.P323Sennitite.L500Struct;
-using Grayscale.P323Sennitite.I500Struct;
-
-#if DEBUG
+﻿#if DEBUG
 using System.Diagnostics;
 #endif
 
-namespace Grayscale.P324KifuTree.L250Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public class KifuTreeImpl : TreeImpl<IMove, KyokumenWrapper>, KifuTree
     {

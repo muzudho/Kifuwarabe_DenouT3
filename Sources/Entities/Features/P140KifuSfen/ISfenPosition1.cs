@@ -1,5 +1,6 @@
 ﻿
-namespace Grayscale.Kifuwarakaku.Entities.Features {
+namespace Grayscale.Kifuwarakaku.Entities.Features
+{
 
     /// <summary>
     /// テーブル形式の局面データ。

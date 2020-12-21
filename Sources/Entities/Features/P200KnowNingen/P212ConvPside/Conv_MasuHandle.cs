@@ -1,6 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
 {
@@ -14,7 +12,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 !Conv_MasuHandle.Yuko(masuHandle)
             )
             {
-                masu = Masu_Honshogi.Query_Basho( Masu_Honshogi.nError);
+                masu = Masu_Honshogi.Query_Basho(Masu_Honshogi.nError);
             }
             else
             {

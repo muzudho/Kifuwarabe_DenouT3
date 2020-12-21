@@ -42,7 +42,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// </summary>
         private Dictionary<T1, T2> items;
 
-        public Dictionary<T1, T2> Items { get{return this.items;} }
+        public Dictionary<T1, T2> Items { get { return this.items; } }
 
         /// <summary>
         /// 差替え。

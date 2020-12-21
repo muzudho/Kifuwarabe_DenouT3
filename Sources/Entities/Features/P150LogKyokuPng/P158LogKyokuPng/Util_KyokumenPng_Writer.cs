@@ -2,11 +2,6 @@
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
 {

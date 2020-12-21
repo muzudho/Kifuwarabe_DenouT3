@@ -12,9 +12,9 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
 
 
-        public  static void Assert_Koma40(ISfenPosition2 result, string hint)
+        public static void Assert_Koma40(ISfenPosition2 result, string hint)
         {
-//#if DEBUG
+            //#if DEBUG
             StringBuilder sb = new StringBuilder();
             int komaCount = 0;
             result.Foreach_Masu201((int masuHandle, string masuString, ref bool toBreak) =>
@@ -26,8 +26,8 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 }
             });
 
-            Debug.Assert(komaCount == 40, "将棋の駒の数が40個ではありませんでした。[" + komaCount + "] " + sb.ToString() + "\n hint="+hint);
-//#endif
+            Debug.Assert(komaCount == 40, "将棋の駒の数が40個ではありませんでした。[" + komaCount + "] " + sb.ToString() + "\n hint=" + hint);
+            //#endif
         }
 
 

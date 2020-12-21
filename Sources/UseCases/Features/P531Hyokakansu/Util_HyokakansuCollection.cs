@@ -1,12 +1,12 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P324KifuTree.I250Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
 using Grayscale.P531Hyokakansu.I500Hyokakansu;
 using Grayscale.P531Hyokakansu.L500Hyokakansu;
 using System.Collections.Generic;
 
 #if DEBUG || LEARN
-using Grayscale.P321KyokumHyoka.I250Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
 #endif
 
 namespace Grayscale.P531Hyokakansu.L510HyokakansuColl

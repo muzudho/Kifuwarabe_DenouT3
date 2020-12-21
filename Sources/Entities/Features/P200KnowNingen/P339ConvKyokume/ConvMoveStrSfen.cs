@@ -1,18 +1,8 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using System;
+﻿using System;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace Grayscale.P339ConvKyokume.L500Converter
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     public abstract class ConvMoveStrSfen
@@ -41,7 +31,7 @@ namespace Grayscale.P339ConvKyokume.L500Converter
             {
                 if (Util_Sky258A.RootMove == move)
                 {
-                    sb.Append( ConvMoveStrSfen.KIFU_TREE_LOG_ROOT_FOLDER);
+                    sb.Append(ConvMoveStrSfen.KIFU_TREE_LOG_ROOT_FOLDER);
                     goto gt_EndMethod;
                 }
 

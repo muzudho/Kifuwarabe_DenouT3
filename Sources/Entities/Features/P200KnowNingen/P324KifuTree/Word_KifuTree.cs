@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P324KifuTree.L250Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Word_KifuTree
     {

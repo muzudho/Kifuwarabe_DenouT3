@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Grayscale.Kifuwarakaku.Entities.Features;
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
 {
@@ -94,18 +93,18 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             return this.NextNodes.ContainsKey(key);
         }
 
-        public void PutAdd_ChildNode(string key,Node<T1, T2> newNode)
+        public void PutAdd_ChildNode(string key, Node<T1, T2> newNode)
         {
-            this.NextNodes.Add(key,newNode);
-            newNode.SetParentNode( this);
+            this.NextNodes.Add(key, newNode);
+            newNode.SetParentNode(this);
         }
 
         public void PutSet_ChildNodes(Dictionary<string, Node<T1, T2>> newNextNodes)
         {
             this.NextNodes = newNextNodes;
-            foreach(Node<T1,T2> child in this.NextNodes.Values)
+            foreach (Node<T1, T2> child in this.NextNodes.Values)
             {
-                child.SetParentNode( this);
+                child.SetParentNode(this);
             }
         }
 
@@ -120,7 +119,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
         public NodeImpl(T1 move, T2 sky)
         {
-            this.SetParentNode( null);
+            this.SetParentNode(null);
             this.move = move;
             this.Value = sky;
             this.NextNodes = new Dictionary<string, Node<T1, T2>>();
@@ -148,7 +147,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
             result += 1;
 
-            foreach(Node<T1,T2> child in this.NextNodes.Values)
+            foreach (Node<T1, T2> child in this.NextNodes.Values)
             {
                 result += child.CountAllNodes();
             }

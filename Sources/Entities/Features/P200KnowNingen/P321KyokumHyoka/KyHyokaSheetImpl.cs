@@ -1,7 +1,6 @@
-﻿using Grayscale.P321KyokumHyoka.I250Struct;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Grayscale.P321KyokumHyoka.L250Struct
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     /// <summary>
     /// 局面を切り取ったときの、スコアの明細

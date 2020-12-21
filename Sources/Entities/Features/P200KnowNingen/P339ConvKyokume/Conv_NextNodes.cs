@@ -1,10 +1,6 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P324KifuTree.I250Struct;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Grayscale.P339ConvKyokume.L500Converter
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Conv_NextNodes
     {

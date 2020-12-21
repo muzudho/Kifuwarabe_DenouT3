@@ -1,6 +1,4 @@
-﻿using Grayscale.P321KyokumHyoka.I250Struct;
-
-namespace Grayscale.P321KyokumHyoka.L250Struct
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>a

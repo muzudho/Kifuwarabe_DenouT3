@@ -1,12 +1,6 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P341Ittesasu.I250OperationA;
-using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
+﻿using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P341Ittesasu.L250OperationA
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public class IttesasuResultImpl : IttesasuResult
     {
@@ -18,9 +12,9 @@ namespace Grayscale.P341Ittesasu.L250OperationA
         public Node<IMove, KyokumenWrapper> Set_SyuryoNode_OrNull { set { this.syuryoNode_OrNull = value; } }
         private Node<IMove, KyokumenWrapper> syuryoNode_OrNull;
 
-        public Komasyurui14 FoodKomaSyurui{ get; set; }
+        public Komasyurui14 FoodKomaSyurui { get; set; }
 
-        public SkyConst Susunda_Sky_orNull{ get; set; }
+        public SkyConst Susunda_Sky_orNull { get; set; }
 
         public IttesasuResultImpl(
             Finger figMovedKoma,

@@ -64,7 +64,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
             if (Conv_Sy.bitfieldWordDictionary.ContainsKey(bitfield))
             {
-                result_word =Conv_Sy.bitfieldWordDictionary[bitfield];
+                result_word = Conv_Sy.bitfieldWordDictionary[bitfield];
             }
             else
             {
@@ -80,7 +80,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
             if (Conv_Sy.wordBitfieldDictionary.ContainsKey(word))
             {
-                result_bitfield =Conv_Sy.wordBitfieldDictionary[word];
+                result_bitfield = Conv_Sy.wordBitfieldDictionary[word];
             }
             else
             {

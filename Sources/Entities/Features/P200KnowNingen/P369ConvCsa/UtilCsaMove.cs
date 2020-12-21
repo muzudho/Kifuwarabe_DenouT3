@@ -1,17 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Text;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
 
 namespace Grayscale.P369ConvCsa.L500Converter
 {
@@ -89,7 +78,7 @@ namespace Grayscale.P369ConvCsa.L500Converter
         {
             Playerside result;
 
-            switch(csa.Sengo)
+            switch (csa.Sengo)
             {
                 case "+": result = Playerside.P1; break;
                 case "-": result = Playerside.P2; break;
@@ -169,7 +158,7 @@ namespace Grayscale.P369ConvCsa.L500Converter
             // 「成り」をしたのかどうかを、調べます。
             //
             {
-                if (null!=ittemae_Sky_orNull && "00" != csa.SourceMasu)
+                if (null != ittemae_Sky_orNull && "00" != csa.SourceMasu)
                 {
                     // ルート局面ではなく、かつ、打ではないとき。
 
@@ -179,9 +168,9 @@ namespace Grayscale.P369ConvCsa.L500Converter
                     //    System.Console.WriteLine("[" + finger + "] " + koma.Masu.Word + "　" + koma.Pside + "　" + KomaSyurui14Array.Ichimoji[(int)koma.Syurui]);
                     //});
 
-                    SyElement srcMasu = Util_Masu10.OkibaSujiDanToMasu(Okiba.ShogiBan,srcSuji,srcDan);
+                    SyElement srcMasu = Util_Masu10.OkibaSujiDanToMasu(Okiba.ShogiBan, srcSuji, srcDan);
                     RO_Star srcKoma = Util_Sky_KomaQuery.InMasuNow(ittemae_Sky_orNull, srcMasu);
-                    Debug.Assert(null!=srcKoma,"元位置の駒を取得できなかった。1");
+                    Debug.Assert(null != srcKoma, "元位置の駒を取得できなかった。1");
 
                     if (!Util_Komasyurui14.IsNari(srcKoma.Komasyurui) && nari)//移動元で「成り」でなかった駒が、移動後に「成駒」になっていた場合。
                     {

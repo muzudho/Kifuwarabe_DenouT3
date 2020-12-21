@@ -1,12 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
@@ -30,143 +22,168 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// <summary>
         /// 先後。
         /// </summary>
-        public Playerside KaisiPside { get{return this.kaisiPside;} } private Playerside kaisiPside;
+        public Playerside KaisiPside { get { return this.kaisiPside; } }
+        private Playerside kaisiPside;
 
         /// <summary>
         /// ▲王
         /// </summary>
-        public int Moti1K { get { return moti1K; } } private int moti1K;
+        public int Moti1K { get { return moti1K; } }
+        private int moti1K;
 
 
         /// <summary>
         /// ▲飛
         /// </summary>
-        public int Moti1R { get { return moti1R; } } private int moti1R;
+        public int Moti1R { get { return moti1R; } }
+        private int moti1R;
 
 
         /// <summary>
         /// ▲角
         /// </summary>
-        public int Moti1B { get { return moti1B; } } private int moti1B;
+        public int Moti1B { get { return moti1B; } }
+        private int moti1B;
 
 
         /// <summary>
         /// ▲金
         /// </summary>
-        public int Moti1G { get { return moti1G; } } private int moti1G;
+        public int Moti1G { get { return moti1G; } }
+        private int moti1G;
 
 
         /// <summary>
         /// ▲銀
         /// </summary>
-        public int Moti1S { get { return moti1S; } } private int moti1S;
+        public int Moti1S { get { return moti1S; } }
+        private int moti1S;
 
 
         /// <summary>
         /// ▲桂
         /// </summary>
-        public int Moti1N { get { return moti1N; } } private int moti1N;
+        public int Moti1N { get { return moti1N; } }
+        private int moti1N;
 
 
         /// <summary>
         /// ▲香
         /// </summary>
-        public int Moti1L { get { return moti1L; } } private int moti1L;
+        public int Moti1L { get { return moti1L; } }
+        private int moti1L;
 
 
         /// <summary>
         /// ▲歩
         /// </summary>
-        public int Moti1P { get { return moti1P; } } private int moti1P;
+        public int Moti1P { get { return moti1P; } }
+        private int moti1P;
 
 
         /// <summary>
         /// △王
         /// </summary>
-        public int Moti2k { get { return moti2k; } } private int moti2k;
+        public int Moti2k { get { return moti2k; } }
+        private int moti2k;
 
 
         /// <summary>
         /// △飛
         /// </summary>
-        public int Moti2r { get { return moti2r; } } private int moti2r;
+        public int Moti2r { get { return moti2r; } }
+        private int moti2r;
 
 
         /// <summary>
         /// △角
         /// </summary>
-        public int Moti2b { get { return moti2b; } } private int moti2b;
+        public int Moti2b { get { return moti2b; } }
+        private int moti2b;
 
 
         /// <summary>
         /// △金
         /// </summary>
-        public int Moti2g { get { return moti2g; } } private int moti2g;
+        public int Moti2g { get { return moti2g; } }
+        private int moti2g;
 
 
         /// <summary>
         /// △銀
         /// </summary>
-        public int Moti2s { get { return moti2s; } } private int moti2s;
+        public int Moti2s { get { return moti2s; } }
+        private int moti2s;
 
 
         /// <summary>
         /// △桂
         /// </summary>
-        public int Moti2n { get { return moti2n; } } private int moti2n;
+        public int Moti2n { get { return moti2n; } }
+        private int moti2n;
 
 
         /// <summary>
         /// △香
         /// </summary>
-        public int Moti2l { get { return moti2l; } } private int moti2l;
+        public int Moti2l { get { return moti2l; } }
+        private int moti2l;
 
 
         /// <summary>
         /// △歩
         /// </summary>
-        public int Moti2p { get { return moti2p; } } private int moti2p;
+        public int Moti2p { get { return moti2p; } }
+        private int moti2p;
 
 
         /// <summary>
         /// 駒袋 王
         /// </summary>
-        public int FukuroK { get { return fukuroK; } } private int fukuroK;
+        public int FukuroK { get { return fukuroK; } }
+        private int fukuroK;
 
         /// <summary>
         /// 駒袋 飛
         /// </summary>
-        public int FukuroR { get { return fukuroR; } } private int fukuroR;
+        public int FukuroR { get { return fukuroR; } }
+        private int fukuroR;
 
         /// <summary>
         /// 駒袋 角
         /// </summary>
-        public int FukuroB { get { return fukuroB; } } private int fukuroB;
+        public int FukuroB { get { return fukuroB; } }
+        private int fukuroB;
 
         /// <summary>
         /// 駒袋 金
         /// </summary>
-        public int FukuroG { get { return fukuroG; } } private int fukuroG;
+        public int FukuroG { get { return fukuroG; } }
+        private int fukuroG;
 
         /// <summary>
         /// 駒袋 銀
         /// </summary>
-        public int FukuroS { get { return fukuroS; } } private int fukuroS;
+        public int FukuroS { get { return fukuroS; } }
+        private int fukuroS;
 
         /// <summary>
         /// 駒袋 桂
         /// </summary>
-        public int FukuroN { get { return fukuroN; } } private int fukuroN;
+        public int FukuroN { get { return fukuroN; } }
+        private int fukuroN;
 
         /// <summary>
         /// 駒袋 香
         /// </summary>
-        public int FukuroL { get { return fukuroL; } } private int fukuroL;
+        public int FukuroL { get { return fukuroL; } }
+        private int fukuroL;
 
         /// <summary>
         /// 駒袋 歩
         /// </summary>
-        public int FukuroP { get { return fukuroP; } } private int fukuroP;
+        public int FukuroP { get { return fukuroP; } }
+        private int fukuroP;
 
 
 
@@ -347,7 +364,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     }
 
                     // 駒の種類だけだと先手ゴマになってしまう。先後も判定した。
-                    switch(koma.Pside)
+                    switch (koma.Pside)
                     {
                         case Playerside.P1:
                             sb.Append(Util_Komasyurui14.Sfen1P[(int)koma.Komasyurui]);

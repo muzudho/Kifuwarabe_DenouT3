@@ -1,18 +1,6 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
+﻿using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P341Ittesasu.L500UtilA
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public class Query341_OnSky
     {
@@ -44,18 +32,18 @@ namespace Grayscale.P341Ittesasu.L500UtilA
                     RO_Star koma2 = Util_Starlightable.AsKoma(src_Sky.StarlightIndexOf(koma1).Now);
 
 
-                        if (pside == koma2.Pside
-                            && Okiba.ShogiBan == Conv_SyElement.ToOkiba(koma2.Masu)
-                            && Util_Komasyurui14.Matches(syurui, Util_Komahaiyaku184.Syurui(koma2.Haiyaku))
-                            && masu1 == koma2.Masu
-                            )
-                        {
-                            // 候補マスにいた
-                            //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-                            hit = true;
-                            foundKoma = koma1;
-                            break;
-                        }
+                    if (pside == koma2.Pside
+                        && Okiba.ShogiBan == Conv_SyElement.ToOkiba(koma2.Masu)
+                        && Util_Komasyurui14.Matches(syurui, Util_Komahaiyaku184.Syurui(koma2.Haiyaku))
+                        && masu1 == koma2.Masu
+                        )
+                    {
+                        // 候補マスにいた
+                        //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                        hit = true;
+                        foundKoma = koma1;
+                        break;
+                    }
                 }
             }
 

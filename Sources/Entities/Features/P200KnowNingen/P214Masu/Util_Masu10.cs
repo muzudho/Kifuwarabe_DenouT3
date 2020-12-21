@@ -1,5 +1,4 @@
 ﻿using System.Text;
-using Grayscale.Kifuwarakaku.Entities.Features;
 
 /*
      /// <summary>
@@ -117,7 +116,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// <returns></returns>
         public static SyElement OkibaSujiDanToMasu(Okiba okiba, int suji, int dan)
         {
-            int masuHandle = Util_Masu10.Handle_OkibaSujiDanToMasu(okiba,suji,dan);
+            int masuHandle = Util_Masu10.Handle_OkibaSujiDanToMasu(okiba, suji, dan);
 
 
             SyElement masu = Masu_Honshogi.Query_Basho(Masu_Honshogi.nError);//範囲外が指定されることもあります。
@@ -158,7 +157,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
             masuHandle = masuHandle + Conv_SyElement.ToMasuNumber(Conv_Okiba.GetFirstMasuFromOkiba(okiba));
 
-            return Conv_MasuHandle.ToMasu( masuHandle);
+            return Conv_MasuHandle.ToMasu(masuHandle);
         }
 
 

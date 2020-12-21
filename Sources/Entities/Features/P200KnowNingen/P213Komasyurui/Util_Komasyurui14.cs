@@ -1,7 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-
-namespace Grayscale.Kifuwarakaku.Entities.Features
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
 
@@ -104,7 +101,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         {
             return Util_Komasyurui14.FlagNari[(int)syurui];
         }
-        
+
         /// <summary>
         /// ------------------------------------------------------------------------------------------------------------------------
         /// 駒が成ったときの駒ハンドル

@@ -18,7 +18,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
 
 
-        public List<Finger> Items { get{return this.items;} }
+        public List<Finger> Items { get { return this.items; } }
         private List<Finger> items;
 
         public Finger this[int i]

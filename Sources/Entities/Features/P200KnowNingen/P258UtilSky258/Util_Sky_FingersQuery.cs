@@ -1,18 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
+﻿using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
 {
@@ -155,7 +141,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             {
                 RO_Star koma = Util_Koma.FromFinger(src_Sky, finger);
 
-                if (Masu_Honshogi.Basho_Equals(koma.Masu,masu))
+                if (Masu_Honshogi.Basho_Equals(koma.Masu, masu))
                 {
                     found.Add(finger);
                 }
@@ -187,7 +173,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 Util_MasuNum.TryMasuToSuji(koma2.Masu, out suji2);
 
                 if (
-                    Conv_SyElement.ToOkiba(koma2.Masu)==okiba
+                    Conv_SyElement.ToOkiba(koma2.Masu) == okiba
                     && koma2.Pside == pside
                     && koma2.Komasyurui == ks
                     && suji2 == suji

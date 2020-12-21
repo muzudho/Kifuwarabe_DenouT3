@@ -1,6 +1,4 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P355_KifuParserA.I500Parser;
 
 namespace Grayscale.P355_KifuParserA.L500Parser

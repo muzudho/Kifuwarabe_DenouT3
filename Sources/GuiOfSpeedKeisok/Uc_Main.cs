@@ -6,7 +6,7 @@ using System.Text;
 using System.Windows.Forms;
 using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P324KifuTree.I250Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
 using Grayscale.P521FeatureVect.L500Struct;
 using Grayscale.P523UtilFv.L510UtilFvLoad;
@@ -14,7 +14,7 @@ using Grayscale.P531Hyokakansu.I500Hyokakansu;
 using Grayscale.P531Hyokakansu.L500Hyokakansu;
 
 #if DEBUG || LEARN
-using Grayscale.P321KyokumHyoka.I250Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
 #endif
 
 namespace Grayscale.P910_SpeedKeisok

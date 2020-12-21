@@ -19,9 +19,9 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.P324KifuTree.I250Struct;
-    using Grayscale.P324KifuTree.L250Struct;
-    using Grayscale.P339ConvKyokume.L500Converter;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.P461Server.L250Util;
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
     using System.Windows.Forms;
@@ -30,9 +30,9 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.P324KifuTree.I250Struct;
-    using Grayscale.P324KifuTree.L250Struct;
-    using Grayscale.P339ConvKyokume.L500Converter;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.P461Server.L250Util;
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 #endif

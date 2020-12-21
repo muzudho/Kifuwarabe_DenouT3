@@ -1,26 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using Grayscale.Kifuwarakaku.Entities.Logging;
+﻿using System.Collections.Generic;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P260Play.L500Query;
-using Grayscale.P269UtilSasu.L500Util;
-using Grayscale.P324KifuTree.I250Struct;
 using Grayscale.P360ConvSasu.L500Converter;
 using Grayscale.P361Util.L500Util;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号

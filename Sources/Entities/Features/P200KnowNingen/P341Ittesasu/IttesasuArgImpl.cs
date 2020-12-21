@@ -1,17 +1,11 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P341Ittesasu.I250OperationA;
-
-
-namespace Grayscale.P341Ittesasu.L250OperationA
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public class IttesasuArgImpl : IttesasuArg
     {
         /// <summary>
         /// 一手指し、開始局面。
         /// </summary>
-        public　KyokumenWrapper KaisiKyokumen { get; set; }
+        public KyokumenWrapper KaisiKyokumen { get; set; }
 
         /// <summary>
         /// 一手指し、開始局面、手番。

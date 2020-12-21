@@ -1,8 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
@@ -19,7 +15,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             kamd.Foreach_Entry((Finger key, SySet<SyElement> value, ref bool toBreak) =>
             {
                 sb.AppendLine("entry.Key=" + key);
-                sb.AppendLine( ShogibanTermDisplay.Masus_ToTerm(value) );
+                sb.AppendLine(ShogibanTermDisplay.Masus_ToTerm(value));
                 sb.AppendLine("  ");//空行
             });
 
@@ -45,7 +41,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
             // 表示テキスト
             Dictionary<int, string> hyoji = new Dictionary<int, string>();
-            for (int masuNumber = Masu_Honshogi.nban11_１一; masuNumber <= Masu_Honshogi.nban99_９九; masuNumber++ )
+            for (int masuNumber = Masu_Honshogi.nban11_１一; masuNumber <= Masu_Honshogi.nban99_９九; masuNumber++)
             {
                 if (kaisu.ContainsKey(masuNumber))
                 {

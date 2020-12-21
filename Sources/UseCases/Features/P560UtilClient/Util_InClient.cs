@@ -2,9 +2,9 @@
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P307UtilSky.L500Util;
-using Grayscale.P324KifuTree.L250Struct;
-using Grayscale.P325PnlTaikyoku.I250Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P355_KifuParserA.I500Parser;
 
 namespace Grayscale.P560UtilClient.L500Util

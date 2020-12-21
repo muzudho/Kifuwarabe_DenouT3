@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Text;
 using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P341Ittesasu.L250OperationA;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
 using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
 using Grayscale.Kifuwarakaku.GuiOfCsharpVs.Features;

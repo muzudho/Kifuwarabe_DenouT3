@@ -1,10 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using System.Text;
+﻿using System.Text;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
@@ -16,7 +10,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         {
             int count = 0;
 
-            foreach(Couple<Finger, SySet<SyElement>> entry in collection.Items)
+            foreach (Couple<Finger, SySet<SyElement>> entry in collection.Items)
             {
                 foreach (SyElement masus in entry.B.Elements)
                 {

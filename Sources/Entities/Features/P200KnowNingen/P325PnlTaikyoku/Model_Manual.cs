@@ -1,7 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-
-namespace Grayscale.P325PnlTaikyoku.I250Struct
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public interface Model_Manual
     {

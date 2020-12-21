@@ -1,5 +1,5 @@
 ﻿
-namespace Grayscale.P274_KifuReaderB.I500Reader
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public interface KifuReaderB_State
     {

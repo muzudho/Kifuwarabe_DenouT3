@@ -14,19 +14,10 @@ using System.Text;
 using System.Windows.Forms;
 using Nett;
 #else
-using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using System.Windows.Forms;
 #endif
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
@@ -75,7 +66,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             }
             else if (Conv_MasuHandle.OnKomadai(masuHandle))
             {
-                switch(syurui)
+                switch (syurui)
                 {
                     case Komasyurui14.H01_Fu_____: result = Komahaiyaku185.n164_歩打; break;
                     case Komasyurui14.H02_Kyo____: result = Komahaiyaku185.n165_香打; break;

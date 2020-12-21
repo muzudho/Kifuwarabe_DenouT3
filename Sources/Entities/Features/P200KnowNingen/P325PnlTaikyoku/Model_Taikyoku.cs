@@ -1,6 +1,4 @@
-﻿using Grayscale.P324KifuTree.I250Struct;
-
-namespace Grayscale.P325PnlTaikyoku.I250Struct
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public interface Model_Taikyoku
     {

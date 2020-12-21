@@ -10,7 +10,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
     /// 
     /// 例：どの駒が、どんな手を指せるか。
     /// </summary>
-    public class Maps_OneAndMulti<T1,T2>
+    public class Maps_OneAndMulti<T1, T2>
     {
 
         public Dictionary<T1, List<T2>> Items { get; set; }
@@ -128,7 +128,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 {
                     if (map2.ContainsKey(key1))
                     {
-                        map2.AddExists( key1, value1);
+                        map2.AddExists(key1, value1);
                     }
                     else
                     {

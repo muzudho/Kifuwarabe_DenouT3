@@ -1,23 +1,18 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
+﻿using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P341Ittesasu.I250OperationA
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public interface IttemodosuResult
     {
         /// <summary>
         /// 指した駒の番号。
         /// </summary>
-        Finger FigMovedKoma{get;set;}
+        Finger FigMovedKoma { get; set; }
 
         /// <summary>
         /// 取った駒があれば、取った駒の番号。
         /// </summary>
-        Finger FigFoodKoma{get;set;}
+        Finger FigFoodKoma { get; set; }
 
         /// <summary>
         /// 取った駒があれば、取った駒の種類。

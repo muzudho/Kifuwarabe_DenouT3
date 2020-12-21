@@ -1,15 +1,11 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-
-namespace Grayscale.P341Ittesasu.I250OperationA
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public interface IttesasuArg
     {
         /// <summary>
         /// 一手指し、開始局面。
         /// </summary>
-        KyokumenWrapper KaisiKyokumen{get;set;}
+        KyokumenWrapper KaisiKyokumen { get; set; }
 
         /// <summary>
         /// 一手指し、開始局面、手番。
@@ -24,6 +20,6 @@ namespace Grayscale.P341Ittesasu.I250OperationA
         /// <summary>
         /// これから作る局面の、手目済み。
         /// </summary>
-        int KorekaranoTemezumi_orMinus1{get;}
+        int KorekaranoTemezumi_orMinus1 { get; }
     }
 }

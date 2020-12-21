@@ -1,8 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
 {
@@ -481,7 +477,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             }
             else
             {
-                string word = "升"+BashoImpl.ToMasuNumber(bitfield);
+                string word = "升" + BashoImpl.ToMasuNumber(bitfield);
                 basho = new BashoImpl(bitfield);//TODO:唯一の新規生成にしたい。
                 Masu_Honshogi.bitfieldBashoDictionary.Add(bitfield, basho);
                 Conv_Sy.Put_BitfieldWord(bitfield, word);
@@ -500,8 +496,8 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         public const int nban18_１八 = Masu_Honshogi.nban17_１七 + 1;
         public const int nban19_１九 = Masu_Honshogi.nban18_１八 + 1;
 
-        public const int nban21_２一 = Masu_Honshogi.nban19_１九 +1;
-        public const int nban22_２二 = Masu_Honshogi.nban21_２一 +1;
+        public const int nban21_２一 = Masu_Honshogi.nban19_１九 + 1;
+        public const int nban22_２二 = Masu_Honshogi.nban21_２一 + 1;
         public const int nban23_２三 = Masu_Honshogi.nban22_２二 + 1;
         public const int nban24_２四 = Masu_Honshogi.nban23_２三 + 1;
         public const int nban25_２五 = Masu_Honshogi.nban24_２四 + 1;

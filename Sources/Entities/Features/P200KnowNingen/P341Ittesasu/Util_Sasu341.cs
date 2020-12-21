@@ -1,17 +1,6 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P341Ittesasu.L500UtilA;
-using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
+﻿using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P341Ittesasu.L510OperationB
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Util_Sasu341
     {
@@ -34,7 +23,7 @@ namespace Grayscale.P341Ittesasu.L510OperationB
         {
             SkyBuffer sky_buf = new SkyBuffer(src_Sky); // 現局面を元に、新規局面を書き換えます。
             sky_buf.SetKaisiPside(Conv_Playerside.Reverse(src_Sky.KaisiPside));// 開始先後を逆転させます。
-            sky_buf.SetTemezumi(sky_buf.Temezumi+1);// 1手進めます。
+            sky_buf.SetTemezumi(sky_buf.Temezumi + 1);// 1手進めます。
             SkyConst src_Sky2 = SkyConst.NewInstance(sky_buf,
                 -1//sky_bufでもう変えてあるので、そのまま。
                 );
@@ -59,7 +48,7 @@ namespace Grayscale.P341Ittesasu.L510OperationB
 
                 RO_Star koma = Util_Starlightable.AsKoma(sky_buf.StarlightIndexOf(tottaKoma).Now);
 
-                    // FIXME:配役あってるか？
+                // FIXME:配役あってるか？
                 sky_buf.PutOverwriteOrAdd_Starlight(tottaKoma, new RO_Starlight(new RO_Star(src_Sky.KaisiPside, akiMasu, koma.Komasyurui)));//tottaKoma,
             }
 
@@ -77,7 +66,7 @@ namespace Grayscale.P341Ittesasu.L510OperationB
                 sky_buf.PutOverwriteOrAdd_Starlight(finger, new RO_Starlight(new RO_Star(src_Sky.KaisiPside, masu, komaSyurui)));
             }
 
-            return SkyConst.NewInstance( sky_buf,
+            return SkyConst.NewInstance(sky_buf,
                 -1//sky_bufでもう進めてあるので、そのまま。
                 );
         }

@@ -1,9 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-
-namespace Grayscale.Kifuwarakaku.Entities.Features
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     /// <summary>
     /// 本将棋の千日手検出用のゾブリスト・ハッシュ・テーブルを作成します。
@@ -21,7 +16,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             Util_ZobristHashing.randamValueTable = new ulong[ConstShogi.BAN_SIZE, 2 * Array_Komasyurui.Items_AllElements.Length];
             for (int masu2 = 0; masu2 < ConstShogi.BAN_SIZE; masu2++)
             {
-                
+
                 //Util_ZobristHashing.randamValueTable[masu2] = new int[
                 //    Array_Komasyurui.Items_All.Length * 2// プレイヤー２人分
                 //    ];
@@ -29,8 +24,8 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 foreach (Komasyurui14 komasyurui2 in Array_Komasyurui.Items_AllElements)
                 {
                     // プレイヤー２人分
-                    Util_ZobristHashing.randamValueTable[masu2,(int)komasyurui2] = (ulong)(KwRandom.Random.NextDouble()*ulong.MaxValue);
-                    Util_ZobristHashing.randamValueTable[masu2,(int)komasyurui2 + Array_Komasyurui.Items_AllElements.Length] = (ulong)(KwRandom.Random.NextDouble()*ulong.MaxValue);
+                    Util_ZobristHashing.randamValueTable[masu2, (int)komasyurui2] = (ulong)(KwRandom.Random.NextDouble() * ulong.MaxValue);
+                    Util_ZobristHashing.randamValueTable[masu2, (int)komasyurui2 + Array_Komasyurui.Items_AllElements.Length] = (ulong)(KwRandom.Random.NextDouble() * ulong.MaxValue);
                 }
             }
         }
@@ -51,15 +46,15 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 Util_ZobristHashing.Init();
             }
 
-            if(masu1<0 || ConstShogi.BAN_SIZE<= masu1)
+            if (masu1 < 0 || ConstShogi.BAN_SIZE <= masu1)
             {
                 result = 0;
                 goto gt_EndMethod;
             }
 
-            int b = ((int)playerNumber1-1) * Array_Komasyurui.Items_AllElements.Length + (int)komaSyurui1;
+            int b = ((int)playerNumber1 - 1) * Array_Komasyurui.Items_AllElements.Length + (int)komaSyurui1;
 
-            result = Util_ZobristHashing.randamValueTable[masu1,b];
+            result = Util_ZobristHashing.randamValueTable[masu1, b];
 
         gt_EndMethod:
             return result;

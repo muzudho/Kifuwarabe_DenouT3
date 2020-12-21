@@ -1,10 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
@@ -251,7 +245,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             buf_Sky.PutOverwriteOrAdd_Starlight(finger, new RO_Starlight(new RO_Star(Playerside.P2, Masu_Honshogi.Query_Basho(Masu_Honshogi.nfukuro39), Komasyurui14.H01_Fu_____)));// Kh185.n001_歩
             finger++;
 
-            buf_Sky.PutOverwriteOrAdd_Starlight(finger, new RO_Starlight(new RO_Star(Playerside.P2,Masu_Honshogi.Query_Basho( Masu_Honshogi.nfukuro40), Komasyurui14.H01_Fu_____)));// Kh185.n001_歩
+            buf_Sky.PutOverwriteOrAdd_Starlight(finger, new RO_Starlight(new RO_Star(Playerside.P2, Masu_Honshogi.Query_Basho(Masu_Honshogi.nfukuro40), Komasyurui14.H01_Fu_____)));// Kh185.n001_歩
             finger++;
 
             // 以上、全40駒。

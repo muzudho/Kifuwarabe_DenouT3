@@ -12,7 +12,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
     /// このコレクションは、「持ち駒の利き」の格納を想定しています。（同じ駒を複数個所に置くのに使う）
     /// </summary>
     //[DebuggerDisplay("v(^▽^)vｲｪｰｲ☆{Words.Length} | {Message}")]
-    public class Maps_OneAndMultiAndMulti<T1,T2,T3>//Finger,Masu,Masus
+    public class Maps_OneAndMultiAndMulti<T1, T2, T3>//Finger,Masu,Masus
     {
         //#region DebuggerDisplay用
 
@@ -135,7 +135,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// クローンを作ります。
         /// </summary>
         /// <param name="entries"></param>
-        public Maps_OneAndMultiAndMulti(Maps_OneAndMultiAndMulti<T1, T2,T3> src)
+        public Maps_OneAndMultiAndMulti(Maps_OneAndMultiAndMulti<T1, T2, T3> src)
         {
             this.items = src.items;
         }

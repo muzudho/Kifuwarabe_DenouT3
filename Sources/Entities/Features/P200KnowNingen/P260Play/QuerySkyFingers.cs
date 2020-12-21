@@ -1,16 +1,11 @@
 ﻿using System;
-using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 #if DEBUG
 
 #endif
 
-namespace Grayscale.P260Play.L250Calc
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class QuerySkyFingers
     {
