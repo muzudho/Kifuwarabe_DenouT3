@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Grayscale.Kifuwarakaku.UseCases.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
 
 namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
 {

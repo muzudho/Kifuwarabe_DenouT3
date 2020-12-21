@@ -9,7 +9,6 @@
     using Codeplex.Data;//DynamicJson
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.UseCases.Features;
-    using Grayscale.Kifuwarakaku.UseCases.Features;
     using Nett;
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 

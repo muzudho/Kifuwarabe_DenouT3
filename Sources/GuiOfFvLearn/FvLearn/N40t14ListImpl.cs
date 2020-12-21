@@ -1,6 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-
-namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
+﻿namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
 {
     /// <summary>
     /// 40+14要素のリスト。

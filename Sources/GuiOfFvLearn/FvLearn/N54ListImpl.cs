@@ -1,6 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-
-namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
+﻿namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
 {
     public class N54ListImpl : N54List
     {

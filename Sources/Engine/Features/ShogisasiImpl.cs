@@ -24,14 +24,6 @@ using System.Collections.Generic;
     using System.Collections.Generic;
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.UseCases.Features;
-    using Grayscale.Kifuwarakaku.UseCases.Features;
-    using Grayscale.Kifuwarakaku.UseCases.Features;
-    using Grayscale.Kifuwarakaku.UseCases.Features;
-    using Grayscale.Kifuwarakaku.UseCases.Features;
-    using Grayscale.Kifuwarakaku.UseCases.Features;
-    using Grayscale.Kifuwarakaku.UseCases.Features;
-    using Grayscale.Kifuwarakaku.UseCases.Features;
-    using Grayscale.Kifuwarakaku.UseCases.Features;
 #endif
 
     /// <summary>

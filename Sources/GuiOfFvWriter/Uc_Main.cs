@@ -5,10 +5,6 @@ using System.Text;
 using System.Windows.Forms;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.UseCases.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
 using Nett;
 
 namespace Grayscale.Kifuwarakaku.GuiOfFvWriter.Features

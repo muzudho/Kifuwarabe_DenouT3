@@ -5,16 +5,6 @@ using Grayscale.Kifuwarakaku.Engine;
 using Grayscale.Kifuwarakaku.Engine.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.UseCases.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
 
 #if DEBUG || LEARN
 using Grayscale.Kifuwarakaku.UseCases.Features;

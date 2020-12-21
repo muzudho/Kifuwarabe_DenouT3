@@ -4,14 +4,6 @@ using System.IO;
 using System.Text;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.UseCases.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
 
 namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
 {

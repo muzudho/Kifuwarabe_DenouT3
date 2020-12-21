@@ -3,17 +3,6 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
 using Nett;
 
 namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features

@@ -20,8 +20,6 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
     using System.Text;
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.UseCases.Features;
-    using Grayscale.Kifuwarakaku.UseCases.Features;
-    using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
 #endif
 

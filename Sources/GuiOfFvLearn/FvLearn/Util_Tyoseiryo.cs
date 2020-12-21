@@ -1,7 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-
-namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
+﻿namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
 {
     public abstract class Util_Tyoseiryo
     {

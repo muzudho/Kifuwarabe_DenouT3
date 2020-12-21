@@ -1,7 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.UseCases.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
-
-namespace Grayscale.Kifuwarakaku.UseCases.Features
+﻿namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     public interface Receiver_ForAims : Receiver
     {

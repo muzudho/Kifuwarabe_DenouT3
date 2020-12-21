@@ -12,7 +12,6 @@ using Grayscale.Kifuwarakaku.UseCases.Features;
 #else
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.UseCases.Features;
-    using Grayscale.Kifuwarakaku.UseCases.Features;
 #endif
 
     /// <summary>

@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
 
 #if DEBUG
 //using Grayscale.P521_Atama_Unou_.L480UtilFvEdit;

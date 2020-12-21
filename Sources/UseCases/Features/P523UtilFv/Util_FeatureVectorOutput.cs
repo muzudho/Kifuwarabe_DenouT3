@@ -1,8 +1,5 @@
 ﻿using System.IO;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
 using Nett;
 
 namespace Grayscale.Kifuwarakaku.UseCases.Features

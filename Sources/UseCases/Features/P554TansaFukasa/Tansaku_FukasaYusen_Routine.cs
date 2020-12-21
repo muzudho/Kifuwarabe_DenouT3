@@ -34,11 +34,6 @@ using Grayscale.Kifuwarakaku.Entities.Features;
 #else
     using System.Collections.Generic;
     using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.UseCases.Features;
-    using Grayscale.Kifuwarakaku.UseCases.Features;
-    using Grayscale.Kifuwarakaku.UseCases.Features;
-    using Grayscale.Kifuwarakaku.UseCases.Features;
-    using Grayscale.Kifuwarakaku.UseCases.Features;
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 #endif
 

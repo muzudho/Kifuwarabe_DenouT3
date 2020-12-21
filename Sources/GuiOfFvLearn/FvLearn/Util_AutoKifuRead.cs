@@ -1,5 +1,4 @@
 ﻿using System.Windows.Forms;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
 
 namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
 {

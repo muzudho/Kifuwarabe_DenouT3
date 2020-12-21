@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
 
 
 

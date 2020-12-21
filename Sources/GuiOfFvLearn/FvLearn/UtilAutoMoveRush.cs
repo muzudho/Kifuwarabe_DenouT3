@@ -20,12 +20,6 @@ using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
 using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
 #else
     using System.Windows.Forms;
-    using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-    using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-    using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-    using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-    using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-    using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
 #endif
 
     /// <summary>

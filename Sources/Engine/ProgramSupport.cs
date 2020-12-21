@@ -10,8 +10,6 @@ namespace Grayscale.Kifuwarakaku.Engine
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.Entities.Logging;
     using Grayscale.Kifuwarakaku.UseCases.Features;
-    using Grayscale.Kifuwarakaku.UseCases.Features;
-    using Grayscale.Kifuwarakaku.UseCases.Features;
     using Nett;
 
     public class ProgramSupport : ShogiEngine

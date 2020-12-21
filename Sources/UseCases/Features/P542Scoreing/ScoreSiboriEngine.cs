@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
 
 namespace Grayscale.Kifuwarakaku.UseCases.Features
 {

@@ -1,6 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.UseCases.Features;
-
-namespace Grayscale.Kifuwarakaku.UseCases.Features
+﻿namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
     /// <summary>
     /// 探索中に変化するデータです。
