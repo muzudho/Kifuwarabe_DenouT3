@@ -262,8 +262,13 @@
         }
 
         /// <summary>
-        /// ログファイルを削除します。(連番がなければ)
+        /// ログ・ディレクトリー直下の ログファイルを削除します。
         /// 
+        /// Example:
+        /// [GUID]name.log
+        /// name.log.png
+        /// ...
+        ///
         /// * 将棋エンジン起動後、ログが少し取られ始めたあとに削除を開始するようなところで実行しないでください。
         /// * TODO usinewgame のタイミングでログを削除したい。
         /// </summary>
@@ -271,9 +276,6 @@
         {
             try
             {
-                //string filepath2 = Path.Combine(Application.StartupPath, this.DefaultFile.FileName);
-                //System.IO.File.Delete(filepath2);
-
                 var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
                 var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
                 string logsDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("LogDirectory"));
@@ -282,12 +284,9 @@
                 foreach (string path in paths)
                 {
                     string name = Path.GetFileName(path);
-                    // if (name.StartsWith("_log_", StringComparison.CurrentCulture))
                     if (name.EndsWith(".log") || name.Contains(".log."))
                     {
-                        string fullpath = Path.Combine(logsDirectory, name);
-                        //MessageBox.Show("fullpath=[" + fullpath + "]", "ログ・ファイルの削除");
-                        System.IO.File.Delete(fullpath);
+                        System.IO.File.Delete(path);
                     }
                 }
             }
