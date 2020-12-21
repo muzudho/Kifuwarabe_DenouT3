@@ -1,4 +1,6 @@
-﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharpVs.Features
+﻿using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+
+namespace Grayscale.Kifuwarakaku.GuiOfCsharpVs.Features
 {
     /// <summary>
     /// シングルトン

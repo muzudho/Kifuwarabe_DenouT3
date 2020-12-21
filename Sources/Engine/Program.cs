@@ -1,6 +1,7 @@
 ﻿namespace Grayscale.Kifuwarakaku.Engine
 {
     using System;
+    using Grayscale.Kifuwarakaku.Engine.Features;
     using Grayscale.Kifuwarakaku.Entities.Logging;
 
     /// <summary>
