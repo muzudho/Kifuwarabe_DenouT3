@@ -2,10 +2,6 @@
 using System.Diagnostics;
 using System.IO;
 using System.Text;
-using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
 using Grayscale.P523UtilFv.L490UtilFvFormat;

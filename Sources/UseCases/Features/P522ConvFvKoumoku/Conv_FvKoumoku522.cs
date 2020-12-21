@@ -1,7 +1,6 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
+﻿using System;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
-using System;
 
 namespace Grayscale.P522ConvFvKoumoku.L500Converter
 {
@@ -15,7 +14,7 @@ namespace Grayscale.P522ConvFvKoumoku.L500Converter
         /// <param name="player2dan"></param>
         /// <param name="player1suji"></param>
         /// <param name="player2suji"></param>
-        public  static void Converter_KK_to_PP(int player1dan, int player2dan, int player1suji, int player2suji, out int p1, out int p2)
+        public static void Converter_KK_to_PP(int player1dan, int player2dan, int player1suji, int player2suji, out int p1, out int p2)
         {
             p1 = Const_NikomaKankeiP_ParamIx.PLAYER1 + Const_NikomaKankeiP_ParamIx.Ban_Oh__ + Square.ToMasu(player1suji, player1dan);
             p2 = Const_NikomaKankeiP_ParamIx.PLAYER2 + Const_NikomaKankeiP_ParamIx.Ban_Oh__ + Square.ToMasu(player2suji, player2dan);

@@ -1,11 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-
-namespace Grayscale.Kifuwarakaku.GuiOfCsharpVs.Features
+﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharpVs.Features
 {
     /// <summary>
     /// シングルトン
@@ -67,7 +60,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharpVs.Features
                     MainGui_Csharp shogiGui = (MainGui_Csharp)obj_shogiGui2;
                     Uc_Form1Mainable ui_PnlMain = ((Form1_Shogi)shogiGui.OwnerForm).Uc_Form1Main;
 
-                    ui_PnlMain.MainGui.Do_ComputerSente( );
+                    ui_PnlMain.MainGui.Do_ComputerSente();
                 };
             }
             return Event_CsharpVsImpl.instance;

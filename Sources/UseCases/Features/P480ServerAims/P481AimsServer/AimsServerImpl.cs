@@ -1,11 +1,10 @@
-﻿    using Grayscale.Kifuwarakaku.Entities.Logging;
+﻿using System;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P461Server.L498Server;
 using Grayscale.P481AimsServer.I060Phase;
 using Grayscale.P481AimsServer.I070ServerBase;
 using Grayscale.P481AimsServer.L060Phase;
 using Grayscale.P481AimsServer.L125Receiver;
-using System;
 
 namespace Grayscale.P481AimsServer.L500Server
 {
@@ -53,7 +52,7 @@ namespace Grayscale.P481AimsServer.L500Server
 
             while (true)
             {
-                switch(phase_AimsServer)
+                switch (phase_AimsServer)
                 {
                     case Phase_AimsServer._01_Server_Booted:
                         {
@@ -175,7 +174,7 @@ namespace Grayscale.P481AimsServer.L500Server
                 }
 
 
-                switch(phaseResult)
+                switch (phaseResult)
                 {
                     case PhaseResult_AimsServer.Break:
                         goto gt_EndLoop;

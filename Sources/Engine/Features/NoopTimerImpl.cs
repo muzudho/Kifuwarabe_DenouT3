@@ -1,6 +1,6 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
+﻿using System.Diagnostics;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P542Scoreing.I005UsiLoop;
-using System.Diagnostics;
 
 namespace Grayscale.Kifuwarakaku.Engine.Features
 {
@@ -80,12 +80,12 @@ namespace Grayscale.Kifuwarakaku.Engine.Features
             // noop リセット処理。
             //if (this.Option_threw_noop)
             //{
-                // noopを投げてなくても、毎回ストップウォッチはリスタートさせます。
-//#if DEBUG
-                Logger.WriteLineC("サーバーから応答[" + command + "]があったのでタイマーをリスタートさせるぜ☆");
-//#endif
-                this.noopPhase = NoopPhase.None;
-                this.sw_forNoop.Restart();
+            // noopを投げてなくても、毎回ストップウォッチはリスタートさせます。
+            //#if DEBUG
+            Logger.WriteLineC("サーバーから応答[" + command + "]があったのでタイマーをリスタートさせるぜ☆");
+            //#endif
+            this.noopPhase = NoopPhase.None;
+            this.sw_forNoop.Restart();
             //}
         }
     }

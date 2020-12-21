@@ -1,8 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Text;
-using Grayscale.Kifuwarakaku.Entities.Features;
 
-namespace Grayscale.P369ConvCsa.L500Converter
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class UtilCsaMove
     {

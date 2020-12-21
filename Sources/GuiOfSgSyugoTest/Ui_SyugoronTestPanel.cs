@@ -1,11 +1,9 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Nett;
 
 namespace Grayscale.P780_SgSyugoTest
@@ -48,7 +46,7 @@ namespace Grayscale.P780_SgSyugoTest
 
             foreach (string definition in definitions)
             {
-                if (-1!=definition.IndexOf('∈'))
+                if (-1 != definition.IndexOf('∈'))
                 {
                     string[] operands = definition.Split('∈');
 
@@ -59,7 +57,7 @@ namespace Grayscale.P780_SgSyugoTest
                     }
                     else
                     {
-                        elementWords = new string[]{ operands[0]};
+                        elementWords = new string[] { operands[0] };
                     }
 
                     SySet<SyElement> sySet = this.syDictionary.GetWord(operands[1]);
@@ -68,7 +66,7 @@ namespace Grayscale.P780_SgSyugoTest
                         sySet = new SySet_Default<SyElement>(operands[1]);
                     }
 
-                    foreach(string elementWord in elementWords)
+                    foreach (string elementWord in elementWords)
                     {
                         sySet.AddElement(new SyElement_Default(bitfield));
                         Conv_Sy.Put_BitfieldWord(bitfield, elementWord);
@@ -134,7 +132,7 @@ namespace Grayscale.P780_SgSyugoTest
             string wordStr = this.txtWord.Text.Trim();
             SySet<SyElement> word = this.syDictionary.GetWord(wordStr);
 
-            this.lblElementsComment.Text = "一般的に"+wordStr+"は";
+            this.lblElementsComment.Text = "一般的に" + wordStr + "は";
             this.lblElementsComment2.Text = "話題の" + wordStr + "は";
             this.lblElementsComment3.Text = "話題の" + wordStr + "は";
             this.lblSupersetComment.Text = wordStr + "は";
@@ -161,7 +159,7 @@ namespace Grayscale.P780_SgSyugoTest
                             sb.Append(",");
                         }
 
-                        sb.Append(Conv_Sy.Query_Word( syElm.Bitfield));
+                        sb.Append(Conv_Sy.Query_Word(syElm.Bitfield));
                     }
                     this.txtElements.Text = sb.ToString();
                 }
@@ -197,7 +195,7 @@ namespace Grayscale.P780_SgSyugoTest
             string[] replacements = context.Split(';');
 
             Dictionary<string, string> repDic = new Dictionary<string, string>();
-            foreach(string replacement in replacements)
+            foreach (string replacement in replacements)
             {
                 string[] pair = replacement.Split('=');
 
@@ -207,7 +205,7 @@ namespace Grayscale.P780_SgSyugoTest
 
             string elements1 = this.txtElements.Text;
 
-            foreach(KeyValuePair<string,string> entry in repDic)
+            foreach (KeyValuePair<string, string> entry in repDic)
             {
                 elements1 = elements1.Replace(entry.Key, entry.Value);
             }

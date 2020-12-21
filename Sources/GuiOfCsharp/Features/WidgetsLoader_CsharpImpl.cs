@@ -4,7 +4,6 @@
     using System.Drawing;
     using System.Text;
     using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
 
     /// <summary>
     /// ファイル１つにつき、１インスタンス作成？

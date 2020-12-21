@@ -1,10 +1,6 @@
 ﻿using System.IO;
 using System.Text;
-using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharpVs.Features;
 using Nett;
 
 namespace Grayscale.Kifuwarakaku.GuiOfCsharpVs.Features

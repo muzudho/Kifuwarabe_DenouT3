@@ -2,14 +2,6 @@
 {
     using System.Collections.Generic;
     using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
     public abstract class Util_Menace
@@ -17,7 +9,7 @@
         /// <summary>
         /// v(^▽^)v超能力『メナス』だぜ☆ 未来の脅威を予測し、可視化するぜ☆ｗｗｗ
         /// </summary>
-        public static void Menace( MainGui_Csharp mainGui)
+        public static void Menace(MainGui_Csharp mainGui)
         {
             if (0 < mainGui.Model_Manual.GuiTemezumi)
             {

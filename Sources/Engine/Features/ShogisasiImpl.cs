@@ -16,17 +16,13 @@ using Grayscale.P542Scoreing.L125ScoreSibori;
 using Grayscale.P542Scoreing.L250Args;
 using Grayscale.P554TansaFukasa.I500Struct;
 using Grayscale.P554TansaFukasa.L500Struct;
-using Grayscale.P440KifuTreeLog.L500Struct;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using System;
 using System.Collections.Generic;
 #else
     using System;
     using System.Collections.Generic;
     using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.P440KifuTreeLog.L500Struct;
     using Grayscale.P521FeatureVect.I500Struct;
     using Grayscale.P521FeatureVect.L500Struct;
     using Grayscale.P542Scoreing.I005UsiLoop;

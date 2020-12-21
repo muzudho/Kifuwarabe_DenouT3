@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P461Server.I125Receiver;
 using Grayscale.P461Server.I497EngineClient;
 using Grayscale.P461Server.L498Server;
@@ -54,7 +53,7 @@ namespace Grayscale.P461Server.L497EngineClient
                 logTag.Logger.WriteLineS(line);
 #endif
 
-                if("noop" == line)
+                if ("noop" == line)
                 {
                     //------------------------------------------------------------
                     // この部分は成功してないので、役に立っていないはず。

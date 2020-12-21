@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
 using Grayscale.P521FeatureVect.L500Struct;
@@ -86,7 +84,7 @@ namespace Grayscale.P720_FvWriter___
 
             StringBuilder sb = new StringBuilder();
             List<CsaKifuMove> moveList = csaKifu.MoveList;
-            foreach(CsaKifuMove csaMove in moveList)
+            foreach (CsaKifuMove csaMove in moveList)
             {
                 sb.Append(csaMove.OptionTemezumi);
                 sb.Append("手目 ");
@@ -189,11 +187,11 @@ namespace Grayscale.P720_FvWriter___
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
 
-            string filepathW = Path.Combine( Application.StartupPath, Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv00Scale")));
+            string filepathW = Path.Combine(Application.StartupPath, Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv00Scale")));
             MessageBox.Show("filepathW=[" + filepathW + "]", "fv_00_Scale.csv書き出し。");
 
             FeatureVector fv = new FeatureVectorImpl();
-            fv.SetBairitu_NikomaKankeiPp( 0.002f);//仮の初期値。
+            fv.SetBairitu_NikomaKankeiPp(0.002f);//仮の初期値。
 
             File.WriteAllText(filepathW, Format_FeatureVector_Scale.Format_Text(fv));
         }

@@ -1,6 +1,6 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
+﻿using System.Text;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
-using System.Text;
 
 
 namespace Grayscale.P523UtilFv.L490UtilFvFormat

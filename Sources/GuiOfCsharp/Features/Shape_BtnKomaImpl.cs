@@ -5,11 +5,6 @@
     using System.IO;
     using System.Text;
     using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
     using Nett;
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
@@ -148,7 +143,7 @@
             // この駒について。
             RO_Star koma = Util_Starlightable.AsKoma(mainGui.Model_Manual.GuiSkyConst.StarlightIndexOf(this.Finger).Now);
 
-            if(true)
+            if (true)
             {
                 //----------
                 // 駒画像
@@ -368,7 +363,7 @@
         /// <param name="y"></param>
         public void LightByMouse(int x, int y)
         {
-            if (this.HitByMouse(x,y)) // マウスが重なっているなら
+            if (this.HitByMouse(x, y)) // マウスが重なっているなら
             {
                 this.Light = true;
             }

@@ -10,10 +10,6 @@ using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
 using Grayscale.P542Scoreing.I250Args;
 #else
-    using Grayscale.Kifuwarakaku.Entities.Logging;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.P521FeatureVect.I500Struct;
     using Grayscale.P542Scoreing.I250Args;
@@ -59,7 +55,7 @@ using Grayscale.P542Scoreing.I250Args;
         /// 合法手を一覧します。
         /// </summary>
         /// <param name="uc_Main"></param>
-        void Aaa_CreateNextNodes_Gohosyu( EvaluationArgs args);
+        void Aaa_CreateNextNodes_Gohosyu(EvaluationArgs args);
 
         /// <summary>
         /// 全合法手をダンプ。デバッグ用途。
@@ -67,7 +63,7 @@ using Grayscale.P542Scoreing.I250Args;
         /// <returns></returns>
         string DumpToAllGohosyu(SkyConst src_Sky);
 
-        
+
         /// <summary>
         /// 評価値を算出します。
         /// </summary>
@@ -80,11 +76,11 @@ using Grayscale.P542Scoreing.I250Args;
 #endif
             );
 
-        
+
         /// <summary>
         /// 合法手一覧を作成したい。
         /// </summary>
-        void Aa_Yomi( IMove move);
+        void Aa_Yomi(IMove move);
 
     }
 }

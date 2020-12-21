@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Grayscale.P743FvLearn.I490StopLearning
+﻿namespace Grayscale.P743FvLearn.I490StopLearning
 {
     public interface StopLearning
     {

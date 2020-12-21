@@ -1,5 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P521FeatureVect.I500Struct;
+﻿using Grayscale.P521FeatureVect.I500Struct;
 using Grayscale.P521FeatureVect.L500Struct;
 
 namespace Grayscale.P743FvLearn.L420Inspection

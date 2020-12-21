@@ -1,7 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-
-
-namespace Grayscale.P361Util.L500Util
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Util_NodeAssert361
     {

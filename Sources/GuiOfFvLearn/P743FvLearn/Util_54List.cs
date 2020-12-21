@@ -18,14 +18,6 @@ using System.Text;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
 #else
     using System.Text;
-    using Grayscale.Kifuwarakaku.Entities.Logging;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.P521FeatureVect.L500Struct;
     using Grayscale.P525ConvFv.L500Converter;

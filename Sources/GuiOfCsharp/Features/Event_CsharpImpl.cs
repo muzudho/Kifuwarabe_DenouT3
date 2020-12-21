@@ -1,18 +1,6 @@
 ﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
     using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.P461Server.L250Util;
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
@@ -357,7 +345,7 @@
         /// <summary>
         /// [成る]ボタンのイベント。
         /// </summary>
-        public DELEGATE_MouseHitEvent Delegate_BtnNaru { get{return this.delegate_BtnNaru;} }
+        public DELEGATE_MouseHitEvent Delegate_BtnNaru { get { return this.delegate_BtnNaru; } }
         private DELEGATE_MouseHitEvent delegate_BtnNaru;
 
         /// <summary>

@@ -1,10 +1,6 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P355_KifuParserA.I500Parser;
-using Grayscale.P372KyokuParser.I500Parser;
-using Grayscale.P372KyokuParser.L500Parser;
-using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
+﻿using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P373ConvStartpo.L500Converter
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Conv_StartposImporter
     {

@@ -1,11 +1,10 @@
 ﻿using System.Text;
-using Grayscale.Kifuwarakaku.Entities.Features;
 
 #if DEBUG
 
 #endif
 
-namespace Grayscale.P370LogGraphiEx.L500Util
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Conv_KaisetuBoards
     {

@@ -1,9 +1,7 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
-using Grayscale.P542Scoreing.L240Shogisasi;
 using Grayscale.P542Scoreing.I250Args;
+using Grayscale.P542Scoreing.L240Shogisasi;
 
 namespace Grayscale.P542Scoreing.L250Args
 {
@@ -12,7 +10,7 @@ namespace Grayscale.P542Scoreing.L250Args
         /// <summary>
         /// 千日手になるかどうかの判定だけを行うクラスです。
         /// </summary>
-        public SennititeConfirmer SennititeConfirmer { get{return this.sennititeConfirmer;} }
+        public SennititeConfirmer SennititeConfirmer { get { return this.sennititeConfirmer; } }
         private SennititeConfirmer sennititeConfirmer;
 
         public FeatureVector FeatureVector { get { return this.featureVector; } }

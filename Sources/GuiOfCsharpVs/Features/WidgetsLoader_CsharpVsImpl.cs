@@ -1,9 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharpVs.Features;
-
-namespace Grayscale.Kifuwarakaku.GuiOfCsharpVs.Features
+﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharpVs.Features
 {
     public class WidgetsLoader_CsharpVsImpl : WidgetsLoader_CsharpImpl
     {

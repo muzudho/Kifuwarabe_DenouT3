@@ -6,16 +6,12 @@ namespace Grayscale.Kifuwarakaku.Engine
     using System.Collections.Generic;
     using System.IO;
     using System.Text;
+    using Grayscale.Kifuwarakaku.Engine.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.Entities.Logging;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.P523UtilFv.L510UtilFvLoad;
     using Grayscale.P542Scoreing.I005UsiLoop;
     using Grayscale.P542Scoreing.L240Shogisasi;
-    using Grayscale.Kifuwarakaku.Engine.Features;
     using Nett;
 
     public class ProgramSupport : ShogiEngine

@@ -1,7 +1,5 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
+﻿using System;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using System;
 
 namespace Grayscale.P531Hyokakansu.L490UtilSokutei
 {

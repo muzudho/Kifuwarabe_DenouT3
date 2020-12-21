@@ -1,17 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
 namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
 #if DEBUG
@@ -26,12 +14,6 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
     using System.Windows.Forms;
 #else
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.P461Server.L250Util;
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
@@ -283,7 +265,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
                                                             mainGui
                                                            , widget
                                                            , btnKoma_Selected
-                                                           
+
                                                            );
                                                     }
                                                 }
@@ -386,7 +368,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
                                                     sky_newChild.SetKaisiPside(Conv_Playerside.Reverse(Playerside.P1));//FIXME:人間が先手でハードコーディング中
                                                     Node<IMove, KyokumenWrapper> newNode = new KifuNodeImpl(
                                                         move,
-                                                        new KyokumenWrapper( SkyConst.NewInstance(
+                                                        new KyokumenWrapper(SkyConst.NewInstance(
                                                             sky_newChild,
                                                             mainGui.Model_Manual.GuiTemezumi + 1//1手進ませる。
                                                             ))
@@ -740,7 +722,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
                                                     // GuiからServerへ渡す情報
                                                     Komasyurui14 syurui;
                                                     IMoveHalf dst;
-                                                    
+
                                                     Util_Function_Csharp.Komamove1a_49Gui(out syurui, out dst, btnTumandeiruKoma, btnSasitaiMasu, mainGui);
 
                                                     // ServerからGuiへ渡す情報
@@ -811,7 +793,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
                                                             mainGui
                                                            , widget
                                                            , btnKoma_Selected
-                                                           
+
                                                            );
                                                     }
                                                 }
@@ -889,7 +871,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
                                                         mainGui
                                                        , widget
                                                        , btnKoma_Selected
-                                                       
+
                                                        );
                                                 }
                                             }
@@ -915,7 +897,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
                                                             mainGui
                                                            , widget
                                                            , btnKoma_Selected
-                                                           
+
                                                            );
                                                     }
                                                 }
@@ -939,14 +921,14 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
                         break;
                 }
             }
-            
 
 
 
 
 
-        //gt_EndMethod1:
-        //    ;
+
+            //gt_EndMethod1:
+            //    ;
         }
     }
 

@@ -2,8 +2,6 @@
 {
     using System;
     using Grayscale.Kifuwarakaku.Entities.Logging;
-    using Grayscale.Kifuwarakaku.Engine;
-    using Grayscale.Kifuwarakaku.Engine;
 
     /// <summary>
     /// プログラムのエントリー・ポイントです。

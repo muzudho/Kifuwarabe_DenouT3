@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
 
 namespace Grayscale.Kifuwarakaku.GuiOfCsharpVs.Features
 {

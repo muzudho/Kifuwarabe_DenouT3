@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using Grayscale.Kifuwarakaku.Entities.Features;
 
-namespace Grayscale.P372KyokuParser.I500Parser
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public interface ParsedKyokumen
     {

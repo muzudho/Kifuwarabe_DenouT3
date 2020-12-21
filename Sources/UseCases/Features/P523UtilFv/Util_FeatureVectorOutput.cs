@@ -1,10 +1,8 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
+﻿using System.IO;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
 using Grayscale.P521FeatureVect.L500Struct;
 using Grayscale.P523UtilFv.L490UtilFvFormat;
-using System.IO;
-using System.Text;
-using System.Windows.Forms;
 using Nett;
 
 namespace Grayscale.P523UtilFv.L491UtilFvIo
@@ -179,7 +177,7 @@ namespace Grayscale.P523UtilFv.L491UtilFvIo
         /// </summary>
         /// <param name="fv"></param>
         /// <param name="fvDirectory"></param>
-        public static void Write_PP_3Mai(FeatureVector fv,string fvDirectory)
+        public static void Write_PP_3Mai(FeatureVector fv, string fvDirectory)
         {
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));

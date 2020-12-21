@@ -1,12 +1,4 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.L500Struct;
 using Grayscale.P522ConvFvKoumoku.L500Converter;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
@@ -76,7 +68,7 @@ namespace Grayscale.P525ConvFv.L500Converter
         {
             p_index = 0;//ここに累計していく。
 
-            if (Okiba.ShogiBan!=Conv_SyElement.ToOkiba(masu))
+            if (Okiba.ShogiBan != Conv_SyElement.ToOkiba(masu))
             {
                 // 盤上でなければ。
                 p_index = -1;
@@ -86,7 +78,7 @@ namespace Grayscale.P525ConvFv.L500Converter
             switch (pside)
             {
                 case Playerside.P1: break;
-                case Playerside.P2: p_index+=FeatureVectorImpl.CHOSA_KOMOKU_2P; break;
+                case Playerside.P2: p_index += FeatureVectorImpl.CHOSA_KOMOKU_2P; break;
                 default: break;
             }
 

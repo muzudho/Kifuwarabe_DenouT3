@@ -14,9 +14,9 @@ using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P354UtilSasuEx.L500Util;
-using Grayscale.P360ConvSasu.L500Converter;
-using Grayscale.P362LegalMove.L500Util;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P542Scoreing.I250Args;
 using Grayscale.P542Scoreing.L500Util;
@@ -26,37 +26,20 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
-using Grayscale.P353ConvSasuEx.L500Converter;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P554TansaFukasa.I500Struct;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P370LogGraphiEx.L500Util;
+using Grayscale.Kifuwarakaku.Entities.Features;
 #else
-    using Grayscale.Kifuwarakaku.Entities.Logging;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.P354UtilSasuEx.L500Util;
-    using Grayscale.P360ConvSasu.L500Converter;
-    using Grayscale.P362LegalMove.L500Util;
+    using System.Collections.Generic;
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.P542Scoreing.I250Args;
     using Grayscale.P542Scoreing.L500Util;
     using Grayscale.P551Tansaku.I500Tansaku;
     using Grayscale.P551Tansaku.L500Struct;
-    using System;
-    using System.Collections.Generic;
-    using System.Diagnostics;
-    using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
-    using Grayscale.P353ConvSasuEx.L500Converter;
-    using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.P554TansaFukasa.I500Struct;
+    using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 #endif
 
     /// <summary>

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Grayscale.P743FvLearn.I400N54List;
+﻿using Grayscale.P743FvLearn.I400N54List;
 
 namespace Grayscale.P743FvLearn.L400N54List
 {
@@ -54,11 +49,11 @@ namespace Grayscale.P743FvLearn.L400N54List
 
         public N40t14ListImpl()
         {
-            this.SetP40Next( 0);
-            this.SetP40List_Unsorted( new int[40]);
+            this.SetP40Next(0);
+            this.SetP40List_Unsorted(new int[40]);
 
-            this.SetP14Next( 0);
-            this.SetP14List_Unsorted( new int[14]);
+            this.SetP14Next(0);
+            this.SetP14List_Unsorted(new int[14]);
         }
 
         ///// <summary>

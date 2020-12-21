@@ -1,6 +1,5 @@
-﻿    using Grayscale.Kifuwarakaku.Entities.Logging;
+﻿using System.Diagnostics;
 using Grayscale.P461Server.I496EngineWrapper;
-using System.Diagnostics;
 
 namespace Grayscale.P461Server.L496EngineWrapper
 {

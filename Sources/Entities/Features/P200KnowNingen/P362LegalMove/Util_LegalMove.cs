@@ -1,10 +1,7 @@
 ﻿using System.Collections.Generic;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P360ConvSasu.L500Converter;
-using Grayscale.P361Util.L500Util;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
-namespace Grayscale.P362LegalMove.L500Util
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
 

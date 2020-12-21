@@ -1,5 +1,4 @@
 ﻿using System.Windows.Forms;
-    using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P743FvLearn.L250Learn;
 using Grayscale.P743FvLearn.L260View;
 using Grayscale.P743FvLearn.L450Tyoseiryo;
@@ -101,11 +100,11 @@ namespace Grayscale.P743FvLearn.L506AutoMoveSort
                 }
 
             }// 指し手順位更新ループ
-            //----------------------------------------
-            // 連打終わり
-            //----------------------------------------
+             //----------------------------------------
+             // 連打終わり
+             //----------------------------------------
 
-            gt_EndMethod:
+        gt_EndMethod:
             ;
         }
 

@@ -1,5 +1,4 @@
-﻿    using Grayscale.Kifuwarakaku.Entities.Logging;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 namespace Grayscale.P461Server.I496EngineWrapper
 {
@@ -11,7 +10,7 @@ namespace Grayscale.P461Server.I496EngineWrapper
     public interface EngineProcessWrapper
     {
         DELEGATE_ShogiServer_ToEngine Delegate_ShogiServer_ToEngine { get; }
-        void  SetDelegate_ShogiServer_ToEngine( DELEGATE_ShogiServer_ToEngine delegateMethod);
+        void SetDelegate_ShogiServer_ToEngine(DELEGATE_ShogiServer_ToEngine delegateMethod);
 
         /// <summary>
         /// ------------------------------------------------------------------------------------------------------------------------
@@ -27,7 +26,7 @@ namespace Grayscale.P461Server.I496EngineWrapper
         /// </summary>
         void Send_Noop_from_server();
 
-        
+
         /// <summary>
         /// 将棋エンジンに、"usinewgame"を送信します。
         /// </summary>
@@ -40,49 +39,49 @@ namespace Grayscale.P461Server.I496EngineWrapper
         void Send_Usi();
 
 
-                
+
         /// <summary>
         /// 将棋エンジンに、終了するように促します。
         /// </summary>
         void Send_Shutdown();
 
 
-        
+
         /// <summary>
         /// 将棋エンジンに、"setoption ～略～"を送信します。
         /// </summary>
         void Send_Setoption(string setoption);
 
 
-                
+
         /// <summary>
         /// 将棋エンジンに、"quit"を送信します。
         /// </summary>
         void Send_Quit();
 
 
-                
+
         /// <summary>
         /// 将棋エンジンに、"position ～略～"を送信します。
         /// </summary>
         void Send_Position(string position);
 
 
-        
+
         /// <summary>
         /// 将棋エンジンに、ログを出すように促します。
         /// </summary>
         void Send_Logdase();
 
 
-                
+
         /// <summary>
         /// 将棋エンジンに、"isready"を送信します。
         /// </summary>
         void Send_Isready();
 
 
-                
+
         /// <summary>
         /// 将棋エンジンが起動しているか否かです。
         /// </summary>

@@ -2,7 +2,6 @@
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P743FvLearn.I250Learn;
 using Grayscale.P743FvLearn.I450Tyoseiryo;

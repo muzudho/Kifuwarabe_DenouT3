@@ -8,14 +8,6 @@
     using System.Windows.Forms;
     using Codeplex.Data;//DynamicJson
     using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.P461Server.L497EngineClient;
     using Grayscale.P461Server.L498Server;
     using Nett;
@@ -232,7 +224,7 @@
             if (this.server.EngineClient.ShogiEngineProcessWrapper.IsLive_ShogiEngine())
             {
                 // だいたい 1tick 50ms と考えて、20倍で 1秒。
-                if ( 20 * 3 < this.noopSend_counter) // 3秒に 1 回ぐらい ok を送れば？
+                if (20 * 3 < this.noopSend_counter) // 3秒に 1 回ぐらい ok を送れば？
                 {
                     // noop
                     this.server.EngineClient.ShogiEngineProcessWrapper.Send_Noop_from_server();
@@ -429,7 +421,7 @@
         }
 
 
-        public void Response( string mutexString)
+        public void Response(string mutexString)
         {
             Uc_Form1Mainable uc_Form1Main = ((Form1_Shogiable)this.OwnerForm).Uc_Form1Main;
 

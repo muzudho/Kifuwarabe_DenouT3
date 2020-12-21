@@ -1,5 +1,4 @@
 ﻿using System.Windows.Forms;
-using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.P743FvLearn.L508AutoMoveRush;
 
 namespace Grayscale.P743FvLearn.L510AutoKifuRead
@@ -30,7 +29,7 @@ namespace Grayscale.P743FvLearn.L510AutoKifuRead
                 renzokuTe = 1;
             }
 
-            while(true)//無限ループ
+            while (true)//無限ループ
             {// 棋譜ループ
 
 

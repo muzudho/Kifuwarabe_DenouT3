@@ -1,18 +1,12 @@
-﻿    using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Windows.Forms;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
 using Grayscale.P521FeatureVect.L500Struct;
 using Grayscale.P522ConvFvKoumoku.L500Converter;
-using Grayscale.P523UtilFv.L480UtilFvEdit;
 using Grayscale.P523UtilFv.L490UtilFvFormat;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Windows.Forms;
 
 #if DEBUG
 //using Grayscale.P521_Atama_Unou_.L480UtilFvEdit;
@@ -36,9 +30,9 @@ namespace Grayscale.P523UtilFv.L491UtilFvIo
 
             if (!File.Exists(filepath2))
             {
-                MessageBox.Show("Make_FromFile_Komawari: ファイルがありません。\n"+
+                MessageBox.Show("Make_FromFile_Komawari: ファイルがありません。\n" +
                     "filepath2=[" + filepath2 + "]\n" +
-                    "Application.StartupPath=[" + Application.StartupPath+"]"
+                    "Application.StartupPath=[" + Application.StartupPath + "]"
                     , "情報");
                 goto gt_EndMethod;
             }
@@ -110,12 +104,12 @@ namespace Grayscale.P523UtilFv.L491UtilFvIo
                 ;
             }
 
-//#if DEBUG
-//            MessageBox.Show(
-//                "rowVersion=[" + rowVersion + "]\n" +
-//                    "rowKomawari=[" + rowKomawari + "]\n"
-//            , "デバッグ");
-//#endif
+            //#if DEBUG
+            //            MessageBox.Show(
+            //                "rowVersion=[" + rowVersion + "]\n" +
+            //                    "rowKomawari=[" + rowKomawari + "]\n"
+            //            , "デバッグ");
+            //#endif
             successful = true;
         gt_EndMethod:
             return successful;
@@ -184,7 +178,7 @@ namespace Grayscale.P523UtilFv.L491UtilFvIo
                                         // [2]列目が値。
                                         float value_NikomaKankeiPp = 0.4649f;//ダミー
                                         float.TryParse(row[2], out value_NikomaKankeiPp);
-                                        fv.SetBairitu_NikomaKankeiPp( value_NikomaKankeiPp);
+                                        fv.SetBairitu_NikomaKankeiPp(value_NikomaKankeiPp);
                                     }
                                     break;
                                 default: break;
@@ -279,7 +273,7 @@ namespace Grayscale.P523UtilFv.L491UtilFvIo
 
             if (!File.Exists(filepath2))
             {
-                MessageBox.Show("Make_FromFile_KK: ファイルがありません。\n"+
+                MessageBox.Show("Make_FromFile_KK: ファイルがありません。\n" +
                     "filepath2=[" + filepath2 + "]\n" +
                                     "Application.StartupPath=[" + Application.StartupPath + "]"
                 , "情報");
@@ -340,7 +334,7 @@ namespace Grayscale.P523UtilFv.L491UtilFvIo
                                 if (Const_FeatureVectorFormat.PARAMETER_INDEX_INPUT)
                                 {
                                     // これは、評価値の代わりにインデックスを入れています。
-                                    fv.NikomaKankeiPp_ForMemory[p1, p2] = k1*10000+k2;
+                                    fv.NikomaKankeiPp_ForMemory[p1, p2] = k1 * 10000 + k2;
                                 }
                                 else
                                 {
@@ -400,7 +394,7 @@ namespace Grayscale.P523UtilFv.L491UtilFvIo
 
             if (!File.Exists(filepath2))
             {
-                MessageBox.Show("Make_FromFile_KP: ファイルがありません。\n"+
+                MessageBox.Show("Make_FromFile_KP: ファイルがありません。\n" +
                     "filepath2=[" + filepath2 + "]\n" +
                                         "Application.StartupPath=[" + Application.StartupPath + "]"
                 , "情報");
@@ -653,7 +647,7 @@ namespace Grayscale.P523UtilFv.L491UtilFvIo
 
             if (!File.Exists(filepath2))
             {
-                MessageBox.Show("Make_FromFile_PP_Banjo: ファイルがありません。\n"+
+                MessageBox.Show("Make_FromFile_PP_Banjo: ファイルがありません。\n" +
                     "filepath2=[" + filepath2 + "]\n" +
                                         "Application.StartupPath=[" + Application.StartupPath + "]"
                 , "情報");
@@ -903,7 +897,7 @@ namespace Grayscale.P523UtilFv.L491UtilFvIo
 
             if (!File.Exists(filepath2))
             {
-                MessageBox.Show("Make_FromFile_PP_Moti19Mai: ファイルがありません。\n"+
+                MessageBox.Show("Make_FromFile_PP_Moti19Mai: ファイルがありません。\n" +
                     "filepath2=[" + filepath2 + "]\n" +
                                         "Application.StartupPath=[" + Application.StartupPath + "]"
                 , "情報");
@@ -937,7 +931,7 @@ namespace Grayscale.P523UtilFv.L491UtilFvIo
                         break;
 
                     default:
-                        if(
+                        if (
                             row.Count == ConstShogi.SUJI_SIZE * 10 // 将棋盤が１０枚並んでいるエリア
                             || row.Count == ConstShogi.SUJI_SIZE * 9 // 将棋盤が９枚並んでいるエリア
                             )
@@ -1159,7 +1153,7 @@ namespace Grayscale.P523UtilFv.L491UtilFvIo
 
             if (!File.Exists(filepath2))
             {
-                MessageBox.Show("Make_FromFile_PP_Moti3or5Mai: ファイルがありません。\n"+
+                MessageBox.Show("Make_FromFile_PP_Moti3or5Mai: ファイルがありません。\n" +
                     "filepath2=[" + filepath2 + "]\n" +
                                         "Application.StartupPath=[" + Application.StartupPath + "]"
                 , "情報");

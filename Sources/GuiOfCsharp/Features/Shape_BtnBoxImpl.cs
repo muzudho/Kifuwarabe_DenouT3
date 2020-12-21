@@ -146,7 +146,7 @@
         /// <param name="y"></param>
         public void LightByMouse(int x, int y)
         {
-            if (this.HitByMouse(x,y)) // マウスが重なっているなら
+            if (this.HitByMouse(x, y)) // マウスが重なっているなら
             {
                 this.Light = true;
             }
@@ -168,7 +168,7 @@
         {
             bool changed = false;
 
-            if ( this.HitByMouse(x, y)) // マウスが重なっているなら
+            if (this.HitByMouse(x, y)) // マウスが重なっているなら
             {
                 if (shogiGui.Shape_PnlTaikyoku.SelectFirstTouch)
                 {
@@ -189,7 +189,7 @@
 
             return changed;
         }
-    
+
     }
 
 

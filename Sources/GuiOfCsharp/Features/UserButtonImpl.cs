@@ -26,7 +26,8 @@
         public string Type { get; set; }
         public string Name { get; set; }
 
-        public Color BackColor {
+        public Color BackColor
+        {
             get
             {
                 return this.this_object.BackColor;
@@ -43,11 +44,12 @@
         }
 
 
-        public DELEGATE_MouseHitEvent Delegate_MouseHitEvent{get;set;}
+        public DELEGATE_MouseHitEvent Delegate_MouseHitEvent { get; set; }
 
         public bool IsLight_OnFlowB_1TumamitaiKoma { get; set; }
 
-        public Rectangle Bounds {
+        public Rectangle Bounds
+        {
             get
             {
                 return this.this_object.Bounds;
@@ -55,7 +57,7 @@
         }
         public void SetBounds(Rectangle rect)
         {
-            this.this_object.SetBounds( rect);
+            this.this_object.SetBounds(rect);
         }
 
         public string Text
@@ -66,7 +68,7 @@
             }
             set
             {
-            this.this_object.Text = value;
+                this.this_object.Text = value;
             }
         }
 
@@ -109,7 +111,7 @@
             return this.this_object.HitByMouse(x, y);
         }
 
-        
+
         /// <summary>
         /// ************************************************************************************************************************
         /// マウスが重なった駒は、光フラグを立てます。
@@ -139,7 +141,7 @@
             }
         }
 
-        
+
         /// <summary>
         /// ************************************************************************************************************************
         /// 動かしたい駒の解除
@@ -164,7 +166,7 @@
             }
         }
 
-        public Okiba Okiba{get;set;}
+        public Okiba Okiba { get; set; }
         public int Suji { get; set; }
         public int Dan { get; set; }
         public int MasuHandle { get; set; }

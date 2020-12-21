@@ -1,14 +1,6 @@
-﻿    using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
-using System;
-using Grayscale.Kifuwarakaku.Entities.Features;
 
 #if DEBUG || LEARN
 using System.Text;
@@ -56,8 +48,8 @@ namespace Grayscale.P531Hyokakansu.L500Hyokakansu
                 float komaScore_temp = fv.Komawari[(int)koma.Komasyurui];
 
                 // 持ち駒は、価値を高めます。（ボーナス）序盤に駒をぽんぽん打つのを防ぐため。
-                if(
-                    (Okiba.Sente_Komadai | Okiba.Gote_Komadai).HasFlag( Conv_SyElement.ToOkiba(koma.Masu))
+                if (
+                    (Okiba.Sente_Komadai | Okiba.Gote_Komadai).HasFlag(Conv_SyElement.ToOkiba(koma.Masu))
                     )
                 {
                     //komaScore_temp *= 1.05f;// 1.05倍だと、相手の桂馬の利きに、桂馬をタダ捨てした。足りてないか。

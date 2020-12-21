@@ -1,19 +1,13 @@
 ﻿using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using Grayscale.Kifuwarakaku.Entities.Logging;
+using Grayscale.Kifuwarakaku.Engine;
+using Grayscale.Kifuwarakaku.Engine.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P440KifuTreeLog.L500Struct;
 using Grayscale.P521FeatureVect.L500Struct;
 using Grayscale.P523UtilFv.L510UtilFvLoad;
 using Grayscale.P542Scoreing.I250Args;
 using Grayscale.P542Scoreing.L250Args;
-using Grayscale.Kifuwarakaku.Engine.Features;
-using Grayscale.Kifuwarakaku.Engine;
 using Grayscale.P743FvLearn.I400N54List;
 using Grayscale.P743FvLearn.L250Learn;
 using Grayscale.P743FvLearn.L260View;
@@ -247,7 +241,7 @@ namespace Grayscale.P743FvLearn.L600Operation
 
 
                         // 半径
-                        float paramRange = Util_Inspection.FvParamRange( uc_Main.LearningData.Fv);
+                        float paramRange = Util_Inspection.FvParamRange(uc_Main.LearningData.Fv);
                         uc_Main.ChkAutoParamRange.Text = "評価更新毎-" + paramRange + "～" + paramRange + "矯正";
                     }
 
@@ -297,8 +291,8 @@ namespace Grayscale.P743FvLearn.L600Operation
             // ノード情報の表示
             Util_LearningView.Aa_ShowNode2(uc_Main.LearningData, uc_Main);
 
-        //gt_EndMethod:
-        //    ;
+            //gt_EndMethod:
+            //    ;
         }
 
         /// <summary>
@@ -337,7 +331,7 @@ namespace Grayscale.P743FvLearn.L600Operation
 
             // 現局面の合法手表示の更新を要求
             isRequest_ShowGohosyu = true;
-            
+
             // 局面PNG画像更新を要求
             isRequest_ChangeKyokumenPng = true;
         }

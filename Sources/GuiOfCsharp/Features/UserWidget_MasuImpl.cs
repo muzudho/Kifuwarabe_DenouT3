@@ -2,7 +2,6 @@
 {
     using System.Drawing;
     using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
 
     /// <summary>
     /// ユーザー定義マス
@@ -132,7 +131,7 @@
             return this.this_object.HitByMouse(x, y);
         }
 
-        
+
         /// <summary>
         /// ************************************************************************************************************************
         /// マウスが重なった駒は、光フラグを立てます。
@@ -162,7 +161,7 @@
             }
         }
 
-        
+
         /// <summary>
         /// ************************************************************************************************************************
         /// 動かしたい駒の解除
@@ -170,7 +169,7 @@
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
-        public bool DeselectByMouse(int x, int y, object obj_shogiGui )
+        public bool DeselectByMouse(int x, int y, object obj_shogiGui)
         {
             return false;// this.this_object.DeselectByMouse(x, y, shape_PnlTaikyoku);
         }

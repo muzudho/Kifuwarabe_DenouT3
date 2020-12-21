@@ -1,7 +1,4 @@
 ﻿using System;
-using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
 
@@ -48,12 +45,12 @@ namespace Grayscale.P531Hyokakansu.L500Hyokakansu
             {
                 case Playerside.P1: out_score = float.MinValue; break;
                 case Playerside.P2: out_score = float.MaxValue; break;
-                default: throw new Exception("千日手判定をしようとしましたが、先後の分からない局面データがありました。"); 
+                default: throw new Exception("千日手判定をしようとしましたが、先後の分からない局面データがありました。");
             }
 
 
-        //gt_EndMethod:
-        //    ;
+            //gt_EndMethod:
+            //    ;
 
             //----------------------------------------
             // 明細項目

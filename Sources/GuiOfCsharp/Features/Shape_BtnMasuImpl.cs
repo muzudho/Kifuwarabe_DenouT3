@@ -2,7 +2,6 @@
 {
     using System.Drawing;
     using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
 
     /// <summary>
     /// ************************************************************************************************************************
@@ -180,7 +179,7 @@
         /// <param name="y"></param>
         public void LightByMouse(int x, int y)
         {
-            if (this.HitByMouse(x,y)) // マウスが重なっているなら
+            if (this.HitByMouse(x, y)) // マウスが重なっているなら
             {
                 this.Light = true;
             }
@@ -204,7 +203,7 @@
         {
             bool changed = false;
 
-            if ( this.HitByMouse(x, y)) // マウスが重なっているなら
+            if (this.HitByMouse(x, y)) // マウスが重なっているなら
             {
                 if (this.SelectFirstTouch)
                 {

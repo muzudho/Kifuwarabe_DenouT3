@@ -1,9 +1,7 @@
 ﻿using System;
-using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P355_KifuParserA.I500Parser;
 
-namespace Grayscale.P355_KifuParserA.L500Parser
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 
     /// <summary>

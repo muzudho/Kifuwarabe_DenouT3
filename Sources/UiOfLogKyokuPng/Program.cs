@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
 using Nett;
 
 namespace Grayscale.Kifuwarakaku.CliOfLogKyokuPng

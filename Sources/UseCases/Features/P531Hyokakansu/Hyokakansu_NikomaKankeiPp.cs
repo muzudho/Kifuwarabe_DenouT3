@@ -1,17 +1,6 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
 using Grayscale.P531Hyokakansu.L499UtilFv;
-using System.Collections.Generic;
-using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
-using System;
 
 
 #if DEBUG || LEARN
@@ -73,7 +62,7 @@ namespace Grayscale.P531Hyokakansu.L500Hyokakansu
             int nextIndex = 0;
             int[] komokuArray_unsorted = new int[54];//昇順でなくても構わないアルゴリズムにすること。
 
-            for (int i=0; i < Finger_Honshogi.Items_KomaOnly.Length; i++)// 全駒
+            for (int i = 0; i < Finger_Honshogi.Items_KomaOnly.Length; i++)// 全駒
             {
                 RO_Star koma = Util_Starlightable.AsKoma(src_Sky.StarlightIndexOf(Finger_Honshogi.Items_KomaOnly[i]).Now);
 
@@ -89,9 +78,9 @@ namespace Grayscale.P531Hyokakansu.L500Hyokakansu
                 }
             }
             // 持ち駒：先後×７種類
-            for(int iPside=0; iPside<Array_Playerside.Items_PlayerOnly.Length; iPside++)
+            for (int iPside = 0; iPside < Array_Playerside.Items_PlayerOnly.Length; iPside++)
             {
-                for (int iKomasyurui = 0; iKomasyurui < Array_Komasyurui.MotiKoma7Syurui.Length; iKomasyurui++ )
+                for (int iKomasyurui = 0; iKomasyurui < Array_Komasyurui.MotiKoma7Syurui.Length; iKomasyurui++)
                 {
                     komokuArray_unsorted[nextIndex] = Util_FvParamIndex.ParamIndex_Moti(src_Sky, Array_Playerside.Items_PlayerOnly[iPside], Array_Komasyurui.MotiKoma7Syurui[iKomasyurui]);
                     nextIndex++;

@@ -3,10 +3,6 @@
     using System.Collections.Generic;
     using System.Drawing;
     using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
 
     /// <summary>
     /// ************************************************************************************************************************
@@ -59,7 +55,7 @@
         /// <summary>
         /// 枡毎の、利いている駒ハンドルのリスト。
         /// </summary>
-        public Dictionary<int,List<int>> HMasu_KikiKomaList
+        public Dictionary<int, List<int>> HMasu_KikiKomaList
         {
             get;
             set;

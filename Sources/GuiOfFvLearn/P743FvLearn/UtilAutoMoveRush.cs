@@ -20,7 +20,6 @@ using Grayscale.P743FvLearn.L508AutoMoveRush;
 using Grayscale.P743FvLearn.L506AutoMoveSort;
 #else
     using System.Windows.Forms;
-    using Grayscale.Kifuwarakaku.Entities.Logging;
     using Grayscale.P743FvLearn.L250Learn;
     using Grayscale.P743FvLearn.L260View;
     using Grayscale.P743FvLearn.L450Tyoseiryo;
@@ -88,7 +87,7 @@ using Grayscale.P743FvLearn.L506AutoMoveSort;
                         goto gt_EndTesu;
                     }
 
-                    if (uc_Main.LearningData.Kifu.CurNode.Value.KyokumenConst.Temezumi < tesu+1)
+                    if (uc_Main.LearningData.Kifu.CurNode.Value.KyokumenConst.Temezumi < tesu + 1)
                     {
                         goto gt_EndLearn;
                     }
@@ -238,7 +237,7 @@ using Grayscale.P743FvLearn.L506AutoMoveSort;
                 }
             }//指し手ループ
 
-            gt_EndMoveList:
+        gt_EndMoveList:
             ;
 
             // 終局時は、オートセーブ

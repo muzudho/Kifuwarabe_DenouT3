@@ -1,4 +1,4 @@
-﻿namespace Grayscale.P440KifuTreeLog.L500Struct
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 #if DEBUG
 using System.Collections.Generic;
@@ -23,12 +23,11 @@ using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Nett;
 using System.Diagnostics;
-using Grayscale.P370LogGraphiEx.L500Util;
+using Grayscale.Kifuwarakaku.Entities.Features;
 #else
     using System.Collections.Generic;
     using System.IO;
     using System.Text;
-    using Grayscale.Kifuwarakaku.Entities.Features;
     using Nett;
 #endif
 

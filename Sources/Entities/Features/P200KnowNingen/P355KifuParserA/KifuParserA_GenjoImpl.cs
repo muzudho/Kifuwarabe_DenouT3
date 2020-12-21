@@ -1,7 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P355_KifuParserA.I500Parser;
-
-namespace Grayscale.P355_KifuParserA.L500Parser
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public class KifuParserA_GenjoImpl : KifuParserA_Genjo
     {

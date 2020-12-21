@@ -1,6 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-
-namespace Grayscale.P355_KifuParserA.I500Parser
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public interface KifuParserA_Result
     {

@@ -1,30 +1,7 @@
-﻿    using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P355_KifuParserA.I500Parser;
-using Grayscale.P355_KifuParserA.L500Parser;
-using Grayscale.P372KyokuParser.I500Parser;
-using Grayscale.P373ConvStartpo.L500Converter;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 namespace Grayscale.P461Server.L250Util
@@ -93,7 +70,7 @@ namespace Grayscale.P461Server.L250Util
             bool successful = false;
             KifuParserA_Impl kifuParserA_Impl = new KifuParserA_Impl();
             KifuParserA_Result result = new KifuParserA_ResultImpl();
-            KifuParserA_Genjo genjo = new KifuParserA_GenjoImpl( inputLine);
+            KifuParserA_Genjo genjo = new KifuParserA_GenjoImpl(inputLine);
 
             try
             {
@@ -245,7 +222,7 @@ namespace Grayscale.P461Server.L250Util
             }
             catch (Exception ex)
             {
-                Util_Message.Show(ex.GetType().Name+"："+ ex.Message);
+                Util_Message.Show(ex.GetType().Name + "：" + ex.Message);
                 toBreak = true;
                 successful = false;
             }
@@ -355,7 +332,7 @@ namespace Grayscale.P461Server.L250Util
             )
         {
 
-            if(""==inputLine)
+            if ("" == inputLine)
             {
                 goto gt_EndMethod;
             }
@@ -499,9 +476,9 @@ namespace Grayscale.P461Server.L250Util
                 sky2 = SkyConst.NewInstance_OverwriteOrAdd_Light(
                         model_Manual.GuiSkyConst,
                         -1,//そのまま
-                        //
-                        // 指した駒
-                        //
+                           //
+                           // 指した駒
+                           //
                         fig_btnTumandeiruKoma,
                         dst,
                         //
@@ -523,9 +500,9 @@ namespace Grayscale.P461Server.L250Util
                 sky2 = SkyConst.NewInstance_OverwriteOrAdd_Light(
                         model_Manual.GuiSkyConst,
                         -1,//そのまま
-                        //
-                        // 指した駒
-                        //
+                           //
+                           // 指した駒
+                           //
                         fig_btnTumandeiruKoma,
                         dst,
                         //

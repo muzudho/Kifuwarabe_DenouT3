@@ -1,7 +1,6 @@
 ﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
     using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
     public interface Shape_PnlTaikyoku : Shape, Shape_Canvas
@@ -71,7 +70,7 @@
         /// </summary>
         bool SelectFirstTouch { get; set; }
 
-        
+
         /// <summary>
         /// ------------------------------------------------------------------------------------------------------------------------
         /// 差し手符号。

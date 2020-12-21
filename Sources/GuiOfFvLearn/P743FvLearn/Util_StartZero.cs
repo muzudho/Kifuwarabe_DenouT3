@@ -1,7 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
 using Grayscale.P531Hyokakansu.L500Hyokakansu;
 using Grayscale.P743FvLearn.I400N54List;
@@ -130,7 +127,7 @@ namespace Grayscale.P743FvLearn.L470StartZero
                 }
                 else if (100 < score)// ±0か、マイナスに転じさせたい。
                 {
-                    chosei_offset *= - 1;
+                    chosei_offset *= -1;
                 }
 
                 int changedCells;

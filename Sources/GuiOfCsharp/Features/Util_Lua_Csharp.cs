@@ -3,15 +3,6 @@
     using System;
     using System.IO;
     using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.P461Server.L250Util;
     using Nett;
     using NLua;
@@ -138,7 +129,7 @@
 
             // 先手
             figKoma = (int)Finger_Honshogi.SenteOh;
-            buffer_Sky.PutOverwriteOrAdd_Starlight(figKoma, new RO_Starlight(/*figKoma,*/ new RO_Star(Playerside.P1, Masu_Honshogi.Query_Basho( Masu_Honshogi.nfukuro01), Komasyurui14.H06_Gyoku__))); //先手王
+            buffer_Sky.PutOverwriteOrAdd_Starlight(figKoma, new RO_Starlight(/*figKoma,*/ new RO_Star(Playerside.P1, Masu_Honshogi.Query_Basho(Masu_Honshogi.nfukuro01), Komasyurui14.H06_Gyoku__))); //先手王
             figKoma = (int)Finger_Honshogi.GoteOh;
             buffer_Sky.PutOverwriteOrAdd_Starlight(figKoma, new RO_Starlight(new RO_Star(Playerside.P2, Masu_Honshogi.Query_Basho(Masu_Honshogi.nfukuro02), Komasyurui14.H06_Gyoku__))); //後手王
 
@@ -230,7 +221,7 @@
             {
                 KifuNode newNode = new KifuNodeImpl(
                             Util_Sky258A.RootMove,//ルートなので
-                            new KyokumenWrapper( SkyConst.NewInstance(
+                            new KyokumenWrapper(SkyConst.NewInstance(
                                 buffer_Sky,
                                 0//空っぽに戻すので、 0手済みに変更。
                                 ))

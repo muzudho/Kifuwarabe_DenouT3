@@ -1,9 +1,8 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
+﻿using System.Collections.Generic;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
 using Grayscale.P531Hyokakansu.I500Hyokakansu;
 using Grayscale.P531Hyokakansu.L500Hyokakansu;
-using System.Collections.Generic;
 
 #if DEBUG || LEARN
 using Grayscale.Kifuwarakaku.Entities.Features;

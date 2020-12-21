@@ -2,11 +2,6 @@
 {
     using System.Windows.Forms;
     using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
     /// <summary>
@@ -243,7 +238,7 @@
             //----------
             // 将ボタン
             //----------
-            this.SetBtn40Komas( new Shape_BtnKomaImpl[]{
+            this.SetBtn40Komas(new Shape_BtnKomaImpl[]{
 
                 new Shape_BtnKomaImpl("#SenteOh",Finger_Honshogi.SenteOh),//[0]
                 new Shape_BtnKomaImpl("#GoteOh",Finger_Honshogi.GoteOh),
@@ -298,7 +293,7 @@
             //----------
             // 将棋盤
             //----------
-            this.Shogiban = new Shape_PnlShogibanImpl("#Shogiban",200, 220, shogibanGui);
+            this.Shogiban = new Shape_PnlShogibanImpl("#Shogiban", 200, 220, shogibanGui);
 
             //----------
             // 駒置き
@@ -311,12 +306,12 @@
             //----------
             // 符号表示
             //----------
-            this.lblFugo = new Shape_LblBoxImpl("#FugoLabel","符号", 480, 145);
+            this.lblFugo = new Shape_LblBoxImpl("#FugoLabel", "符号", 480, 145);
 
             //----------
             // 先後表示
             //----------
-            this.lblPside = new Shape_LblBoxImpl("#PsideLabel","－－", 350, 145);
+            this.lblPside = new Shape_LblBoxImpl("#PsideLabel", "－－", 350, 145);
         }
 
 
@@ -346,10 +341,10 @@
             //----------
             // 駒置き、駒袋
             //----------
-            for (int i = 0; i < this.KomadaiArr.Length;i++ )
+            for (int i = 0; i < this.KomadaiArr.Length; i++)
             {
                 Shape_PnlKomadai k = this.KomadaiArr[i];
-                k.Paint( e.Graphics);
+                k.Paint(e.Graphics);
             }
 
             //----------

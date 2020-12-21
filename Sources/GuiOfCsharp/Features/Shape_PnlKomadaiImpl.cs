@@ -2,7 +2,6 @@
 {
     using System.Drawing;
     using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
 
     /// <summary>
     /// ************************************************************************************************************************
@@ -80,7 +79,7 @@
         /// </summary>
         /// <param name="suji"></param>
         /// <returns></returns>
-        public int SujiToX( int suji)
+        public int SujiToX(int suji)
         {
             return (Util_Masu10.KOMADAI_LAST_SUJI - suji) * this.MasuWidth + this.Bounds.X;
         }
@@ -95,7 +94,7 @@
         /// <returns></returns>
         public int DanToY(int dan)
         {
-            return (dan-1) * this.MasuHeight + this.Bounds.Y;
+            return (dan - 1) * this.MasuHeight + this.Bounds.Y;
         }
 
 
@@ -105,7 +104,7 @@
         /// ************************************************************************************************************************
         /// </summary>
         /// <param name="g"></param>
-        public void Paint( Graphics g)
+        public void Paint(Graphics g)
         {
             if (!this.Visible)
             {

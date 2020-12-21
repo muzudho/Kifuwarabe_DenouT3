@@ -1,5 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P461Server.I125Receiver;
 using Grayscale.P461Server.I496EngineWrapper;
 

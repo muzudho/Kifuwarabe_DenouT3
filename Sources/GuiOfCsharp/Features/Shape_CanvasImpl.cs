@@ -37,7 +37,7 @@
             //----------------------------------------
             foreach (UserWidget widget in shogibanGui.Widgets.Values)
             {
-                if(widget.Window==windowName)
+                if (widget.Window == windowName)
                 {
                     widget.Paint(e.Graphics);
                 }

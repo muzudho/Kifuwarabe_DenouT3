@@ -1,8 +1,8 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using NLua;
-using System;
+﻿using System;
 using System.IO;
+using Grayscale.Kifuwarakaku.Entities.Features;
 using Nett;
+using NLua;
 
 namespace Grayscale.P531Hyokakansu.L060UtilLua
 {
@@ -29,8 +29,8 @@ namespace Grayscale.P531Hyokakansu.L060UtilLua
             string dataDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataDirectory"));
 
             using (Util_Lua_KifuWarabe.lua = new Lua())
-                // 要設定 プラットフォームターゲット x64。32bit/64bit混在できない。
-                // KifuNaraveVs, KifuWarabe
+            // 要設定 プラットフォームターゲット x64。32bit/64bit混在できない。
+            // KifuNaraveVs, KifuWarabe
             {
                 try
                 {
@@ -58,7 +58,7 @@ namespace Grayscale.P531Hyokakansu.L060UtilLua
                     //System.Windows.Forms.MessageBox.Show("[" + file + "]ファイル読込み");
 
                     Util_Lua_KifuWarabe.lua.DoFile(file);// KifuNarabeVS の、bin/Release等に入れ忘れていないこと。
-                    
+
                     //System.Windows.Forms.MessageBox.Show("[" + luaFuncName + "]呼び出し");
                     Util_Lua_KifuWarabe.lua.GetFunction(luaFuncName).Call();
 
@@ -73,10 +73,10 @@ namespace Grayscale.P531Hyokakansu.L060UtilLua
                     //----------------------------------------------------------------------------------------------------
 
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
-                    System.Windows.Forms.MessageBox.Show( ex.GetType().Name + "：" + ex.Message);
-                }    
+                    System.Windows.Forms.MessageBox.Show(ex.GetType().Name + "：" + ex.Message);
+                }
             }
         }
 

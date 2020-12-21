@@ -61,7 +61,7 @@
         {
             this.widgetName = widgetName;
             this.Visible = true;
-            this.bounds = new Rectangle(x,y,width,height);
+            this.bounds = new Rectangle(x, y, width, height);
         }
 
 

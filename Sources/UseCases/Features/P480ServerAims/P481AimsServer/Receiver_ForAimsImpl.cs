@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows.Forms;
-using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P461Server.I497EngineClient;
 using Grayscale.P461Server.L497EngineClient;
@@ -28,7 +22,7 @@ namespace Grayscale.P481AimsServer.L125Receiver
             this.owner_AimsServer = owner_AimsServer;
         }
         private AimsServerBase owner_AimsServer;
-        
+
         /// <summary>
         /// 将棋エンジンから、データを非同期受信(*1)します。
         /// 
@@ -47,7 +41,7 @@ namespace Grayscale.P481AimsServer.L125Receiver
             }
             else
             {
-                switch(this.Owner_AimsServer.Phase_AimsServer)
+                switch (this.Owner_AimsServer.Phase_AimsServer)
                 {
                     case Phase_AimsServer._01_Server_Booted: break;//thru
                     case Phase_AimsServer._02_WaitAimsUsiok: break;//thru
@@ -117,7 +111,7 @@ namespace Grayscale.P481AimsServer.L125Receiver
                                 ////
                                 MessageBox.Show("将棋サーバー「AIMS GUI が先手と仮定し、\n" +
                                     "サーバーは WaitAimsBestmove フェーズに移るぜ☆\n" +
-                                    "将棋エンジンには position    コマンド、\n"+
+                                    "将棋エンジンには position    コマンド、\n" +
                                     "AIMS GUI  には position,go コマンドを送るぜ☆！」");
                                 this.Owner_AimsServer.SetPhase_AimsServer(Phase_AimsServer._101_WaitAimsBestmove);
 
@@ -129,7 +123,7 @@ namespace Grayscale.P481AimsServer.L125Receiver
 
                                 // AIMS GUIに対して
                                 // 例：「position startpos moves 7g7f」
-                                Console.Out.WriteLine( Util_KirokuGakari.ToSfen_PositionCommand(this.Owner_AimsServer.Model_Taikyoku.Kifu));
+                                Console.Out.WriteLine(Util_KirokuGakari.ToSfen_PositionCommand(this.Owner_AimsServer.Model_Taikyoku.Kifu));
 
                                 Console.Out.WriteLine("go");
                             }
@@ -141,37 +135,37 @@ namespace Grayscale.P481AimsServer.L125Receiver
                         }
                         break;
                 }
-                    /*
-                else if (line.StartsWith("info"))
-                {
-                }
-                else if (line.StartsWith("bestmove resign"))
-                {
-                    // 将棋エンジンが、投了されました。
-                    //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                /*
+            else if (line.StartsWith("info"))
+            {
+            }
+            else if (line.StartsWith("bestmove resign"))
+            {
+                // 将棋エンジンが、投了されました。
+                //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-                    //------------------------------------------------------------
-                    // あなたの負けです☆
-                    //------------------------------------------------------------
-                    ((EngineClient)this.Owner_EngineClient).ShogiEngineProcessWrapper.Send_Gameover_lose();
+                //------------------------------------------------------------
+                // あなたの負けです☆
+                //------------------------------------------------------------
+                ((EngineClient)this.Owner_EngineClient).ShogiEngineProcessWrapper.Send_Gameover_lose();
 
-                    //------------------------------------------------------------
-                    // 将棋エンジンを終了してください☆
-                    //------------------------------------------------------------
-                    ((EngineClient)this.Owner_EngineClient).ShogiEngineProcessWrapper.Send_Quit();
-                }
-                else if (line.StartsWith("bestmove"))
-                {
-                    // 将棋エンジンが、手を指されました。
-                    //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                //------------------------------------------------------------
+                // 将棋エンジンを終了してください☆
+                //------------------------------------------------------------
+                ((EngineClient)this.Owner_EngineClient).ShogiEngineProcessWrapper.Send_Quit();
+            }
+            else if (line.StartsWith("bestmove"))
+            {
+                // 将棋エンジンが、手を指されました。
+                //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-                    ((Server)((EngineClient)this.Owner_EngineClient).Owner_Server).SetInputString99(
-                        ((Server)((EngineClient)this.Owner_EngineClient).Owner_Server).InputString99 + line.Substring("bestmove".Length + "".Length)
-                        );
+                ((Server)((EngineClient)this.Owner_EngineClient).Owner_Server).SetInputString99(
+                    ((Server)((EngineClient)this.Owner_EngineClient).Owner_Server).InputString99 + line.Substring("bestmove".Length + "".Length)
+                    );
 
-                    OwataMinister.BY_GUI.Logger.WriteLineAddMemo("USI受信：bestmove input99=[" + ((Server)((EngineClient)this.Owner_EngineClient).Owner_Server).InputString99 + "]");
-                }
-                     */
+                OwataMinister.BY_GUI.Logger.WriteLineAddMemo("USI受信：bestmove input99=[" + ((Server)((EngineClient)this.Owner_EngineClient).Owner_Server).InputString99 + "]");
+            }
+                 */
             }
         }
 

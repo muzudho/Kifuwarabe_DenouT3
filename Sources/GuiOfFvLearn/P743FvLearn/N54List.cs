@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Grayscale.P743FvLearn.I400N54List
+﻿namespace Grayscale.P743FvLearn.I400N54List
 {
     public interface N54List
     {

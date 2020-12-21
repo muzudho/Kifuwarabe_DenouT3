@@ -1,8 +1,6 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P355_KifuParserA.I500Parser;
+﻿using Grayscale.Kifuwarakaku.Entities.Logging;
 
-namespace Grayscale.P355_KifuParserA.L500Parser
+namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     /// <summary>
     /// 指定局面から始める配置です。

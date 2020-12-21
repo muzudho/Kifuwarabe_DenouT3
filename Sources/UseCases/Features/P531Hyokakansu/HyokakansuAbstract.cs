@@ -1,6 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
 using Grayscale.P531Hyokakansu.I500Hyokakansu;
 
@@ -29,7 +27,7 @@ namespace Grayscale.P531Hyokakansu.L500Hyokakansu
         /// コンストラクター。
         /// </summary>
         /// <param name="name"></param>
-        public HyokakansuAbstract( HyokakansuName name)
+        public HyokakansuAbstract(HyokakansuName name)
         {
             this.name = name;
         }

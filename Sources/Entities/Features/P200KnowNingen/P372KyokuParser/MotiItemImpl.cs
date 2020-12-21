@@ -1,7 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P372KyokuParser.I500Parser;
-
-namespace Grayscale.P372KyokuParser.L500Parser
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public class MotiItemImpl : MotiItem
     {

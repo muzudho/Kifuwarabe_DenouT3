@@ -18,14 +18,6 @@ using System.Text;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
 #else
     using System.Text;
-    using Grayscale.Kifuwarakaku.Entities.Logging;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.P521FeatureVect.L500Struct;
     using Grayscale.P525ConvFv.L500Converter;
@@ -130,11 +122,11 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
             });
 
 
-            result_n40t14List.SetP40List_Unsorted( p40List);
-            result_n40t14List.SetP40Next( p40Next);
+            result_n40t14List.SetP40List_Unsorted(p40List);
+            result_n40t14List.SetP40Next(p40Next);
 
-            result_n40t14List.SetP14List_Unsorted( p14List);
-            result_n40t14List.SetP14Next( p14Next);
+            result_n40t14List.SetP14List_Unsorted(p14List);
+            result_n40t14List.SetP14Next(p14Next);
 
             return result_n40t14List;
         }

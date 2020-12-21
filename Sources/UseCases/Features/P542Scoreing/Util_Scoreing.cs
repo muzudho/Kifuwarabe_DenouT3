@@ -1,9 +1,5 @@
 ﻿using System;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P531Hyokakansu.I500Hyokakansu;
 using Grayscale.P531Hyokakansu.L510HyokakansuColl;
 using Grayscale.P542Scoreing.I250Args;
@@ -75,7 +71,7 @@ namespace Grayscale.P542Scoreing.L500Util
                     //----------------------------------------
                     // アルファー・カット
                     //----------------------------------------
-                    if (1<yomiDeep && a_parentsiblingDecidedValue < ref_a_childBest)
+                    if (1 < yomiDeep && a_parentsiblingDecidedValue < ref_a_childBest)
                     {
                         // 親の兄が既に見つけている数字より　大きな数字を見つけた場合
                         alpha_cut = true;//探索を打ち切り
@@ -171,8 +167,8 @@ namespace Grayscale.P542Scoreing.L500Util
         {
             // FIXME: 点数（評価明細）を上書きしているような。
             // 枝はこれでいいのか？
-            node_yomi_mutable.SetScore( alphabeta_bestScore);
-            node_yomi_mutable.SetBranchKyHyokaSheet(new KyHyokaSheetImpl( alphabeta_bestScore));
+            node_yomi_mutable.SetScore(alphabeta_bestScore);
+            node_yomi_mutable.SetBranchKyHyokaSheet(new KyHyokaSheetImpl(alphabeta_bestScore));
         }
 
     }

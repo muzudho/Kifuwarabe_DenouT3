@@ -1,12 +1,6 @@
 ﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P461Server.I125Receiver;
 using Grayscale.P461Server.I497EngineClient;
-using Grayscale.P461Server.L498Server;
 using Grayscale.P461Server.L497EngineClient;
 
 namespace Grayscale.P461Server.L498Server

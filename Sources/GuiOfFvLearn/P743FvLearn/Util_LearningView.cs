@@ -1,31 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text;
-using System.Windows.Forms;
-using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.P369ConvCsa.L500Converter;
 using Grayscale.P743FvLearn.I250Learn;
 using Grayscale.P743FvLearn.L250Learn;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
@@ -289,7 +265,7 @@ namespace Grayscale.P743FvLearn.L260View
                 });
 
 
-                
+
                 uc_Main.LstGohosyu.Items.Clear();
                 uc_Main.LstGohosyu.Items.AddRange(list.ToArray());
                 //foreach (GohosyuListItem item in list)
@@ -407,7 +383,7 @@ namespace Grayscale.P743FvLearn.L260View
             // 合法手表示の更新を要求します。 
             isRequestShowGohosyu = true;
             // 局面PNG画像を更新を要求。
-            isRequestChangeKyokumenPng = true;            
+            isRequestChangeKyokumenPng = true;
 
             //
             // リストの頭１個を除外します。

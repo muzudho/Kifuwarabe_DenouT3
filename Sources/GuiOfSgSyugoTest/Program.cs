@@ -1,6 +1,6 @@
-﻿using Grayscale.P780_SgSyugoTest.L500ShogiSyugoronTest;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using Grayscale.P780_SgSyugoTest.L500ShogiSyugoronTest;
 
 namespace Grayscale.P780_SgSyugoTest
 {
@@ -25,7 +25,7 @@ namespace Grayscale.P780_SgSyugoTest
             panel.SyFuncDictionary.Add("左下一直線升たち", Sample_Func.func左下一直線升たち);
             panel.SyFuncDictionary.Add("左上一直線升たち", Sample_Func.func左上一直線升たち);
 
-            
+
 
 
             Application.Run(form1);

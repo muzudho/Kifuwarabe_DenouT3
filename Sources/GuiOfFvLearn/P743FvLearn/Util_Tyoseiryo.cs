@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Grayscale.P743FvLearn.I400N54List;
 using Grayscale.P743FvLearn.I450Tyoseiryo;
-using Grayscale.P743FvLearn.I400N54List;
 
 namespace Grayscale.P743FvLearn.L450Tyoseiryo
 {
@@ -13,7 +8,7 @@ namespace Grayscale.P743FvLearn.L450Tyoseiryo
         /// <summary>
         /// 調整量の初期化
         /// </summary>
-        public static void Init( TyoseiryoSettings tyoseiryoSettings_mutable, int renzoku_kaisu)
+        public static void Init(TyoseiryoSettings tyoseiryoSettings_mutable, int renzoku_kaisu)
         {
             // 上昇用
             {
@@ -42,7 +37,7 @@ namespace Grayscale.P743FvLearn.L450Tyoseiryo
 
                     //bairitu *= 1.0075f; // 0.0075割り増しだと、ゆっくり過ぎる。１００回ぐらい繰り返さないと、１位に上がらない。
                     //1.1 * (1.0075 ^ (25-10)) =  1.16967622254
-                    
+
                     //bairitu *= 1.01f; // 0.01割り増しで上がっていく。ちょうど良かった。
                     //1.1 * (1.01 ^ (25-10)) = 1.27706585091
 
@@ -96,7 +91,7 @@ namespace Grayscale.P743FvLearn.L450Tyoseiryo
             float kizami;//刻んだ数。
 
             // 表を三角形に使うので、正方形から１辺分（対角ライン）を引き、２で割る。
-            float nikomaKankeiPatternSu = (n54List.P54Next * (n54List.P54Next-1)) / 2; //二駒関係のＰ×Ｐのパターン数。
+            float nikomaKankeiPatternSu = (n54List.P54Next * (n54List.P54Next - 1)) / 2; //二駒関係のＰ×Ｐのパターン数。
 
             kizami = value * 1.0f / nikomaKankeiPatternSu;
 

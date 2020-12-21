@@ -1,12 +1,10 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
 using Grayscale.P521FeatureVect.L500Struct;
 using Grayscale.P522ConvFvKoumoku.L500Converter;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Grayscale.P523UtilFv.L490UtilFvFormat
 {
@@ -116,7 +114,7 @@ namespace Grayscale.P523UtilFv.L490UtilFvFormat
                 List<Kp_P2Item> kpList = new List<Kp_P2Item>();
 
                 // pieceの 1Pと2P
-                for ( int piecePlayer = 1; piecePlayer < 3; piecePlayer++)
+                for (int piecePlayer = 1; piecePlayer < 3; piecePlayer++)
                 {
                     int koumokuIndex;
                     if (piecePlayer == 1)
@@ -248,7 +246,7 @@ namespace Grayscale.P523UtilFv.L490UtilFvFormat
                     //----------------------------------------
                     for (int kSuji = 9; kSuji > 0; kSuji--)
                     {
-                        if(kSuji!=9)
+                        if (kSuji != 9)
                         {
                             // 表の横の隙間
                             sb.Append("    ");

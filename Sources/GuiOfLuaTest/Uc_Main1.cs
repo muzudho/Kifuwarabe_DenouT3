@@ -1,6 +1,6 @@
-﻿using NLua;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using NLua;
 
 namespace Grayscale.P771_LuaTest____
 {
@@ -87,7 +87,7 @@ namespace Grayscale.P771_LuaTest____
 
         public static void WriteLine(string message)
         {
-            MessageBox.Show(message,"Luaからの出力");
+            MessageBox.Show(message, "Luaからの出力");
             //System.Console.WriteLine(message);
         }
     }

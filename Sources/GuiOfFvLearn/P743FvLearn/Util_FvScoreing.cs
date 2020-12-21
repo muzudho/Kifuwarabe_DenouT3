@@ -1,5 +1,4 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
+﻿using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
 using Grayscale.P743FvLearn.I400N54List;
 using Grayscale.P743FvLearn.L450Tyoseiryo;
@@ -42,7 +41,7 @@ namespace Grayscale.P743FvLearn.L460Scoreing
         //                (Playerside.P2 == selfPside && Const_NikomaKankeiP_ParamIx.PLAYER2 <= p1 && 0.0f < fv_mutable.NikomaKankeiPp_ForMemory[p1, p2] )
         //                )
         //            {
-                        
+
         //                result_sum += fv_mutable.NikomaKankeiPp_ForMemory[p1, p2];
         //                fv_mutable.NikomaKankeiPp_ForMemory[p1, p2] = 0;
         //            }

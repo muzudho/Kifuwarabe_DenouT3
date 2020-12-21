@@ -1,5 +1,5 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using System.Text;
+﻿using System.Text;
+using Grayscale.Kifuwarakaku.Entities.Features;
 
 
 namespace Grayscale.P743FvLearn.L250Learn

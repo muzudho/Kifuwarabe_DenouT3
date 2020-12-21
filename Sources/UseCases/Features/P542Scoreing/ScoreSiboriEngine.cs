@@ -1,12 +1,6 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
+﻿using System.Collections.Generic;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P542Scoreing.L240Shogisasi;
-using System.Collections.Generic;
-using System;
 
 namespace Grayscale.P542Scoreing.L125ScoreSibori
 {
@@ -104,7 +98,7 @@ namespace Grayscale.P542Scoreing.L125ScoreSibori
                     }
 
                     if (score <= goodestScore)//より負数の方がよい。
-                        {
+                    {
                         dic.Add(key, node);
                     }
                 });

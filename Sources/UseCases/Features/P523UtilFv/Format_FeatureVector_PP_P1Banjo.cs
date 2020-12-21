@@ -1,11 +1,9 @@
-﻿using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.P521FeatureVect.I500Struct;
 using Grayscale.P521FeatureVect.L500Struct;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Grayscale.P523UtilFv.L490UtilFvFormat
 {
@@ -119,7 +117,7 @@ namespace Grayscale.P523UtilFv.L490UtilFvFormat
                 List<PpItem_P2> p2List = new List<PpItem_P2>();
 
                 // pieceの 1Pと2P
-                for ( int piecePlayer = 1; piecePlayer < 3; piecePlayer++)
+                for (int piecePlayer = 1; piecePlayer < 3; piecePlayer++)
                 {
                     int koumokuIndex;
                     if (piecePlayer == 1)
@@ -251,7 +249,7 @@ namespace Grayscale.P523UtilFv.L490UtilFvFormat
                     //----------------------------------------
                     for (int p1Suji = 9; p1Suji > 0; p1Suji--)
                     {
-                        if(p1Suji!=9)
+                        if (p1Suji != 9)
                         {
                             // 表の横の隙間
                             sb.Append("    ");
@@ -271,7 +269,7 @@ namespace Grayscale.P523UtilFv.L490UtilFvFormat
                             int p2 = p2Item.P2_base + p2Masu;
                             if (Const_FeatureVectorFormat.PARAMETER_INDEX_OUTPUT)
                             {
-                                sb.Append(string.Format("{0,4}_{1,4}", p1,p2));
+                                sb.Append(string.Format("{0,4}_{1,4}", p1, p2));
                             }
                             else
                             {
@@ -333,7 +331,7 @@ namespace Grayscale.P523UtilFv.L490UtilFvFormat
                     int p2 = p2Item.P2_base;
                     if (Const_FeatureVectorFormat.PARAMETER_INDEX_OUTPUT)
                     {
-                        sb.Append(string.Format("{0,4}_{1,4}", p1,p2));
+                        sb.Append(string.Format("{0,4}_{1,4}", p1, p2));
                     }
                     else
                     {

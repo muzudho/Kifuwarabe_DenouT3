@@ -60,7 +60,7 @@
             //
             //      ボタンや将棋盤などを描画するツールを、事前準備しておきます。
             //
-            this.shape_Canvas = new Shape_CanvasImpl( "#Canvas", 0,0,0,0);
+            this.shape_Canvas = new Shape_CanvasImpl("#Canvas", 0, 0, 0, 0);
         }
 
     }
