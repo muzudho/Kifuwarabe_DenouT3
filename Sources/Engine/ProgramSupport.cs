@@ -38,21 +38,6 @@ namespace Grayscale.Kifuwarakaku.Engine
         public bool Option_enable_serverNoopable { get; set; }
 
         /// <summary>
-        /// 送信
-        /// </summary>
-        /// <param name="line">メッセージ</param>
-        public void Send(string line)
-        {
-            // 将棋サーバーに向かってメッセージを送り出します。
-            Util_Message.Upload(line);
-
-#if DEBUG
-            // 送信記録をつけます。
-            Logger.EngineNetwork.Logger.WriteLineS(line);
-#endif
-        }
-
-        /// <summary>
         /// コンストラクター
         /// </summary>
         public ProgramSupport()

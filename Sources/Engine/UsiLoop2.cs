@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using Grayscale.Kifuwarakaku.Engine.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Logging;
+using Grayscale.Kifuwarakaku.UseCases;
 using Grayscale.Kifuwarakaku.UseCases.Features;
 using Nett;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
@@ -667,7 +668,7 @@ namespace Grayscale.Kifuwarakaku.Engine
 
                         // この将棋エンジンは、後手とします。
                         // ２０手目、投了  を決め打ちで返します。
-                        this.owner.Send("bestmove resign");//投了
+                        Playing.Send("bestmove resign");//投了
                     }
                     break;
                 default:// どちらの王さまも、まだまだ健在だぜ☆！
@@ -759,7 +760,7 @@ namespace Grayscale.Kifuwarakaku.Engine
                                     // 符号を逆転
                                     hyojiScore = -hyojiScore;
                                 }
-                                this.owner.Send("info time 1 depth 1 nodes 1 score cp " + hyojiScore.ToString() + " pv ");//FIXME:
+                                Playing.Send("info time 1 depth 1 nodes 1 score cp " + hyojiScore.ToString() + " pv ");//FIXME:
                                                                                                                           //+ " pv 3a3b L*4h 4c4d"
                             }
 
@@ -767,7 +768,7 @@ namespace Grayscale.Kifuwarakaku.Engine
                             //----------------------------------------
                             // 指し手を送ります。
                             //----------------------------------------
-                            this.owner.Send("bestmove " + sfenText);
+                            Playing.Send("bestmove " + sfenText);
                         }
                         else // 指し手がないときは、SFENが書けない☆　投了だぜ☆
                         {
@@ -778,7 +779,7 @@ namespace Grayscale.Kifuwarakaku.Engine
                             //----------------------------------------
                             // 投了ｗ！
                             //----------------------------------------
-                            this.owner.Send("bestmove resign");
+                            Playing.Send("bestmove resign");
                         }
 
                         //------------------------------------------------------------
@@ -854,7 +855,7 @@ namespace Grayscale.Kifuwarakaku.Engine
                 //
                 //      という流れと思います。
                 // この指し手は、無視されます。（無視されますが、送る必要があります）
-                this.owner.Send("bestmove 9a9b");
+                Playing.Send("bestmove 9a9b");
             }
             else
             {
@@ -872,7 +873,7 @@ namespace Grayscale.Kifuwarakaku.Engine
                 //
                 //
                 // 特に何もなく、すぐ指せというのですから、今考えている最善手をすぐに指します。
-                this.owner.Send("bestmove 9a9b");
+                Playing.Send("bestmove 9a9b");
             }
         }
 

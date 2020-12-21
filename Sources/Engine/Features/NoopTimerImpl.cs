@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using Grayscale.Kifuwarakaku.Entities.Logging;
+using Grayscale.Kifuwarakaku.UseCases;
 using Grayscale.Kifuwarakaku.UseCases.Features;
 
 namespace Grayscale.Kifuwarakaku.Engine.Features
@@ -61,7 +62,7 @@ namespace Grayscale.Kifuwarakaku.Engine.Features
                             logTag.Logger.WriteLineAddMemo("noopを投げるぜ☆");
 #endif
                             // まだ noop を投げていないなら
-                            owner.Send("noop");// サーバーが生きていれば、"ok" と返してくるはず。（独自実装）
+                            Playing.Send("noop");// サーバーが生きていれば、"ok" と返してくるはず。（独自実装）
                             this.noopPhase = NoopPhase.NoopThrew;
                             this.sw_forNoop.Restart();//時間計測をリセット。
                         }

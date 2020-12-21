@@ -1,9 +1,12 @@
 ﻿namespace Grayscale.Kifuwarakaku.Engine
 {
     using System;
+    using System.IO;
     using Grayscale.Kifuwarakaku.Engine.Features;
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.Entities.Logging;
+    using Grayscale.Kifuwarakaku.UseCases;
+    using Nett;
 
     /// <summary>
     /// プログラムのエントリー・ポイントです。
@@ -114,8 +117,92 @@
 
 
 
-                        if ("usi" == line) { usiLoop1.AtLoop_OnUsi(line, ref result_UsiLoop1); }
-                        else if (line.StartsWith("setoption")) { usiLoop1.AtLoop_OnSetoption(line, ref result_UsiLoop1); }
+                        if ("usi" == line)
+                        {
+                            //------------------------------------------------------------
+                            // あなたは USI ですか？
+                            //------------------------------------------------------------
+                            //
+                            // 図.
+                            //
+                            //      log.txt
+                            //      ┌────────────────────────────────────────
+                            //      ～
+                            //      │2014/08/02 1:31:35> usi
+                            //      │
+                            //
+                            //
+                            // 将棋所で [対局(G)]-[エンジン管理...]-[追加...] でファイルを選んだときに、
+                            // 送られてくる文字が usi です。
+
+
+                            //------------------------------------------------------------
+                            // エンジン設定ダイアログボックスを作ります
+                            //------------------------------------------------------------
+                            //
+                            // 図.
+                            //
+                            //      log.txt
+                            //      ┌────────────────────────────────────────
+                            //      ～
+                            //      │2014/08/02 23:40:15< option name 子 type check default true
+                            //      │2014/08/02 23:40:15< option name USI type spin default 2 min 1 max 13
+                            //      │2014/08/02 23:40:15< option name 寅 type combo default tiger var マウス var うし var tiger var ウー var 龍 var へび var 馬 var ひつじ var モンキー var バード var ドッグ var うりぼー
+                            //      │2014/08/02 23:40:15< option name 卯 type button default うさぎ
+                            //      │2014/08/02 23:40:15< option name 辰 type string default DRAGON
+                            //      │2014/08/02 23:40:15< option name 巳 type filename default スネーク.html
+                            //      │
+                            //
+                            //
+                            // 将棋所で [エンジン設定] ボタンを押したときに出てくるダイアログボックスに、
+                            //      ・チェックボックス
+                            //      ・スピン
+                            //      ・コンボボックス
+                            //      ・ボタン
+                            //      ・テキストボックス
+                            //      ・ファイル選択テキストボックス
+                            // を置くことができます。
+                            //
+                            Playing.Send("option name 子 type check default true");
+                            Playing.Send("option name USI type spin default 2 min 1 max 13");
+                            Playing.Send("option name 寅 type combo default tiger var マウス var うし var tiger var ウー var 龍 var へび var 馬 var ひつじ var モンキー var バード var ドッグ var うりぼー");
+                            Playing.Send("option name 卯 type button default うさぎ");
+                            Playing.Send("option name 辰 type string default DRAGON");
+                            Playing.Send("option name 巳 type filename default スネーク.html");
+
+
+                            //------------------------------------------------------------
+                            // USI です！！
+                            //------------------------------------------------------------
+                            //
+                            // 図.
+                            //
+                            //      log.txt
+                            //      ┌────────────────────────────────────────
+                            //      ～
+                            //      │2014/08/02 2:03:33< id name fugafuga 1.00.0
+                            //      │2014/08/02 2:03:33< id author hogehoge
+                            //      │2014/08/02 2:03:33< usiok
+                            //      │
+                            //
+                            // プログラム名と、作者名を送り返す必要があります。
+                            // オプションも送り返せば、受け取ってくれます。
+                            // usi を受け取ってから、5秒以内に usiok を送り返して完了です。
+
+                            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+                            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+                            var engineName = toml.Get<TomlTable>("Engine").Get<string>("Name");
+                            Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+                            var engineAuthor = toml.Get<TomlTable>("Engine").Get<string>("Author");
+
+                            Playing.Send($"id name {engineName} {version.Major}.{version.Minor}.{version.Build}");
+                            Playing.Send($"id author {engineAuthor}");
+                            Playing.Send("usiok");
+                        }
+                        else if (line.StartsWith("setoption"))
+                        {
+                            usiLoop1.AtLoop_OnSetoption(line, ref result_UsiLoop1);
+                        }
                         else if ("isready" == line) { usiLoop1.AtLoop_OnIsready(line, ref result_UsiLoop1); }
                         else if ("usinewgame" == line) { usiLoop1.AtLoop_OnUsinewgame(line, ref result_UsiLoop1); }
                         else if ("quit" == line) { usiLoop1.AtLoop_OnQuit(line, ref result_UsiLoop1); }

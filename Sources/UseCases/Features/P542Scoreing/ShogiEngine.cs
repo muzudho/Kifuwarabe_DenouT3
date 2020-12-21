@@ -5,12 +5,6 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
     public interface ShogiEngine
     {
         /// <summary>
-        /// 送信
-        /// </summary>
-        /// <param name="line">メッセージ</param>
-        void Send(string line);
-
-        /// <summary>
         /// USI「setoption」コマンドのリストです。
         /// </summary>
         Dictionary<string, string> SetoptionDictionary { get; set; }
