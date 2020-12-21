@@ -173,9 +173,9 @@
       <Project>{8c0f1ff2-e0c6-45d7-ab40-bb8f548f55dd}</Project>
       <Name>Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UiOfLogKyokuPng\UiOfLogKyokuPng.csproj">
+    <ProjectReference Include="..\UiOfLogKyokuPng\CliOfLogKyokuPng.csproj">
       <Project>{6f26bae0-8e17-4fda-a242-d1d7c4db2507}</Project>
-      <Name>UiOfLogKyokuPng</Name>
+      <Name>CliOfLogKyokuPng</Name>
     </ProjectReference>
     <ProjectReference Include="..\GuiOfKifuCsa\GuiOfKifuCsa.csproj">
       <Project>{abed6201-9999-44cd-a91b-4ca01cc89006}</Project>

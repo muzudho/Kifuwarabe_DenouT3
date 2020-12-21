@@ -6,7 +6,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{DE171E48-E284-4FA6-9AEA-476D69C5D21A}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Grayscale.Kifuwarakaku.GuiOfCsharpVs</RootNamespace>
     <AssemblyName>Grayscale.Kifuwarakaku.GuiOfCsharpVs</AssemblyName>
@@ -90,9 +90,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="P803_GuiCsharpVs\MainGui_CsharpVsImpl.cs" />
-    <Compile Include="P803_GuiCsharpVs\Event_CsharpVsImpl.cs" />
-    <Compile Include="P803_GuiCsharpVs\WidgetsLoader_CsharpVsImpl.cs" />
+    <Compile Include="Features\MainGui_CsharpVsImpl.cs" />
+    <Compile Include="Features\Event_CsharpVsImpl.cs" />
+    <Compile Include="Features\WidgetsLoader_CsharpVsImpl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -115,6 +115,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -137,9 +138,7 @@
       <Name>UseCases</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="P801_／／将棋ＧＵＩ（対局用）\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Analyzer Include="..\..\packages\Microsoft.CodeAnalysis.NetAnalyzers.5.0.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll" />
     <Analyzer Include="..\..\packages\Microsoft.CodeAnalysis.NetAnalyzers.5.0.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.NetAnalyzers.dll" />

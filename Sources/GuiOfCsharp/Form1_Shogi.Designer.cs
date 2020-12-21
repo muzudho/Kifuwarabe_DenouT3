@@ -1,4 +1,4 @@
-﻿namespace Grayscale.P699_Form_______
+﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
     partial class Form1_Shogi
     {
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uc_Form1Main = new Grayscale.P699_Form_______.Uc_Form1Main();
+            this.uc_Form1Main = new Grayscale.Kifuwarakaku.GuiOfCsharp.Features.Uc_Form1Main();
             this.SuspendLayout();
             // 
             // ui_PnlMain1

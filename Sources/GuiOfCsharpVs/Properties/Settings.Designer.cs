@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Grayscale.Kifuwarakaku.GuiOfCsharpVs.Properties {
+namespace Grayscale.Kifuwarakaku.GuiOfCsharpVs.Features.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

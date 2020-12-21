@@ -5,11 +5,11 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P693ShogiGui.L492Widgets;
-using Grayscale.P693ShogiGui.L500GUI;
+using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
 using Nett;
 
-namespace Grayscale.P699_Form_______
+namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
 
     static class Program

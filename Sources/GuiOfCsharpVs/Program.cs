@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P699_Form_______;
+using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
 
-namespace Grayscale.P803GuiCsharpVs.L500Gui
+namespace Grayscale.Kifuwarakaku.GuiOfCsharpVs.Features
 {
     static class Program
     {

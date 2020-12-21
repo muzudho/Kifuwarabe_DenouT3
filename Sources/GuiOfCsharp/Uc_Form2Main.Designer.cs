@@ -1,4 +1,4 @@
-﻿namespace Grayscale.P699_Form_______
+﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
     partial class Uc_Form2Main
     {

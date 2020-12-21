@@ -1,25 +1,25 @@
-﻿namespace Grayscale.P699_Form_______
+﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
 #if DEBUG
 using Grayscale.Kifuwarakaku.Entities.Logger;
-using Grayscale.P693ShogiGui.I100Widgets;
-using Grayscale.P693ShogiGui.I500Gui;
-using Grayscale.P693ShogiGui.L080Shape;
-using Grayscale.P693ShogiGui.L081Canvas;
-using Grayscale.P693ShogiGui.L125Scene;
-using Grayscale.P693ShogiGui.L250Timed;
+using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 #else
     using System.Runtime.CompilerServices;
     using System.Windows.Forms;
     using Grayscale.Kifuwarakaku.Entities.Logging;
-    using Grayscale.P693ShogiGui.I100Widgets;
-    using Grayscale.P693ShogiGui.I500Gui;
-    using Grayscale.P693ShogiGui.L080Shape;
-    using Grayscale.P693ShogiGui.L081Canvas;
-    using Grayscale.P693ShogiGui.L125Scene;
-    using Grayscale.P693ShogiGui.L250Timed;
+    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
 #endif
 
     public partial class Uc_Form2Main : UserControl

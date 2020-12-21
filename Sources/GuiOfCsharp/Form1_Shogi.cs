@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Reflection;
 using System.Windows.Forms;
-using Grayscale.Kifuwarakaku.Entities.Logging;
-using Grayscale.P693ShogiGui.I500Gui;
-using Grayscale.P693ShogiGui.I510Form;
+using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
 
-namespace Grayscale.P699_Form_______
+namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
     [Serializable]
     public partial class Form1_Shogi : Form, Form1_Shogiable

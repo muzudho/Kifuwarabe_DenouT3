@@ -1,4 +1,4 @@
-﻿namespace Grayscale.P699_Form_______
+﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
     partial class Form2_Console
     {
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uc_Form2Main = new Grayscale.P699_Form_______.Uc_Form2Main();
+            this.uc_Form2Main = new Grayscale.Kifuwarakaku.GuiOfCsharp.Features.Uc_Form2Main();
             this.SuspendLayout();
             // 
             // uc_Form2Main

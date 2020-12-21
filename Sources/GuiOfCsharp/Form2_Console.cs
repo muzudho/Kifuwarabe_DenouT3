@@ -1,7 +1,7 @@
-﻿using Grayscale.P693ShogiGui.L500GUI;
+﻿using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
 using System.Windows.Forms;
 
-namespace Grayscale.P699_Form_______
+namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
     public partial class Form2_Console : Form
     {

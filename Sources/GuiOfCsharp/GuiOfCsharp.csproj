@@ -61,62 +61,62 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="P690GuiCsharp\P693ShogiGui\AspectOriented_TextBox.cs" />
+    <Compile Include="Features\AspectOriented_TextBox.cs" />
     <Compile Include="Form2_Console.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form2_Console.Designer.cs">
       <DependentUpon>Form2_Console.cs</DependentUpon>
     </Compile>
-    <Compile Include="P690GuiCsharp\P693ShogiGui\Shape_CanvasImpl.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\Conv_Koma_InGui.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\Util_Function_Csharp.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\SubGuiImpl.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\Event_CsharpImpl.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\ShogibanGuiEvent.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\Shape.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\Shape_BtnKoma.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\Shape_BtnMasu.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\Shape_PnlKomadai.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\Shape_PnlShogiban.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\Shape_PnlTaikyoku.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\Shape_Canvas.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\Timed.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\SubGui.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\RepaintRequest.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\RepaintRequestGedanTxt.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\TextboxListener.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\Shape_Abstract.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\Shape_BtnKomaImpl.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\SyuturyokuKirikae.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\Util_Menace.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\MouseEventState.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\MouseEventStateName.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\SaiseiEventState.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\SaiseiEventStateName.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\SceneName.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\RepaintRequestImpl.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\UserButtonImpl.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\UserWidget_MasuImpl.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\Shape_BtnBoxImpl.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\Shape_BtnMasuImpl.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\Shape_PnlTaikyokuImpl.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\Shape_PnlShogibanImpl.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\Shape_PnlKomadaiImpl.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\Shape_LblBoxImpl.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\TimedA_EngineCapture.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\Timed_Abstract.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\TimedB_MouseCapture.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\TimedC_SaiseiCapture.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\MainGui_CsharpImpl.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\Util_Lua_Csharp.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\WidgetsLoader_CsharpImpl.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\UserWidget.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\MainGui_Csharp.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\WidgetsLoader.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\Form1_Mutex.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\Form1_Shogiable.cs" />
-    <Compile Include="P690GuiCsharp\P693ShogiGui\Uc_Form1Mainable.cs" />
+    <Compile Include="Features\Shape_CanvasImpl.cs" />
+    <Compile Include="Features\Conv_Koma_InGui.cs" />
+    <Compile Include="Features\Util_Function_Csharp.cs" />
+    <Compile Include="Features\SubGuiImpl.cs" />
+    <Compile Include="Features\Event_CsharpImpl.cs" />
+    <Compile Include="Features\ShogibanGuiEvent.cs" />
+    <Compile Include="Features\Shape.cs" />
+    <Compile Include="Features\Shape_BtnKoma.cs" />
+    <Compile Include="Features\Shape_BtnMasu.cs" />
+    <Compile Include="Features\Shape_PnlKomadai.cs" />
+    <Compile Include="Features\Shape_PnlShogiban.cs" />
+    <Compile Include="Features\Shape_PnlTaikyoku.cs" />
+    <Compile Include="Features\Shape_Canvas.cs" />
+    <Compile Include="Features\Timed.cs" />
+    <Compile Include="Features\SubGui.cs" />
+    <Compile Include="Features\RepaintRequest.cs" />
+    <Compile Include="Features\RepaintRequestGedanTxt.cs" />
+    <Compile Include="Features\TextboxListener.cs" />
+    <Compile Include="Features\Shape_Abstract.cs" />
+    <Compile Include="Features\Shape_BtnKomaImpl.cs" />
+    <Compile Include="Features\SyuturyokuKirikae.cs" />
+    <Compile Include="Features\Util_Menace.cs" />
+    <Compile Include="Features\MouseEventState.cs" />
+    <Compile Include="Features\MouseEventStateName.cs" />
+    <Compile Include="Features\SaiseiEventState.cs" />
+    <Compile Include="Features\SaiseiEventStateName.cs" />
+    <Compile Include="Features\SceneName.cs" />
+    <Compile Include="Features\RepaintRequestImpl.cs" />
+    <Compile Include="Features\UserButtonImpl.cs" />
+    <Compile Include="Features\UserWidget_MasuImpl.cs" />
+    <Compile Include="Features\Shape_BtnBoxImpl.cs" />
+    <Compile Include="Features\Shape_BtnMasuImpl.cs" />
+    <Compile Include="Features\Shape_PnlTaikyokuImpl.cs" />
+    <Compile Include="Features\Shape_PnlShogibanImpl.cs" />
+    <Compile Include="Features\Shape_PnlKomadaiImpl.cs" />
+    <Compile Include="Features\Shape_LblBoxImpl.cs" />
+    <Compile Include="Features\TimedA_EngineCapture.cs" />
+    <Compile Include="Features\Timed_Abstract.cs" />
+    <Compile Include="Features\TimedB_MouseCapture.cs" />
+    <Compile Include="Features\TimedC_SaiseiCapture.cs" />
+    <Compile Include="Features\MainGui_CsharpImpl.cs" />
+    <Compile Include="Features\Util_Lua_Csharp.cs" />
+    <Compile Include="Features\WidgetsLoader_CsharpImpl.cs" />
+    <Compile Include="Features\UserWidget.cs" />
+    <Compile Include="Features\MainGui_Csharp.cs" />
+    <Compile Include="Features\WidgetsLoader.cs" />
+    <Compile Include="Features\Form1_Mutex.cs" />
+    <Compile Include="Features\Form1_Shogiable.cs" />
+    <Compile Include="Features\Uc_Form1Mainable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Uc_Form2Main.cs">
       <SubType>UserControl</SubType>
@@ -171,6 +171,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -178,10 +179,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="P690GuiCsharp\P691_／／将棋ＧＵＩ\" />
-    <Folder Include="P690GuiCsharp\P699_Form_______／／フォーム\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Analyzer Include="..\..\packages\Microsoft.CodeAnalysis.NetAnalyzers.5.0.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll" />
     <Analyzer Include="..\..\packages\Microsoft.CodeAnalysis.NetAnalyzers.5.0.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.NetAnalyzers.dll" />

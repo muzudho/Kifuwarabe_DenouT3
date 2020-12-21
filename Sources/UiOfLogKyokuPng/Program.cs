@@ -10,53 +10,6 @@ namespace Grayscale.P159_Form_______
 {
     static class Program
     {
-
-        static void AppendCommandline(Dictionary<string, string> dic)
-        {
-            string[] args = Environment.GetCommandLineArgs();
-
-            foreach(string arg in args)
-            {
-                string name;
-                string value;
-
-                string rest = arg;
-                if (!rest.StartsWith("--"))
-                {
-                    goto gt_Next1;
-                }
-
-                rest = rest.Substring(2);
-
-                int eq = rest.IndexOf('=');
-                if (-1 == eq)
-                {
-                    goto gt_Next1;
-                }
-
-                name = rest.Substring(0, eq).Trim();
-                value = rest.Substring(eq + 1).Trim();
-
-                if (value.StartsWith("\"") && value.EndsWith("\""))
-                {
-                    value = value.Substring(1, value.Length - 2);
-                }
-
-                if (dic.ContainsKey(name))
-                {
-                    dic[name] = value;
-                }
-                else
-                {
-                    dic.Add(name, value);
-                }
-
-            gt_Next1:
-                ;
-            }
-        }
-
-
         /// <summary>
         /// アプリケーションのメイン エントリ ポイントです。
         /// </summary>
@@ -135,6 +88,51 @@ namespace Grayscale.P159_Form_______
                 reportEnvironment
                 );
 
+        }
+
+        static void AppendCommandline(Dictionary<string, string> dic)
+        {
+            string[] args = Environment.GetCommandLineArgs();
+
+            foreach (string arg in args)
+            {
+                string name;
+                string value;
+
+                string rest = arg;
+                if (!rest.StartsWith("--"))
+                {
+                    goto gt_Next1;
+                }
+
+                rest = rest.Substring(2);
+
+                int eq = rest.IndexOf('=');
+                if (-1 == eq)
+                {
+                    goto gt_Next1;
+                }
+
+                name = rest.Substring(0, eq).Trim();
+                value = rest.Substring(eq + 1).Trim();
+
+                if (value.StartsWith("\"") && value.EndsWith("\""))
+                {
+                    value = value.Substring(1, value.Length - 2);
+                }
+
+                if (dic.ContainsKey(name))
+                {
+                    dic[name] = value;
+                }
+                else
+                {
+                    dic.Add(name, value);
+                }
+
+            gt_Next1:
+                ;
+            }
         }
     }
 }

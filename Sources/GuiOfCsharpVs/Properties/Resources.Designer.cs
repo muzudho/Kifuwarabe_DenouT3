@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Grayscale.Kifuwarakaku.GuiOfCsharpVs.Properties {
+namespace Grayscale.Kifuwarakaku.GuiOfCsharpVs.Features.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharpVs.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Grayscale.Kifuwarakaku.GuiOfCsharpVs.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Grayscale.Kifuwarakaku.GuiOfCsharpVs.Features.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

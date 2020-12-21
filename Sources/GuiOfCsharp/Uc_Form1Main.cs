@@ -1,4 +1,4 @@
-﻿namespace Grayscale.P699_Form_______
+﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
 #if DEBUG
 using System;
@@ -20,18 +20,18 @@ using Grayscale.P238Seiza.L500Util;
 using Grayscale.P258UtilSky258.L500UtilSky;
 using Grayscale.P324KifuTree.L250Struct;
 using Grayscale.P341Ittesasu.L250OperationA;
-using Grayscale.P693ShogiGui.I080Shape;
-using Grayscale.P693ShogiGui.I100Widgets;
-using Grayscale.P693ShogiGui.I125Scene;
-using Grayscale.P693ShogiGui.I499Repaint;
-using Grayscale.P693ShogiGui.I500Gui;
-using Grayscale.P693ShogiGui.I510Form;
-using Grayscale.P693ShogiGui.L060TextBoxListener;
-using Grayscale.P693ShogiGui.L080Shape;
-using Grayscale.P693ShogiGui.L081Canvas;
-using Grayscale.P693ShogiGui.L125Scene;
-using Grayscale.P693ShogiGui.L249Function;
-using Grayscale.P693ShogiGui.L250Timed;
+using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
 using Nett;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 #else
@@ -53,18 +53,18 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
     using Grayscale.P258UtilSky258.L500UtilSky;
     using Grayscale.P324KifuTree.L250Struct;
     using Grayscale.P341Ittesasu.L250OperationA;
-    using Grayscale.P693ShogiGui.I080Shape;
-    using Grayscale.P693ShogiGui.I100Widgets;
-    using Grayscale.P693ShogiGui.I125Scene;
-    using Grayscale.P693ShogiGui.I499Repaint;
-    using Grayscale.P693ShogiGui.I500Gui;
-    using Grayscale.P693ShogiGui.I510Form;
-    using Grayscale.P693ShogiGui.L060TextBoxListener;
-    using Grayscale.P693ShogiGui.L080Shape;
-    using Grayscale.P693ShogiGui.L081Canvas;
-    using Grayscale.P693ShogiGui.L125Scene;
-    using Grayscale.P693ShogiGui.L249Function;
-    using Grayscale.P693ShogiGui.L250Timed;
+    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
+    using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
     using Nett;
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 #endif
