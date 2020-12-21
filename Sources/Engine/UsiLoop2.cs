@@ -19,10 +19,8 @@ namespace Grayscale.Kifuwarakaku.Engine
     /// </summary>
     public class UsiLoop2
     {
-        #region プロパティー
         private ShogiEngine owner;
         private Shogisasi shogisasi;
-
 
         /// <summary>
         /// 棋譜です。
@@ -52,14 +50,11 @@ namespace Grayscale.Kifuwarakaku.Engine
         /// </summary>
         public Dictionary<string, string> GameoverProperties { get; set; }
 
-        #endregion
-
         public UsiLoop2(Shogisasi shogisasi, ShogiEngine owner)
         {
             this.owner = owner;
             this.shogisasi = shogisasi;
 
-            #region ↓詳説  ＜n手目＞
             //
             // 図.
             //
@@ -86,7 +81,6 @@ namespace Grayscale.Kifuwarakaku.Engine
             //      │    │                          │            │2           │自分が指したときにはカウントを変えません。                              │
             //      └──┴─────────────┴──────┴──────┴────────────────────────────────────┘
             //
-            #endregion
 
             // 棋譜
             {
@@ -239,7 +233,6 @@ namespace Grayscale.Kifuwarakaku.Engine
             //-------------------+----------------------------------------------------------------------------------------------------
             // スナップショット  |
             //-------------------+----------------------------------------------------------------------------------------------------
-            #region ↓詳説
             // 対局後のタイミングで、データの中身を確認しておきます。
             // Key と Value の表の形をしています。（順不同）
             //
@@ -280,7 +273,6 @@ namespace Grayscale.Kifuwarakaku.Engine
             //      │gameover    │lose        │
             //      └──────┴──────┘
             //
-            #endregion
 #if DEBUG
             Logger.EngineDefault.Logger.WriteLineAddMemo("KifuParserA_Impl.LOGGING_BY_ENGINE, ┏━確認━━━━setoptionDictionary ━┓");
             foreach (KeyValuePair<string, string> pair in this.owner.SetoptionDictionary)
@@ -512,7 +504,6 @@ namespace Grayscale.Kifuwarakaku.Engine
             //------------------------------------------------------------
             // 将棋所が次に呼びかけるまで、考えていてください
             //------------------------------------------------------------
-            #region ↓詳説
             //
             // 図.
             //
@@ -530,18 +521,15 @@ namespace Grayscale.Kifuwarakaku.Engine
             // 将棋所は「go ponder」というメッセージを返してくると思います。
             //
             // 恐らく  このメッセージを受け取っても、将棋エンジンは気にせず  考え続けていればいいのではないでしょうか。
-            #endregion
 
 
             //------------------------------------------------------------
             // じっとがまん
             //------------------------------------------------------------
-            #region ↓詳説
             //
             // まだ指してはいけません。
             // 指したら反則です。相手はまだ指していないのだ☆ｗ
             //
-            #endregion
         }
 
 
@@ -667,7 +655,6 @@ namespace Grayscale.Kifuwarakaku.Engine
                         //------------------------------------------------------------
                         // 投了
                         //------------------------------------------------------------
-                        #region ↓詳説
                         //
                         // 図.
                         //
@@ -680,7 +667,6 @@ namespace Grayscale.Kifuwarakaku.Engine
 
                         // この将棋エンジンは、後手とします。
                         // ２０手目、投了  を決め打ちで返します。
-                        #endregion
                         this.owner.Send("bestmove resign");//投了
                     }
                     break;
@@ -895,7 +881,6 @@ namespace Grayscale.Kifuwarakaku.Engine
             //------------------------------------------------------------
             // 対局が終わりました
             //------------------------------------------------------------
-            #region ↓詳説
             //
             // 図.
             //
@@ -907,12 +892,10 @@ namespace Grayscale.Kifuwarakaku.Engine
             //
 
             // 対局が終わったときに送られてくる文字が gameover です。
-            #endregion
 
             //------------------------------------------------------------
             // 「あ、勝ちました」「あ、引き分けました」「あ、負けました」
             //------------------------------------------------------------
-            #region ↓詳説
             //
             // 上図のメッセージのままだと使いにくいので、
             // あとで使いやすいように Key と Value の表に分けて持ち直します。
@@ -926,7 +909,6 @@ namespace Grayscale.Kifuwarakaku.Engine
             //      │gameover    │lose        │
             //      └──────┴──────┘
             //
-            #endregion
             Regex regex = new Regex(@"gameover (.)", RegexOptions.Singleline);
             Match m = regex.Match(line);
 

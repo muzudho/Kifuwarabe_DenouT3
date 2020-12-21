@@ -2,6 +2,7 @@
 {
     using System;
     using Grayscale.Kifuwarakaku.Engine.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.Entities.Logging;
 
     /// <summary>
@@ -19,9 +20,7 @@
             // 将棋エンジン　きふわらべ
             ProgramSupport programSupport = new ProgramSupport();
             programSupport.AtBegin();
-            bool isTimeoutShutdown;
-
-            isTimeoutShutdown = false;
+            bool isTimeoutShutdown = false;
 
             try
             {
@@ -65,14 +64,96 @@
                     // USIループ（１つ目）
                     //
                     UsiLoop1 usiLoop1 = new UsiLoop1(programSupport);
-                    usiLoop1.AtStart();
+
+                    isTimeoutShutdown = false;
+                    PhaseResult_UsiLoop1 result_UsiLoop1;
+
+                    //
+                    // サーバーに noop を送ってもよいかどうかは setoption コマンドがくるまで分からないので、
+                    // 作ってしまっておきます。
+                    // 1回も役に立たずに Loop2 に行くようなら、正常です。
+#if NOOPABLE
+            NoopTimerImpl noopTimer = new NoopTimerImpl();
+            noopTimer._01_BeforeLoop();
+#endif
+
+                    while (true)
+                    {
+                        result_UsiLoop1 = PhaseResult_UsiLoop1.None;
+
+                        // 将棋サーバーから何かメッセージが届いていないか、見てみます。
+                        string line = Util_Message.Download_Nonstop();
+
+                        // (2020-12-13 sun) ノン・ブロッキングなら このコードが意味あったんだが☆（＾～＾）
+                        if (null == line)//次の行が無ければヌル。
+                        {
+                            // メッセージは届いていませんでした。
+                            //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+#if NOOPABLE
                     bool isTimeoutShutdown_temp;
-                    PhaseResult_UsiLoop1 result_UsiLoop1 = usiLoop1.AtBody(out isTimeoutShutdown_temp);
-                    usiLoop1.AtEnd();
+                    noopTimer._03_AtEmptyMessage(this.Owner, out isTimeoutShutdown_temp);
                     if (isTimeoutShutdown_temp)
                     {
+                        //MessageBox.Show("ループ１でタイムアウトだぜ☆！");
+                        out_isTimeoutShutdown = isTimeoutShutdown_temp;
+                        result_UsiLoop1 = PhaseResult_UsiLoop1.TimeoutShutdown;
+                        goto end_loop1;
+                    }
+#endif
+
+                            goto gt_NextTime1;
+                        }
+
+                        // 通信ログは必ず取ります。
+                        Logger.WriteLineC(line);
+
+#if NOOPABLE
+                noopTimer._04_AtResponsed(this.Owner, line);
+#endif
+
+
+
+
+                        if ("usi" == line) { usiLoop1.AtLoop_OnUsi(line, ref result_UsiLoop1); }
+                        else if (line.StartsWith("setoption")) { usiLoop1.AtLoop_OnSetoption(line, ref result_UsiLoop1); }
+                        else if ("isready" == line) { usiLoop1.AtLoop_OnIsready(line, ref result_UsiLoop1); }
+                        else if ("usinewgame" == line) { usiLoop1.AtLoop_OnUsinewgame(line, ref result_UsiLoop1); }
+                        else if ("quit" == line) { usiLoop1.AtLoop_OnQuit(line, ref result_UsiLoop1); }
+                        else
+                        {
+                            //------------------------------------------------------------
+                            // ○△□×！？
+                            //------------------------------------------------------------
+                            //
+                            // ／(＾×＾)＼
+                            //
+
+                            // 通信が届いていますが、このプログラムでは  聞かなかったことにします。
+                            // USIプロトコルの独習を進め、対応／未対応を選んでください。
+                            //
+                            // ログだけ取って、スルーします。
+                        }
+
+                        switch (result_UsiLoop1)
+                        {
+                            case PhaseResult_UsiLoop1.Break:
+                                goto end_loop1;
+
+                            case PhaseResult_UsiLoop1.Quit:
+                                goto end_loop1;
+
+                            default:
+                                break;
+                        }
+
+                    gt_NextTime1:
+                        ;
+                    }
+                end_loop1:
+
+                    if (isTimeoutShutdown)
+                    {
                         //MessageBox.Show("ループ１で矯正終了するんだぜ☆！");
-                        isTimeoutShutdown = isTimeoutShutdown_temp;
                         goto gt_EndMethod;
                     }
                     else if (result_UsiLoop1 == PhaseResult_UsiLoop1.Quit)
@@ -85,12 +166,12 @@
                     //
                     UsiLoop2 usiLoop2 = new UsiLoop2(programSupport.shogisasi, programSupport);
                     usiLoop2.AtBegin();
-                    usiLoop2.AtBody(out isTimeoutShutdown_temp);
+                    usiLoop2.AtBody(out isTimeoutShutdown);
                     usiLoop2.AtEnd();
-                    if (isTimeoutShutdown_temp)
+                    if (isTimeoutShutdown)
                     {
                         //MessageBox.Show("ループ２で矯正終了するんだぜ☆！");
-                        isTimeoutShutdown = isTimeoutShutdown_temp;
+                        isTimeoutShutdown = isTimeoutShutdown;
                         goto gt_EndMethod;//全体ループを抜けます。
                     }
                 }

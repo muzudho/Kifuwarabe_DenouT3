@@ -27,104 +27,6 @@ namespace Grayscale.Kifuwarakaku.Engine
             this.owner = owner;
         }
 
-        public void AtStart()
-        {
-        }
-
-        public PhaseResult_UsiLoop1 AtBody(out bool out_isTimeoutShutdown)
-        {
-            out_isTimeoutShutdown = false;
-            PhaseResult_UsiLoop1 result_UsiLoop1;
-
-            //
-            // サーバーに noop を送ってもよいかどうかは setoption コマンドがくるまで分からないので、
-            // 作ってしまっておきます。
-            // 1回も役に立たずに Loop2 に行くようなら、正常です。
-#if NOOPABLE
-            NoopTimerImpl noopTimer = new NoopTimerImpl();
-            noopTimer._01_BeforeLoop();
-#endif
-
-            while (true)
-            {
-                result_UsiLoop1 = PhaseResult_UsiLoop1.None;
-
-                // 将棋サーバーから何かメッセージが届いていないか、見てみます。
-                string line = Util_Message.Download_Nonstop();
-
-                // (2020-12-13 sun) ノン・ブロッキングなら このコードが意味あったんだが☆（＾～＾）
-                if (null == line)//次の行が無ければヌル。
-                {
-                    // メッセージは届いていませんでした。
-                    //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-#if NOOPABLE
-                    bool isTimeoutShutdown_temp;
-                    noopTimer._03_AtEmptyMessage(this.Owner, out isTimeoutShutdown_temp);
-                    if (isTimeoutShutdown_temp)
-                    {
-                        //MessageBox.Show("ループ１でタイムアウトだぜ☆！");
-                        out_isTimeoutShutdown = isTimeoutShutdown_temp;
-                        result_UsiLoop1 = PhaseResult_UsiLoop1.TimeoutShutdown;
-                        goto end_loop1;
-                    }
-#endif
-
-                    goto gt_NextTime1;
-                }
-
-                // 通信ログは必ず取ります。
-                Logger.WriteLineC(line);
-
-#if NOOPABLE
-                noopTimer._04_AtResponsed(this.Owner, line);
-#endif
-
-
-
-
-                if ("usi" == line) { this.AtLoop_OnUsi(line, ref result_UsiLoop1); }
-                else if (line.StartsWith("setoption")) { this.AtLoop_OnSetoption(line, ref result_UsiLoop1); }
-                else if ("isready" == line) { this.AtLoop_OnIsready(line, ref result_UsiLoop1); }
-                else if ("usinewgame" == line) { this.AtLoop_OnUsinewgame(line, ref result_UsiLoop1); }
-                else if ("quit" == line) { this.AtLoop_OnQuit(line, ref result_UsiLoop1); }
-                else
-                {
-                    //------------------------------------------------------------
-                    // ○△□×！？
-                    //------------------------------------------------------------
-                    //
-                    // ／(＾×＾)＼
-                    //
-
-                    // 通信が届いていますが、このプログラムでは  聞かなかったことにします。
-                    // USIプロトコルの独習を進め、対応／未対応を選んでください。
-                    //
-                    // ログだけ取って、スルーします。
-                }
-
-                switch (result_UsiLoop1)
-                {
-                    case PhaseResult_UsiLoop1.Break:
-                        goto end_loop1;
-
-                    case PhaseResult_UsiLoop1.Quit:
-                        goto end_loop1;
-
-                    default:
-                        break;
-                }
-
-            gt_NextTime1:
-                ;
-            }
-        end_loop1:
-            return result_UsiLoop1;
-        }
-
-        public void AtEnd()
-        {
-        }
-
         public void AtLoop_OnUsi(string line, ref PhaseResult_UsiLoop1 result_Usi)
         {
             //------------------------------------------------------------
@@ -214,7 +116,6 @@ namespace Grayscale.Kifuwarakaku.Engine
             //------------------------------------------------------------
             // 設定してください
             //------------------------------------------------------------
-            #region ↓詳説
             //
             // 図.
             //
@@ -247,12 +148,10 @@ namespace Grayscale.Kifuwarakaku.Engine
             // 将棋所から、[エンジン設定] ダイアログボックスの内容が送られてきます。
             // このダイアログボックスは、将棋エンジンから将棋所に  ダイアログボックスを作るようにメッセージを送って作ったものです。
             //
-            #endregion
 
             //------------------------------------------------------------
             // 設定を一覧表に変えます
             //------------------------------------------------------------
-            #region ↓詳説
             //
             // 上図のメッセージのままだと使いにくいので、
             // あとで使いやすいように Key と Value の表に分けて持ち直します。
@@ -268,7 +167,6 @@ namespace Grayscale.Kifuwarakaku.Engine
             //      │USI_Hash    │256         │
             //      └──────┴──────┘
             //
-            #endregion
             Regex regex = new Regex(@"setoption name ([^ ]+)(?: value (.*))?", RegexOptions.Singleline);
             Match m = regex.Match(line);
 
@@ -327,7 +225,6 @@ namespace Grayscale.Kifuwarakaku.Engine
             //------------------------------------------------------------
             // それでは定刻になりましたので……
             //------------------------------------------------------------
-            #region ↓詳説
             //
             // 図.
             //
@@ -339,7 +236,6 @@ namespace Grayscale.Kifuwarakaku.Engine
             //
             //
             // 対局開始前に、将棋所から送られてくる文字が isready です。
-            #endregion
 
 
             //------------------------------------------------------------
@@ -358,7 +254,6 @@ namespace Grayscale.Kifuwarakaku.Engine
             //------------------------------------------------------------
             // よろしくお願いします(^▽^)！
             //------------------------------------------------------------
-            #region ↓詳説
             //
             // 図.
             //
@@ -370,7 +265,6 @@ namespace Grayscale.Kifuwarakaku.Engine
             //
             //
             // いつでも対局する準備が整っていましたら、 readyok を送り返します。
-            #endregion
             this.Owner.Send("readyok");
         }
 
@@ -380,7 +274,6 @@ namespace Grayscale.Kifuwarakaku.Engine
             //------------------------------------------------------------
             // 対局時計が ポチッ とされました
             //------------------------------------------------------------
-            #region ↓詳説
             //
             // 図.
             //
@@ -392,7 +285,6 @@ namespace Grayscale.Kifuwarakaku.Engine
             //
             //
             // 対局が始まったときに送られてくる文字が usinewgame です。
-            #endregion
 
 
             // 無限ループ（１つ目）を抜けます。無限ループ（２つ目）に進みます。
@@ -406,7 +298,6 @@ namespace Grayscale.Kifuwarakaku.Engine
             //------------------------------------------------------------
             // おつかれさまでした
             //------------------------------------------------------------
-            #region ↓詳説
             //
             // 図.
             //
@@ -418,13 +309,11 @@ namespace Grayscale.Kifuwarakaku.Engine
             //
             //
             // 将棋エンジンを止めるときに送られてくる文字が quit です。
-            #endregion
 
 
             //------------------------------------------------------------
             // ﾉｼ
             //------------------------------------------------------------
-            #region ↓詳説
             //
             // 図.
             //
@@ -435,7 +324,6 @@ namespace Grayscale.Kifuwarakaku.Engine
             //      │
             //
             //
-            #endregion
 #if DEBUG
             Logger.EngineDefault.Logger.WriteLineAddMemo("(^-^)ﾉｼ");
 #endif
