@@ -2,6 +2,7 @@
 {
     using System;
     using System.IO;
+    using System.Text.RegularExpressions;
     using Grayscale.Kifuwarakaku.Engine.Features;
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.Entities.Logging;
@@ -201,9 +202,115 @@
                         }
                         else if (line.StartsWith("setoption"))
                         {
-                            usiLoop1.AtLoop_OnSetoption(line, ref result_UsiLoop1);
+                            //------------------------------------------------------------
+                            // 設定してください
+                            //------------------------------------------------------------
+                            //
+                            // 図.
+                            //
+                            //      log.txt
+                            //      ┌────────────────────────────────────────
+                            //      ～
+                            //      │2014/08/02 8:19:36> setoption name USI_Ponder value true
+                            //      │2014/08/02 8:19:36> setoption name USI_Hash value 256
+                            //      │
+                            //
+                            // ↑ゲーム開始時には、[対局]ダイアログボックスの[エンジン共通設定]の２つの内容が送られてきます。
+                            //      ・[相手の手番中に先読み] チェックボックス
+                            //      ・[ハッシュメモリ  ★　MB] スピン
+                            //
+                            // または
+                            //
+                            //      log.txt
+                            //      ┌────────────────────────────────────────
+                            //      ～
+                            //      │2014/08/02 23:47:35> setoption name 卯
+                            //      │2014/08/02 23:47:35> setoption name 卯
+                            //      │2014/08/02 23:48:29> setoption name 子 value true
+                            //      │2014/08/02 23:48:29> setoption name USI value 6
+                            //      │2014/08/02 23:48:29> setoption name 寅 value 馬
+                            //      │2014/08/02 23:48:29> setoption name 辰 value DRAGONabcde
+                            //      │2014/08/02 23:48:29> setoption name 巳 value C:\Users\Takahashi\Documents\新しいビットマップ イメージ.bmp
+                            //      │
+                            //
+                            //
+                            // 将棋所から、[エンジン設定] ダイアログボックスの内容が送られてきます。
+                            // このダイアログボックスは、将棋エンジンから将棋所に  ダイアログボックスを作るようにメッセージを送って作ったものです。
+                            //
+
+                            //------------------------------------------------------------
+                            // 設定を一覧表に変えます
+                            //------------------------------------------------------------
+                            //
+                            // 上図のメッセージのままだと使いにくいので、
+                            // あとで使いやすいように Key と Value の表に分けて持ち直します。
+                            //
+                            // 図.
+                            //
+                            //      setoptionDictionary
+                            //      ┌──────┬──────┐
+                            //      │Key         │Value       │
+                            //      ┝━━━━━━┿━━━━━━┥
+                            //      │USI_Ponder  │true        │
+                            //      ├──────┼──────┤
+                            //      │USI_Hash    │256         │
+                            //      └──────┴──────┘
+                            //
+                            Regex regex = new Regex(@"setoption name ([^ ]+)(?: value (.*))?", RegexOptions.Singleline);
+                            Match m = regex.Match(line);
+
+                            if (m.Success)
+                            {
+                                string name = (string)m.Groups[1].Value;
+                                string value = "";
+
+                                if (3 <= m.Groups.Count)
+                                {
+                                    // 「value ★」も省略されずにありました。
+                                    //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                                    value = (string)m.Groups[2].Value;
+                                }
+
+                                if (programSupport.SetoptionDictionary.ContainsKey(name))
+                                {
+                                    // 設定を上書きします。
+                                    programSupport.SetoptionDictionary[name] = value;
+                                }
+                                else
+                                {
+                                    // 設定を追加します。
+                                    programSupport.SetoptionDictionary.Add(name, value);
+                                }
+                            }
+
+                            if (programSupport.SetoptionDictionary.ContainsKey("USI_ponder"))
+                            {
+                                string value = programSupport.SetoptionDictionary["USI_ponder"];
+
+                                bool result;
+                                if (Boolean.TryParse(value, out result))
+                                {
+                                    programSupport.Option_enable_usiPonder = result;
+                                }
+                            }
+                            else if (programSupport.SetoptionDictionary.ContainsKey("noopable"))
+                            {
+                                //
+                                // 独自実装。
+                                //
+                                string value = programSupport.SetoptionDictionary["noopable"];
+
+                                bool result;
+                                if (Boolean.TryParse(value, out result))
+                                {
+                                    programSupport.Option_enable_serverNoopable = result;
+                                }
+                            }
                         }
-                        else if ("isready" == line) { usiLoop1.AtLoop_OnIsready(line, ref result_UsiLoop1); }
+                        else if ("isready" == line)
+                        {
+                            usiLoop1.AtLoop_OnIsready(line, ref result_UsiLoop1);
+                        }
                         else if ("usinewgame" == line) { usiLoop1.AtLoop_OnUsinewgame(line, ref result_UsiLoop1); }
                         else if ("quit" == line) { usiLoop1.AtLoop_OnQuit(line, ref result_UsiLoop1); }
                         else
