@@ -109,7 +109,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 //----------------------------------------
                 // 次ノート追加
                 //----------------------------------------
-                kifuRef.GetSennititeCounter().CountUp_New(Conv_Sky.ToKyokumenHash(nextNode_and_nextCurrent.Value.KyokumenConst), hint + "/AppendChild_And_ChangeCurrentToChild");
+                kifuRef.GetSennititeCounter().CountUp_New(Conv_Sky.ToKyokumenHash(nextNode_and_nextCurrent.Value.KyokumenConst), $"{hint}/AppendChild_And_ChangeCurrentToChild");
                 ((KifuNode)kifuRef.CurNode).PutTuginoitte_New(nextNode_and_nextCurrent);
             }
 

@@ -67,7 +67,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 );
 
                 // 記録係り用棋譜（採譜）
-                UtilKifuTree282.AppendChild_And_ChangeCurrentToChild(saifuKifu, saifu_newChild, hint + "/ToJsaKifuText");// 新しい次ノードを追加。次ノードを、これからカレントとする。
+                UtilKifuTree282.AppendChild_And_ChangeCurrentToChild(saifuKifu, saifu_newChild, $"{hint}/ToJsaKifuText");// 新しい次ノードを追加。次ノードを、これからカレントとする。
 
                 // 後手の符号がまだ含まれていない。
                 string jsaFugoStr = ConvMoveStrJsa.ToMoveStrJsa(saifu_newChild

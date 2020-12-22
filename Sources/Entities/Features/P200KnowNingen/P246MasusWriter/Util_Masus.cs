@@ -30,10 +30,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     Util_MasuNum.TryMasuToSuji(hMasu1, out suji);
                     Util_MasuNum.TryMasuToDan(hMasu1, out dan);
 
-                    sb.Append("["
-                        + suji.ToString()
-                        + dan.ToString()
-                        + "]");
+                    sb.Append($"[{suji}{dan}]");
                 }
 
                 // 次に親集合
@@ -52,10 +49,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     Util_MasuNum.TryMasuToSuji(hMasu1, out suji);
                     Util_MasuNum.TryMasuToDan(hMasu1, out dan);
 
-                    sb.Append("["
-                        + suji.ToString()
-                        + dan.ToString()
-                        + "]");
+                    sb.Append($"[{suji}{dan}]");
                 }
 
                 // 次に親集合
@@ -75,10 +69,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     Util_MasuNum.TryMasuToSuji(hMasu1, out suji);
                     Util_MasuNum.TryMasuToDan(hMasu1, out dan);
 
-                    sb.Append(
-                        suji.ToString()
-                        + dan.ToString()
-                        + "→");
+                    sb.Append($"{suji}{dan}→");
                 }
 
                 // 最後の矢印は削除します。
@@ -155,10 +146,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     Util_MasuNum.TryMasuToSuji(hMasu1, out suji);
                     Util_MasuNum.TryMasuToDan(hMasu1, out dan);
 
-                    sb.Append("["
-                        + suji.ToString()
-                        + dan.ToString()
-                        + "]");
+                    sb.Append($"[{suji}{dan}]");
                 }
 
                 // 次に親集合
@@ -178,10 +166,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     Util_MasuNum.TryMasuToSuji(hMasu1, out suji);
                     Util_MasuNum.TryMasuToDan(hMasu1, out dan);
 
-                    sb.Append(
-                        suji.ToString()
-                        + dan.ToString()
-                        + "→");
+                    sb.Append($"{suji}{dan}→");
                 }
 
                 // 最後の矢印は削除します。

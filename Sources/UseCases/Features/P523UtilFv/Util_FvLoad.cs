@@ -158,7 +158,7 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
                         sb_result.Append($"ファイルオープン失敗 PP_Banjo[{ppItem.Filepath}]。");
                         goto gt_EndMethod;
                     }
-                    sb_result.Append("開" + Path.GetFileName(ppItem.Filepath) + "。");
+                    sb_result.Append($"開{Path.GetFileName(ppItem.Filepath)}。");
                 }
             }
 

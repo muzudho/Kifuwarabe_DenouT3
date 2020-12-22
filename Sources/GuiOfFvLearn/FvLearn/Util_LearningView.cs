@@ -187,7 +187,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
             //----------------------------------------
             // フォルダー作成
             //----------------------------------------
-            //this.Kifu.CreateAllFolders(Const_Filepath.LOGS + "temp", 4);
+            //this.Kifu.CreateAllFolders($"{Const_Filepath.LOGS}temp", 4);
 
             {
 

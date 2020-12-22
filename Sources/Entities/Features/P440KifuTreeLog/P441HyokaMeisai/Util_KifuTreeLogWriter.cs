@@ -82,9 +82,9 @@
             StringBuilder tree_folder = new StringBuilder();
             kifu.ForeachHonpu(kifu.CurNode, (int temezumi2, KyokumenWrapper kWrap, Node<IMove, KyokumenWrapper> node, ref bool toBreak) =>
             {
-                tree_folder.Append(ConvMoveStrSfen.ToMoveStrSfenForFilename(node.Key) + "/");
+                tree_folder.Append($"{ConvMoveStrSfen.ToMoveStrSfenForFilename(node.Key)}/");
             });
-            //sb_folder.Append( Conv_MoveStr_Sfen.ToMoveStr_Sfen_ForFilename(kifu.CurNode.Key) + "/");
+            //sb_folder.Append( $"{Conv_MoveStr_Sfen.ToMoveStr_Sfen_ForFilename(kifu.CurNode.Key)}/");
 
             string moveText1 = ConvMoveStrSfen.ToMoveStrSfen(kifu.CurNode.Key);
             KifuNode kifuNode1 = (KifuNode)kifu.CurNode;

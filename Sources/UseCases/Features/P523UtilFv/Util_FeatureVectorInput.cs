@@ -832,11 +832,6 @@ using Grayscale.Kifuwarakaku.Entities.Features;
             Logger.Trace("FV 総合点（読込後）1");
             Logger.Trace($"      PP ={Util_FeatureVectorEdit.GetTotal_PP(fv)}");
             Logger.Trace("----------------------------------------");
-
-            //MessageBox.Show(
-            //    "rowVersion=[" + rowVersion + "]\n" +
-            //            "rowKk=[" + rowNestedShogiban + "]\n"
-            //, "デバッグ");
 #endif
             successful = true;
         gt_EndMethod:
@@ -1092,10 +1087,6 @@ using Grayscale.Kifuwarakaku.Entities.Features;
             Logger.Trace("FV 総合点（読込後）2");
             Logger.Trace($"      PP ={Util_FeatureVectorEdit.GetTotal_PP(fv)}");
             Logger.Trace("----------------------------------------");
-
-            //MessageBox.Show(
-            //    "rowVersion=[" + rowVersion + "]\n" 
-            //, "デバッグ");
 #endif
             successful = true;
         gt_EndMethod:
@@ -1332,10 +1323,6 @@ using Grayscale.Kifuwarakaku.Entities.Features;
             Logger.Trace("FV 総合点（読込後）3");
             Logger.Trace($"      PP ={Util_FeatureVectorEdit.GetTotal_PP(fv)}");
             Logger.Trace("----------------------------------------");
-
-            //MessageBox.Show(
-            //    "rowVersion=[" + rowVersion + "]\n" 
-            //, "デバッグ");
 #endif
             successful = true;
         gt_EndMethod:

@@ -172,7 +172,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             // 成りの資格があれば、成りの指し手を作ります。
             if (isPromotionable)
             {
-                //MessageBox.Show("成りの資格がある駒がありました。 src=["+srcKoma.Masu.Word+"]["+srcKoma.Syurui+"]");
+                //MessageBox.Show($"成りの資格がある駒がありました。 src=[{srcKoma.Masu.Word}][{srcKoma.Syurui}]");
 
                 IMove move = new RO_Starbeam(
                     //figKoma,//駒

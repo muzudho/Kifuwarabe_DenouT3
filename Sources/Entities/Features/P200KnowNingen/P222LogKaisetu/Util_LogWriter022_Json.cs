@@ -260,7 +260,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
                     if (board.Temezumi != int.MinValue)
                     {
-                        sb.Append(board.Temezumi + "手済");
+                        sb.Append($"{board.Temezumi}手済");
                     }
 
                     switch (board.GenTeban)

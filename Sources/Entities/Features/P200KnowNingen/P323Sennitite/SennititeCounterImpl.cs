@@ -106,10 +106,10 @@ using System.Text;
         public void CountUp_Overwrite(ulong hash_old, ulong hash_new, string hint)
         {
             // カウントダウン。
-            this.CountDown(hash_old, hint + "/CountUp_Overwrite");
+            this.CountDown(hash_old, $"{hint}/CountUp_Overwrite");
 
             // カウントアップ。
-            this.CountUp_New(hash_new, hint + "/CountUp_Overwrite");
+            this.CountUp_New(hash_new, $"{hint}/CountUp_Overwrite");
         }
         /// <summary>
         /// 同一局面カウンター。

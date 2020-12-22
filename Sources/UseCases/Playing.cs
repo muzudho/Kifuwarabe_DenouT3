@@ -695,10 +695,6 @@ usiok");
 
             int latestTemezumi = this.Game.Kifu.CurNode.Value.KyokumenConst.Temezumi;//現・手目済
 
-            //#if DEBUG
-            // MessageBox.Show("["+latestTemezumi+"]手目済　["+this.owner.PlayerInfo.Playerside+"]の手番");
-            //#endif
-
             SkyConst src_Sky = this.Game.Kifu.NodeAt(latestTemezumi).Value.KyokumenConst;//現局面
 
             //Logger.Trace($"将棋サーバー「{latestTemezumi}手目、きふわらべ　さんの手番ですよ！」　{line}");

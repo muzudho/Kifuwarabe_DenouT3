@@ -56,9 +56,7 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
                                 //------------------------------------------------------------
                                 // AIMS GUIへ：　「isready」を転送します。
                                 //------------------------------------------------------------
-                                //MessageBox.Show("将棋サーバー「将棋エンジンから、usiokが返ってきたぜ☆！\n" +
-                                //    "サーバーは WaitAimsIsready フェーズに移るぜ☆\n"+
-                                //    "AIMS GUIには isready を送るぜ☆！」");
+                                //MessageBox.Show($"将棋サーバー「将棋エンジンから、usiokが返ってきたぜ☆！\nサーバーは WaitAimsIsready フェーズに移るぜ☆\nAIMS GUIには isready を送るぜ☆！」");
                                 this.Owner_AimsServer.SetPhase_AimsServer(Phase_AimsServer._05_WaitAimsReadyok);
                                 Console.Out.WriteLine("isready");
                             }

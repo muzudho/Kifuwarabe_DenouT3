@@ -121,7 +121,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     //
 
                     var sky2 = Util_Sky307.Json_1Sky(src_Sky, "エラー駒になったとき",
-hint + "_SF解3",
+$"{hint}_SF解3",
 src_Sky.Temezumi);
 
                     string text2;
