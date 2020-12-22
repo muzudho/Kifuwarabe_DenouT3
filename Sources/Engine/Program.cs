@@ -209,7 +209,7 @@
                             var engineName = toml.Get<TomlTable>("Engine").Get<string>("Name");
                             Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
                             var engineAuthor = toml.Get<TomlTable>("Engine").Get<string>("Author");
-                            playing.UsiOk("{engineName} {version.Major}.{version.Minor}.{version.Build}", engineAuthor);
+                            playing.UsiOk($"{engineName} {version.Major}.{version.Minor}.{version.Build}", engineAuthor);
                         }
                         else if (line.StartsWith("setoption"))
                         {
