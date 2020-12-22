@@ -36,8 +36,6 @@ namespace Grayscale.Kifuwarakaku.UseCases
         /// </summary>
         public ScoreSiboriEngine EdagariEngine { get; set; }
 
-        public IGame Game { get; private set; }
-
         /// <summary>
         /// USI「setoption」コマンドのリストです。
         /// </summary>
@@ -53,6 +51,8 @@ namespace Grayscale.Kifuwarakaku.UseCases
         /// サーバーに「noop」を送ると、「ok」を返してくれるものとします。１分間を空けてください。
         /// </summary>
         public bool Option_enable_serverNoopable { get; set; }
+
+        public IGame Game { get; private set; }
 
         /// <summary>
         /// 送信
