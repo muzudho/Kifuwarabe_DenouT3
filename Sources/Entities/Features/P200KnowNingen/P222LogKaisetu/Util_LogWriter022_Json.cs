@@ -22,7 +22,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
                     foreach (int masu in board.Masu_theMove)
                     {
-                        sb.AppendLine("{ \"act\":\"drawMasu\" , \"masu\":" + masu.ToString() + " },");
+                        sb.AppendLine($"{{ \"act\":\"drawMasu\" , \"masu\":{masu} }},");
                     }
                 }
 
@@ -32,7 +32,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
                     foreach (int masu in board.Masu_theEffect)
                     {
-                        sb.AppendLine("{ \"act\":\"drawMasu\" , \"masu\":" + masu.ToString() + " },");
+                        sb.AppendLine($"{{ \"act\":\"drawMasu\" , \"masu\":{masu} }},");
                     }
                 }
 
@@ -42,7 +42,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
                     foreach (int masu in board.Masu_3)
                     {
-                        sb.AppendLine("{ \"act\":\"drawMasu\" , \"masu\":" + masu.ToString() + " },");
+                        sb.AppendLine($"{{ \"act\":\"drawMasu\" , \"masu\":{masu} }},");
                     }
                 }
 
@@ -52,7 +52,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
                     foreach (int masu in board.Masu_4)
                     {
-                        sb.AppendLine("{ \"act\":\"drawMasu\" , \"masu\":" + masu.ToString() + " },");
+                        sb.AppendLine($"{{ \"act\":\"drawMasu\" , \"masu\":{masu} }},");
                     }
                 }
             }
@@ -70,7 +70,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
                     foreach (int masu in board.MarkMasu1)
                     {
-                        sb.AppendLine("{ \"act\":\"drawImg\", \"img\":\"mark1\", \"masu\":" + masu + " },");
+                        sb.AppendLine($"{{ \"act\":\"drawImg\", \"img\":\"mark1\", \"masu\":{masu} }},");
                     }
 
                     sb.AppendLine("{ \"act\":\"end_imgColor\", },");
@@ -87,7 +87,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
                     foreach (int masu in board.MarkMasu2)
                     {
-                        sb.AppendLine("{ \"act\":\"drawImg\", \"img\":\"mark1\", \"masu\":" + masu + " },");
+                        sb.AppendLine($"{{ \"act\":\"drawImg\", \"img\":\"mark1\", \"masu\":{masu} }},");
                     }
 
                     sb.AppendLine("{ \"act\":\"end_imgColor\", },");
@@ -104,7 +104,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
                     foreach (int masu in board.MarkMasu3)
                     {
-                        sb.AppendLine("{ \"act\":\"drawImg\", \"img\":\"mark1\", \"masu\":" + masu + " },");
+                        sb.AppendLine($"{{ \"act\":\"drawImg\", \"img\":\"mark1\", \"masu\":{masu} }},");
                     }
 
                     sb.AppendLine("{ \"act\":\"end_imgColor\", },");
@@ -121,7 +121,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
                     foreach (int masu in board.MarkMasu4)
                     {
-                        sb.AppendLine("{ \"act\":\"drawImg\", \"img\":\"mark1\", \"masu\":" + masu + " },");
+                        sb.AppendLine($"{{ \"act\":\"drawImg\", \"img\":\"mark1\", \"masu\":{masu} }},");
                     }
 
                     sb.AppendLine("{ \"act\":\"end_imgColor\", },");
@@ -172,7 +172,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
                 foreach (Gkl_KomaMasu km in board.KomaMasu1)
                 {
-                    sb.AppendLine("{ act:\"drawImg\", img:\"" + km.KomaImg + "\", masu:" + km.Masu + " },");
+                    sb.AppendLine($"{{ act:\"drawImg\", img:\"{km.KomaImg}\", masu:{km.Masu} }},");
                 }
 
                 sb.AppendLine("{ act:\"end_imgColor\", },");
@@ -189,7 +189,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
                 foreach (Gkl_KomaMasu km in board.KomaMasu2)
                 {
-                    sb.AppendLine("{ act:\"drawImg\", img:\"" + km.KomaImg + "\", masu:" + km.Masu + " },");
+                    sb.AppendLine($"{{ act:\"drawImg\", img:\"{km.KomaImg}\", masu:{km.Masu} }},");
                 }
 
                 sb.AppendLine("{ act:\"end_imgColor\", },");
@@ -206,7 +206,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
                 foreach (Gkl_KomaMasu km in board.KomaMasu3)
                 {
-                    sb.AppendLine("{ act:\"drawImg\", img:\"" + km.KomaImg + "\", masu:" + km.Masu + " },");
+                    sb.AppendLine($"{{ act:\"drawImg\", img:\"{km.KomaImg}\", masu:{km.Masu} }},");
                 }
 
                 sb.AppendLine("{ act:\"end_imgColor\", },");
@@ -223,7 +223,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
                 foreach (Gkl_KomaMasu km in board.KomaMasu4)
                 {
-                    sb.AppendLine("{ act:\"drawImg\", img:\"" + km.KomaImg + "\", masu:" + km.Masu + " },");
+                    sb.AppendLine($"{{ act:\"drawImg\", img:\"{km.KomaImg}\", masu:{km.Masu} }},");
                 }
 
                 sb.AppendLine("{ act:\"end_imgColor\", },");
@@ -236,7 +236,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
                 foreach (Gkl_Arrow a in board.Arrow)
                 {
-                    sb.AppendLine("{ act:\"drawArrow\", from:\"" + a.From + "\", to:" + a.To + " },");
+                    sb.AppendLine($"{{ act:\"drawArrow\", from:\"{a.From}\", to:{a.To} }},");
                 }
             }
 

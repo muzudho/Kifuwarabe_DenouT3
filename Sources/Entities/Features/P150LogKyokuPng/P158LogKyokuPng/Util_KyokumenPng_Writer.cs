@@ -1,7 +1,5 @@
 ﻿using System.Drawing;
 using System.IO;
-using System.Runtime.InteropServices;
-using System.Windows.Forms;
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
 {
@@ -29,7 +27,8 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             bool successful = true;
 
 
-            //System.Windows.Forms.MessageBox.Show(sfenstring + "\n" + outFile, "局面PNG書き出し");
+            //System.Windows.Forms.MessageBox.Show($@"{sfenstring}
+            //{outFile}", "局面PNG書き出し");
 
             //
             // SFEN → RO_SfenStartpos
@@ -105,7 +104,6 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                         out moji5,
                         out rest
                         );
-                    //Logger.Trace("moji1=[" + moji1 + "] moji2=[" + moji2 + "] moji3=[" + moji3 + "] moji4=[" + moji4 + "] moji5=[" + moji5 + "] rest=[" + rest + "]");
 
                     if (moji2 == "*")
                     {
@@ -166,15 +164,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 }
             }
 
-            try
-            {
-                bmp.Save(filepath);
-            }
-            catch (ExternalException ex)
-            {
-                MessageBox.Show(ex.GetType().Name + "：" + ex.Message + "\n filepath：" + filepath);
-                throw;
-            }
+            bmp.Save(filepath);
 
             return successful;
         }

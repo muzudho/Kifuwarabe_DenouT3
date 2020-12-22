@@ -98,7 +98,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 {
                     foreach (T2 value in entry1.Value)
                     {
-                        sb.AppendLine("key=[" + entry1.Key.ToString() + "] value=[" + value.ToString() + "]");
+                        sb.AppendLine($"key=[{ entry1.Key }] value=[{ value }]");
                     }
                 }
             }

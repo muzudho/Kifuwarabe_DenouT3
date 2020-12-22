@@ -1,23 +1,7 @@
 ﻿namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
 {
 #if DEBUG
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Grayscale.Kifuwarakaku.Entities.Logger;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using System.IO;
-using System.Windows.Forms;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
+    using System.Windows.Forms;
 #else
     using System.Windows.Forms;
 #endif

@@ -1,8 +1,11 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace Grayscale.Kifuwarakaku.Entities.Features
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
-
+#if DEBUG
+    using System.Runtime.CompilerServices;
+    using Grayscale.Kifuwarakaku.Entities.Logging;
+#else
+using System.Runtime.CompilerServices;
+#endif
 
     /// <summary>
     /// 変化なし
@@ -39,8 +42,8 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             //shogiGui_Base.Model_PnlTaikyoku.Kifu.AssertPside(shogiGui_Base.Model_PnlTaikyoku.Kifu.CurNode, "Execute_Step",logTag);
 
 #if DEBUG
-                logTag.Logger.WriteLineAddMemo("┏━━━━━┓(^o^)");
-                logTag.Logger.WriteLineAddMemo("わたしは　" + this.State.GetType().Name + "　の　Execute_Step　だぜ☆　：　呼出箇所＝" + memberName + "." + sourceFilePath + "." + sourceLineNumber);
+            Logger.Trace("┏━━━━━┓(^o^)");
+            Logger.Trace("わたしは　" + this.State.GetType().Name + "　の　Execute_Step　だぜ☆　：　呼出箇所＝" + memberName + "." + sourceFilePath + "." + sourceLineNumber);
 #endif
 
             KifuParserA_State nextState;
@@ -71,8 +74,8 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             )
         {
 #if DEBUG
-                logTag.Logger.WriteLineAddMemo("┏━━━━━━━━━━┓");
-                logTag.Logger.WriteLineAddMemo("わたしは　" + this.State.GetType().Name + "　の　Execute_All　だぜ☆　：　呼出箇所＝" + memberName + "." + sourceFilePath + "." + sourceLineNumber);
+            Logger.Trace("┏━━━━━━━━━━┓");
+            Logger.Trace($"わたしは　{this.State.GetType().Name}　の　Execute_All　だぜ☆　：　呼出箇所＝{memberName}.{sourceFilePath}.{sourceLineNumber}");
 #endif
 
             KifuParserA_State nextState = this.State;

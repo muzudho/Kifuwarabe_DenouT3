@@ -3,7 +3,6 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 #if DEBUG || LEARN
 using System.Text;
-using Grayscale.Kifuwarakaku.Entities.Features;
 #endif
 
 namespace Grayscale.Kifuwarakaku.UseCases.Features

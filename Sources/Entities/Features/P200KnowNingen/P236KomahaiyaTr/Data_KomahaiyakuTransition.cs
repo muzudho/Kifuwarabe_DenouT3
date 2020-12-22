@@ -1,17 +1,8 @@
 ﻿#if DEBUG
-using Grayscale.P003Log.L500Struct;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using System.Windows.Forms;
 using Nett;
 #else
 using System;
@@ -236,7 +227,7 @@ columnCount=[{columnCount}");
 
                     int masuHandle = (8 - columnCount) * 9 + (rowCount2 % 9);//0～80
 
-                    sbLog.AppendLine("(" + rowCount2 + "," + columnCount + ")[" + masuHandle + "]" + cellValue);
+                    sbLog.AppendLine($"({rowCount2},{columnCount})[{masuHandle}]{cellValue}");
 
                     table81[masuHandle] = Array_Komahaiyaku185.Items[cellValue];
 

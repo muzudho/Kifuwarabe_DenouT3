@@ -1,15 +1,20 @@
-﻿using System;
+﻿namespace Grayscale.Kifuwarakaku.UseCases.Features
+{
+#if DEBUG
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Windows.Forms;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Logging;
+#else
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 using Grayscale.Kifuwarakaku.Entities.Features;
-
-#if DEBUG
-//using Grayscale.P521_Atama_Unou_.L480UtilFvEdit;
 #endif
 
-namespace Grayscale.Kifuwarakaku.UseCases.Features
-{
     public abstract class Util_FeatureVectorInput
     {
 
@@ -261,10 +266,10 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
             string filepath2 = Path.Combine(Application.StartupPath, filepath1);
 
 #if DEBUG
-            logTag.Logger.WriteLineAddMemo("----------------------------------------");
-            logTag.Logger.WriteLineAddMemo("FV 総合点（読込前）2");
-            logTag.Logger.WriteLineAddMemo("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
-            logTag.Logger.WriteLineAddMemo("----------------------------------------");
+            Logger.Trace("----------------------------------------");
+            Logger.Trace("FV 総合点（読込前）2");
+            Logger.Trace("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
+            Logger.Trace("----------------------------------------");
 #endif
 
             if (!File.Exists(filepath2))
@@ -353,10 +358,10 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
             }
 
 #if DEBUG
-            logTag.Logger.WriteLineAddMemo("----------------------------------------");
-            logTag.Logger.WriteLineAddMemo("FV 総合点（読込後）4");
-            logTag.Logger.WriteLineAddMemo("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
-            logTag.Logger.WriteLineAddMemo("----------------------------------------");
+            Logger.Trace("----------------------------------------");
+            Logger.Trace("FV 総合点（読込後）4");
+            Logger.Trace("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
+            Logger.Trace("----------------------------------------");
 
             //MessageBox.Show(
             //    "rowVersion=[" + rowVersion + "]\n" +
@@ -382,10 +387,10 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
             string filepath2 = Path.Combine(Application.StartupPath, filepath1);
 
 #if DEBUG
-            logTag.Logger.WriteLineAddMemo("----------------------------------------");
-            logTag.Logger.WriteLineAddMemo("FV 総合点（読込前）6");
-            logTag.Logger.WriteLineAddMemo("    PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
-            logTag.Logger.WriteLineAddMemo("----------------------------------------");
+            Logger.Trace("----------------------------------------");
+            Logger.Trace("FV 総合点（読込前）6");
+            Logger.Trace("    PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
+            Logger.Trace("----------------------------------------");
 #endif
 
             if (!File.Exists(filepath2))
@@ -590,10 +595,10 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
             }
 
 #if DEBUG
-            logTag.Logger.WriteLineAddMemo("----------------------------------------");
-            logTag.Logger.WriteLineAddMemo("FV 総合点（読込後）5");
-            logTag.Logger.WriteLineAddMemo("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
-            logTag.Logger.WriteLineAddMemo("----------------------------------------");
+            Logger.Trace("----------------------------------------");
+            Logger.Trace("FV 総合点（読込後）5");
+            Logger.Trace("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
+            Logger.Trace("----------------------------------------");
 
             //MessageBox.Show(
             //    "rowVersion=[" + rowVersion + "]\n" +
@@ -635,10 +640,10 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
             string filepath2 = Path.Combine(Application.StartupPath, filepath1);
 
 #if DEBUG
-            logTag.Logger.WriteLineAddMemo("----------------------------------------");
-            logTag.Logger.WriteLineAddMemo("FV 総合点（読込前）3");
-            logTag.Logger.WriteLineAddMemo("    PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
-            logTag.Logger.WriteLineAddMemo("----------------------------------------");
+            Logger.Trace("----------------------------------------");
+            Logger.Trace("FV 総合点（読込前）3");
+            Logger.Trace("    PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
+            Logger.Trace("----------------------------------------");
 #endif
 
             if (!File.Exists(filepath2))
@@ -849,10 +854,10 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
             }
 
 #if DEBUG
-            logTag.Logger.WriteLineAddMemo("----------------------------------------");
-            logTag.Logger.WriteLineAddMemo("FV 総合点（読込後）1");
-            logTag.Logger.WriteLineAddMemo("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
-            logTag.Logger.WriteLineAddMemo("----------------------------------------");
+            Logger.Trace("----------------------------------------");
+            Logger.Trace("FV 総合点（読込後）1");
+            Logger.Trace("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
+            Logger.Trace("----------------------------------------");
 
             //MessageBox.Show(
             //    "rowVersion=[" + rowVersion + "]\n" +
@@ -885,10 +890,10 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
 
 
 #if DEBUG
-            logTag.Logger.WriteLineAddMemo("----------------------------------------");
-            logTag.Logger.WriteLineAddMemo("FV 総合点（読込前）4");
-            logTag.Logger.WriteLineAddMemo("    PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
-            logTag.Logger.WriteLineAddMemo("----------------------------------------");
+            Logger.Trace("----------------------------------------");
+            Logger.Trace("FV 総合点（読込前）4");
+            Logger.Trace("    PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
+            Logger.Trace("----------------------------------------");
 #endif
 
             if (!File.Exists(filepath2))
@@ -1111,10 +1116,10 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
             }
 
 #if DEBUG
-            logTag.Logger.WriteLineAddMemo("----------------------------------------");
-            logTag.Logger.WriteLineAddMemo("FV 総合点（読込後）2");
-            logTag.Logger.WriteLineAddMemo("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
-            logTag.Logger.WriteLineAddMemo("----------------------------------------");
+            Logger.Trace("----------------------------------------");
+            Logger.Trace("FV 総合点（読込後）2");
+            Logger.Trace("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
+            Logger.Trace("----------------------------------------");
 
             //MessageBox.Show(
             //    "rowVersion=[" + rowVersion + "]\n" 
@@ -1141,10 +1146,10 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
             string filepath2 = Path.Combine(Application.StartupPath, filepath1);
 
 #if DEBUG
-            logTag.Logger.WriteLineAddMemo("----------------------------------------");
-            logTag.Logger.WriteLineAddMemo("FV 総合点（読込前）5");
-            logTag.Logger.WriteLineAddMemo("    PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
-            logTag.Logger.WriteLineAddMemo("----------------------------------------");
+            Logger.Trace("----------------------------------------");
+            Logger.Trace("FV 総合点（読込前）5");
+            Logger.Trace("    PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
+            Logger.Trace("----------------------------------------");
 #endif
 
             if (!File.Exists(filepath2))
@@ -1353,10 +1358,10 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
             }
 
 #if DEBUG
-            logTag.Logger.WriteLineAddMemo("----------------------------------------");
-            logTag.Logger.WriteLineAddMemo("FV 総合点（読込後）3");
-            logTag.Logger.WriteLineAddMemo("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
-            logTag.Logger.WriteLineAddMemo("----------------------------------------");
+            Logger.Trace("----------------------------------------");
+            Logger.Trace("FV 総合点（読込後）3");
+            Logger.Trace("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
+            Logger.Trace("----------------------------------------");
 
             //MessageBox.Show(
             //    "rowVersion=[" + rowVersion + "]\n" 

@@ -19,14 +19,15 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             int komaCount = 0;
             result.Foreach_Masu201((int masuHandle, string masuString, ref bool toBreak) =>
             {
-                sb.Append("[" + masuString + "]");
+                sb.Append($"[{masuString}]");
                 if (masuString != "")
                 {
                     komaCount++;
                 }
             });
 
-            Debug.Assert(komaCount == 40, "将棋の駒の数が40個ではありませんでした。[" + komaCount + "] " + sb.ToString() + "\n hint=" + hint);
+            Debug.Assert(komaCount == 40, $@"将棋の駒の数が40個ではありませんでした。[{ komaCount }] { sb }
+hint={ hint}");
             //#endif
         }
 

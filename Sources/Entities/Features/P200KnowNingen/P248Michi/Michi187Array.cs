@@ -146,8 +146,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
             if (!File.Exists(filepath2))
             {
-                MessageBox.Show("ファイルがありません。\n" +
-                    "filepath2=[" + filepath2 + "]", "情報");
+                MessageBox.Show($"ファイルがありません。\nfilepath2=[{filepath2}]", "情報");
                 rows = null;
                 goto gt_EndMethod;
             }

@@ -70,7 +70,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     inputLine = inputLine.Substring("startpos".Length);
                 }
 
-                inputLine = "sfen lnsgkgsnl/1r5b1/ppppppppp/9/9/9/PPPPPPPPP/1B5R1/LNSGKGSNL w - 1 " + inputLine;
+                inputLine = $"sfen lnsgkgsnl/1r5b1/ppppppppp/9/9/9/PPPPPPPPP/1B5R1/LNSGKGSNL w - 1 { inputLine }";
             }
 
 
@@ -186,16 +186,16 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             //// 解析失敗時用
             //{
             //    StringBuilder sb = new StringBuilder();
-            //    sb.Append("解析失敗☆ inputLine=[" + inputLine + "]");
+            //    sb.Append($"解析失敗☆ inputLine=[{ inputLine }]");
 
             //    for (int i = 1; i < 28; i++)
             //    {
-            //        sb.Append("str" + i + "[" + stra[i] + "]");
+            //        sb.Append($"str{ i }[{ stra[i] }]");
             //    }
 
             //    Debug.Assert(result_Sfenstring != null, sb.ToString());
 
-            //    Util_SfenstringReader.Assert_Koma40(result_Sfenstring, "inputLine=[" + inputLine + "]");
+            //    Util_SfenstringReader.Assert_Koma40(result_Sfenstring, $"inputLine=[{ inputLine }]");
             //}
 
             return successful;
@@ -484,38 +484,20 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             );
 
             SfenPosition2Reference.Assert_Koma40(result,
-                " dan1=[" + dan1 + "]\n"
-                + " dan2=[" + dan2 + "]\n"
-                + " dan3=[" + dan3 + "]\n"
-                + " dan4=[" + dan4 + "]\n"
-                + " dan5=[" + dan5 + "]\n"
-                + " dan6=[" + dan6 + "]\n"
-                + " dan7=[" + dan7 + "]\n"
-                + " dan8=[" + dan8 + "]\n"
-                + " dan9=[" + dan9 + "]\n"
-
-                + " strPside=[" + pside_Str + "]\n"
-
-                + " K=[" + mK_Str + "]"
-                + " R=[" + mR_Str + "]"
-                + " B=[" + mB_Str + "]"
-                + " G=[" + mG_Str + "]"
-                + " S=[" + mS_Str + "]"
-                + " N=[" + mN_Str + "]"
-                + " L=[" + mL_Str + "]"
-                + " P=[" + mP_Str + "]\n"
-
-                + " k=[" + mk_Str + "]"
-                + " r=[" + mr_Str + "]"
-                + " b=[" + mb_Str + "]"
-                + " g=[" + mg_Str + "]"
-                + " s=[" + ms_Str + "]"
-                + " n=[" + mn_Str + "]"
-                + " l=[" + ml_Str + "]"
-                + " p=[" + mp_Str + "]\n"
-
-                + " temezumi_Str=[" + temezumi_Str + "]\n"
-                );
+                $@" dan1={ dan1 }]
+ dan2=[{dan2}]
+ dan3=[{dan3}]
+ dan4=[{dan4}]
+ dan5=[{dan5}]
+ dan6=[{dan6}]
+ dan7=[{dan7}]
+ dan8=[{dan8}]
+ dan9=[{dan9}]
+ strPside=[{ pside_Str }]
+ K=[{mK_Str}] R=[{mR_Str}] B=[{mB_Str}] G=[{mG_Str}] S=[{mS_Str}] N=[{mN_Str}] L=[{mL_Str}] P=[{ mP_Str}]
+ k=[{mk_Str}] r=[{mr_Str}] b=[{mb_Str}] g=[{mg_Str}] s=[{ms_Str}] n=[{mn_Str}] l=[{ml_Str}] p=[{ mp_Str}]
+ temezumi_Str=[{temezumi_Str}]
+ ");
 
             return result;
         }

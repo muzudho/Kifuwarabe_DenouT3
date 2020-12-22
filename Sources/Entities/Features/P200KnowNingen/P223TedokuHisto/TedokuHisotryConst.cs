@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 
 #if DEBUG
-using Grayscale.Kifuwarakaku.Entities.Features;
 using Nett;
 using System.IO;
 #endif

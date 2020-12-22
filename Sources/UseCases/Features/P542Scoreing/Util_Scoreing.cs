@@ -2,7 +2,6 @@
 using Grayscale.Kifuwarakaku.Entities.Features;
 
 #if DEBUG || LEARN
-using Grayscale.Kifuwarakaku.Entities.Features;
 #endif
 
 namespace Grayscale.Kifuwarakaku.UseCases.Features

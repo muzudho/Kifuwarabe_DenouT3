@@ -45,14 +45,14 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
             this.ShogiEngineProcessWrapper = new EngineProcessWrapperImpl();
 
 #if DEBUG
-            this.ShogiEngineProcessWrapper.SetDelegate_ShogiServer_ToEngine( (string line) =>
-            {
+            this.ShogiEngineProcessWrapper.SetDelegate_ShogiServer_ToEngine((string line) =>
+           {
                 //
                 // USIコマンドを将棋エンジンに送ったタイミングで、なにかすることがあれば、
                 // ここに書きます。
                 //
-                Logger.WriteLineC(logTag, line);
-            });
+                Logger.WriteLineC(line);
+           });
 #endif
         }
 

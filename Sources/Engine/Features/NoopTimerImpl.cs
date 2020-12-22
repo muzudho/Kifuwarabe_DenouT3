@@ -1,7 +1,6 @@
 ﻿using System.Diagnostics;
 using Grayscale.Kifuwarakaku.Entities.Logging;
 using Grayscale.Kifuwarakaku.UseCases;
-using Grayscale.Kifuwarakaku.UseCases.Features;
 
 namespace Grayscale.Kifuwarakaku.Engine.Features
 {
@@ -35,7 +34,7 @@ namespace Grayscale.Kifuwarakaku.Engine.Features
         public void _02_AtEmptyMessage(Playing playing, out bool isTimeoutShutdown)
         {
             isTimeoutShutdown = false;
-            //logTag.Logger.WriteLineAddMemo("メッセージは届いていませんでした。this.sw_forNoop.Elapsed.Seconds=[" + this.sw_forNoop.Elapsed.Seconds + "]");
+            // Logger.Trace($"メッセージは届いていませんでした。this.sw_forNoop.Elapsed.Seconds=[{ this.sw_forNoop.Elapsed.Seconds }]");
 
             if (playing.Option_enable_serverNoopable && 10 < this.sw_forNoop.Elapsed.Seconds)//0 < this.sw_forNoop.Elapsed.Se.Minutes
             {
@@ -48,7 +47,7 @@ namespace Grayscale.Kifuwarakaku.Engine.Features
 
                             // noop を投げて 1分過ぎていれば。
 #if DEBUG
-                            logTag.Logger.WriteLineAddMemo("計20秒ほど、サーバーからの応答がなかったぜ☆ (^-^)ﾉｼ");
+                            Logger.Trace("計20秒ほど、サーバーからの応答がなかったぜ☆ (^-^)ﾉｼ");
 #endif
 
                             // このプログラムを終了します。
@@ -59,7 +58,7 @@ namespace Grayscale.Kifuwarakaku.Engine.Features
                     case NoopPhase.None:
                         {
 #if DEBUG
-                            logTag.Logger.WriteLineAddMemo("noopを投げるぜ☆");
+                            Logger.Trace("noopを投げるぜ☆");
 #endif
                             // まだ noop を投げていないなら
                             Playing.Send("noop");// サーバーが生きていれば、"ok" と返してくるはず。（独自実装）
@@ -76,14 +75,14 @@ namespace Grayscale.Kifuwarakaku.Engine.Features
         /// </summary>
         public void _03_AtResponsed(string command)
         {
-            //System.Windows.Forms.MessageBox.Show("メッセージが届いています [" + line + "]");
+            //System.Windows.Forms.MessageBox.Show($"メッセージが届いています [{ line }]");
 
             // noop リセット処理。
             //if (this.Option_threw_noop)
             //{
             // noopを投げてなくても、毎回ストップウォッチはリスタートさせます。
             //#if DEBUG
-            Logger.WriteLineC("サーバーから応答[" + command + "]があったのでタイマーをリスタートさせるぜ☆");
+            Logger.Trace($"サーバーから応答[{ command }]があったのでタイマーをリスタートさせるぜ☆");
             //#endif
             this.noopPhase = NoopPhase.None;
             this.sw_forNoop.Restart();

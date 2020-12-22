@@ -1,5 +1,19 @@
 ﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
+#if DEBUG
+    using System;
+    using System.Collections.Generic;
+    using System.Drawing;
+    using System.IO;
+    using System.Text;
+    using System.Windows.Forms;
+    using Codeplex.Data;//DynamicJson
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Logging;
+    using Grayscale.Kifuwarakaku.UseCases.Features;
+    using Nett;
+    using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
+#else
     using System;
     using System.Collections.Generic;
     using System.Drawing;
@@ -11,6 +25,7 @@
     using Grayscale.Kifuwarakaku.UseCases.Features;
     using Nett;
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
+#endif
 
     /// <summary>
     /// 将棋盤ウィンドウ（Ｃ＃）に対応。
@@ -169,7 +184,7 @@
             //
             this.shape_PnlTaikyoku = new Shape_PnlTaikyokuImpl("#TaikyokuPanel", this);
 
-            //System.C onsole.WriteLine("つまんでいる駒を放します。(1)");
+            //Logger.Trace("つまんでいる駒を放します。(1)");
             this.SetFigTumandeiruKoma(-1);
 
             //----------
@@ -327,7 +342,7 @@
 
             {
 #if DEBUG
-                logTag.Logger.WriteLineAddMemo("(^o^)乱数のたね＝[" + KwRandom.Seed + "]");
+                Logger.Trace("(^o^)乱数のたね＝[" + KwRandom.Seed + "]");
 #endif
 
                 this.Data_Settei_Csv.Read_Add(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataSetteiCsv")), Encoding.UTF8);

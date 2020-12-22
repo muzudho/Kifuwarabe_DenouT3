@@ -1,15 +1,8 @@
 ﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
 #if DEBUG
-using Grayscale.Kifuwarakaku.Entities.Logger;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using System.Runtime.CompilerServices;
-using System.Windows.Forms;
+    using System.Runtime.CompilerServices;
+    using System.Windows.Forms;
 #else
     using System.Runtime.CompilerServices;
     using System.Windows.Forms;
@@ -27,13 +20,13 @@ using System.Windows.Forms;
 
         public void SetInputareaText(string value)
         {
-            //System.C onsole.WriteLine("☆セット：" + value);
+            //Logger.Trace("☆セット：" + value);
             this.txtInputarea.Text = value;
         }
 
         public void AppendInputareaText(string value, [CallerMemberName] string memberName = "")
         {
-            //System.C onsole.WriteLine("☆アペンド(" + memberName + ")：" + value);
+            //Logger.Trace("☆アペンド(" + memberName + ")：" + value);
             this.txtInputarea.Text += value;
         }
 

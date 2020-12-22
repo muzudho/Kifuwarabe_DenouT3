@@ -1,29 +1,11 @@
 ﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
 #if DEBUG
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using Grayscale.Kifuwarakaku.Entities.Logger;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Nett;
-using System.Diagnostics;
-using Grayscale.Kifuwarakaku.Entities.Features;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.IO;
+    using System.Text;
+    using Nett;
 #else
     using System.Collections.Generic;
     using System.IO;
@@ -72,84 +54,66 @@ using Grayscale.Kifuwarakaku.Entities.Features;
 #if DEBUG
             int logFileCounter = 0;
 
-            try
+            //----------------------------------------
+            // 既存の棋譜ツリー・ログを空に。
+            //----------------------------------------
             {
-                //----------------------------------------
-                // 既存の棋譜ツリー・ログを空に。
-                //----------------------------------------
+                string rootFolder = Path.Combine(Util_KifuTreeLogWriter.REPORT_ENVIRONMENT.OutFolder, ConvMoveStrSfen.KIFU_TREE_LOG_ROOT_FOLDER);
+                if (Directory.Exists(rootFolder))
                 {
-                    string rootFolder = Path.Combine(Util_KifuTreeLogWriter.REPORT_ENVIRONMENT.OutFolder, ConvMoveStrSfen.KIFU_TREE_LOG_ROOT_FOLDER);
-                    if (Directory.Exists(rootFolder))
+                    try
                     {
-                        try
-                        {
-                            Directory.Delete(rootFolder, true);
-                        }
-                        catch (IOException)
-                        {
-                            // ディレクトリーが空でなくて、ディレクトリーを削除できなかったときに
-                            // ここにくるが、
-                            // ディレクトリーの中は空っぽにできていたりする。
-                            //
-                            // とりあえず続行。
-                        }
+                        Directory.Delete(rootFolder, true);
+                    }
+                    catch (IOException)
+                    {
+                        // ディレクトリーが空でなくて、ディレクトリーを削除できなかったときに
+                        // ここにくるが、
+                        // ディレクトリーの中は空っぽにできていたりする。
+                        //
+                        // とりあえず続行。
                     }
                 }
-
-                //----------------------------------------
-                // カレントノードまでの符号を使って、フォルダーパスを作成。
-                //----------------------------------------
-                StringBuilder tree_folder = new StringBuilder();
-                kifu.ForeachHonpu(kifu.CurNode, (int temezumi2, KyokumenWrapper kWrap, Node<IMove, KyokumenWrapper> node, ref bool toBreak) =>
-                {
-                    tree_folder.Append(ConvMoveStrSfen.ToMoveStrSfenForFilename(node.Key) + "/");
-                });
-                //sb_folder.Append( Conv_MoveStr_Sfen.ToMoveStr_Sfen_ForFilename(kifu.CurNode.Key) + "/");
-
-                string moveText1 = ConvMoveStrSfen.ToMoveStrSfen(kifu.CurNode.Key);
-                KifuNode kifuNode1 = (KifuNode)kifu.CurNode;
-
-                // 評価明細のログ出力。
-                Util_KifuTreeLogWriter.AA_Write_ForeachLeafs_ForDebug(
-                    ref logFileCounter,
-                    moveText1,
-                    kifuNode1,
-                    kifu,
-                    tree_folder.ToString(),
-                    Util_KifuTreeLogWriter.REPORT_ENVIRONMENT,
-                    logTag
-                    );
             }
-            catch (Exception ex)
+
+            //----------------------------------------
+            // カレントノードまでの符号を使って、フォルダーパスを作成。
+            //----------------------------------------
+            StringBuilder tree_folder = new StringBuilder();
+            kifu.ForeachHonpu(kifu.CurNode, (int temezumi2, KyokumenWrapper kWrap, Node<IMove, KyokumenWrapper> node, ref bool toBreak) =>
             {
-                //>>>>> エラーが起こりました。
-                string message = ex.GetType().Name + " " + ex.Message + "：評価明細付きのログ出力をしていたときです。：";
-                Debug.Fail(message);
+                tree_folder.Append(ConvMoveStrSfen.ToMoveStrSfenForFilename(node.Key) + "/");
+            });
+            //sb_folder.Append( Conv_MoveStr_Sfen.ToMoveStr_Sfen_ForFilename(kifu.CurNode.Key) + "/");
 
-                // どうにもできないので  ログだけ取って、上に投げます。
-                logTag.Logger.WriteLineError(message);
-                throw;
-            }
+            string moveText1 = ConvMoveStrSfen.ToMoveStrSfen(kifu.CurNode.Key);
+            KifuNode kifuNode1 = (KifuNode)kifu.CurNode;
 
-            try
+            // 評価明細のログ出力。
+            Util_KifuTreeLogWriter.AA_Write_ForeachLeafs_ForDebug(
+                ref logFileCounter,
+                moveText1,
+                kifuNode1,
+                kifu,
+                tree_folder.ToString(),
+                Util_KifuTreeLogWriter.REPORT_ENVIRONMENT
+                );
+
+            if (0 < logF_kiki.boards.Count)//ﾛｸﾞが残っているなら
             {
-                if (0 < logF_kiki.boards.Count)//ﾛｸﾞが残っているなら
-                {
-                    bool enableLog = true;// false;
-                    //
-                    // ログの書き出し
-                    //
-                    Util_GraphicalLog.WriteHtml5(
-                        enableLog,
-                        "#評価ログ",
-                        "[" + Conv_KaisetuBoards.ToJsonStr(logF_kiki) + "]"
-                    );
+                bool enableLog = true;// false;
+                                      //
+                                      // ログの書き出し
+                                      //
+                Util_GraphicalLog.WriteHtml5(
+                    enableLog,
+                    "#評価ログ",
+                    "[" + Conv_KaisetuBoards.ToJsonStr(logF_kiki) + "]"
+                );
 
-                    // 書き出した分はクリアーします。
-                    logF_kiki.boards.Clear();
-                }
+                // 書き出した分はクリアーします。
+                logF_kiki.boards.Clear();
             }
-            catch (Exception ex) { logTag.Panic(ex, "局面評価明細を出力しようとしたときです。"); throw; }
 #endif
         }
 

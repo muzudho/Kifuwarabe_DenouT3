@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using System.Text;
 using System.Xml;
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
@@ -91,17 +90,14 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         [Conditional("DEBUG")]
         public void DebugWrite()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine("設定ファイル          : " + this.FileName);
-            sb.AppendLine("設定ファイルVer       : " + this.SetteiFileVer);
-            sb.AppendLine("将棋エンジン          : " + this.ShogiEngineName);
-            sb.AppendLine("将棋エンジン・ファイル: " + this.ShogiEngineFilePath);
-            sb.AppendLine();
-            sb.AppendLine();
-            sb.AppendLine();
-            sb.AppendLine();
+            Logging.Logger.Trace($@"設定ファイル          : { this.FileName}
+設定ファイルVer       : { this.SetteiFileVer}
+将棋エンジン          : { this.ShogiEngineName}
+将棋エンジン・ファイル: { this.ShogiEngineFilePath}
 
-            Logging.Logger.Trace(sb.ToString());
+
+
+");
         }
 
         public bool Exists()
@@ -171,7 +167,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             {
                 // エラー
                 successfule = false;
-                Util_Message.Show(ex.GetType().Name + "　" + ex.Message);
+                Util_Message.Show($"{ex}");
             }
 
             return successfule;

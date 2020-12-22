@@ -1,4 +1,5 @@
-﻿using Grayscale.Kifuwarakaku.UseCases.Features;
+﻿using Grayscale.Kifuwarakaku.Entities.Logging;
+using Grayscale.Kifuwarakaku.UseCases.Features;
 
 namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
 {
@@ -74,16 +75,14 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
                 {
                     longest_positive = false;
                 }
-#if DEBUG
-                logTag.Logger.WriteLineAddMemo("topology");
-                logTag.Logger.WriteLineAddMemo("   negative_length =" + negative_length);
-                logTag.Logger.WriteLineAddMemo("   positive_length =" + positive_length);
-                logTag.Logger.WriteLineAddMemo("   longest_positive=" + longest_positive);
-                logTag.Logger.WriteLineAddMemo("   negative_average=" + (negative_items == 0 ? 0 : negative_total / negative_items));
-                logTag.Logger.WriteLineAddMemo("   positive_average=" + (positive_items == 0 ? 0 : positive_total / positive_items));
-                logTag.Logger.WriteLineAddMemo("   notZero         =" + notZero);
-                logTag.Logger.WriteLineAddMemo("----------------------------------------");
-#endif
+                Logger.Trace("topology");
+                Logger.Trace("   negative_length =" + negative_length);
+                Logger.Trace("   positive_length =" + positive_length);
+                Logger.Trace("   longest_positive=" + longest_positive);
+                Logger.Trace("   negative_average=" + (negative_items == 0 ? 0 : negative_total / negative_items));
+                Logger.Trace("   positive_average=" + (positive_items == 0 ? 0 : positive_total / positive_items));
+                Logger.Trace("   notZero         =" + notZero);
+                Logger.Trace("----------------------------------------");
             }
 
 
@@ -149,15 +148,15 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
                 longest_positive = false;
             }
 #if DEBUG
-            logTag.Logger.WriteLineAddMemo("end");
-            logTag.Logger.WriteLineAddMemo("   negative_length =" + negative_length);
-            logTag.Logger.WriteLineAddMemo("   positive_length =" + positive_length);
-            logTag.Logger.WriteLineAddMemo("   longest_positive=" + longest_positive);
-            logTag.Logger.WriteLineAddMemo("   zoom            =" + zoom);
-            logTag.Logger.WriteLineAddMemo("   negative_average=" + (negative_items == 0 ? 0 : negative_total / negative_items));
-            logTag.Logger.WriteLineAddMemo("   positive_average=" + (positive_items == 0 ? 0 : positive_total / positive_items));
-            logTag.Logger.WriteLineAddMemo("   notZero         =" + notZero);
-            logTag.Logger.WriteLineAddMemo("----------------------------------------");
+            Logger.Trace("end");
+            Logger.Trace("   negative_length =" + negative_length);
+            Logger.Trace("   positive_length =" + positive_length);
+            Logger.Trace("   longest_positive=" + longest_positive);
+            Logger.Trace("   zoom            =" + zoom);
+            Logger.Trace("   negative_average=" + (negative_items == 0 ? 0 : negative_total / negative_items));
+            Logger.Trace("   positive_average=" + (positive_items == 0 ? 0 : positive_total / positive_items));
+            Logger.Trace("   notZero         =" + notZero);
+            Logger.Trace("----------------------------------------");
 #endif
         }
 

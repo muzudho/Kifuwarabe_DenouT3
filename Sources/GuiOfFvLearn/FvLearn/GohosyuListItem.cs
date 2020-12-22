@@ -1,8 +1,15 @@
-﻿using System;
-using System.Text;
-
-namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
+﻿namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
 {
+#if DEBUG
+    using System;
+    using System.Text;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+#else
+using System;
+using System.Text;
+using Grayscale.Kifuwarakaku.Entities.Features;
+#endif
+
     /// <summary>
     /// 合法手リストのアイテム。
     /// </summary>
@@ -89,7 +96,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
 #if DEBUG || LEARN
             sb.Append(
                 String.Format("{0,12:0.0000}",
-                this.komawariMeisai.UtiwakeValue+
+                this.komawariMeisai.UtiwakeValue +
                 this.PpMeisai.UtiwakeValue
                 ));
 #else

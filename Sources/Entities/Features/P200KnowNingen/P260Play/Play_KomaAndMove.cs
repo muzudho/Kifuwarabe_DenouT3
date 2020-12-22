@@ -72,11 +72,11 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
                 // a -overThere b するぜ☆
                 Util_GraphicalLog.WriteHtml5(enableLog, "Thought_KomaAndMove Minus_OverThereMasus1",
-                    "[\n" +
-                    "    [\n" +
-                    Util_FormatJson_LogGraphicEx.JsonElements_Masus(enableLog, srcMasus, "(1)引く前") +
-                    "    ],\n" +
-                    "],\n"
+                    $@"[
+[
+{Util_FormatJson_LogGraphicEx.JsonElements_Masus(enableLog, srcMasus, "(1)引く前")}    ],
+],
+"
                     );
                 SySet<SyElement> minusedMasus = srcMasus.Clone();
                 minusedMasus.MinusMe_Opened(b, Util_SyElement_BinaryOperator.Dlgt_Equals_MasuNumber);
@@ -86,13 +86,11 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             }
 
             Util_GraphicalLog.WriteHtml5(enableLog, "Thought_KomaAndMove Minus_OverThereMasus2",
-                "[\n" +
-                "    [\n" +
-                Util_FormatJson_LogGraphicEx.JsonKyokumens_MultiKomabetuMasus(enableLog, src_srcSky_forLog, a, "(1)a") +
-                Util_FormatJson_LogGraphicEx.JsonElements_Masus(enableLog, b, "(2)-overThere_b") +
-                Util_FormatJson_LogGraphicEx.JsonKyokumens_MultiKomabetuMasus(enableLog, src_srcSky_forLog, c, "(3)＝c") +
-                "    ],\n" +
-                "],\n"
+                $@"[
+    [
+{Util_FormatJson_LogGraphicEx.JsonKyokumens_MultiKomabetuMasus(enableLog, src_srcSky_forLog, a, "(1)a")}{Util_FormatJson_LogGraphicEx.JsonElements_Masus(enableLog, b, "(2)-overThere_b")}{Util_FormatJson_LogGraphicEx.JsonKyokumens_MultiKomabetuMasus(enableLog, src_srcSky_forLog, c, "(3)＝c")}    ],
+],
+"
                 );
 
             return c;

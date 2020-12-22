@@ -1,7 +1,12 @@
-﻿using System.Diagnostics;
-
-namespace Grayscale.Kifuwarakaku.UseCases.Features
+﻿namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
+#if DEBUG
+    using System.Diagnostics;
+    using Grayscale.Kifuwarakaku.Entities.Logging;
+#else
+using System.Diagnostics;
+#endif
+
     /// <summary>
     /// C# GUI のコンピューター対戦用。受信機能。
     /// </summary>
@@ -47,7 +52,7 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
             {
                 //>>>>>>>>>> メッセージを受け取りました。
 #if DEBUG
-                logTag.Logger.WriteLineS(line);
+                Logger.WriteLineS(line);
 #endif
 
                 if ("noop" == line)
@@ -121,7 +126,7 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
                         );
 
 #if DEBUG
-                    Logger.WriteLineAddMemo(logTag, "USI受信：bestmove input99=[" + ((Server)((EngineClient)this.Owner_EngineClient).Owner_Server).InputString99 + "]");
+                    Logger.Trace($"USI受信：bestmove input99=[{((Server)((EngineClient)this.Owner_EngineClient).Owner_Server).InputString99}]");
 #endif
                 }
                 else

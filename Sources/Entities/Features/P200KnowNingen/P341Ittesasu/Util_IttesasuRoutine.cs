@@ -1,11 +1,17 @@
-﻿using System;
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
+{
+#if DEBUG
+    using System;
+    using System.Diagnostics;
+    using System.Runtime.CompilerServices;
+    using Grayscale.Kifuwarakaku.Entities.Logging;
+    using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
+#else
+using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
-
-namespace Grayscale.Kifuwarakaku.Entities.Features
-{
-
+#endif
 
     public abstract class Util_IttesasuRoutine
     {
@@ -371,10 +377,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 //
                 out_food_koma = Util_Starlightable.AsKoma(susunda_Sky_orNull_before.StarlightIndexOf(out_figFoodKoma).Now);
 #if DEBUG
-                if (null != logTag.OnAppendLog)
-                {
-                    logTag.OnAppendLog("駒取った=" + out_food_koma.Komasyurui + Environment.NewLine);
-                }
+                Logger.Trace("駒取った=" + out_food_koma.Komasyurui + Environment.NewLine);
 #endif
                 //
                 // 取られる駒は、駒置き場の空きマスに移動させます。
@@ -470,7 +473,7 @@ dst.Pside={dstKoma.Pside}");
 
         gt_EndMethod:
 
-            //System.C onsole.WriteLine("ゲット駒台駒袋スペース＝" + akiMasu);
+            //Logger.Trace("ゲット駒台駒袋スペース＝" + akiMasu);
 
             return akiMasu;
         }

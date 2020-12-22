@@ -1,39 +1,14 @@
 ﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
 #if DEBUG
-using System;
-using System.IO;
-using System.Text;
-using System.Windows.Forms;
-    using Grayscale.Kifuwarakaku.Entities.Logger;
-using Grayscale.P003Log.L500Struct;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
-using Nett;
-using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
+    using System;
+    using System.IO;
+    using System.Text;
+    using System.Windows.Forms;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Logging;
+    using Nett;
+    using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 #else
     using System;
     using System.IO;
@@ -619,8 +594,8 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
                         form2.WriteLine_Syuturyoku("");
 
                         // ログ
-                        //logTag.Logger.WriteLineAddMemo( "");
-                        //logTag.Logger.WriteLineAddMemo( "");
+                        //Logger.Trace( "");
+                        //Logger.Trace( "");
                     }
                     break;
 
@@ -642,7 +617,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 #if DEBUG
                         // ログ
-                        logTag.Logger.WriteLineAddMemo(form2.GetOutputareaText());
+                        Logger.Trace(form2.GetOutputareaText());
 #endif
                     }
                     break;

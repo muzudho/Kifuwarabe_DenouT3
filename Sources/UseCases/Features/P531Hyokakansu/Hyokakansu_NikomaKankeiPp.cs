@@ -3,7 +3,6 @@
 
 #if DEBUG || LEARN
 using System.Text;
-using Grayscale.Kifuwarakaku.Entities.Features;
 #endif
 
 namespace Grayscale.Kifuwarakaku.UseCases.Features

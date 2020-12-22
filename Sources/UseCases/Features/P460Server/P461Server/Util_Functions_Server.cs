@@ -1,12 +1,19 @@
-﻿using System;
+﻿namespace Grayscale.Kifuwarakaku.UseCases.Features
+{
+#if DEBUG
+    using System;
+    using System.Diagnostics;
+    using System.Runtime.CompilerServices;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Logging;
+    using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
+#else
+using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
-
-namespace Grayscale.Kifuwarakaku.UseCases.Features
-{
-
+#endif
 
     public class Util_Functions_Server
     {
@@ -80,8 +87,8 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
                     // 最初はここ
 
 #if DEBUG
-                    logTag.Logger.WriteLineAddMemo("(^o^)... ...");
-                    logTag.Logger.WriteLineAddMemo("ｻｲｼｮﾊｺｺ☆　：　" + memberName + "." + sourceFilePath + "." + sourceLineNumber);
+                    Logger.Trace("(^o^)... ...");
+                    Logger.Trace("ｻｲｼｮﾊｺｺ☆　：　" + memberName + "." + sourceFilePath + "." + sourceLineNumber);
 #endif
                     inputLine = kifuParserA_Impl.Execute_Step(
                         ref result,
@@ -111,7 +118,7 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
                     {
 #if DEBUG
                         string message = "(^o^)ﾂｷﾞﾊ　ﾋﾗﾃ　ﾏﾀﾊ　ｼﾃｲｷｮｸﾒﾝ　ｦ　ｼｮﾘｼﾀｲ☆ inputLine=[" + inputLine + "]";
-                        logTag.Logger.WriteLineAddMemo(message);
+                        Logger.Trace(message);
 #endif
 
                         inputLine = kifuParserA_Impl.Execute_Step(
@@ -131,7 +138,7 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
 
                     {
 #if DEBUG
-                        logTag.Logger.WriteLineAddMemo("(^o^)ﾂｷﾞﾊ　ﾑｰﾌﾞｽ　ｦ　ｼｮﾘｼﾀｲ☆");
+                        Logger.Trace("(^o^)ﾂｷﾞﾊ　ﾑｰﾌﾞｽ　ｦ　ｼｮﾘｼﾀｲ☆");
 #endif
 
                         inputLine = kifuParserA_Impl.Execute_Step(
@@ -160,7 +167,7 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
                 if (kifuParserA_Impl.State is KifuParserA_StateA2_SfenMoves)
                 {
 #if DEBUG
-                    Logger.WriteLineAddMemo(logTag, "ﾂｷﾞﾊ　ｲｯﾃ　ｼｮﾘｼﾀｲ☆");
+                    Logger.Trace("ﾂｷﾞﾊ　ｲｯﾃ　ｼｮﾘｼﾀｲ☆");
 #endif
 
                     inputLine = kifuParserA_Impl.Execute_Step(

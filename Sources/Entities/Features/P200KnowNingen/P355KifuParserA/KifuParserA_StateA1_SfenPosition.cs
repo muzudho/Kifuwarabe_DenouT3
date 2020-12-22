@@ -43,7 +43,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 #if DEBUG
-                    logTag.Logger.WriteLineAddMemo("（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　平手のようなんだぜ☆");
+                Logger.Trace("（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　平手のようなんだぜ☆");
 #endif
 
                 genjo.InputLine = genjo.InputLine.Substring("startpos".Length);

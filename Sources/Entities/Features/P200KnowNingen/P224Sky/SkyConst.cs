@@ -161,7 +161,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             //
             Komasyurui14 tedokuKeisan_komasyurui, int tedokukeisan_index, SyElement tedokukeisan_sasitamasu)
         {
-            Debug.Assert(src.Count == 40, "本将棋とみなしてテスト中。sky.Starlights.Count=[" + src.Count + "]");//将棋の駒の数
+            Debug.Assert(src.Count == 40, $"本将棋とみなしてテスト中。sky.Starlights.Count=[{src.Count}]");//将棋の駒の数
 
             if (tedokuKeisan_komasyurui == Komasyurui14.H00_Null___)
             {
@@ -232,7 +232,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     else if (this.starlights.Count + 1 <= (int)finger1[i])
                     {
                         // エラー
-                        Debug.Assert((int)finger1[i] < this.starlights.Count, "要素の個数より2大きいインデックスを指定しました。 インデックス[" + (int)finger1[i] + "]　要素の個数[" + this.starlights.Count + "]");
+                        Debug.Assert((int)finger1[i] < this.starlights.Count, $"要素の個数より2大きいインデックスを指定しました。 インデックス[{(int)finger1[i]}]　要素の個数[{this.starlights.Count}]");
 
                         throw new Exception($"{this.GetType().Name}#SetStarPos：　リストの要素より2多いインデックスを指定されましたので、追加しません。starIndex=[{finger1[i]}] / this.stars.Count=[{this.starlights.Count}]");
                     }

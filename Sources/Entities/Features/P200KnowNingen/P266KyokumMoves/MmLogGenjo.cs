@@ -1,11 +1,4 @@
 ﻿#if DEBUG
-    using Grayscale.Kifuwarakaku.Entities.Logger;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
@@ -25,8 +18,6 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         int Temezumi_yomiCur { get; }
 
         IMove Move { get; }
-
-        IErrorController ErrH { get; }
 
         void Log1(Playerside pside_genTeban3);
 

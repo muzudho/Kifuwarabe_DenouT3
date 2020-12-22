@@ -166,7 +166,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             kifu282.CurNode.Add_ChildNode(Util_Sky278.TranslateMove_StarlightToText(out_swapedNode.Key), out_swapedNode);
             out_swapedNode.ParentNode = kifu282.CurNode;
 
-            logTag.Logger.WriteLineAddMemo("リンクトリストの、最終ノードは差し替えられた hint=[" + hint + "] item=[" + Util_Sky278.TranslateMove_StarlightToText(swapedMove) + "]");
+            Logger.Trace("リンクトリストの、最終ノードは差し替えられた hint=[" + hint + "] item=[" + Util_Sky278.TranslateMove_StarlightToText(swapedMove) + "]");
         // memberName=[" + memberName + "] sourceFilePath=[" + sourceFilePath + "] sourceLineNumber=[" + sourceLineNumber + "]
 
         gt_EndMethod:

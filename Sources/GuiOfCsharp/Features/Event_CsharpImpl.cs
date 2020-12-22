@@ -526,7 +526,7 @@
                 //------------------------------
                 if (!mainGui.Shape_PnlTaikyoku.Requested_NaruDialogToShow)
                 {
-                    //System.C onsole.WriteLine("マウス左ボタンを押したのでチェンジターンします。");
+                    //Logger.Trace("マウス左ボタンを押したのでチェンジターンします。");
                     mainGui.ChangedTurn();
                 }
             }
@@ -534,7 +534,7 @@
 
             mainGui.RepaintRequest.SetFlag_RecalculateRequested();// 駒の再描画要求
 
-            //System.C onsole.WriteLine("つまんでいる駒を放します。(6)");
+            //Logger.Trace("つまんでいる駒を放します。(6)");
             mainGui.SetFigTumandeiruKoma(-1);//駒を放した扱いです。
 
             mainGui.Shape_PnlTaikyoku.SetNaruMasu(null);

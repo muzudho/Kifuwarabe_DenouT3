@@ -58,7 +58,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvWriter.Features
 
 #if DEBUG
             MessageBox.Show("FVファイルを読み込んで、書き出しました。\n" +
-                "readFilepath=["+filepathR+"]"+
+                "readFilepath=[" + filepathR + "]" +
                 "writeFilepath=[" + filepathW + "]");
 #endif
         }

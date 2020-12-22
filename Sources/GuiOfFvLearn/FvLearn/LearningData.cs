@@ -1,14 +1,8 @@
 ﻿namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
 {
 #if DEBUG
-using Grayscale.Kifuwarakaku.Entities.Logger;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.UseCases.Features;
 #else
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.UseCases.Features;

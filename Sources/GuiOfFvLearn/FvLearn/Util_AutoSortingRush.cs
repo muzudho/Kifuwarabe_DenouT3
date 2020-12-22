@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 
 namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
 {
@@ -57,7 +58,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
                     {
                         // 1位なら終了
 #if DEBUG
-                        logTag.Logger.WriteLineAddMemo("items.Count=[" + uc_Main.LstGohosyu.Items.Count + "] sfenMoveStr=[" + sfenMoveStr + "] gohosyuItem.Sfen=[" + gohosyuItem.Sfen + "]");
+                        Logger.Trace("items.Count=[" + uc_Main.LstGohosyu.Items.Count + "] sfenMoveStr=[" + sfenMoveStr + "] gohosyuItem.Sfen=[" + gohosyuItem.Sfen + "]");
 #endif
                         break;
                     }

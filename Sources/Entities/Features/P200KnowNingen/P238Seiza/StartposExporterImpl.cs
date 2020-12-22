@@ -189,7 +189,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
         public StartposExporterImpl(SkyConst src_Sky)
         {
-            Debug.Assert(src_Sky.Count == 40, "sourceSky.Starlights.Count=[" + src_Sky.Count + "]");//将棋の駒の数
+            Debug.Assert(src_Sky.Count == 40, $"sourceSky.Starlights.Count=[{src_Sky.Count}]");//将棋の駒の数
 
             this.BanObject201 = new Dictionary<int, RO_Star>();//Masu
 
@@ -211,7 +211,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 IMoveSource light = src_Sky.StarlightIndexOf(finger).Now;
                 RO_Star komaKs = Util_Starlightable.AsKoma(light);
 
-                Debug.Assert(Conv_MasuHandle.OnAll(Conv_SyElement.ToMasuNumber(komaKs.Masu)), "(int)koma.Masu=[" + Conv_SyElement.ToMasuNumber(komaKs.Masu) + "]");//升番号
+                Debug.Assert(Conv_MasuHandle.OnAll(Conv_SyElement.ToMasuNumber(komaKs.Masu)), $"(int)koma.Masu=[{Conv_SyElement.ToMasuNumber(komaKs.Masu)}]");//升番号
 
                 this.AddKoma(komaKs.Masu,
                     new RO_Star(komaKs)
@@ -224,7 +224,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         private void AddKoma(SyElement masu, RO_Star koma)// Ks14 komaSyurui
         {
 
-            Debug.Assert(!this.BanObject201.ContainsKey(Conv_SyElement.ToMasuNumber(masu)), "既に駒がある枡に、駒を置こうとしています。[" + Conv_SyElement.ToMasuNumber(masu) + "]");
+            Debug.Assert(!this.BanObject201.ContainsKey(Conv_SyElement.ToMasuNumber(masu)), $"既に駒がある枡に、駒を置こうとしています。[{Conv_SyElement.ToMasuNumber(masu)}]");
 
 
             this.BanObject201.Add(Conv_SyElement.ToMasuNumber(masu), koma);

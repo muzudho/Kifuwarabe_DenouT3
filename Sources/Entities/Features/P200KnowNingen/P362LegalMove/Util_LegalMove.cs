@@ -50,7 +50,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     src_Sky.KaisiPside
 
 #if DEBUG
-                    logF_kiki,
+                    ,logF_kiki
 #endif
                     );
             }
@@ -113,7 +113,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             Playerside pside_genTeban
 
 #if DEBUG
-            KaisetuBoards logF_kiki,
+            ,KaisetuBoards logF_kiki
 #endif
             )
         {
@@ -287,7 +287,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     {
                         logBrd_kiki.NounaiSeme = Gkl_NounaiSeme.Sente;
                     }
-                    else if(Playerside.P2 == tebanSeme)
+                    else if (Playerside.P2 == tebanSeme)
                     {
                         logBrd_kiki.NounaiSeme = Gkl_NounaiSeme.Gote;
                     }
@@ -320,21 +320,21 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     RO_Star koma = Util_Starlightable.AsKoma(src_Sky.StarlightIndexOf(finger).Now);
 
 
-                        Gkl_KomaMasu km = new Gkl_KomaMasu(
-                            Util_Converter_LogGraphicEx.PsideKs14_ToString(tebanSeme, Util_Komahaiyaku184.Syurui(koma.Haiyaku), ""),
-                            Conv_SyElement.ToMasuNumber(koma.Masu)
-                            );
-                        boardLog_clone.KomaMasu1.Add(km);
+                    Gkl_KomaMasu km = new Gkl_KomaMasu(
+                        Util_Converter_LogGraphicEx.PsideKs14_ToString(tebanSeme, Util_Komahaiyaku184.Syurui(koma.Haiyaku), ""),
+                        Conv_SyElement.ToMasuNumber(koma.Masu)
+                        );
+                    boardLog_clone.KomaMasu1.Add(km);
                 }
                 foreach (Finger finger in fingers_kurau_BANJO.Items)
                 {
                     RO_Star koma = Util_Starlightable.AsKoma(src_Sky.StarlightIndexOf(finger).Now);
 
 
-                        logBrd_kiki.KomaMasu2.Add(new Gkl_KomaMasu(
-                            Util_Converter_LogGraphicEx.PsideKs14_ToString(tebanKurau, Util_Komahaiyaku184.Syurui(koma.Haiyaku), ""),
-                            Conv_SyElement.ToMasuNumber(koma.Masu)
-                            ));
+                    logBrd_kiki.KomaMasu2.Add(new Gkl_KomaMasu(
+                        Util_Converter_LogGraphicEx.PsideKs14_ToString(tebanKurau, Util_Komahaiyaku184.Syurui(koma.Haiyaku), ""),
+                        Conv_SyElement.ToMasuNumber(koma.Masu)
+                        ));
                 }
                 logBrd_kiki = boardLog_clone;
 #endif

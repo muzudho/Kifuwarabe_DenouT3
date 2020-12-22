@@ -21,42 +21,42 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             {
                 switch (ks14)
                 {
-                    case Komasyurui14.H01_Fu_____: komaImg = "fu" + extentionWithDot; break;
-                    case Komasyurui14.H02_Kyo____: komaImg = "kyo" + extentionWithDot; break;
-                    case Komasyurui14.H03_Kei____: komaImg = "kei" + extentionWithDot; break;
-                    case Komasyurui14.H04_Gin____: komaImg = "gin" + extentionWithDot; break;
-                    case Komasyurui14.H05_Kin____: komaImg = "kin" + extentionWithDot; break;
-                    case Komasyurui14.H06_Gyoku__: komaImg = "oh" + extentionWithDot; break;
-                    case Komasyurui14.H07_Hisya__: komaImg = "hi" + extentionWithDot; break;
-                    case Komasyurui14.H08_Kaku___: komaImg = "kaku" + extentionWithDot; break;
-                    case Komasyurui14.H09_Ryu____: komaImg = "ryu" + extentionWithDot; break;
-                    case Komasyurui14.H10_Uma____: komaImg = "uma" + extentionWithDot; break;
-                    case Komasyurui14.H11_Tokin__: komaImg = "tokin" + extentionWithDot; break;
-                    case Komasyurui14.H12_NariKyo: komaImg = "narikyo" + extentionWithDot; break;
-                    case Komasyurui14.H13_NariKei: komaImg = "narikei" + extentionWithDot; break;
-                    case Komasyurui14.H14_NariGin: komaImg = "narigin" + extentionWithDot; break;
-                    default: komaImg = "batu" + extentionWithDot; break;
+                    case Komasyurui14.H01_Fu_____: komaImg = $"fu{extentionWithDot}"; break;
+                    case Komasyurui14.H02_Kyo____: komaImg = $"kyo{extentionWithDot}"; break;
+                    case Komasyurui14.H03_Kei____: komaImg = $"kei{extentionWithDot}"; break;
+                    case Komasyurui14.H04_Gin____: komaImg = $"gin{extentionWithDot}"; break;
+                    case Komasyurui14.H05_Kin____: komaImg = $"kin{extentionWithDot}"; break;
+                    case Komasyurui14.H06_Gyoku__: komaImg = $"oh{extentionWithDot}"; break;
+                    case Komasyurui14.H07_Hisya__: komaImg = $"hi{extentionWithDot}"; break;
+                    case Komasyurui14.H08_Kaku___: komaImg = $"kaku{extentionWithDot}"; break;
+                    case Komasyurui14.H09_Ryu____: komaImg = $"ryu{extentionWithDot}"; break;
+                    case Komasyurui14.H10_Uma____: komaImg = $"uma{extentionWithDot}"; break;
+                    case Komasyurui14.H11_Tokin__: komaImg = $"tokin{extentionWithDot}"; break;
+                    case Komasyurui14.H12_NariKyo: komaImg = $"narikyo{extentionWithDot}"; break;
+                    case Komasyurui14.H13_NariKei: komaImg = $"narikei{extentionWithDot}"; break;
+                    case Komasyurui14.H14_NariGin: komaImg = $"narigin{extentionWithDot}"; break;
+                    default: komaImg = $"batu{extentionWithDot}"; break;
                 }
             }
             else
             {
                 switch (ks14)
                 {
-                    case Komasyurui14.H01_Fu_____: komaImg = "fuV" + extentionWithDot; break;
-                    case Komasyurui14.H02_Kyo____: komaImg = "kyoV" + extentionWithDot; break;
-                    case Komasyurui14.H03_Kei____: komaImg = "keiV" + extentionWithDot; break;
-                    case Komasyurui14.H04_Gin____: komaImg = "ginV" + extentionWithDot; break;
-                    case Komasyurui14.H05_Kin____: komaImg = "kinV" + extentionWithDot; break;
-                    case Komasyurui14.H06_Gyoku__: komaImg = "ohV" + extentionWithDot; break;
-                    case Komasyurui14.H07_Hisya__: komaImg = "hiV" + extentionWithDot; break;
-                    case Komasyurui14.H08_Kaku___: komaImg = "kakuV" + extentionWithDot; break;
-                    case Komasyurui14.H09_Ryu____: komaImg = "ryuV" + extentionWithDot; break;
-                    case Komasyurui14.H10_Uma____: komaImg = "umaV" + extentionWithDot; break;
-                    case Komasyurui14.H11_Tokin__: komaImg = "tokinV" + extentionWithDot; break;
-                    case Komasyurui14.H12_NariKyo: komaImg = "narikyoV" + extentionWithDot; break;
-                    case Komasyurui14.H13_NariKei: komaImg = "narikeiV" + extentionWithDot; break;
-                    case Komasyurui14.H14_NariGin: komaImg = "nariginV" + extentionWithDot; break;
-                    default: komaImg = "batu" + extentionWithDot; break;
+                    case Komasyurui14.H01_Fu_____: komaImg = $"fuV{extentionWithDot}"; break;
+                    case Komasyurui14.H02_Kyo____: komaImg = $"kyoV{extentionWithDot}"; break;
+                    case Komasyurui14.H03_Kei____: komaImg = $"keiV{extentionWithDot}"; break;
+                    case Komasyurui14.H04_Gin____: komaImg = $"ginV{extentionWithDot}"; break;
+                    case Komasyurui14.H05_Kin____: komaImg = $"kinV{extentionWithDot}"; break;
+                    case Komasyurui14.H06_Gyoku__: komaImg = $"ohV{extentionWithDot}"; break;
+                    case Komasyurui14.H07_Hisya__: komaImg = $"hiV{extentionWithDot}"; break;
+                    case Komasyurui14.H08_Kaku___: komaImg = $"kakuV{extentionWithDot}"; break;
+                    case Komasyurui14.H09_Ryu____: komaImg = $"ryuV{extentionWithDot}"; break;
+                    case Komasyurui14.H10_Uma____: komaImg = $"umaV{extentionWithDot}"; break;
+                    case Komasyurui14.H11_Tokin__: komaImg = $"tokinV{extentionWithDot}"; break;
+                    case Komasyurui14.H12_NariKyo: komaImg = $"narikyoV{extentionWithDot}"; break;
+                    case Komasyurui14.H13_NariKei: komaImg = $"narikeiV{extentionWithDot}"; break;
+                    case Komasyurui14.H14_NariGin: komaImg = $"nariginV{extentionWithDot}"; break;
+                    default: komaImg = $"batu{extentionWithDot}"; break;
                 }
             }
 

@@ -3,16 +3,10 @@ using System.Drawing;
 namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
 #if DEBUG
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
-    using Grayscale.Kifuwarakaku.Entities.Features;
+    using System.Windows.Forms;
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.UseCases.Features;
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
-    using System.Windows.Forms;
 #else
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.UseCases.Features;
@@ -486,7 +480,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
                                                     if (Okiba.ShogiBan == Conv_SyElement.ToOkiba(koma.Masu))
                                                     {
                                                         //>>>>> 将棋盤の上に置いてあった駒から、指を放しました
-                                                        //System.C onsole.WriteLine("つまんでいる駒を放します。(4)");
+                                                        //Logger.Trace("つまんでいる駒を放します。(4)");
                                                         mainGui.SetFigTumandeiruKoma(-1);
 
 
@@ -558,7 +552,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
                                                         //------------------------------
                                                         if (!mainGui.Shape_PnlTaikyoku.Requested_NaruDialogToShow)
                                                         {
-                                                            //System.C onsole.WriteLine("マウス左ボタンを放したのでチェンジターンします。");
+                                                            //Logger.Trace("マウス左ボタンを放したのでチェンジターンします。");
                                                             mainGui.ChangedTurn();//マウス左ボタンを放したのでチェンジターンします。
                                                         }
 
@@ -585,7 +579,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
                                         #region マウス左ボタンダウン
                                         SceneName nextPhaseB = SceneName.Ignore;
 
-                                        //System.C onsole.WriteLine("B2マウスダウン");
+                                        //Logger.Trace("B2マウスダウン");
 
                                         //----------
                                         // つまんでいる駒
@@ -593,7 +587,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
                                         Shape_BtnKoma btnTumandeiruKoma = mainGui.Shape_PnlTaikyoku.Btn_TumandeiruKoma(mainGui);
                                         if (null == btnTumandeiruKoma)
                                         {
-                                            //System.C onsole.WriteLine("つまんでいる駒なし");
+                                            //Logger.Trace("つまんでいる駒なし");
                                             goto gt_nextBlock;
                                         }
 
@@ -647,7 +641,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
                                                         {
                                                             //>>>>> そこに駒が置いてあった。
 #if DEBUG
-                                    MessageBox.Show("駒が置いてあった","デバッグ中");
+                                                            MessageBox.Show("駒が置いてあった", "デバッグ中");
 #endif
                                                             match = true;
                                                             toBreak = true;
@@ -741,7 +735,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
                                         else if ((Okiba.Sente_Komadai | Okiba.Gote_Komadai).HasFlag(
                                             Conv_SyElement.ToOkiba(btnSasitaiMasu.Zahyo)))//>>>>> 駒置き：升目
                                         {
-                                            //System.C onsole.WriteLine("駒台上");
+                                            //Logger.Trace("駒台上");
 
                                             RO_Star koma = Util_Starlightable.AsKoma(mainGui.Model_Manual.GuiSkyConst.StarlightIndexOf(btnTumandeiruKoma.Koma).Now);
 
@@ -815,7 +809,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
                                     {
                                         #region マウス右ボタンダウン
                                         // 各駒の、移動済フラグを解除
-                                        //System.C onsole.WriteLine("つまんでいる駒を放します。(5)");
+                                        //Logger.Trace("つまんでいる駒を放します。(5)");
                                         mainGui.SetFigTumandeiruKoma(-1);
                                         mainGui.Shape_PnlTaikyoku.SelectFirstTouch = false;
 

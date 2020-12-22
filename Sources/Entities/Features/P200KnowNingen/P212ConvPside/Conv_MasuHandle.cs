@@ -64,7 +64,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
         public static bool OnKomabukuro(int masuHandle)
         {
-            Debug.Assert(Masu_Honshogi.nfukuro01 == 161, "fukuro01=[" + Masu_Honshogi.nfukuro01.ToString() + "]");
+            Debug.Assert(Masu_Honshogi.nfukuro01 == 161, $"fukuro01=[{Masu_Honshogi.nfukuro01.ToString()}]");
 
             return Masu_Honshogi.nfukuro01 <= masuHandle && masuHandle <= Masu_Honshogi.nfukuro40;
         }

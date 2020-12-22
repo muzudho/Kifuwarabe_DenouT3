@@ -71,7 +71,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             }
             else
             {
-                result = "Unknown kifu property [" + key + "]";
+                result = $"Unknown kifu property [{key}]";
             }
 
             return result;

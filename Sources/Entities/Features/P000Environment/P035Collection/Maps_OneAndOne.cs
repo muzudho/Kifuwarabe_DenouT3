@@ -185,7 +185,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
             this.Foreach_Entry((T1 key, T2 value, ref bool toBreak) =>
             {
-                sb.AppendLine("key=[" + key.ToString() + "] value=[" + value.ToString() + "]");
+                sb.AppendLine($"key=[{ key }] value=[{ value }]");
             });
 
             return sb.ToString();

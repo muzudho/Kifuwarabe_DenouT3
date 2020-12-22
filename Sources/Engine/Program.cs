@@ -1,5 +1,6 @@
 ﻿namespace Grayscale.Kifuwarakaku.Engine
 {
+#if DEBUG
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
@@ -13,6 +14,20 @@
     using Grayscale.Kifuwarakaku.UseCases.Features;
     using Nett;
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
+#else
+    using System;
+    using System.Diagnostics;
+    using System.IO;
+    using System.Text;
+    using System.Text.RegularExpressions;
+    using Grayscale.Kifuwarakaku.Engine.Features;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Logging;
+    using Grayscale.Kifuwarakaku.UseCases;
+    using Grayscale.Kifuwarakaku.UseCases.Features;
+    using Nett;
+    using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
+#endif
 
     /// <summary>
     /// プログラムのエントリー・ポイントです。
@@ -72,18 +87,18 @@
                 Array_ForcePromotion.Load(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("InputForcePromotion")), Encoding.UTF8);
 
 #if DEBUG
-                    {
-                        File.WriteAllText(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("OutputForcePromotion")), Array_ForcePromotion.LogHtml());
-                    }
+                {
+                    File.WriteAllText(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("OutputForcePromotion")), Array_ForcePromotion.LogHtml());
+                }
 #endif
 
                 // データの読取「配役転換表」
                 Data_KomahaiyakuTransition.Load(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("InputSyuruiToHaiyaku")), Encoding.UTF8);
 
 #if DEBUG
-                    {
-                        File.WriteAllText(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("OutputSyuruiToHaiyaku")), Data_KomahaiyakuTransition.Format_LogHtml());
-                    }
+                {
+                    File.WriteAllText(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("OutputSyuruiToHaiyaku")), Data_KomahaiyakuTransition.Format_LogHtml());
+                }
 #endif
             }
 
@@ -112,10 +127,10 @@
                 Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
                 versionStr = String.Format("{0}.{1}.{2}", version.Major, version.Minor.ToString("00"), version.Build);
 
-                //seihinName += " " + versionStr;
+                //seihinName += $" {versionStr}";
 #if DEBUG
-                    var engineName = toml.Get<TomlTable>("Engine").Get<string>("Name");
-                    Logger.EngineDefault.Logger.WriteLineAddMemo($"v(^▽^)v ｲｪｰｲ☆ ... {engineName} {versionStr}");
+                var engineName = toml.Get<TomlTable>("Engine").Get<string>("Name");
+                Logger.Trace($"v(^▽^)v ｲｪｰｲ☆ ... {engineName} {versionStr}");
 #endif
             }
 
@@ -355,7 +370,7 @@
                         if (line.StartsWith("position"))
                         {
 #if DEBUG
-                this.Log1("（＾△＾）positionきたｺﾚ！");
+                            Logger.Trace("（＾△＾）positionきたｺﾚ！");
 #endif
                             // 入力行を解析します。
                             KifuParserA_Result result = new KifuParserA_ResultImpl();
@@ -379,7 +394,7 @@
 
 
 #if DEBUG
-                this.Log2_Png_Tyokkin(line, (KifuNode)result.Out_newNode_OrNull);
+                            Playing.Log2_Png_Tyokkin(line, (KifuNode)result.Out_newNode_OrNull);
 #endif
 
                             //------------------------------------------------------------
@@ -473,7 +488,9 @@
                                 break;
                         }
 
+#pragma warning disable CS0164 // このラベルは参照されていません
                     gt_NextLine_loop2:
+#pragma warning restore CS0164 // このラベルは参照されていません
                         ;
                     }
 
@@ -524,34 +541,21 @@
                     //      └──────┴──────┘
                     //
 #if DEBUG
-            Logger.EngineDefault.Logger.WriteLineAddMemo("KifuParserA_Impl.LOGGING_BY_ENGINE, ┏━確認━━━━setoptionDictionary ━┓");
-            foreach (KeyValuePair<string, string> pair in this.owner.SetoptionDictionary)
-            {
-                Logger.EngineDefault.Logger.WriteLineAddMemo(pair.Key + "=" + pair.Value);
-            }
-            Logger.EngineDefault.Logger.WriteLineAddMemo("┗━━━━━━━━━━━━━━━━━━┛");
-            Logger.EngineDefault.Logger.WriteLineAddMemo("┏━確認━━━━goDictionary━━━━━┓");
-            foreach (KeyValuePair<string, string> pair in this.GoProperties)
-            {
-                Logger.EngineDefault.Logger.WriteLineAddMemo(pair.Key + "=" + pair.Value);
-            }
+                    Logger.Trace("KifuParserA_Impl.LOGGING_BY_ENGINE, ┏━確認━━━━setoptionDictionary ━┓");
+                    foreach (KeyValuePair<string, string> pair in playing.SetoptionDictionary)
+                    {
+                        Logger.Trace($"{pair.Key}={pair.Value}");
+                    }
+                    Logger.Trace("┗━━━━━━━━━━━━━━━━━━┛");
 
-            //Dictionary<string, string> goMateProperties = new Dictionary<string, string>();
-            //goMateProperties["mate"] = "";
-            //LarabeLoggerList_Warabe.ENGINE.WriteLineAddMemo("┗━━━━━━━━━━━━━━━━━━┛");
-            //LarabeLoggerList_Warabe.ENGINE.WriteLineAddMemo("┏━確認━━━━goMateDictionary━━━┓");
-            //foreach (KeyValuePair<string, string> pair in this.goMateProperties)
-            //{
-            //    LarabeLoggerList_Warabe.ENGINE.WriteLineAddMemo(pair.Key + "=" + pair.Value);
-            //}
-
-            Logger.EngineDefault.Logger.WriteLineAddMemo("┗━━━━━━━━━━━━━━━━━━┛");
-            Logger.EngineDefault.Logger.WriteLineAddMemo("┏━確認━━━━gameoverDictionary━━┓");
-            foreach (KeyValuePair<string, string> pair in this.GameoverProperties)
-            {
-                Logger.EngineDefault.Logger.WriteLineAddMemo(pair.Key + "=" + pair.Value);
-            }
-            Logger.EngineDefault.Logger.WriteLineAddMemo("┗━━━━━━━━━━━━━━━━━━┛");
+                    //Dictionary<string, string> goMateProperties = new Dictionary<string, string>();
+                    //goMateProperties["mate"] = "";
+                    //LarabeLoggerList_Warabe.ENGINE.WriteLineAddMemo("┗━━━━━━━━━━━━━━━━━━┛");
+                    //LarabeLoggerList_Warabe.ENGINE.WriteLineAddMemo("┏━確認━━━━goMateDictionary━━━┓");
+                    //foreach (KeyValuePair<string, string> pair in this.goMateProperties)
+                    //{
+                    //    LarabeLoggerList_Warabe.ENGINE.WriteLineAddMemo($"{pair.Key}={pair.Value}");
+                    //}
 #endif
 
                     if (isTimeoutShutdown)

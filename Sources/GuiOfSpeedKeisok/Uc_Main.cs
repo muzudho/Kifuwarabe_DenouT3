@@ -8,7 +8,6 @@ using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.UseCases.Features;
 
 #if DEBUG || LEARN
-using Grayscale.Kifuwarakaku.Entities.Features;
 #endif
 
 namespace Grayscale.Kifuwarakaku.GuiOfSpeedKeisok

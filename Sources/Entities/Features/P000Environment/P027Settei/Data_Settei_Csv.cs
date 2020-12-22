@@ -32,7 +32,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         {
             if (!File.Exists(filepath))
             {
-                Util_Message.Show("設定ファイルが見つかりません。[" + filepath + "]");
+                Util_Message.Show($"設定ファイルが見つかりません。[{filepath}]");
                 goto gt_EndMethod;
             }
 
@@ -50,7 +50,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             }
             else
             {
-                this.FilepathsCsv = this.FilepathsCsv + "," + filepath;
+                this.FilepathsCsv = $"{this.FilepathsCsv},{filepath}";
             }
             //this.Properties.Clear();
 
@@ -70,7 +70,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
                 if (this.Properties.ContainsKey(row[0]))
                 {
-                    Util_Message.Show("項目[" + row[0] + "]を上書きします。");
+                    Util_Message.Show($"項目[{row[0]}]を上書きします。");
                     this.Properties[row[0]] = row[1];
                 }
                 else
@@ -88,11 +88,11 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
         public void DebugOut()
         {
-            Logger.Trace("┏━━━━━━━━┓サイズ＝[" + this.Properties.Count + "]");
+            Logger.Trace($"┏━━━━━━━━┓サイズ＝[{this.Properties.Count}]");
 
             foreach (KeyValuePair<string, string> entry in this.Properties)
             {
-                Logger.Trace(entry.Key + "=「" + entry.Value + "」");
+                Logger.Trace($"{entry.Key}=「{entry.Value}」");
 
             }
 
@@ -105,11 +105,12 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
             if (!this.Properties.ContainsKey(name))
             {
-                Util_Message.Show("設定ファイル[" + this.FilepathsCsv + "]の中に、項目が見つかりません。\n項目名[" + name + "]\n"
-                    + "もしかして？\n"
-                    + "・　.odsを編集していて、.csvに出力していないとか？\n"
-                    + "・　エンコーディングは合っている？\n"
-                    );
+                Util_Message.Show($@"設定ファイル[{this.FilepathsCsv}]の中に、項目が見つかりません。
+項目名[{ name }]
+もしかして？
+・　.odsを編集していて、.csvに出力していないとか？
+・　エンコーディングは合っている？
+");
                 result = "";
                 goto gt_EndMethod;
             }

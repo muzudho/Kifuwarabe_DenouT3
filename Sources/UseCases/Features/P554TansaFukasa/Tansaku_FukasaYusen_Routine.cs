@@ -4,33 +4,9 @@
 namespace Grayscale.Kifuwarakaku.UseCases.Features
 {
 #if DEBUG
-    using Grayscale.Kifuwarakaku.Entities.Logger;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
+    using System.Collections.Generic;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 #else
     using System.Collections.Generic;
     using Grayscale.Kifuwarakaku.Entities.Features;
@@ -248,21 +224,20 @@ using Grayscale.Kifuwarakaku.Entities.Features;
                 );
 
 #if DEBUG
-                exceptionArea = 20;
-                if (0 < genjo.Args.LogF_moveKiki.boards.Count)//ﾛｸﾞが残っているなら
-                {
-                    ////
-                    //// ログの書き出し
-                    ////
-                    //Util_GraphicalLog.WriteHtml5(
-                    //    true,//enableLog,
-                    //    "MoveRoutine#Yomi_NextNodes(00)新ログ",
-                    //    "[" + Util_GraphicalLog.BoardFileLog_ToJsonStr(genjo.Args.LogF_moveKiki) + "]"
-                    //);
+            if (0 < genjo.Args.LogF_moveKiki.boards.Count)//ﾛｸﾞが残っているなら
+            {
+                ////
+                //// ログの書き出し
+                ////
+                //Util_GraphicalLog.WriteHtml5(
+                //    true,//enableLog,
+                //    "MoveRoutine#Yomi_NextNodes(00)新ログ",
+                //    "[" + Util_GraphicalLog.BoardFileLog_ToJsonStr(genjo.Args.LogF_moveKiki) + "]"
+                //);
 
-                    // 書き出した分はクリアーします。
-                    genjo.Args.LogF_moveKiki.boards.Clear();
-                }
+                // 書き出した分はクリアーします。
+                genjo.Args.LogF_moveKiki.boards.Clear();
+            }
 #endif
         }
 
@@ -334,19 +309,19 @@ using Grayscale.Kifuwarakaku.Entities.Features;
             out_a_childrenBest = node_yomi.Score;
 
 #if DEBUG_ALPHA_METHOD
-                    logTag.Logger.WriteLineAddMemo("1. 手(" + node_yomi.Value.ToKyokumenConst.Temezumi + ")読(" + yomiDeep + ") 兄弟最善=[" + a_siblingDecidedValue + "] 子ベスト=[" + a_childrenBest + "]");
+                    Logger.Trace("1. 手(" + node_yomi.Value.ToKyokumenConst.Temezumi + ")読(" + yomiDeep + ") 兄弟最善=[" + a_siblingDecidedValue + "] 子ベスト=[" + a_childrenBest + "]");
 #endif
 
 #if DEBUG
-                bool enableLog = false;
-                //
-                // ログの書き出し
-                //
-                Util_GraphicalLog.WriteHtml5(
-                    enableLog,
-                    "指し手生成ログA",
-                    "[" + Conv_KaisetuBoards.ToJsonStr(genjo.Args.LogF_moveKiki) + "]"
-                );
+            bool enableLog = false;
+            //
+            // ログの書き出し
+            //
+            Util_GraphicalLog.WriteHtml5(
+                enableLog,
+                "指し手生成ログA",
+                "[" + Conv_KaisetuBoards.ToJsonStr(genjo.Args.LogF_moveKiki) + "]"
+            );
             // 書き出した分はクリアーします。
             genjo.Args.LogF_moveKiki.boards.Clear();
 #endif
@@ -480,12 +455,12 @@ using Grayscale.Kifuwarakaku.Entities.Features;
                     wideCount1++;
 
 #if DEBUG_ALPHA_METHOD
-                logTag.Logger.WriteLineAddMemo("3. 手(" + node_yomi.Value.ToKyokumenConst.Temezumi + ")読(" + yomiDeep + ") 兄弟最善=[" + a_siblingDecidedValue + "] 子ベスト=[" + a_childrenBest + "] 自点=[" + a_myScore + "]");
+                Logger.Trace("3. 手(" + node_yomi.Value.ToKyokumenConst.Temezumi + ")読(" + yomiDeep + ") 兄弟最善=[" + a_siblingDecidedValue + "] 子ベスト=[" + a_childrenBest + "] 自点=[" + a_myScore + "]");
 #endif
                     if (alpha_cut)
                     {
 #if DEBUG_ALPHA_METHOD
-                        logTag.Logger.WriteLineAddMemo("アルファ・カット☆！");
+                        Logger.Trace("アルファ・カット☆！");
 #endif
                         //----------------------------------------
                         // 次の「子の弟」要素はもう読みません。
@@ -541,9 +516,9 @@ using Grayscale.Kifuwarakaku.Entities.Features;
             // 盤１個分のログの準備
             //----------------------------------------
 #if DEBUG
-                MmLogGenjoImpl mm_log_orNull = null;
-                KaisetuBoard logBrd_move1;
-                Tansaku_FukasaYusen_Routine.Log1(genjo, src_Sky_move, src_Sky, out mm_log_orNull, out logBrd_move1);
+            MmLogGenjoImpl mm_log_orNull = null;
+            KaisetuBoard logBrd_move1;
+            Tansaku_FukasaYusen_Routine.Log1(genjo, src_Sky_move, src_Sky, out mm_log_orNull, out logBrd_move1);
 #endif
 
             //----------------------------------------
@@ -669,13 +644,12 @@ using Grayscale.Kifuwarakaku.Entities.Features;
         {
             out_logBrd_move1 = new KaisetuBoard();// 盤１個分のログの準備
 
-                out_mm_log = new MmLogGenjoImpl(
-                        genjo.YomikaisiTemezumi,
-                        out_logBrd_move1,//ログ？
-                        src_Sky.Temezumi,//手済み
-                        src_Sky_move,//指し手
-                        logTag//ログ
-                    );
+            out_mm_log = new MmLogGenjoImpl(
+                    genjo.YomikaisiTemezumi,
+                    out_logBrd_move1,//ログ？
+                    src_Sky.Temezumi,//手済み
+                    src_Sky_move//指し手
+                );
         }
         private static void Log2(
             Tansaku_Genjo genjo,
@@ -683,16 +657,16 @@ using Grayscale.Kifuwarakaku.Entities.Features;
             KaisetuBoard logBrd_move1
         )
         {
-                logBrd_move1.moveOrNull = node_yomi.Key;
+            logBrd_move1.moveOrNull = node_yomi.Key;
 
 
-                RO_Star srcKoma = Util_Starlightable.AsKoma(logBrd_move1.moveOrNull.LongTimeAgo);
-                RO_Star dstKoma = Util_Starlightable.AsKoma(logBrd_move1.moveOrNull.Now);
+            RO_Star srcKoma = Util_Starlightable.AsKoma(logBrd_move1.moveOrNull.LongTimeAgo);
+            RO_Star dstKoma = Util_Starlightable.AsKoma(logBrd_move1.moveOrNull.Now);
 
 
-                // ログ試し
-                logBrd_move1.Arrow.Add(new Gkl_Arrow(Conv_SyElement.ToMasuNumber(srcKoma.Masu), Conv_SyElement.ToMasuNumber(dstKoma.Masu)));
-                genjo.Args.LogF_moveKiki.boards.Add(logBrd_move1);
+            // ログ試し
+            logBrd_move1.Arrow.Add(new Gkl_Arrow(Conv_SyElement.ToMasuNumber(srcKoma.Masu), Conv_SyElement.ToMasuNumber(dstKoma.Masu)));
+            genjo.Args.LogF_moveKiki.boards.Add(logBrd_move1);
         }
 #endif
     }

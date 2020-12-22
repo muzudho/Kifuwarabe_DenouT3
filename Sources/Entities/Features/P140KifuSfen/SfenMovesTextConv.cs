@@ -41,8 +41,6 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             moji4 = "";
             moji5 = "";
 
-            //System.C onsole.WriteLine("TuginoItte_Sfen.GetData_FromText:text=[" + text + "]");
-
             //------------------------------------------------------------
             // リスト作成
             //------------------------------------------------------------

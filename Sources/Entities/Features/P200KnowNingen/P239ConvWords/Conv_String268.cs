@@ -234,7 +234,7 @@
                     break;
 
                 default:
-                    Util_Message.Show("▲バグ【駒種類】Sfen=[" + sfen + "]");
+                    Util_Message.Show($"▲バグ【駒種類】Sfen=[{sfen}]");
                     syurui = Komasyurui14.H00_Null___;
                     break;
             }

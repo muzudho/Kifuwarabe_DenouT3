@@ -41,7 +41,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             {
                 //>>>>> 棋譜が始まります。
 #if DEUBG
-                    logTag.Logger.WriteLineAddMemo("（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　ｳﾑ☆　moves 分かるぜ☆");
+                    Logger.Trace("（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　ｳﾑ☆　moves 分かるぜ☆");
 #endif
 
                 genjo.InputLine = genjo.InputLine.Substring("moves".Length);

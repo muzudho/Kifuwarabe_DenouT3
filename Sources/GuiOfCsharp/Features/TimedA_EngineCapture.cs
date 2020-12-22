@@ -1,6 +1,11 @@
 ﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
+    using Grayscale.Kifuwarakaku.Entities.Logging;
+#if DEBUG
     using Grayscale.Kifuwarakaku.UseCases.Features;
+#else
+    using Grayscale.Kifuwarakaku.UseCases.Features;
+#endif
 
     /// <summary>
     /// ▲人間vs△コンピューター対局のやりとりです。
@@ -26,7 +31,7 @@
 
 #if DEBUG
                 string message = "(^o^)timer入力 input99=[" + this.mainGui.ConsoleWindowGui.InputString99 + "]";
-                logTag.Logger.WriteLineAddMemo(message);
+                Logger.Trace(message);
 #endif
 
                 //

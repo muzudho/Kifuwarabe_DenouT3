@@ -477,7 +477,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             }
             else
             {
-                string word = "升" + BashoImpl.ToMasuNumber(bitfield);
+                string word = $"升{BashoImpl.ToMasuNumber(bitfield)}";
                 basho = new BashoImpl(bitfield);//TODO:唯一の新規生成にしたい。
                 Masu_Honshogi.bitfieldBashoDictionary.Add(bitfield, basho);
                 Conv_Sy.Put_BitfieldWord(bitfield, word);

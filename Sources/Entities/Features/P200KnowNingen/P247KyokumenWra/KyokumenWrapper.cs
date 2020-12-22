@@ -23,7 +23,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             get {
                 SkyConst result = Util_Sky.ImportSfen(this.sfenstringImpl);
 
-                StartposImporter.Assert_HirateHonsyogi(new SkyBuffer(result), "this.startposString=[" + this.sfenstringImpl + "]");
+                StartposImporter.Assert_HirateHonsyogi(new SkyBuffer(result), "this.startposString=[{this.sfenstringImpl}]");
 
                 return result;
             }
@@ -35,7 +35,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
         public KyokumenWrapper(SkyConst sky)
         {
-            Debug.Assert(sky.Count == 40, "sky.Starlights.Count=[" + sky.Count + "]");//将棋の駒の数
+            Debug.Assert(sky.Count == 40, "sky.Starlights.Count=[{sky.Count}]");//将棋の駒の数
 
             //*
             #region sky型

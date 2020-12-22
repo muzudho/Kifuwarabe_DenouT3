@@ -1,13 +1,24 @@
-﻿using System;
+﻿namespace Grayscale.Kifuwarakaku.UseCases
+{
+#if DEBUG
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using Grayscale.Kifuwarakaku.Entities;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Logging;
+    using Grayscale.Kifuwarakaku.UseCases.Features;
+    using Nett;
+#else
+using System;
 using System.Collections.Generic;
 using System.IO;
 using Grayscale.Kifuwarakaku.Entities;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.UseCases.Features;
 using Nett;
+#endif
 
-namespace Grayscale.Kifuwarakaku.UseCases
-{
     public class Playing
     {
         public Playing()
@@ -65,16 +76,17 @@ namespace Grayscale.Kifuwarakaku.UseCases
 
 #if DEBUG
             // 送信記録をつけます。
-            Logger.EngineNetwork.Logger.WriteLineS(line);
+            Logger.WriteLineS(line);
 #endif
         }
 
+#if DEBUG
         /// <summary>
-        /// 未使用。
+        /// 
         /// </summary>
         /// <param name="line"></param>
         /// <param name="kifuNode"></param>
-        private void Log2_Png_Tyokkin(string line, KifuNode kifuNode)
+        public static void Log2_Png_Tyokkin(string line, KifuNode kifuNode)
         {
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
@@ -135,6 +147,7 @@ namespace Grayscale.Kifuwarakaku.UseCases
                     );
             }
         }
+#endif
 
         /// <summary>
         /// 指し手を決めます。
@@ -187,8 +200,7 @@ namespace Grayscale.Kifuwarakaku.UseCases
             //
             Util_KifuTreeLogWriter.A_Write_KifuTreeLog(
                 logF_kiki,
-                kifu,
-                logTag
+                kifu
                 );
             //Util_LogWriter500_HyokaMeisai.Log_Html5(
             //    this,
@@ -426,13 +438,13 @@ usiok");
             // 将棋エンジン「おっおっ、設定を終わらせておかなければ（汗、汗…）」
             //------------------------------------------------------------
 #if DEBUG
-            Logger.EngineDefault.Logger.WriteLineAddMemo("┏━━━━━設定━━━━━┓");
-            foreach (KeyValuePair<string, string> pair in this.Owner.SetoptionDictionary)
+            Logger.Trace("┏━━━━━設定━━━━━┓");
+            foreach (KeyValuePair<string, string> pair in this.SetoptionDictionary)
             {
                 // ここで将棋エンジンの設定を済ませておいてください。
-                Logger.EngineDefault.Logger.WriteLineAddMemo(pair.Key + "=" + pair.Value);
+                Logger.Trace(pair.Key + "=" + pair.Value);
             }
-            Logger.EngineDefault.Logger.WriteLineAddMemo("┗━━━━━━━━━━━━┛");
+            Logger.Trace("┗━━━━━━━━━━━━┛");
 #endif
 
             //------------------------------------------------------------
@@ -503,7 +515,7 @@ usiok");
             //
             //
 #if DEBUG
-            Logger.EngineDefault.Logger.WriteLineAddMemo("(^-^)ﾉｼ");
+            Logger.Trace("(^-^)ﾉｼ");
 #endif
         }
 
@@ -689,7 +701,7 @@ usiok");
 
             SkyConst src_Sky = this.Game.Kifu.NodeAt(latestTemezumi).Value.KyokumenConst;//現局面
 
-            //logTag.Logger.WriteLineAddMemo("将棋サーバー「" + latestTemezumi + "手目、きふわらべ　さんの手番ですよ！」　" + line);
+            //Logger.Trace("将棋サーバー「" + latestTemezumi + "手目、きふわらべ　さんの手番ですよ！」　" + line);
 
 
             //----------------------------------------
@@ -783,15 +795,15 @@ usiok");
 
 
 #if DEBUG
-                                //// 内容をログ出力
-                                //// 最善手、次善手、三次善手、四次善手、五次善手
-                                //StringBuilder sb = new StringBuilder();
-                                //for (int iMultiPV = 0; iMultiPV < 5; iMultiPV++)
-                                //{
-                                //    string sfenText = Util_Sky.ToSfenMoveText(bestMoveList[iMultiPV]);
-                                //    sb.AppendLine("[" + iMultiPV + "]" + sfenText);
-                                //}
-                                //System.Windows.Forms.MessageBox.Show(sb.ToString());
+                            //// 内容をログ出力
+                            //// 最善手、次善手、三次善手、四次善手、五次善手
+                            //StringBuilder sb = new StringBuilder();
+                            //for (int iMultiPV = 0; iMultiPV < 5; iMultiPV++)
+                            //{
+                            //    string sfenText = Util_Sky.ToSfenMoveText(bestMoveList[iMultiPV]);
+                            //    sb.AppendLine("[" + iMultiPV + "]" + sfenText);
+                            //}
+                            //System.Windows.Forms.MessageBox.Show(sb.ToString());
 #endif
                         }
 

@@ -1,15 +1,25 @@
-﻿using System;
+﻿namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
+{
+#if DEBUG
+    using System;
+    using System.Diagnostics;
+    using System.IO;
+    using System.Text;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Logging;
+    using Grayscale.Kifuwarakaku.UseCases.Features;
+    using Nett;
+    using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
+#else
+using System;
 using System.IO;
 using System.Text;
-using Grayscale.Kifuwarakaku.Engine;
-using Grayscale.Kifuwarakaku.Engine.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.UseCases.Features;
 using Nett;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
+#endif
 
-namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
-{
     /// <summary>
     /// 学習用データ。
     /// </summary>
@@ -167,7 +177,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
             this.Aaa_CreateNextNodes_Gohosyu(args);
 #if DEBUG
             sw2.Stop();
-            Logger.Trace("合法手作成　　　 　= {0}", sw2.Elapsed);
+            Logger.Trace($"合法手作成　　　 　= {sw2.Elapsed}");
             Logger.Trace("────────────────────────────────────────");
 #endif
 

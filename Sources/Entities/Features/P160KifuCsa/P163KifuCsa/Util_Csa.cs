@@ -14,7 +14,8 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
             if (!File.Exists(filepath))
             {
-                MessageBox.Show("ファイルがありません。\nファイルパス=[" + filepath + "]", "エラー");
+                MessageBox.Show($@"ファイルがありません。
+ファイルパス=[{filepath}]", "エラー");
 
                 goto gt_EndMethod;
             }

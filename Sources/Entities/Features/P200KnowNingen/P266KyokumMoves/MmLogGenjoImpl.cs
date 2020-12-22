@@ -1,20 +1,4 @@
 ﻿#if DEBUG
-    using Grayscale.Kifuwarakaku.Entities.Logger;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
@@ -40,23 +24,17 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         public IMove Move { get { return this.move; } }
         private IMove move;
 
-        public IErrorController ErrH { get { return this.logTag; } }
-        private IErrorController logTag;
-
-
         public MmLogGenjoImpl(
             int yomikaisiTemezumi,
             KaisetuBoard brdMove,
             int temezumi_yomiCur,
-            IMove move,
-            IErrorController logTag
+            IMove move
             )
         {
             this.BrdMove = brdMove;
             this.yomikaisiTemezumi = yomikaisiTemezumi;
             this.temezumi_yomiCur = temezumi_yomiCur;
             this.move = move;
-            this.logTag = logTag;
         }
 
         public void Log1(Playerside pside_genTeban3)

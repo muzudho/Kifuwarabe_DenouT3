@@ -1,18 +1,6 @@
 ﻿#if DEBUG
-    using Grayscale.Kifuwarakaku.Entities.Logger;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
-
-using Grayscale.Kifuwarakaku.Entities.Features;
 
 namespace Grayscale.Kifuwarakaku.Engine.Features
 {
@@ -26,10 +14,9 @@ namespace Grayscale.Kifuwarakaku.Engine.Features
             Node<IMove, KyokumenWrapper> node_forLog,
             string nodePath,
             KifuNode niniNode,//任意のノード
-            //KifuTree kifu_forAssert,
+                              //KifuTree kifu_forAssert,
             KyokumenPngEnvironment reportEnvironment,
-            KaisetuBoards logF_kiki,
-            IErrorController logTag
+            KaisetuBoards logF_kiki
             )
         {
             //
@@ -49,16 +36,15 @@ namespace Grayscale.Kifuwarakaku.Engine.Features
                     niniNode.Value.KyokumenConst,//現在の局面
                     pside,
                     false
-//#if DEBUG
+                    //#if DEBUG
                     ,
                     new MmLogGenjoImpl(
                         0,//読み開始手目済み
                         logBrd_move1,
                         0,//現在の手済み
-                        niniNode.Key,
-                        logTag
+                        niniNode.Key
                     )
-//#endif
+                //#endif
                 );
 
                 logBrd_move1.moveOrNull = niniNode.Key;

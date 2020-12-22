@@ -1,21 +1,20 @@
-﻿using System.IO;
+﻿namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
+{
+#if DEBUG
+    using System.IO;
+    using System.Text;
+    using System.Windows.Forms;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Logging;
+    using Grayscale.Kifuwarakaku.UseCases.Features;
+#else
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using Grayscale.Kifuwarakaku.Engine;
-using Grayscale.Kifuwarakaku.Engine.Features;
 using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
-
-#if DEBUG || LEARN
 using Grayscale.Kifuwarakaku.UseCases.Features;
 #endif
 
-#if DEBUG
-using Grayscale.Kifuwarakaku.Entities.Features;
-#endif
-
-namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
-{
     public abstract class Util_LearnOperation
     {
 
@@ -35,16 +34,16 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
             {
                 string sfenMoveStr = item.Sfen;
 #if DEBUG
-                logTag.Logger.WriteLineAddMemo("sfenMoveStr=" + sfenMoveStr);
+                Logger.Trace("sfenMoveStr=" + sfenMoveStr);
 #endif
 
                 if (uc_Main.LearningData.Kifu.CurNode.HasChildNode(sfenMoveStr))
                 {
 #if DEBUG
-                    logTag.Logger.WriteLineAddMemo("----------------------------------------");
-                    logTag.Logger.WriteLineAddMemo("FV 総合点（読込前）1");
-                    logTag.Logger.WriteLineAddMemo("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(uc_Main.LearningData.Fv));
-                    logTag.Logger.WriteLineAddMemo("----------------------------------------");
+                    Logger.Trace("----------------------------------------");
+                    Logger.Trace("FV 総合点（読込前）1");
+                    Logger.Trace("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(uc_Main.LearningData.Fv));
+                    Logger.Trace("----------------------------------------");
 #endif
                     Node<IMove, KyokumenWrapper> nextNode = uc_Main.LearningData.Kifu.CurNode.GetChildNode(sfenMoveStr);
 
@@ -60,10 +59,10 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
                         out real_tyoseiryo
                         );//相手が有利になる点
 #if DEBUG
-                    logTag.Logger.WriteLineAddMemo("----------------------------------------");
-                    logTag.Logger.WriteLineAddMemo("FV 総合点（読込後）6");
-                    logTag.Logger.WriteLineAddMemo("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(uc_Main.LearningData.Fv));
-                    logTag.Logger.WriteLineAddMemo("----------------------------------------");
+                    Logger.Trace("----------------------------------------");
+                    Logger.Trace("FV 総合点（読込後）6");
+                    Logger.Trace("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(uc_Main.LearningData.Fv));
+                    Logger.Trace("----------------------------------------");
 #endif
                 }
             }

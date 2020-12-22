@@ -391,7 +391,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
 
 #if DEBUG
             sw1.Stop();
-            Logger.Trace("一手指すボタン合計 = {0}", sw1.Elapsed);
+            Logger.Trace($"一手指すボタン合計 = {sw1.Elapsed}");
             Logger.Trace("────────────────────────────────────────");
 #endif
 

@@ -1,7 +1,13 @@
-﻿using Grayscale.Kifuwarakaku.UseCases.Features;
-
-namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
+﻿namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
 {
+#if DEBUG
+    using Grayscale.Kifuwarakaku.Entities.Logging;
+    using Grayscale.Kifuwarakaku.UseCases.Features;
+#else
+using Grayscale.Kifuwarakaku.Entities.Logging;
+using Grayscale.Kifuwarakaku.UseCases.Features;
+#endif
+
     /// <summary>
     /// フィーチャー・ベクターの概要をデバッグ出力します。
     /// </summary>
@@ -84,16 +90,16 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
                     longest_positive = false;
                 }
 
-                logTag.Logger.WriteLineAddMemo("PP");
-                logTag.Logger.WriteLineAddMemo("----------------------------------------");
-                logTag.Logger.WriteLineAddMemo("begin");
-                logTag.Logger.WriteLineAddMemo("   negative_length =" + negative_length);
-                logTag.Logger.WriteLineAddMemo("   positive_length =" + positive_length);
-                logTag.Logger.WriteLineAddMemo("   longest_positive=" + longest_positive);
-                logTag.Logger.WriteLineAddMemo("   negative_average=" + (negative_items == 0 ? 0 : negative_total / negative_items));
-                logTag.Logger.WriteLineAddMemo("   positive_average=" + (positive_items == 0 ? 0 : positive_total / positive_items));
-                logTag.Logger.WriteLineAddMemo("   notZero         =" + notZero);
-                logTag.Logger.WriteLineAddMemo("----------------------------------------");
+                Logger.Trace("PP");
+                Logger.Trace("----------------------------------------");
+                Logger.Trace("begin");
+                Logger.Trace("   negative_length =" + negative_length);
+                Logger.Trace("   positive_length =" + positive_length);
+                Logger.Trace("   longest_positive=" + longest_positive);
+                Logger.Trace("   negative_average=" + (negative_items == 0 ? 0 : negative_total / negative_items));
+                Logger.Trace("   positive_average=" + (positive_items == 0 ? 0 : positive_total / positive_items));
+                Logger.Trace("   notZero         =" + notZero);
+                Logger.Trace("----------------------------------------");
 #endif
             }
         }

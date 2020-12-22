@@ -1,11 +1,10 @@
-﻿using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
-
-#if DEBUG
-using Grayscale.Kifuwarakaku.Entities.Features;
-#endif
-
-namespace Grayscale.Kifuwarakaku.Entities.Features
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
 {
+#if DEBUG
+    using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
+#else
+using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
+#endif
 
     /// <summary>
     /// 指定局面の、動かせる駒調べ。
@@ -78,12 +77,6 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 #endif
             )
         {
-#if DEBUG
-                    if (mmLog_orNull != null)
-                    {
-                        logTag = mmLog_orNull.ErrH;
-                    }
-#endif
 
             //if (null != log_orNull)
             //{

@@ -1,10 +1,18 @@
-﻿using System;
+﻿namespace Grayscale.Kifuwarakaku.Entities.Features
+{
+#if DEBUG
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.Text;
+    using Grayscale.Kifuwarakaku.Entities.Logging;
+#else
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
+#endif
 
-namespace Grayscale.Kifuwarakaku.Entities.Features
-{
     public class SennititeCounterImpl : SennititeCounter
     {
         /// <summary>
@@ -26,7 +34,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     sb.AppendLine("----------------------------------------");
                     sb.AppendLine("is千日手☆！:" + this.douituKyokumenCounterDictionary[hash].ToString());
                     sb.AppendLine(this.Dump_Format());
-                    this.WriteLog(sb.ToString());
+                    Logger.Trace(sb.ToString());
                 }
 #endif
             }
@@ -50,7 +58,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     sb.AppendLine("----------------------------------------");
                     sb.AppendLine("千日手、カウントダウン☆！：" + hint + ":" + this.douituKyokumenCounterDictionary[hash].ToString());
                     sb.AppendLine(this.Dump_Format());
-                    this.WriteLog(sb.ToString());
+                    Logger.Trace(sb.ToString());
                 }
 #endif
             }
@@ -74,7 +82,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     sb.AppendLine("----------------------------------------");
                     sb.AppendLine("千日手カウントアップした☆！：" + hint + ":" + this.douituKyokumenCounterDictionary[hash].ToString());
                     sb.AppendLine(this.Dump_Format());
-                    this.WriteLog(sb.ToString());
+                    Logger.Trace(sb.ToString());
                 }
 #endif
             }
@@ -90,7 +98,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     sb.AppendLine("----------------------------------------");
                     sb.AppendLine("千日手、新局面追加☆！：" + hint + ":" + this.douituKyokumenCounterDictionary[hash].ToString());
                     sb.AppendLine(this.Dump_Format());
-                    this.WriteLog(sb.ToString());
+                    Logger.Trace(sb.ToString());
                 }
 #endif
             }

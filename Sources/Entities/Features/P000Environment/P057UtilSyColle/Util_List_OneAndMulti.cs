@@ -23,13 +23,13 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     {
                         foreach (SyElement syElement in ((SySet<SyElement>)item.B).Elements)
                         {
-                            sb.AppendLine("(" + count + ") a=[" + item.A.ToString() + "] b=[" + Conv_Sy.Query_Word(syElement.Bitfield) + "]");
+                            sb.AppendLine($"({ count }) a=[{ item.A.ToString() }] b=[{ Conv_Sy.Query_Word(syElement.Bitfield) }]");
                             count++;
                         }
                     }
                     else
                     {
-                        sb.AppendLine("(" + count + ") a=[" + item.A.ToString() + "] b=[" + item.B.ToString() + "]");
+                        sb.AppendLine($"({ count }) a=[{ item.A.ToString() }] b=[{ item.B.ToString() }]");
                         count++;
                     }
                 }

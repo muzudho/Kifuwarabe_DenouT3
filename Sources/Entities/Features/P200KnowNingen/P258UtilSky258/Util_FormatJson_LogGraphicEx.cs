@@ -38,15 +38,15 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 // 全マス
                 foreach (New_Basho masu in value.Elements)
                 {
-                    sb.AppendLine("                { act:\"drawMasu\" , masu:" + masu.MasuNumber + " },");
+                    sb.AppendLine($"                {{ act:\"drawMasu\" , masu:{masu.MasuNumber} }},");
                 }
 
 
                 string komaImg = Util_Converter_LogGraphicEx.Finger_ToString(src_Sky_base, key, "");
-                sb.AppendLine("                { act:\"drawImg\", img:\"" + komaImg + "\", masu: " + Conv_SyElement.ToMasuNumber(koma.Masu) + " },");//FIXME:おかしい？
+                sb.AppendLine($"                {{ act:\"drawImg\", img:\"{komaImg}\", masu: {Conv_SyElement.ToMasuNumber(koma.Masu)} }},");//FIXME:おかしい？
 
                 // コメント
-                sb.AppendLine("                { act:\"drawText\", text:\"" + comment + "\"  , x:0, y:20 },");
+                sb.AppendLine($"                {{ act:\"drawText\", text:\"{comment}\"  , x:0, y:20 }},");
 
                 sb.AppendLine("            ],");
 
@@ -92,14 +92,14 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             sb.AppendLine("                { act:\"colorMasu\", style:\"rgba(100,240,100,0.5)\" },");
 
             // マス
-            sb.AppendLine("                { act:\"drawMasu\" , masu:" + Conv_SyElement.ToMasuNumber(dstKoma.Masu) + " },");
+            sb.AppendLine($"                {{ act:\"drawMasu\" , masu:{Conv_SyElement.ToMasuNumber(dstKoma.Masu)} }},");
 
 
             string komaImg = Util_Converter_LogGraphicEx.Finger_ToString(src_Sky_base, finger, "");
-            sb.AppendLine("                { act:\"drawImg\", img:\"" + komaImg + "\", masu: " + Conv_SyElement.ToMasuNumber(dstKoma.Masu) + " },");//FIXME:おかしい？
+            sb.AppendLine($"                {{ act:\"drawImg\", img:\"{komaImg}\", masu: {Conv_SyElement.ToMasuNumber(dstKoma.Masu)} }},");//FIXME:おかしい？
 
             // コメント
-            sb.AppendLine("                { act:\"drawText\", text:\"" + comment + "\"  , x:0, y:20 },");
+            sb.AppendLine($"                {{ act:\"drawText\", text:\"{comment}\"  , x:0, y:20 }},");
 
         //sb.AppendLine("            ],");
 
@@ -145,14 +145,14 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 sb.AppendLine("                { act:\"colorMasu\", style:\"rgba(100,240,100,0.5)\" },");
 
                 // マス
-                sb.AppendLine("                { act:\"drawMasu\" , masu:" + Conv_SyElement.ToMasuNumber(dstKoma.Masu) + " },");
+                sb.AppendLine($"                {{ act:\"drawMasu\" , masu:{Conv_SyElement.ToMasuNumber(dstKoma.Masu)} }},");
 
 
                 string komaImg = Util_Converter_LogGraphicEx.Finger_ToString(src_Sky_base, srcKoma2, "");
-                sb.AppendLine("                { act:\"drawImg\", img:\"" + komaImg + "\", masu: " + Conv_SyElement.ToMasuNumber(dstKoma.Masu) + " },");//FIXME:おかしい？
+                sb.AppendLine($"                {{ act:\"drawImg\", img:\"{komaImg}\", masu: {Conv_SyElement.ToMasuNumber(dstKoma.Masu)} }},");//FIXME:おかしい？
 
                 // コメント
-                sb.AppendLine("                { act:\"drawText\", text:\"" + comment + "\"  , x:0, y:20 },");
+                sb.AppendLine($"                {{ act:\"drawText\", text:\"{comment}\"  , x:0, y:20 }},");
 
                 sb.AppendLine("            ],");
             });
@@ -185,12 +185,12 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
 
                 string komaImg = Util_Converter_LogGraphicEx.Finger_ToString(src_Sky, hKoma, "");
-                sb.AppendLine("                { act:\"drawImg\", img:\"" + komaImg + "\", masu: " + Conv_SyElement.ToMasuNumber(koma.Masu) + " },");//FIXME:おかしい？
+                sb.AppendLine($"                {{ act:\"drawImg\", img:\"{komaImg}\", masu: {Conv_SyElement.ToMasuNumber(koma.Masu)} }},");//FIXME:おかしい？
             }
 
 
 
-            sb.AppendLine("                { act:\"drawText\", text:\"" + comment + "\"  , x:0, y:20 },");
+            sb.AppendLine($"                {{ act:\"drawText\", text:\"{comment}\"  , x:0, y:20 }},");
 
         //sb.AppendLine("            ],");
 
@@ -211,12 +211,12 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
             foreach (New_Basho masu in masus.Elements)
             {
-                sb.AppendLine("                { act:\"drawMasu\" , masu:" + ((int)masu.MasuNumber) + " },\n");
+                sb.AppendLine($"                {{ act:\"drawMasu\" , masu:{((int)masu.MasuNumber)} }},\n");
             }
 
 
 
-            sb.AppendLine("                { act:\"drawText\", text:\"" + comment + "\"  , x:0, y:20 },\n");
+            sb.AppendLine($"                {{ act:\"drawText\", text:\"{comment}\"  , x:0, y:20 }},\n");
 
         gt_EndMethod:
             return sb.ToString();

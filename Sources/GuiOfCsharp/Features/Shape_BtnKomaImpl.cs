@@ -273,7 +273,7 @@
 
                         //if (w == 0 || h == 0)
                         //{
-                        //    System.C onsole.WriteLine("moji=["+moji+"]");
+                        //    Logger.Trace("moji=["+moji+"]");
                         //}
 
                         //if (w < 1)

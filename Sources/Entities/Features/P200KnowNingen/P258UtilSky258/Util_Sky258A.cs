@@ -99,7 +99,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
         public static void Assert_Honshogi(SkyConst src_Sky)
         {
-            Debug.Assert(src_Sky.Count == 40, "siteiSky.Starlights.Count=[" + src_Sky.Count + "]");//将棋の駒の数
+            Debug.Assert(src_Sky.Count == 40, $"siteiSky.Starlights.Count=[{src_Sky.Count}]");//将棋の駒の数
 
             ////デバッグ
             //{
@@ -107,7 +107,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
             //    for (int i = 0; i < 40; i++)
             //    {
-            //        sb.Append("駒" + i + ".種類=[" + ((RO_Star_KomaKs)siteiSky.StarlightIndexOf(i).Now).Syurui + "]\n");
+            //        sb.Append("駒{i}.種類=[{((RO_Star_KomaKs)siteiSky.StarlightIndexOf(i).Now).Syurui}]\n");
             //    }
 
             //    MessageBox.Show(sb.ToString());
@@ -115,61 +115,61 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
 
             // 王
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(0).Now).Komasyurui == Komasyurui14.H06_Gyoku__, "駒0.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(0).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(1).Now).Komasyurui == Komasyurui14.H06_Gyoku__, "駒1.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(1).Now).Komasyurui + "]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(0).Now).Komasyurui == Komasyurui14.H06_Gyoku__, $"駒0.種類=[{((RO_Star)src_Sky.StarlightIndexOf(0).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(1).Now).Komasyurui == Komasyurui14.H06_Gyoku__, $"駒1.種類=[{((RO_Star)src_Sky.StarlightIndexOf(1).Now).Komasyurui}]");
 
             // 飛車
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(2).Now).Komasyurui == Komasyurui14.H07_Hisya__ || ((RO_Star)src_Sky.StarlightIndexOf(2).Now).Komasyurui == Komasyurui14.H09_Ryu____, "駒2.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(2).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(3).Now).Komasyurui == Komasyurui14.H07_Hisya__ || ((RO_Star)src_Sky.StarlightIndexOf(3).Now).Komasyurui == Komasyurui14.H09_Ryu____, "駒3.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(3).Now).Komasyurui + "]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(2).Now).Komasyurui == Komasyurui14.H07_Hisya__ || ((RO_Star)src_Sky.StarlightIndexOf(2).Now).Komasyurui == Komasyurui14.H09_Ryu____, $"駒2.種類=[{((RO_Star)src_Sky.StarlightIndexOf(2).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(3).Now).Komasyurui == Komasyurui14.H07_Hisya__ || ((RO_Star)src_Sky.StarlightIndexOf(3).Now).Komasyurui == Komasyurui14.H09_Ryu____, $"駒3.種類=[{((RO_Star)src_Sky.StarlightIndexOf(3).Now).Komasyurui}]");
 
             // 角
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(4).Now).Komasyurui == Komasyurui14.H08_Kaku___ || ((RO_Star)src_Sky.StarlightIndexOf(4).Now).Komasyurui == Komasyurui14.H10_Uma____, "駒4.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(4).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(5).Now).Komasyurui == Komasyurui14.H08_Kaku___ || ((RO_Star)src_Sky.StarlightIndexOf(5).Now).Komasyurui == Komasyurui14.H10_Uma____, "駒5.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(5).Now).Komasyurui + "]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(4).Now).Komasyurui == Komasyurui14.H08_Kaku___ || ((RO_Star)src_Sky.StarlightIndexOf(4).Now).Komasyurui == Komasyurui14.H10_Uma____, $"駒4.種類=[{((RO_Star)src_Sky.StarlightIndexOf(4).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(5).Now).Komasyurui == Komasyurui14.H08_Kaku___ || ((RO_Star)src_Sky.StarlightIndexOf(5).Now).Komasyurui == Komasyurui14.H10_Uma____, $"駒5.種類=[{((RO_Star)src_Sky.StarlightIndexOf(5).Now).Komasyurui}]");
 
             // 金
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(6).Now).Komasyurui == Komasyurui14.H05_Kin____, "駒6.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(6).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(7).Now).Komasyurui == Komasyurui14.H05_Kin____, "駒7.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(7).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(8).Now).Komasyurui == Komasyurui14.H05_Kin____, "駒8.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(8).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(9).Now).Komasyurui == Komasyurui14.H05_Kin____, "駒9.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(9).Now).Komasyurui + "]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(6).Now).Komasyurui == Komasyurui14.H05_Kin____, $"駒6.種類=[{((RO_Star)src_Sky.StarlightIndexOf(6).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(7).Now).Komasyurui == Komasyurui14.H05_Kin____, $"駒7.種類=[{((RO_Star)src_Sky.StarlightIndexOf(7).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(8).Now).Komasyurui == Komasyurui14.H05_Kin____, $"駒8.種類=[{((RO_Star)src_Sky.StarlightIndexOf(8).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(9).Now).Komasyurui == Komasyurui14.H05_Kin____, $"駒9.種類=[{((RO_Star)src_Sky.StarlightIndexOf(9).Now).Komasyurui}]");
 
             // 銀
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(10).Now).Komasyurui == Komasyurui14.H04_Gin____ || ((RO_Star)src_Sky.StarlightIndexOf(10).Now).Komasyurui == Komasyurui14.H14_NariGin, "駒10.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(10).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(11).Now).Komasyurui == Komasyurui14.H04_Gin____ || ((RO_Star)src_Sky.StarlightIndexOf(11).Now).Komasyurui == Komasyurui14.H14_NariGin, "駒11.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(11).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(12).Now).Komasyurui == Komasyurui14.H04_Gin____ || ((RO_Star)src_Sky.StarlightIndexOf(12).Now).Komasyurui == Komasyurui14.H14_NariGin, "駒12.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(12).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(13).Now).Komasyurui == Komasyurui14.H04_Gin____ || ((RO_Star)src_Sky.StarlightIndexOf(13).Now).Komasyurui == Komasyurui14.H14_NariGin, "駒13.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(13).Now).Komasyurui + "]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(10).Now).Komasyurui == Komasyurui14.H04_Gin____ || ((RO_Star)src_Sky.StarlightIndexOf(10).Now).Komasyurui == Komasyurui14.H14_NariGin, $"駒10.種類=[{((RO_Star)src_Sky.StarlightIndexOf(10).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(11).Now).Komasyurui == Komasyurui14.H04_Gin____ || ((RO_Star)src_Sky.StarlightIndexOf(11).Now).Komasyurui == Komasyurui14.H14_NariGin, $"駒11.種類=[{((RO_Star)src_Sky.StarlightIndexOf(11).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(12).Now).Komasyurui == Komasyurui14.H04_Gin____ || ((RO_Star)src_Sky.StarlightIndexOf(12).Now).Komasyurui == Komasyurui14.H14_NariGin, $"駒12.種類=[{((RO_Star)src_Sky.StarlightIndexOf(12).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(13).Now).Komasyurui == Komasyurui14.H04_Gin____ || ((RO_Star)src_Sky.StarlightIndexOf(13).Now).Komasyurui == Komasyurui14.H14_NariGin, $"駒13.種類=[{((RO_Star)src_Sky.StarlightIndexOf(13).Now).Komasyurui}]");
 
             // 桂
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(14).Now).Komasyurui == Komasyurui14.H03_Kei____ || ((RO_Star)src_Sky.StarlightIndexOf(14).Now).Komasyurui == Komasyurui14.H13_NariKei, "駒14.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(14).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(15).Now).Komasyurui == Komasyurui14.H03_Kei____ || ((RO_Star)src_Sky.StarlightIndexOf(15).Now).Komasyurui == Komasyurui14.H13_NariKei, "駒15.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(15).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(16).Now).Komasyurui == Komasyurui14.H03_Kei____ || ((RO_Star)src_Sky.StarlightIndexOf(16).Now).Komasyurui == Komasyurui14.H13_NariKei, "駒16.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(16).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(17).Now).Komasyurui == Komasyurui14.H03_Kei____ || ((RO_Star)src_Sky.StarlightIndexOf(17).Now).Komasyurui == Komasyurui14.H13_NariKei, "駒17.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(17).Now).Komasyurui + "]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(14).Now).Komasyurui == Komasyurui14.H03_Kei____ || ((RO_Star)src_Sky.StarlightIndexOf(14).Now).Komasyurui == Komasyurui14.H13_NariKei, $"駒14.種類=[{((RO_Star)src_Sky.StarlightIndexOf(14).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(15).Now).Komasyurui == Komasyurui14.H03_Kei____ || ((RO_Star)src_Sky.StarlightIndexOf(15).Now).Komasyurui == Komasyurui14.H13_NariKei, $"駒15.種類=[{((RO_Star)src_Sky.StarlightIndexOf(15).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(16).Now).Komasyurui == Komasyurui14.H03_Kei____ || ((RO_Star)src_Sky.StarlightIndexOf(16).Now).Komasyurui == Komasyurui14.H13_NariKei, $"駒16.種類=[{((RO_Star)src_Sky.StarlightIndexOf(16).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(17).Now).Komasyurui == Komasyurui14.H03_Kei____ || ((RO_Star)src_Sky.StarlightIndexOf(17).Now).Komasyurui == Komasyurui14.H13_NariKei, $"駒17.種類=[{((RO_Star)src_Sky.StarlightIndexOf(17).Now).Komasyurui}]");
 
             // 香
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(18).Now).Komasyurui == Komasyurui14.H02_Kyo____ || ((RO_Star)src_Sky.StarlightIndexOf(18).Now).Komasyurui == Komasyurui14.H12_NariKyo, "駒18.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(18).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(19).Now).Komasyurui == Komasyurui14.H02_Kyo____ || ((RO_Star)src_Sky.StarlightIndexOf(19).Now).Komasyurui == Komasyurui14.H12_NariKyo, "駒19.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(19).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(20).Now).Komasyurui == Komasyurui14.H02_Kyo____ || ((RO_Star)src_Sky.StarlightIndexOf(20).Now).Komasyurui == Komasyurui14.H12_NariKyo, "駒20.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(20).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(21).Now).Komasyurui == Komasyurui14.H02_Kyo____ || ((RO_Star)src_Sky.StarlightIndexOf(21).Now).Komasyurui == Komasyurui14.H12_NariKyo, "駒21.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(21).Now).Komasyurui + "]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(18).Now).Komasyurui == Komasyurui14.H02_Kyo____ || ((RO_Star)src_Sky.StarlightIndexOf(18).Now).Komasyurui == Komasyurui14.H12_NariKyo, $"駒18.種類=[{((RO_Star)src_Sky.StarlightIndexOf(18).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(19).Now).Komasyurui == Komasyurui14.H02_Kyo____ || ((RO_Star)src_Sky.StarlightIndexOf(19).Now).Komasyurui == Komasyurui14.H12_NariKyo, $"駒19.種類=[{((RO_Star)src_Sky.StarlightIndexOf(19).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(20).Now).Komasyurui == Komasyurui14.H02_Kyo____ || ((RO_Star)src_Sky.StarlightIndexOf(20).Now).Komasyurui == Komasyurui14.H12_NariKyo, $"駒20.種類=[{((RO_Star)src_Sky.StarlightIndexOf(20).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(21).Now).Komasyurui == Komasyurui14.H02_Kyo____ || ((RO_Star)src_Sky.StarlightIndexOf(21).Now).Komasyurui == Komasyurui14.H12_NariKyo, $"駒21.種類=[{((RO_Star)src_Sky.StarlightIndexOf(21).Now).Komasyurui}]");
 
             // 歩
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(22).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(22).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒22.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(22).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(23).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(23).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒23.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(23).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(24).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(24).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒24.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(24).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(25).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(25).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒25.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(25).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(26).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(26).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒26.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(26).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(27).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(27).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒27.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(27).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(28).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(28).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒28.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(28).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(29).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(29).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒29.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(29).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(30).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(30).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒30.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(30).Now).Komasyurui + "]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(22).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(22).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒22.種類=[{((RO_Star)src_Sky.StarlightIndexOf(22).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(23).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(23).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒23.種類=[{((RO_Star)src_Sky.StarlightIndexOf(23).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(24).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(24).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒24.種類=[{((RO_Star)src_Sky.StarlightIndexOf(24).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(25).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(25).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒25.種類=[{((RO_Star)src_Sky.StarlightIndexOf(25).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(26).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(26).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒26.種類=[{((RO_Star)src_Sky.StarlightIndexOf(26).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(27).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(27).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒27.種類=[{((RO_Star)src_Sky.StarlightIndexOf(27).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(28).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(28).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒28.種類=[{((RO_Star)src_Sky.StarlightIndexOf(28).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(29).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(29).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒29.種類=[{((RO_Star)src_Sky.StarlightIndexOf(29).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(30).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(30).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒30.種類=[{((RO_Star)src_Sky.StarlightIndexOf(30).Now).Komasyurui}]");
 
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(31).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(31).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒31.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(31).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(32).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(32).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒32.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(32).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(33).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(33).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒33.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(33).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(34).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(34).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒34.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(34).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(35).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(35).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒35.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(35).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(36).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(36).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒36.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(36).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(37).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(37).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒37.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(37).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(38).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(38).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒38.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(38).Now).Komasyurui + "]");
-            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(39).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(39).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒39.種類=[" + ((RO_Star)src_Sky.StarlightIndexOf(39).Now).Komasyurui + "]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(31).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(31).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒31.種類=[{((RO_Star)src_Sky.StarlightIndexOf(31).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(32).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(32).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒32.種類=[{((RO_Star)src_Sky.StarlightIndexOf(32).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(33).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(33).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒33.種類=[{((RO_Star)src_Sky.StarlightIndexOf(33).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(34).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(34).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒34.種類=[{((RO_Star)src_Sky.StarlightIndexOf(34).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(35).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(35).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒35.種類=[{((RO_Star)src_Sky.StarlightIndexOf(35).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(36).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(36).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒36.種類=[{((RO_Star)src_Sky.StarlightIndexOf(36).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(37).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(37).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒37.種類=[{((RO_Star)src_Sky.StarlightIndexOf(37).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(38).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(38).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒38.種類=[{((RO_Star)src_Sky.StarlightIndexOf(38).Now).Komasyurui}]");
+            Debug.Assert(((RO_Star)src_Sky.StarlightIndexOf(39).Now).Komasyurui == Komasyurui14.H01_Fu_____ || ((RO_Star)src_Sky.StarlightIndexOf(39).Now).Komasyurui == Komasyurui14.H11_Tokin__, "駒39.種類=[{((RO_Star)src_Sky.StarlightIndexOf(39).Now).Komasyurui}]");
 
 
 
@@ -190,8 +190,8 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 //{
                 //}
                 //koma.Syurui
-                //Debug.Assert((.Syurui == Ks14.H06_Oh, "駒0.種類=[" + ((RO_Star_Koma)siteiSky.StarlightIndexOf(0).Now).Syurui + "]");
-                //sb.Append("駒" + i + ".種類=[" + ((RO_Star_KomaKs)siteiSky.StarlightIndexOf(i).Now).Syurui + "]\n");
+                //Debug.Assert((.Syurui == Ks14.H06_Oh, $"駒0.種類=[{((RO_Star_Koma)siteiSky.StarlightIndexOf(0).Now).Syurui}]");
+                //sb.Append($"駒{i}.種類=[{((RO_Star_KomaKs)siteiSky.StarlightIndexOf(i).Now).Syurui}]\n");
             }
 
 

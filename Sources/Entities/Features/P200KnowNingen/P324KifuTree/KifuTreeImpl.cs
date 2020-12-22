@@ -52,9 +52,9 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         {
 #if DEBUG
             Debug.Assert(
-                (parentPside==Playerside.P1 && childPside==Playerside.P2)
+                (parentPside == Playerside.P1 && childPside == Playerside.P2)
                 ||
-                (parentPside==Playerside.P2 && childPside==Playerside.P1)
+                (parentPside == Playerside.P2 && childPside == Playerside.P1)
                 , "親子の先後に、異順序がありました。現手番[" + parentPside + "]　<> 次手番[" + childPside + "]");
 #endif
         }

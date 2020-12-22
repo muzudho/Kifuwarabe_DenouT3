@@ -2,20 +2,10 @@
 {
     using System;
 #if DEBUG
-    using Grayscale.Kifuwarakaku.Entities.Logger;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
-using Grayscale.Kifuwarakaku.GuiOfFvLearn.Features;
-using System.Text;
-using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.UseCases.Features;
+    using System.Text;
+    using Finger = ProjectDark.NamedInt.StrictNamedInt0; //フィンガー番号
 #else
     using System.Text;
     using Grayscale.Kifuwarakaku.Entities.Features;
