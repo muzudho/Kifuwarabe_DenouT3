@@ -153,7 +153,6 @@
             System.Diagnostics.Debugger.Break();
 #endif
                     isTimeoutShutdown = false;
-                    PhaseResult_UsiLoop1 result_UsiLoop1;
 
                     //
                     // サーバーに noop を送ってもよいかどうかは setoption コマンドがくるまで分からないので、
@@ -167,8 +166,6 @@
                     // USIループ（１つ目）
                     while (true)
                     {
-                        result_UsiLoop1 = PhaseResult_UsiLoop1.None;
-
                         // 将棋サーバーから何かメッセージが届いていないか、見てみます。
                         string line = Util_Message.Download_Nonstop();
 
@@ -211,60 +208,6 @@
                         }
                         else if (line.StartsWith("setoption"))
                         {
-                            //------------------------------------------------------------
-                            // 設定してください
-                            //------------------------------------------------------------
-                            //
-                            // 図.
-                            //
-                            //      log.txt
-                            //      ┌────────────────────────────────────────
-                            //      ～
-                            //      │2014/08/02 8:19:36> setoption name USI_Ponder value true
-                            //      │2014/08/02 8:19:36> setoption name USI_Hash value 256
-                            //      │
-                            //
-                            // ↑ゲーム開始時には、[対局]ダイアログボックスの[エンジン共通設定]の２つの内容が送られてきます。
-                            //      ・[相手の手番中に先読み] チェックボックス
-                            //      ・[ハッシュメモリ  ★　MB] スピン
-                            //
-                            // または
-                            //
-                            //      log.txt
-                            //      ┌────────────────────────────────────────
-                            //      ～
-                            //      │2014/08/02 23:47:35> setoption name 卯
-                            //      │2014/08/02 23:47:35> setoption name 卯
-                            //      │2014/08/02 23:48:29> setoption name 子 value true
-                            //      │2014/08/02 23:48:29> setoption name USI value 6
-                            //      │2014/08/02 23:48:29> setoption name 寅 value 馬
-                            //      │2014/08/02 23:48:29> setoption name 辰 value DRAGONabcde
-                            //      │2014/08/02 23:48:29> setoption name 巳 value C:\Users\Takahashi\Documents\新しいビットマップ イメージ.bmp
-                            //      │
-                            //
-                            //
-                            // 将棋所から、[エンジン設定] ダイアログボックスの内容が送られてきます。
-                            // このダイアログボックスは、将棋エンジンから将棋所に  ダイアログボックスを作るようにメッセージを送って作ったものです。
-                            //
-
-                            //------------------------------------------------------------
-                            // 設定を一覧表に変えます
-                            //------------------------------------------------------------
-                            //
-                            // 上図のメッセージのままだと使いにくいので、
-                            // あとで使いやすいように Key と Value の表に分けて持ち直します。
-                            //
-                            // 図.
-                            //
-                            //      setoptionDictionary
-                            //      ┌──────┬──────┐
-                            //      │Key         │Value       │
-                            //      ┝━━━━━━┿━━━━━━┥
-                            //      │USI_Ponder  │true        │
-                            //      ├──────┼──────┤
-                            //      │USI_Hash    │256         │
-                            //      └──────┴──────┘
-                            //
                             Regex regex = new Regex(@"setoption name ([^ ]+)(?: value (.*))?", RegexOptions.Singleline);
                             Match m = regex.Match(line);
 
@@ -280,148 +223,26 @@
                                     value = (string)m.Groups[2].Value;
                                 }
 
-                                if (playing.SetoptionDictionary.ContainsKey(name))
-                                {
-                                    // 設定を上書きします。
-                                    playing.SetoptionDictionary[name] = value;
-                                }
-                                else
-                                {
-                                    // 設定を追加します。
-                                    playing.SetoptionDictionary.Add(name, value);
-                                }
-                            }
-
-                            if (playing.SetoptionDictionary.ContainsKey("USI_ponder"))
-                            {
-                                string value = playing.SetoptionDictionary["USI_ponder"];
-
-                                bool result;
-                                if (Boolean.TryParse(value, out result))
-                                {
-                                    playing.Option_enable_usiPonder = result;
-                                }
-                            }
-                            else if (playing.SetoptionDictionary.ContainsKey("noopable"))
-                            {
-                                //
-                                // 独自実装。
-                                //
-                                string value = playing.SetoptionDictionary["noopable"];
-
-                                bool result;
-                                if (Boolean.TryParse(value, out result))
-                                {
-                                    playing.Option_enable_serverNoopable = result;
-                                }
+                                playing.SetOption(name, value);
                             }
                         }
                         else if ("isready" == line)
                         {
-                            //------------------------------------------------------------
-                            // それでは定刻になりましたので……
-                            //------------------------------------------------------------
-                            //
-                            // 図.
-                            //
-                            //      log.txt
-                            //      ┌────────────────────────────────────────
-                            //      ～
-                            //      │2014/08/02 1:31:35> isready
-                            //      │
-                            //
-                            //
-                            // 対局開始前に、将棋所から送られてくる文字が isready です。
-
-
-                            //------------------------------------------------------------
-                            // 将棋エンジン「おっおっ、設定を終わらせておかなければ（汗、汗…）」
-                            //------------------------------------------------------------
-#if DEBUG
-            Logger.EngineDefault.Logger.WriteLineAddMemo("┏━━━━━設定━━━━━┓");
-            foreach (KeyValuePair<string, string> pair in this.Owner.SetoptionDictionary)
-            {
-                // ここで将棋エンジンの設定を済ませておいてください。
-                Logger.EngineDefault.Logger.WriteLineAddMemo(pair.Key + "=" + pair.Value);
-            }
-            Logger.EngineDefault.Logger.WriteLineAddMemo("┗━━━━━━━━━━━━┛");
-#endif
-
-                            //------------------------------------------------------------
-                            // よろしくお願いします(^▽^)！
-                            //------------------------------------------------------------
-                            //
-                            // 図.
-                            //
-                            //      log.txt
-                            //      ┌────────────────────────────────────────
-                            //      ～
-                            //      │2014/08/02 2:03:33< readyok
-                            //      │
-                            //
-                            //
-                            // いつでも対局する準備が整っていましたら、 readyok を送り返します。
-                            Playing.Send("readyok");
+                            playing.ReadyOk();
                         }
                         else if ("usinewgame" == line)
                         {
-                            //------------------------------------------------------------
-                            // 対局時計が ポチッ とされました
-                            //------------------------------------------------------------
-                            //
-                            // 図.
-                            //
-                            //      log.txt
-                            //      ┌────────────────────────────────────────
-                            //      ～
-                            //      │2014/08/02 2:03:33> usinewgame
-                            //      │
-                            //
-                            //
-                            // 対局が始まったときに送られてくる文字が usinewgame です。
-
+                            playing.UsiNewGame();
 
                             // 無限ループ（１つ目）を抜けます。無限ループ（２つ目）に進みます。
-                            result_UsiLoop1 = PhaseResult_UsiLoop1.Break;
+                            goto end_loop1;
                         }
                         else if ("quit" == line)
                         {
-                            //------------------------------------------------------------
-                            // おつかれさまでした
-                            //------------------------------------------------------------
-                            //
-                            // 図.
-                            //
-                            //      log.txt
-                            //      ┌────────────────────────────────────────
-                            //      ～
-                            //      │2014/08/02 1:31:38> quit
-                            //      │
-                            //
-                            //
-                            // 将棋エンジンを止めるときに送られてくる文字が quit です。
-
-
-                            //------------------------------------------------------------
-                            // ﾉｼ
-                            //------------------------------------------------------------
-                            //
-                            // 図.
-                            //
-                            //      log.txt
-                            //      ┌────────────────────────────────────────
-                            //      ～
-                            //      │2014/08/02 3:08:34> (^-^)ﾉｼ
-                            //      │
-                            //
-                            //
-#if DEBUG
-            Logger.EngineDefault.Logger.WriteLineAddMemo("(^-^)ﾉｼ");
-#endif
-
+                            playing.Quit();
 
                             // このプログラムを終了します。
-                            result_UsiLoop1 = PhaseResult_UsiLoop1.Quit;
+                            goto gt_EndMethod;//全体ループを抜けます。
                         }
                         else
                         {
@@ -438,18 +259,6 @@
                             // ログだけ取って、スルーします。
                         }
 
-                        switch (result_UsiLoop1)
-                        {
-                            case PhaseResult_UsiLoop1.Break:
-                                goto end_loop1;
-
-                            case PhaseResult_UsiLoop1.Quit:
-                                goto end_loop1;
-
-                            default:
-                                break;
-                        }
-
                     gt_NextTime1:
                         ;
                     }
@@ -459,10 +268,6 @@
                     {
                         //MessageBox.Show("ループ１で矯正終了するんだぜ☆！");
                         goto gt_EndMethod;
-                    }
-                    else if (result_UsiLoop1 == PhaseResult_UsiLoop1.Quit)
-                    {
-                        goto gt_EndMethod;//全体ループを抜けます。
                     }
 
                     //
