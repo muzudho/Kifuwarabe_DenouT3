@@ -43,7 +43,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 #if DEBUG
-                Logger.Trace("（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　平手のようなんだぜ☆");
+                Logger.Trace($"（＾△＾）「{genjo.InputLine}」vs【{this.GetType().Name}】　：　平手のようなんだぜ☆");
 #endif
 
                 genjo.InputLine = genjo.InputLine.Substring("startpos".Length);
@@ -67,7 +67,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             else
             {
                 //#if DEBUG
-                Logger.Error("（＾△＾）ここはスルーして次に状態遷移するんだぜ☆\n「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】");//　：　局面の指定のようなんだぜ☆　対応していない☆？
+                Logger.Error($"（＾△＾）ここはスルーして次に状態遷移するんだぜ☆\n「{genjo.InputLine}」vs【{this.GetType().Name}】");//　：　局面の指定のようなんだぜ☆　対応していない☆？
                                                                                                                     // Logger.WriteLineError(logTag, "（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　局面の指定のようなんだぜ☆　対応していない☆？");
                                                                                                                     //#endif
                 nextState = KifuParserA_StateA1b_SfenLnsgkgsnl.GetInstance();

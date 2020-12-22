@@ -43,7 +43,7 @@ using System.Runtime.CompilerServices;
 
 #if DEBUG
             Logger.Trace("┏━━━━━┓(^o^)");
-            Logger.Trace("わたしは　" + this.State.GetType().Name + "　の　Execute_Step　だぜ☆　：　呼出箇所＝" + memberName + "." + sourceFilePath + "." + sourceLineNumber);
+            Logger.Trace($"わたしは　{this.State.GetType().Name}　の　Execute_Step　だぜ☆　：　呼出箇所＝{memberName}.{sourceFilePath}.{sourceLineNumber}");
 #endif
 
             KifuParserA_State nextState;
@@ -87,7 +87,7 @@ using System.Runtime.CompilerServices;
                     // FIXME: コンピューターが先手のとき、ここにくる？
 
                     // 異常時。
-                    //FIXME: logTag.Logger.WriteLineError("＼（＾ｏ＾）／「" + genjo.InputLine + "」入力がない3☆！　終わるぜ☆");
+                    //FIXME: Logger.Trace($"＼（＾ｏ＾）／「{genjo.InputLine}」入力がない3☆！　終わるぜ☆");
                     genjo.ToBreak_Abnormal();
                     goto gt_NextLoop1;
                 }

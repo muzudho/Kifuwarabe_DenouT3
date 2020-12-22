@@ -9,16 +9,16 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
         public static SfenStringImpl ExportSfen(SkyConst src_Sky)
         {
-            Debug.Assert(src_Sky.Count == 40, "sky.Starlights.Count=[" + src_Sky.Count + "]");//将棋の駒の数
+            Debug.Assert(src_Sky.Count == 40, $"sky.Starlights.Count=[{src_Sky.Count}]");//将棋の駒の数
 
             StartposExporterImpl se = new StartposExporterImpl(src_Sky);
-            return new SfenStringImpl("sfen " + Util_StartposExporter.ToSfenstring(se, false));
+            return new SfenStringImpl($"sfen {Util_StartposExporter.ToSfenstring(se, false)}");
         }
 
         public static SfenStringImpl ExportSfen_ForDebug(SkyConst src_Sky, bool psideIsBlack)
         {
             StartposExporterImpl se = new StartposExporterImpl(src_Sky);
-            return new SfenStringImpl("sfen " + Util_StartposExporter.ToSfenstring(se, true));
+            return new SfenStringImpl($"sfen {Util_StartposExporter.ToSfenstring(se, true)}");
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 comment = cmt.ToString();
             }
 
-            sb.AppendLine("    { act:\"drawText\", text:\"" + comment + "\", x: 20, y:20 },");//FIXME: \記号が入ってなければいいが☆
+            sb.AppendLine($"    {{ act:\"drawText\", text:\"{comment}\", x: 20, y:20 }},");//FIXME: \記号が入ってなければいいが☆
 
             int hKoma = 0;
             int hMasu_sente = 81;
@@ -93,19 +93,19 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 if (Conv_SyElement.ToOkiba(koma.Masu) == Okiba.Gote_Komadai)
                 {
                     // 後手持ち駒
-                    sb.AppendLine("    { act:\"drawImg\", img:\"" + Util_Converter_LogGraphicEx.PsideKs14_ToString(koma.Pside, koma.Komasyurui, "") + "\", masu: " + hMasu_gote + " },");//FIXME: \記号が入ってなければいいが☆
+                    sb.AppendLine($"    {{ act:\"drawImg\", img:\"{Util_Converter_LogGraphicEx.PsideKs14_ToString(koma.Pside, koma.Komasyurui, "")}\", masu: {hMasu_gote} }},");//FIXME: \記号が入ってなければいいが☆
                     hMasu_gote++;
                 }
                 else if (Conv_SyElement.ToOkiba(koma.Masu) == Okiba.Sente_Komadai)
                 {
                     // 先手持ち駒
-                    sb.AppendLine("    { act:\"drawImg\", img:\"" + Util_Converter_LogGraphicEx.PsideKs14_ToString(koma.Pside, koma.Komasyurui, "") + "\", masu: " + hMasu_sente + " },");//FIXME: \記号が入ってなければいいが☆
+                    sb.AppendLine($"    {{ act:\"drawImg\", img:\"{Util_Converter_LogGraphicEx.PsideKs14_ToString(koma.Pside, koma.Komasyurui, "")}\", masu: {hMasu_sente} }},");//FIXME: \記号が入ってなければいいが☆
                     hMasu_sente++;
                 }
                 else if (Conv_SyElement.ToOkiba(koma.Masu) == Okiba.ShogiBan)
                 {
                     // 盤上
-                    sb.AppendLine("    { act:\"drawImg\", img:\"" + Util_Converter_LogGraphicEx.PsideKs14_ToString(koma.Pside, koma.Komasyurui, "") + "\", masu: " + Conv_SyElement.ToMasuNumber(koma.Masu) + " },");//FIXME: \記号が入ってなければいいが☆
+                    sb.AppendLine($"    {{ act:\"drawImg\", img:\"{Util_Converter_LogGraphicEx.PsideKs14_ToString(koma.Pside, koma.Komasyurui, "")}\", masu: {Conv_SyElement.ToMasuNumber(koma.Masu)} }},");//FIXME: \記号が入ってなければいいが☆
                 }
 
                 hKoma++;

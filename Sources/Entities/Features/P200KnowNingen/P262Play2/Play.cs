@@ -1,4 +1,5 @@
 ﻿using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
+using Grayscale.Kifuwarakaku.Entities.Logging;
 
 #if DEBUG
 using System.Diagnostics;
@@ -90,10 +91,10 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 #if DEBUG
                 //if (null != errH_orNull)
                 //{
-                //    Logger.Trace("banjoJiFus.Count=[" + banjoJiFus.Count + "]");
+                //    Logger.Trace($"banjoJiFus.Count=[{banjoJiFus.Count}]");
                 //    foreach (Finger figKoma in banjoJiFus.Items)
                 //    {
-                //        Logger.Trace("figKoma=[" + (int)figKoma + "]");
+                //        Logger.Trace($"figKoma=[{(int)figKoma}]");
                 //    }
                 //    Logger.Trace("----------------------------------------");
                 //}
@@ -116,7 +117,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     {
                         // 二歩になる筋番号の発見☆
 #if DEBUG
-                        //Logger.Trace("二歩チェック： " + suji + "筋は二歩。");
+                        //Logger.Trace($"二歩チェック： {suji}筋は二歩。");
 #endif
 
                         // 筋一列を、クリアーします。
@@ -131,7 +132,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 //{
                 //    Logger.Trace("歩の置けない筋チェック（二歩チェック）終了");
                 //    Logger.Trace("----------------------------------------");
-                //    Logger.Trace("歩の置ける升＝" + Util_SySet.Dump_Elements(aMasus[(int)Komasyurui14.H01_Fu_____]));
+                //    Logger.Trace($"歩の置ける升＝{Util_SySet.Dump_Elements(aMasus[(int)Komasyurui14.H01_Fu_____])}");
                 //    Logger.Trace("----------------------------------------");
                 //}
 #endif

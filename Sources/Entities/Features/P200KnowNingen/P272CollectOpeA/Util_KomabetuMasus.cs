@@ -16,7 +16,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             // 全要素
             komabetuMasus.Foreach_Entry((Finger key, SySet<SyElement> value, ref bool toBreak) =>
             {
-                sb.AppendLine("駒＝[" + key + "]");
+                sb.AppendLine($"駒＝[{key}]");
                 sb.AppendLine(Util_Masus<New_Basho>.LogString_Concrete(value));
             });
 
@@ -34,7 +34,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             {
                 foreach (New_Basho masu in value.Elements)
                 {
-                    sb.AppendLine("finger=[" + key.ToString() + "] masu=[" + value.ToString() + "]");
+                    sb.AppendLine($"finger=[{key.ToString()}] masu=[{value.ToString()}]");
                 }
             });
 

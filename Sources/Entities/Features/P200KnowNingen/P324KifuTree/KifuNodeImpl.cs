@@ -101,7 +101,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
             System.Diagnostics.Debug.Assert(
                 !this.HasTuginoitte(moveStr),
-                "指し手[" + moveStr + "]は既に指されていました。"
+                $"指し手[{moveStr}]は既に指されていました。"
                 );
 #endif
             // SFENをキーに、次ノードを増やします。
@@ -135,8 +135,8 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             {
                 sb.AppendLine(Util_Sky307.Json_1Sky(
                     node.Value.KyokumenConst,
-                    memo + "：" + key,
-                    hint + "_SF解1",
+                    $"{memo}：{key}",
+                    $"{hint}_SF解1",
                     temezumi_yomiGenTeban_forLog
                     ));// 局面をテキストで作成
             });

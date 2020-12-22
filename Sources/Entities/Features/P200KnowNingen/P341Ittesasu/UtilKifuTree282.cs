@@ -59,12 +59,12 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     //----------------------------------------
                     // 本譜の手はスキップ
                     //----------------------------------------
-                    //Logger.Trace("残すmoveStr=[" + moveStr + "] key1=[" + key1 + "] ★");
+                    //Logger.Trace($"残すmoveStr=[{moveStr}] key1=[{key1}] ★");
                     goto gt_Next1;
                 }
                 //else
                 //{
-                //    Logger.Trace("残すmoveStr=[" + moveStr + "] key1=[" + key1 + "]");
+                //    Logger.Trace($"残すmoveStr=[{moveStr}] key1=[{key1}]");
                 //}
 
                 //----------------------------------------
@@ -166,8 +166,8 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             kifu282.CurNode.Add_ChildNode(Util_Sky278.TranslateMove_StarlightToText(out_swapedNode.Key), out_swapedNode);
             out_swapedNode.ParentNode = kifu282.CurNode;
 
-            Logger.Trace("リンクトリストの、最終ノードは差し替えられた hint=[" + hint + "] item=[" + Util_Sky278.TranslateMove_StarlightToText(swapedMove) + "]");
-        // memberName=[" + memberName + "] sourceFilePath=[" + sourceFilePath + "] sourceLineNumber=[" + sourceLineNumber + "]
+            Logger.Trace($"リンクトリストの、最終ノードは差し替えられた hint=[{hint}] item=[{Util_Sky278.TranslateMove_StarlightToText(swapedMove)}]");
+        // memberName=[{memberName}"] sourceFilePath=[{sourceFilePath}] sourceLineNumber=[{sourceLineNumber}]
 
         gt_EndMethod:
             ;

@@ -15,7 +15,7 @@
 
                 if (KomaSyurui14Array.IsNari(koma.Syurui))
                 {
-                    MessageBox.Show("指し手に成りが含まれています。[" + koma.Masu.Word + "][" + koma.Syurui + "]", "デバッグ:" + hint);
+                    MessageBox.Show($"指し手に成りが含まれています。[{koma.Masu.Word}][{koma.Syurui}]", "デバッグ:" + hint);
                     //Logger.Trace("指し手に成りが含まれています。");
                     toBreak = true;
                     goto gt_EndMethod;

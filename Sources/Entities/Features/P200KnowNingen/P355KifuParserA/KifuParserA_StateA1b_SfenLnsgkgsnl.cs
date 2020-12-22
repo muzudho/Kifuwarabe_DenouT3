@@ -39,7 +39,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         {
             nextState = this;
 
-            Logger.Error("（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　さて、どんな内容なんだぜ☆？");
+            Logger.Error($"（＾△＾）「{genjo.InputLine}」vs【{this.GetType().Name}】　：　さて、どんな内容なんだぜ☆？");
 
             StartposImporter startposImporter1;
             string restText;
@@ -50,7 +50,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 out restText
                 );
             genjo.StartposImporter_OrNull = startposImporter1;
-            Logger.Error("（＾△＾）restText=「" + restText + "」 successful=【" + successful + "】");
+            Logger.Error($"（＾△＾）restText=「{restText}」 successful=【{successful}】");
 
             if (successful)
             {

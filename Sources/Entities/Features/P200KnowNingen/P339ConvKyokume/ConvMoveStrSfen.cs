@@ -43,13 +43,13 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 //int srcDan;
                 //if (!Util_MasuNum.TryMasuToDan(srcKoma.Masu, out srcDan))
                 //{
-                //    throw new Exception("指定の元マス[" + Util_Masu10.AsMasuNumber(srcKoma.Masu) + "]は、段に変換できません。　：　" + memberName + "." + sourceFilePath + "." + sourceLineNumber);
+                //    throw new Exception("指定の元マス[$"{Util_Masu10.AsMasuNumber(srcKoma.Masu)}]は、段に変換できません。　：　{memberName}.{sourceFilePath}.{sourceLineNumber}");
                 //}
 
                 //int dan;
                 //if (!Util_MasuNum.TryMasuToDan(dstKoma.Masu, out dan))
                 //{
-                //    throw new Exception("指定の先マス[" + Util_Masu10.AsMasuNumber(dstKoma.Masu) + "]は、段に変換できません。　：　" + memberName + "." + sourceFilePath + "." + sourceLineNumber);
+                //    throw new Exception($"指定の先マス[{Util_Masu10.AsMasuNumber(dstKoma.Masu)}]は、段に変換できません。　：　{memberName}.{sourceFilePath}.{sourceLineNumber}");
                 //}
 
 

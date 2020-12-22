@@ -32,11 +32,11 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
             Node<IMove, KyokumenWrapper> siteiNode = kifu.CurNode;
             SkyConst src_Sky = siteiNode.Value.KyokumenConst;
-            //kifu.AssertPside(kifu.CurNode, "str1=" + str1);
+            //kifu.AssertPside(kifu.CurNode, $"str1={str1}");
             Playerside pside1 = src_Sky.KaisiPside;
 
 #if DEBUG
-            Debug.Assert(!Conv_MasuHandle.OnKomabukuro(Conv_SyElement.ToMasuNumber(((RO_Star)src_Sky.StarlightIndexOf((Finger)0).Now).Masu)), "[" + src_Sky.Temezumi + "]手目、駒が駒袋にあった。");
+            Debug.Assert(!Conv_MasuHandle.OnKomabukuro(Conv_SyElement.ToMasuNumber(((RO_Star)src_Sky.StarlightIndexOf((Finger)0).Now).Masu)), $"[{src_Sky.Temezumi}]手目、駒が駒袋にあった。");
 #endif
 
             Komasyurui14 uttaSyurui; // 打った駒の種類

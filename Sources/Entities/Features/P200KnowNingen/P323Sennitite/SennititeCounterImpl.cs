@@ -32,7 +32,7 @@ using System.Text;
                 {
                     StringBuilder sb = new StringBuilder();
                     sb.AppendLine("----------------------------------------");
-                    sb.AppendLine("is千日手☆！:" + this.douituKyokumenCounterDictionary[hash].ToString());
+                    sb.AppendLine($"is千日手☆！:{this.douituKyokumenCounterDictionary[hash].ToString()}");
                     sb.AppendLine(this.Dump_Format());
                     Logger.Trace(sb.ToString());
                 }
@@ -56,7 +56,7 @@ using System.Text;
                 {
                     StringBuilder sb = new StringBuilder();
                     sb.AppendLine("----------------------------------------");
-                    sb.AppendLine("千日手、カウントダウン☆！：" + hint + ":" + this.douituKyokumenCounterDictionary[hash].ToString());
+                    sb.AppendLine($"千日手、カウントダウン☆！：{hint}:{this.douituKyokumenCounterDictionary[hash]}");
                     sb.AppendLine(this.Dump_Format());
                     Logger.Trace(sb.ToString());
                 }
@@ -80,7 +80,7 @@ using System.Text;
                 {
                     StringBuilder sb = new StringBuilder();
                     sb.AppendLine("----------------------------------------");
-                    sb.AppendLine("千日手カウントアップした☆！：" + hint + ":" + this.douituKyokumenCounterDictionary[hash].ToString());
+                    sb.AppendLine($"千日手カウントアップした☆！：{hint}:{this.douituKyokumenCounterDictionary[hash]}");
                     sb.AppendLine(this.Dump_Format());
                     Logger.Trace(sb.ToString());
                 }
@@ -96,7 +96,7 @@ using System.Text;
                 {
                     StringBuilder sb = new StringBuilder();
                     sb.AppendLine("----------------------------------------");
-                    sb.AppendLine("千日手、新局面追加☆！：" + hint + ":" + this.douituKyokumenCounterDictionary[hash].ToString());
+                    sb.AppendLine($"千日手、新局面追加☆！：{hint}:{this.douituKyokumenCounterDictionary[hash]}");
                     sb.AppendLine(this.Dump_Format());
                     Logger.Trace(sb.ToString());
                 }

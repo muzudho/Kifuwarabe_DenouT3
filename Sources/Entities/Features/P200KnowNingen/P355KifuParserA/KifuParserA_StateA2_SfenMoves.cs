@@ -111,7 +111,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     {
                         //「6g6f」形式でもなかった☆
 
-                        Logger.Error("（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　！？　次の一手が読めない☆　inputLine=[" + genjo.InputLine + "]");
+                        Logger.Error($"（＾△＾）「{genjo.InputLine}」vs【{this.GetType().Name}】　：　！？　次の一手が読めない☆　inputLine=[{genjo.InputLine}]");
                         genjo.ToBreak_Abnormal();
                         goto gt_EndMethod;
                     }
@@ -136,7 +136,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     //------------------------------
                     // ★棋譜読込専用  駒移動
                     //------------------------------
-                    //Logger.Trace("一手指し開始　：　残りの符号つ「" + genjo.InputLine + "」");
+                    //Logger.Trace($"一手指し開始　：　残りの符号つ「{genjo.InputLine}」");
 
                     //
                     //↓↓将棋エンジンが一手指し（進める）
@@ -184,12 +184,12 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             }
             else
             {
-                //Logger.Trace("（＾△＾）現局面まで進んだのかだぜ☆？\n" + Util_Sky307.Json_1Sky(
+                //Logger.Trace($"（＾△＾）現局面まで進んだのかだぜ☆？\n{Util_Sky307.Json_1Sky(
                 //    src_Sky,
                 //    "棋譜パース",
                 //    "SFENパース3",
                 //    src_Sky.Temezumi//読み進めている現在の手目
-                //    ));
+                //    )}");
                 genjo.ToBreak_Normal();//棋譜パーサーＡの、唯一の正常終了のしかた。
             }
 

@@ -52,7 +52,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 // 
 
 #if DEBUG
-                Logger.Trace("（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　ﾌﾑﾌﾑ... SFEN形式か...☆");
+                Logger.Trace($"（＾△＾）「{genjo.InputLine}」vs【{this.GetType().Name}】　：　ﾌﾑﾌﾑ... SFEN形式か...☆");
 #endif
                 genjo.InputLine = genjo.InputLine.Substring("position".Length);
                 genjo.InputLine = genjo.InputLine.Trim();
@@ -63,14 +63,14 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             else if ("" == genjo.InputLine)
             {
                 // 異常時。
-                Logger.Error("＼（＾ｏ＾）／「" + genjo.InputLine + "」入力がない2☆！　終わるぜ☆");
+                Logger.Error($"＼（＾ｏ＾）／「{genjo.InputLine}」入力がない2☆！　終わるぜ☆");
                 genjo.ToBreak_Abnormal();
             }
             else
             {
 #if DEBUG
                 Playerside pside = model_Taikyoku.Kifu.CurNode.Value.KyokumenConst.KaisiPside;
-                Logger.Trace("（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　ﾌﾑﾌﾑ... positionじゃなかったぜ☆　日本式か☆？　SFENでmovesを読んだあとのプログラムに合流させるぜ☆　：　先後＝[" + pside + "]");
+                Logger.Trace($"（＾△＾）「{genjo.InputLine}」vs【{this.GetType().Name}】　：　ﾌﾑﾌﾑ... positionじゃなかったぜ☆　日本式か☆？　SFENでmovesを読んだあとのプログラムに合流させるぜ☆　：　先後＝[{pside}]");
 #endif
                 nextState = KifuParserA_StateA2_SfenMoves.GetInstance();
             }

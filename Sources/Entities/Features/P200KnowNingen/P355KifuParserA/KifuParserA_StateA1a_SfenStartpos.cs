@@ -40,9 +40,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             if (genjo.InputLine.StartsWith("moves"))
             {
                 //>>>>> 棋譜が始まります。
-#if DEUBG
-                    Logger.Trace("（＾△＾）「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　ｳﾑ☆　moves 分かるぜ☆");
-#endif
+                Logger.Trace($"（＾△＾）「{genjo.InputLine}」vs【{this.GetType().Name}】　：　ｳﾑ☆　moves 分かるぜ☆");
 
                 genjo.InputLine = genjo.InputLine.Substring("moves".Length);
                 genjo.InputLine = genjo.InputLine.Trim();
@@ -55,13 +53,13 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 // FIXME: コンピューターが先手のとき、ここにくる？
 
                 // 異常時。
-                Logger.Error("＼（＾ｏ＾）／「" + genjo.InputLine + "」入力がない1☆！　終わるぜ☆");
+                Logger.Error($"＼（＾ｏ＾）／「{genjo.InputLine}」入力がない1☆！　終わるぜ☆");
                 genjo.ToBreak_Abnormal();
             }
             else
             {
                 // 異常時。
-                Logger.Error("＼（＾ｏ＾）／「" + genjo.InputLine + "」vs【" + this.GetType().Name + "】　：　movesがない☆！　終わるぜ☆");
+                Logger.Error($"＼（＾ｏ＾）／「{genjo.InputLine}」vs【{this.GetType().Name}】　：　movesがない☆！　終わるぜ☆");
                 genjo.ToBreak_Abnormal();
             }
 

@@ -18,7 +18,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 string moveStr = ConvMove.ChangeMoveTo_KsString_ForLog(board1.moveOrNull, board1.GenTeban);
 
                 //string oldCaption = boardLog1.Caption;
-                //boardLog1.Caption += "_" + moveStr;
+                //boardLog1.Caption += $"_{moveStr}";
                 sb_json_boardsLog.Append(Util_LogWriter_Json.ToJsonStr(board1));
                 //boardLog1.Caption = oldCaption;
             }

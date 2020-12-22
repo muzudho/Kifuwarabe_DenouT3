@@ -102,7 +102,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 }
             });
 
-            Debug.Assert(this.masubetuKoma_banjo.Count == 40, "将棋の駒の数が40個ではありませんでした。[" + this.masubetuKoma_banjo.Count + "]");
+            Debug.Assert(this.masubetuKoma_banjo.Count == 40, $"将棋の駒の数が40個ではありませんでした。[{this.masubetuKoma_banjo.Count}]");
         }
 
 
@@ -121,21 +121,21 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
             //                    if (Util_MasuNum.OnKomabukuro(Util_Masu.AsMasuNumber(koma.Masu)))
             //                    {
-            //                        sb.Append("[袋" + Util_Masu.AsMasuNumber(koma.Masu) + "]");
+            //                        sb.Append($"[袋{Util_Masu.AsMasuNumber(koma.Masu)}]");
             //                        fukuro++;
             //                    }
             //                    else if (Util_MasuNum.OnShogiban(Util_Masu.AsMasuNumber(koma.Masu)))
             //                    {
-            //                        sb.Append("[盤" + Util_Masu.AsMasuNumber(koma.Masu) + "]");
+            //                        sb.Append($"[盤{Util_Masu.AsMasuNumber(koma.Masu)}]");
             //                        ban++;
             //                    }
             //                    else if (Util_MasuNum.OnKomadai(Util_Masu.AsMasuNumber(koma.Masu)))
             //                    {
-            //                        sb.Append("[台" + Util_Masu.AsMasuNumber(koma.Masu) + "]");
+            //                        sb.Append($"[台{Util_Masu.AsMasuNumber(koma.Masu)}]");
             //                        dai++;
             //                    }
             //                });
-            //                Debug.Assert(40 == ban + dai || 40 == fukuro, "駒袋に駒が！fukuro=[" + fukuro + "] ban=[" + ban + "] dai=[" + dai + "] " + failMessage + " "+sb.ToString());
+            //                Debug.Assert(40 == ban + dai || 40 == fukuro, $"駒袋に駒が！fukuro=[{fukuro}] ban=[{ban}] dai=[{dai}] {failMessage} {sb}");
             //            }
             //#endif
         }
@@ -317,9 +317,9 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     default: throw new Exception($"未対応の駒種類=[{entry.Value.Komasyurui}]");
                 }
 
-                Debug.Assert(0 <= int_finger && int_finger <= 39, "finger=[" + int_finger + "]");
+                Debug.Assert(0 <= int_finger && int_finger <= 39, $"finger=[{int_finger}]");
 
-                Debug.Assert(!komaDic.ContainsKey(int_finger), "finger=[" + int_finger + "]");
+                Debug.Assert(!komaDic.ContainsKey(int_finger), $"finger=[{int_finger}]");
 
                 komaDic.Add(int_finger, entry.Value);
 
@@ -467,7 +467,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
                 foreach (KeyValuePair<Finger, RO_Star> entry in komaDic)
                 {
-                    Debug.Assert(0 <= (int)entry.Key && (int)entry.Key <= 39, "entry.Key=[" + (int)entry.Key + "]");
+                    Debug.Assert(0 <= (int)entry.Key && (int)entry.Key <= 39, $"entry.Key=[{(int)entry.Key}]");
 
                     komas[(int)entry.Key] = entry.Value;
                 }
@@ -487,7 +487,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 }
             }
 
-            StartposImporter.Assert_HirateHonsyogi(dst_Sky, "ToSkyの終了直前 this.InputLine=[" + this.InputLine + "]");
+            StartposImporter.Assert_HirateHonsyogi(dst_Sky, $"ToSkyの終了直前 this.InputLine=[{this.InputLine}]");
 
             return SkyConst.NewInstance(dst_Sky,
                 -1//dst_sky で設定済みなのでそのまま。

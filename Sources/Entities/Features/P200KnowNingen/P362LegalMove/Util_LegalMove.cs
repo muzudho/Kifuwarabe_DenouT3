@@ -96,10 +96,13 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             )
         {
             bool enableLog = false;//logTag.Logger.Enable
-            Util_GraphicalLog.WriteHtml5(enableLog, "Util_LegalMove(王手回避漏れ02)王手を回避するかどうかに関わらず、ひとまず全ての次の手", "[" +
+            Util_GraphicalLog.WriteHtml5(
+                enableLog,
+                "Util_LegalMove(王手回避漏れ02)王手を回避するかどうかに関わらず、ひとまず全ての次の手",
+                "[" +
                 ((KifuNode)hubNode).Json_NextNodes_MultiSky(
-                    "(王手回避漏れ02." + temezumi_yomiGenTeban + "手目)",
-                    hint + "_Lv3_RMHO",
+                    $"(王手回避漏れ02.{temezumi_yomiGenTeban}手目)",
+                    $"{hint}_Lv3_RMHO",
                     temezumi_yomiGenTeban) + "]");// ログ出力
         }
 

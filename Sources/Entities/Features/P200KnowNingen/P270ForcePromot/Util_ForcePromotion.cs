@@ -51,9 +51,9 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
                 sbLog.AppendLine();
                 sbLog.AppendLine(hint);
-                sbLog.AppendLine("　現在の配役=[" + currentHaiyaku + "]");
-                sbLog.AppendLine("　masuHandle=[" + masuHandle + "]");
-                sbLog.AppendLine("　強制転成後の配役=[" + result + "]");
+                sbLog.AppendLine($"　現在の配役=[{currentHaiyaku}]");
+                sbLog.AppendLine($"　masuHandle=[{masuHandle}]");
+                sbLog.AppendLine($"　強制転成後の配役=[{result}]");
                 File.WriteAllText(logFilePath, sbLog.ToString());
             }
 

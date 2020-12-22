@@ -965,7 +965,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 //    siteiNode.Value.ToKyokumenConst, srcOkiba1, pside, srcSyurui);//(2014-10-04 12:46)変更
 
 
-                Debug.Assert(0 < daiKomaFgs.Count, "フィンガーズが 1個未満。 srcOkiba1=[" + srcOkiba1 + "] pside=[" + pside + "] srcSyurui=[" + srcSyurui + "]");
+                Debug.Assert(0 < daiKomaFgs.Count, $"フィンガーズが 1個未満。 srcOkiba1=[{srcOkiba1}] pside=[{pside}] srcSyurui=[{srcSyurui}]");
 
                 // 1個はヒットするはず
                 Finger hitKoma = daiKomaFgs[0];//▲！[コマ送り]ボタンを連打すると、エラーになります。
