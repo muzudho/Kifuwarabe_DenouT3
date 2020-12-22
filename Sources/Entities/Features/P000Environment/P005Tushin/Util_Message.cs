@@ -56,16 +56,6 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         }
 
         /// <summary>
-        /// 将棋サーバーに向かってメッセージを送り出します。
-        /// 将棋エンジンが使います。
-        /// </summary>
-        /// <param name="message"></param>
-        public static void Upload(string message)
-        {
-            Console.Out.WriteLine(message);
-        }
-
-        /// <summary>
         /// TODO:未実装
         /// </summary>
         /// <returns></returns>
