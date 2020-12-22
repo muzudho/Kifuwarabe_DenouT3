@@ -32,10 +32,6 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
             File.WriteAllText(Path.Combine(fvDirectory, toml.Get<TomlTable>("Resources").Get<string>("Fv01KKInFvDir")), Format_FeatureVector_KK.Format_KK(fv));
-
-            //StringBuilder sb = new StringBuilder();
-            //sb.AppendLine(filepathW);
-            //MessageBox.Show("ファイルを書き出しました。\n" + sb.ToString());
         }
 
         public static void Write_KP(FeatureVector fv, string fvDirectory)
@@ -62,8 +58,6 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
                 File.WriteAllText(filepathW2, Format_FeatureVector_KP.Format_KP(fv, Playerside.P2));
                 //sb.AppendLine(filepathW2);
             }
-
-            //MessageBox.Show("ファイルを書き出しました。\n" + sb.ToString());
         }
 
         /// <summary>
@@ -103,8 +97,6 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
                     //sb.AppendLine(item.Filepath);
                 }
             }
-
-            //MessageBox.Show("ファイルを書き出しました。\n" + sb.ToString());
         }
 
         /// <summary>
@@ -131,8 +123,6 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
                     //sb_result.AppendLine(item.Filepath);
                 }
             }
-
-            //MessageBox.Show("ファイルを書き出しました。\n" + sb_result.ToString());
         }
 
 
@@ -165,8 +155,6 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
                     //sb.AppendLine(item.Filepath);
                 }
             }
-
-            //MessageBox.Show("ファイルを書き出しました。\n" + sb.ToString());
         }
 
         /// <summary>
@@ -194,10 +182,6 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
                     //sb.AppendLine(item.Filepath);
                 }
             }
-
-            //MessageBox.Show("ファイルを書き出しました。\n" + sb.ToString());
         }
-
-
     }
 }

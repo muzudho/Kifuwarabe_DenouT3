@@ -31,8 +31,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvWriter.Features
             Util_FeatureVectorEdit.Make_Random(fv);
 
             File.WriteAllText(filepath, Format_FeatureVector_Komawari.Format_Text(fv));
-            MessageBox.Show("サンプルファイルを書き出しました。\n" +
-                "filepath=[" + filepath + "]");
+            MessageBox.Show($"サンプルファイルを書き出しました。\nfilepath=[{filepath}]");
         }
 
         private void btnRead_Click(object sender, EventArgs e)
@@ -57,9 +56,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvWriter.Features
             File.WriteAllText(filepathW, Format_FeatureVector_Komawari.Format_Text(fv));
 
 #if DEBUG
-            MessageBox.Show("FVファイルを読み込んで、書き出しました。\n" +
-                "readFilepath=[" + filepathR + "]" +
-                "writeFilepath=[" + filepathW + "]");
+            MessageBox.Show($"FVファイルを読み込んで、書き出しました。\nreadFilepath=[{filepathR}]writeFilepath=[{filepathW}]");
 #endif
         }
 
@@ -184,7 +181,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvWriter.Features
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
 
             string filepathW = Path.Combine(Application.StartupPath, Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv00Scale")));
-            MessageBox.Show("filepathW=[" + filepathW + "]", "fv_00_Scale.csv書き出し。");
+            MessageBox.Show($"filepathW=[{filepathW}]", "fv_00_Scale.csv書き出し。");
 
             FeatureVector fv = new FeatureVectorImpl();
             fv.SetBairitu_NikomaKankeiPp(0.002f);//仮の初期値。

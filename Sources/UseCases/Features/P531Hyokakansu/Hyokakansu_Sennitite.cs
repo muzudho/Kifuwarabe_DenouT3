@@ -58,7 +58,7 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
             // 明細
             {
                 StringBuilder sb = new StringBuilder();
-                sb.Append("千日手。 score=[" + out_score + "]");
+                sb.Append($"千日手。 score=[{out_score}]");
                 utiwake = sb.ToString();
             }
             out_meisaiKoumoku_orNull = new KyHyokaMeisai_KoumokuImpl(utiwake, out_score);

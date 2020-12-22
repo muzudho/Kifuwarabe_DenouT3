@@ -171,10 +171,10 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
             this.LearningData.AtBegin(this);
 
             // フォームの初期化が終わった後で。
-            this.lblExplainStopLearning.Text = "自動学習の止め方：　次のファイルがあれば、そのうち止まります。「" + this.StopLearning.StopLearningFilePath + "」";
+            this.lblExplainStopLearning.Text = $"自動学習の止め方：　次のファイルがあれば、そのうち止まります。「{this.StopLearning.StopLearningFilePath}」";
 
             // ラベル
-            this.chkHyakuretuken.Text = "1位になるまで繰返す(最大" + UtilAutoMoveRush.RENZOKU_KAISU + "回)";
+            this.chkHyakuretuken.Text = $"1位になるまで繰返す(最大{UtilAutoMoveRush.RENZOKU_KAISU}回)";
 
             // ファイル読込
             {
@@ -294,10 +294,6 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
                 string src = this.TxtKifuFilepath.Text;
                 string dst = Path.Combine(this.search_kifu_folder_lines[1], Path.GetFileName(this.TxtKifuFilepath.Text));
 
-                //MessageBox.Show("棋譜移動\n" +
-                //    "src=[" + src + "]\n" +
-                //    "dst=[" + dst + "]");
-
                 File.Move(src, dst);
                 this.TxtKifuFilepath.Text = "";
             }
@@ -313,10 +309,6 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
             {
                 string src = this.TxtKifuFilepath.Text;
                 string dst = Path.Combine(this.search_kifu_folder_lines[2], Path.GetFileName(this.TxtKifuFilepath.Text));
-
-                MessageBox.Show("棋譜移動\n" +
-                    "src=[" + src + "]\n" +
-                    "dst=[" + dst + "]");
 
                 File.Move(src, dst);
                 this.TxtKifuFilepath.Text = "";
@@ -533,10 +525,8 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
 
                 if ("" != selectedFile)
                 {
+                    // ランダムチョイス棋譜
                     result_path = Path.Combine(path_doFolder, selectedFile);
-
-                    //MessageBox.Show("ランダムチョイス棋譜\n" +
-                    //    "result_path=[" + result_path + "]");
                 }
             }
 

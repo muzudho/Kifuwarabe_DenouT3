@@ -93,12 +93,12 @@ using Grayscale.Kifuwarakaku.UseCases.Features;
                 Logger.Trace("PP");
                 Logger.Trace("----------------------------------------");
                 Logger.Trace("begin");
-                Logger.Trace("   negative_length =" + negative_length);
-                Logger.Trace("   positive_length =" + positive_length);
-                Logger.Trace("   longest_positive=" + longest_positive);
-                Logger.Trace("   negative_average=" + (negative_items == 0 ? 0 : negative_total / negative_items));
-                Logger.Trace("   positive_average=" + (positive_items == 0 ? 0 : positive_total / positive_items));
-                Logger.Trace("   notZero         =" + notZero);
+                Logger.Trace($"   negative_length ={negative_length}");
+                Logger.Trace($"   positive_length ={positive_length}");
+                Logger.Trace($"   longest_positive={longest_positive}");
+                Logger.Trace($"   negative_average={(negative_items == 0 ? 0 : negative_total / negative_items)}");
+                Logger.Trace($"   positive_average={(positive_items == 0 ? 0 : positive_total / positive_items)}");
+                Logger.Trace($"   notZero         ={notZero}");
                 Logger.Trace("----------------------------------------");
 #endif
             }

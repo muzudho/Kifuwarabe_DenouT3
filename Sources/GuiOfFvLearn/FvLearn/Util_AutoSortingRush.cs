@@ -57,9 +57,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
                     if (sfenMoveStr == gohosyuItem.Sfen)
                     {
                         // 1位なら終了
-#if DEBUG
-                        Logger.Trace("items.Count=[" + uc_Main.LstGohosyu.Items.Count + "] sfenMoveStr=[" + sfenMoveStr + "] gohosyuItem.Sfen=[" + gohosyuItem.Sfen + "]");
-#endif
+                        Logger.Trace($"items.Count=[{uc_Main.LstGohosyu.Items.Count}] sfenMoveStr=[{sfenMoveStr}] gohosyuItem.Sfen=[{gohosyuItem.Sfen}]");
                         break;
                     }
                 }

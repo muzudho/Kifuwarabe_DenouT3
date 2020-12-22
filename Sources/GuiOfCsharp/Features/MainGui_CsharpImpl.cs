@@ -263,64 +263,46 @@
         /// </summary>
         public void ReadStyle_ToForm(Form1_Shogiable ui_Form1)
         {
-            try
-            {
-                var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-                var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
+            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
 
-                string filepath2 = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataStyleText"));
+            string filepath2 = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataStyleText"));
 #if DEBUG
-                MessageBox.Show("独自スタイルシート　filepath2=" + filepath2);
+                MessageBox.Show($"独自スタイルシート　filepath2={filepath2}");
 #endif
 
-                if (File.Exists(filepath2))
+            if (File.Exists(filepath2))
+            {
+                string styleText = System.IO.File.ReadAllText(filepath2, Encoding.UTF8);
+
+                var jsonMousou_arr = DynamicJson.Parse(styleText);
+
+                var bodyElm = jsonMousou_arr["body"];
+
+                if (null != bodyElm)
                 {
-                    string styleText = System.IO.File.ReadAllText(filepath2, Encoding.UTF8);
+                    var backColor = bodyElm["backColor"];
 
-                    try
+                    if (null != backColor)
                     {
-                        var jsonMousou_arr = DynamicJson.Parse(styleText);
+                        var var_alpha = backColor["alpha"];
 
-                        var bodyElm = jsonMousou_arr["body"];
+                        int red = (int)backColor["red"];
 
-                        if (null != bodyElm)
+                        int green = (int)backColor["green"];
+
+                        int blue = (int)backColor["blue"];
+
+                        if (null != var_alpha)
                         {
-                            var backColor = bodyElm["backColor"];
-
-                            if (null != backColor)
-                            {
-                                var var_alpha = backColor["alpha"];
-
-                                int red = (int)backColor["red"];
-
-                                int green = (int)backColor["green"];
-
-                                int blue = (int)backColor["blue"];
-
-                                if (null != var_alpha)
-                                {
-                                    ui_Form1.Uc_Form1Main.BackColor = Color.FromArgb((int)var_alpha, red, green, blue);
-                                }
-                                else
-                                {
-                                    ui_Form1.Uc_Form1Main.BackColor = Color.FromArgb(red, green, blue);
-                                }
-                            }
+                            ui_Form1.Uc_Form1Main.BackColor = Color.FromArgb((int)var_alpha, red, green, blue);
+                        }
+                        else
+                        {
+                            ui_Form1.Uc_Form1Main.BackColor = Color.FromArgb(red, green, blue);
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("JSONのパース時にエラーか？：" + ex.GetType().Name + "：" + ex.Message);
-                        throw;
-                    }
-
-
-
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("JSONのパース時にエラーか？：" + ex.GetType().Name + "：" + ex.Message);
             }
         }
 
@@ -342,7 +324,7 @@
 
             {
 #if DEBUG
-                Logger.Trace("(^o^)乱数のたね＝[" + KwRandom.Seed + "]");
+                Logger.Trace($"(^o^)乱数のたね＝[{KwRandom.Seed}]");
 #endif
 
                 this.Data_Settei_Csv.Read_Add(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataSetteiCsv")), Encoding.UTF8);

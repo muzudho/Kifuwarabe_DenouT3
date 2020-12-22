@@ -76,12 +76,12 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
                     longest_positive = false;
                 }
                 Logger.Trace("topology");
-                Logger.Trace("   negative_length =" + negative_length);
-                Logger.Trace("   positive_length =" + positive_length);
-                Logger.Trace("   longest_positive=" + longest_positive);
-                Logger.Trace("   negative_average=" + (negative_items == 0 ? 0 : negative_total / negative_items));
-                Logger.Trace("   positive_average=" + (positive_items == 0 ? 0 : positive_total / positive_items));
-                Logger.Trace("   notZero         =" + notZero);
+                Logger.Trace($"   negative_length ={negative_length}");
+                Logger.Trace($"   positive_length ={positive_length}");
+                Logger.Trace($"   longest_positive={longest_positive}");
+                Logger.Trace($"   negative_average={(negative_items == 0 ? 0 : negative_total / negative_items)}");
+                Logger.Trace($"   positive_average={(positive_items == 0 ? 0 : positive_total / positive_items)}");
+                Logger.Trace($"   notZero         ={notZero}");
                 Logger.Trace("----------------------------------------");
             }
 
@@ -147,17 +147,15 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
             {
                 longest_positive = false;
             }
-#if DEBUG
             Logger.Trace("end");
-            Logger.Trace("   negative_length =" + negative_length);
-            Logger.Trace("   positive_length =" + positive_length);
-            Logger.Trace("   longest_positive=" + longest_positive);
-            Logger.Trace("   zoom            =" + zoom);
-            Logger.Trace("   negative_average=" + (negative_items == 0 ? 0 : negative_total / negative_items));
-            Logger.Trace("   positive_average=" + (positive_items == 0 ? 0 : positive_total / positive_items));
-            Logger.Trace("   notZero         =" + notZero);
+            Logger.Trace($"   negative_length ={negative_length}");
+            Logger.Trace($"   positive_length ={positive_length}");
+            Logger.Trace($"   longest_positive={longest_positive}");
+            Logger.Trace($"   zoom            ={zoom}");
+            Logger.Trace($"   negative_average={(negative_items == 0 ? 0 : negative_total / negative_items)}");
+            Logger.Trace($"   positive_average={(positive_items == 0 ? 0 : positive_total / positive_items)}");
+            Logger.Trace($"   notZero         ={notZero}");
             Logger.Trace("----------------------------------------");
-#endif
         }
 
     }

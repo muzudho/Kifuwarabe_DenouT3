@@ -108,7 +108,7 @@
                 Util_GraphicalLog.WriteHtml5(
                     enableLog,
                     "#評価ログ",
-                    "[" + Conv_KaisetuBoards.ToJsonStr(logF_kiki) + "]"
+                    $"[{Conv_KaisetuBoards.ToJsonStr(logF_kiki)}]"
                 );
 
                 // 書き出した分はクリアーします。
@@ -145,10 +145,10 @@
                     // 再帰
                     Util_KifuTreeLogWriter.AA_Write_ForeachLeafs_ForDebug(
                         ref logFileCounter_temp,
-                        nodePath + " " + ConvMoveStrSfen.ToMoveStrSfenForFilename(nextNode.Key),
+                        $"{nodePath} {ConvMoveStrSfen.ToMoveStrSfenForFilename(nextNode.Key)}",
                         (KifuNode)nextNode,
                         kifu,
-                        treeFolder + ((int)score).ToString() + "点_" + ConvMoveStrSfen.ToMoveStrSfen(nextNode.Key) + "/",
+                        $"{treeFolder}{(int)score}点_{ConvMoveStrSfen.ToMoveStrSfen(nextNode.Key)}/",
                         reportEnvironment
                         );
 
@@ -184,7 +184,7 @@
 
 
             // 出力先
-            fileName = Conv_Filepath.ToEscape("_log_" + ((int)node.Score) + "点_" + logFileCounter + "_" + nodePath + ".png");
+            fileName = Conv_Filepath.ToEscape($"_log_{((int)node.Score)}点_{logFileCounter}_{nodePath}.png");
             relFolder = Conv_Filepath.ToEscape(relFolder);
             //
             // 画像ﾛｸﾞ
@@ -332,7 +332,7 @@
         //                    Util_GraphicalLog.WriteHtml5(
         //                        enableLog,
         //                        "#評価ログ",
-        //                        "[" + Conv_KaisetuBoards.ToJsonStr(logF_kiki) + "]"
+        //                        $"[{Conv_KaisetuBoards.ToJsonStr(logF_kiki)}]"
         //                    );
 
         //                    // 書き出した分はクリアーします。

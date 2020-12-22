@@ -45,11 +45,11 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
                         {
                             if (line.StartsWith("option "))
                             {
-                                //ok MessageBox.Show("将棋サーバー「Firstフェーズで、将棋エンジンから、オプション[" + line + "]が返ってきたぜ☆！」");
+                                //ok MessageBox.Show($"将棋サーバー「Firstフェーズで、将棋エンジンから、オプション[{line}]が返ってきたぜ☆！」");
                             }
                             else if (line.StartsWith("id "))
                             {
-                                //ok MessageBox.Show("将棋サーバー「Firstフェーズで、将棋エンジンから、アイディー[" + line + "]が返ってきたぜ☆！」");
+                                //ok MessageBox.Show($"将棋サーバー「Firstフェーズで、将棋エンジンから、アイディー[{line}]が返ってきたぜ☆！」");
                             }
                             else if ("usiok" == line)
                             {
@@ -64,7 +64,7 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
                             }
                             else
                             {
-                                MessageBox.Show("将棋サーバー「WaitEngineUsiokフェーズで、将棋エンジンから、[" + line + "]が返ってきたぜ☆！」");
+                                MessageBox.Show($"将棋サーバー「WaitEngineUsiokフェーズで、将棋エンジンから、[{line}]が返ってきたぜ☆！」");
                             }
                         }
                         break;
@@ -126,7 +126,7 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
                         break;
                     default:
                         {
-                            MessageBox.Show("将棋サーバー「該当なしフェーズで、将棋エンジンから、[" + line + "]が返ってきたぜ☆！」");
+                            MessageBox.Show($"将棋サーバー「該当なしフェーズで、将棋エンジンから、[{line}]が返ってきたぜ☆！」");
                         }
                         break;
                 }
@@ -158,7 +158,7 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
                     ((Server)((EngineClient)this.Owner_EngineClient).Owner_Server).InputString99 + line.Substring("bestmove".Length + "".Length)
                     );
 
-                OwataMinister.BY_GUI.Logger.WriteLineAddMemo("USI受信：bestmove input99=[" + ((Server)((EngineClient)this.Owner_EngineClient).Owner_Server).InputString99 + "]");
+                OwataMinister.BY_GUI.Logger.WriteLineAddMemo($"USI受信：bestmove input99=[{((Server)((EngineClient)this.Owner_EngineClient).Owner_Server).InputString99}");
             }
                  */
             }

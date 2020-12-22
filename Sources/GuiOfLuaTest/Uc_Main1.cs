@@ -66,7 +66,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfLuaTest
                 var scoreX = lua["score"];
                 float score = (float)scoreX;
 
-                MessageBox.Show("scoreXの型=[" + scoreX.GetType().Name + "]　score=[" + score + "]");
+                MessageBox.Show($"scoreXの型=[{scoreX.GetType().Name}]　score=[{score}]");
 
                 //lua.Close(); // アプリが終了してしまう？
 

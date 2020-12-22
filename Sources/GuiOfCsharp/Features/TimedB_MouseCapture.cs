@@ -368,8 +368,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
                                                             ))
                                                     );
                                                     //MessageBox.Show(
-                                                    //    "追加前\n"+
-                                                    //    "newNode=KaisiPside=" + newNode.Value.ToKyokumenConst.KaisiPside,
+                                                    //    $"追加前\nnewNode=KaisiPside={newNode.Value.ToKyokumenConst.KaisiPside}",
                                                     //    "デバッグ");
 
                                                     //マウスの左ボタンを放したときです。

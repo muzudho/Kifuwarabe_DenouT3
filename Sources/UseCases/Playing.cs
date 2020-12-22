@@ -91,8 +91,8 @@ using Nett;
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
 
-            //OwataMinister.WARABE_ENGINE.Logger.WriteLineAddMemo(
-            //    Util_Sky307.Json_1Sky(this.Kifu.CurNode.Value.ToKyokumenConst, "現局面になっているのかなんだぜ☆？　line=[" + line + "]　棋譜＝" + KirokuGakari.ToJsaKifuText(this.Kifu, OwataMinister.WARABE_ENGINE),
+            //Logger.Trace(
+            //    Util_Sky307.Json_1Sky(this.Kifu.CurNode.Value.ToKyokumenConst, $"現局面になっているのかなんだぜ☆？　line={line}]　棋譜＝{KirokuGakari.ToJsaKifuText(this.Kifu, OwataMinister.WARABE_ENGINE)}",
             //        "PgCS",
             //        this.Kifu.CurNode.Value.ToKyokumenConst.Temezumi
             //    )
@@ -442,7 +442,7 @@ usiok");
             foreach (KeyValuePair<string, string> pair in this.SetoptionDictionary)
             {
                 // ここで将棋エンジンの設定を済ませておいてください。
-                Logger.Trace(pair.Key + "=" + pair.Value);
+                Logger.Trace($"{pair.Key}={pair.Value}");
             }
             Logger.Trace("┗━━━━━━━━━━━━┛");
 #endif
@@ -701,7 +701,7 @@ usiok");
 
             SkyConst src_Sky = this.Game.Kifu.NodeAt(latestTemezumi).Value.KyokumenConst;//現局面
 
-            //Logger.Trace("将棋サーバー「" + latestTemezumi + "手目、きふわらべ　さんの手番ですよ！」　" + line);
+            //Logger.Trace($"将棋サーバー「{latestTemezumi}手目、きふわらべ　さんの手番ですよ！」　{line}");
 
 
             //----------------------------------------
@@ -713,9 +713,9 @@ usiok");
 
                 RO_Star king1p = Util_Starlightable.AsKoma(src_Sky.StarlightIndexOf(Finger_Honshogi.SenteOh).Now);
                 RO_Star king2p = Util_Starlightable.AsKoma(src_Sky.StarlightIndexOf(Finger_Honshogi.GoteOh).Now);
-                //OwataMinister.WARABE_ENGINE.Logger.WriteLineAddMemo("将棋サーバー「ではここで、王さまがどこにいるか確認してみましょう」");
-                //OwataMinister.WARABE_ENGINE.Logger.WriteLineAddMemo("▲王の置き場＝" + Conv_SyElement.Masu_ToOkiba(koma1.Masu));
-                //OwataMinister.WARABE_ENGINE.Logger.WriteLineAddMemo("△王の置き場＝" + Conv_SyElement.Masu_ToOkiba(koma2.Masu));
+                //Logger.Trace("将棋サーバー「ではここで、王さまがどこにいるか確認してみましょう」");
+                //Logger.Trace($"▲王の置き場＝{Conv_SyElement.Masu_ToOkiba(koma1.Masu)}");
+                //Logger.Trace($"△王の置き場＝{Conv_SyElement.Masu_ToOkiba(koma2.Masu)}");
 
                 if (Conv_SyElement.ToOkiba(king1p.Masu) != Okiba.ShogiBan)
                 {
@@ -801,7 +801,7 @@ usiok");
                             //for (int iMultiPV = 0; iMultiPV < 5; iMultiPV++)
                             //{
                             //    string sfenText = Util_Sky.ToSfenMoveText(bestMoveList[iMultiPV]);
-                            //    sb.AppendLine("[" + iMultiPV + "]" + sfenText);
+                            //    sb.AppendLine($"[{iMultiPV}]{sfenText}");
                             //}
                             //System.Windows.Forms.MessageBox.Show(sb.ToString());
 #endif
@@ -837,8 +837,7 @@ usiok");
                             string sfenText = ConvMoveStrSfen.ToMoveStrSfen(bestMove2);
 
                             // ログが重過ぎる☆！
-                            //OwataMinister.WARABE_ENGINE.Logger.WriteLineAddMemo("(Warabe)指し手のチョイス： bestmove＝[" + sfenText + "]" +
-                            //    "　棋譜＝" + KirokuGakari.ToJsaKifuText(this.Kifu));
+                            //Logger.Trace($"(Warabe)指し手のチョイス： bestmove＝[{sfenText}]　棋譜＝{KirokuGakari.ToJsaKifuText(this.Kifu)}");
 
                             //----------------------------------------
                             // スコア 試し
@@ -851,7 +850,7 @@ usiok");
                                     // 符号を逆転
                                     hyojiScore = -hyojiScore;
                                 }
-                                Playing.Send("info time 1 depth 1 nodes 1 score cp " + hyojiScore.ToString() + " pv ");//FIXME:
+                                Playing.Send($"info time 1 depth 1 nodes 1 score cp {hyojiScore.ToString()} pv ");//FIXME:
                                                                                                                        //+ " pv 3a3b L*4h 4c4d"
                             }
 
@@ -859,13 +858,12 @@ usiok");
                             //----------------------------------------
                             // 指し手を送ります。
                             //----------------------------------------
-                            Playing.Send("bestmove " + sfenText);
+                            Playing.Send($"bestmove {sfenText}");
                         }
                         else // 指し手がないときは、SFENが書けない☆　投了だぜ☆
                         {
                             // ログが重過ぎる☆！
-                            //OwataMinister.WARABE_ENGINE.Logger.WriteLineAddMemo("(Warabe)指し手のチョイス： 指し手がないときは、SFENが書けない☆　投了だぜ☆ｗｗ（＞＿＜）" +
-                            //    "　棋譜＝" + KirokuGakari.ToJsaKifuText(this.Kifu));
+                            //Logger.Trace($"(Warabe)指し手のチョイス： 指し手がないときは、SFENが書けない☆　投了だぜ☆ｗｗ（＞＿＜）　棋譜＝{KirokuGakari.ToJsaKifuText(this.Kifu)}");
 
                             //----------------------------------------
                             // 投了ｗ！

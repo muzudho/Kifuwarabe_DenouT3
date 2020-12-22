@@ -159,7 +159,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         //        }
         //        else
         //        {
-        //            folderpath = folderpath + "/" + Conv_MoveStr_Sfen.ToMoveStr_Sfen_ForFilename(this.Key);
+        //            folderpath = $"{folderpath}/{Conv_MoveStr_Sfen.ToMoveStr_Sfen_ForFilename(this.Key)}";
         //            Directory.CreateDirectory(folderpath);
         //        }
 
@@ -176,7 +176,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         //    }
         //    catch(PathTooLongException ex)
         //    {
-        //        Logger.Trace("パスが長すぎた☆無視して続行☆：" + ex.Message + "\n folderpath=[" + folderpath + "]");
+        //        Logger.Trace($"パスが長すぎた☆無視して続行☆：{ex}\n folderpath={folderpath}]");
         //    }
         //}
 

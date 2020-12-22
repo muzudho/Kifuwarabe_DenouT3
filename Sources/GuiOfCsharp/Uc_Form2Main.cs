@@ -20,13 +20,11 @@
 
         public void SetInputareaText(string value)
         {
-            //Logger.Trace("☆セット：" + value);
             this.txtInputarea.Text = value;
         }
 
         public void AppendInputareaText(string value, [CallerMemberName] string memberName = "")
         {
-            //Logger.Trace("☆アペンド(" + memberName + ")：" + value);
             this.txtInputarea.Text += value;
         }
 

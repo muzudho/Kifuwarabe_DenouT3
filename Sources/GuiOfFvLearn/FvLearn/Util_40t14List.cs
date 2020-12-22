@@ -23,10 +23,10 @@
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Util_40t14List#Error1：２駒関係FVの配列添え字がわからないぜ☆！処理は続けられない。");
-            sb.AppendLine("koma1.Pside=[" + koma.Pside + "]");
-            sb.AppendLine("koma1.Komasyurui=[" + koma.Komasyurui + "]");
-            sb.AppendLine("koma1.Masu=[" + koma.Masu + "]");
-            sb.AppendLine("Conv_SyElement.ToOkiba(koma1.Masu)=[" + Conv_SyElement.ToOkiba(koma.Masu) + "]");
+            sb.AppendLine($"koma1.Pside=[{koma.Pside}]");
+            sb.AppendLine($"koma1.Komasyurui=[{koma.Komasyurui}]");
+            sb.AppendLine($"koma1.Masu=[{koma.Masu}]");
+            sb.AppendLine($"Conv_SyElement.ToOkiba(koma1.Masu)=[{Conv_SyElement.ToOkiba(koma.Masu)}]");
             throw new Exception(sb.ToString());
         }
 

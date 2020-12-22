@@ -66,7 +66,7 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
                 string filepath = fv_komawari_file_path;
                 if (!Util_FeatureVectorInput.Make_FromFile_Komawari(fv, filepath))
                 {
-                    sb_result.Append("ファイルオープン失敗 Fv[" + filepath + "]。");
+                    sb_result.Append($"ファイルオープン失敗 Fv[{filepath}]。");
                     goto gt_EndMethod;
                 }
                 sb_result.Append("開fv。");
@@ -78,7 +78,7 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
                 string filepath = Path.Combine(fvDirectory, toml.Get<TomlTable>("Resources").Get<string>("Fv00ScaleInFvDir"));
                 if (!Util_FeatureVectorInput.Make_FromFile_Scale(fv, filepath))
                 {
-                    sb_result.Append("ファイルオープン失敗 Fv[" + filepath + "]。");
+                    sb_result.Append($"ファイルオープン失敗 Fv[{filepath}]。");
                     goto gt_EndMethod;
                 }
                 sb_result.Append("開Sc。");
@@ -88,7 +88,7 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
                 string filepath = Path.Combine(fvDirectory, toml.Get<TomlTable>("Resources").Get<string>("Fv01KKInFvDir"));
                 if (!Util_FeatureVectorInput.Make_FromFile_KK(fv, filepath))
                 {
-                    sb_result.Append("ファイルオープン失敗 KK[" + filepath + "]。");
+                    sb_result.Append($"ファイルオープン失敗 KK[{filepath}]。");
                     goto gt_EndMethod;
                 }
                 sb_result.Append("開KK。");
@@ -98,7 +98,7 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
                 string filepath = Path.Combine(fvDirectory, toml.Get<TomlTable>("Resources").Get<string>("Fv02n1pKPInFvDir"));
                 if (!Util_FeatureVectorInput.Make_FromFile_KP(fv, filepath, Playerside.P1))
                 {
-                    sb_result.Append("ファイルオープン失敗 1pKP[" + filepath + "]。");
+                    sb_result.Append($"ファイルオープン失敗 1pKP[{filepath}]。");
                     goto gt_EndMethod;
                 }
                 sb_result.Append("開1pKP。");
@@ -108,7 +108,7 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
                 string filepath = Path.Combine(fvDirectory, toml.Get<TomlTable>("Resources").Get<string>("Fv03n2pKPInFvDir"));
                 if (!Util_FeatureVectorInput.Make_FromFile_KP(fv, filepath, Playerside.P2))
                 {
-                    sb_result.Append("ファイルオープン失敗 2pKP[" + filepath + "]。");
+                    sb_result.Append($"ファイルオープン失敗 2pKP[{filepath}]。");
                     goto gt_EndMethod;
                 }
                 sb_result.Append("開2pKP。");
@@ -137,10 +137,10 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
                 {
                     if (!Util_FeatureVectorInput.Make_FromFile_PP_Banjo(fv, p1Item.Filepath, p1Item.P1_base))
                     {
-                        sb_result.Append("ファイルオープン失敗 PP_Banjo[" + p1Item.Filepath + "]。");
+                        sb_result.Append($"ファイルオープン失敗 PP_Banjo[{p1Item.Filepath}]。");
                         goto gt_EndMethod;
                     }
-                    sb_result.Append("開" + Path.GetFileName(p1Item.Filepath) + "。");
+                    sb_result.Append($"開{Path.GetFileName(p1Item.Filepath)}。");
                 }
             }
 
@@ -155,7 +155,7 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
                 {
                     if (!Util_FeatureVectorInput.Make_FromFile_PP_Moti19Mai(fv, ppItem.Filepath, ppItem.P1_base))
                     {
-                        sb_result.Append("ファイルオープン失敗 PP_Banjo[" + ppItem.Filepath + "]。");
+                        sb_result.Append($"ファイルオープン失敗 PP_Banjo[{ppItem.Filepath}]。");
                         goto gt_EndMethod;
                     }
                     sb_result.Append("開" + Path.GetFileName(ppItem.Filepath) + "。");
@@ -179,10 +179,10 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
                 {
                     if (!Util_FeatureVectorInput.Make_FromFile_PP_Moti3or5Mai(fv, ppItem.Filepath, ppItem.P1_base, 5))
                     {
-                        sb_result.Append("ファイルオープン失敗 PP_Banjo[" + ppItem.Filepath + "]。");
+                        sb_result.Append($"ファイルオープン失敗 PP_Banjo[{ppItem.Filepath}]。");
                         goto gt_EndMethod;
                     }
-                    sb_result.Append("開" + Path.GetFileName(ppItem.Filepath) + "。");
+                    sb_result.Append($"開{Path.GetFileName(ppItem.Filepath)}。");
                 }
             }
 
@@ -199,10 +199,10 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
                 {
                     if (!Util_FeatureVectorInput.Make_FromFile_PP_Moti3or5Mai(fv, ppItem.Filepath, ppItem.P1_base, 3))
                     {
-                        sb_result.Append("ファイルオープン失敗 PP_Banjo[" + ppItem.Filepath + "]。");
+                        sb_result.Append($"ファイルオープン失敗 PP_Banjo[{ppItem.Filepath}]。");
                         goto gt_EndMethod;
                     }
-                    sb_result.Append("開" + Path.GetFileName(ppItem.Filepath) + "。");
+                    sb_result.Append($"開{Path.GetFileName(ppItem.Filepath)}。");
                 }
             }
 

@@ -30,7 +30,7 @@
             {
 
 #if DEBUG
-                string message = "(^o^)timer入力 input99=[" + this.mainGui.ConsoleWindowGui.InputString99 + "]";
+                string message = $"(^o^)timer入力 input99=[{this.mainGui.ConsoleWindowGui.InputString99}]";
                 Logger.Trace(message);
 #endif
 

@@ -8,11 +8,12 @@
     using Grayscale.Kifuwarakaku.Entities.Logging;
     using Grayscale.Kifuwarakaku.UseCases.Features;
 #else
-using System.IO;
-using System.Text;
-using System.Windows.Forms;
-using Grayscale.Kifuwarakaku.Entities.Features;
-using Grayscale.Kifuwarakaku.UseCases.Features;
+    using System.IO;
+    using System.Text;
+    using System.Windows.Forms;
+    using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Entities.Logging;
+    using Grayscale.Kifuwarakaku.UseCases.Features;
 #endif
 
     public abstract class Util_LearnOperation
@@ -33,18 +34,14 @@ using Grayscale.Kifuwarakaku.UseCases.Features;
             foreach (GohosyuListItem item in uc_Main.LstGohosyu.SelectedItems)
             {
                 string sfenMoveStr = item.Sfen;
-#if DEBUG
-                Logger.Trace("sfenMoveStr=" + sfenMoveStr);
-#endif
+                Logger.Trace($"sfenMoveStr={sfenMoveStr}");
 
                 if (uc_Main.LearningData.Kifu.CurNode.HasChildNode(sfenMoveStr))
                 {
-#if DEBUG
                     Logger.Trace("----------------------------------------");
                     Logger.Trace("FV 総合点（読込前）1");
-                    Logger.Trace("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(uc_Main.LearningData.Fv));
+                    Logger.Trace($"      PP ={Util_FeatureVectorEdit.GetTotal_PP(uc_Main.LearningData.Fv)}");
                     Logger.Trace("----------------------------------------");
-#endif
                     Node<IMove, KyokumenWrapper> nextNode = uc_Main.LearningData.Kifu.CurNode.GetChildNode(sfenMoveStr);
 
                     // 盤上の駒、持駒を数えます。
@@ -58,12 +55,10 @@ using Grayscale.Kifuwarakaku.UseCases.Features;
                         tyoseiryo,
                         out real_tyoseiryo
                         );//相手が有利になる点
-#if DEBUG
                     Logger.Trace("----------------------------------------");
                     Logger.Trace("FV 総合点（読込後）6");
-                    Logger.Trace("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(uc_Main.LearningData.Fv));
+                    Logger.Trace($"      PP ={Util_FeatureVectorEdit.GetTotal_PP(uc_Main.LearningData.Fv)}");
                     Logger.Trace("----------------------------------------");
-#endif
                 }
             }
 
@@ -231,7 +226,7 @@ using Grayscale.Kifuwarakaku.UseCases.Features;
 
                         // 半径
                         float paramRange = Util_Inspection.FvParamRange(uc_Main.LearningData.Fv);
-                        uc_Main.ChkAutoParamRange.Text = "評価更新毎-" + paramRange + "～" + paramRange + "矯正";
+                        uc_Main.ChkAutoParamRange.Text = $"評価更新毎-{paramRange}～{paramRange}矯正";
                     }
 
                     uc_Main.BtnUpdateKyokumenHyoka.Enabled = true;

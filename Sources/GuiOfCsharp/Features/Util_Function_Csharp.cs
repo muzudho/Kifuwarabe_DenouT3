@@ -78,7 +78,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 
             // 巻き戻したので、符号が入ります。
             {
-                shogiGui.RepaintRequest.NyuryokuText = fugoJStr + " " + backedInputText;// 入力欄
+                shogiGui.RepaintRequest.NyuryokuText = $"{fugoJStr} {backedInputText}";// 入力欄
                 shogiGui.RepaintRequest.SyuturyokuRequest = RepaintRequestGedanTxt.Kifu;
             }
             shogiGui.RepaintRequest.SetFlag_RefreshRequest();

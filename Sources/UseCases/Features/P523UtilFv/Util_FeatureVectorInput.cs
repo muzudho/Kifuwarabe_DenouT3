@@ -31,9 +31,7 @@ using Grayscale.Kifuwarakaku.Entities.Features;
 
             if (!File.Exists(filepath2))
             {
-                MessageBox.Show("Make_FromFile_Komawari: ファイルがありません。\n" +
-                    "filepath2=[" + filepath2 + "]\n" +
-                    "Application.StartupPath=[" + Application.StartupPath + "]"
+                MessageBox.Show($"Make_FromFile_Komawari: ファイルがありません。\nfilepath2=[{filepath2}]\nApplication.StartupPath=[{Application.StartupPath}]"
                     , "情報");
                 goto gt_EndMethod;
             }
@@ -105,12 +103,6 @@ using Grayscale.Kifuwarakaku.Entities.Features;
                 ;
             }
 
-            //#if DEBUG
-            //            MessageBox.Show(
-            //                "rowVersion=[" + rowVersion + "]\n" +
-            //                    "rowKomawari=[" + rowKomawari + "]\n"
-            //            , "デバッグ");
-            //#endif
             successful = true;
         gt_EndMethod:
             return successful;
@@ -130,9 +122,7 @@ using Grayscale.Kifuwarakaku.Entities.Features;
 
             if (!File.Exists(filepath2))
             {
-                MessageBox.Show("Make_FromFile_Scale: ファイルがありません。\n" +
-                    "filepath2=[" + filepath2 + "]\n" +
-                    "Application.StartupPath=[" + Application.StartupPath + "]"
+                MessageBox.Show($"Make_FromFile_Scale: ファイルがありません。\nfilepath2=[{filepath2}]\nApplication.StartupPath=[{Application.StartupPath}]"
                     , "情報");
                 goto gt_EndMethod;
             }
@@ -268,15 +258,13 @@ using Grayscale.Kifuwarakaku.Entities.Features;
 #if DEBUG
             Logger.Trace("----------------------------------------");
             Logger.Trace("FV 総合点（読込前）2");
-            Logger.Trace("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
+            Logger.Trace($"      PP ={Util_FeatureVectorEdit.GetTotal_PP(fv)}");
             Logger.Trace("----------------------------------------");
 #endif
 
             if (!File.Exists(filepath2))
             {
-                MessageBox.Show("Make_FromFile_KK: ファイルがありません。\n" +
-                    "filepath2=[" + filepath2 + "]\n" +
-                                    "Application.StartupPath=[" + Application.StartupPath + "]"
+                MessageBox.Show($"Make_FromFile_KK: ファイルがありません。\nfilepath2=[{filepath2}]\nApplication.StartupPath=[{Application.StartupPath}]"
                 , "情報");
                 goto gt_EndMethod;
             }
@@ -362,11 +350,6 @@ using Grayscale.Kifuwarakaku.Entities.Features;
             Logger.Trace("FV 総合点（読込後）4");
             Logger.Trace("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
             Logger.Trace("----------------------------------------");
-
-            //MessageBox.Show(
-            //    "rowVersion=[" + rowVersion + "]\n" +
-            //            "rowKk=[" + rowKk + "]\n"
-            //, "デバッグ");
 #endif
             successful = true;
         gt_EndMethod:
@@ -389,15 +372,13 @@ using Grayscale.Kifuwarakaku.Entities.Features;
 #if DEBUG
             Logger.Trace("----------------------------------------");
             Logger.Trace("FV 総合点（読込前）6");
-            Logger.Trace("    PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
+            Logger.Trace($"    PP ={Util_FeatureVectorEdit.GetTotal_PP(fv)}");
             Logger.Trace("----------------------------------------");
 #endif
 
             if (!File.Exists(filepath2))
             {
-                MessageBox.Show("Make_FromFile_KP: ファイルがありません。\n" +
-                    "filepath2=[" + filepath2 + "]\n" +
-                                        "Application.StartupPath=[" + Application.StartupPath + "]"
+                MessageBox.Show($"Make_FromFile_KP: ファイルがありません。\nfilepath2=[{filepath2}]\nApplication.StartupPath=[{Application.StartupPath}]"
                 , "情報");
                 goto gt_EndMethod;
             }
@@ -597,13 +578,8 @@ using Grayscale.Kifuwarakaku.Entities.Features;
 #if DEBUG
             Logger.Trace("----------------------------------------");
             Logger.Trace("FV 総合点（読込後）5");
-            Logger.Trace("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
+            Logger.Trace($"      PP ={Util_FeatureVectorEdit.GetTotal_PP(fv)}");
             Logger.Trace("----------------------------------------");
-
-            //MessageBox.Show(
-            //    "rowVersion=[" + rowVersion + "]\n" +
-            //            "rowKk=[" + rowBanjo + "]\n"
-            //, "デバッグ");
 #endif
             successful = true;
         gt_EndMethod:
@@ -642,15 +618,13 @@ using Grayscale.Kifuwarakaku.Entities.Features;
 #if DEBUG
             Logger.Trace("----------------------------------------");
             Logger.Trace("FV 総合点（読込前）3");
-            Logger.Trace("    PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
+            Logger.Trace($"    PP ={Util_FeatureVectorEdit.GetTotal_PP(fv)}");
             Logger.Trace("----------------------------------------");
 #endif
 
             if (!File.Exists(filepath2))
             {
-                MessageBox.Show("Make_FromFile_PP_Banjo: ファイルがありません。\n" +
-                    "filepath2=[" + filepath2 + "]\n" +
-                                        "Application.StartupPath=[" + Application.StartupPath + "]"
+                MessageBox.Show($"Make_FromFile_PP_Banjo: ファイルがありません。\nfilepath2=[{filepath2}]\nApplication.StartupPath=[{Application.StartupPath}]"
                 , "情報");
                 goto gt_EndMethod;
             }
@@ -856,7 +830,7 @@ using Grayscale.Kifuwarakaku.Entities.Features;
 #if DEBUG
             Logger.Trace("----------------------------------------");
             Logger.Trace("FV 総合点（読込後）1");
-            Logger.Trace("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
+            Logger.Trace($"      PP ={Util_FeatureVectorEdit.GetTotal_PP(fv)}");
             Logger.Trace("----------------------------------------");
 
             //MessageBox.Show(
@@ -892,15 +866,13 @@ using Grayscale.Kifuwarakaku.Entities.Features;
 #if DEBUG
             Logger.Trace("----------------------------------------");
             Logger.Trace("FV 総合点（読込前）4");
-            Logger.Trace("    PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
+            Logger.Trace($"    PP ={Util_FeatureVectorEdit.GetTotal_PP(fv)}");
             Logger.Trace("----------------------------------------");
 #endif
 
             if (!File.Exists(filepath2))
             {
-                MessageBox.Show("Make_FromFile_PP_Moti19Mai: ファイルがありません。\n" +
-                    "filepath2=[" + filepath2 + "]\n" +
-                                        "Application.StartupPath=[" + Application.StartupPath + "]"
+                MessageBox.Show($"Make_FromFile_PP_Moti19Mai: ファイルがありません。\nfilepath2=[{filepath2}]\nApplication.StartupPath=[{Application.StartupPath}]"
                 , "情報");
                 goto gt_EndMethod;
             }
@@ -1118,7 +1090,7 @@ using Grayscale.Kifuwarakaku.Entities.Features;
 #if DEBUG
             Logger.Trace("----------------------------------------");
             Logger.Trace("FV 総合点（読込後）2");
-            Logger.Trace("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
+            Logger.Trace($"      PP ={Util_FeatureVectorEdit.GetTotal_PP(fv)}");
             Logger.Trace("----------------------------------------");
 
             //MessageBox.Show(
@@ -1148,15 +1120,13 @@ using Grayscale.Kifuwarakaku.Entities.Features;
 #if DEBUG
             Logger.Trace("----------------------------------------");
             Logger.Trace("FV 総合点（読込前）5");
-            Logger.Trace("    PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
+            Logger.Trace($"    PP ={Util_FeatureVectorEdit.GetTotal_PP(fv)}");
             Logger.Trace("----------------------------------------");
 #endif
 
             if (!File.Exists(filepath2))
             {
-                MessageBox.Show("Make_FromFile_PP_Moti3or5Mai: ファイルがありません。\n" +
-                    "filepath2=[" + filepath2 + "]\n" +
-                                        "Application.StartupPath=[" + Application.StartupPath + "]"
+                MessageBox.Show($"Make_FromFile_PP_Moti3or5Mai: ファイルがありません。\nfilepath2=[{filepath2}]\nApplication.StartupPath=[{Application.StartupPath}]"
                 , "情報");
                 goto gt_EndMethod;
             }
@@ -1360,7 +1330,7 @@ using Grayscale.Kifuwarakaku.Entities.Features;
 #if DEBUG
             Logger.Trace("----------------------------------------");
             Logger.Trace("FV 総合点（読込後）3");
-            Logger.Trace("      PP =" + Util_FeatureVectorEdit.GetTotal_PP(fv));
+            Logger.Trace($"      PP ={Util_FeatureVectorEdit.GetTotal_PP(fv)}");
             Logger.Trace("----------------------------------------");
 
             //MessageBox.Show(

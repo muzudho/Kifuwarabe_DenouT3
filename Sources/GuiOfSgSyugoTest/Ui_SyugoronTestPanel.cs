@@ -132,10 +132,10 @@ namespace Grayscale.Kifuwarakaku.GuiOfSgSyugoTest
             string wordStr = this.txtWord.Text.Trim();
             SySet<SyElement> word = this.syDictionary.GetWord(wordStr);
 
-            this.lblElementsComment.Text = "一般的に" + wordStr + "は";
-            this.lblElementsComment2.Text = "話題の" + wordStr + "は";
-            this.lblElementsComment3.Text = "話題の" + wordStr + "は";
-            this.lblSupersetComment.Text = wordStr + "は";
+            this.lblElementsComment.Text = $"一般的に{wordStr}は";
+            this.lblElementsComment2.Text = $"話題の{wordStr}は";
+            this.lblElementsComment3.Text = $"話題の{wordStr}は";
+            this.lblSupersetComment.Text = $"{wordStr}は";
 
             if (null == word)
             {

@@ -22,8 +22,6 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
         /// <param name="luaFuncName">実行したいLua関数の名前。</param>
         public static void Perform(string luaFuncName)
         {
-            //System.Windows.Forms.MessageBox.Show("[" + luaFuncName + "]呼び出し");
-
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
             string dataDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataDirectory"));
@@ -32,51 +30,40 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
             // 要設定 プラットフォームターゲット x64。32bit/64bit混在できない。
             // KifuNaraveVs, KifuWarabe
             {
-                try
-                {
-                    // 初期化
-                    lua.LoadCLRPackage();
-                    Util_Lua_KifuWarabe.Score = 0;
+                // 初期化
+                lua.LoadCLRPackage();
+                Util_Lua_KifuWarabe.Score = 0;
 
-                    //
-                    // 関数の登録
-                    //
+                //
+                // 関数の登録
+                //
 
-                    // Lua「debugOut("あー☆")」
-                    // ↓
-                    // C#「C onsole.WriteLine("あー☆")」
-                    lua.RegisterFunction("debugOut", typeof(Console).GetMethod("WriteLine", new Type[] { typeof(string) }));
+                // Lua「debugOut("あー☆")」
+                // ↓
+                // C#「C onsole.WriteLine("あー☆")」
+                lua.RegisterFunction("debugOut", typeof(Console).GetMethod("WriteLine", new Type[] { typeof(string) }));
 
-                    // Lua「random(0,100)」
-                    // ↓
-                    // C#「Util_Lua_KifuWarabe.Random(0,100)」
-                    lua.RegisterFunction("random", typeof(Util_Lua_KifuWarabe).GetMethod("Random", new Type[] { typeof(float), typeof(float) }));
+                // Lua「random(0,100)」
+                // ↓
+                // C#「Util_Lua_KifuWarabe.Random(0,100)」
+                lua.RegisterFunction("random", typeof(Util_Lua_KifuWarabe).GetMethod("Random", new Type[] { typeof(float), typeof(float) }));
 
-                    //----------------------------------------------------------------------------------------------------
+                //----------------------------------------------------------------------------------------------------
 
-                    string file = Path.Combine(dataDirectory, "lua/KifuWarabe/data_score.lua");
-                    //System.Windows.Forms.MessageBox.Show("[" + file + "]ファイル読込み");
+                string file = Path.Combine(dataDirectory, "lua/KifuWarabe/data_score.lua");
 
-                    Util_Lua_KifuWarabe.lua.DoFile(file);// KifuNarabeVS の、bin/Release等に入れ忘れていないこと。
+                Util_Lua_KifuWarabe.lua.DoFile(file);// KifuNarabeVS の、bin/Release等に入れ忘れていないこと。
 
-                    //System.Windows.Forms.MessageBox.Show("[" + luaFuncName + "]呼び出し");
-                    Util_Lua_KifuWarabe.lua.GetFunction(luaFuncName).Call();
+                Util_Lua_KifuWarabe.lua.GetFunction(luaFuncName).Call();
 
-                    //System.Windows.Forms.MessageBox.Show("スコアは？");
-                    var score2 = lua["score"];
-                    //System.Windows.Forms.MessageBox.Show("スコアの型は[" + score2.GetType().Name + "]");
+                //System.Windows.Forms.MessageBox.Show("スコアは？");
+                var score2 = lua["score"];
 
-                    Util_Lua_KifuWarabe.Score = (float)score2;
+                Util_Lua_KifuWarabe.Score = (float)score2;
 
-                    //Util_Lua_KifuWarabe.lua.Close(); // アプリが終了してしまう？
+                //Util_Lua_KifuWarabe.lua.Close(); // アプリが終了してしまう？
 
-                    //----------------------------------------------------------------------------------------------------
-
-                }
-                catch (Exception ex)
-                {
-                    System.Windows.Forms.MessageBox.Show(ex.GetType().Name + "：" + ex.Message);
-                }
+                //----------------------------------------------------------------------------------------------------
             }
         }
 

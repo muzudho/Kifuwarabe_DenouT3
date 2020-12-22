@@ -232,7 +232,7 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
                 //Util_GraphicalLog.WriteHtml5(
                 //    true,//enableLog,
                 //    "MoveRoutine#Yomi_NextNodes(00)新ログ",
-                //    "[" + Util_GraphicalLog.BoardFileLog_ToJsonStr(genjo.Args.LogF_moveKiki) + "]"
+                //    $"[{Util_GraphicalLog.BoardFileLog_ToJsonStr(genjo.Args.LogF_moveKiki)}]"
                 //);
 
                 // 書き出した分はクリアーします。
@@ -309,7 +309,7 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
             out_a_childrenBest = node_yomi.Score;
 
 #if DEBUG_ALPHA_METHOD
-                    Logger.Trace("1. 手(" + node_yomi.Value.ToKyokumenConst.Temezumi + ")読(" + yomiDeep + ") 兄弟最善=[" + a_siblingDecidedValue + "] 子ベスト=[" + a_childrenBest + "]");
+                    Logger.Trace($"1. 手({node_yomi.Value.ToKyokumenConst.Temezumi})読({yomiDeep}) 兄弟最善=[{a_siblingDecidedValue}] 子ベスト=[{a_childrenBest}]");
 #endif
 
 #if DEBUG
@@ -320,7 +320,7 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
             Util_GraphicalLog.WriteHtml5(
                 enableLog,
                 "指し手生成ログA",
-                "[" + Conv_KaisetuBoards.ToJsonStr(genjo.Args.LogF_moveKiki) + "]"
+                $"[{Conv_KaisetuBoards.ToJsonStr(genjo.Args.LogF_moveKiki)}]"
             );
             // 書き出した分はクリアーします。
             genjo.Args.LogF_moveKiki.boards.Clear();

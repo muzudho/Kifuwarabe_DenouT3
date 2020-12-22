@@ -94,7 +94,7 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
             }
             catch (Exception ex)
             {
-                Util_Message.Show(ex.GetType().Name + "：" + ex.Message);
+                Util_Message.Show($"{ex}");
             }
 
         gt_EndMethod:

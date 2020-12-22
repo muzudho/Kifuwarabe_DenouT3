@@ -44,10 +44,6 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
 
             // ファイルチューザーで指定された、Dataフォルダーのパス（fvフォルダーの親）
             string dataFolderPath = Directory.GetParent(fvFolderPath).FullName;
-            //MessageBox.Show(
-            //    "fvフォルダーのパス=[" + fvFolderPath + "]\n"+
-            //    "dataフォルダーのパス=[" + dataFolderPath + "]"
-            //, "Do_Save");
 
             //----------------------------------------
             // 時間
@@ -96,10 +92,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
                 try
                 {
                     string srcPath = Path.Combine(dataFolderPath, "fv");
-                    string dstPath = Path.Combine(dataFolderPath, "fv_" + ymd + "_" + hms);
-                    //MessageBox.Show(
-                    //    "リネーム前のフォルダーのパス=[" + srcPath + "]\n" +
-                    //    "リネーム後のフォルダーのパス=[" + dstPath + "]", "Do_Save");
+                    string dstPath = Path.Combine(dataFolderPath, $"fv_{ymd}_{hms}");
 
                     Directory.Move(srcPath, dstPath);
                 }
@@ -202,8 +195,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
             }
             else
             {
-                Debug.Fail("指し手[" + sfenMoveStr +
-                    "]に対応する次ノードは作成されていませんでした。\n" +
+                Debug.Fail($"指し手[{sfenMoveStr}]に対応する次ノードは作成されていませんでした。\n" +
                     uc_Main.LearningData.DumpToAllGohosyu(
                         uc_Main.LearningData.Kifu.CurNode.Value.KyokumenConst));
             }

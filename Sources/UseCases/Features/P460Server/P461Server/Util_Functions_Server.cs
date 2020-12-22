@@ -88,7 +88,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 #if DEBUG
                     Logger.Trace("(^o^)... ...");
-                    Logger.Trace("ｻｲｼｮﾊｺｺ☆　：　" + memberName + "." + sourceFilePath + "." + sourceLineNumber);
+                    Logger.Trace($"ｻｲｼｮﾊｺｺ☆　：　{memberName}.{sourceFilePath}.{sourceLineNumber}");
 #endif
                     inputLine = kifuParserA_Impl.Execute_Step(
                         ref result,
@@ -117,7 +117,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
                     {
 #if DEBUG
-                        string message = "(^o^)ﾂｷﾞﾊ　ﾋﾗﾃ　ﾏﾀﾊ　ｼﾃｲｷｮｸﾒﾝ　ｦ　ｼｮﾘｼﾀｲ☆ inputLine=[" + inputLine + "]";
+                        string message = $"(^o^)ﾂｷﾞﾊ　ﾋﾗﾃ　ﾏﾀﾊ　ｼﾃｲｷｮｸﾒﾝ　ｦ　ｼｮﾘｼﾀｲ☆ inputLine=[{inputLine}]";
                         Logger.Trace(message);
 #endif
 
@@ -229,7 +229,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
             }
             catch (Exception ex)
             {
-                Util_Message.Show(ex.GetType().Name + "：" + ex.Message);
+                Util_Message.Show($"{ex}");
                 toBreak = true;
                 successful = false;
             }

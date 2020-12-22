@@ -49,9 +49,9 @@ namespace Grayscale.Kifuwarakaku.CliOfLogKyokuPng
 
             //foreach (KeyValuePair<string, string> entry in argsDic)
             //{
-            //    MessageBox.Show("["+entry.Key + "]=[" + entry.Value+"]", "デバッグ");
+            //    MessageBox.Show($"[{entry.Key}]=[{entry.Value}]", "デバッグ");
             //}
-            //MessageBox.Show("出力先=[" + Path.Combine(Application.StartupPath, argsDic["outPath"]) + "]", "デバッグ");
+            //MessageBox.Show($"出力先=[{Path.Combine(Application.StartupPath, argsDic["outPath"])}]", "デバッグ");
 
 
 

@@ -306,7 +306,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
             string sfen = item.Sfen;
 
             // (2020-12-18 fri)この機能むずかしいからいったん廃止☆（＾～＾）
-            // logTag.OnAppendLog?.Invoke("sfen=" + sfen + Environment.NewLine);
+            // logTag.OnAppendLog?.Invoke($"sfen={sfen}\n");
 
             //
             // 現局面の合法手は、既に読んであるとします。（棋譜ツリーのNextNodesが既に設定されていること）
@@ -368,9 +368,9 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
             //----------------------------------------
             // カレント・ノードより古い、以前読んだ手を削除したい。
             //----------------------------------------
-            Logger.Trace("カレント・ノード＝" + ConvMoveStrSfen.ToMoveStrSfen(learningData.Kifu.CurNode.Key));
+            Logger.Trace($"カレント・ノード＝{ConvMoveStrSfen.ToMoveStrSfen(learningData.Kifu.CurNode.Key)}");
             int result_removedCount = UtilKifuTree282.IzennoHenkaCutter(learningData.Kifu);
-            Logger.Trace("削除した要素数＝" + result_removedCount);
+            Logger.Trace($"削除した要素数＝{result_removedCount}");
 
             ////----------------------------------------
             //// 合法手一覧を作成したい。

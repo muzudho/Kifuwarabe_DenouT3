@@ -31,8 +31,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
 
             if (File.Exists(this.StopLearningFilePath))
             {
-                DialogResult result = MessageBox.Show("[" + this.StopLearningFilePath + "]ファイルを検知しました。\n" +
-                    "自動学習を停止しますか？", "info", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                DialogResult result = MessageBox.Show($"[{this.StopLearningFilePath}]ファイルを検知しました。\n自動学習を停止しますか？", "info", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 switch (result)
                 {
                     case DialogResult.OK: isStop = true; break;

@@ -17,7 +17,7 @@ namespace Grayscale.Kifuwarakaku.CliOfAims
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
 
             string filepath = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("AimsDataSetteiXml"));
-            MessageBox.Show("設定ファイルパス＝[" + filepath + "]");
+            MessageBox.Show($"設定ファイルパス＝[{filepath}]");
 
             //
             // 設定XMLファイル
@@ -40,7 +40,7 @@ namespace Grayscale.Kifuwarakaku.CliOfAims
             }
 
 
-            MessageBox.Show("AIMSサーバー\n将棋エンジン・ファイルパス＝[" + setteiXmlFile.ShogiEngineFilePath + "]");
+            MessageBox.Show($"AIMSサーバー\n将棋エンジン・ファイルパス＝[{setteiXmlFile.ShogiEngineFilePath}]");
 
             SkyConst src_Sky = Util_SkyWriter.New_Hirate(Playerside.P1);
 

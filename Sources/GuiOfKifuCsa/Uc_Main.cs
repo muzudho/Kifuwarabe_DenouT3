@@ -24,7 +24,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfKifuCsa
             this.CsaKifu = Util_Csa.ReadFile(this.txtKifuFilepath.Text);
 
             string filepath_out = Path.Combine(this.txtKifuFilepath.Text, toml.Get<TomlTable>("Resources").Get<string>("N18KifuCsaLogBasename"));
-            MessageBox.Show("終わった。デバッグ出力をする☆\nファイルパス=[" + filepath_out + "]", "かんりょう");
+            MessageBox.Show($"終わった。デバッグ出力をする☆\nファイルパス=[{filepath_out}]", "かんりょう");
             //デバッグ用にファイルを書き出します。
             CsaKifuWriterImpl.WriteForDebug(filepath_out, this.CsaKifu);
         }
