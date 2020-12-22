@@ -143,6 +143,7 @@
     <Compile Include="Features\P554TansaFukasa\Mode_Tansaku.cs" />
     <Compile Include="Features\P554TansaFukasa\Tansaku_FukasaYusen_Routine.cs" />
     <Compile Include="Features\P560UtilClient\Util_InClient.cs" />
+    <Compile Include="Game.cs" />
     <Compile Include="Playing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Result_KingState.cs" />

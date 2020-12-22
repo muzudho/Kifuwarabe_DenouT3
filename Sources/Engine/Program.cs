@@ -307,35 +307,14 @@
 
                     // 棋譜
                     {
-                        Playerside firstPside = Playerside.P1;
-                        // FIXME:平手とは限らないが、平手という前提で作っておく。
-                        playing.SetKifu(new KifuTreeImpl(
-                                new KifuNodeImpl(
-                                    Util_Sky258A.RootMove,
-                                    new KyokumenWrapper(SkyConst.NewInstance(
-                                            Util_SkyWriter.New_Hirate(firstPside),
-                                            0 // 初期局面は 0手目済み
-                                        ))// きふわらべ起動時
-                                )
-                        ));
-                        playing.Kifu.SetProperty(Word_KifuTree.PropName_Startpos, "startpos");// 平手 // FIXME:平手とは限らないが。
-
                         Debug.Assert(!Conv_MasuHandle.OnKomabukuro(
-                            Conv_SyElement.ToMasuNumber(((RO_Star)playing.Kifu.CurNode.Value.KyokumenConst.StarlightIndexOf((Finger)0).Now).Masu)
+                            Conv_SyElement.ToMasuNumber(((RO_Star)playing.Game.Kifu.CurNode.Value.KyokumenConst.StarlightIndexOf((Finger)0).Now).Masu)
                             ), "駒が駒袋にあった。");
-                    }
-
-                    // goの属性一覧
-                    {
-                        playing.GoProperties = new Dictionary<string, string>();
-                        playing.GoProperties["btime"] = "";
-                        playing.GoProperties["wtime"] = "";
-                        playing.GoProperties["byoyomi"] = "";
                     }
 
                     // go ponderの属性一覧
                     {
-                        playing.GoPonderNow = false;   // go ponderを将棋所に伝えたなら真
+                        playing.Game.GoPonderNow = false;   // go ponderを将棋所に伝えたなら真
                     }
 
                     isTimeoutShutdown = false;
@@ -381,7 +360,7 @@
                             // 入力行を解析します。
                             KifuParserA_Result result = new KifuParserA_ResultImpl();
                             KifuParserA_Impl kifuParserA = new KifuParserA_Impl();
-                            Model_Taikyoku model_Taikyoku = new Model_TaikyokuImpl(playing.Kifu);//FIXME:  この棋譜を委譲メソッドで修正するはず。 ShogiGui_Warabeは？
+                            Model_Taikyoku model_Taikyoku = new Model_TaikyokuImpl(playing.Game.Kifu);//FIXME:  この棋譜を委譲メソッドで修正するはず。 ShogiGui_Warabeは？
                             KifuParserA_Genjo genjo = new KifuParserA_GenjoImpl(line);
                             kifuParserA.Execute_All(
                                 ref result,
@@ -452,8 +431,8 @@
                             StringBuilder sb = new StringBuilder();
                             sb.Append("ログだせ～（＾▽＾）");
 
-                            playing.Kifu.ForeachZenpuku(
-                                playing.Kifu.GetRoot(), (int temezumi, KyokumenWrapper sky, Node<IMove, KyokumenWrapper> node, ref bool toBreak) =>
+                            playing.Game.Kifu.ForeachZenpuku(
+                                playing.Game.Kifu.GetRoot(), (int temezumi, KyokumenWrapper sky, Node<IMove, KyokumenWrapper> node, ref bool toBreak) =>
                                 {
                                     //sb.AppendLine("(^-^)");
 

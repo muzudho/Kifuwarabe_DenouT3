@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>8c0f1ff2-e0c6-45d7-ab40-bb8f548f55dd</ProjectGuid>
+    <ProjectGuid>{8C0F1FF2-E0C6-45D7-AB40-BB8F548F55DD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Grayscale.Kifuwarakaku.Entities</RootNamespace>
@@ -88,6 +88,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IGame.cs" />
     <Compile Include="Logging\ILogEvent.cs" />
     <Compile Include="Logging\ErrorHandlerImpl.cs" />
     <Compile Include="Logging\ILogFile.cs" />

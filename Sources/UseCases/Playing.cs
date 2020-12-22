@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using Grayscale.Kifuwarakaku.Entities;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.UseCases.Features;
 using Nett;
@@ -11,6 +12,7 @@ namespace Grayscale.Kifuwarakaku.UseCases
     {
         public Playing()
         {
+            this.Game = new Game();
             //-------------+----------------------------------------------------------------------------------------------------------
             // データ設計  |
             //-------------+----------------------------------------------------------------------------------------------------------
@@ -34,25 +36,7 @@ namespace Grayscale.Kifuwarakaku.UseCases
         /// </summary>
         public ScoreSiboriEngine EdagariEngine { get; set; }
 
-        /// <summary>
-        /// 棋譜です。
-        /// </summary>
-        public KifuTree Kifu { get { return this.kifu; } }
-        public void SetKifu(KifuTree kifu)
-        {
-            this.kifu = kifu;
-        }
-        private KifuTree kifu;
-
-        /// <summary>
-        /// 「go」の属性一覧です。
-        /// </summary>
-        public Dictionary<string, string> GoProperties { get; set; }
-
-        /// <summary>
-        /// 「go ponder」の属性一覧です。
-        /// </summary>
-        public bool GoPonderNow { get; set; }
+        public IGame Game { get; private set; }
 
         /// <summary>
         /// USI「setoption」コマンドのリストです。
@@ -484,6 +468,7 @@ usiok");
             //
             //
             // 対局が始まったときに送られてくる文字が usinewgame です。
+            this.Game = new Game();
         }
 
         public void Quit()
@@ -696,13 +681,13 @@ usiok");
 
             // ┏━━━━プログラム━━━━┓
 
-            int latestTemezumi = this.Kifu.CurNode.Value.KyokumenConst.Temezumi;//現・手目済
+            int latestTemezumi = this.Game.Kifu.CurNode.Value.KyokumenConst.Temezumi;//現・手目済
 
             //#if DEBUG
             // MessageBox.Show("["+latestTemezumi+"]手目済　["+this.owner.PlayerInfo.Playerside+"]の手番");
             //#endif
 
-            SkyConst src_Sky = this.Kifu.NodeAt(latestTemezumi).Value.KyokumenConst;//現局面
+            SkyConst src_Sky = this.Game.Kifu.NodeAt(latestTemezumi).Value.KyokumenConst;//現局面
 
             //logTag.Logger.WriteLineAddMemo("将棋サーバー「" + latestTemezumi + "手目、きふわらべ　さんの手番ですよ！」　" + line);
 
@@ -792,7 +777,7 @@ usiok");
                             {
                                 bestKifuNodeList.Add(this.WA_Bestmove(
                                     isHonshogi,
-                                    this.Kifu)
+                                    this.Game.Kifu)
                                     );
                             }
 
@@ -849,7 +834,7 @@ usiok");
                             {
                                 //int hyojiScore = (int)(bestScore / 100.0d);//FIXME:適当に調整した。
                                 int hyojiScore = (int)bestScore;
-                                if (this.Kifu.CurNode.Value.KyokumenConst.KaisiPside == Playerside.P2)
+                                if (this.Game.Kifu.CurNode.Value.KyokumenConst.KaisiPside == Playerside.P2)
                                 {
                                     // 符号を逆転
                                     hyojiScore = -hyojiScore;
@@ -879,7 +864,7 @@ usiok");
                         //------------------------------------------------------------
                         // 以前の手カッター
                         //------------------------------------------------------------
-                        UtilKifuTree282.IzennoHenkaCutter(this.Kifu);
+                        UtilKifuTree282.IzennoHenkaCutter(this.Game.Kifu);
                     }
                     break;
             }
@@ -915,7 +900,7 @@ usiok");
             //
             // stop するのは思考です。  stop を受け取ったら  すぐに最善手を指してください。
 
-            if (this.GoPonderNow)
+            if (this.Game.GoPonderNow)
             {
                 //------------------------------------------------------------
                 // 将棋エンジン「（予想手が間違っていたって？）  △９二香 を指そうと思っていたんだが」
