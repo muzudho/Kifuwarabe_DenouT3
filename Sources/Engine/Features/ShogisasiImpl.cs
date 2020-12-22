@@ -23,6 +23,7 @@ using System.Collections.Generic;
     using System;
     using System.Collections.Generic;
     using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.UseCases;
     using Grayscale.Kifuwarakaku.UseCases.Features;
 #endif
 
@@ -33,28 +34,7 @@ using System.Collections.Generic;
     /// </summary>
     public class ShogisasiImpl : Shogisasi
     {
-        /// <summary>
-        /// 枝狩りエンジン。
-        /// </summary>
-        public ScoreSiboriEngine EdagariEngine { get; set; }
-
-        /// <summary>
-        /// 右脳。
-        /// </summary>
-        public FeatureVector FeatureVector { get; set; }
-
         public ShogisasiImpl()
-        {
-            this.EdagariEngine = new ScoreSiboriEngine();
-
-            this.FeatureVector = new FeatureVectorImpl();
-        }
-
-
-        /// <summary>
-        /// 対局開始のとき。
-        /// </summary>
-        public void OnTaikyokuKaisi()
         {
         }
 
@@ -66,6 +46,7 @@ using System.Collections.Generic;
         /// <param name="kifu"></param>
         /// <returns></returns>
         public KifuNode WA_Bestmove(
+            Playing playing,
             bool isHonshogi,
             KifuTree kifu
             )
@@ -75,7 +56,7 @@ using System.Collections.Generic;
 #endif
             EvaluationArgs args = new EvaluationArgsImpl(
                 kifu.GetSennititeCounter(),
-                this.FeatureVector,
+                playing.FeatureVector,
                 this,
                 Util_KifuTreeLogWriter.REPORT_ENVIRONMENT
 #if DEBUG
@@ -123,7 +104,7 @@ using System.Collections.Generic;
 #endif
 
             // 評価値の高いノードだけを残します。
-            this.EdagariEngine.EdaSibori_HighScore(kifu, this);
+            playing.EdagariEngine.EdaSibori_HighScore(kifu, this);
 
             // 評価値の同点があれば、同点決勝をして　1手に決めます。
             KifuNode bestKifuNode = null;

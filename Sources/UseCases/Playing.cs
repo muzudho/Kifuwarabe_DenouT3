@@ -18,7 +18,20 @@ namespace Grayscale.Kifuwarakaku.UseCases
 
             this.Option_enable_usiPonder = false; // ポンダーに対応している将棋サーバーなら真です。
             this.Option_enable_serverNoopable = false; // 独自実装のコマンドなので、ＯＦＦにしておきます。
+
+            this.FeatureVector = new FeatureVectorImpl();
+            this.EdagariEngine = new ScoreSiboriEngine();
         }
+
+        /// <summary>
+        /// 右脳。
+        /// </summary>
+        public FeatureVector FeatureVector { get; private set; }
+
+        /// <summary>
+        /// 枝狩りエンジン。
+        /// </summary>
+        public ScoreSiboriEngine EdagariEngine { get; set; }
 
         /// <summary>
         /// 棋譜です。

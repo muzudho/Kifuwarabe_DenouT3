@@ -28,6 +28,7 @@
         {
             // 将棋エンジン　きふわらべ
             var playing = new Playing();
+
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
 
@@ -50,7 +51,7 @@
             //------------------------------------------------------------------------------------------------------------------------
             {
                 playing.shogisasi = new ShogisasiImpl();
-                Util_FvLoad.OpenFv(playing.shogisasi.FeatureVector, Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv00Komawari")));
+                Util_FvLoad.OpenFv(playing.FeatureVector, Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv00Komawari")));
             }
 
             //------------------------------------------------------------------------------------------------------------------------
@@ -612,8 +613,6 @@
                         playing.GameoverProperties["gameover"] = "";
                     }
 
-                    playing.shogisasi.OnTaikyokuKaisi();//対局開始時の処理。
-
                     isTimeoutShutdown = false;
                     //PerformanceMetrics performanceMetrics = new PerformanceMetrics();//使ってない？
 
@@ -993,6 +992,7 @@
                                             for (int iMultiPV = 0; iMultiPV < multiPV_Count; iMultiPV++)
                                             {
                                                 bestKifuNodeList.Add(playing.shogisasi.WA_Bestmove(
+                                                    playing,
                                                     isHonshogi,
                                                     playing.Kifu)
                                                     );

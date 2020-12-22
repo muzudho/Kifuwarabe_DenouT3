@@ -9,17 +9,6 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
     public interface Shogisasi
     {
         /// <summary>
-        /// 右脳。
-        /// </summary>
-        FeatureVector FeatureVector { get; set; }
-
-        /// <summary>
-        /// 対局開始のとき。
-        /// </summary>
-        void OnTaikyokuKaisi();
-
-
-        /// <summary>
         /// 指し手を決めます。
         /// </summary>
         /// <param name="enableLog"></param>
@@ -28,6 +17,7 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
         /// <param name="logTag"></param>
         /// <returns></returns>
         KifuNode WA_Bestmove(
+            Playing playing,
             bool isHonshogi,
             KifuTree kifu
             );
