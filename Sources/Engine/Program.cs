@@ -573,7 +573,7 @@
 
                 // どうにもできないので  ログだけ取って無視します。
                 Logger.Fatal($"(^ー^)「大外枠でキャッチ」{ex}");
-                // TODO Playing.Send("bestmove resign");
+                Playing.Send("bestmove resign");
             }
 
         gt_EndMethod:
