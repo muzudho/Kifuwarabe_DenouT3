@@ -88,7 +88,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfLuaTest
         public static void WriteLine(string message)
         {
             MessageBox.Show(message, "Luaからの出力");
-            //System.Console.WriteLine(message);
+            //Logger.Trace(message);
         }
     }
 }

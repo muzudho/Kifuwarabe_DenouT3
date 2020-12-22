@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using Grayscale.Kifuwarakaku.Entities.Features;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
@@ -367,9 +368,9 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
             //----------------------------------------
             // カレント・ノードより古い、以前読んだ手を削除したい。
             //----------------------------------------
-            System.Console.WriteLine("カレント・ノード＝" + ConvMoveStrSfen.ToMoveStrSfen(learningData.Kifu.CurNode.Key));
+            Logger.Trace("カレント・ノード＝" + ConvMoveStrSfen.ToMoveStrSfen(learningData.Kifu.CurNode.Key));
             int result_removedCount = UtilKifuTree282.IzennoHenkaCutter(learningData.Kifu);
-            System.Console.WriteLine("削除した要素数＝" + result_removedCount);
+            Logger.Trace("削除した要素数＝" + result_removedCount);
 
             ////----------------------------------------
             //// 合法手一覧を作成したい。
@@ -390,8 +391,8 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
 
 #if DEBUG
             sw1.Stop();
-            Console.WriteLine("一手指すボタン合計 = {0}", sw1.Elapsed);
-            Console.WriteLine("────────────────────────────────────────");
+            Logger.Trace("一手指すボタン合計 = {0}", sw1.Elapsed);
+            Logger.Trace("────────────────────────────────────────");
 #endif
 
         gt_EndMethod:

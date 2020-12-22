@@ -636,7 +636,7 @@
                         //string line = TimeoutReader.ReadLine(1000);//指定ミリ秒だけブロック。  (2020-12-13 sun) そのあと抜ける。頼んで作ってもらった関数、入力を取りこぼす不具合がある☆（＾～＾）？
 
                         //通常版
-                        string line = System.Console.In.ReadLine();
+                        string line = Console.In.ReadLine();
 
                         if (null == line)//次の行が無ければヌル。
                         {
@@ -1087,7 +1087,7 @@
                             }
                             // ┗━━━━プログラム━━━━┛
 
-                            //System.C onsole.WriteLine();
+                            // Logger.Trace();
 
                             //throw new Exception("デバッグだぜ☆！　エラーはキャッチできたかな～☆？（＾▽＾）");
                         }

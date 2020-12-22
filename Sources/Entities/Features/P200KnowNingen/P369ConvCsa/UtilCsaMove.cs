@@ -164,7 +164,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     //ittemae_Sky_orNull.Foreach_Starlights((Finger finger, Starlight light, ref bool toBreak) =>
                     //{
                     //    RO_Star_Koma koma = Util_Starlightable.AsKoma(light.Now);
-                    //    System.Console.WriteLine("[" + finger + "] " + koma.Masu.Word + "　" + koma.Pside + "　" + KomaSyurui14Array.Ichimoji[(int)koma.Syurui]);
+                    //    Logger.Trace("[" + finger + "] " + koma.Masu.Word + "　" + koma.Pside + "　" + KomaSyurui14Array.Ichimoji[(int)koma.Syurui]);
                     //});
 
                     SyElement srcMasu = Util_Masu10.OkibaSujiDanToMasu(Okiba.ShogiBan, srcSuji, srcDan);

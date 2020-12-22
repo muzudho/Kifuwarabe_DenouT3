@@ -176,7 +176,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         //    }
         //    catch(PathTooLongException ex)
         //    {
-        //        System.Console.WriteLine("パスが長すぎた☆無視して続行☆：" + ex.Message + "\n folderpath=[" + folderpath + "]");
+        //        Logger.Trace("パスが長すぎた☆無視して続行☆：" + ex.Message + "\n folderpath=[" + folderpath + "]");
         //    }
         //}
 

@@ -98,7 +98,7 @@
                 this.ShogibanGui.SetWidget(name, widget);
 
                 //
-                // 表示するウィンドウ名。"Shogiban", "Console"
+                // 表示するウィンドウ名。"Shogiban", "Logger.Trace"
                 //
                 if (columnNameIndex.ContainsKey("window"))
                 {

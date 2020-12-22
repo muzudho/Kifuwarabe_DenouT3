@@ -27,7 +27,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             }
 
 
-            //ystem.C onsole.WriteLine("（１）source[" + source + "]");
+            //Logger.Trace("（１）source[" + source + "]");
 
             //１セル分の文字列
             StringBuilder cell = new StringBuilder();
@@ -37,28 +37,28 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 cell.Length = 0;
                 ch = source[index];
 
-                //ystem.C onsole.WriteLine("（２）index[" + index + "] ch[" + ch + "]");
+                //Logger.Trace("（２）index[" + index + "] ch[" + ch + "]");
 
                 if (',' == ch)
                 {
                     // 空を追加して次へ。
                     index++;
 
-                    //ystem.C onsole.WriteLine("（３）index[" + index + "] ");
+                    //Logger.Trace("（３）index[" + index + "] ");
                 }
                 else if ('"' == ch)
                 {
                     // 1文字目が「"」なら、2文字目へ。
                     index++;
 
-                    //ystem.C onsole.WriteLine("（４）index[" + index + "] ");
+                    //Logger.Trace("（４）index[" + index + "] ");
 
                     // エスケープしながら、単独「"」が出てくるまでそのまま出力。
                     while (index < length)
                     {
                         ch = source[index];
 
-                        //ystem.C onsole.WriteLine("（５）index[" + index + "] ");
+                        //Logger.Trace("（５）index[" + index + "] ");
 
                         if ('"' == ch)
                         {
@@ -69,7 +69,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                             // しかし次の文字が「"」の場合、まだこの「"」で終わってはいけない。
                             // 
 
-                            //ystem.C onsole.WriteLine("（６）index[" + index + "] ");
+                            //Logger.Trace("（６）index[" + index + "] ");
 
 
                             if (index + 1 == length)
@@ -78,7 +78,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                                 //「"」を無視して終了。
                                 index++;
 
-                                //ystem.C onsole.WriteLine("（７）index[" + index + "] ");
+                                //Logger.Trace("（７）index[" + index + "] ");
 
                                 break;
                             }
@@ -89,7 +89,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                                 index += 2;
                                 cell.Append('"');
 
-                                //ystem.C onsole.WriteLine("（８）index[" + index + "] ");
+                                //Logger.Trace("（８）index[" + index + "] ");
                             }
                             else
                             {
@@ -97,7 +97,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                                 //「"」を無視して終了。
                                 index += 2;//【改変/】2012年10月30日変更。旧： index++;
 
-                                //ystem.C onsole.WriteLine("（９）index[" + index + "] 　2文字目が「\"」でなければ、「\"」を無視して終了。");
+                                //Logger.Trace("（９）index[" + index + "] 　2文字目が「\"」でなければ、「\"」を無視して終了。");
 
                                 break;
                             }
@@ -108,22 +108,22 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                             cell.Append(ch);
                             index++;
 
-                            //ystem.C onsole.WriteLine("（１１）index[" + index + "] ch[" + ch + "]");
+                            //Logger.Trace("（１１）index[" + index + "] ch[" + ch + "]");
                         }
 
-                        //ystem.C onsole.WriteLine("（１２）index[" + index + "] ");
+                        //Logger.Trace("（１２）index[" + index + "] ");
                     }
 
-                    //ystem.C onsole.WriteLine("（１３）index[" + index + "] ");
+                    //Logger.Trace("（１３）index[" + index + "] ");
                 }
                 else
                 {
-                    //ystem.C onsole.WriteLine("（１４a）index[" + index + "] s_Cell[" + s_Cell.ToString() + "] ch[" + ch + "]");
+                    //Logger.Trace("（１４a）index[" + index + "] s_Cell[" + s_Cell.ToString() + "] ch[" + ch + "]");
 
                     cell.Append(ch);
                     index++;
 
-                    //ystem.C onsole.WriteLine("（１４b）index[" + index + "] s_Cell[" + s_Cell.ToString() + "]");
+                    //Logger.Trace("（１４b）index[" + index + "] s_Cell[" + s_Cell.ToString() + "]");
 
                     // 1文字目が「"」でないなら、「,」が出てくるか、次がなくなるまでそのまま出力。
                     // フォーマットチェックは行わない。
@@ -131,7 +131,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     {
                         ch = source[index];
 
-                        //ystem.C onsole.WriteLine("（１５）index[" + index + "] ch[" + ch + "]");
+                        //Logger.Trace("（１５）index[" + index + "] ch[" + ch + "]");
 
 
                         if (chDelimiter != ch)
@@ -140,7 +140,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                             cell.Append(ch);
                             index++;
 
-                            //ystem.C onsole.WriteLine("（１６）index[" + index + "] ");
+                            //Logger.Trace("（１６）index[" + index + "] ");
 
                         }
                         else
@@ -149,23 +149,23 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                             // このセル読取は脱出。
                             index++;
 
-                            //ystem.C onsole.WriteLine("（１７）index[" + index + "] 「,」を見つけたのでこれを無視し、このセル読取は脱出。");
+                            //Logger.Trace("（１７）index[" + index + "] 「,」を見つけたのでこれを無視し、このセル読取は脱出。");
 
                             break;
                         }
 
-                        //ystem.C onsole.WriteLine("（１８）index[" + index + "] ");
+                        //Logger.Trace("（１８）index[" + index + "] ");
 
                     }
                     // 次が無くなったか、「,」の次の文字を指している。
                 }
 
-                //ystem.C onsole.WriteLine("（２０）index[" + index + "] s_Cell.ToString()[" + s_Cell.ToString() + "]");
+                //Logger.Trace("（２０）index[" + index + "] s_Cell.ToString()[" + s_Cell.ToString() + "]");
 
                 list_Destination.Add(cell.ToString());
             }
 
-        //ystem.C onsole.WriteLine("（２１）index[" + index + "] ");
+        //Logger.Trace("（２１）index[" + index + "] ");
 
 
         gt_EndMethod:

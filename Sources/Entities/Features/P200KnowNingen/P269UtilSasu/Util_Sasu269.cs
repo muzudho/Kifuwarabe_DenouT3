@@ -205,7 +205,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     if (KomaSyurui14Array.IsNari(koma.Syurui))
                     {
                         MessageBox.Show("指し手に成りが含まれています。[" + koma.Masu.Word + "][" + koma.Syurui + "]", "デバッグ:" + hint);
-                        //System.Console.WriteLine("指し手に成りが含まれています。");
+                        //Logger.Trace("指し手に成りが含まれています。");
                         goto gt_EndMethod;
                     }
                 }

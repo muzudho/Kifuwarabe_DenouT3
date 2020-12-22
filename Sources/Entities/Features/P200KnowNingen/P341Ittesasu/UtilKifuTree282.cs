@@ -59,12 +59,12 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     //----------------------------------------
                     // 本譜の手はスキップ
                     //----------------------------------------
-                    //System.Console.WriteLine("残すmoveStr=[" + moveStr + "] key1=[" + key1 + "] ★");
+                    //Logger.Trace("残すmoveStr=[" + moveStr + "] key1=[" + key1 + "] ★");
                     goto gt_Next1;
                 }
                 //else
                 //{
-                //    System.Console.WriteLine("残すmoveStr=[" + moveStr + "] key1=[" + key1 + "]");
+                //    Logger.Trace("残すmoveStr=[" + moveStr + "] key1=[" + key1 + "]");
                 //}
 
                 //----------------------------------------

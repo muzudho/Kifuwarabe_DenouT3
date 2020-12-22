@@ -33,10 +33,7 @@ namespace Grayscale.Kifuwarakaku.CliOfAims
                 //    setteiXmlFile.Write();
                 //}
 
-                if (!setteiXmlFile.Read())
-                {
-                    // 読取に失敗しました。
-                }
+                setteiXmlFile.Read();
 
                 // デバッグ
                 //setteiXmlFile.DebugWrite();

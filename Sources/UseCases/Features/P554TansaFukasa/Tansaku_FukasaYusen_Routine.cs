@@ -564,11 +564,11 @@ using Grayscale.Kifuwarakaku.Entities.Features;
                 );
 
             //#if DEBUG
-            //                System.Console.WriteLine("komaBETUSusumeruMasusの全要素＝" + Util_List_OneAndMultiEx<Finger, SySet<SyElement>>.CountAllElements(komaBETUSusumeruMasus));
+            //                Logger.Trace("komaBETUSusumeruMasusの全要素＝" + Util_List_OneAndMultiEx<Finger, SySet<SyElement>>.CountAllElements(komaBETUSusumeruMasus));
             //#endif
             //#if DEBUG
             //                string jsaMoveStr = Util_Translator_Move.ToMove(genjo.Node_yomiNext, genjo.Node_yomiNext.Value);
-            //                System.Console.WriteLine("[" + jsaMoveStr + "]の駒別置ける升 調べ\n" + Util_List_OneAndMultiEx<Finger, SySet<SyElement>>.Dump(komaBETUSusumeruMasus, genjo.Node_yomiNext.Value.ToKyokumenConst));
+            //                Logger.Trace("[" + jsaMoveStr + "]の駒別置ける升 調べ\n" + Util_List_OneAndMultiEx<Finger, SySet<SyElement>>.Dump(komaBETUSusumeruMasus, genjo.Node_yomiNext.Value.ToKyokumenConst));
             //#endif
             //Moveseisei_FukasaYusen_Routine.Log2(genjo, logBrd_move1);//ログ試し
 
@@ -591,7 +591,7 @@ using Grayscale.Kifuwarakaku.Entities.Features;
                     komaBETUSusumeruMasus, src_Sky);
 
                 //#if DEBUG
-                //                    System.Console.WriteLine("komaBETUAllMovesの全要素＝" + Util_Maps_OneAndMultiEx<Finger, SySet<SyElement>>.CountAllElements(komaBETUAllMoves));
+                //                    Logger.Trace("komaBETUAllMovesの全要素＝" + Util_Maps_OneAndMultiEx<Finger, SySet<SyElement>>.CountAllElements(komaBETUAllMoves));
                 //#endif
 
 
@@ -651,7 +651,7 @@ using Grayscale.Kifuwarakaku.Entities.Features;
                     );
 
                 //#if DEBUG
-                //                    System.Console.WriteLine("駒別置ける升="+komaBETUSusumeruMasus.Items.Count+"件。　指し手別局面="+ss.Count+"件。");
+                //                    Logger.Trace("駒別置ける升="+komaBETUSusumeruMasus.Items.Count+"件。　指し手別局面="+ss.Count+"件。");
                 //                    Debug.Assert(komaBETUSusumeruMasus.Items.Count == ss.Count, "変換後のデータ件数が異なります。[" + komaBETUSusumeruMasus.Items.Count + "]→["+ss.Count+"]");
                 //#endif
             }

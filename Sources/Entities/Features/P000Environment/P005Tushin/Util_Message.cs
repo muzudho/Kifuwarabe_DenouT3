@@ -101,23 +101,13 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         }
 
         /// <summary>
-        /// GUI用。デバッグライト
-        /// FIXME: 将棋エンジンでも使っていることがありますが、表示されません。
-        /// </summary>
-        /// <param name="message"></param>
-        public static void Whisper(string message)
-        {
-            System.Console.WriteLine(message);
-        }
-
-        /// <summary>
         /// GUI用。エラーライト
         /// FIXME: 将棋エンジンでも使っていることがありますが、表示されません。
         /// </summary>
         /// <param name="message"></param>
         public static void Show(string message)
         {
-            System.Console.WriteLine(message);
+            Console.WriteLine(message);
             MessageBox.Show(message);
         }
 
@@ -127,7 +117,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// </summary>
         public static void Debugger_ManualIn_PleasePushKey()
         {
-            System.Console.ReadKey();
+            Console.ReadKey();
         }
 
 

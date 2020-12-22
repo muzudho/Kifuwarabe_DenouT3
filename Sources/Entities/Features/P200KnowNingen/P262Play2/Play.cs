@@ -116,7 +116,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     {
                         // 二歩になる筋番号の発見☆
 #if DEBUG
-                        //System.Console.WriteLine("二歩チェック： " + suji + "筋は二歩。");
+                        //Logger.Trace("二歩チェック： " + suji + "筋は二歩。");
 #endif
 
                         // 筋一列を、クリアーします。

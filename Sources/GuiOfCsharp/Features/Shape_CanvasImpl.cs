@@ -9,7 +9,7 @@
     {
 
         public const string WINDOW_NAME_SHOGIBAN = "Shogiban";
-        public const string WINDOW_NAME_CONSOLE = "Console";
+        public const string WINDOW_NAME_CONSOLE = "Logger.Trace";
 
 
         public Shape_CanvasImpl(string widgetName, int x, int y, int width, int height)

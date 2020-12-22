@@ -105,7 +105,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                         out moji5,
                         out rest
                         );
-                    //System.Console.WriteLine("moji1=[" + moji1 + "] moji2=[" + moji2 + "] moji3=[" + moji3 + "] moji4=[" + moji4 + "] moji5=[" + moji5 + "] rest=[" + rest + "]");
+                    //Logger.Trace("moji1=[" + moji1 + "] moji2=[" + moji2 + "] moji3=[" + moji3 + "] moji4=[" + moji4 + "] moji5=[" + moji5 + "] rest=[" + rest + "]");
 
                     if (moji2 == "*")
                     {

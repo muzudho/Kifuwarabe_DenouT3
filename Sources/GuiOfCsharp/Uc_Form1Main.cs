@@ -340,10 +340,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
                     this.SetteiXmlFile.Write();
                 }
 
-                if (!this.SetteiXmlFile.Read())
-                {
-                    // 読取に失敗しました。
-                }
+                this.SetteiXmlFile.Read();
 
                 // デバッグ
                 this.SetteiXmlFile.DebugWrite();

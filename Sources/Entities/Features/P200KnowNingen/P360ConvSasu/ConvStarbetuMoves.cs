@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
@@ -37,7 +38,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     if (hubNode.ContainsKey_ChildNodes(sfenText))
                     {
                         // 既存の指し手なら無視
-                        System.Console.WriteLine("既存の指し手なので無視します1。sfenText=[" + sfenText + "]");
+                        Logger.Trace("既存の指し手なので無視します1。sfenText=[" + sfenText + "]");
                     }
                     else
                     {

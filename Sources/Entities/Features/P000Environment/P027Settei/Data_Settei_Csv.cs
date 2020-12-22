@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Grayscale.Kifuwarakaku.Entities.Logging;
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
 {
@@ -87,15 +88,15 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
         public void DebugOut()
         {
-            System.Console.WriteLine("┏━━━━━━━━┓サイズ＝[" + this.Properties.Count + "]");
+            Logger.Trace("┏━━━━━━━━┓サイズ＝[" + this.Properties.Count + "]");
 
             foreach (KeyValuePair<string, string> entry in this.Properties)
             {
-                System.Console.WriteLine(entry.Key + "=「" + entry.Value + "」");
+                Logger.Trace(entry.Key + "=「" + entry.Value + "」");
 
             }
 
-            System.Console.WriteLine("┗━━━━━━━━┛");
+            Logger.Trace("┗━━━━━━━━┛");
         }
 
         public string Get(string name)

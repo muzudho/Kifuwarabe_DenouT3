@@ -12,7 +12,7 @@
         private SceneName name1;
 
         /// <summary>
-        /// ウィジェットが配置されているウィンドウ名。"Shogiban", "Console"。
+        /// ウィジェットが配置されているウィンドウ名。"Shogiban", "Logger.Trace"。
         /// </summary>
         public string WindowName { get { return this.windowName; } }
         private string windowName;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Xml;
@@ -87,6 +88,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             this.shogiEngineFilePath = "shogiEngine.exe";
         }
 
+        [Conditional("DEBUG")]
         public void DebugWrite()
         {
             StringBuilder sb = new StringBuilder();
@@ -99,7 +101,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             sb.AppendLine();
             sb.AppendLine();
 
-            Util_Message.Whisper(sb.ToString());
+            Logging.Logger.Trace(sb.ToString());
         }
 
         public bool Exists()
@@ -107,37 +109,24 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             return File.Exists(this.FileName);
         }
 
-        public bool Read()
+        public void Read()
         {
-            bool successfule = true;
-
             XmlDocument xDoc = new XmlDocument();
 
-            try
+            xDoc.Load(this.fileName);
+
+            XmlElement xKifunarabe = xDoc.DocumentElement;
+            this.setteiFileVer = xKifunarabe.GetAttribute("setteiFileVer");
+
+            XmlNodeList xShogiEngineNodeList = xKifunarabe.GetElementsByTagName("shogiEngine");
+            foreach (XmlNode xShogiEngineNode in xShogiEngineNodeList)
             {
-                xDoc.Load(this.fileName);
+                XmlElement xShogiEngine = (XmlElement)xShogiEngineNode;
 
-                XmlElement xKifunarabe = xDoc.DocumentElement;
-                this.setteiFileVer = xKifunarabe.GetAttribute("setteiFileVer");
-
-                XmlNodeList xShogiEngineNodeList = xKifunarabe.GetElementsByTagName("shogiEngine");
-                foreach (XmlNode xShogiEngineNode in xShogiEngineNodeList)
-                {
-                    XmlElement xShogiEngine = (XmlElement)xShogiEngineNode;
-
-                    this.shogiEngineName = xShogiEngine.GetAttribute("name");
-                    this.shogiEngineFilePath = xShogiEngine.GetAttribute("file");
-                    break;
-                }
+                this.shogiEngineName = xShogiEngine.GetAttribute("name");
+                this.shogiEngineFilePath = xShogiEngine.GetAttribute("file");
+                break;
             }
-            catch (Exception ex)
-            {
-                // エラー
-                successfule = false;
-                Util_Message.Whisper(ex.GetType().Name + "　" + ex.Message);
-            }
-
-            return successfule;
         }
 
 

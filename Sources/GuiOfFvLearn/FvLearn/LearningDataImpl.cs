@@ -169,8 +169,8 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
             this.Aaa_CreateNextNodes_Gohosyu(args);
 #if DEBUG
             sw2.Stop();
-            Console.WriteLine("合法手作成　　　 　= {0}", sw2.Elapsed);
-            Console.WriteLine("────────────────────────────────────────");
+            Logger.Trace("合法手作成　　　 　= {0}", sw2.Elapsed);
+            Logger.Trace("────────────────────────────────────────");
 #endif
 
 
