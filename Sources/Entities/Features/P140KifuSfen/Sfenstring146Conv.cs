@@ -4,6 +4,42 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Sfenstring146Conv
     {
+        static readonly Regex regexOfStartpos = new Regex(
+            @"^\s*" +
+            @"sfen " +
+            @"((?:[123456789]|\+?[KRBGSNLPkrbgsnlp])+)/" +//1段目
+            @"((?:[123456789]|\+?[KRBGSNLPkrbgsnlp])+)/" +//2段目
+            @"((?:[123456789]|\+?[KRBGSNLPkrbgsnlp])+)/" +//3段目
+            @"((?:[123456789]|\+?[KRBGSNLPkrbgsnlp])+)/" +//4段目
+            @"((?:[123456789]|\+?[KRBGSNLPkrbgsnlp])+)/" +//5段目
+            @"((?:[123456789]|\+?[KRBGSNLPkrbgsnlp])+)/" +//6段目
+            @"((?:[123456789]|\+?[KRBGSNLPkrbgsnlp])+)/" +//7段目
+            @"((?:[123456789]|\+?[KRBGSNLPkrbgsnlp])+)/" +//8段目
+            @"((?:[123456789]|\+?[KRBGSNLPkrbgsnlp])+) " +//9段目
+            @"(b|w) " +//先後
+            @"\-?" +//持駒なし
+                    // ↓この書き方だと、順序が決まってしまうが。
+            @"(\d*K)?" +//持駒▲王 ※持ち駒が１個だけの場合は、数字が省略されます。
+            @"(\d*R)?" +//持駒▲飛
+            @"(\d*B)?" +//持駒▲角
+            @"(\d*G)?" +//持駒▲金
+            @"(\d*S)?" +//持駒▲銀
+            @"(\d*N)?" +//持駒▲桂
+            @"(\d*L)?" +//持駒▲香
+            @"(\d*P)?" +//持駒▲歩
+            @"(\d*k)?" +//持駒△王
+            @"(\d*r)?" +//持駒△飛
+            @"(\d*b)?" +//持駒△角
+            @"(\d*g)?" +//持駒△金
+            @"(\d*s)?" +//持駒△銀
+            @"(\d*n)?" +//持駒△桂
+            @"(\d*l)?" +//持駒△香
+            @"(\d*p)?" +//持駒△歩
+            @" (\d+)" +//手目
+            @"",
+            RegexOptions.Singleline | RegexOptions.Compiled
+        );
+
         /// <summary>
         /// ************************************************************************************************************************
         /// 「lnsgkgsnl/1r5b1/ppppppppp/9/9/9/PPPPPPPPP/1B5R1/LNSGKGSNL w - 1」といった記述を解析します。
@@ -58,42 +94,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             //------------------------------------------------------------
             if (!startposPattern)
             {
-                Regex regex2 = new Regex(
-                    @"^\s*" +
-                    @"sfen " +
-                    @"((?:[123456789]|\+?[KRBGSNLPkrbgsnlp])+)/" +//1段目
-                    @"((?:[123456789]|\+?[KRBGSNLPkrbgsnlp])+)/" +//2段目
-                    @"((?:[123456789]|\+?[KRBGSNLPkrbgsnlp])+)/" +//3段目
-                    @"((?:[123456789]|\+?[KRBGSNLPkrbgsnlp])+)/" +//4段目
-                    @"((?:[123456789]|\+?[KRBGSNLPkrbgsnlp])+)/" +//5段目
-                    @"((?:[123456789]|\+?[KRBGSNLPkrbgsnlp])+)/" +//6段目
-                    @"((?:[123456789]|\+?[KRBGSNLPkrbgsnlp])+)/" +//7段目
-                    @"((?:[123456789]|\+?[KRBGSNLPkrbgsnlp])+)/" +//8段目
-                    @"((?:[123456789]|\+?[KRBGSNLPkrbgsnlp])+) " +//9段目
-                    @"(b|w) " +//先後
-                    @"\-?" +//持駒なし
-                            // ↓この書き方だと、順序が決まってしまうが。
-                    @"(\d*K)?" +//持駒▲王 ※持ち駒が１個だけの場合は、数字が省略されます。
-                    @"(\d*R)?" +//持駒▲飛
-                    @"(\d*B)?" +//持駒▲角
-                    @"(\d*G)?" +//持駒▲金
-                    @"(\d*S)?" +//持駒▲銀
-                    @"(\d*N)?" +//持駒▲桂
-                    @"(\d*L)?" +//持駒▲香
-                    @"(\d*P)?" +//持駒▲歩
-                    @"(\d*k)?" +//持駒△王
-                    @"(\d*r)?" +//持駒△飛
-                    @"(\d*b)?" +//持駒△角
-                    @"(\d*g)?" +//持駒△金
-                    @"(\d*s)?" +//持駒△銀
-                    @"(\d*n)?" +//持駒△桂
-                    @"(\d*l)?" +//持駒△香
-                    @"(\d*p)?" +//持駒△歩
-                    @" (\d+)" +//手目
-                    @"",
-                    RegexOptions.Singleline
-                );
-                MatchCollection mc = regex2.Matches(inputLine);
+                MatchCollection mc = regexOfStartpos.Matches(inputLine);
                 foreach (Match m in mc)
                 {
                     if (0 < m.Groups.Count)

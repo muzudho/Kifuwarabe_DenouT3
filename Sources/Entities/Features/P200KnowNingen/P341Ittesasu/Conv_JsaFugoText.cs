@@ -4,10 +4,13 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class Conv_JsaFugoText
     {
+        static readonly Regex regexOfJapaneseMove = new Regex(
+            @"^\s*([▲△]?)(?:([123456789１２３４５６７８９])([123456789１２３４５６７８９一二三四五六七八九]))?(同)?[\s　]*(歩|香|桂|銀|金|飛|角|王|玉|と|成香|成桂|成銀|竜|龍|馬)(右|左|直)?(寄|引|上)?(成|不成)?(打?)",
+            RegexOptions.Singleline
+        );
+
         /// <summary>
-        /// ************************************************************************************************************************
         /// テキスト形式の符号「▲７六歩△３四歩▲２六歩…」の最初の要素を、切り取ってプロセスに変換します。
-        /// ************************************************************************************************************************
         /// 
         /// [再生]、[コマ送り]で利用。
         /// </summary>
@@ -44,12 +47,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             //------------------------------------------------------------
             // リスト作成
             //------------------------------------------------------------
-            Regex regex = new Regex(
-                @"^\s*([▲△]?)(?:([123456789１２３４５６７８９])([123456789１２３４５６７８９一二三四五六七八九]))?(同)?[\s　]*(歩|香|桂|銀|金|飛|角|王|玉|と|成香|成桂|成銀|竜|龍|馬)(右|左|直)?(寄|引|上)?(成|不成)?(打?)",
-                RegexOptions.Singleline
-            );
-
-            MatchCollection mc = regex.Matches(inputLine);
+            MatchCollection mc = regexOfJapaneseMove.Matches(inputLine);
             foreach (Match m in mc)
             {
                 if (0 < m.Groups.Count)

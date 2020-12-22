@@ -4,6 +4,11 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 {
     public abstract class SfenMovesTextConv
     {
+        static readonly Regex regexOfMove = new Regex(
+            @"^\s*([123456789PLNSGKRB])([abcdefghi\*])([123456789])([abcdefghi])(\+)?",
+            RegexOptions.Singleline | RegexOptions.Compiled
+        );
+
         /// <summary>
         /// テキスト形式の符号「7g7f 3c3d 6g6f…」の最初の１要素を、切り取ってトークンに分解します。
         /// 
@@ -41,12 +46,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             //------------------------------------------------------------
             // リスト作成
             //------------------------------------------------------------
-            Regex regex = new Regex(
-                @"^\s*([123456789PLNSGKRB])([abcdefghi\*])([123456789])([abcdefghi])(\+)?",
-                RegexOptions.Singleline
-            );
-
-            MatchCollection mc = regex.Matches(inputLine);
+            MatchCollection mc = regexOfMove.Matches(inputLine);
             foreach (Match m in mc)
             {
                 if (0 < m.Groups.Count)

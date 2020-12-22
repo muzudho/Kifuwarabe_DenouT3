@@ -20,6 +20,9 @@
     class Program
     {
         static readonly Regex regexOfGoFisherClock = new Regex(@"go btime (\d+) wtime (\d+) binc (\d+) winc (\d+)", RegexOptions.Singleline | RegexOptions.Compiled);
+        static readonly Regex regexOfSetoption = new Regex(@"setoption name ([^ ]+)(?: value (.*))?", RegexOptions.Singleline | RegexOptions.Compiled);
+        static readonly Regex regexOfGo = new Regex(@"go btime (\d+) wtime (\d+) byoyomi (\d+)", RegexOptions.Singleline | RegexOptions.Compiled);
+        static readonly Regex regexOfGameover = new Regex(@"gameover (.)", RegexOptions.Singleline | RegexOptions.Compiled);
 
         /// <summary>
         /// Ｃ＃のプログラムは、
@@ -210,8 +213,7 @@
                         }
                         else if (line.StartsWith("setoption"))
                         {
-                            Regex regex = new Regex(@"setoption name ([^ ]+)(?: value (.*))?", RegexOptions.Singleline);
-                            Match m = regex.Match(line);
+                            Match m = regexOfSetoption.Match(line);
 
                             if (m.Success)
                             {
@@ -417,8 +419,7 @@
                         // 「go ponder」「go mate」「go infinite」とは区別します。
                         else if (line.StartsWith("go"))
                         {
-                            Regex regex = new Regex(@"go btime (\d+) wtime (\d+) byoyomi (\d+)", RegexOptions.Singleline);
-                            Match m = regex.Match(line);
+                            Match m = regexOfGo.Match(line);
                             if (m.Success)
                             {
                                 playing.Go((string)m.Groups[1].Value, (string)m.Groups[2].Value, (string)m.Groups[3].Value, "", "");
@@ -437,8 +438,7 @@
                         }
                         else if (line.StartsWith("gameover"))
                         {
-                            Regex regex = new Regex(@"gameover (.)", RegexOptions.Singleline);
-                            Match m = regex.Match(line);
+                            Match m = regexOfGameover.Match(line);
                             if (m.Success)
                             {
                                 playing.GameOver((string)m.Groups[1].Value);
