@@ -50,7 +50,6 @@
             // 思考エンジンの、記憶を読み取ります。
             //------------------------------------------------------------------------------------------------------------------------
             {
-                playing.shogisasi = new ShogisasiImpl();
                 Util_FvLoad.OpenFv(playing.FeatureVector, Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv00Komawari")));
             }
 
@@ -991,8 +990,7 @@
                                             // 最善手、次善手、三次善手、四次善手、五次善手
                                             for (int iMultiPV = 0; iMultiPV < multiPV_Count; iMultiPV++)
                                             {
-                                                bestKifuNodeList.Add(playing.shogisasi.WA_Bestmove(
-                                                    playing,
+                                                bestKifuNodeList.Add(playing.WA_Bestmove(
                                                     isHonshogi,
                                                     playing.Kifu)
                                                     );

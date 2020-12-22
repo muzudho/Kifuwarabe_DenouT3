@@ -20,7 +20,6 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
         /// 読み用。
         /// </summary>
         private FeatureVector featureVector_ForYomi = new FeatureVectorImpl();
-        private Shogisasi shogisasi_ForYomi = new ShogisasiImpl();
 
         public static KyokumenPngEnvironment REPORT_ENVIRONMENT;
         static LearningDataImpl()
@@ -158,7 +157,6 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
                 args = new EvaluationArgsImpl(
                     this.Kifu.GetSennititeCounter(),
                     this.featureVector_ForYomi,
-                    this.shogisasi_ForYomi,
                     LearningDataImpl.REPORT_ENVIRONMENT
 #if DEBUG
                     ,

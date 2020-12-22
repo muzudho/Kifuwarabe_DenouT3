@@ -307,7 +307,6 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
                 args = new EvaluationArgsImpl(
                     uc_Main.LearningData.Kifu.GetSennititeCounter(),
                     new FeatureVectorImpl(),
-                    new ShogisasiImpl(),
                     Util_KifuTreeLogWriter.REPORT_ENVIRONMENT
 #if DEBUG
                     ,

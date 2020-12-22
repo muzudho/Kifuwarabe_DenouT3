@@ -15,7 +15,7 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
         /// </summary>
         /// <param name="kifu"></param>
         /// <param name="atamanosumiCollection"></param>
-        public void EdaSibori_HighScore(KifuTree kifu, Shogisasi shogisasi)
+        public void EdaSibori_HighScore(KifuTree kifu)
         {
             //
             // ノードが２つもないようなら、スキップします。

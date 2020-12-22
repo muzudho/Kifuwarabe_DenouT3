@@ -13,10 +13,6 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
         public FeatureVector FeatureVector { get { return this.featureVector; } }
         private FeatureVector featureVector;
 
-        public Shogisasi Shogisasi { get { return this.shogisasi; } }
-        private Shogisasi shogisasi;
-
-
         public KyokumenPngEnvironment ReportEnvironment { get { return this.reportEnvironment; } }
         private KyokumenPngEnvironment reportEnvironment;
 
@@ -31,7 +27,6 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
         public EvaluationArgsImpl(
             SennititeConfirmer sennititeConfirmer,
             FeatureVector featureVector,
-            Shogisasi shogisasi,
             KyokumenPngEnvironment reportEnvironment
 #if DEBUG
             ,
@@ -41,7 +36,6 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
         {
             this.sennititeConfirmer = sennititeConfirmer;
             this.featureVector = featureVector;
-            this.shogisasi = shogisasi;
             this.reportEnvironment = reportEnvironment;
 #if DEBUG
             this.kaisetuBoards_orNull = kaisetuBoards_orNull;

@@ -14,8 +14,6 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
         /// </summary>
         FeatureVector FeatureVector { get; }
 
-        Shogisasi Shogisasi { get; }
-
         KyokumenPngEnvironment ReportEnvironment { get; }
 
 #if DEBUG

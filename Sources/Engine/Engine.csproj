@@ -92,7 +92,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Features\Util_LogBuilder510.cs" />
-    <Compile Include="Features\ShogisasiImpl.cs" />
     <Compile Include="Features\Result_KingState.cs" />
     <Compile Include="Features\NoopPhase.cs" />
     <Compile Include="Features\NoopTimerImpl.cs" />

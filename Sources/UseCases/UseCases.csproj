@@ -133,7 +133,6 @@
     <Compile Include="Features\P542Scoreing\EvaluationArgsImpl.cs" />
     <Compile Include="Features\P542Scoreing\PerformanceMetrics.cs" />
     <Compile Include="Features\P542Scoreing\ScoreSiboriEngine.cs" />
-    <Compile Include="Features\P542Scoreing\Shogisasi.cs" />
     <Compile Include="Features\P542Scoreing\Util_Scoreing.cs" />
     <Compile Include="Features\P551Tansaku\Tansaku_Args.cs" />
     <Compile Include="Features\P551Tansaku\Tansaku_ArgsImpl.cs" />
