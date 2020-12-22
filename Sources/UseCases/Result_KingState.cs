@@ -1,5 +1,4 @@
-﻿
-namespace Grayscale.Kifuwarakaku.Engine.Features
+﻿namespace Grayscale.Kifuwarakaku.UseCases
 {
     public enum Result_KingState
     {

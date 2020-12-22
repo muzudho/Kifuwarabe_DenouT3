@@ -145,6 +145,7 @@
     <Compile Include="Features\P560UtilClient\Util_InClient.cs" />
     <Compile Include="Playing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Result_KingState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

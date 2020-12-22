@@ -92,10 +92,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Features\Util_LogBuilder510.cs" />
-    <Compile Include="Features\Result_KingState.cs" />
     <Compile Include="Features\NoopPhase.cs" />
     <Compile Include="Features\NoopTimerImpl.cs" />
-    <Compile Include="Features\PhaseResult_UsiLoop1.cs" />
     <Compile Include="Features\PhaseResult_UsiLoop2.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
