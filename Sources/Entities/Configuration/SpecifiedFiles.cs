@@ -4,7 +4,7 @@
     using Grayscale.Kifuwarakaku.Entities.Configuration;
     using Nett;
 
-    public static class SpecifyFiles
+    public static class SpecifiedFiles
     {
         /// <summary>
         /// このクラスを使う前にセットしてください。

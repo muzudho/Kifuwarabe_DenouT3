@@ -1,10 +1,10 @@
-﻿using System.Configuration;
-using System.IO;
-using Grayscale.Kifuwarakaku.Entities.Configuration;
-using Nett;
-
-namespace Grayscale.Kifuwarakaku.Engine.Configuration
+﻿namespace Grayscale.Kifuwarakaku.Engine.Configuration
 {
+    using System.Configuration;
+    using System.IO;
+    using Grayscale.Kifuwarakaku.Entities.Configuration;
+    using Nett;
+
     public class EngineConf : IEngineConf
     {
         public string GetEngine(string key)

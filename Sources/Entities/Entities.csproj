@@ -352,7 +352,7 @@
     <Compile Include="Features\P200KnowNingen\P372KyokuParser\ParsedKyokumenImpl.cs" />
     <Compile Include="Features\P200KnowNingen\P373ConvStartpo\Conv_StartposImporter.cs" />
     <Compile Include="Features\P440KifuTreeLog\P441HyokaMeisai\Util_KifuTreeLogWriter.cs" />
-    <Compile Include="Configuration\SpecifyFiles.cs" />
+    <Compile Include="Configuration\SpecifiedFiles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
