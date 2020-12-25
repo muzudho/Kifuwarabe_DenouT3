@@ -92,9 +92,17 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Engine\Engine.csproj">
+      <Project>{e410eaaa-154f-4965-a396-bfe465f4a4be}</Project>
+      <Name>Engine</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{8c0f1ff2-e0c6-45d7-ab40-bb8f548f55dd}</Project>
       <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UseCases\UseCases.csproj">
+      <Project>{95fced87-bef9-4384-a7b6-1a63a6a74110}</Project>
+      <Name>UseCases</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

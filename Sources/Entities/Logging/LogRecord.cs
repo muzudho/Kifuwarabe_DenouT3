@@ -1,11 +1,13 @@
-﻿namespace Grayscale.Kifuwarakaku.Entities.Logging
+﻿using Grayscale.Kifuwarakaku.Entities.Configuration;
+
+namespace Grayscale.Kifuwarakaku.Entities.Logging
 {
     /// <summary>
     /// ログの書き込み先情報。
     /// </summary>
     public class LogRecord : ILogRecord
     {
-        public LogRecord(ILogFile logFile, bool enabled, bool timeStampPrintable)
+        public LogRecord(IResFile logFile, bool enabled, bool timeStampPrintable)
         {
             this.LogFile = logFile;
             this.Enabled = enabled;
@@ -15,7 +17,7 @@
         /// <summary>
         /// 出力先ファイル。
         /// </summary>
-        public ILogFile LogFile { get; private set; }
+        public IResFile LogFile { get; private set; }
 
         /// <summary>
         /// ログ出力の有無。

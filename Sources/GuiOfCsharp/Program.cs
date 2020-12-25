@@ -4,6 +4,8 @@
 using System;
 using System.IO;
 using System.Windows.Forms;
+using Grayscale.Kifuwarakaku.Engine.Configuration;
+using Grayscale.Kifuwarakaku.Entities;
 using Nett;
 
 namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
@@ -17,6 +19,9 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
         [STAThread]
         static void Main()
         {
+            var engineConf = new EngineConf();
+            EntitiesLayer.Implement(engineConf);
+
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
 

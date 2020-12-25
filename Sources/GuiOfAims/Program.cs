@@ -1,5 +1,7 @@
 ﻿using System.IO;
 using System.Windows.Forms;
+using Grayscale.Kifuwarakaku.Engine.Configuration;
+using Grayscale.Kifuwarakaku.Entities;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.UseCases.Features;
 using Nett;
@@ -12,6 +14,9 @@ namespace Grayscale.Kifuwarakaku.CliOfAims
         static void Main(string[] args)
         {
             MessageBox.Show("AIMSサーバー");
+
+            var engineConf = new EngineConf();
+            EntitiesLayer.Implement(engineConf);
 
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));

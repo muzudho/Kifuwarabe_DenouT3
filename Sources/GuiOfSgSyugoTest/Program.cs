@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using Grayscale.Kifuwarakaku.Engine.Configuration;
+using Grayscale.Kifuwarakaku.Entities;
 using Grayscale.Kifuwarakaku.GuiOfSgSyugoTest.Features;
 
 namespace Grayscale.Kifuwarakaku.GuiOfSgSyugoTest
@@ -12,6 +14,9 @@ namespace Grayscale.Kifuwarakaku.GuiOfSgSyugoTest
         [STAThread]
         static void Main()
         {
+            var engineConf = new EngineConf();
+            EntitiesLayer.Implement(engineConf);
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 

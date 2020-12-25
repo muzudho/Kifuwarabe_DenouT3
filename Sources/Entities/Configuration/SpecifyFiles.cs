@@ -1,16 +1,16 @@
-﻿namespace Grayscale.Kifuwarakaku.Entities.Logging
+﻿namespace Grayscale.Kifuwarakaku.Entities.Configuration
 {
     using System.IO;
+    using Grayscale.Kifuwarakaku.Entities.Configuration;
     using Nett;
 
-    public static class SpecifyLogFiles
+    public static class SpecifyFiles
     {
-        static SpecifyLogFiles()
+        /// <summary>
+        /// このクラスを使う前にセットしてください。
+        /// </summary>
+        public static void Init(IEngineConf engineConf)
         {
-            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-            var logDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("LogDirectory"));
-
             /*
             AddLog(LogTags.NarabeNetwork, new LogRecord("../../Logs/#将棋GUI_ﾈｯﾄﾜｰｸ", true, false));
             // ログ。将棋エンジンきふわらべで汎用に使います。
@@ -26,24 +26,24 @@
             OutputPieceTypeToHaiyaku = DataEntry(profilePath, toml, "OutputPieceTypeToHaiyaku");
             HaichiTenkanHyoOnlyDataLog = DataEntry(profilePath, toml, "HaichiTenkanHyoOnlyDataLog");
             HaichiTenkanHyoAllLog = DataEntry(profilePath, toml, "HaichiTenkanHyoAllLog");
-            LatestPositionLogPng = LogEntry(logDirectory, toml, "LatestPositionLogPng");
-            MousouRireki = LogEntry(logDirectory, toml, "MousouRireki");
-            GuiDefault = LogEntry(logDirectory, toml, "GuiRecordLog");
-            LinkedList = LogEntry(logDirectory, toml, "LinkedListLog");
-            GuiPaint = LogEntry(logDirectory, toml, "GuiPaint");
-            LegalMove = LogEntry(logDirectory, toml, "LegalMoveLog");
-            LegalMoveEvasion = LogEntry(logDirectory, toml, "LegalMoveEvasionLog");
-            GenMove = LogEntry(logDirectory, toml, "GenMoveLog");
+            LatestPositionLogPng = LogEntry("LatestPositionLogPng");
+            MousouRireki = LogEntry("MousouRireki");
+            GuiDefault = LogEntry("GuiRecordLog");
+            LinkedList = LogEntry("LinkedListLog");
+            GuiPaint = LogEntry("GuiPaint");
+            LegalMove = LogEntry("LegalMoveLog");
+            LegalMoveEvasion = LogEntry("LegalMoveEvasionLog");
+            GenMove = LogEntry("GenMoveLog");
             */
         }
 
-        static ILogFile LogEntry(string logDirectory, TomlTable toml, string resourceKey)
+        static IResFile LogEntry(string logDirectory, TomlTable toml, string resourceKey)
         {
-            return LogFile.AsLog(logDirectory, toml.Get<TomlTable>("Logs").Get<string>(resourceKey));
+            return ResFile.AsLog(logDirectory, toml.Get<TomlTable>("Logs").Get<string>(resourceKey));
         }
-        static ILogFile DataEntry(string profilePath, TomlTable toml, string resourceKey)
+        static IResFile DataEntry(string profilePath, TomlTable toml, string resourceKey)
         {
-            return LogFile.AsData(profilePath, toml.Get<TomlTable>("Resources").Get<string>(resourceKey));
+            return ResFile.AsData(profilePath, toml.Get<TomlTable>("Resources").Get<string>(resourceKey));
         }
 
         /*

@@ -1,4 +1,6 @@
-﻿namespace Grayscale.Kifuwarakaku.Entities.Logging
+﻿using Grayscale.Kifuwarakaku.Entities.Configuration;
+
+namespace Grayscale.Kifuwarakaku.Entities.Logging
 {
     /// <summary>
     /// ログの書き込み先情報。
@@ -8,7 +10,7 @@
         /// <summary>
         /// 出力先ファイル。
         /// </summary>
-        ILogFile LogFile { get; }
+        IResFile LogFile { get; }
 
         /// <summary>
         /// ログ出力の有無。

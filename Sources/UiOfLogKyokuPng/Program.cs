@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using Grayscale.Kifuwarakaku.Engine.Configuration;
+using Grayscale.Kifuwarakaku.Entities;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Nett;
 
@@ -14,6 +16,9 @@ namespace Grayscale.Kifuwarakaku.CliOfLogKyokuPng
         [STAThread]
         static void Main()
         {
+            var engineConf = new EngineConf();
+            EntitiesLayer.Implement(engineConf);
+
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
 

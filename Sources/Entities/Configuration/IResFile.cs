@@ -1,9 +1,9 @@
-﻿namespace Grayscale.Kifuwarakaku.Entities.Logging
+﻿namespace Grayscale.Kifuwarakaku.Entities.Configuration
 {
     /// <summary>
-    /// ログの書き込み先情報。
+    /// Resource. ファイルについて。
     /// </summary>
-    public interface ILogFile
+    public interface IResFile
     {
         /// <summary>
         /// ファイル名。

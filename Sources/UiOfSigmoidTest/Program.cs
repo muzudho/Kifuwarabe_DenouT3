@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Text;
+using Grayscale.Kifuwarakaku.Engine.Configuration;
+using Grayscale.Kifuwarakaku.Entities;
 using Grayscale.Kifuwarakaku.Entities.Logging;
 
 namespace Grayscale.Kifuwarakaku.CliOfSigmoidTest
@@ -8,6 +10,9 @@ namespace Grayscale.Kifuwarakaku.CliOfSigmoidTest
     {
         static void Main(string[] args)
         {
+            var engineConf = new EngineConf();
+            EntitiesLayer.Implement(engineConf);
+
             /*
             Logger.Trace("targetって何だぜ☆？");
             Logger.Trace("func(-256.0) → [{func(-256.0)}]");

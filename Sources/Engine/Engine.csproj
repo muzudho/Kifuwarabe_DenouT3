@@ -91,6 +91,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\EngineConf.cs" />
     <Compile Include="Features\Util_LogBuilder510.cs" />
     <Compile Include="Features\NoopPhase.cs" />
     <Compile Include="Features\NoopTimerImpl.cs" />
@@ -107,10 +108,6 @@
       <Project>{8c0f1ff2-e0c6-45d7-ab40-bb8f548f55dd}</Project>
       <Name>Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UiOfLogKyokuPng\CliOfLogKyokuPng.csproj">
-      <Project>{bd194834-b536-4b5b-931e-54349f197e95}</Project>
-      <Name>CliOfLogKyokuPng</Name>
-    </ProjectReference>
     <ProjectReference Include="..\UseCases\UseCases.csproj">
       <Project>{95fced87-bef9-4384-a7b6-1a63a6a74110}</Project>
       <Name>UseCases</Name>
@@ -120,6 +117,7 @@
     <Analyzer Include="..\..\packages\Microsoft.CodeAnalysis.NetAnalyzers.5.0.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll" />
     <Analyzer Include="..\..\packages\Microsoft.CodeAnalysis.NetAnalyzers.5.0.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.NetAnalyzers.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

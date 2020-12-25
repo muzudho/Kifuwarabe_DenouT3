@@ -88,12 +88,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\IEngineConf.cs" />
+    <Compile Include="EntitiesLayer.cs" />
     <Compile Include="IGame.cs" />
     <Compile Include="Logging\ILogEvent.cs" />
     <Compile Include="Logging\ErrorHandlerImpl.cs" />
-    <Compile Include="Logging\ILogFile.cs" />
+    <Compile Include="Configuration\IResFile.cs" />
     <Compile Include="Logging\ILogRecord.cs" />
-    <Compile Include="Logging\LogFile.cs" />
+    <Compile Include="Configuration\ResFile.cs" />
     <Compile Include="Logging\Logger.cs" />
     <Compile Include="Logging\LogRecord.cs" />
     <Compile Include="Features\P000Environment\P005Tushin\Util_Message.cs" />
@@ -350,7 +352,7 @@
     <Compile Include="Features\P200KnowNingen\P372KyokuParser\ParsedKyokumenImpl.cs" />
     <Compile Include="Features\P200KnowNingen\P373ConvStartpo\Conv_StartposImporter.cs" />
     <Compile Include="Features\P440KifuTreeLog\P441HyokaMeisai\Util_KifuTreeLogWriter.cs" />
-    <Compile Include="Logging\SpecifyLogFiles.cs" />
+    <Compile Include="Configuration\SpecifyFiles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
