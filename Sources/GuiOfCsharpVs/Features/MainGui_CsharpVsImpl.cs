@@ -74,12 +74,9 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharpVs.Features
         {
             base.Load_AsStart();
 
-            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-
-            this.Data_Settei_Csv.Read_Add(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataSetteiVsCsv")), Encoding.UTF8);
+            this.Data_Settei_Csv.Read_Add(this.EngineConf.GetResourceFullPath("DataSetteiVsCsv"), Encoding.UTF8);
             this.Data_Settei_Csv.DebugOut();
-            this.WidgetLoaders.Add(new WidgetsLoader_CsharpVsImpl(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Vs03Widgets")), this));
+            this.WidgetLoaders.Add(new WidgetsLoader_CsharpVsImpl(this.EngineConf.GetResourceFullPath("Vs03Widgets"), this));
         }
 
     }

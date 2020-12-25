@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using Grayscale.Kifuwarakaku.Engine.Configuration;
+using Grayscale.Kifuwarakaku.Entities.Configuration;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Nett;
 
@@ -10,6 +12,18 @@ namespace Grayscale.Kifuwarakaku.GuiOfSgSyugoTest
 {
     public partial class Ui_SyugoronTestPanel : UserControl
     {
+        public Ui_SyugoronTestPanel()
+        {
+            this.syDictionary = new SyWordDictionary<SyElement>();
+
+            this.syFuncDictionary = new SyFuncDictionary();
+
+            InitializeComponent();
+
+            EngineConf = new EngineConf();
+        }
+
+        IEngineConf EngineConf { get; set; }
 
         private SyWordDictionary<SyElement> syDictionary;
 
@@ -20,15 +34,6 @@ namespace Grayscale.Kifuwarakaku.GuiOfSgSyugoTest
             {
                 return this.syFuncDictionary;
             }
-        }
-
-        public Ui_SyugoronTestPanel()
-        {
-            this.syDictionary = new SyWordDictionary<SyElement>();
-
-            this.syFuncDictionary = new SyFuncDictionary();
-
-            InitializeComponent();
         }
 
         /// <summary>
@@ -216,11 +221,8 @@ namespace Grayscale.Kifuwarakaku.GuiOfSgSyugoTest
 
         private void Ui_Main_Load(object sender, EventArgs e)
         {
-            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-
             // UTF-8
-            string path = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("SyugoronDirectoryText"));
+            string path = EngineConf.GetResourceFullPath("SyugoronDirectoryText");
 
             //MessageBox.Show(path);
             if (File.Exists(path))
@@ -290,11 +292,8 @@ namespace Grayscale.Kifuwarakaku.GuiOfSgSyugoTest
         /// <param name="e"></param>
         private void btnOverwrite_Click(object sender, EventArgs e)
         {
-            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-
             // UTF-8
-            string path = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("SyugoronDirectoryText"));
+            string path = EngineConf.GetResourceFullPath("SyugoronDirectoryText");
 
             //MessageBox.Show(path);
             if (File.Exists(path))

@@ -297,16 +297,13 @@
         /// <param name="e"></param>
         private void Uc_Form1Main_Load(object sender, EventArgs e)
         {
-            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-
             Uc_Form2Main uc_Form2Main = ((Form1_Shogi)this.ParentForm).Form2_Console.Uc_Form2Main;
 
             //
             // 設定XMLファイル
             //
             {
-                this.setteiXmlFile = new SetteiXmlFile(toml.Get<TomlTable>("Resources").Get<string>("DataSetteiXml"));
+                this.setteiXmlFile = new SetteiXmlFile(this.MainGui.EngineConf.GetResourceBasename("DataSetteiXml"));
                 if (!this.SetteiXmlFile.Exists())
                 {
                     // ファイルが存在しませんでした。

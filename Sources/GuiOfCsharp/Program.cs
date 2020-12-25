@@ -22,9 +22,6 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
             var engineConf = new EngineConf();
             EntitiesLayer.Implement(engineConf);
 
-            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-
             MainGui_CsharpImpl mainGui = new MainGui_CsharpImpl(engineConf);//new ShogiEngineVsClientImpl(this)
 
             //↓ [STAThread]指定のあるメソッドで フォームを作成してください。
@@ -34,8 +31,8 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
             //↑ [STAThread]指定のあるメソッドで フォームを作成してください。
 
             mainGui.Load_AsStart();
-            mainGui.WidgetLoaders.Add(new WidgetsLoader_CsharpImpl(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Shogiban01Widgets")), mainGui));
-            mainGui.WidgetLoaders.Add(new WidgetsLoader_CsharpImpl(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Console02Widgets")), mainGui));
+            mainGui.WidgetLoaders.Add(new WidgetsLoader_CsharpImpl(engineConf.GetResourceFullPath("Shogiban01Widgets"), mainGui));
+            mainGui.WidgetLoaders.Add(new WidgetsLoader_CsharpImpl(engineConf.GetResourceFullPath("Console02Widgets"), mainGui));
             mainGui.LaunchForm_AsBody();
         }
 

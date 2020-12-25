@@ -118,18 +118,18 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
             // 駒割
             File.WriteAllText(uc_Main.TxtFvFilepath.Text, Format_FeatureVector_Komawari.Format_Text(fv));
             // スケール
-            Util_FeatureVectorOutput.Write_Scale(fv, fvFolderPath);
+            Util_FeatureVectorOutput.Write_Scale(uc_Main.EngineConf, fv, fvFolderPath);
             // KK
-            Util_FeatureVectorOutput.Write_KK(fv, fvFolderPath);
+            Util_FeatureVectorOutput.Write_KK(uc_Main.EngineConf, fv, fvFolderPath);
             // 1pKP,2pKP
-            Util_FeatureVectorOutput.Write_KP(fv, fvFolderPath);
+            Util_FeatureVectorOutput.Write_KP(uc_Main.EngineConf, fv, fvFolderPath);
             // PP 盤上
-            Util_FeatureVectorOutput.Write_PP_Banjo(fv, fvFolderPath);
+            Util_FeatureVectorOutput.Write_PP_Banjo(uc_Main.EngineConf, fv, fvFolderPath);
             // PP １９枚の持駒
-            Util_FeatureVectorOutput.Write_PP_19Mai(fv, fvFolderPath);
+            Util_FeatureVectorOutput.Write_PP_19Mai(uc_Main.EngineConf, fv, fvFolderPath);
             // PP ５枚の持駒、３枚の持駒
-            Util_FeatureVectorOutput.Write_PP_5Mai(fv, fvFolderPath);
-            Util_FeatureVectorOutput.Write_PP_3Mai(fv, fvFolderPath);
+            Util_FeatureVectorOutput.Write_PP_5Mai(uc_Main.EngineConf, fv, fvFolderPath);
+            Util_FeatureVectorOutput.Write_PP_3Mai(uc_Main.EngineConf, fv, fvFolderPath);
         }
 
         /// <summary>

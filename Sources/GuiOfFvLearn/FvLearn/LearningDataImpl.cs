@@ -14,7 +14,9 @@
 using System;
 using System.IO;
 using System.Text;
-using Grayscale.Kifuwarakaku.Entities.Features;
+    using Grayscale.Kifuwarakaku.Engine.Configuration;
+    using Grayscale.Kifuwarakaku.Entities.Configuration;
+    using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.UseCases.Features;
 using Nett;
 using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
@@ -34,16 +36,13 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
         public static KyokumenPngEnvironment REPORT_ENVIRONMENT;
         static LearningDataImpl()
         {
-            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-            string logsDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("LogDirectory"));
-            string dataDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataDirectory"));
+            var engineConf = new EngineConf();
 
             LearningDataImpl.REPORT_ENVIRONMENT = new KyokumenPngEnvironmentImpl(
-                        Path.Combine(profilePath, logsDirectory),
-                        Path.Combine(profilePath, dataDirectory, "img/gkLog/"),
-                        toml.Get<TomlTable>("Resources").Get<string>("Koma1PngBasename"),//argsDic["kmFile"],
-                        toml.Get<TomlTable>("Resources").Get<string>("Suji1PngBasename"),//argsDic["sjFile"],
+                        engineConf.LogDirectory,
+                        Path.Combine(engineConf.DataDirectory, "img/gkLog/"),
+                        engineConf.GetResourceBasename("Koma1PngBasename"),//argsDic["kmFile"],
+                        engineConf.GetResourceBasename("Suji1PngBasename"),//argsDic["sjFile"],
                         "20",//argsDic["kmW"],
                         "20",//argsDic["kmH"],
                         "8",//argsDic["sjW"],
@@ -60,10 +59,12 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
         /// </summary>
         public FeatureVector Fv { get; set; }
 
-        public LearningDataImpl()
+        public LearningDataImpl(IEngineConf engineConf)
         {
+            EngineConf = engineConf;
             this.Fv = new FeatureVectorImpl();
         }
+        IEngineConf EngineConf { get; set; }
 
         /// <summary>
         /// 初期設定。
@@ -74,31 +75,31 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
 
             // データの読取「道」
-            if (Michi187Array.Load(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Michi187"))))
+            if (Michi187Array.Load(this.EngineConf.GetResourceFullPath("Michi187")))
             {
             }
 
             // データの読取「配役」
-            Util_Array_KomahaiyakuEx184.Load(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Haiyaku185")), Encoding.UTF8);
+            Util_Array_KomahaiyakuEx184.Load(this.EngineConf.GetResourceFullPath("Haiyaku185"), Encoding.UTF8);
 
             // データの読取「強制転成表」　※駒配役を生成した後で。
-            Array_ForcePromotion.Load(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("InputForcePromotion")), Encoding.UTF8);
+            Array_ForcePromotion.Load(this.EngineConf.GetResourceFullPath("InputForcePromotion"), Encoding.UTF8);
 #if DEBUG
             {
-                File.WriteAllText(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("OutputForcePromotion")), Array_ForcePromotion.LogHtml());
+                File.WriteAllText(this.EngineConf.GetResourceFullPath("OutputForcePromotion"), Array_ForcePromotion.LogHtml());
             }
 #endif
 
             // データの読取「配役転換表」
-            Data_KomahaiyakuTransition.Load(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("InputSyuruiToHaiyaku")), Encoding.UTF8);
+            Data_KomahaiyakuTransition.Load(this.EngineConf.GetResourceFullPath("InputSyuruiToHaiyaku"), Encoding.UTF8);
 #if DEBUG
             {
-                File.WriteAllText(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("OutputSyuruiToHaiyaku")), Data_KomahaiyakuTransition.Format_LogHtml());
+                File.WriteAllText(this.EngineConf.GetResourceFullPath("OutputSyuruiToHaiyaku"), Data_KomahaiyakuTransition.Format_LogHtml());
             }
 #endif
 
             // ファイルへのパス。
-            uc_Main.TxtFvFilepath.Text = Path.GetFullPath(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv00Komawari")));
+            uc_Main.TxtFvFilepath.Text = Path.GetFullPath(this.EngineConf.GetResourceFullPath("Fv00Komawari"));
             uc_Main.TxtStatus1.Text = "開くボタンで開いてください。";
         }
         /// <summary>
@@ -109,9 +110,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
             uc_Main.PctKyokumen.Image = null;//掴んでいる画像ファイルを放します。
             this.WritePng();
 
-            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-            uc_Main.PctKyokumen.ImageLocation = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("LearningPositionLogPng"));
+            uc_Main.PctKyokumen.ImageLocation = this.EngineConf.GetResourceFullPath("LearningPositionLogPng");
         }
 
         /// <summary>

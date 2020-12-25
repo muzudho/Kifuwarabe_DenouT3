@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using Grayscale.Kifuwarakaku.Engine.Configuration;
+using Grayscale.Kifuwarakaku.Entities.Configuration;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.UseCases.Features;
 using Nett;
@@ -15,7 +17,11 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvWriter.Features
         public Uc_Main()
         {
             InitializeComponent();
+
+            EngineConf = new EngineConf();
         }
+
+        IEngineConf EngineConf { get; set; }
 
         private void btnWriter_Click(object sender, EventArgs e)
         {
@@ -23,9 +29,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvWriter.Features
 
         private void btnMakeRandom_Click(object sender, EventArgs e)
         {
-            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-            string filepath = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv00KomawariSample"));
+            string filepath = EngineConf.GetResourceFullPath("Fv00KomawariSample");
 
             FeatureVector fv = new FeatureVectorImpl();
             Util_FeatureVectorEdit.Make_Random(fv);
@@ -36,12 +40,9 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvWriter.Features
 
         private void btnRead_Click(object sender, EventArgs e)
         {
-            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-
-            string filepathR = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv00Komawari"));
-            string filepathR_KK = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv01KK"));
-            string filepathW = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv2Sample"));
+            string filepathR = EngineConf.GetResourceFullPath("Fv00Komawari");
+            string filepathR_KK = EngineConf.GetResourceFullPath("Fv01KK");
+            string filepathW = EngineConf.GetResourceFullPath("Fv2Sample");
 
             FeatureVector fv = new FeatureVectorImpl();
 
@@ -123,14 +124,10 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvWriter.Features
         /// <param name="e"></param>
         private void btn_HyoHenkeiFvKK_Click(object sender, EventArgs e)
         {
-            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-            string dataDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataDirectory"));
-
             FeatureVector fv = new FeatureVectorImpl();
-            Util_FeatureVectorInput.Make_FromFile_Komawari(fv, Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv00Komawari")));
+            Util_FeatureVectorInput.Make_FromFile_Komawari(fv, EngineConf.GetResourceFullPath("Fv00Komawari"));
 
-            Util_FeatureVectorOutput.Write_KK(fv, Path.Combine(profilePath, dataDirectory));
+            Util_FeatureVectorOutput.Write_KK(EngineConf, fv, EngineConf.DataDirectory);
         }
 
         /// <summary>
@@ -140,14 +137,10 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvWriter.Features
         /// <param name="e"></param>
         private void btn_1pKP_Write_Click(object sender, EventArgs e)
         {
-            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-            string dataDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataDirectory"));
-
             FeatureVector fv = new FeatureVectorImpl();
-            Util_FeatureVectorInput.Make_FromFile_Komawari(fv, Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv00Komawari")));
+            Util_FeatureVectorInput.Make_FromFile_Komawari(fv, EngineConf.GetResourceFullPath("Fv00Komawari"));
 
-            Util_FeatureVectorOutput.Write_KP(fv, Path.Combine(profilePath, dataDirectory));
+            Util_FeatureVectorOutput.Write_KP(EngineConf, fv, EngineConf.DataDirectory);
         }
 
         /// <summary>
@@ -157,17 +150,13 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvWriter.Features
         /// <param name="e"></param>
         private void btnWriteFvPp_Click(object sender, EventArgs e)
         {
-            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-            string dataDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataDirectory"));
-
             FeatureVector fv = new FeatureVectorImpl();
-            Util_FeatureVectorInput.Make_FromFile_Komawari(fv, Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv00Komawari")));
+            Util_FeatureVectorInput.Make_FromFile_Komawari(fv, EngineConf.GetResourceFullPath("Fv00Komawari"));
 
-            Util_FeatureVectorOutput.Write_PP_Banjo(fv, Path.Combine(profilePath, dataDirectory));
-            Util_FeatureVectorOutput.Write_PP_19Mai(fv, Path.Combine(profilePath, dataDirectory));
-            Util_FeatureVectorOutput.Write_PP_5Mai(fv, Path.Combine(profilePath, dataDirectory));
-            Util_FeatureVectorOutput.Write_PP_3Mai(fv, Path.Combine(profilePath, dataDirectory));
+            Util_FeatureVectorOutput.Write_PP_Banjo(EngineConf, fv, EngineConf.DataDirectory);
+            Util_FeatureVectorOutput.Write_PP_19Mai(EngineConf, fv, EngineConf.DataDirectory);
+            Util_FeatureVectorOutput.Write_PP_5Mai(EngineConf, fv, EngineConf.DataDirectory);
+            Util_FeatureVectorOutput.Write_PP_3Mai(EngineConf, fv, EngineConf.DataDirectory);
         }
 
         /// <summary>
@@ -177,10 +166,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvWriter.Features
         /// <param name="e"></param>
         private void btnWriteFvScale_Click(object sender, EventArgs e)
         {
-            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-
-            string filepathW = Path.Combine(Application.StartupPath, Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv00Scale")));
+            string filepathW = EngineConf.GetResourceFullPath("Fv00Scale");
             MessageBox.Show($"filepathW=[{filepathW}]", "fv_00_Scale.csv書き出し。");
 
             FeatureVector fv = new FeatureVectorImpl();
@@ -188,7 +174,5 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvWriter.Features
 
             File.WriteAllText(filepathW, Format_FeatureVector_Scale.Format_Text(fv));
         }
-
-
     }
 }

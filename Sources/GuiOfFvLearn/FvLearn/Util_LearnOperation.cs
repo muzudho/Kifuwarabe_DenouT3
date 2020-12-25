@@ -210,7 +210,7 @@
 
                     StringBuilder sb_result = new StringBuilder();
                     // フィーチャー・ベクターの外部ファイルを開きます。
-                    sb_result.Append(Util_FvLoad.OpenFv(uc_Main.LearningData.Fv, uc_Main.TxtFvFilepath.Text));
+                    sb_result.Append(Util_FvLoad.OpenFv(uc_Main.EngineConf, uc_Main.LearningData.Fv, uc_Main.TxtFvFilepath.Text));
                     uc_Main.TxtStatus1.Text = sb_result.ToString();
 
                     // うまくいっていれば、フィーチャー・ベクターのセットアップが終わっているはず。

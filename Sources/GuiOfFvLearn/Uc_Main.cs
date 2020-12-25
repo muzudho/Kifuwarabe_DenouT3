@@ -2,6 +2,8 @@
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using Grayscale.Kifuwarakaku.Engine.Configuration;
+using Grayscale.Kifuwarakaku.Entities.Configuration;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Nett;
 
@@ -9,6 +11,46 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
 {
     public partial class Uc_Main : UserControl
     {
+        public Uc_Main()
+        {
+            EngineConf = new EngineConf();
+            this.LearningData = new LearningDataImpl(EngineConf);
+
+            this.stopLearning = new StopLearningImpl(EngineConf.GetResourceFullPath("StopLearningFlag"));
+
+            this.tyoseiryoSettings = new TyoseiryoSettingsImpl();
+
+            //
+            // イベントハンドラー登録
+            //
+            // (2020-12-18 fri)この機能むずかしいからいったん廃止☆（＾～＾）
+            //Logger.Learner.OnAppendLog = (string log) =>
+            //{
+            //    this.txtIttesasuLog.Text += log;
+            //};
+            // (2020-12-18 fri)この機能むずかしいからいったん廃止☆（＾～＾）
+            //Logger.Learner.OnClearLog = () =>
+            //{
+            //    this.txtIttesasuLog.Text = "";
+            //};
+            //Logger.LEARNER.Dlgt_OnNaibuDataAppend_or_Null = (string log) =>
+            //{
+            //    this.txtNaibuData.Text += log;
+            //};
+            //Logger.LEARNER.Dlgt_OnNaibuDataClear_or_Null = () =>
+            //{
+            //    this.txtNaibuData.Text = "";
+            //};
+
+            //
+            // 調整量
+            //
+            Util_Tyoseiryo.Init(this.tyoseiryoSettings, UtilAutoMoveRush.RENZOKU_KAISU);
+
+            InitializeComponent();
+        }
+
+        public IEngineConf EngineConf { get; private set; }
 
         public LearningData LearningData { get; set; }
 
@@ -87,46 +129,6 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
         public StopLearning StopLearning { get { return this.stopLearning; } }
         private StopLearning stopLearning;
 
-        public Uc_Main()
-        {
-            this.LearningData = new LearningDataImpl();
-
-            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-            this.stopLearning = new StopLearningImpl(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("StopLearningFlag")));
-
-            this.tyoseiryoSettings = new TyoseiryoSettingsImpl();
-
-            //
-            // イベントハンドラー登録
-            //
-            // (2020-12-18 fri)この機能むずかしいからいったん廃止☆（＾～＾）
-            //Logger.Learner.OnAppendLog = (string log) =>
-            //{
-            //    this.txtIttesasuLog.Text += log;
-            //};
-            // (2020-12-18 fri)この機能むずかしいからいったん廃止☆（＾～＾）
-            //Logger.Learner.OnClearLog = () =>
-            //{
-            //    this.txtIttesasuLog.Text = "";
-            //};
-            //Logger.LEARNER.Dlgt_OnNaibuDataAppend_or_Null = (string log) =>
-            //{
-            //    this.txtNaibuData.Text += log;
-            //};
-            //Logger.LEARNER.Dlgt_OnNaibuDataClear_or_Null = () =>
-            //{
-            //    this.txtNaibuData.Text = "";
-            //};
-
-            //
-            // 調整量
-            //
-            Util_Tyoseiryo.Init(this.tyoseiryoSettings, UtilAutoMoveRush.RENZOKU_KAISU);
-
-            InitializeComponent();
-        }
-
         /// <summary>
         /// [一手指す]ボタン。
         /// </summary>
@@ -178,10 +180,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
 
             // ファイル読込
             {
-                var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-                var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-
-                string path = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("SearchKifuFolderText"));
+                string path = EngineConf.GetResourceFullPath("SearchKifuFolderText");
                 if (File.Exists(path))
                 {
                     this.search_kifu_folder_lines = File.ReadAllLines(path, Encoding.UTF8);

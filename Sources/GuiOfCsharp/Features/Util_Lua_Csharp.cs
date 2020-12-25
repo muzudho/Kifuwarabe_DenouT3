@@ -1,6 +1,7 @@
 ﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
     using System;
+    using System.Configuration;
     using System.IO;
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.UseCases.Features;
@@ -68,7 +69,7 @@
 
 
                 //----------------------------------------------------------------------------------------------------
-                var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
+                var profilePath = ConfigurationManager.AppSettings["Profile"];
                 var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
                 string dataDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataDirectory"));
 

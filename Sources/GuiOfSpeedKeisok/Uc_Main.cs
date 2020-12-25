@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using Grayscale.Kifuwarakaku.Engine.Configuration;
+using Grayscale.Kifuwarakaku.Entities.Configuration;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.UseCases.Features;
 
@@ -15,6 +17,22 @@ namespace Grayscale.Kifuwarakaku.GuiOfSpeedKeisok
 
     public partial class Uc_Main : UserControl
     {
+        public Uc_Main()
+        {
+            this.FeatureVector = new FeatureVectorImpl();
+            {
+                KifuTree kifu_newHirate;
+                Util_FvLoad.CreateKifuTree(out kifu_newHirate);
+                this.Kifu = kifu_newHirate;
+            }
+            this.Src_Sky = ((KifuNode)this.Kifu.CurNode).Value.KyokumenConst;
+            InitializeComponent();
+
+            EngineConf = new EngineConf();
+        }
+
+        IEngineConf EngineConf { get; set; }
+
         private class KeisokuResult
         {
             public string Name { get; set; }
@@ -42,19 +60,6 @@ namespace Grayscale.Kifuwarakaku.GuiOfSpeedKeisok
         public FeatureVector FeatureVector { get; set; }
 
         public KifuTree Kifu { get; set; }
-
-
-        public Uc_Main()
-        {
-            this.FeatureVector = new FeatureVectorImpl();
-            {
-                KifuTree kifu_newHirate;
-                Util_FvLoad.CreateKifuTree(out kifu_newHirate);
-                this.Kifu = kifu_newHirate;
-            }
-            this.Src_Sky = ((KifuNode)this.Kifu.CurNode).Value.KyokumenConst;
-            InitializeComponent();
-        }
 
         private KeisokuResult Keisoku(Hyokakansu handan1)
         {
@@ -153,7 +158,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfSpeedKeisok
 
                     StringBuilder sb_result = new StringBuilder();
                     // フィーチャー・ベクターの外部ファイルを開きます。
-                    sb_result.Append(Util_FvLoad.OpenFv(this.FeatureVector, this.txtFvFilepath.Text));
+                    sb_result.Append(Util_FvLoad.OpenFv(EngineConf, this.FeatureVector, this.txtFvFilepath.Text));
 
                     this.txtResult.Text = sb_result.ToString();
 

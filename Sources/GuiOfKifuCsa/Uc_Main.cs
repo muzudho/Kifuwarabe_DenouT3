@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
+using Grayscale.Kifuwarakaku.Engine.Configuration;
+using Grayscale.Kifuwarakaku.Entities.Configuration;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Nett;
 
@@ -14,16 +16,17 @@ namespace Grayscale.Kifuwarakaku.GuiOfKifuCsa
         {
             this.CsaKifu = new CsaKifuImpl();
             InitializeComponent();
+
+            EngineConf = new EngineConf();
         }
+
+        IEngineConf EngineConf { get; set; }
 
         private void btnRead_Click(object sender, EventArgs e)
         {
-            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-
             this.CsaKifu = Util_Csa.ReadFile(this.txtKifuFilepath.Text);
 
-            string filepath_out = Path.Combine(this.txtKifuFilepath.Text, toml.Get<TomlTable>("Resources").Get<string>("N18KifuCsaLogBasename"));
+            string filepath_out = Path.Combine(this.txtKifuFilepath.Text, EngineConf.GetResourceBasename("N18KifuCsaLogBasename"));
             MessageBox.Show($"終わった。デバッグ出力をする☆\nファイルパス=[{filepath_out}]", "かんりょう");
             //デバッグ用にファイルを書き出します。
             CsaKifuWriterImpl.WriteForDebug(filepath_out, this.CsaKifu);
