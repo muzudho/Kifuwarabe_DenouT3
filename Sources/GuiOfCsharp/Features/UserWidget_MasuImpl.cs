@@ -10,7 +10,7 @@
     {
         #region 定数
 
-        public static readonly UserWidget_MasuImpl NULL_OBJECT = new UserWidget_MasuImpl(new Shape_BtnMasuImpl("#NullMasu"));
+        public static readonly UserWidget_MasuImpl NULL_OBJECT = new UserWidget_MasuImpl(new Shape_BtnMasuImpl(null, "#NullMasu")); // TODO よくない作り☆（＾～＾）
 
         #endregion
 
@@ -108,6 +108,7 @@
             // その設定を使って、再作成します。
             //
             this.this_object = new Shape_BtnMasuImpl(
+                this.this_object.EngineConf,
                 this.Name,
                 Util_Masu10.OkibaSujiDanToMasu(
                             this.Okiba,

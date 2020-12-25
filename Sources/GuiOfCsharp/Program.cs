@@ -25,7 +25,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
             var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
             var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
 
-            MainGui_CsharpImpl mainGui = new MainGui_CsharpImpl();//new ShogiEngineVsClientImpl(this)
+            MainGui_CsharpImpl mainGui = new MainGui_CsharpImpl(engineConf);//new ShogiEngineVsClientImpl(this)
 
             //↓ [STAThread]指定のあるメソッドで フォームを作成してください。
             Application.EnableVisualStyles();

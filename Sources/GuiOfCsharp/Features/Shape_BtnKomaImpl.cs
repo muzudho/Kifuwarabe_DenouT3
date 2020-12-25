@@ -4,6 +4,7 @@
     using System.Drawing;
     using System.IO;
     using System.Text;
+    using Grayscale.Kifuwarakaku.Entities.Configuration;
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Nett;
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
@@ -16,8 +17,17 @@
     [Serializable]
     public class Shape_BtnKomaImpl : Shape_Abstract, Shape_BtnKoma
     {
-
-        #region プロパティー
+        /// <summary>
+        /// ************************************************************************************************************************
+        /// コンストラクターです。
+        /// ************************************************************************************************************************
+        /// </summary>
+        /// <param name="koma"></param>
+        public Shape_BtnKomaImpl(IEngineConf engineConf, string widgetName, Finger koma)
+            : base(engineConf, widgetName, 42, 42, 35, 35)
+        {
+            this.Finger = koma;
+        }
 
         /// <summary>
         /// ------------------------------------------------------------------------------------------------------------------------
@@ -37,22 +47,6 @@
             get;
             set;
         }
-
-        #endregion
-
-
-        /// <summary>
-        /// ************************************************************************************************************************
-        /// コンストラクターです。
-        /// ************************************************************************************************************************
-        /// </summary>
-        /// <param name="koma"></param>
-        public Shape_BtnKomaImpl(string widgetName, Finger koma)
-            : base(widgetName, 42, 42, 35, 35)
-        {
-            this.Finger = koma;
-        }
-
 
         private void PaintText(Graphics g, RO_Star komaKs, Point location)
         {

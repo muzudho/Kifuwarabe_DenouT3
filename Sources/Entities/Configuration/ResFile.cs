@@ -13,9 +13,9 @@
         /// </summary>
         public string Name { get; private set; }
 
-        public static IResFile AsData(string logDirectory, string basename)
+        public static IResFile AsData(string fullName)
         {
-            return new ResFile(Path.Combine(logDirectory, $"{basename}"));
+            return new ResFile(fullName);
         }
         public static IResFile AsLog(string logDirectory, string basename)
         {

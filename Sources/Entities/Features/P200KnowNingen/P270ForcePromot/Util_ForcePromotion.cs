@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Grayscale.Kifuwarakaku.Entities.Configuration;
 using Nett;
 
 namespace Grayscale.Kifuwarakaku.Entities.Features
@@ -18,7 +19,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// <param name="currentHaiyaku"></param>
         /// <param name="masuHandle"></param>
         /// <returns>転生しないなら　未設定　を返します。</returns>
-        public static Komahaiyaku185 MasuHandleTo_ForcePromotionHaiyaku(Komahaiyaku185 currentHaiyaku, int masuHandle, string hint)
+        public static Komahaiyaku185 MasuHandleTo_ForcePromotionHaiyaku(IEngineConf engineConf, Komahaiyaku185 currentHaiyaku, int masuHandle, string hint)
         {
             Komahaiyaku185 result;
 
@@ -38,9 +39,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
 
             {
-                var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-                var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-                var logFilePath = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("N20DebugForcePromotionLog"));
+                var logFilePath = engineConf.GetResourceFullPath("N20DebugForcePromotionLog");
 
                 StringBuilder sbLog = new StringBuilder();
 

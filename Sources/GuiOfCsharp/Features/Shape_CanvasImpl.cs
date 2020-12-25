@@ -1,6 +1,7 @@
 ﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
     using System.Windows.Forms;
+    using Grayscale.Kifuwarakaku.Entities.Configuration;
 
     /// <summary>
     /// ウィジェットを描画する土台。
@@ -12,8 +13,8 @@
         public const string WINDOW_NAME_CONSOLE = "Logger.Trace";
 
 
-        public Shape_CanvasImpl(string widgetName, int x, int y, int width, int height)
-            : base(widgetName, x, y, width, height)
+        public Shape_CanvasImpl(IEngineConf engineConf, string widgetName, int x, int y, int width, int height)
+            : base(engineConf, widgetName, x, y, width, height)
         {
         }
 

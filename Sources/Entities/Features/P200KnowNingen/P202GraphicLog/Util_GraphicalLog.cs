@@ -78,11 +78,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             sb.AppendLine("</body>");
             sb.AppendLine("</html>");
 
-            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-            string logsDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("LogDirectory"));
-
-            File.WriteAllText(Path.Combine(logsDirectory, $"_log{Util_GraphicalLog.LogFileCounter}_{fileNameMemo}.html"), sb.ToString());
+            File.WriteAllText(Path.Combine(EngineConf.LogDirectory, $"_log{Util_GraphicalLog.LogFileCounter}_{fileNameMemo}.html"), sb.ToString());
             Util_GraphicalLog.LogFileCounter++;
 
         gt_EndMethod:

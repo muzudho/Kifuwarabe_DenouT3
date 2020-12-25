@@ -10,6 +10,7 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Text;
+    using Grayscale.Kifuwarakaku.Entities.Configuration;
     using Nett;
 #endif
 
@@ -18,21 +19,16 @@
     /// </summary>
     public abstract class Util_KifuTreeLogWriter
     {
-
-        public static KyokumenPngEnvironment REPORT_ENVIRONMENT;
-        static Util_KifuTreeLogWriter()
+        /// <summary>
+        /// このクラスを使う前にセットしてください。
+        /// </summary>
+        public static void Init(IEngineConf engineConf)
         {
-            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-
-            string logsDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("LogDirectory"));
-            string dataDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataDirectory"));
-
             Util_KifuTreeLogWriter.REPORT_ENVIRONMENT = new KyokumenPngEnvironmentImpl(
-                        Path.Combine(logsDirectory, "_log_KifuTreeLog/"),//argsDic["outFolder"],
-                        Path.Combine(dataDirectory, "img/gkLog/"),//argsDic["imgFolder"],
-                        toml.Get<TomlTable>("Resources").Get<string>("Koma1PngBasename"),//argsDic["kmFile"],
-                        toml.Get<TomlTable>("Resources").Get<string>("Suji1PngBasename"),//argsDic["sjFile"],
+                        Path.Combine(engineConf.LogDirectory, "_log_KifuTreeLog/"),//argsDic["outFolder"],
+                        Path.Combine(engineConf.DataDirectory, "img/gkLog/"),//argsDic["imgFolder"],
+                        engineConf.GetResourceBasename("Koma1PngBasename"),//argsDic["kmFile"],
+                        engineConf.GetResourceBasename("Suji1PngBasename"),//argsDic["sjFile"],
                         "20",//argsDic["kmW"],
                         "20",//argsDic["kmH"],
                         "8",//argsDic["sjW"],
@@ -40,6 +36,7 @@
                         );
         }
 
+        public static KyokumenPngEnvironment REPORT_ENVIRONMENT;
 
         /// <summary>
         /// 棋譜ツリー・ログの書出し
@@ -121,6 +118,7 @@
         /// 棋譜ツリーの、ノードに格納されている、局面評価明細を、出力していきます。
         /// </summary>
         public static void AA_Write_ForeachLeafs_ForDebug(
+            IEngineConf engineConf,
             ref int logFileCounter,
             string nodePath,
             KifuNode node,
@@ -144,6 +142,7 @@
 
                     // 再帰
                     Util_KifuTreeLogWriter.AA_Write_ForeachLeafs_ForDebug(
+                        engineConf,
                         ref logFileCounter_temp,
                         $"{nodePath} {ConvMoveStrSfen.ToMoveStrSfenForFilename(nextNode.Key)}",
                         (KifuNode)nextNode,
@@ -158,6 +157,7 @@
 
             // 盤１個分の png 画像ログ出力
             Util_KifuTreeLogWriter.AAA_Write_Node(
+                engineConf,
                 ref logFileCounter,
                 nodePath,
                 node,
@@ -172,6 +172,7 @@
         /// 盤１個分のログ。
         /// </summary>
         private static void AAA_Write_Node(
+            IEngineConf engineConf,
             ref int logFileCounter,
             string nodePath,
             KifuNode node,
@@ -239,7 +240,7 @@
             // 評価明細
             //
             {
-                Util_KifuTreeLogWriter.AAAA_Write_HyokaMeisai(fileName, node, relFolder, reportEnvironment);
+                Util_KifuTreeLogWriter.AAAA_Write_HyokaMeisai(engineConf, fileName, node, relFolder, reportEnvironment);
             }
         }
 
@@ -252,15 +253,13 @@
         /// <param name="treeFolder"></param>
         /// <param name="env"></param>
         public static void AAAA_Write_HyokaMeisai(
+            IEngineConf engineConf,
             string id,
             KifuNode node,
             string treeFolder,
             KyokumenPngEnvironment env
             )
         {
-            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-
             StringBuilder sb = new StringBuilder();
 
             // 見出し
@@ -299,7 +298,7 @@
             //sb.AppendLine(Conv_Sky.ToKyokumenHash(node.Value.ToKyokumenConst).ToString());
             //sb.AppendLine();
 
-            File.AppendAllText($"{env.OutFolder}{treeFolder}{toml.Get<TomlTable>("Resources").Get<string>("HyokaMeisaiLogTxtBasename")}", sb.ToString());
+            File.AppendAllText($"{env.OutFolder}{treeFolder}{engineConf.GetResourceBasename("HyokaMeisaiLogTxtBasename")}", sb.ToString());
         }
 
 

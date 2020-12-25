@@ -17,7 +17,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharpVs.Features
             var engineConf = new EngineConf();
             EntitiesLayer.Implement(engineConf);
 
-            MainGui_CsharpVsImpl mainGuiVs = new MainGui_CsharpVsImpl();
+            MainGui_CsharpVsImpl mainGuiVs = new MainGui_CsharpVsImpl(engineConf);
 
             //↓ [STAThread]指定のあるメソッドで フォームを作成してください。
             Application.EnableVisualStyles();

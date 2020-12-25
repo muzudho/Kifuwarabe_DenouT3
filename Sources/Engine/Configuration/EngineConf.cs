@@ -16,6 +16,10 @@ namespace Grayscale.Kifuwarakaku.Engine.Configuration
         {
             return Path.Combine(this.ProfilePath, this.EngineToml.Get<TomlTable>("Resources").Get<string>(key));
         }
+        public string GetResourceBasename(string key)
+        {
+            return this.EngineToml.Get<TomlTable>("Resources").Get<string>(key);
+        }
 
         /// <summary>
         /// フルパスにしない方が使いやすい？
@@ -39,6 +43,19 @@ namespace Grayscale.Kifuwarakaku.Engine.Configuration
             }
         }
         string logDirectory_;
+
+        public string DataDirectory
+        {
+            get
+            {
+                if (this.dataDirectory_ == null)
+                {
+                    this.dataDirectory_ = Path.Combine(this.ProfilePath, this.EngineToml.Get<TomlTable>("Resources").Get<string>("DataDirectory"));
+                }
+                return this.dataDirectory_;
+            }
+        }
+        string dataDirectory_;
 
         TomlTable EngineToml
         {

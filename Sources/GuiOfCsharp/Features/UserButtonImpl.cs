@@ -9,7 +9,7 @@
     public class UserButtonImpl : UserWidget
     {
 
-        public static readonly UserButtonImpl NULL_OBJECT = new UserButtonImpl(new Shape_BtnBoxImpl("#NullButton"));
+        public static readonly UserButtonImpl NULL_OBJECT = new UserButtonImpl(new Shape_BtnBoxImpl(null, "#NullButton")); // TODO よくない作り☆（＾～＾）
 
 
         public object Object { get { return this.this_object; } }

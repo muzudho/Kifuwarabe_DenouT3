@@ -22,10 +22,10 @@
             */
 
             /*
-            OutputForcePromotion = DataEntry(profilePath, toml, "OutputForcePromotion");
-            OutputPieceTypeToHaiyaku = DataEntry(profilePath, toml, "OutputPieceTypeToHaiyaku");
-            HaichiTenkanHyoOnlyDataLog = DataEntry(profilePath, toml, "HaichiTenkanHyoOnlyDataLog");
-            HaichiTenkanHyoAllLog = DataEntry(profilePath, toml, "HaichiTenkanHyoAllLog");
+            OutputForcePromotion = DataEntry( "OutputForcePromotion");
+            OutputPieceTypeToHaiyaku = DataEntry( "OutputPieceTypeToHaiyaku");
+            HaichiTenkanHyoOnlyDataLog = DataEntry( "HaichiTenkanHyoOnlyDataLog");
+            HaichiTenkanHyoAllLog = DataEntry( "HaichiTenkanHyoAllLog");
             LatestPositionLogPng = LogEntry("LatestPositionLogPng");
             MousouRireki = LogEntry("MousouRireki");
             GuiDefault = LogEntry("GuiRecordLog");
@@ -37,13 +37,13 @@
             */
         }
 
-        static IResFile LogEntry(string logDirectory, TomlTable toml, string resourceKey)
+        static IResFile LogEntry(IEngineConf engineConf, string key)
         {
-            return ResFile.AsLog(logDirectory, toml.Get<TomlTable>("Logs").Get<string>(resourceKey));
+            return ResFile.AsLog(engineConf.LogDirectory, engineConf.GetLogBasename(key));
         }
-        static IResFile DataEntry(string profilePath, TomlTable toml, string resourceKey)
+        static IResFile DataEntry(IEngineConf engineConf, string key)
         {
-            return ResFile.AsData(profilePath, toml.Get<TomlTable>("Resources").Get<string>(resourceKey));
+            return ResFile.AsData(engineConf.GetResourceFullPath(key));
         }
 
         /*

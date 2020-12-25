@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Windows.Forms;
+    using Grayscale.Kifuwarakaku.Entities.Configuration;
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.UseCases.Features;
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
@@ -11,7 +12,7 @@
     /// </summary>
     public interface MainGui_Csharp
     {
-        #region プロパティー
+        IEngineConf EngineConf { get; }
 
         /// <summary>
         /// 将棋サーバー。
@@ -85,8 +86,6 @@
         Dictionary<string, UserWidget> Widgets { get; set; }
         void SetWidget(string name, UserWidget widget);
         UserWidget GetWidget(string name);
-
-        #endregion
 
 
         Timed TimedA { get; set; }

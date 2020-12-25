@@ -21,6 +21,7 @@
     using System.Text;
     using System.Windows.Forms;
     using Codeplex.Data;//DynamicJson
+    using Grayscale.Kifuwarakaku.Entities.Configuration;
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.UseCases.Features;
     using Nett;
@@ -34,6 +35,47 @@
     /// </summary>
     public class MainGui_CsharpImpl : MainGui_Csharp
     {
+        /// <summary>
+        /// 生成後、OwnerFormをセットしてください。
+        /// </summary>
+        public MainGui_CsharpImpl(IEngineConf engineConf)
+        {
+            this.EngineConf = engineConf;
+
+            this.model_Manual = new Model_ManualImpl();
+            this.server = new Server_Impl(this.model_Manual.GuiSkyConst, this.model_Manual.GuiTemezumi, new Receiver_ForCsharpVsImpl());
+
+            this.Widgets = new Dictionary<string, UserWidget>();
+
+            this.consoleWindowGui = new SubGuiImpl(this);
+
+            this.TimedA = new TimedA_EngineCapture(this);
+            this.TimedB_MouseCapture = new TimedB_MouseCapture(this);
+            this.TimedC = new TimedC_SaiseiCapture(this);
+
+            this.Data_Settei_Csv = new Data_Settei_Csv();
+            this.WidgetLoaders = new List<WidgetsLoader>();
+            this.RepaintRequest = new RepaintRequestImpl();
+
+            //----------
+            // ビュー
+            //----------
+            //
+            //      ボタンや将棋盤などを描画するツールを、事前準備しておきます。
+            //
+            this.shape_PnlTaikyoku = new Shape_PnlTaikyokuImpl(engineConf, "#TaikyokuPanel", this);
+
+            //Logger.Trace("つまんでいる駒を放します。(1)");
+            this.SetFigTumandeiruKoma(-1);
+
+            //----------
+            // [出力切替]初期値
+            //----------
+            this.syuturyokuKirikae = SyuturyokuKirikae.Japanese;
+        }
+
+        public IEngineConf EngineConf { get; private set; }
+
         /// <summary>
         /// 将棋サーバー。
         /// </summary>
@@ -157,43 +199,6 @@
         public Data_Settei_Csv Data_Settei_Csv { get; set; }
 
         /// <summary>
-        /// 生成後、OwnerFormをセットしてください。
-        /// </summary>
-        public MainGui_CsharpImpl()
-        {
-            this.model_Manual = new Model_ManualImpl();
-            this.server = new Server_Impl(this.model_Manual.GuiSkyConst, this.model_Manual.GuiTemezumi, new Receiver_ForCsharpVsImpl());
-
-            this.Widgets = new Dictionary<string, UserWidget>();
-
-            this.consoleWindowGui = new SubGuiImpl(this);
-
-            this.TimedA = new TimedA_EngineCapture(this);
-            this.TimedB_MouseCapture = new TimedB_MouseCapture(this);
-            this.TimedC = new TimedC_SaiseiCapture(this);
-
-            this.Data_Settei_Csv = new Data_Settei_Csv();
-            this.WidgetLoaders = new List<WidgetsLoader>();
-            this.RepaintRequest = new RepaintRequestImpl();
-
-            //----------
-            // ビュー
-            //----------
-            //
-            //      ボタンや将棋盤などを描画するツールを、事前準備しておきます。
-            //
-            this.shape_PnlTaikyoku = new Shape_PnlTaikyokuImpl("#TaikyokuPanel", this);
-
-            //Logger.Trace("つまんでいる駒を放します。(1)");
-            this.SetFigTumandeiruKoma(-1);
-
-            //----------
-            // [出力切替]初期値
-            //----------
-            this.syuturyokuKirikae = SyuturyokuKirikae.Japanese;
-        }
-
-        /// <summary>
         /// 将棋エンジンを起動します。
         /// </summary>
         public virtual void Start_ShogiEngine(string shogiEngineFilePath)
@@ -263,10 +268,7 @@
         /// </summary>
         public void ReadStyle_ToForm(Form1_Shogiable ui_Form1)
         {
-            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-
-            string filepath2 = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataStyleText"));
+            string filepath2 = this.EngineConf.GetResourceFullPath("DataStyleText");
 #if DEBUG
                 MessageBox.Show($"独自スタイルシート　filepath2={filepath2}");
 #endif
@@ -312,12 +314,7 @@
         /// </summary>
         public virtual void Load_AsStart()
         {
-            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-
-            //
             // 既存のログファイルを削除したい。
-            //
             {
 
             }
@@ -327,7 +324,7 @@
                 Logger.Trace($"(^o^)乱数のたね＝[{KwRandom.Seed}]");
 #endif
 
-                this.Data_Settei_Csv.Read_Add(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("DataSetteiCsv")), Encoding.UTF8);
+                this.Data_Settei_Csv.Read_Add(this.EngineConf.GetResourceFullPath("DataSetteiCsv"), Encoding.UTF8);
                 this.Data_Settei_Csv.DebugOut();
 
                 //----------

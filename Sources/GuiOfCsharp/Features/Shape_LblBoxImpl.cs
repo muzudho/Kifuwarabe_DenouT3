@@ -1,6 +1,7 @@
 ﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
     using System.Drawing;
+    using Grayscale.Kifuwarakaku.Entities.Configuration;
 
     /// <summary>
     /// ************************************************************************************************************************
@@ -67,8 +68,8 @@
         /// <param name="label"></param>
         /// <param name="x"></param>
         /// <param name="y"></param>
-        public Shape_LblBoxImpl(string widgetName, string label, int x, int y)
-            : base(widgetName, x, y, 70, 35)
+        public Shape_LblBoxImpl(IEngineConf engineConf, string widgetName, string label, int x, int y)
+            : base(engineConf, widgetName, x, y, 70, 35)
         {
             this.Text = label;
         }

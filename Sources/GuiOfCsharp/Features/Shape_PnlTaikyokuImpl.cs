@@ -1,6 +1,7 @@
 ﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
     using System.Windows.Forms;
+    using Grayscale.Kifuwarakaku.Entities.Configuration;
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
@@ -222,8 +223,8 @@
         /// コンストラクターです。
         /// ************************************************************************************************************************
         /// </summary>
-        public Shape_PnlTaikyokuImpl(string widgetName, MainGui_Csharp shogibanGui)
-            : base(widgetName, 0, 0, 0, 0)
+        public Shape_PnlTaikyokuImpl(IEngineConf engineConf, string widgetName, MainGui_Csharp shogibanGui)
+            : base(engineConf, widgetName, 0, 0, 0, 0)
         {
 
             // 初期化
@@ -240,78 +241,78 @@
             //----------
             this.SetBtn40Komas(new Shape_BtnKomaImpl[]{
 
-                new Shape_BtnKomaImpl("#SenteOh",Finger_Honshogi.SenteOh),//[0]
-                new Shape_BtnKomaImpl("#GoteOh",Finger_Honshogi.GoteOh),
+                new Shape_BtnKomaImpl(engineConf, "#SenteOh",Finger_Honshogi.SenteOh),//[0]
+                new Shape_BtnKomaImpl(engineConf, "#GoteOh",Finger_Honshogi.GoteOh),
 
-                new Shape_BtnKomaImpl("#Hi1",Finger_Honshogi.Hi1),
-                new Shape_BtnKomaImpl("#Hi2",Finger_Honshogi.Hi2),
+                new Shape_BtnKomaImpl(engineConf, "#Hi1",Finger_Honshogi.Hi1),
+                new Shape_BtnKomaImpl(engineConf, "#Hi2",Finger_Honshogi.Hi2),
 
-                new Shape_BtnKomaImpl("#Kaku1",Finger_Honshogi.Kaku1),
-                new Shape_BtnKomaImpl("#Kaku2",Finger_Honshogi.Kaku2),//[5]
+                new Shape_BtnKomaImpl(engineConf, "#Kaku1",Finger_Honshogi.Kaku1),
+                new Shape_BtnKomaImpl(engineConf, "#Kaku2",Finger_Honshogi.Kaku2),//[5]
 
-                new Shape_BtnKomaImpl("#Kin1",Finger_Honshogi.Kin1),
-                new Shape_BtnKomaImpl("#Kin2",Finger_Honshogi.Kin2),
-                new Shape_BtnKomaImpl("#Kin3",Finger_Honshogi.Kin3),
-                new Shape_BtnKomaImpl("#Kin4",Finger_Honshogi.Kin4),
+                new Shape_BtnKomaImpl(engineConf, "#Kin1",Finger_Honshogi.Kin1),
+                new Shape_BtnKomaImpl(engineConf, "#Kin2",Finger_Honshogi.Kin2),
+                new Shape_BtnKomaImpl(engineConf, "#Kin3",Finger_Honshogi.Kin3),
+                new Shape_BtnKomaImpl(engineConf, "#Kin4",Finger_Honshogi.Kin4),
 
-                new Shape_BtnKomaImpl("#Gin1",Finger_Honshogi.Gin1),//[10]
-                new Shape_BtnKomaImpl("#Gin2",Finger_Honshogi.Gin2),
-                new Shape_BtnKomaImpl("#Gin3",Finger_Honshogi.Gin3),
-                new Shape_BtnKomaImpl("#Gin4",Finger_Honshogi.Gin4),
+                new Shape_BtnKomaImpl(engineConf, "#Gin1",Finger_Honshogi.Gin1),//[10]
+                new Shape_BtnKomaImpl(engineConf, "#Gin2",Finger_Honshogi.Gin2),
+                new Shape_BtnKomaImpl(engineConf, "#Gin3",Finger_Honshogi.Gin3),
+                new Shape_BtnKomaImpl(engineConf, "#Gin4",Finger_Honshogi.Gin4),
 
-                new Shape_BtnKomaImpl("#Kei1",Finger_Honshogi.Kei1),
-                new Shape_BtnKomaImpl("#Kei2",Finger_Honshogi.Kei2),//[15]
-                new Shape_BtnKomaImpl("#Kei3",Finger_Honshogi.Kei3),
-                new Shape_BtnKomaImpl("#Kei4",Finger_Honshogi.Kei4),
+                new Shape_BtnKomaImpl(engineConf, "#Kei1",Finger_Honshogi.Kei1),
+                new Shape_BtnKomaImpl(engineConf, "#Kei2",Finger_Honshogi.Kei2),//[15]
+                new Shape_BtnKomaImpl(engineConf, "#Kei3",Finger_Honshogi.Kei3),
+                new Shape_BtnKomaImpl(engineConf, "#Kei4",Finger_Honshogi.Kei4),
 
-                new Shape_BtnKomaImpl("#Kyo1",Finger_Honshogi.Kyo1),
-                new Shape_BtnKomaImpl("#Kyo2",Finger_Honshogi.Kyo2),
-                new Shape_BtnKomaImpl("#Kyo3",Finger_Honshogi.Kyo3),//[20]
-                new Shape_BtnKomaImpl("#Kyo4",Finger_Honshogi.Kyo4),
+                new Shape_BtnKomaImpl(engineConf, "#Kyo1",Finger_Honshogi.Kyo1),
+                new Shape_BtnKomaImpl(engineConf, "#Kyo2",Finger_Honshogi.Kyo2),
+                new Shape_BtnKomaImpl(engineConf, "#Kyo3",Finger_Honshogi.Kyo3),//[20]
+                new Shape_BtnKomaImpl(engineConf, "#Kyo4",Finger_Honshogi.Kyo4),
 
-                new Shape_BtnKomaImpl("#Fu1",Finger_Honshogi.Fu1),
-                new Shape_BtnKomaImpl("#Fu2",Finger_Honshogi.Fu2),
-                new Shape_BtnKomaImpl("#Fu3",Finger_Honshogi.Fu3),
-                new Shape_BtnKomaImpl("#Fu4",Finger_Honshogi.Fu4),//[25]
-                new Shape_BtnKomaImpl("#Fu5",Finger_Honshogi.Fu5),
-                new Shape_BtnKomaImpl("#Fu6",Finger_Honshogi.Fu6),
-                new Shape_BtnKomaImpl("#Fu7",Finger_Honshogi.Fu7),
-                new Shape_BtnKomaImpl("#Fu8",Finger_Honshogi.Fu8),
-                new Shape_BtnKomaImpl("#Fu9",Finger_Honshogi.Fu9),//[30]
+                new Shape_BtnKomaImpl(engineConf, "#Fu1",Finger_Honshogi.Fu1),
+                new Shape_BtnKomaImpl(engineConf, "#Fu2",Finger_Honshogi.Fu2),
+                new Shape_BtnKomaImpl(engineConf, "#Fu3",Finger_Honshogi.Fu3),
+                new Shape_BtnKomaImpl(engineConf, "#Fu4",Finger_Honshogi.Fu4),//[25]
+                new Shape_BtnKomaImpl(engineConf, "#Fu5",Finger_Honshogi.Fu5),
+                new Shape_BtnKomaImpl(engineConf, "#Fu6",Finger_Honshogi.Fu6),
+                new Shape_BtnKomaImpl(engineConf, "#Fu7",Finger_Honshogi.Fu7),
+                new Shape_BtnKomaImpl(engineConf, "#Fu8",Finger_Honshogi.Fu8),
+                new Shape_BtnKomaImpl(engineConf, "#Fu9",Finger_Honshogi.Fu9),//[30]
 
-                new Shape_BtnKomaImpl("#Fu10",Finger_Honshogi.Fu10),
-                new Shape_BtnKomaImpl("#Fu11",Finger_Honshogi.Fu11),
-                new Shape_BtnKomaImpl("#Fu12",Finger_Honshogi.Fu12),
-                new Shape_BtnKomaImpl("#Fu13",Finger_Honshogi.Fu13),
-                new Shape_BtnKomaImpl("#Fu14",Finger_Honshogi.Fu14),//[35]
-                new Shape_BtnKomaImpl("#Fu15",Finger_Honshogi.Fu15),
-                new Shape_BtnKomaImpl("#Fu16",Finger_Honshogi.Fu16),
-                new Shape_BtnKomaImpl("#Fu17",Finger_Honshogi.Fu17),
-                new Shape_BtnKomaImpl("#Fu18",Finger_Honshogi.Fu18)//[39]
+                new Shape_BtnKomaImpl(engineConf, "#Fu10",Finger_Honshogi.Fu10),
+                new Shape_BtnKomaImpl(engineConf, "#Fu11",Finger_Honshogi.Fu11),
+                new Shape_BtnKomaImpl(engineConf, "#Fu12",Finger_Honshogi.Fu12),
+                new Shape_BtnKomaImpl(engineConf, "#Fu13",Finger_Honshogi.Fu13),
+                new Shape_BtnKomaImpl(engineConf, "#Fu14",Finger_Honshogi.Fu14),//[35]
+                new Shape_BtnKomaImpl(engineConf, "#Fu15",Finger_Honshogi.Fu15),
+                new Shape_BtnKomaImpl(engineConf, "#Fu16",Finger_Honshogi.Fu16),
+                new Shape_BtnKomaImpl(engineConf, "#Fu17",Finger_Honshogi.Fu17),
+                new Shape_BtnKomaImpl(engineConf, "#Fu18",Finger_Honshogi.Fu18)//[39]
             });
 
             //----------
             // 将棋盤
             //----------
-            this.Shogiban = new Shape_PnlShogibanImpl("#Shogiban", 200, 220, shogibanGui);
+            this.Shogiban = new Shape_PnlShogibanImpl(engineConf, "#Shogiban", 200, 220, shogibanGui);
 
             //----------
             // 駒置き
             //----------
             this.KomadaiArr = new Shape_PnlKomadaiImpl[3];
-            this.KomadaiArr[0] = new Shape_PnlKomadaiImpl("#Sente_Komadai", Okiba.Sente_Komadai, 610, 220, 81, shogibanGui);
-            this.KomadaiArr[1] = new Shape_PnlKomadaiImpl("#Gote_Komadai", Okiba.Gote_Komadai, 10, 220, 121, shogibanGui);
-            this.KomadaiArr[2] = new Shape_PnlKomadaiImpl("#KomaBukuro", Okiba.KomaBukuro, 810, 220, 161, shogibanGui);
+            this.KomadaiArr[0] = new Shape_PnlKomadaiImpl(engineConf, "#Sente_Komadai", Okiba.Sente_Komadai, 610, 220, 81, shogibanGui);
+            this.KomadaiArr[1] = new Shape_PnlKomadaiImpl(engineConf, "#Gote_Komadai", Okiba.Gote_Komadai, 10, 220, 121, shogibanGui);
+            this.KomadaiArr[2] = new Shape_PnlKomadaiImpl(engineConf, "#KomaBukuro", Okiba.KomaBukuro, 810, 220, 161, shogibanGui);
 
             //----------
             // 符号表示
             //----------
-            this.lblFugo = new Shape_LblBoxImpl("#FugoLabel", "符号", 480, 145);
+            this.lblFugo = new Shape_LblBoxImpl(engineConf, "#FugoLabel", "符号", 480, 145);
 
             //----------
             // 先後表示
             //----------
-            this.lblPside = new Shape_LblBoxImpl("#PsideLabel", "－－", 350, 145);
+            this.lblPside = new Shape_LblBoxImpl(engineConf, "#PsideLabel", "－－", 350, 145);
         }
 
 

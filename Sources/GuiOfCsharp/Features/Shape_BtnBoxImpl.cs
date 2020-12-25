@@ -1,6 +1,7 @@
 ﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
     using System.Drawing;
+    using Grayscale.Kifuwarakaku.Entities.Configuration;
 
     /// <summary>
     /// ************************************************************************************************************************
@@ -66,8 +67,8 @@
         /// <param name="label"></param>
         /// <param name="x"></param>
         /// <param name="y"></param>
-        public Shape_BtnBoxImpl(string widgetName)
-            : base(widgetName, 0, 0, 70, 35)
+        public Shape_BtnBoxImpl(IEngineConf engineConf, string widgetName)
+            : base(engineConf, widgetName, 0, 0, 70, 35)
         {
             this.Text = "";
             this.FontSize = 20.0f;

@@ -30,55 +30,55 @@
             /*
             AddLog(LogTags.Default, DefaultByProcess);
 
-            AddLog(LogTags.Error, LogEntry(profilePath, toml, "N01ErrorLog", true, false));
+            AddLog(LogTags.Error, LogEntry( "N01ErrorLog", true, false));
 
             // 汎用ログ。千日手判定用。
-            AddLog(LogTags.DefaultSennitite, LogEntry(profilePath, toml, "N02DefaultSennititeLog", true, false));
+            AddLog(LogTags.DefaultSennitite, LogEntry( "N02DefaultSennititeLog", true, false));
 
             // 擬似将棋サーバーのログ
-            AddLog(LogTags.ServerDefault, LogEntry(profilePath, toml, "N03ServerDefaultLog", true, false));
+            AddLog(LogTags.ServerDefault, LogEntry( "N03ServerDefaultLog", true, false));
 
             // 擬似将棋サーバーのログ。ログ。送受信内容の記録専用です。
-            AddLog(LogTags.ServerNetworkAsync, LogEntry(profilePath, toml, "N04ServerNetworkAsyncLog", true, true));
+            AddLog(LogTags.ServerNetworkAsync, LogEntry( "N04ServerNetworkAsyncLog", true, true));
 
             // C# GUIのログ
-            AddLog(LogTags.CsharpGuiDefault, LogEntry(profilePath, toml, "N05CsharpGuiDefaultLog", true, false));
+            AddLog(LogTags.CsharpGuiDefault, LogEntry( "N05CsharpGuiDefaultLog", true, false));
 
             // C# GUIのログ
-            AddLog(LogTags.CsharpGuiKifuYomitori, LogEntry(profilePath, toml, "N06CsharpGuiKifuYomitoriLog", true, false));
+            AddLog(LogTags.CsharpGuiKifuYomitori, LogEntry( "N06CsharpGuiKifuYomitoriLog", true, false));
 
             // C# GUIのログ
-            AddLog(LogTags.CsharpGuiNetwork, LogEntry(profilePath, toml, "N07CsharpGuiNetworkLog", true, true));
+            AddLog(LogTags.CsharpGuiNetwork, LogEntry( "N07CsharpGuiNetworkLog", true, true));
 
             // C# GUIのログ
-            AddLog(LogTags.CsharpGuiPaint, LogEntry(profilePath, toml, "N08CsharpGuiPaintLog", true, false));
+            AddLog(LogTags.CsharpGuiPaint, LogEntry( "N08CsharpGuiPaintLog", true, false));
 
             // C# GUIのログ
-            AddLog(LogTags.CsharpGuiSennitite, LogEntry(profilePath, toml, "N09CsharpGuiSennititeLog", true, false));
+            AddLog(LogTags.CsharpGuiSennitite, LogEntry( "N09CsharpGuiSennititeLog", true, false));
 
             // AIMS GUIに対応する用のログ
-            AddLog(LogTags.AimsDefault, LogEntry(profilePath, toml, "N10AimsDefaultLog", true, false));
+            AddLog(LogTags.AimsDefault, LogEntry( "N10AimsDefaultLog", true, false));
 
             // 将棋エンジンのログ。将棋エンジンきふわらべで汎用に使います。
-            AddLog(LogTags.EngineDefault, LogEntry(profilePath, toml, "N11EngineDefaultLog", true, false));
+            AddLog(LogTags.EngineDefault, LogEntry( "N11EngineDefaultLog", true, false));
 
             // 将棋エンジンのログ。送受信内容の記録専用です。
-            AddLog(LogTags.EngineNetwork, LogEntry(profilePath, toml, "N12EngineNetworkLog", true, true));
+            AddLog(LogTags.EngineNetwork, LogEntry( "N12EngineNetworkLog", true, true));
 
             // 将棋エンジンのログ。思考ルーチン専用です。
-            AddLog(LogTags.EngineMousouRireki, LogEntry(profilePath, toml, "N13EngineMousouRirekiLog", true, false));
+            AddLog(LogTags.EngineMousouRireki, LogEntry( "N13EngineMousouRirekiLog", true, false));
 
             // 将棋エンジンのログ
-            AddLog(LogTags.EngineSennitite, LogEntry(profilePath, toml, "N14EngineSennititeLog", true, false));
+            AddLog(LogTags.EngineSennitite, LogEntry( "N14EngineSennititeLog", true, false));
 
             // その他のログ。汎用。テスト・プログラム用。
-            AddLog(LogTags.TestProgram, LogEntry(profilePath, toml, "N15TestProgramLog", true, false));
+            AddLog(LogTags.TestProgram, LogEntry( "N15TestProgramLog", true, false));
 
             // その他のログ。棋譜学習ソフト用。
-            AddLog(LogTags.Learner, LogEntry(profilePath, toml, "N16LearnerLog", true, false));
+            AddLog(LogTags.Learner, LogEntry( "N16LearnerLog", true, false));
 
             // その他のログ。スピード計測ソフト用。
-            AddLog(LogTags.SpeedKeisoku, LogEntry(profilePath, toml, "N17SpeedKeisokuLog", true, false));
+            AddLog(LogTags.SpeedKeisoku, LogEntry( "N17SpeedKeisokuLog", true, false));
             */
         }
 
@@ -273,11 +273,7 @@
         {
             try
             {
-                var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-                var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-                string logsDirectory = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("LogDirectory"));
-
-                string[] paths = Directory.GetFiles(logsDirectory);
+                string[] paths = Directory.GetFiles(EngineConf.LogDirectory);
                 foreach (string path in paths)
                 {
                     string name = Path.GetFileName(path);

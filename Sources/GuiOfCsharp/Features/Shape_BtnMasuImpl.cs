@@ -1,6 +1,7 @@
 ﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
     using System.Drawing;
+    using Grayscale.Kifuwarakaku.Entities.Configuration;
     using Grayscale.Kifuwarakaku.Entities.Features;
 
     /// <summary>
@@ -72,8 +73,8 @@
         /// <param name="dan"></param>
         /// <param name="x"></param>
         /// <param name="y"></param>
-        public Shape_BtnMasuImpl(string widgetName)
-            : base(widgetName, 0, 0, 35, 35)
+        public Shape_BtnMasuImpl(IEngineConf engineConf, string widgetName)
+            : base(engineConf, widgetName, 0, 0, 35, 35)
         {
             this.Zahyo = Masu_Honshogi.Query_Basho(Masu_Honshogi.nError);
         }
@@ -88,8 +89,8 @@
         /// <param name="dan"></param>
         /// <param name="x"></param>
         /// <param name="y"></param>
-        public Shape_BtnMasuImpl(string widgetName, SyElement masu, int x, int y, int width, int height)
-            : base(widgetName, x, y, width, height)
+        public Shape_BtnMasuImpl(IEngineConf engineConf, string widgetName, SyElement masu, int x, int y, int width, int height)
+            : base(engineConf, widgetName, x, y, width, height)
         {
             this.Zahyo = masu;
         }

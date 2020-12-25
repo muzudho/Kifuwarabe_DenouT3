@@ -1,6 +1,7 @@
 ﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
     using System.Drawing;
+    using Grayscale.Kifuwarakaku.Entities.Configuration;
     using Grayscale.Kifuwarakaku.Entities.Features;
 
     /// <summary>
@@ -61,8 +62,8 @@
         /// <param name="okiba"></param>
         /// <param name="x"></param>
         /// <param name="y"></param>
-        public Shape_PnlKomadaiImpl(string widgetName, Okiba okiba, int x, int y, int firstMasuHandle, MainGui_Csharp shogibanGui)
-            : base(widgetName, x, y, 1, 1)
+        public Shape_PnlKomadaiImpl(IEngineConf engineConf, string widgetName, Okiba okiba, int x, int y, int firstMasuHandle, MainGui_Csharp shogibanGui)
+            : base(engineConf, widgetName, x, y, 1, 1)
         {
             this.ShogibanGui = shogibanGui;
             this.Okiba = okiba;

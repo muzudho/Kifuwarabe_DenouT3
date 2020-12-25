@@ -20,7 +20,9 @@
     using System.IO;
     using System.Text;
     using System.Text.RegularExpressions;
+    using Grayscale.Kifuwarakaku.Engine.Configuration;
     using Grayscale.Kifuwarakaku.Engine.Features;
+    using Grayscale.Kifuwarakaku.Entities;
     using Grayscale.Kifuwarakaku.Entities.Features;
     using Grayscale.Kifuwarakaku.Entities.Logging;
     using Grayscale.Kifuwarakaku.UseCases;
@@ -46,11 +48,11 @@
         /// <param name="args"></param>
         static void Main(string[] args)
         {
+            var engineConf = new EngineConf();
+            EntitiesLayer.Implement(engineConf);
+
             // 将棋エンジン　きふわらべ
             var playing = new Playing();
-
-            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
 
             //-------------------+----------------------------------------------------------------------------------------------------
             // ログファイル削除  |
@@ -69,35 +71,35 @@
             //------------------------------------------------------------------------------------------------------------------------
             // 思考エンジンの、記憶を読み取ります。
             //------------------------------------------------------------------------------------------------------------------------
-            Util_FvLoad.OpenFv(playing.FeatureVector, Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Fv00Komawari")));
+            Util_FvLoad.OpenFv(playing.FeatureVector, engineConf.GetResourceFullPath("Fv00Komawari"));
 
             //------------------------------------------------------------------------------------------------------------------------
             // ファイル読込み
             //------------------------------------------------------------------------------------------------------------------------
             {
                 // データの読取「道」
-                if (Michi187Array.Load(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Michi187"))))
+                if (Michi187Array.Load(engineConf.GetResourceFullPath("Michi187")))
                 {
                 }
 
                 // データの読取「配役」
-                Util_Array_KomahaiyakuEx184.Load(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("Haiyaku185")), Encoding.UTF8);
+                Util_Array_KomahaiyakuEx184.Load(engineConf.GetResourceFullPath("Haiyaku185"), Encoding.UTF8);
 
                 // データの読取「強制転成表」　※駒配役を生成した後で。
-                Array_ForcePromotion.Load(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("InputForcePromotion")), Encoding.UTF8);
+                Array_ForcePromotion.Load(engineConf.GetResourceFullPath("InputForcePromotion"), Encoding.UTF8);
 
 #if DEBUG
                 {
-                    File.WriteAllText(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("OutputForcePromotion")), Array_ForcePromotion.LogHtml());
+                    File.WriteAllText(engineConf.GetResourceFullPath("OutputForcePromotion"), Array_ForcePromotion.LogHtml());
                 }
 #endif
 
                 // データの読取「配役転換表」
-                Data_KomahaiyakuTransition.Load(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("InputSyuruiToHaiyaku")), Encoding.UTF8);
+                Data_KomahaiyakuTransition.Load(engineConf.GetResourceFullPath("InputSyuruiToHaiyaku"), Encoding.UTF8);
 
 #if DEBUG
                 {
-                    File.WriteAllText(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("OutputSyuruiToHaiyaku")), Data_KomahaiyakuTransition.Format_LogHtml());
+                    File.WriteAllText(engineConf.GetResourceFullPath("OutputSyuruiToHaiyaku"), Data_KomahaiyakuTransition.Format_LogHtml());
                 }
 #endif
             }
@@ -129,7 +131,7 @@
 
                 //seihinName += $" {versionStr}";
 #if DEBUG
-                var engineName = toml.Get<TomlTable>("Engine").Get<string>("Name");
+                var engineName = engineConf.GetEngine("Name");
                 Logger.Trace($"v(^▽^)v ｲｪｰｲ☆ ... {engineName} {versionStr}");
 #endif
             }
@@ -221,9 +223,9 @@
 
                         if ("usi" == line)
                         {
-                            var engineName = toml.Get<TomlTable>("Engine").Get<string>("Name");
+                            var engineName = engineConf.GetEngine("Name");
                             Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
-                            var engineAuthor = toml.Get<TomlTable>("Engine").Get<string>("Author");
+                            var engineAuthor = engineConf.GetEngine("Author");
                             playing.UsiOk($"{engineName} {version.Major}.{version.Minor}.{version.Build}", engineAuthor);
                         }
                         else if (line.StartsWith("setoption"))
@@ -462,7 +464,7 @@
                                     }
                                 });
 
-                            File.WriteAllText(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("LogDaseMeirei")), sb.ToString());
+                            File.WriteAllText(engineConf.GetResourceFullPath("LogDaseMeirei"), sb.ToString());
                         }
                         else
                         {

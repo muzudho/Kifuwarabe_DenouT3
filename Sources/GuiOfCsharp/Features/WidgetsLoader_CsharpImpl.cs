@@ -87,10 +87,10 @@
                 switch (type)
                 {
                     case "Masu":
-                        widget = new UserWidget_MasuImpl(new Shape_BtnMasuImpl(name));
+                        widget = new UserWidget_MasuImpl(new Shape_BtnMasuImpl(this.ShogibanGui.EngineConf, name));
                         break;
                     default://Button
-                        widget = new UserButtonImpl(new Shape_BtnBoxImpl(name));
+                        widget = new UserButtonImpl(new Shape_BtnBoxImpl(this.ShogibanGui.EngineConf, name));
                         break;
                 }
                 widget.Type = type;

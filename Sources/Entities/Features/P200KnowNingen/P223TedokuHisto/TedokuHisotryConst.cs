@@ -76,9 +76,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             //
             // ログ出力
             //
-            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-            Util_TedokuHistory.WriteLog(Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("N19TedokuKeisanLog")), result);
+            Util_TedokuHistory.WriteLog(EngineConf.GetResourceFullPath("N19TedokuKeisanLog"), result);
 #endif
 
             return result;

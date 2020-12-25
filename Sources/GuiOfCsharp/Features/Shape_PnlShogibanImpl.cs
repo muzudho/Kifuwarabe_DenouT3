@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Drawing;
+    using Grayscale.Kifuwarakaku.Entities.Configuration;
     using Grayscale.Kifuwarakaku.Entities.Features;
 
     /// <summary>
@@ -74,8 +75,8 @@
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
-        public Shape_PnlShogibanImpl(string widgetName, int x, int y, MainGui_Csharp shogibanGui)
-            : base(widgetName, x, y, 1, 1)
+        public Shape_PnlShogibanImpl(IEngineConf engineConf, string widgetName, int x, int y, MainGui_Csharp shogibanGui)
+            : base(engineConf, widgetName, x, y, 1, 1)
         {
             this.ShogibanGui = shogibanGui;
             this.MasuWidth = 40;

@@ -155,9 +155,6 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 #if DEBUG
             // デバッグ出力
             {
-                var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-                var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-
                 StringBuilder sb = new StringBuilder();
 
                 foreach (List<string> row2 in rows2)
@@ -172,7 +169,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     sb.AppendLine();
                 }
 
-                string filepath_HaiyakuLoad1 = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("OutputSyuruiToHaiyaku01DataRowOnly"));
+                string filepath_HaiyakuLoad1 = EngineConf.GetResourceFullPath("OutputSyuruiToHaiyaku01DataRowOnly");
                 File.WriteAllText(filepath_HaiyakuLoad1, sb.ToString());
             }
 #endif
@@ -242,10 +239,7 @@ columnCount=[{columnCount}");
 
 #if DEBUG
             {
-                var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-                var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-
-                string filepath_HaiyakuLoad2 = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("OutputSyuruiToHaiyaku02Load"));
+                string filepath_HaiyakuLoad2 = EngineConf.GetResourceFullPath("OutputSyuruiToHaiyaku02Load");
                 File.WriteAllText(filepath_HaiyakuLoad2, sbLog.ToString());
             }
 #endif

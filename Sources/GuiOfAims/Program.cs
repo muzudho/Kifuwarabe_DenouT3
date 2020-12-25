@@ -18,10 +18,7 @@ namespace Grayscale.Kifuwarakaku.CliOfAims
             var engineConf = new EngineConf();
             EntitiesLayer.Implement(engineConf);
 
-            var profilePath = System.Configuration.ConfigurationManager.AppSettings["Profile"];
-            var toml = Toml.ReadFile(Path.Combine(profilePath, "Engine.toml"));
-
-            string filepath = Path.Combine(profilePath, toml.Get<TomlTable>("Resources").Get<string>("AimsDataSetteiXml"));
+            string filepath = engineConf.GetResourceFullPath("AimsDataSetteiXml");
             MessageBox.Show($"設定ファイルパス＝[{filepath}]");
 
             //

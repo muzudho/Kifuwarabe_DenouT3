@@ -1,6 +1,7 @@
 ﻿namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 {
     using System.Drawing;
+    using Grayscale.Kifuwarakaku.Entities.Configuration;
 
     /// <summary>
     /// ************************************************************************************************************************
@@ -9,6 +10,19 @@
     /// </summary>
     public abstract class Shape_Abstract
     {
+        /// <summary>
+        /// コンストラクターです。
+        /// </summary>
+        public Shape_Abstract(IEngineConf engineConf, string widgetName, int x, int y, int width, int height)
+        {
+            EngineConf = engineConf;
+            this.widgetName = widgetName;
+            this.Visible = true;
+            this.bounds = new Rectangle(x, y, width, height);
+        }
+
+        public IEngineConf EngineConf { get; private set; }
+
         public string WidgetName { get { return this.widgetName; } }
         private string widgetName;
 
@@ -51,19 +65,6 @@
             get;
             set;
         }
-
-        /// <summary>
-        /// ************************************************************************************************************************
-        /// コンストラクターです。
-        /// ************************************************************************************************************************
-        /// </summary>
-        public Shape_Abstract(string widgetName, int x, int y, int width, int height)
-        {
-            this.widgetName = widgetName;
-            this.Visible = true;
-            this.bounds = new Rectangle(x, y, width, height);
-        }
-
 
         /// <summary>
         /// ************************************************************************************************************************

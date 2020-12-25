@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Text;
+using Grayscale.Kifuwarakaku.Entities.Configuration;
 using Grayscale.Kifuwarakaku.Entities.Features;
 using Grayscale.Kifuwarakaku.GuiOfCsharp.Features;
 using Nett;
@@ -13,7 +14,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharpVs.Features
     {
 
 
-        public MainGui_CsharpVsImpl()
+        public MainGui_CsharpVsImpl(IEngineConf engineConf) : base(engineConf)
         {
         }
 
