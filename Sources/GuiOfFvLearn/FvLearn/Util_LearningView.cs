@@ -55,7 +55,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
                     if (Masu_Honshogi.IsErrorBasho(srcMasu))// 駒台の "00" かも。
                     {
                         //駒台の駒。
-                        Komasyurui14 utuKomasyurui = Util_Komasyurui14.NarazuCaseHandle(UtilCsaMove.ToKomasyurui(csaMove));// 打つ駒の種類。
+                        PieceType utuKomasyurui = Util_Komasyurui14.NarazuCaseHandle(UtilCsaMove.ToKomasyurui(csaMove));// 打つ駒の種類。
 
                         Okiba komadai;
                         switch (pside)
@@ -77,11 +77,11 @@ namespace Grayscale.Kifuwarakaku.GuiOfFvLearn.Features
                     // 先位置
                     SyElement dstMasu = UtilCsaMove.ToDstMasu(csaMove);
                     Finger figFoodKoma = Util_Sky_FingerQuery.InShogibanMasuNow(kaisi_Sky, pside, dstMasu);
-                    Komasyurui14 foodKomasyurui;
+                    PieceType foodKomasyurui;
                     if (figFoodKoma == Fingers.Error_1)
                     {
                         // 駒のない枡
-                        foodKomasyurui = Komasyurui14.H00_Null___;//取った駒無し。
+                        foodKomasyurui = PieceType.None;//取った駒無し。
                     }
                     else
                     {

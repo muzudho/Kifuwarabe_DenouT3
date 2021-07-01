@@ -286,7 +286,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
             //------------------------------
             // 前の手に戻します
             //------------------------------
-            IttemodosuResult ittemodosuResult = new IttemodosuResultImpl(Fingers.Error_1, Fingers.Error_1, null, Komasyurui14.H00_Null___, null);
+            IttemodosuResult ittemodosuResult = new IttemodosuResultImpl(Fingers.Error_1, Fingers.Error_1, null, PieceType.None, null);
             {
                 //Ks14 foodKomaSyurui;//取った駒があれば、取った駒の種類。
                 //SkyConst susunda_Sky_orNull;
@@ -397,7 +397,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
 
 
 
-            Komasyurui14 koma_Food_pre_Syurui = Util_Starlightable.AsKoma(model_Manual.GuiSkyConst.StarlightIndexOf(btnKoma_Food_Koma).Now).Komasyurui;
+            PieceType koma_Food_pre_Syurui = Util_Starlightable.AsKoma(model_Manual.GuiSkyConst.StarlightIndexOf(btnKoma_Food_Koma).Now).Komasyurui;
 
 
             // その駒は、駒置き場に移動させます。

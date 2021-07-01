@@ -122,7 +122,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
         }
 
         public static void Komamove1a_49Gui(
-            out Komasyurui14 toSyurui,
+            out PieceType toSyurui,
             out IMoveHalf dst,
             Shape_BtnKoma btnKoma_Selected,
             Shape_BtnMasu btnMasu,

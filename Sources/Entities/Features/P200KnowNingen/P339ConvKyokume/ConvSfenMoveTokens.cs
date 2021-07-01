@@ -39,7 +39,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             Debug.Assert(!Conv_MasuHandle.OnKomabukuro(Conv_SyElement.ToMasuNumber(((RO_Star)src_Sky.StarlightIndexOf((Finger)0).Now).Masu)), $"[{src_Sky.Temezumi}]手目、駒が駒袋にあった。");
 #endif
 
-            Komasyurui14 uttaSyurui; // 打った駒の種類
+            PieceType uttaSyurui; // 打った駒の種類
 
             int srcSuji = Util_Koma.CTRL_NOTHING_PROPERTY_SUJI;
             int srcDan = Util_Koma.CTRL_NOTHING_PROPERTY_DAN;
@@ -54,7 +54,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             else
             {
                 //>>>>>>>>>> 指しました。
-                uttaSyurui = Komasyurui14.H00_Null___;//打った駒はない☆
+                uttaSyurui = PieceType.None;//打った駒はない☆
 
                 //------------------------------
                 // 1
@@ -154,8 +154,8 @@ src_Sky.Temezumi=[{src_Sky.Temezumi}]
             }
 
 
-            Komasyurui14 dstSyurui;
-            Komasyurui14 srcSyurui;
+            PieceType dstSyurui;
+            PieceType srcSyurui;
             Okiba srcOkiba;
             SyElement srcMasu;
 
@@ -229,7 +229,7 @@ src_Sky.Temezumi=[{src_Sky.Temezumi}]
                     dstSyurui
                     ),
 
-                Komasyurui14.H00_Null___//符号からは、取った駒は分からない
+                PieceType.None//符号からは、取った駒は分からない
             );
         }
     }

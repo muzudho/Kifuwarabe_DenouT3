@@ -240,28 +240,28 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 // 先手駒台
                 switch (koma.Komasyurui)
                 {
-                    case Komasyurui14.H01_Fu_____:
+                    case PieceType.P:
                         this.moti1P++;
                         break;
-                    case Komasyurui14.H02_Kyo____:
+                    case PieceType.L:
                         this.moti1L++;
                         break;
-                    case Komasyurui14.H03_Kei____:
+                    case PieceType.N:
                         this.moti1N++;
                         break;
-                    case Komasyurui14.H04_Gin____:
+                    case PieceType.S:
                         this.moti1S++;
                         break;
-                    case Komasyurui14.H05_Kin____:
+                    case PieceType.G:
                         this.moti1G++;
                         break;
-                    case Komasyurui14.H06_Gyoku__:
+                    case PieceType.K:
                         this.moti1K++;
                         break;
-                    case Komasyurui14.H07_Hisya__:
+                    case PieceType.R:
                         this.moti1R++;
                         break;
-                    case Komasyurui14.H08_Kaku___:
+                    case PieceType.B:
                         this.moti1B++;
                         break;
                 }
@@ -271,28 +271,28 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 // 後手駒台
                 switch (koma.Komasyurui)
                 {
-                    case Komasyurui14.H01_Fu_____:
+                    case PieceType.P:
                         this.moti2p++;
                         break;
-                    case Komasyurui14.H02_Kyo____:
+                    case PieceType.L:
                         this.moti2l++;
                         break;
-                    case Komasyurui14.H03_Kei____:
+                    case PieceType.N:
                         this.moti2n++;
                         break;
-                    case Komasyurui14.H04_Gin____:
+                    case PieceType.S:
                         this.moti2s++;
                         break;
-                    case Komasyurui14.H05_Kin____:
+                    case PieceType.G:
                         this.moti2g++;
                         break;
-                    case Komasyurui14.H06_Gyoku__:
+                    case PieceType.K:
                         this.moti2k++;
                         break;
-                    case Komasyurui14.H07_Hisya__:
+                    case PieceType.R:
                         this.moti2r++;
                         break;
-                    case Komasyurui14.H08_Kaku___:
+                    case PieceType.B:
                         this.moti2b++;
                         break;
                 }
@@ -302,28 +302,28 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 // 駒袋
                 switch (koma.Komasyurui)
                 {
-                    case Komasyurui14.H01_Fu_____:
+                    case PieceType.P:
                         this.fukuroP++;
                         break;
-                    case Komasyurui14.H02_Kyo____:
+                    case PieceType.L:
                         this.fukuroL++;
                         break;
-                    case Komasyurui14.H03_Kei____:
+                    case PieceType.N:
                         this.fukuroN++;
                         break;
-                    case Komasyurui14.H04_Gin____:
+                    case PieceType.S:
                         this.fukuroS++;
                         break;
-                    case Komasyurui14.H05_Kin____:
+                    case PieceType.G:
                         this.fukuroG++;
                         break;
-                    case Komasyurui14.H06_Gyoku__:
+                    case PieceType.K:
                         this.fukuroK++;
                         break;
-                    case Komasyurui14.H07_Hisya__:
+                    case PieceType.R:
                         this.fukuroR++;
                         break;
-                    case Komasyurui14.H08_Kaku___:
+                    case PieceType.B:
                         this.fukuroB++;
                         break;
                 }

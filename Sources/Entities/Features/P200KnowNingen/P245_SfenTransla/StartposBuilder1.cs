@@ -23,19 +23,19 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// <summary>
         /// 先手の持ち駒の数。
         /// </summary>
-        private Dictionary<Komasyurui14, int> motiBlack;
+        private Dictionary<PieceType, int> motiBlack;
 
         /// <summary>
         /// 後手の持ち駒の数。
         /// </summary>
-        private Dictionary<Komasyurui14, int> motiWhite;
+        private Dictionary<PieceType, int> motiWhite;
 
         public StartposBuilder1()
         {
             this.psideIsBlack = true;
             this.ban81 = new Dictionary<int, RO_Star>();
-            this.motiBlack = new Dictionary<Komasyurui14, int>();
-            this.motiWhite = new Dictionary<Komasyurui14, int>();
+            this.motiBlack = new Dictionary<PieceType, int>();
+            this.motiWhite = new Dictionary<PieceType, int>();
         }
 
         /// <summary>
@@ -182,101 +182,101 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
                 // 先手持ち駒
                 //王
-                if (this.motiBlack.ContainsKey(Komasyurui14.H06_Gyoku__))
+                if (this.motiBlack.ContainsKey(PieceType.K))
                 {
-                    sb.Append(this.motiBlack[Komasyurui14.H06_Gyoku__]);
+                    sb.Append(this.motiBlack[PieceType.K]);
                     sb.Append("K");
                 }
                 //飛車
-                else if (this.motiBlack.ContainsKey(Komasyurui14.H07_Hisya__))
+                else if (this.motiBlack.ContainsKey(PieceType.R))
                 {
-                    sb.Append(this.motiBlack[Komasyurui14.H07_Hisya__]);
+                    sb.Append(this.motiBlack[PieceType.R]);
                     sb.Append("R");
                 }
                 //角
-                else if (this.motiBlack.ContainsKey(Komasyurui14.H08_Kaku___))
+                else if (this.motiBlack.ContainsKey(PieceType.B))
                 {
-                    sb.Append(this.motiBlack[Komasyurui14.H08_Kaku___]);
+                    sb.Append(this.motiBlack[PieceType.B]);
                     sb.Append("B");
                 }
                 //金
-                else if (this.motiBlack.ContainsKey(Komasyurui14.H05_Kin____))
+                else if (this.motiBlack.ContainsKey(PieceType.G))
                 {
-                    sb.Append(this.motiBlack[Komasyurui14.H05_Kin____]);
+                    sb.Append(this.motiBlack[PieceType.G]);
                     sb.Append("G");
                 }
                 //銀
-                else if (this.motiBlack.ContainsKey(Komasyurui14.H04_Gin____))
+                else if (this.motiBlack.ContainsKey(PieceType.S))
                 {
-                    sb.Append(this.motiBlack[Komasyurui14.H04_Gin____]);
+                    sb.Append(this.motiBlack[PieceType.S]);
                     sb.Append("S");
                 }
                 //桂馬
-                else if (this.motiBlack.ContainsKey(Komasyurui14.H03_Kei____))
+                else if (this.motiBlack.ContainsKey(PieceType.N))
                 {
-                    sb.Append(this.motiBlack[Komasyurui14.H03_Kei____]);
+                    sb.Append(this.motiBlack[PieceType.N]);
                     sb.Append("N");
                 }
                 //香車
-                else if (this.motiBlack.ContainsKey(Komasyurui14.H02_Kyo____))
+                else if (this.motiBlack.ContainsKey(PieceType.L))
                 {
-                    sb.Append(this.motiBlack[Komasyurui14.H02_Kyo____]);
+                    sb.Append(this.motiBlack[PieceType.L]);
                     sb.Append("L");
                 }
                 //歩
-                else if (this.motiBlack.ContainsKey(Komasyurui14.H01_Fu_____))
+                else if (this.motiBlack.ContainsKey(PieceType.P))
                 {
-                    sb.Append(this.motiBlack[Komasyurui14.H01_Fu_____]);
+                    sb.Append(this.motiBlack[PieceType.P]);
                     sb.Append("P");
                 }
 
                 // 後手持ち駒
                 //王
-                if (this.motiWhite.ContainsKey(Komasyurui14.H06_Gyoku__))
+                if (this.motiWhite.ContainsKey(PieceType.K))
                 {
-                    sb.Append(this.motiBlack[Komasyurui14.H06_Gyoku__]);
+                    sb.Append(this.motiBlack[PieceType.K]);
                     sb.Append("k");
                 }
                 //飛車
-                else if (this.motiWhite.ContainsKey(Komasyurui14.H07_Hisya__))
+                else if (this.motiWhite.ContainsKey(PieceType.R))
                 {
-                    sb.Append(this.motiBlack[Komasyurui14.H07_Hisya__]);
+                    sb.Append(this.motiBlack[PieceType.R]);
                     sb.Append("r");
                 }
                 //角
-                else if (this.motiWhite.ContainsKey(Komasyurui14.H08_Kaku___))
+                else if (this.motiWhite.ContainsKey(PieceType.B))
                 {
-                    sb.Append(this.motiBlack[Komasyurui14.H08_Kaku___]);
+                    sb.Append(this.motiBlack[PieceType.B]);
                     sb.Append("b");
                 }
                 //金
-                else if (this.motiWhite.ContainsKey(Komasyurui14.H05_Kin____))
+                else if (this.motiWhite.ContainsKey(PieceType.G))
                 {
-                    sb.Append(this.motiBlack[Komasyurui14.H05_Kin____]);
+                    sb.Append(this.motiBlack[PieceType.G]);
                     sb.Append("g");
                 }
                 //銀
-                else if (this.motiWhite.ContainsKey(Komasyurui14.H04_Gin____))
+                else if (this.motiWhite.ContainsKey(PieceType.S))
                 {
-                    sb.Append(this.motiBlack[Komasyurui14.H04_Gin____]);
+                    sb.Append(this.motiBlack[PieceType.S]);
                     sb.Append("s");
                 }
                 //桂馬
-                else if (this.motiWhite.ContainsKey(Komasyurui14.H03_Kei____))
+                else if (this.motiWhite.ContainsKey(PieceType.N))
                 {
-                    sb.Append(this.motiBlack[Komasyurui14.H03_Kei____]);
+                    sb.Append(this.motiBlack[PieceType.N]);
                     sb.Append("n");
                 }
                 //香車
-                else if (this.motiWhite.ContainsKey(Komasyurui14.H02_Kyo____))
+                else if (this.motiWhite.ContainsKey(PieceType.L))
                 {
-                    sb.Append(this.motiBlack[Komasyurui14.H02_Kyo____]);
+                    sb.Append(this.motiBlack[PieceType.L]);
                     sb.Append("l");
                 }
                 //歩
-                else if (this.motiWhite.ContainsKey(Komasyurui14.H01_Fu_____))
+                else if (this.motiWhite.ContainsKey(PieceType.P))
                 {
-                    sb.Append(this.motiBlack[Komasyurui14.H01_Fu_____]);
+                    sb.Append(this.motiBlack[PieceType.P]);
                     sb.Append("p");
                 }
             }

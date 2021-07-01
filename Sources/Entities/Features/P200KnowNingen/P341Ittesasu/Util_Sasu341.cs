@@ -56,7 +56,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             // FIXME: 取った駒はどうなっている？
             {
                 RO_Star koma = Util_Starlightable.AsKoma(sky_buf.StarlightIndexOf(finger).Now);
-                Komasyurui14 komaSyurui = koma.Komasyurui;
+                PieceType komaSyurui = koma.Komasyurui;
 
                 if (toNaru)
                 {

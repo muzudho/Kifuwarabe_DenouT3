@@ -10,7 +10,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
         public Node<IMove, KyokumenWrapper> SyuryoNode_OrNull { get; set; }
 
-        public Komasyurui14 FoodKomaSyurui { get; set; }
+        public PieceType FoodKomaSyurui { get; set; }
 
         public SkyConst Susunda_Sky_orNull { get; set; }
 
@@ -18,7 +18,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             Finger figMovedKoma,
             Finger figFoodKoma,
             Node<IMove, KyokumenWrapper> out_newNode_OrNull,
-            Komasyurui14 foodKomaSyurui,
+            PieceType foodKomaSyurui,
             SkyConst susunda_Sky_orNull
             )
         {

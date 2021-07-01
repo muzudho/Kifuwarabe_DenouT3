@@ -444,7 +444,7 @@
             // 駒を動かします。
             {
                 // GuiからServerへ渡す情報
-                Komasyurui14 syurui;
+                PieceType syurui;
                 IMoveHalf dst;
                 Util_Function_Csharp.Komamove1a_49Gui(out syurui, out dst, btnTumandeiruKoma, mainGui.Shape_PnlTaikyoku.NaruBtnMasu, mainGui);
 
@@ -473,7 +473,7 @@
 
                     mainGui.Model_Manual.GuiSkyConst.StarlightIndexOf(btnTumandeiruKoma.Finger).Now,
 
-                    mainGui.Shape_PnlTaikyoku.MousePos_FoodKoma != null ? mainGui.Shape_PnlTaikyoku.MousePos_FoodKoma.Komasyurui : Komasyurui14.H00_Null___
+                    mainGui.Shape_PnlTaikyoku.MousePos_FoodKoma != null ? mainGui.Shape_PnlTaikyoku.MousePos_FoodKoma.Komasyurui : PieceType.None
                     );// 選択している駒の元の場所と、移動先
 
                 KifuNode newNode;

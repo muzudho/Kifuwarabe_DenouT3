@@ -125,7 +125,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
                 if (null != nextTe)
                 {
-                    IttesasuResult ittesasuResult = new IttesasuResultImpl(Fingers.Error_1, Fingers.Error_1, null, Komasyurui14.H00_Null___, null);
+                    IttesasuResult ittesasuResult = new IttesasuResultImpl(Fingers.Error_1, Fingers.Error_1, null, PieceType.None, null);
 
                     //
                     //FIXME: これが悪さをしていないか☆？

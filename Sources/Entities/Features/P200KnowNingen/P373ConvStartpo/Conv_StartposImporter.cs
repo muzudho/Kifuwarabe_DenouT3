@@ -58,7 +58,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 //------------------------------
                 if (0 < startposImporter.RO_SfenStartpos.Moti1K)
                 {
-                    parsedKyokumen.MotiList.Add(new MotiItemImpl(Komasyurui14.H06_Gyoku__, startposImporter.RO_SfenStartpos.Moti1K, Playerside.P1));
+                    parsedKyokumen.MotiList.Add(new MotiItemImpl(PieceType.K, startposImporter.RO_SfenStartpos.Moti1K, Playerside.P1));
                 }
 
                 //------------------------------
@@ -66,7 +66,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 //------------------------------
                 if (0 < startposImporter.RO_SfenStartpos.Moti1R)
                 {
-                    parsedKyokumen.MotiList.Add(new MotiItemImpl(Komasyurui14.H07_Hisya__, startposImporter.RO_SfenStartpos.Moti1R, Playerside.P1));
+                    parsedKyokumen.MotiList.Add(new MotiItemImpl(PieceType.R, startposImporter.RO_SfenStartpos.Moti1R, Playerside.P1));
                 }
 
                 //------------------------------
@@ -74,7 +74,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 //------------------------------
                 if (0 < startposImporter.RO_SfenStartpos.Moti1B)
                 {
-                    parsedKyokumen.MotiList.Add(new MotiItemImpl(Komasyurui14.H08_Kaku___, startposImporter.RO_SfenStartpos.Moti1B, Playerside.P1));
+                    parsedKyokumen.MotiList.Add(new MotiItemImpl(PieceType.B, startposImporter.RO_SfenStartpos.Moti1B, Playerside.P1));
                 }
 
                 //------------------------------
@@ -82,7 +82,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 //------------------------------
                 if (0 < startposImporter.RO_SfenStartpos.Moti1G)
                 {
-                    parsedKyokumen.MotiList.Add(new MotiItemImpl(Komasyurui14.H05_Kin____, startposImporter.RO_SfenStartpos.Moti1G, Playerside.P1));
+                    parsedKyokumen.MotiList.Add(new MotiItemImpl(PieceType.G, startposImporter.RO_SfenStartpos.Moti1G, Playerside.P1));
                 }
 
                 //------------------------------
@@ -90,7 +90,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 //------------------------------
                 if (0 < startposImporter.RO_SfenStartpos.Moti1S)
                 {
-                    parsedKyokumen.MotiList.Add(new MotiItemImpl(Komasyurui14.H04_Gin____, startposImporter.RO_SfenStartpos.Moti1S, Playerside.P1));
+                    parsedKyokumen.MotiList.Add(new MotiItemImpl(PieceType.S, startposImporter.RO_SfenStartpos.Moti1S, Playerside.P1));
                 }
 
                 //------------------------------
@@ -98,7 +98,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 //------------------------------
                 if (0 < startposImporter.RO_SfenStartpos.Moti1N)
                 {
-                    parsedKyokumen.MotiList.Add(new MotiItemImpl(Komasyurui14.H03_Kei____, startposImporter.RO_SfenStartpos.Moti1N, Playerside.P1));
+                    parsedKyokumen.MotiList.Add(new MotiItemImpl(PieceType.N, startposImporter.RO_SfenStartpos.Moti1N, Playerside.P1));
                 }
 
                 //------------------------------
@@ -106,7 +106,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 //------------------------------
                 if (0 < startposImporter.RO_SfenStartpos.Moti1L)
                 {
-                    parsedKyokumen.MotiList.Add(new MotiItemImpl(Komasyurui14.H02_Kyo____, startposImporter.RO_SfenStartpos.Moti1L, Playerside.P1));
+                    parsedKyokumen.MotiList.Add(new MotiItemImpl(PieceType.L, startposImporter.RO_SfenStartpos.Moti1L, Playerside.P1));
                 }
 
                 //------------------------------
@@ -114,7 +114,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 //------------------------------
                 if (0 < startposImporter.RO_SfenStartpos.Moti1P)
                 {
-                    parsedKyokumen.MotiList.Add(new MotiItemImpl(Komasyurui14.H01_Fu_____, startposImporter.RO_SfenStartpos.Moti1P, Playerside.P1));
+                    parsedKyokumen.MotiList.Add(new MotiItemImpl(PieceType.P, startposImporter.RO_SfenStartpos.Moti1P, Playerside.P1));
                 }
 
                 //------------------------------
@@ -122,7 +122,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 //------------------------------
                 if (0 < startposImporter.RO_SfenStartpos.Moti2k)
                 {
-                    parsedKyokumen.MotiList.Add(new MotiItemImpl(Komasyurui14.H06_Gyoku__, startposImporter.RO_SfenStartpos.Moti2k, Playerside.P2));
+                    parsedKyokumen.MotiList.Add(new MotiItemImpl(PieceType.K, startposImporter.RO_SfenStartpos.Moti2k, Playerside.P2));
                 }
 
                 //------------------------------
@@ -130,7 +130,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 //------------------------------
                 if (0 < startposImporter.RO_SfenStartpos.Moti2r)
                 {
-                    parsedKyokumen.MotiList.Add(new MotiItemImpl(Komasyurui14.H07_Hisya__, startposImporter.RO_SfenStartpos.Moti2r, Playerside.P2));
+                    parsedKyokumen.MotiList.Add(new MotiItemImpl(PieceType.R, startposImporter.RO_SfenStartpos.Moti2r, Playerside.P2));
                 }
 
                 //------------------------------
@@ -138,7 +138,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 //------------------------------
                 if (0 < startposImporter.RO_SfenStartpos.Moti2b)
                 {
-                    parsedKyokumen.MotiList.Add(new MotiItemImpl(Komasyurui14.H08_Kaku___, startposImporter.RO_SfenStartpos.Moti2b, Playerside.P2));
+                    parsedKyokumen.MotiList.Add(new MotiItemImpl(PieceType.B, startposImporter.RO_SfenStartpos.Moti2b, Playerside.P2));
                 }
 
                 //------------------------------
@@ -146,7 +146,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 //------------------------------
                 if (0 < startposImporter.RO_SfenStartpos.Moti2g)
                 {
-                    parsedKyokumen.MotiList.Add(new MotiItemImpl(Komasyurui14.H05_Kin____, startposImporter.RO_SfenStartpos.Moti2g, Playerside.P2));
+                    parsedKyokumen.MotiList.Add(new MotiItemImpl(PieceType.G, startposImporter.RO_SfenStartpos.Moti2g, Playerside.P2));
                 }
 
                 //------------------------------
@@ -154,7 +154,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 //------------------------------
                 if (0 < startposImporter.RO_SfenStartpos.Moti2s)
                 {
-                    parsedKyokumen.MotiList.Add(new MotiItemImpl(Komasyurui14.H04_Gin____, startposImporter.RO_SfenStartpos.Moti2s, Playerside.P2));
+                    parsedKyokumen.MotiList.Add(new MotiItemImpl(PieceType.S, startposImporter.RO_SfenStartpos.Moti2s, Playerside.P2));
                 }
 
                 //------------------------------
@@ -162,7 +162,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 //------------------------------
                 if (0 < startposImporter.RO_SfenStartpos.Moti2n)
                 {
-                    parsedKyokumen.MotiList.Add(new MotiItemImpl(Komasyurui14.H03_Kei____, startposImporter.RO_SfenStartpos.Moti2n, Playerside.P2));
+                    parsedKyokumen.MotiList.Add(new MotiItemImpl(PieceType.N, startposImporter.RO_SfenStartpos.Moti2n, Playerside.P2));
                 }
 
                 //------------------------------
@@ -170,7 +170,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 //------------------------------
                 if (0 < startposImporter.RO_SfenStartpos.Moti2l)
                 {
-                    parsedKyokumen.MotiList.Add(new MotiItemImpl(Komasyurui14.H02_Kyo____, startposImporter.RO_SfenStartpos.Moti2l, Playerside.P2));
+                    parsedKyokumen.MotiList.Add(new MotiItemImpl(PieceType.L, startposImporter.RO_SfenStartpos.Moti2l, Playerside.P2));
                 }
 
                 //------------------------------
@@ -178,7 +178,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 //------------------------------
                 if (0 < startposImporter.RO_SfenStartpos.Moti2p)
                 {
-                    parsedKyokumen.MotiList.Add(new MotiItemImpl(Komasyurui14.H01_Fu_____, startposImporter.RO_SfenStartpos.Moti2p, Playerside.P2));
+                    parsedKyokumen.MotiList.Add(new MotiItemImpl(PieceType.P, startposImporter.RO_SfenStartpos.Moti2p, Playerside.P2));
                 }
             }
 

@@ -26,14 +26,14 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// <summary>
         /// 種類ハンドル→升ハンドル→次配役ハンドルの連鎖なんだぜ☆
         /// </summary>
-        public static Dictionary<Komasyurui14, Komahaiyaku185[]> Map
+        public static Dictionary<PieceType, Komahaiyaku185[]> Map
         {
             get
             {
                 return Data_KomahaiyakuTransition.map;
             }
         }
-        private static Dictionary<Komasyurui14, Komahaiyaku185[]> map;
+        private static Dictionary<PieceType, Komahaiyaku185[]> map;
 
         #endregion
 
@@ -44,7 +44,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// <param name="syurui"></param>
         /// <param name="masu_shogiban">0～80</param>
         /// <returns></returns>
-        public static Komahaiyaku185 ToHaiyaku(Komasyurui14 syurui, SyElement masu_shogiban, Playerside pside)
+        public static Komahaiyaku185 ToHaiyaku(PieceType syurui, SyElement masu_shogiban, Playerside pside)
         {
             Komahaiyaku185 result;
 
@@ -59,20 +59,20 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             {
                 switch (syurui)
                 {
-                    case Komasyurui14.H01_Fu_____: result = Komahaiyaku185.n164_歩打; break;
-                    case Komasyurui14.H02_Kyo____: result = Komahaiyaku185.n165_香打; break;
-                    case Komasyurui14.H03_Kei____: result = Komahaiyaku185.n166_桂打; break;
-                    case Komasyurui14.H04_Gin____: result = Komahaiyaku185.n167_銀打; break;
-                    case Komasyurui14.H05_Kin____: result = Komahaiyaku185.n168_金打; break;
-                    case Komasyurui14.H06_Gyoku__: result = Komahaiyaku185.n169_王打; break;
-                    case Komasyurui14.H07_Hisya__: result = Komahaiyaku185.n170_飛打; break;
-                    case Komasyurui14.H08_Kaku___: result = Komahaiyaku185.n171_角打; break;
-                    case Komasyurui14.H09_Ryu____: result = Komahaiyaku185.n170_飛打; break;
-                    case Komasyurui14.H10_Uma____: result = Komahaiyaku185.n171_角打; break;
-                    case Komasyurui14.H11_Tokin__: result = Komahaiyaku185.n164_歩打; break;
-                    case Komasyurui14.H12_NariKyo: result = Komahaiyaku185.n165_香打; break;
-                    case Komasyurui14.H13_NariKei: result = Komahaiyaku185.n166_桂打; break;
-                    case Komasyurui14.H14_NariGin: result = Komahaiyaku185.n167_銀打; break;
+                    case PieceType.P: result = Komahaiyaku185.n164_歩打; break;
+                    case PieceType.L: result = Komahaiyaku185.n165_香打; break;
+                    case PieceType.N: result = Komahaiyaku185.n166_桂打; break;
+                    case PieceType.S: result = Komahaiyaku185.n167_銀打; break;
+                    case PieceType.G: result = Komahaiyaku185.n168_金打; break;
+                    case PieceType.K: result = Komahaiyaku185.n169_王打; break;
+                    case PieceType.R: result = Komahaiyaku185.n170_飛打; break;
+                    case PieceType.B: result = Komahaiyaku185.n171_角打; break;
+                    case PieceType.PR: result = Komahaiyaku185.n170_飛打; break;
+                    case PieceType.PB: result = Komahaiyaku185.n171_角打; break;
+                    case PieceType.PP: result = Komahaiyaku185.n164_歩打; break;
+                    case PieceType.PL: result = Komahaiyaku185.n165_香打; break;
+                    case PieceType.PN: result = Komahaiyaku185.n166_桂打; break;
+                    case PieceType.PS: result = Komahaiyaku185.n167_銀打; break;
                     default: result = Komahaiyaku185.n000_未設定; break;
                 }
             }
@@ -80,20 +80,20 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             {
                 switch (syurui)
                 {
-                    case Komasyurui14.H01_Fu_____: result = Komahaiyaku185.n172_駒袋歩; break;
-                    case Komasyurui14.H02_Kyo____: result = Komahaiyaku185.n173_駒袋香; break;
-                    case Komasyurui14.H03_Kei____: result = Komahaiyaku185.n174_駒袋桂; break;
-                    case Komasyurui14.H04_Gin____: result = Komahaiyaku185.n175_駒袋銀; break;
-                    case Komasyurui14.H05_Kin____: result = Komahaiyaku185.n176_駒袋金; break;
-                    case Komasyurui14.H06_Gyoku__: result = Komahaiyaku185.n177_駒袋王; break;
-                    case Komasyurui14.H07_Hisya__: result = Komahaiyaku185.n178_駒袋飛; break;
-                    case Komasyurui14.H08_Kaku___: result = Komahaiyaku185.n179_駒袋角; break;
-                    case Komasyurui14.H09_Ryu____: result = Komahaiyaku185.n180_駒袋竜; break;
-                    case Komasyurui14.H10_Uma____: result = Komahaiyaku185.n181_駒袋馬; break;
-                    case Komasyurui14.H11_Tokin__: result = Komahaiyaku185.n182_駒袋と金; break;
-                    case Komasyurui14.H12_NariKyo: result = Komahaiyaku185.n183_駒袋杏; break;
-                    case Komasyurui14.H13_NariKei: result = Komahaiyaku185.n184_駒袋圭; break;
-                    case Komasyurui14.H14_NariGin: result = Komahaiyaku185.n185_駒袋全; break;
+                    case PieceType.P: result = Komahaiyaku185.n172_駒袋歩; break;
+                    case PieceType.L: result = Komahaiyaku185.n173_駒袋香; break;
+                    case PieceType.N: result = Komahaiyaku185.n174_駒袋桂; break;
+                    case PieceType.S: result = Komahaiyaku185.n175_駒袋銀; break;
+                    case PieceType.G: result = Komahaiyaku185.n176_駒袋金; break;
+                    case PieceType.K: result = Komahaiyaku185.n177_駒袋王; break;
+                    case PieceType.R: result = Komahaiyaku185.n178_駒袋飛; break;
+                    case PieceType.B: result = Komahaiyaku185.n179_駒袋角; break;
+                    case PieceType.PR: result = Komahaiyaku185.n180_駒袋竜; break;
+                    case PieceType.PB: result = Komahaiyaku185.n181_駒袋馬; break;
+                    case PieceType.PP: result = Komahaiyaku185.n182_駒袋と金; break;
+                    case PieceType.PL: result = Komahaiyaku185.n183_駒袋杏; break;
+                    case PieceType.PN: result = Komahaiyaku185.n184_駒袋圭; break;
+                    case PieceType.PS: result = Komahaiyaku185.n185_駒袋全; break;
                     default: result = Komahaiyaku185.n000_未設定; break;
                 }
             }
@@ -176,7 +176,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
 
 
-            Data_KomahaiyakuTransition.map = new Dictionary<Komasyurui14, Komahaiyaku185[]>();
+            Data_KomahaiyakuTransition.map = new Dictionary<PieceType, Komahaiyaku185[]>();
 
 
             int rowCount2 = 0;
@@ -274,7 +274,7 @@ columnCount=[{columnCount}");
             sb.AppendLine("</head>");
             sb.AppendLine("<body>");
 
-            foreach (KeyValuePair<Komasyurui14, Komahaiyaku185[]> entry1 in Data_KomahaiyakuTransition.Map)
+            foreach (KeyValuePair<PieceType, Komahaiyaku185[]> entry1 in Data_KomahaiyakuTransition.Map)
             {
                 sb.Append("<h1>");
                 sb.Append(entry1.Key);

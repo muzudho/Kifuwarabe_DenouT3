@@ -17,7 +17,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// <summary>
         /// 取った駒があれば、取った駒の種類。
         /// </summary>
-        Komasyurui14 FoodKomaSyurui { get; set; }
+        PieceType FoodKomaSyurui { get; set; }
 
         /// <summary>
         /// 終了ノード。

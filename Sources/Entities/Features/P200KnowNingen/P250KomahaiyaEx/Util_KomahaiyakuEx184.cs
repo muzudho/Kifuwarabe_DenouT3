@@ -62,65 +62,65 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// </summary>
         /// <param name="ks14"></param>
         /// <returns></returns>
-        public static Komahaiyaku185 GetHaiyaku_KomabukuroNarazu(Komasyurui14 ks14)
+        public static Komahaiyaku185 GetHaiyaku_KomabukuroNarazu(PieceType ks14)
         {
             Komahaiyaku185 kh;
 
             switch (ks14)
             {
-                case Komasyurui14.H01_Fu_____:
+                case PieceType.P:
                     kh = Komahaiyaku185.n172_駒袋歩;
                     break;
 
-                case Komasyurui14.H02_Kyo____:
+                case PieceType.L:
                     kh = Komahaiyaku185.n173_駒袋香;
                     break;
 
-                case Komasyurui14.H03_Kei____:
+                case PieceType.N:
                     kh = Komahaiyaku185.n174_駒袋桂;
                     break;
 
-                case Komasyurui14.H04_Gin____:
+                case PieceType.S:
                     kh = Komahaiyaku185.n175_駒袋銀;
                     break;
 
-                case Komasyurui14.H05_Kin____:
+                case PieceType.G:
                     kh = Komahaiyaku185.n176_駒袋金;
                     break;
 
-                case Komasyurui14.H06_Gyoku__:
+                case PieceType.K:
                     kh = Komahaiyaku185.n177_駒袋王;
                     break;
 
-                case Komasyurui14.H07_Hisya__:
+                case PieceType.R:
                     kh = Komahaiyaku185.n178_駒袋飛;
                     break;
 
-                case Komasyurui14.H08_Kaku___:
+                case PieceType.B:
                     kh = Komahaiyaku185.n179_駒袋角;
                     break;
 
-                case Komasyurui14.H09_Ryu____:
+                case PieceType.PR:
                     kh = Komahaiyaku185.n180_駒袋竜;
                     break;
 
-                case Komasyurui14.H10_Uma____:
+                case PieceType.PB:
                     kh = Komahaiyaku185.n181_駒袋馬;
                     break;
 
-                case Komasyurui14.H11_Tokin__:
+                case PieceType.PP:
                     kh = Komahaiyaku185.n182_駒袋と金;
                     break;
 
-                case Komasyurui14.H12_NariKyo:
+                case PieceType.PL:
                     kh = Komahaiyaku185.n183_駒袋杏;
                     break;
 
-                case Komasyurui14.H13_NariKei:
+                case PieceType.PN:
                     kh = Komahaiyaku185.n184_駒袋圭;
                     break;
 
-                case Komasyurui14.H14_NariGin:
+                case PieceType.PS:
                     kh = Komahaiyaku185.n185_駒袋全;
                     break;
 

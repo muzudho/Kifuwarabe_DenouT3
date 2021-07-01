@@ -63,7 +63,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             }
 
 
-            if (aDaihyo[(int)Komasyurui14.H01_Fu_____] != null)// 攻め手が、歩を持っているなら
+            if (aDaihyo[(int)PieceType.P] != null)// 攻め手が、歩を持っているなら
             {
                 //----------------------------------------
                 // 二歩チェック
@@ -84,8 +84,8 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 Fingers banjoJiFus = Util_Sky_FingersQuery.InOkibaPsideKomasyuruiNow(
                     src_Sky,//指定局面
                     Okiba.ShogiBan,//将棋盤上の
-                    aDaihyo[(int)Komasyurui14.H01_Fu_____].Pside,//持駒を持っているプレイヤー側の
-                    Komasyurui14.H01_Fu_____//歩
+                    aDaihyo[(int)PieceType.P].Pside,//持駒を持っているプレイヤー側の
+                    PieceType.P//歩
                     );
 
 #if DEBUG
@@ -123,7 +123,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                         // 筋一列を、クリアーします。
 
                         // 駒種類別、置こうとする升
-                        aMasus[(int)Komasyurui14.H01_Fu_____] = aMasus[(int)Komasyurui14.H01_Fu_____].Minus_Closed(
+                        aMasus[(int)PieceType.P] = aMasus[(int)PieceType.P].Minus_Closed(
                             Masu_Honshogi.BAN_SUJIS[suji], Util_SyElement_BinaryOperator.Dlgt_Equals_MasuNumber);
                     }
                 }
@@ -158,7 +158,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             //----------------------------------------
             // 「どの持ち駒を」「どこに置ける」のコレクション。
             List_OneAndMulti<Finger, SySet<SyElement>> result = new List_OneAndMulti<Finger, SySet<SyElement>>();
-            foreach (Komasyurui14 ks in Array_Komasyurui.MotiKoma7Syurui)
+            foreach (PieceType ks in Array_Komasyurui.MotiKoma7Syurui)
             {
                 // 置こうとする駒があれば
                 if (null != aDaihyo[(int)ks])

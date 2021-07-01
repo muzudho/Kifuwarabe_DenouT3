@@ -155,7 +155,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(ConvMoveStrSfen.ToMoveStrSfen(ss));
-            if (Komasyurui14.H00_Null___ != (Komasyurui14)ss.FoodKomaSyurui)
+            if (PieceType.None != (PieceType)ss.FoodKomaSyurui)
             {
                 sb.Append("(");
                 sb.Append(ss.FoodKomaSyurui);

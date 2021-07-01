@@ -35,7 +35,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         {
             out_figKomasFirst = new Finger[Array_Komasyurui.Items_AllElements.Length];
 
-            foreach (Komasyurui14 komasyurui in Array_Komasyurui.Items_AllElements)
+            foreach (PieceType komasyurui in Array_Komasyurui.Items_AllElements)
             {
                 out_figKomasFirst[(int)komasyurui] = Fingers.Error_1; //ヌル値は無い。指定が必要。
             }
@@ -43,7 +43,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             foreach (Finger figMotiKoma in figKomas.Items)
             {
                 // 持ち駒の種類
-                Komasyurui14 motikomaSyurui = Util_Starlightable.AsKoma(src_Sky.StarlightIndexOf(figMotiKoma).Now).Komasyurui;
+                PieceType motikomaSyurui = Util_Starlightable.AsKoma(src_Sky.StarlightIndexOf(figMotiKoma).Now).Komasyurui;
                 if (out_figKomasFirst[(int)motikomaSyurui] == Fingers.Error_1)
                 {
                     out_figKomasFirst[(int)motikomaSyurui] = figMotiKoma;

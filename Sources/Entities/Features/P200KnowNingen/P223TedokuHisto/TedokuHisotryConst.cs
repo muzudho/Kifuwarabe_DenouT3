@@ -48,27 +48,27 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// <param name="index"></param>
         /// <param name="masu"></param>
         /// <returns></returns>
-        public static TedokuHistory NewInstance_AppendSasitamasu(TedokuHistory src, Komasyurui14 komasyurui, int index, SyElement masu)
+        public static TedokuHistory NewInstance_AppendSasitamasu(TedokuHistory src, PieceType komasyurui, int index, SyElement masu)
         {
             TedokuHistoryConst result = (TedokuHistoryConst)TedokuHistoryConst.New_Clone(src);
 
             // 持駒を打った場合はどうする？
             switch (komasyurui)
             {
-                case Komasyurui14.H11_Tokin__://どの歩？
-                case Komasyurui14.H01_Fu_____: result.Fu___[index].Add(masu); break;//suji-1=index
-                case Komasyurui14.H12_NariKyo:
-                case Komasyurui14.H02_Kyo____: result.Kyo__[index].Add(masu); break;
-                case Komasyurui14.H13_NariKei:
-                case Komasyurui14.H03_Kei____: result.Kei__[index].Add(masu); break;
-                case Komasyurui14.H14_NariGin:
-                case Komasyurui14.H04_Gin____: result.Gin__[index].Add(masu); break;
-                case Komasyurui14.H05_Kin____: result.Kin__[index].Add(masu); break;
-                case Komasyurui14.H06_Gyoku__: result.Gyoku.Add(masu); break;
-                case Komasyurui14.H09_Ryu____:
-                case Komasyurui14.H07_Hisya__: result.Hisya[index].Add(masu); break;
-                case Komasyurui14.H10_Uma____:
-                case Komasyurui14.H08_Kaku___: result.Kaku_[index].Add(masu); break;
+                case PieceType.PP://どの歩？
+                case PieceType.P: result.Fu___[index].Add(masu); break;//suji-1=index
+                case PieceType.PL:
+                case PieceType.L: result.Kyo__[index].Add(masu); break;
+                case PieceType.PN:
+                case PieceType.N: result.Kei__[index].Add(masu); break;
+                case PieceType.PS:
+                case PieceType.S: result.Gin__[index].Add(masu); break;
+                case PieceType.G: result.Kin__[index].Add(masu); break;
+                case PieceType.K: result.Gyoku.Add(masu); break;
+                case PieceType.PR:
+                case PieceType.R: result.Hisya[index].Add(masu); break;
+                case PieceType.PB:
+                case PieceType.B: result.Kaku_[index].Add(masu); break;
                 default: break;
             }
 

@@ -37,8 +37,8 @@
         /// <summary>
         /// 駒種類１４
         /// </summary>
-        public Komasyurui14 Komasyurui { get { return this.komasyurui; } }
-        private Komasyurui14 komasyurui;
+        public PieceType Komasyurui { get { return this.komasyurui; } }
+        private PieceType komasyurui;
 
         public Komahaiyaku185 Haiyaku
         {
@@ -49,7 +49,7 @@
         }
 
 
-        public RO_Star(Playerside pside, SyElement masu, Komasyurui14 syurui)
+        public RO_Star(Playerside pside, SyElement masu, PieceType syurui)
         {
             this.startype = BoardItem.Koma;
             this.pside = pside;
@@ -77,7 +77,7 @@
         /// 不成ケース
         /// </summary>
         /// <returns></returns>
-        public Komasyurui14 ToNarazuCase()
+        public PieceType ToNarazuCase()
         {
             return Util_Komasyurui14.NarazuCaseHandle(this.komasyurui);// Haiyaku184Array.Syurui(this.Haiyaku)
         }

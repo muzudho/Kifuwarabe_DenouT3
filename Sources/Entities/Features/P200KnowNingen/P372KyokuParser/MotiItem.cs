@@ -5,7 +5,7 @@
         /// <summary>
         /// 駒の種類。
         /// </summary>
-        Komasyurui14 Komasyurui { get; }
+        PieceType Komasyurui { get; }
 
         /// <summary>
         /// 持っている枚数。

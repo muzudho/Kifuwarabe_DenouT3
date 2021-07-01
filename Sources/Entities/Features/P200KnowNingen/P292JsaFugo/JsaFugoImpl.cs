@@ -19,14 +19,14 @@
         /// 駒種類
         /// ------------------------------------------------------------------------------------------------------------------------
         /// </summary>
-        public Komasyurui14 Syurui
+        public PieceType Syurui
         {
             get
             {
                 return this.syurui;
             }
         }
-        private Komasyurui14 syurui;
+        private PieceType syurui;
 
 
         /// <summary>
@@ -103,7 +103,7 @@
         /// <param name="nari"></param>
         /// <param name="daHyoji"></param>
         public JsaFugoImpl(
-            Komasyurui14 syurui, MigiHidari migiHidari, AgaruHiku agaruHiku, NariNarazu nari, DaHyoji daHyoji)
+            PieceType syurui, MigiHidari migiHidari, AgaruHiku agaruHiku, NariNarazu nari, DaHyoji daHyoji)
         {
             this.syurui = syurui;
             this.migiHidari = migiHidari;

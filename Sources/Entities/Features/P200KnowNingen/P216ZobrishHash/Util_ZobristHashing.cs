@@ -21,7 +21,7 @@
                 //    Array_Komasyurui.Items_All.Length * 2// プレイヤー２人分
                 //    ];
 
-                foreach (Komasyurui14 komasyurui2 in Array_Komasyurui.Items_AllElements)
+                foreach (PieceType komasyurui2 in Array_Komasyurui.Items_AllElements)
                 {
                     // プレイヤー２人分
                     Util_ZobristHashing.randamValueTable[masu2, (int)komasyurui2] = (ulong)(KwRandom.Random.NextDouble() * ulong.MaxValue);
@@ -37,7 +37,7 @@
         /// <param name="playerNumber">1,2</param>
         /// <param name="komaSyurui">駒種類</param>
         /// <returns></returns>
-        public static ulong GetValue(int masu1, Playerside playerNumber1, Komasyurui14 komaSyurui1)
+        public static ulong GetValue(int masu1, Playerside playerNumber1, PieceType komaSyurui1)
         {
             ulong result;
 

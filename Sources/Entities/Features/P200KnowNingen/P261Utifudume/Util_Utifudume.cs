@@ -102,7 +102,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             }
 
             // 相手の玉頭に、利きのある相手側の駒の種類の一覧。
-            List<Komasyurui14> ksList = new List<Komasyurui14>();
+            List<PieceType> ksList = new List<PieceType>();
             SySet<SyElement> aitegyokuKiki;
             {
                 // 相手側の盤上の駒一覧。
@@ -137,7 +137,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             {
                 goto gt_EndUtifudume;
             }
-            else if (ksList[0] != Komasyurui14.H06_Gyoku__)
+            else if (ksList[0] != PieceType.K)
             {
                 goto gt_EndUtifudume;
             }
@@ -169,7 +169,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
             // １升（玉頭升）を、クリアーします。
 
-            aMasus[(int)Komasyurui14.H01_Fu_____].Minus_Closed(
+            aMasus[(int)PieceType.P].Minus_Closed(
                 masu_gyokutou, Util_SyElement_BinaryOperator.Dlgt_Equals_MasuNumber);
 
 

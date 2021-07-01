@@ -13,7 +13,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// <returns></returns>
         public static bool Query_Koma(
             Playerside pside,
-            Komasyurui14 syurui,
+            PieceType syurui,
             SySet<SyElement> srcAll,
             SkyConst src_Sky,//KifuTree kifu,
             out Finger foundKoma

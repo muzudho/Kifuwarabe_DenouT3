@@ -77,7 +77,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         {
             SkyConst result = new SkyConst(src, false, temezumi_orMinus1, new Finger[] { Fingers.Error_1 }, new IMoveHalf[] { null },
                 // 手得計算
-                Komasyurui14.H00_Null___, 0, Masu_Honshogi.Query_Basho(Masu_Honshogi.nError)
+                PieceType.None, 0, Masu_Honshogi.Query_Basho(Masu_Honshogi.nError)
                 );
             return result;
         }
@@ -86,7 +86,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         {
             SkyConst result = new SkyConst(src, true, temezumi_orMinus1, new Finger[] { Fingers.Error_1 }, new IMoveHalf[] { null },
                 // 手得計算
-                Komasyurui14.H00_Null___, 0, Masu_Honshogi.Query_Basho(Masu_Honshogi.nError)
+                PieceType.None, 0, Masu_Honshogi.Query_Basho(Masu_Honshogi.nError)
                 );
             return result;
         }
@@ -105,7 +105,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         {
             SkyConst result = new SkyConst(src, false, temezumi_orMinus1, new Finger[] { finger1 }, new IMoveHalf[] { light1 },
                 // 手得計算
-                Komasyurui14.H00_Null___, 0, Masu_Honshogi.Query_Basho(Masu_Honshogi.nError)
+                PieceType.None, 0, Masu_Honshogi.Query_Basho(Masu_Honshogi.nError)
                 );
             return result;
         }
@@ -122,7 +122,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// <returns></returns>
         public static SkyConst NewInstance_OverwriteOrAdd_Light(Sky src, int temezumi_orMinus1, Finger finger1, IMoveHalf light1,
             // 手得計算
-            Komasyurui14 tedokuKeisan_komasyurui, int tedokukeisan_index, SyElement tedokukeisan_sasitamasu
+            PieceType tedokuKeisan_komasyurui, int tedokukeisan_index, SyElement tedokukeisan_sasitamasu
             )
         {
             SkyConst result = new SkyConst(src, false, temezumi_orMinus1, new Finger[] { finger1 }, new IMoveHalf[] { light1 },
@@ -146,7 +146,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         {
             SkyConst result = new SkyConst(src, false, temezumi_orMinus1, new Finger[] { finger1, finger2 }, new IMoveHalf[] { light1, light2 },
                 // 手得計算
-                Komasyurui14.H00_Null___, 0, Masu_Honshogi.Query_Basho(Masu_Honshogi.nError)
+                PieceType.None, 0, Masu_Honshogi.Query_Basho(Masu_Honshogi.nError)
                 );
             return result;
         }
@@ -159,11 +159,11 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             //
             // 手得計算
             //
-            Komasyurui14 tedokuKeisan_komasyurui, int tedokukeisan_index, SyElement tedokukeisan_sasitamasu)
+            PieceType tedokuKeisan_komasyurui, int tedokukeisan_index, SyElement tedokukeisan_sasitamasu)
         {
             Debug.Assert(src.Count == 40, $"本将棋とみなしてテスト中。sky.Starlights.Count=[{src.Count}]");//将棋の駒の数
 
-            if (tedokuKeisan_komasyurui == Komasyurui14.H00_Null___)
+            if (tedokuKeisan_komasyurui == PieceType.None)
             {
                 //----------------------------------------
                 // 手得計算のヒストリーを作らない場合

@@ -32,7 +32,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             )
         {
             bool isMakimodosi = true;
-            ittemodosuResult = new IttemodosuResultImpl(Fingers.Error_1, Fingers.Error_1, null, Komasyurui14.H00_Null___, null);
+            ittemodosuResult = new IttemodosuResultImpl(Fingers.Error_1, Fingers.Error_1, null, PieceType.None, null);
 
             //
             // 一手指し開始局面（不変）
@@ -78,7 +78,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             //
             // 巻き戻しなら、非成りに戻します。
             //
-            Komasyurui14 syurui2 = Util_IttemodosuRoutine.Do30_MakimodosiNara_HinariNiModosu(ittemodosuArg.Move, isMakimodosi);
+            PieceType syurui2 = Util_IttemodosuRoutine.Do30_MakimodosiNara_HinariNiModosu(ittemodosuArg.Move, isMakimodosi);
 
 
             IMoveHalf dst;
@@ -132,7 +132,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                         new RO_Star(
                             Conv_Playerside.Reverse(koma.Pside),//先後を逆にして駒台に置きます。
                             koma.Masu,// マス
-                            (Komasyurui14)ittemodosuArg.Move.FoodKomaSyurui
+                            (PieceType)ittemodosuArg.Move.FoodKomaSyurui
                         )
                     ));
             }
@@ -176,7 +176,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         {
             Node<IMove, KyokumenWrapper> editNodeRef = ittemodosuReference.SyuryoNode_OrNull;
             IMove nextMove = editNodeRef.Key;
-            if (ittemodosuReference.FoodKomaSyurui != Komasyurui14.H00_Null___)
+            if (ittemodosuReference.FoodKomaSyurui != PieceType.None)
             {
                 // 元のキーの、取った駒の種類だけを差替えます。
                 nextMove = Util_Sky258A.BuildMove(editNodeRef.Key.LongTimeAgo, editNodeRef.Key.Now, ittemodosuReference.FoodKomaSyurui);
@@ -259,7 +259,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// <param name="isMakimodosi"></param>
         /// <returns></returns>
         private static IMoveHalf Do37_KomaOnDestinationMasu(
-            Komasyurui14 syurui2,
+            PieceType syurui2,
             IMove move,
             SkyConst src_Sky
             )
@@ -318,7 +318,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             out Finger out_figFoodKoma
         )
         {
-            if (Komasyurui14.H00_Null___ != (Komasyurui14)move.FoodKomaSyurui)
+            if (PieceType.None != (PieceType)move.FoodKomaSyurui)
             {
                 //----------------------------------------
                 // 取られていた駒があった場合
@@ -338,7 +338,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
 
                 // 取った駒は、種類が同じなら、駒台のどの駒でも同じです。
-                out_figFoodKoma = Util_Sky_FingerQuery.InOkibaSyuruiNowIgnoreCase(kaisi_Sky, okiba, (Komasyurui14)move.FoodKomaSyurui);
+                out_figFoodKoma = Util_Sky_FingerQuery.InOkibaSyuruiNowIgnoreCase(kaisi_Sky, okiba, (PieceType)move.FoodKomaSyurui);
             }
             else
             {
@@ -355,14 +355,14 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// <param name="move">棋譜に記録するために「指す前／指した後」を含めた手。</param>
         /// <param name="isBack"></param>
         /// <returns></returns>
-        private static Komasyurui14 Do30_MakimodosiNara_HinariNiModosu(
+        private static PieceType Do30_MakimodosiNara_HinariNiModosu(
             IMove move,
             bool isBack)
         {
             //------------------------------------------------------------
             // 確定  ：  移動先升
             //------------------------------------------------------------
-            Komasyurui14 syurui2;
+            PieceType syurui2;
             {
                 //----------
                 // 成るかどうか

@@ -74,20 +74,20 @@ using Grayscale.Kifuwarakaku.Entities.Features;
 
                             switch (rowKomawari)
                             {
-                                case 0: fv.Komawari[(int)Komasyurui14.H01_Fu_____] = col2; break;
-                                case 1: fv.Komawari[(int)Komasyurui14.H02_Kyo____] = col2; break;
-                                case 2: fv.Komawari[(int)Komasyurui14.H03_Kei____] = col2; break;
-                                case 3: fv.Komawari[(int)Komasyurui14.H04_Gin____] = col2; break;
-                                case 4: fv.Komawari[(int)Komasyurui14.H05_Kin____] = col2; break;
-                                case 5: fv.Komawari[(int)Komasyurui14.H06_Gyoku__] = col2; break;
-                                case 6: fv.Komawari[(int)Komasyurui14.H07_Hisya__] = col2; break;
-                                case 7: fv.Komawari[(int)Komasyurui14.H08_Kaku___] = col2; break;
-                                case 8: fv.Komawari[(int)Komasyurui14.H11_Tokin__] = col2; break;
-                                case 9: fv.Komawari[(int)Komasyurui14.H12_NariKyo] = col2; break;
-                                case 10: fv.Komawari[(int)Komasyurui14.H13_NariKei] = col2; break;
-                                case 11: fv.Komawari[(int)Komasyurui14.H14_NariGin] = col2; break;
-                                case 12: fv.Komawari[(int)Komasyurui14.H09_Ryu____] = col2; break;
-                                case 13: fv.Komawari[(int)Komasyurui14.H10_Uma____] = col2; break;
+                                case 0: fv.Komawari[(int)PieceType.P] = col2; break;
+                                case 1: fv.Komawari[(int)PieceType.L] = col2; break;
+                                case 2: fv.Komawari[(int)PieceType.N] = col2; break;
+                                case 3: fv.Komawari[(int)PieceType.S] = col2; break;
+                                case 4: fv.Komawari[(int)PieceType.G] = col2; break;
+                                case 5: fv.Komawari[(int)PieceType.K] = col2; break;
+                                case 6: fv.Komawari[(int)PieceType.R] = col2; break;
+                                case 7: fv.Komawari[(int)PieceType.B] = col2; break;
+                                case 8: fv.Komawari[(int)PieceType.PP] = col2; break;
+                                case 9: fv.Komawari[(int)PieceType.PL] = col2; break;
+                                case 10: fv.Komawari[(int)PieceType.PN] = col2; break;
+                                case 11: fv.Komawari[(int)PieceType.PS] = col2; break;
+                                case 12: fv.Komawari[(int)PieceType.PR] = col2; break;
+                                case 13: fv.Komawari[(int)PieceType.PB] = col2; break;
                                 default: break;
                             }
                         }

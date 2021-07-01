@@ -169,7 +169,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 if (
                     Okiba.ShogiBan == Conv_SyElement.ToOkiba(koma.Masu)
                     && jiPside == koma.Pside
-                    && Komasyurui14.H06_Gyoku__ == koma.Komasyurui
+                    && PieceType.K == koma.Komasyurui
                     )
                 {
                     //
@@ -180,7 +180,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 else if (
                     Okiba.ShogiBan == Conv_SyElement.ToOkiba(koma.Masu)
                     && aitePside == koma.Pside
-                    && Komasyurui14.H06_Gyoku__ == koma.Komasyurui
+                    && PieceType.K == koma.Komasyurui
                     )
                 {
                     //
@@ -214,7 +214,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
 
                 if (
                     Okiba.ShogiBan == Conv_SyElement.ToOkiba(koma.Masu)
-                    && Komasyurui14.H06_Gyoku__ == koma.Komasyurui
+                    && PieceType.K == koma.Komasyurui
                     )
                 {
                     if (Playerside.P1 == koma.Pside)

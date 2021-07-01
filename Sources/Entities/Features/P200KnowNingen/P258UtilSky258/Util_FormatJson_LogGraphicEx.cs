@@ -28,7 +28,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 // 駒１つ
                 RO_Star koma = Util_Starlightable.AsKoma(src_Sky_base.StarlightIndexOf(key).Now);
 
-                Komasyurui14 ks14 = Util_Komahaiyaku184.Syurui(koma.Haiyaku);
+                PieceType ks14 = Util_Komahaiyaku184.Syurui(koma.Haiyaku);
 
                 sb.AppendLine("            [");
 
@@ -84,7 +84,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             Finger finger = Util_Sky_FingersQuery.InMasuNow(src_Sky_base, srcKoma.Masu).ToFirst();
 
             // 駒１つ
-            Komasyurui14 ks14 = Util_Komahaiyaku184.Syurui(dstKoma.Haiyaku);
+            PieceType ks14 = Util_Komahaiyaku184.Syurui(dstKoma.Haiyaku);
 
             //sb.AppendLine("            [");
 
@@ -137,7 +137,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 Finger srcKoma2 = Util_Sky_FingersQuery.InMasuNow(src_Sky_base, srcKoma1.Masu).ToFirst();
 
                 // 駒１つ
-                Komasyurui14 ks14 = Util_Komahaiyaku184.Syurui(dstKoma.Haiyaku);
+                PieceType ks14 = Util_Komahaiyaku184.Syurui(dstKoma.Haiyaku);
 
                 sb.AppendLine("            [");
 

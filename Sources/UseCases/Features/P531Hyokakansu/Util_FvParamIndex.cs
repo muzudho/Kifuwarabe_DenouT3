@@ -31,40 +31,40 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
             //
             // 盤上の駒種類別　パラメーター・インデックス。
             //
-            paramIndex_KomaSyrui_Banjo[(int)Komasyurui14.H00_Null___] = -1;
-            paramIndex_KomaSyrui_Banjo[(int)Komasyurui14.H01_Fu_____] = Const_NikomaKankeiP_ParamIx.Ban_Fu__;
-            paramIndex_KomaSyrui_Banjo[(int)Komasyurui14.H02_Kyo____] = Const_NikomaKankeiP_ParamIx.Ban_Kyo_;
-            paramIndex_KomaSyrui_Banjo[(int)Komasyurui14.H03_Kei____] = Const_NikomaKankeiP_ParamIx.Ban_Kei_;
-            paramIndex_KomaSyrui_Banjo[(int)Komasyurui14.H04_Gin____] = Const_NikomaKankeiP_ParamIx.Ban_Gin_;
-            paramIndex_KomaSyrui_Banjo[(int)Komasyurui14.H05_Kin____] = Const_NikomaKankeiP_ParamIx.Ban_Kin_;
-            paramIndex_KomaSyrui_Banjo[(int)Komasyurui14.H06_Gyoku__] = Const_NikomaKankeiP_ParamIx.Ban_Oh__;
-            paramIndex_KomaSyrui_Banjo[(int)Komasyurui14.H07_Hisya__] = Const_NikomaKankeiP_ParamIx.Ban_Hi__;
-            paramIndex_KomaSyrui_Banjo[(int)Komasyurui14.H08_Kaku___] = Const_NikomaKankeiP_ParamIx.Ban_Kaku;
-            paramIndex_KomaSyrui_Banjo[(int)Komasyurui14.H09_Ryu____] = Const_NikomaKankeiP_ParamIx.Ban_Hi__;//飛と同じ
-            paramIndex_KomaSyrui_Banjo[(int)Komasyurui14.H10_Uma____] = Const_NikomaKankeiP_ParamIx.Ban_Kaku;//角と同じ
-            paramIndex_KomaSyrui_Banjo[(int)Komasyurui14.H11_Tokin__] = Const_NikomaKankeiP_ParamIx.Ban_Kin_;//金と同じ
-            paramIndex_KomaSyrui_Banjo[(int)Komasyurui14.H12_NariKyo] = Const_NikomaKankeiP_ParamIx.Ban_Kin_;//金と同じ
-            paramIndex_KomaSyrui_Banjo[(int)Komasyurui14.H13_NariKei] = Const_NikomaKankeiP_ParamIx.Ban_Kin_;//金と同じ
-            paramIndex_KomaSyrui_Banjo[(int)Komasyurui14.H14_NariGin] = Const_NikomaKankeiP_ParamIx.Ban_Kin_;//金と同じ
+            paramIndex_KomaSyrui_Banjo[(int)PieceType.None] = -1;
+            paramIndex_KomaSyrui_Banjo[(int)PieceType.P] = Const_NikomaKankeiP_ParamIx.Ban_Fu__;
+            paramIndex_KomaSyrui_Banjo[(int)PieceType.L] = Const_NikomaKankeiP_ParamIx.Ban_Kyo_;
+            paramIndex_KomaSyrui_Banjo[(int)PieceType.N] = Const_NikomaKankeiP_ParamIx.Ban_Kei_;
+            paramIndex_KomaSyrui_Banjo[(int)PieceType.S] = Const_NikomaKankeiP_ParamIx.Ban_Gin_;
+            paramIndex_KomaSyrui_Banjo[(int)PieceType.G] = Const_NikomaKankeiP_ParamIx.Ban_Kin_;
+            paramIndex_KomaSyrui_Banjo[(int)PieceType.K] = Const_NikomaKankeiP_ParamIx.Ban_Oh__;
+            paramIndex_KomaSyrui_Banjo[(int)PieceType.R] = Const_NikomaKankeiP_ParamIx.Ban_Hi__;
+            paramIndex_KomaSyrui_Banjo[(int)PieceType.B] = Const_NikomaKankeiP_ParamIx.Ban_Kaku;
+            paramIndex_KomaSyrui_Banjo[(int)PieceType.PR] = Const_NikomaKankeiP_ParamIx.Ban_Hi__;//飛と同じ
+            paramIndex_KomaSyrui_Banjo[(int)PieceType.PB] = Const_NikomaKankeiP_ParamIx.Ban_Kaku;//角と同じ
+            paramIndex_KomaSyrui_Banjo[(int)PieceType.PP] = Const_NikomaKankeiP_ParamIx.Ban_Kin_;//金と同じ
+            paramIndex_KomaSyrui_Banjo[(int)PieceType.PL] = Const_NikomaKankeiP_ParamIx.Ban_Kin_;//金と同じ
+            paramIndex_KomaSyrui_Banjo[(int)PieceType.PN] = Const_NikomaKankeiP_ParamIx.Ban_Kin_;//金と同じ
+            paramIndex_KomaSyrui_Banjo[(int)PieceType.PS] = Const_NikomaKankeiP_ParamIx.Ban_Kin_;//金と同じ
 
             //
             // 持ち駒の駒種類別　パラメーター・インデックス。
             //
-            paramIndex_KomaSyrui_Moti[(int)Komasyurui14.H00_Null___] = -1;
-            paramIndex_KomaSyrui_Moti[(int)Komasyurui14.H01_Fu_____] = Const_NikomaKankeiP_ParamIx.MotiFu__;
-            paramIndex_KomaSyrui_Moti[(int)Komasyurui14.H02_Kyo____] = Const_NikomaKankeiP_ParamIx.MotiKyo_;
-            paramIndex_KomaSyrui_Moti[(int)Komasyurui14.H03_Kei____] = Const_NikomaKankeiP_ParamIx.MotiKei_;
-            paramIndex_KomaSyrui_Moti[(int)Komasyurui14.H04_Gin____] = Const_NikomaKankeiP_ParamIx.MotiGin_;
-            paramIndex_KomaSyrui_Moti[(int)Komasyurui14.H05_Kin____] = Const_NikomaKankeiP_ParamIx.MotiKin_;
-            paramIndex_KomaSyrui_Moti[(int)Komasyurui14.H06_Gyoku__] = -1; // 王は持ち駒にできない。
-            paramIndex_KomaSyrui_Moti[(int)Komasyurui14.H07_Hisya__] = Const_NikomaKankeiP_ParamIx.MotiHi__;
-            paramIndex_KomaSyrui_Moti[(int)Komasyurui14.H08_Kaku___] = Const_NikomaKankeiP_ParamIx.MotiKaku;
-            paramIndex_KomaSyrui_Moti[(int)Komasyurui14.H09_Ryu____] = Const_NikomaKankeiP_ParamIx.Ban_Hi__;//飛と同じ
-            paramIndex_KomaSyrui_Moti[(int)Komasyurui14.H10_Uma____] = Const_NikomaKankeiP_ParamIx.Ban_Kaku;//角と同じ
-            paramIndex_KomaSyrui_Moti[(int)Komasyurui14.H11_Tokin__] = Const_NikomaKankeiP_ParamIx.MotiFu__;//歩と同じ
-            paramIndex_KomaSyrui_Moti[(int)Komasyurui14.H12_NariKyo] = Const_NikomaKankeiP_ParamIx.MotiKyo_;//香と同じ
-            paramIndex_KomaSyrui_Moti[(int)Komasyurui14.H13_NariKei] = Const_NikomaKankeiP_ParamIx.MotiKei_;//桂と同じ
-            paramIndex_KomaSyrui_Moti[(int)Komasyurui14.H14_NariGin] = Const_NikomaKankeiP_ParamIx.MotiGin_;//銀と同じ
+            paramIndex_KomaSyrui_Moti[(int)PieceType.None] = -1;
+            paramIndex_KomaSyrui_Moti[(int)PieceType.P] = Const_NikomaKankeiP_ParamIx.MotiFu__;
+            paramIndex_KomaSyrui_Moti[(int)PieceType.L] = Const_NikomaKankeiP_ParamIx.MotiKyo_;
+            paramIndex_KomaSyrui_Moti[(int)PieceType.N] = Const_NikomaKankeiP_ParamIx.MotiKei_;
+            paramIndex_KomaSyrui_Moti[(int)PieceType.S] = Const_NikomaKankeiP_ParamIx.MotiGin_;
+            paramIndex_KomaSyrui_Moti[(int)PieceType.G] = Const_NikomaKankeiP_ParamIx.MotiKin_;
+            paramIndex_KomaSyrui_Moti[(int)PieceType.K] = -1; // 王は持ち駒にできない。
+            paramIndex_KomaSyrui_Moti[(int)PieceType.R] = Const_NikomaKankeiP_ParamIx.MotiHi__;
+            paramIndex_KomaSyrui_Moti[(int)PieceType.B] = Const_NikomaKankeiP_ParamIx.MotiKaku;
+            paramIndex_KomaSyrui_Moti[(int)PieceType.PR] = Const_NikomaKankeiP_ParamIx.Ban_Hi__;//飛と同じ
+            paramIndex_KomaSyrui_Moti[(int)PieceType.PB] = Const_NikomaKankeiP_ParamIx.Ban_Kaku;//角と同じ
+            paramIndex_KomaSyrui_Moti[(int)PieceType.PP] = Const_NikomaKankeiP_ParamIx.MotiFu__;//歩と同じ
+            paramIndex_KomaSyrui_Moti[(int)PieceType.PL] = Const_NikomaKankeiP_ParamIx.MotiKyo_;//香と同じ
+            paramIndex_KomaSyrui_Moti[(int)PieceType.PN] = Const_NikomaKankeiP_ParamIx.MotiKei_;//桂と同じ
+            paramIndex_KomaSyrui_Moti[(int)PieceType.PS] = Const_NikomaKankeiP_ParamIx.MotiGin_;//銀と同じ
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
         /// <param name="pside"></param>
         /// <param name="syurui"></param>
         /// <returns>エラー時は-1</returns>
-        public static int ParamIndex_Moti(SkyConst src_Sky, Playerside pside, Komasyurui14 syurui)
+        public static int ParamIndex_Moti(SkyConst src_Sky, Playerside pside, PieceType syurui)
         {
             Fingers fingers = Util_Sky_FingersQuery.InOkibaPsideKomasyuruiNow(src_Sky, Conv_Playerside.ToKomadai(pside), pside, syurui);
 

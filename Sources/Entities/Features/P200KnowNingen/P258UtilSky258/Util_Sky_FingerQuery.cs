@@ -61,11 +61,11 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// <param name="komasyurui"></param>
         /// <param name="uc_Main"></param>
         /// <returns>無ければ -1</returns>
-        public static Finger InOkibaSyuruiNowIgnoreCase(SkyConst srcSky, Okiba okiba, Komasyurui14 komasyurui)
+        public static Finger InOkibaSyuruiNowIgnoreCase(SkyConst srcSky, Okiba okiba, PieceType komasyurui)
         {
             Finger found = Fingers.Error_1;
 
-            Komasyurui14 syuruiNarazuCase = Util_Komasyurui14.NarazuCaseHandle(komasyurui);
+            PieceType syuruiNarazuCase = Util_Komasyurui14.NarazuCaseHandle(komasyurui);
 
             foreach (Finger finger in Finger_Honshogi.Items_KomaOnly)
             {

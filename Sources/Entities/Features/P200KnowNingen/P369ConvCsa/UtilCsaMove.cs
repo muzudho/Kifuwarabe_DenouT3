@@ -42,27 +42,27 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// </summary>
         /// <param name="csa"></param>
         /// <returns></returns>
-        public static Komasyurui14 ToKomasyurui(CsaKifuMove csa)
+        public static PieceType ToKomasyurui(CsaKifuMove csa)
         {
-            Komasyurui14 result_kifuwarabe;
+            PieceType result_kifuwarabe;
 
             switch (csa.Syurui)
             {
-                case Word_Csa.FU_FU_____: result_kifuwarabe = Komasyurui14.H01_Fu_____; break;
-                case Word_Csa.KY_KYO____: result_kifuwarabe = Komasyurui14.H02_Kyo____; break;
-                case Word_Csa.KE_KEI____: result_kifuwarabe = Komasyurui14.H03_Kei____; break;
-                case Word_Csa.GI_GIN____: result_kifuwarabe = Komasyurui14.H04_Gin____; break;
-                case Word_Csa.KI_KIN____: result_kifuwarabe = Komasyurui14.H05_Kin____; break;
-                case Word_Csa.KA_KAKU___: result_kifuwarabe = Komasyurui14.H08_Kaku___; break;
-                case Word_Csa.HI_HISYA__: result_kifuwarabe = Komasyurui14.H07_Hisya__; break;
-                case Word_Csa.OU_OU_____: result_kifuwarabe = Komasyurui14.H06_Gyoku__; break;
-                case Word_Csa.TO_TOKIN__: result_kifuwarabe = Komasyurui14.H11_Tokin__; break;
-                case Word_Csa.NY_NARIKYO: result_kifuwarabe = Komasyurui14.H12_NariKyo; break;
-                case Word_Csa.NK_NARIKEI: result_kifuwarabe = Komasyurui14.H13_NariKei; break;
-                case Word_Csa.NG_NARIGIN: result_kifuwarabe = Komasyurui14.H14_NariGin; break;
-                case Word_Csa.UM_UMA____: result_kifuwarabe = Komasyurui14.H10_Uma____; break;
-                case Word_Csa.RY_RYU____: result_kifuwarabe = Komasyurui14.H09_Ryu____; break;
-                default: result_kifuwarabe = Komasyurui14.H00_Null___; break;
+                case Word_Csa.FU_FU_____: result_kifuwarabe = PieceType.P; break;
+                case Word_Csa.KY_KYO____: result_kifuwarabe = PieceType.L; break;
+                case Word_Csa.KE_KEI____: result_kifuwarabe = PieceType.N; break;
+                case Word_Csa.GI_GIN____: result_kifuwarabe = PieceType.S; break;
+                case Word_Csa.KI_KIN____: result_kifuwarabe = PieceType.G; break;
+                case Word_Csa.KA_KAKU___: result_kifuwarabe = PieceType.B; break;
+                case Word_Csa.HI_HISYA__: result_kifuwarabe = PieceType.R; break;
+                case Word_Csa.OU_OU_____: result_kifuwarabe = PieceType.K; break;
+                case Word_Csa.TO_TOKIN__: result_kifuwarabe = PieceType.PP; break;
+                case Word_Csa.NY_NARIKYO: result_kifuwarabe = PieceType.PL; break;
+                case Word_Csa.NK_NARIKEI: result_kifuwarabe = PieceType.PN; break;
+                case Word_Csa.NG_NARIGIN: result_kifuwarabe = PieceType.PS; break;
+                case Word_Csa.UM_UMA____: result_kifuwarabe = PieceType.PB; break;
+                case Word_Csa.RY_RYU____: result_kifuwarabe = PieceType.PR; break;
+                default: result_kifuwarabe = PieceType.None; break;
             }
 
             return result_kifuwarabe;

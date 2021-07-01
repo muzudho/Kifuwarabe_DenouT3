@@ -86,7 +86,7 @@
                     //----------------------------------------
                     // 持ち駒
                     //----------------------------------------
-                    Komasyurui14 motiKomasyurui = koma.ToNarazuCase();//例：駒台に馬はない。角の数を数える。
+                    PieceType motiKomasyurui = koma.ToNarazuCase();//例：駒台に馬はない。角の数を数える。
                     // 駒の枚数
                     int maisu = Util_Sky_FingersQuery.InOkibaKomasyuruiNow(src_Sky, Conv_Playerside.ToKomadai(koma.Pside), motiKomasyurui).Items.Count;
                     Conv_FvKoumoku525.ToPIndex_FromMoti_PsideKomasyuruiMaisu(koma.Pside, motiKomasyurui, maisu, out pIndex);

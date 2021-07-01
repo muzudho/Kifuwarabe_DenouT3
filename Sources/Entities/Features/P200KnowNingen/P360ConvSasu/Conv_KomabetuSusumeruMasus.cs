@@ -34,7 +34,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     IMove move = new RO_Starbeam(
                         srcStar,// 移動元
                         dstStar,// 移動先
-                        Komasyurui14.H00_Null___//取った駒不明
+                        PieceType.None//取った駒不明
                     );
                     result_komabetuAllMove.Put_NewOrOverwrite(figKoma, move);//FIXME: １つの駒に指し手は１つ？？
 

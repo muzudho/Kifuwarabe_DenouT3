@@ -185,7 +185,7 @@
     <Compile Include="Features\P200KnowNingen\P212ConvPside\Conv_Playerside.cs" />
     <Compile Include="Features\P200KnowNingen\P212ConvPside\Conv_SyElement.cs" />
     <Compile Include="Features\P200KnowNingen\P213Komasyurui\Array_Komasyurui.cs" />
-    <Compile Include="Features\P200KnowNingen\P213Komasyurui\Komasyurui14.cs" />
+    <Compile Include="Features\P200KnowNingen\P213Komasyurui\PieceType.cs" />
     <Compile Include="Features\P200KnowNingen\P213Komasyurui\Util_Komasyurui14.cs" />
     <Compile Include="Features\P200KnowNingen\P214Masu\Util_Masu10.cs" />
     <Compile Include="Features\P200KnowNingen\P214Masu\Util_MasuNum.cs" />
@@ -354,6 +354,7 @@
     <Compile Include="Features\P440KifuTreeLog\P441HyokaMeisai\Util_KifuTreeLogWriter.cs" />
     <Compile Include="Configuration\SpecifiedFiles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Take1Base\Piece.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

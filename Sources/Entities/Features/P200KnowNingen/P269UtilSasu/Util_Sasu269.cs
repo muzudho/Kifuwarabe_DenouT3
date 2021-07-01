@@ -182,7 +182,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                         dstKoma.Masu,
                         Util_Komasyurui14.ToNariCase(dstKoma.Komasyurui)//強制的に【成り】に駒の種類を変更
                     ),// 移動先
-                    Komasyurui14.H00_Null___//取った駒不明
+                    PieceType.None//取った駒不明
                 );
 
                 // TODO: 一段目の香車のように、既に駒は成っている場合があります。無い指し手だけ追加するようにします。

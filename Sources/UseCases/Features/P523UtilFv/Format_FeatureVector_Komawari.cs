@@ -39,59 +39,59 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
             sb.AppendLine("\"#KomaWari 順番を崩さないように書いてくれ☆\",");//コメント行
 
             sb.Append("\"Komawari\",\"(0)歩\",");
-            sb.Append(fv.Komawari[(int)Komasyurui14.H01_Fu_____]);
+            sb.Append(fv.Komawari[(int)PieceType.P]);
             sb.AppendLine(",");
 
             sb.Append("\"Komawari\",\"(1)香\",");
-            sb.Append(fv.Komawari[(int)Komasyurui14.H02_Kyo____]);
+            sb.Append(fv.Komawari[(int)PieceType.L]);
             sb.AppendLine(",");
 
             sb.Append("\"Komawari\",\"(2)桂\",");
-            sb.Append(fv.Komawari[(int)Komasyurui14.H03_Kei____]);
+            sb.Append(fv.Komawari[(int)PieceType.N]);
             sb.AppendLine(",");
 
             sb.Append("\"Komawari\",\"(3)銀\",");
-            sb.Append(fv.Komawari[(int)Komasyurui14.H04_Gin____]);
+            sb.Append(fv.Komawari[(int)PieceType.S]);
             sb.AppendLine(",");
 
             sb.Append("\"Komawari\",\"(4)金\",");
-            sb.Append(fv.Komawari[(int)Komasyurui14.H05_Kin____]);
+            sb.Append(fv.Komawari[(int)PieceType.G]);
             sb.AppendLine(",");
 
             sb.Append("\"Komawari\",\"(5)玉\",");
-            sb.Append(fv.Komawari[(int)Komasyurui14.H06_Gyoku__]);
+            sb.Append(fv.Komawari[(int)PieceType.K]);
             sb.AppendLine(",");
 
             sb.Append("\"Komawari\",\"(6)飛\",");
-            sb.Append(fv.Komawari[(int)Komasyurui14.H07_Hisya__]);
+            sb.Append(fv.Komawari[(int)PieceType.R]);
             sb.AppendLine(",");
 
             sb.Append("\"Komawari\",\"(7)角\",");
-            sb.Append(fv.Komawari[(int)Komasyurui14.H08_Kaku___]);
+            sb.Append(fv.Komawari[(int)PieceType.B]);
             sb.AppendLine(",");
 
             sb.Append("\"Komawari\",\"(8)と金\",");
-            sb.Append(fv.Komawari[(int)Komasyurui14.H11_Tokin__]);
+            sb.Append(fv.Komawari[(int)PieceType.PP]);
             sb.AppendLine(",");
 
             sb.Append("\"Komawari\",\"(9)成香\",");
-            sb.Append(fv.Komawari[(int)Komasyurui14.H12_NariKyo]);
+            sb.Append(fv.Komawari[(int)PieceType.PL]);
             sb.AppendLine(",");
 
             sb.Append("\"Komawari\",\"(10)成桂\",");
-            sb.Append(fv.Komawari[(int)Komasyurui14.H13_NariKei]);
+            sb.Append(fv.Komawari[(int)PieceType.PN]);
             sb.AppendLine(",");
 
             sb.Append("\"Komawari\",\"(11)成銀\",");
-            sb.Append(fv.Komawari[(int)Komasyurui14.H14_NariGin]);
+            sb.Append(fv.Komawari[(int)PieceType.PS]);
             sb.AppendLine(",");
 
             sb.Append("\"Komawari\",\"(12)竜\",");
-            sb.Append(fv.Komawari[(int)Komasyurui14.H09_Ryu____]);
+            sb.Append(fv.Komawari[(int)PieceType.PR]);
             sb.AppendLine(",");
 
             sb.Append("\"Komawari\",\"(13)馬\",");
-            sb.Append(fv.Komawari[(int)Komasyurui14.H10_Uma____]);
+            sb.Append(fv.Komawari[(int)PieceType.PB]);
             sb.AppendLine(",");
 
             return sb.ToString();

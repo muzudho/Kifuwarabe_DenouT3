@@ -39,38 +39,38 @@ namespace Grayscale.Kifuwarakaku.UseCases.Features
             // 駒割は固定。
             // コーディングの利便上、エラー駒やヌル駒にもランダム値を入れておく。
             //
-            foreach (Komasyurui14 komaSyurui in Array_Komasyurui.Items_AllElements)//
+            foreach (PieceType komaSyurui in Array_Komasyurui.Items_AllElements)//
             {
                 fv.Komawari[(int)komaSyurui] = KwRandom.Random.Next(0, 999);
             }
             //
             // 
             //
-            fv.Komawari[(int)Komasyurui14.H00_Null___] = 0;
-            fv.Komawari[(int)Komasyurui14.H01_Fu_____] = 100;
-            fv.Komawari[(int)Komasyurui14.H02_Kyo____] = 800;
-            fv.Komawari[(int)Komasyurui14.H03_Kei____] = 200;
-            fv.Komawari[(int)Komasyurui14.H04_Gin____] = 500;
-            fv.Komawari[(int)Komasyurui14.H05_Kin____] = 600;
+            fv.Komawari[(int)PieceType.None] = 0;
+            fv.Komawari[(int)PieceType.P] = 100;
+            fv.Komawari[(int)PieceType.L] = 800;
+            fv.Komawari[(int)PieceType.N] = 200;
+            fv.Komawari[(int)PieceType.S] = 500;
+            fv.Komawari[(int)PieceType.G] = 600;
             // 玉はあとで。
-            fv.Komawari[(int)Komasyurui14.H07_Hisya__] = 1600;
-            fv.Komawari[(int)Komasyurui14.H08_Kaku___] = 1600;
-            fv.Komawari[(int)Komasyurui14.H09_Ryu____] = 2000;
-            fv.Komawari[(int)Komasyurui14.H10_Uma____] = 2000;
-            fv.Komawari[(int)Komasyurui14.H11_Tokin__] = 600;
-            fv.Komawari[(int)Komasyurui14.H12_NariKyo] = 600;
-            fv.Komawari[(int)Komasyurui14.H13_NariKei] = 600;
-            fv.Komawari[(int)Komasyurui14.H14_NariGin] = 600;
+            fv.Komawari[(int)PieceType.R] = 1600;
+            fv.Komawari[(int)PieceType.B] = 1600;
+            fv.Komawari[(int)PieceType.PR] = 2000;
+            fv.Komawari[(int)PieceType.PB] = 2000;
+            fv.Komawari[(int)PieceType.PP] = 600;
+            fv.Komawari[(int)PieceType.PL] = 600;
+            fv.Komawari[(int)PieceType.PN] = 600;
+            fv.Komawari[(int)PieceType.PS] = 600;
             //
             // 玉の駒割は計算で求める。 歩100×18 ＋ 香800×4 ＋ 桂200×4 ＋ 銀500×4 ＋ 金600×4 ＋ 飛1600×2 ＋ 角1600×2。
-            fv.Komawari[(int)Komasyurui14.H06_Gyoku__] =
-                fv.Komawari[(int)Komasyurui14.H01_Fu_____] * 18 +
-                fv.Komawari[(int)Komasyurui14.H02_Kyo____] * 4 +
-                fv.Komawari[(int)Komasyurui14.H03_Kei____] * 4 +
-                fv.Komawari[(int)Komasyurui14.H04_Gin____] * 4 +
-                fv.Komawari[(int)Komasyurui14.H05_Kin____] * 4 +
-                fv.Komawari[(int)Komasyurui14.H07_Hisya__] * 2 +
-                fv.Komawari[(int)Komasyurui14.H08_Kaku___] * 2 +
+            fv.Komawari[(int)PieceType.K] =
+                fv.Komawari[(int)PieceType.P] * 18 +
+                fv.Komawari[(int)PieceType.L] * 4 +
+                fv.Komawari[(int)PieceType.N] * 4 +
+                fv.Komawari[(int)PieceType.S] * 4 +
+                fv.Komawari[(int)PieceType.G] * 4 +
+                fv.Komawari[(int)PieceType.R] * 2 +
+                fv.Komawari[(int)PieceType.B] * 2 +
                 0;
 
             //

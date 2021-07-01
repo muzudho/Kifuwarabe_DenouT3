@@ -6,14 +6,14 @@
         /// <summary>
         /// 駒の種類。
         /// </summary>
-        public Komasyurui14 Komasyurui
+        public PieceType Komasyurui
         {
             get
             {
                 return this.komasyurui;
             }
         }
-        private Komasyurui14 komasyurui;
+        private PieceType komasyurui;
 
         /// <summary>
         /// 持っている枚数。
@@ -42,7 +42,7 @@
         /// <summary>
         /// コンストラクター。
         /// </summary>
-        public MotiItemImpl(Komasyurui14 komasyurui, int maisu, Playerside playerside)
+        public MotiItemImpl(PieceType komasyurui, int maisu, Playerside playerside)
         {
             this.komasyurui = komasyurui;
             this.maisu = maisu;

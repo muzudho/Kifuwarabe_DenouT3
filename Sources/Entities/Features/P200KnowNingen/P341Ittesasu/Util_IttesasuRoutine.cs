@@ -39,7 +39,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
             //------------------------------
             // 用意
             //------------------------------
-            ittesasuResult = new IttesasuResultImpl(Fingers.Error_1, Fingers.Error_1, null, Komasyurui14.H00_Null___, null);
+            ittesasuResult = new IttesasuResultImpl(Fingers.Error_1, Fingers.Error_1, null, PieceType.None, null);
             SkyConst kaisi_Sky = ittesasuArg.KaisiKyokumen.KyokumenConst;// 一手指し開始局面（不変）
             Node<IMove, KyokumenWrapper> editNodeRef;// 編集対象ノード（巻き戻し時と、進む時で異なる）
 
@@ -107,7 +107,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
                 }
                 else
                 {
-                    ittesasuResult.FoodKomaSyurui = Komasyurui14.H00_Null___;
+                    ittesasuResult.FoodKomaSyurui = PieceType.None;
                 }
             }
             Debug.Assert(figMovedKoma != Fingers.Error_1, "駒を動かせなかった？1");
@@ -191,7 +191,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
         {
             Node<IMove, KyokumenWrapper> editNodeRef = ittesasuReference.Get_SyuryoNode_OrNull;
             IMove nextMove = editNodeRef.Key;
-            if (ittesasuReference.FoodKomaSyurui != Komasyurui14.H00_Null___)
+            if (ittesasuReference.FoodKomaSyurui != PieceType.None)
             {
                 // 元のキーの、取った駒の種類だけを差替えます。
                 nextMove = Util_Sky258A.BuildMove(editNodeRef.Key.LongTimeAgo, editNodeRef.Key.Now, ittesasuReference.FoodKomaSyurui);
@@ -325,7 +325,7 @@ using Finger = ProjectDark.NamedInt.StrictNamedInt0; //スプライト番号
         /// <param name="isMakimodosi"></param>
         /// <returns></returns>
         private static IMoveHalf Do36_KomaOnDestinationMasu(
-            Komasyurui14 syurui2,
+            PieceType syurui2,
             IMove move,
             SkyConst src_Sky)
         {

@@ -46,7 +46,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// <param name="syurui"></param>
         /// <param name="hKomas"></param>
         /// <returns></returns>
-        public static Fingers InKomasyuruiNow(SkyConst src_Sky, Komasyurui14 syurui)
+        public static Fingers InKomasyuruiNow(SkyConst src_Sky, PieceType syurui)
         {
             Fingers figKomas = new Fingers();
 
@@ -73,7 +73,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// <param name="syurui"></param>
         /// <param name="kifu"></param>
         /// <returns></returns>
-        public static Fingers InOkibaKomasyuruiNow(SkyConst src_Sky, Okiba okiba, Komasyurui14 syurui)
+        public static Fingers InOkibaKomasyuruiNow(SkyConst src_Sky, Okiba okiba, PieceType syurui)
         {
             Fingers komas = new Fingers();
 
@@ -104,7 +104,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// <param name="pside">先後サイド。</param>
         /// <param name="komaSyurui">駒の種類。</param>
         /// <returns></returns>
-        public static Fingers InOkibaPsideKomasyuruiNow(SkyConst src_Sky, Okiba okiba, Playerside pside, Komasyurui14 komaSyurui)
+        public static Fingers InOkibaPsideKomasyuruiNow(SkyConst src_Sky, Okiba okiba, Playerside pside, PieceType komaSyurui)
         {
             Fingers fingers = new Fingers();
 
@@ -161,7 +161,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// <param name="pside">駒種類</param>
         /// <param name="suji">筋番号1～9</param>
         /// <returns></returns>
-        public static Fingers InOkibaPsideKomasyuruiSujiNow(SkyConst src_Sky, Okiba okiba, Playerside pside, Komasyurui14 ks, int suji)
+        public static Fingers InOkibaPsideKomasyuruiSujiNow(SkyConst src_Sky, Okiba okiba, Playerside pside, PieceType ks, int suji)
         {
             Fingers found = new Fingers();
 

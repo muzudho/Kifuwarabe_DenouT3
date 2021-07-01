@@ -38,7 +38,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             NariNarazu nariNarazu = Conv_String268.Nari_ToBool(strNariNarazu);//成
             DaHyoji daHyoji = Conv_String268.Str_ToDaHyoji(strDaHyoji);             //打
 
-            Komasyurui14 srcSyurui = Conv_String268.Str_ToSyurui(strSrcSyurui);
+            PieceType srcSyurui = Conv_String268.Str_ToSyurui(strSrcSyurui);
 
 
             //------------------------------
@@ -95,7 +95,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 goto gt_EndShogiban;
             }
 
-            if (Komasyurui14.H01_Fu_____ == srcSyurui)
+            if (PieceType.P == srcSyurui)
             {
                 #region 歩
                 //************************************************************
@@ -124,7 +124,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 }
                 #endregion
             }
-            else if (Komasyurui14.H07_Hisya__ == srcSyurui)
+            else if (PieceType.R == srcSyurui)
             {
                 #region 飛
                 //************************************************************
@@ -223,7 +223,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 }
                 #endregion
             }
-            else if (Komasyurui14.H08_Kaku___ == srcSyurui)
+            else if (PieceType.B == srcSyurui)
             {
                 #region 角
                 //************************************************************
@@ -322,7 +322,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 }
                 #endregion
             }
-            else if (Komasyurui14.H02_Kyo____ == srcSyurui)
+            else if (PieceType.L == srcSyurui)
             {
                 #region 香
                 //************************************************************
@@ -362,7 +362,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 }
                 #endregion
             }
-            else if (Komasyurui14.H03_Kei____ == srcSyurui)
+            else if (PieceType.N == srcSyurui)
             {
                 #region 桂
                 //************************************************************
@@ -424,7 +424,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 }
                 #endregion
             }
-            else if (Komasyurui14.H04_Gin____ == srcSyurui)
+            else if (PieceType.S == srcSyurui)
             {
                 #region 銀
                 //************************************************************
@@ -501,11 +501,11 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 #endregion
             }
             else if (
-                Komasyurui14.H05_Kin____ == srcSyurui
-                || Komasyurui14.H11_Tokin__ == srcSyurui
-                || Komasyurui14.H12_NariKyo == srcSyurui
-                || Komasyurui14.H13_NariKei == srcSyurui
-                || Komasyurui14.H14_NariGin == srcSyurui
+                PieceType.G == srcSyurui
+                || PieceType.PP == srcSyurui
+                || PieceType.PL == srcSyurui
+                || PieceType.PN == srcSyurui
+                || PieceType.PS == srcSyurui
                 )
             {
                 #region △金、△と金、△成香、△成桂、△成銀
@@ -589,7 +589,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 }
                 #endregion
             }
-            else if (Komasyurui14.H06_Gyoku__ == srcSyurui)
+            else if (PieceType.K == srcSyurui)
             {
                 #region 王
                 //************************************************************
@@ -633,7 +633,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 }
                 #endregion
             }
-            else if (Komasyurui14.H09_Ryu____ == srcSyurui)
+            else if (PieceType.PR == srcSyurui)
             {
                 #region 竜
                 //************************************************************
@@ -757,7 +757,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                 }
                 #endregion
             }
-            else if (Komasyurui14.H10_Uma____ == srcSyurui)
+            else if (PieceType.PB == srcSyurui)
             {
                 #region 馬
                 //************************************************************
@@ -978,7 +978,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
             }
 
 
-            Komasyurui14 dstSyurui;
+            PieceType dstSyurui;
             if (NariNarazu.Nari == nariNarazu)
             {
                 // 成ります
@@ -1007,7 +1007,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     dstSyurui
                 ),
 
-                Komasyurui14.H00_Null___ // 符号からは、取った駒の種類は分からないんだぜ☆　だがバグではない☆　あとで調べる☆
+                PieceType.None // 符号からは、取った駒の種類は分からないんだぜ☆　だがバグではない☆　あとで調べる☆
             );
         }
 

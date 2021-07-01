@@ -203,16 +203,16 @@
                 KyokumenPngArgs_FoodOrDropKoma foodKoma;
                 if (null != node.Key.FoodKomaSyurui)
                 {
-                    switch (Util_Komasyurui14.NarazuCaseHandle((Komasyurui14)node.Key.FoodKomaSyurui))
+                    switch (Util_Komasyurui14.NarazuCaseHandle((PieceType)node.Key.FoodKomaSyurui))
                     {
-                        case Komasyurui14.H00_Null___: foodKoma = KyokumenPngArgs_FoodOrDropKoma.NONE; break;
-                        case Komasyurui14.H01_Fu_____: foodKoma = KyokumenPngArgs_FoodOrDropKoma.FU__; break;
-                        case Komasyurui14.H02_Kyo____: foodKoma = KyokumenPngArgs_FoodOrDropKoma.KYO_; break;
-                        case Komasyurui14.H03_Kei____: foodKoma = KyokumenPngArgs_FoodOrDropKoma.KEI_; break;
-                        case Komasyurui14.H04_Gin____: foodKoma = KyokumenPngArgs_FoodOrDropKoma.GIN_; break;
-                        case Komasyurui14.H05_Kin____: foodKoma = KyokumenPngArgs_FoodOrDropKoma.KIN_; break;
-                        case Komasyurui14.H07_Hisya__: foodKoma = KyokumenPngArgs_FoodOrDropKoma.HI__; break;
-                        case Komasyurui14.H08_Kaku___: foodKoma = KyokumenPngArgs_FoodOrDropKoma.KAKU; break;
+                        case PieceType.None: foodKoma = KyokumenPngArgs_FoodOrDropKoma.NONE; break;
+                        case PieceType.P: foodKoma = KyokumenPngArgs_FoodOrDropKoma.FU__; break;
+                        case PieceType.L: foodKoma = KyokumenPngArgs_FoodOrDropKoma.KYO_; break;
+                        case PieceType.N: foodKoma = KyokumenPngArgs_FoodOrDropKoma.KEI_; break;
+                        case PieceType.S: foodKoma = KyokumenPngArgs_FoodOrDropKoma.GIN_; break;
+                        case PieceType.G: foodKoma = KyokumenPngArgs_FoodOrDropKoma.KIN_; break;
+                        case PieceType.R: foodKoma = KyokumenPngArgs_FoodOrDropKoma.HI__; break;
+                        case PieceType.B: foodKoma = KyokumenPngArgs_FoodOrDropKoma.KAKU; break;
                         default: foodKoma = KyokumenPngArgs_FoodOrDropKoma.UNKNOWN; break;
                     }
                 }

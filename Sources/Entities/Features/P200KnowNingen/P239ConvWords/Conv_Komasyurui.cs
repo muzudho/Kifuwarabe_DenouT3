@@ -9,65 +9,65 @@
         /// </summary>
         /// <param name="moji"></param>
         /// <returns></returns>
-        public static string ToStr_Ichimoji(Komasyurui14 ks14)
+        public static string ToStr_Ichimoji(PieceType ks14)
         {
             string syurui;
 
             switch (ks14)
             {
-                case Komasyurui14.H01_Fu_____:
+                case PieceType.P:
                     syurui = "歩";
                     break;
 
-                case Komasyurui14.H02_Kyo____:
+                case PieceType.L:
                     syurui = "香";
                     break;
 
-                case Komasyurui14.H03_Kei____:
+                case PieceType.N:
                     syurui = "桂";
                     break;
 
-                case Komasyurui14.H04_Gin____:
+                case PieceType.S:
                     syurui = "銀";
                     break;
 
-                case Komasyurui14.H05_Kin____:
+                case PieceType.G:
                     syurui = "金";
                     break;
 
-                case Komasyurui14.H07_Hisya__:
+                case PieceType.R:
                     syurui = "飛";
                     break;
 
-                case Komasyurui14.H08_Kaku___:
+                case PieceType.B:
                     syurui = "角";
                     break;
 
-                case Komasyurui14.H06_Gyoku__:
+                case PieceType.K:
                     syurui = "玉";
                     break;
 
-                case Komasyurui14.H11_Tokin__:
+                case PieceType.PP:
                     syurui = "と";
                     break;
 
-                case Komasyurui14.H12_NariKyo:
+                case PieceType.PL:
                     syurui = "杏";
                     break;
 
-                case Komasyurui14.H13_NariKei:
+                case PieceType.PN:
                     syurui = "圭";
                     break;
 
-                case Komasyurui14.H14_NariGin:
+                case PieceType.PS:
                     syurui = "全";
                     break;
 
-                case Komasyurui14.H09_Ryu____:
+                case PieceType.PR:
                     syurui = "竜";
                     break;
 
-                case Komasyurui14.H10_Uma____:
+                case PieceType.PB:
                     syurui = "馬";
                     break;
 
@@ -84,65 +84,65 @@
         /// </summary>
         /// <param name="ks14"></param>
         /// <returns></returns>
-        public static string ToStr_ImageName(Komasyurui14 ks14)
+        public static string ToStr_ImageName(PieceType ks14)
         {
             string name;
 
             switch (ks14)
             {
-                case Komasyurui14.H01_Fu_____:
+                case PieceType.P:
                     name = "01_Fu_____";
                     break;
 
-                case Komasyurui14.H02_Kyo____:
+                case PieceType.L:
                     name = "02_Kyo____";
                     break;
 
-                case Komasyurui14.H03_Kei____:
+                case PieceType.N:
                     name = "03_Kei____";
                     break;
 
-                case Komasyurui14.H04_Gin____:
+                case PieceType.S:
                     name = "04_Gin____";
                     break;
 
-                case Komasyurui14.H05_Kin____:
+                case PieceType.G:
                     name = "05_Kin____";
                     break;
 
-                case Komasyurui14.H07_Hisya__:
+                case PieceType.R:
                     name = "07_Hisya__";
                     break;
 
-                case Komasyurui14.H08_Kaku___:
+                case PieceType.B:
                     name = "08_Kaku___";
                     break;
 
-                case Komasyurui14.H06_Gyoku__:
+                case PieceType.K:
                     name = "06_Gyoku__";
                     break;
 
-                case Komasyurui14.H11_Tokin__:
+                case PieceType.PP:
                     name = "11_Tokin__";
                     break;
 
-                case Komasyurui14.H12_NariKyo:
+                case PieceType.PL:
                     name = "12_NariKyo";
                     break;
 
-                case Komasyurui14.H13_NariKei:
+                case PieceType.PN:
                     name = "13_NariKei";
                     break;
 
-                case Komasyurui14.H14_NariGin:
+                case PieceType.PS:
                     name = "14_NariGin";
                     break;
 
-                case Komasyurui14.H09_Ryu____:
+                case PieceType.PR:
                     name = "09_Ryu____";
                     break;
 
-                case Komasyurui14.H10_Uma____:
+                case PieceType.PB:
                     name = "10_Uma____";
                     break;
 

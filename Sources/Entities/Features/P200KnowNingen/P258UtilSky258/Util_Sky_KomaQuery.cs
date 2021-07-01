@@ -67,7 +67,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// </summary>
         /// <param name="masu">マス番号</param>
         /// <returns>スプライト番号。なければエラー番号。</returns>
-        public static RO_Star InMasuPsideKomasyuruiNow(SkyConst src_Sky, SyElement masu, Playerside pside, Komasyurui14 syurui)
+        public static RO_Star InMasuPsideKomasyuruiNow(SkyConst src_Sky, SyElement masu, Playerside pside, PieceType syurui)
         {
             RO_Star koma = null;
 

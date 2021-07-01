@@ -30,15 +30,15 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         /// <summary>
         /// 種類。
         /// </summary>
-        public static Komasyurui14 Syurui(Komahaiyaku185 haiyaku)
+        public static PieceType Syurui(Komahaiyaku185 haiyaku)
         {
             return Util_Komahaiyaku184.syurui[(int)haiyaku];
         }
-        public static void AddSyurui(Komasyurui14 syurui)
+        public static void AddSyurui(PieceType syurui)
         {
             Util_Komahaiyaku184.syurui.Add(syurui);
         }
-        private static List<Komasyurui14> syurui;
+        private static List<PieceType> syurui;
 
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
         static Util_Komahaiyaku184()
         {
             Util_Komahaiyaku184.kukanMasus = new Dictionary<Komahaiyaku185, List<SySet<SyElement>>>();
-            Util_Komahaiyaku184.syurui = new List<Komasyurui14>();
+            Util_Komahaiyaku184.syurui = new List<PieceType>();
             Util_Komahaiyaku184.name = new List<string>();
             Util_Komahaiyaku184.name2 = new List<string>();
         }

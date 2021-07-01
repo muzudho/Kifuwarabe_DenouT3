@@ -41,7 +41,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                                 koma.Haiyaku//TODO:成るとか考えたい
                             ),
 
-                            Komasyurui14.H00_Null___//取った駒不明
+                            PieceType.None//取った駒不明
                         );
                     //sbSfen.Append(sbSfen.ToString());
 
@@ -84,7 +84,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                         //key,
                         new RO_Star(src_Sky.KaisiPside, koma.Masu, koma.Haiyaku),
                         new RO_Star(src_Sky.KaisiPside, dstMasu, koma.Haiyaku),//FIXME:配役は適当。
-                        Komasyurui14.H00_Null___
+                        PieceType.None
                         );
 
                     string moveStr = ConvMoveStrSfen.ToMoveStrSfen(move);//重複防止用のキー
@@ -125,7 +125,7 @@ namespace Grayscale.Kifuwarakaku.Entities.Features
                     IMove move = Util_Sky258A.BuildMove(
                         new RO_Star(src_Sky.KaisiPside, koma.Masu, koma.Haiyaku),
                         new RO_Star(src_Sky.KaisiPside, dstMasu, koma.Haiyaku),//FIXME:配役は適当。
-                        Komasyurui14.H00_Null___
+                        PieceType.None
                         );
 
                     string moveStr = ConvMoveStrSfen.ToMoveStrSfen(move);//重複防止用のキー

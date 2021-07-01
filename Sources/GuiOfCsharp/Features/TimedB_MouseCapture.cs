@@ -352,7 +352,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
                                                     IMove move = new RO_Starbeam(
                                                         dstStarlight.Now,
                                                         srcStarlight.Now,
-                                                        mainGui.Shape_PnlTaikyoku.MousePos_FoodKoma != null ? mainGui.Shape_PnlTaikyoku.MousePos_FoodKoma.Komasyurui : Komasyurui14.H00_Null___
+                                                        mainGui.Shape_PnlTaikyoku.MousePos_FoodKoma != null ? mainGui.Shape_PnlTaikyoku.MousePos_FoodKoma.Komasyurui : PieceType.None
                                                         );// 選択している駒の元の場所と、移動先
 
                                                     //
@@ -498,7 +498,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
 
                                                             src_Sky.StarlightIndexOf(btnKoma.Koma).Now,
 
-                                                            mainGui.Shape_PnlTaikyoku.MousePos_FoodKoma != null ? mainGui.Shape_PnlTaikyoku.MousePos_FoodKoma.Komasyurui : Komasyurui14.H00_Null___
+                                                            mainGui.Shape_PnlTaikyoku.MousePos_FoodKoma != null ? mainGui.Shape_PnlTaikyoku.MousePos_FoodKoma.Komasyurui : PieceType.None
                                                             );// 選択している駒の元の場所と、移動先
 
                                                         IMove last;
@@ -713,7 +713,7 @@ namespace Grayscale.Kifuwarakaku.GuiOfCsharp.Features
                                                 // 駒を動かします。
                                                 {
                                                     // GuiからServerへ渡す情報
-                                                    Komasyurui14 syurui;
+                                                    PieceType syurui;
                                                     IMoveHalf dst;
 
                                                     Util_Function_Csharp.Komamove1a_49Gui(out syurui, out dst, btnTumandeiruKoma, btnSasitaiMasu, mainGui);

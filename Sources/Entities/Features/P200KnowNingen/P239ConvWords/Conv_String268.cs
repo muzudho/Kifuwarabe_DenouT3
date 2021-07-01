@@ -9,72 +9,72 @@
         /// </summary>
         /// <param name="moji"></param>
         /// <returns></returns>
-        public static Komasyurui14 Str_ToSyurui(string moji)
+        public static PieceType Str_ToSyurui(string moji)
         {
-            Komasyurui14 syurui;
+            PieceType syurui;
 
             switch (moji)
             {
                 case "歩":
-                    syurui = Komasyurui14.H01_Fu_____;
+                    syurui = PieceType.P;
                     break;
 
                 case "香":
-                    syurui = Komasyurui14.H02_Kyo____;
+                    syurui = PieceType.L;
                     break;
 
                 case "桂":
-                    syurui = Komasyurui14.H03_Kei____;
+                    syurui = PieceType.N;
                     break;
 
                 case "銀":
-                    syurui = Komasyurui14.H04_Gin____;
+                    syurui = PieceType.S;
                     break;
 
                 case "金":
-                    syurui = Komasyurui14.H05_Kin____;
+                    syurui = PieceType.G;
                     break;
 
                 case "飛":
-                    syurui = Komasyurui14.H07_Hisya__;
+                    syurui = PieceType.R;
                     break;
 
                 case "角":
-                    syurui = Komasyurui14.H08_Kaku___;
+                    syurui = PieceType.B;
                     break;
 
                 case "王"://thru
                 case "玉":
-                    syurui = Komasyurui14.H06_Gyoku__;
+                    syurui = PieceType.K;
                     break;
 
                 case "と":
-                    syurui = Komasyurui14.H11_Tokin__;
+                    syurui = PieceType.PP;
                     break;
 
                 case "成香":
-                    syurui = Komasyurui14.H12_NariKyo;
+                    syurui = PieceType.PL;
                     break;
 
                 case "成桂":
-                    syurui = Komasyurui14.H13_NariKei;
+                    syurui = PieceType.PN;
                     break;
 
                 case "成銀":
-                    syurui = Komasyurui14.H14_NariGin;
+                    syurui = PieceType.PS;
                     break;
 
                 case "竜"://thru
                 case "龍":
-                    syurui = Komasyurui14.H09_Ryu____;
+                    syurui = PieceType.PR;
                     break;
 
                 case "馬":
-                    syurui = Komasyurui14.H10_Uma____;
+                    syurui = PieceType.PB;
                     break;
 
                 default:
-                    syurui = Komasyurui14.H00_Null___;
+                    syurui = PieceType.None;
                     break;
             }
 
@@ -173,69 +173,69 @@
         /// </summary>
         /// <param name="syurui"></param>
         /// <returns></returns>
-        public static void SfenUttaSyurui(string sfen, out Komasyurui14 syurui)
+        public static void SfenUttaSyurui(string sfen, out PieceType syurui)
         {
             switch (sfen)
             {
                 case "P":
-                    syurui = Komasyurui14.H01_Fu_____;
+                    syurui = PieceType.P;
                     break;
 
                 case "L":
-                    syurui = Komasyurui14.H02_Kyo____;
+                    syurui = PieceType.L;
                     break;
 
                 case "N":
-                    syurui = Komasyurui14.H03_Kei____;
+                    syurui = PieceType.N;
                     break;
 
                 case "S":
-                    syurui = Komasyurui14.H04_Gin____;
+                    syurui = PieceType.S;
                     break;
 
                 case "G":
-                    syurui = Komasyurui14.H05_Kin____;
+                    syurui = PieceType.G;
                     break;
 
                 case "R":
-                    syurui = Komasyurui14.H07_Hisya__;
+                    syurui = PieceType.R;
                     break;
 
                 case "B":
-                    syurui = Komasyurui14.H08_Kaku___;
+                    syurui = PieceType.B;
                     break;
 
                 case "K":
-                    syurui = Komasyurui14.H06_Gyoku__;
+                    syurui = PieceType.K;
                     break;
 
                 case "+P":
-                    syurui = Komasyurui14.H11_Tokin__;
+                    syurui = PieceType.PP;
                     break;
 
                 case "+L":
-                    syurui = Komasyurui14.H12_NariKyo;
+                    syurui = PieceType.PL;
                     break;
 
                 case "+N":
-                    syurui = Komasyurui14.H13_NariKei;
+                    syurui = PieceType.PN;
                     break;
 
                 case "+S":
-                    syurui = Komasyurui14.H14_NariGin;
+                    syurui = PieceType.PS;
                     break;
 
                 case "+R":
-                    syurui = Komasyurui14.H07_Hisya__;
+                    syurui = PieceType.R;
                     break;
 
                 case "+B":
-                    syurui = Komasyurui14.H08_Kaku___;
+                    syurui = PieceType.B;
                     break;
 
                 default:
                     Util_Message.Show($"▲バグ【駒種類】Sfen=[{sfen}]");
-                    syurui = Komasyurui14.H00_Null___;
+                    syurui = PieceType.None;
                     break;
             }
         }
@@ -249,153 +249,153 @@
         /// </summary>
         /// <param name="syurui"></param>
         /// <returns></returns>
-        public static void SfenSyokihaichi_ToSyurui(string sfen, out Playerside pside, out Komasyurui14 syurui)
+        public static void SfenSyokihaichi_ToSyurui(string sfen, out Playerside pside, out PieceType syurui)
         {
             switch (sfen)
             {
                 case "P":
                     pside = Playerside.P1;
-                    syurui = Komasyurui14.H01_Fu_____;
+                    syurui = PieceType.P;
                     break;
 
                 case "p":
                     pside = Playerside.P2;
-                    syurui = Komasyurui14.H01_Fu_____;
+                    syurui = PieceType.P;
                     break;
 
                 case "L":
                     pside = Playerside.P1;
-                    syurui = Komasyurui14.H02_Kyo____;
+                    syurui = PieceType.L;
                     break;
 
                 case "l":
                     pside = Playerside.P2;
-                    syurui = Komasyurui14.H02_Kyo____;
+                    syurui = PieceType.L;
                     break;
 
                 case "N":
                     pside = Playerside.P1;
-                    syurui = Komasyurui14.H03_Kei____;
+                    syurui = PieceType.N;
                     break;
 
                 case "n":
                     pside = Playerside.P2;
-                    syurui = Komasyurui14.H03_Kei____;
+                    syurui = PieceType.N;
                     break;
 
                 case "S":
                     pside = Playerside.P1;
-                    syurui = Komasyurui14.H04_Gin____;
+                    syurui = PieceType.S;
                     break;
 
                 case "s":
                     pside = Playerside.P2;
-                    syurui = Komasyurui14.H04_Gin____;
+                    syurui = PieceType.S;
                     break;
 
                 case "G":
                     pside = Playerside.P1;
-                    syurui = Komasyurui14.H05_Kin____;
+                    syurui = PieceType.G;
                     break;
 
                 case "g":
                     pside = Playerside.P2;
-                    syurui = Komasyurui14.H05_Kin____;
+                    syurui = PieceType.G;
                     break;
 
                 case "R":
                     pside = Playerside.P1;
-                    syurui = Komasyurui14.H07_Hisya__;
+                    syurui = PieceType.R;
                     break;
 
                 case "r":
                     pside = Playerside.P2;
-                    syurui = Komasyurui14.H07_Hisya__;
+                    syurui = PieceType.R;
                     break;
 
                 case "B":
                     pside = Playerside.P1;
-                    syurui = Komasyurui14.H08_Kaku___;
+                    syurui = PieceType.B;
                     break;
 
                 case "b":
                     pside = Playerside.P2;
-                    syurui = Komasyurui14.H08_Kaku___;
+                    syurui = PieceType.B;
                     break;
 
                 case "K":
                     pside = Playerside.P1;
-                    syurui = Komasyurui14.H06_Gyoku__;
+                    syurui = PieceType.K;
                     break;
 
                 case "k":
                     pside = Playerside.P2;
-                    syurui = Komasyurui14.H06_Gyoku__;
+                    syurui = PieceType.K;
                     break;
 
                 case "+P":
                     pside = Playerside.P1;
-                    syurui = Komasyurui14.H11_Tokin__;
+                    syurui = PieceType.PP;
                     break;
 
                 case "+p":
                     pside = Playerside.P2;
-                    syurui = Komasyurui14.H11_Tokin__;
+                    syurui = PieceType.PP;
                     break;
 
                 case "+L":
                     pside = Playerside.P1;
-                    syurui = Komasyurui14.H12_NariKyo;
+                    syurui = PieceType.PL;
                     break;
 
                 case "+l":
                     pside = Playerside.P2;
-                    syurui = Komasyurui14.H12_NariKyo;
+                    syurui = PieceType.PL;
                     break;
 
                 case "+N":
                     pside = Playerside.P1;
-                    syurui = Komasyurui14.H13_NariKei;
+                    syurui = PieceType.PN;
                     break;
 
                 case "+n":
                     pside = Playerside.P2;
-                    syurui = Komasyurui14.H13_NariKei;
+                    syurui = PieceType.PN;
                     break;
 
                 case "+S":
                     pside = Playerside.P1;
-                    syurui = Komasyurui14.H14_NariGin;
+                    syurui = PieceType.PS;
                     break;
 
                 case "+s":
                     pside = Playerside.P2;
-                    syurui = Komasyurui14.H14_NariGin;
+                    syurui = PieceType.PS;
                     break;
 
                 case "+R":
                     pside = Playerside.P1;
-                    syurui = Komasyurui14.H07_Hisya__;
+                    syurui = PieceType.R;
                     break;
 
                 case "+r":
                     pside = Playerside.P2;
-                    syurui = Komasyurui14.H07_Hisya__;
+                    syurui = PieceType.R;
                     break;
 
                 case "+B":
                     pside = Playerside.P1;
-                    syurui = Komasyurui14.H08_Kaku___;
+                    syurui = PieceType.B;
                     break;
 
                 case "+b":
                     pside = Playerside.P2;
-                    syurui = Komasyurui14.H08_Kaku___;
+                    syurui = PieceType.B;
                     break;
 
                 default:
                     pside = Playerside.P2;
-                    syurui = Komasyurui14.H00_Null___;
+                    syurui = PieceType.None;
                     break;
             }
         }

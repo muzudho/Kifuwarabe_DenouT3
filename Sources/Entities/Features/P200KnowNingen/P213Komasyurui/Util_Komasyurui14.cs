@@ -81,11 +81,11 @@
         /// 駒が成らなかったときの駒ハンドル
         /// ------------------------------------------------------------------------------------------------------------------------
         /// </summary>
-        public static Komasyurui14 NarazuCaseHandle(Komasyurui14 syurui)
+        public static PieceType NarazuCaseHandle(PieceType syurui)
         {
             return Util_Komasyurui14.narazuCaseHandle[(int)syurui];
         }
-        protected static Komasyurui14[] narazuCaseHandle;
+        protected static PieceType[] narazuCaseHandle;
 
 
         /// <summary>
@@ -97,7 +97,7 @@
         public static bool[] FlagNari { get { return Util_Komasyurui14.flagNari; } }
         protected static bool[] flagNari;
 
-        public static bool IsNari(Komasyurui14 syurui)
+        public static bool IsNari(PieceType syurui)
         {
             return Util_Komasyurui14.FlagNari[(int)syurui];
         }
@@ -107,10 +107,10 @@
         /// 駒が成ったときの駒ハンドル
         /// ------------------------------------------------------------------------------------------------------------------------
         /// </summary>
-        public static Komasyurui14[] NariCaseHandle { get { return Util_Komasyurui14.nariCaseHandle; } }
-        protected static Komasyurui14[] nariCaseHandle;
+        public static PieceType[] NariCaseHandle { get { return Util_Komasyurui14.nariCaseHandle; } }
+        protected static PieceType[] nariCaseHandle;
 
-        public static Komasyurui14 ToNariCase(Komasyurui14 syurui)
+        public static PieceType ToNariCase(PieceType syurui)
         {
             return Util_Komasyurui14.NariCaseHandle[(int)syurui];
         }
@@ -118,22 +118,22 @@
         static Util_Komasyurui14()
         {
 
-            Util_Komasyurui14.nariCaseHandle = new Komasyurui14[]{
-                Komasyurui14.H00_Null___,//[0]ヌル
-                Komasyurui14.H11_Tokin__,
-                Komasyurui14.H12_NariKyo,
-                Komasyurui14.H13_NariKei,
-                Komasyurui14.H14_NariGin,
-                Komasyurui14.H05_Kin____,
-                Komasyurui14.H06_Gyoku__,
-                Komasyurui14.H09_Ryu____,
-                Komasyurui14.H10_Uma____,
-                Komasyurui14.H09_Ryu____,
-                Komasyurui14.H10_Uma____,
-                Komasyurui14.H11_Tokin__,
-                Komasyurui14.H12_NariKyo,
-                Komasyurui14.H13_NariKei,
-                Komasyurui14.H14_NariGin,
+            Util_Komasyurui14.nariCaseHandle = new PieceType[]{
+                PieceType.None,//[0]ヌル
+                PieceType.PP,
+                PieceType.PL,
+                PieceType.PN,
+                PieceType.PS,
+                PieceType.G,
+                PieceType.K,
+                PieceType.PR,
+                PieceType.PB,
+                PieceType.PR,
+                PieceType.PB,
+                PieceType.PP,
+                PieceType.PL,
+                PieceType.PN,
+                PieceType.PS,
             };
 
             Util_Komasyurui14.flagNari = new bool[]{
@@ -155,22 +155,22 @@
                 false,//[15]エラー
             };
 
-            Util_Komasyurui14.narazuCaseHandle = new Komasyurui14[]{
-                Komasyurui14.H00_Null___,//[0]ヌル
-                Komasyurui14.H01_Fu_____,//[1]歩
-                Komasyurui14.H02_Kyo____,//[2]香
-                Komasyurui14.H03_Kei____,//[3]桂
-                Komasyurui14.H04_Gin____,//[4]銀
-                Komasyurui14.H05_Kin____,//[5]金
-                Komasyurui14.H06_Gyoku__,//[6]王
-                Komasyurui14.H07_Hisya__,//[7]飛車
-                Komasyurui14.H08_Kaku___,//[8]角
-                Komasyurui14.H07_Hisya__,//[9]竜→飛車
-                Komasyurui14.H08_Kaku___,//[10]馬→角
-                Komasyurui14.H01_Fu_____,//[11]と→歩
-                Komasyurui14.H02_Kyo____,//[12]杏→香
-                Komasyurui14.H03_Kei____,//[13]圭→桂
-                Komasyurui14.H04_Gin____,//[14]全→銀
+            Util_Komasyurui14.narazuCaseHandle = new PieceType[]{
+                PieceType.None,//[0]ヌル
+                PieceType.P,//[1]歩
+                PieceType.L,//[2]香
+                PieceType.N,//[3]桂
+                PieceType.S,//[4]銀
+                PieceType.G,//[5]金
+                PieceType.K,//[6]王
+                PieceType.R,//[7]飛車
+                PieceType.B,//[8]角
+                PieceType.R,//[9]竜→飛車
+                PieceType.B,//[10]馬→角
+                PieceType.P,//[11]と→歩
+                PieceType.L,//[12]杏→香
+                PieceType.N,//[13]圭→桂
+                PieceType.S,//[14]全→銀
             };
 
             Util_Komasyurui14.flagNareruKoma = new bool[]{
@@ -376,7 +376,7 @@
         /// 外字を利用した表示文字。
         /// ------------------------------------------------------------------------------------------------------------------------
         /// </summary>
-        public static char ToGaiji(Komasyurui14 koma, Playerside pside)
+        public static char ToGaiji(PieceType koma, Playerside pside)
         {
             char result;
 
@@ -401,7 +401,7 @@
         /// 「歩」といった、外字を利用しない表示文字。
         /// ------------------------------------------------------------------------------------------------------------------------
         /// </summary>
-        public static string ToIchimoji(Komasyurui14 koma)
+        public static string ToIchimoji(PieceType koma)
         {
             return Util_Komasyurui14.Ichimoji[(int)koma];
         }
@@ -411,7 +411,7 @@
         /// 「▲歩」といった、外字を利用しない表示文字。
         /// ------------------------------------------------------------------------------------------------------------------------
         /// </summary>
-        public static string ToNimoji(Komasyurui14 koma, Playerside pside)
+        public static string ToNimoji(PieceType koma, Playerside pside)
         {
             string result;
 
@@ -436,7 +436,7 @@
         /// 駒のSFEN符号用の単語。
         /// ------------------------------------------------------------------------------------------------------------------------
         /// </summary>
-        public static string SfenText(Komasyurui14 komaSyurui, Playerside pside)
+        public static string SfenText(PieceType komaSyurui, Playerside pside)
         {
             string str;
 
@@ -453,7 +453,7 @@
         }
 
 
-        public static bool Matches(Komasyurui14 koma1, Komasyurui14 koma2)
+        public static bool Matches(PieceType koma1, PieceType koma2)
         {
             return (int)koma2 == (int)koma1;
         }
